@@ -649,6 +649,113 @@ body.pmopen{overflow:hidden}
   .fcount{margin-right:auto}
 }
 
+/* ============ SHOP-UPGRADE: NEUE KOMPONENTEN ============ */
+/* Grundpreis */
+.gp{font-size:11px;color:var(--ink-45);margin-top:3px}
+/* Wunschlisten-Herz auf Karten */
+.wbtn{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;
+  background:rgba(251,249,245,.92);display:flex;align-items:center;justify-content:center;
+  z-index:2;transition:.25s}
+.wbtn svg{width:17px;height:17px;stroke:var(--ink-70);fill:none;stroke-width:1.6}
+.wbtn:hover{transform:scale(1.1)}
+.wbtn.on svg{fill:#B5453C;stroke:#B5453C}
+/* Kategorie-Kacheln im Shop */
+.catgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.6vw,18px);margin:8px 0 4px}
+@media(max-width:640px){.catgrid{grid-template-columns:repeat(2,1fr)}}
+.catgrid .tcat img{aspect-ratio:4/3}
+/* Autosuggest */
+.fsearch{position:relative}
+.sgg{position:absolute;top:calc(100% + 1px);left:-1px;right:-1px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 22px 44px -20px rgba(26,22,19,.3);z-index:45;display:none;max-height:340px;overflow:auto}
+.sgi{display:flex;gap:10px;align-items:center;padding:9px 12px;cursor:pointer;font-size:13px;text-align:left}
+.sgi:hover{background:var(--stone)}
+.sgi img{width:38px;height:38px;object-fit:cover;flex:none}
+.sgi span{line-height:1.35}
+.sgi b{margin-left:auto;font-weight:400;color:var(--brass);flex:none}
+.sgc{display:flex;gap:6px;flex-wrap:wrap;padding:10px 12px;border-top:1px solid var(--line)}
+.sgc button{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;padding:6px 11px;border:1px solid var(--line);transition:.2s}
+.sgc button:hover{border-color:var(--ink)}
+.sge{padding:12px;font-size:12.5px;color:var(--ink-45)}
+/* Staffeltabelle PDP */
+.staffel{border:1px solid var(--line);background:#fff;margin:0 0 20px;font-size:13px}
+.staffel .sth{padding:9px 14px;border-bottom:1px solid var(--line);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-45)}
+.staffel table{width:100%;border-collapse:collapse}
+.staffel td{padding:8px 14px;border-top:1px solid var(--line)}
+.staffel tr:first-child td{border-top:none}
+.staffel td:last-child{text-align:right;color:var(--brass);font-weight:500}
+/* Größen */
+.sizes{margin:2px 0 20px}
+.sizes .slbl{display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);margin-bottom:8px}
+.szb{min-width:52px;height:44px;border:1px solid var(--line);margin:0 8px 8px 0;font-size:13px;background:#fff;transition:.2s}
+.szb:hover{border-color:var(--ink)}
+.szb.on{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+/* Preis-Referenzhinweis (30-Tage-Bestpreis, Grundpreis) */
+.refnote{font-size:11px;color:var(--ink-45);margin-top:4px}
+/* Accordion PDP */
+.acc{border-top:1px solid var(--line)}
+.acc summary{cursor:pointer;padding:14px 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:500;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:'+';font-size:17px;color:var(--ink-45);font-weight:300}
+.acc[open] summary::after{content:'−'}
+.acc p{font-size:13.5px;color:var(--ink-70);padding-bottom:16px;line-height:1.7}
+.acc a{color:var(--brass)}
+/* Bundle */
+.bundle{border:1px solid var(--line);background:#fff;padding:18px;margin-top:22px}
+.bundle h3{font-size:17px;margin-bottom:12px}
+.bimgs{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.bimgs img{width:62px;height:62px;object-fit:cover;border:1px solid var(--line)}
+.bimgs span{color:var(--ink-45)}
+.bsum{font-size:14px;margin-bottom:14px}
+.bsum b{color:var(--brass);font-size:16px}
+.bsum .old{color:var(--ink-45);text-decoration:line-through;font-size:12.5px;margin-left:7px}
+.bsum small{display:block;color:var(--ink-45);font-size:11.5px;margin-top:6px;line-height:1.5}
+/* Cross-Sell im Warenkorb */
+.xsell{border-top:1px solid var(--line);margin-top:10px;padding:14px 0 6px}
+.xh{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);margin-bottom:10px}
+.xi{display:flex;gap:10px;align-items:center;padding:7px 0}
+.xi img{width:44px;height:44px;object-fit:cover;background:#fff;flex:none}
+.xi .xn{font-size:12.5px;line-height:1.35}
+.xi .xp{font-size:12px;color:var(--brass);margin-top:2px}
+.xi .xadd{margin-left:auto;width:34px;height:34px;border:1px solid var(--line);font-size:16px;flex:none;transition:.2s}
+.xi .xadd:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+/* Gutscheinfeld (einklappbar) */
+.cpwrap{margin-bottom:12px}
+.cpd summary{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);
+  cursor:pointer;list-style:none;padding:2px 0 8px;text-decoration:underline;text-underline-offset:3px}
+.cpd summary::-webkit-details-marker{display:none}
+.cprow{display:flex;gap:8px;margin-bottom:10px}
+.cprow input{flex:1;min-width:0;border:1px solid var(--line);padding:10px 12px;font:inherit;font-size:13px;
+  background:#fff;text-transform:uppercase;letter-spacing:.08em}
+.cprow input:focus{outline:none;border-color:var(--brass)}
+.cpon{font-size:12.5px;color:var(--ink-70);display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.cpon b{color:var(--brass)}
+.cpon button{text-decoration:underline;text-underline-offset:3px;font-size:11px;color:var(--ink-45)}
+/* Sticky Kaufleiste im Produkt-Modal (mobil) */
+.pmbar{display:none}
+@media(max-width:860px){
+  .pmbar{display:flex;position:sticky;bottom:0;background:var(--paper);border-top:1px solid var(--line);
+    padding:12px 16px;gap:14px;align-items:center;justify-content:space-between;z-index:6}
+  .pmbar b{font-size:17px}
+  .pmbar small{display:block;font-size:10px;color:var(--ink-45)}
+  .pmbar .btn{flex:1;max-width:280px;padding:13px 18px}
+}
+/* Shop-Dropdown im Header */
+.navdrop{position:relative;display:inline-flex}
+.navdrop>a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 0;
+  border-bottom:1px solid transparent;transition:.25s}
+.navdrop:hover>a{border-color:var(--ink)}
+.navdrop .dropm{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+  background:var(--paper);border:1px solid var(--line);box-shadow:0 26px 54px -26px rgba(26,22,19,.4);
+  padding:10px 0;min-width:235px;opacity:0;visibility:hidden;transition:.28s;z-index:60}
+.navdrop:hover .dropm{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+nav.main .dropm a{display:block;padding:9px 22px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border:none}
+nav.main .dropm a:hover{background:var(--stone);border:none}
+/* Mobilmenü: Kategorie-Unterpunkte */
+.mnav .sub{font-family:var(--sans);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  padding:11px 0 11px 18px;color:var(--ink-70)}
+
 </style>
 </head>
 <body class="locked">
@@ -661,6 +768,7 @@ body.pmopen{overflow:hidden}
   <div class="t on"><span><b>Persönliche Beratung</b>&nbsp; vor Ort in ganz Deutschland</span></div>
   <div class="t"><span><b>Komplettpaket</b>&nbsp; sämtliche Arbeiten und Materialien enthalten</span></div>
   <div class="t"><span><b>Sonderanfertigung</b>&nbsp; nach Maß und in Ihrer Wunschfarbe</span></div>
+  <div class="t"><span><b>Versandkostenfrei ab 79 €</b>&nbsp; kostenloser Rückversand</span></div>
   <div class="t"><span><b>Über 400 Bäder</b>&nbsp; umgesetzt seit 2016</span></div>
 </div></div>
 
@@ -672,11 +780,23 @@ body.pmopen{overflow:hidden}
     <nav class="main">
       <a href="#linien" onclick="goSec('linien');return false">Designlinien</a>
       <a href="#material" onclick="goSec('material');return false">Material</a>
-      <a href="#" onclick="go('shop');return false">Shop</a>
+      <span class="navdrop"><a href="#" onclick="go('shop');return false">Shop</a>
+        <div class="dropm">
+          <a href="#" onclick="go('shop','frottee');return false">Bad &amp; Frottee</a>
+          <a href="#" onclick="go('shop','haar');return false">Haarpflege</a>
+          <a href="#" onclick="go('shop','pflege');return false">Körperpflege</a>
+          <a href="#" onclick="go('shop','duft');return false">Duft &amp; Parfüm</a>
+          <a href="#" onclick="go('shop','taschen');return false">Taschen &amp; Accessoires</a>
+          <a href="#" onclick="go('shop','armatur');return false">Armaturen</a>
+          <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
+        </div></span>
       <a href="#marke" onclick="goSec('marke');return false">Die Marke</a>
       <a href="#termin" onclick="goSec('termin');return false">Beratung</a>
     </nav>
     <div class="hicons">
+      <button class="cartbtn" onclick="go('wunsch');renderWish()" aria-label="Wunschliste">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 20.5S4.8 16 2.9 11.7A5.2 5.2 0 0 1 12 6.9a5.2 5.2 0 0 1 9.1 4.8C19.2 16 12 20.5 12 20.5z"/></svg>
+        <i class="n" id="wn" style="display:none">0</i></button>
       <button class="cartbtn" onclick="cart(1)" aria-label="Warenkorb">
         <svg class="icon" viewBox="0 0 24 24"><path d="M6 7h12l1.4 13H4.6L6 7z"/><path d="M9 7a3 3 0 016 0"/></svg>
         <i class="n" id="cn" style="display:none">0</i></button>
@@ -689,6 +809,13 @@ body.pmopen{overflow:hidden}
   <a href="#linien" onclick="mnav(0);goSec('linien');return false">Designlinien</a>
   <a href="#material" onclick="mnav(0);goSec('material');return false">Material</a>
   <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
+  <a href="#" class="sub" onclick="go('shop','frottee');mnav(0);return false">Bad &amp; Frottee</a>
+  <a href="#" class="sub" onclick="go('shop','haar');mnav(0);return false">Haarpflege</a>
+  <a href="#" class="sub" onclick="go('shop','pflege');mnav(0);return false">Körperpflege</a>
+  <a href="#" class="sub" onclick="go('shop','duft');mnav(0);return false">Duft &amp; Parfüm</a>
+  <a href="#" class="sub" onclick="go('shop','taschen');mnav(0);return false">Taschen &amp; Accessoires</a>
+  <a href="#" class="sub" onclick="go('shop','armatur');mnav(0);return false">Armaturen</a>
+  <a href="#" class="sub" onclick="go('wunsch');renderWish();mnav(0);return false">♡ Wunschliste</a>
   <a href="#marke" onclick="mnav(0);goSec('marke');return false">Die Marke</a>
   <a href="#termin" onclick="mnav(0);goSec('termin');return false">Beratung</a>
 </div>
@@ -1084,6 +1211,16 @@ body.pmopen{overflow:hidden}
   </div>
 </main>
 
+<!-- ============ WUNSCHLISTE ============ -->
+<main class="view" id="v-wunsch">
+  <div class="wrap shophead">
+    <span class="eyebrow">Wunschliste</span>
+    <h1>Gemerkte Artikel</h1>
+    <p>Ihre Favoriten, gespeichert in diesem Browser — jederzeit mit einem Klick in den Warenkorb.</p>
+  </div>
+  <div class="wrap" id="wishBody" style="padding-bottom:110px"></div>
+</main>
+
 <!-- ============ KONTAKT ============ -->
 <main class="view" id="v-kontakt">
   <div class="wrap legal">
@@ -1261,6 +1398,7 @@ body.pmopen{overflow:hidden}
     <button class="pmx" onclick="closeP()" aria-label="Schließen">&times;</button>
     <div class="pmgrid" id="pmGrid"></div>
     <div class="pmrel"><h3>Passt dazu</h3><div class="pg" id="pmRel"></div></div>
+    <div class="pmbar" id="pmBar"></div>
   </div>
 </div>
 
@@ -1361,6 +1499,87 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
   if(e.target.querySelector&&e.target.querySelector('#bars'))fillBars()}}),{threshold:.12});
 function obs(){document.querySelectorAll('.reveal:not(.in)').forEach(e=>io.observe(e))}
 
+/* ---------- Promotions: EINE zentrale Konfiguration ----------
+   Regeln: Neukundenrabatt und Mengenrabatt stapeln sich nicht — der höhere gewinnt.
+   Gratisversand stapelt immer. Alle Schwellen nur hier ändern. */
+const PROMO={
+  freeShip:79, shipCost:5.90,
+  tiers:[{n:3,d:.15},{n:2,d:.10}],
+  welcome:{code:'DOCCIA10',d:.10,label:'Neukundenrabatt'}
+};
+const store={get(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v==null?f:v}catch(e){return f}},
+  set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+
+/* ---------- Tracking-Stub: schreibt nur in den dataLayer, lädt kein Skript.
+   Echtes Tracking erst nach Consent-System — siehe OFFEN.md ---------- */
+window.dataLayer=window.dataLayer||[];
+function track(ev,data){window.dataLayer.push(Object.assign({event:ev},data||{}))}
+
+/* ---------- Wunschliste & Zuletzt angesehen (persistent) ---------- */
+let WISH=new Set(store.get('ld_wish',[]));
+let SEEN=store.get('ld_seen',[]);
+let COUPON=store.get('ld_coupon',null);
+
+/* ---------- Grundpreis (PAngV): Pflicht bei Pflegeprodukten.
+   Produkte mit ml/g bekommen ihn automatisch; EdP (klassisches Parfüm) und
+   Sets aus verschiedenen Produkten sind ausgenommen und haben kein ml-Feld. ---------- */
+function gpText(p){
+  if(!p.ml&&!p.g)return'';
+  const base=p.ml?p.p/p.ml*100:p.p/p.g*100;
+  return base.toFixed(2).replace('.',',')+' € / 100 '+(p.ml?'ml':'g');
+}
+
+/* ---------- Konkrete Lieferzeit (2–4 Werktage, Wochenende übersprungen) ---------- */
+function lieferzeit(){
+  const addWd=n=>{const d=new Date();let c=0;while(c<n){d.setDate(d.getDate()+1);if(d.getDay()!==0&&d.getDay()!==6)c++}return d};
+  const f=d=>d.toLocaleDateString('de-DE',{weekday:'short',day:'numeric',month:'long'});
+  return `Lieferung ${f(addWd(2))} – ${f(addWd(4))}`;
+}
+
+/* ---------- Suche: Normalisierung, Synonyme, Tippfehlertoleranz ---------- */
+const SYN=[
+ ['handtuch','tuch','badetuch','frottee','towel'],
+ ['bademantel','mantel','morgenmantel'],
+ ['parfum','parfuem','duft','eau de parfum','edp'],
+ ['duschgel','gel','dusche','shower'],
+ ['lotion','creme','milk','body'],
+ ['kerze','duftkerze','candle'],
+ ['tasche','beutel','shopper','strandtasche'],
+ ['rucksack','backpack','weekender','reisetasche'],
+ ['etui','case','brillenetui'],
+ ['armatur','thermostat','brause','duschkopf','regendusche','duschsystem'],
+ ['shampoo','haarpflege','haar','maske','kur'],
+ ['sonnencreme','spf','sonnenschutz','sonne','aftersun','aloe'],
+ ['peeling','scrub'],
+ ['mist','spray','bodyspray'],
+ ['geschenk','set','geschenkset']
+];
+const nrm=s=>(s||'').toLowerCase().replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss');
+function lev(a,b){
+  if(Math.abs(a.length-b.length)>2)return 9;
+  const m=[...Array(a.length+1)].map((_,i)=>[i,...Array(b.length).fill(0)]);
+  for(let j=0;j<=b.length;j++)m[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)
+    m[i][j]=Math.min(m[i-1][j]+1,m[i][j-1]+1,m[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
+  return m[a.length][b.length];
+}
+function expandWord(w){
+  const out=new Set([w]);
+  SYN.forEach(g=>{if(g.some(x=>nrm(x)===w||nrm(x).startsWith(w)&&w.length>=4))g.forEach(x=>out.add(nrm(x)))});
+  return[...out];
+}
+function prodMatch(p,q){
+  const cat=CATS.find(c=>c.id===p.cat);
+  const hay=nrm(p.n+' '+p.d+' '+(cat?cat.n:''));
+  const toks=hay.split(/[^a-z0-9]+/).filter(t=>t.length>2);
+  return nrm(q).split(/\s+/).filter(Boolean).every(w=>{
+    if(expandWord(w).some(x=>hay.includes(x)))return true;
+    if(w.length>=5){const md=w.length>=8?2:1;
+      return toks.some(t=>lev(t,w)<=md||t.startsWith(w.slice(0,Math.max(4,w.length-md))))}
+    return false;
+  });
+}
+
 /* ---------- Designlinien ---------- */
 const LINES=[
  {n:'Classic',img:'shower2',claim:'Klar. Reduziert. Zeitlos.',from:6900,hi:0,
@@ -1412,92 +1631,97 @@ const CATS=[
   subs:[{id:'thermostate',n:'Thermostate'},{id:'systeme',n:'Duschsysteme'}]}
 ];
 const P=[
- {id:'set-essential',cat:'frottee',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelStack',img2:'setShelf',r:4.9,rv:34,badge:'Bestseller',
+ {id:'set-essential',cat:'frottee',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelStack',img2:'setShelf',r:4.9,rv:34,badge:'Bestseller',mat:'100 % Baumwolle, 600 g/m²',rel:['gel','kerze','shampoo'],
   d:'Drei Handtücher aus 600 g/m² Baumwollfrottee in Creme, Weiß und Grau, mit gewebter Wortmarke und dem Vier-Farben-Zeichen. Vorgewaschen, dadurch sofort saugfähig und formstabil.',
   x:'Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe, so bleibt der Flor weich und voluminös.'},
- {id:'set-gold',cat:'frottee',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,
+ {id:'set-gold',cat:'frottee',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
   d:'Die gleiche Qualität wie das Wellness-Essential, mit Wortmarke in feiner Webkante. Passend zu allen Farben der Kollektion.',
   x:'Waschbar bei 60 °C mit Colorwaschmittel, kein Weichspüler. Die Webkante vor dem Waschen glatt streichen und links waschen — so bleibt die goldene Stickerei jahrelang schön.'},
- {id:'mantel-creme',cat:'frottee',sc:'maentel',colors:[1,2,3],n:'Waffelpiqué-Bademantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',
+ {id:'mantel-creme',cat:'frottee',sc:'maentel',colors:[1,2,3],n:'Waffelpiqué-Bademantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
   d:'Leichter Waffelpiqué-Mantel mit Schalkragen und zwei aufgesetzten Taschen. Trocknet schnell, ideal auch für warme Räume.',
   x:'Waschbar bei 40 °C im Schonwaschgang, trocknet über Nacht an der Luft. Der leichte Waffelpiqué ist ideal für Frühjahr und Sommer — im Winter empfehlen wir ihn über dem Pyjama.'},
- {id:'mantel-anth',cat:'frottee',sc:'maentel',n:'Waffelpiqué-Bademantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,
+ {id:'mantel-anth',cat:'frottee',sc:'maentel',n:'Waffelpiqué-Bademantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-gold','gel','edp-sea'],
   d:'Der gleiche Schnitt in Anthrazit. Unisex, in den Größen S bis XL erhältlich.',
   x:'Waschbar bei 40 °C, auf links gedreht mit Colorwaschmittel — so bleibt das Anthrazit satt. Schonend trocknergeeignet, fällt normal groß aus.'},
 
- {id:'shampoo',cat:'haar',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampoo',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',
+ {id:'shampoo',cat:'haar',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampoo',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
   d:'Feuchtigkeitsshampoo für beanspruchtes Haar nach Sonne und Schwimmen. Schützt vor Salzwasser und Chlor, ohne zu beschweren.',
   x:'Sulfatfrei, mit Panthenol und 2 % Arganöl. Mild genug für die tägliche Wäsche — besonders wertvoll in der Badesaison von Mai bis September.'},
- {id:'haar-set',cat:'haar',sc:'kur',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'shampoo',r:4.9,rv:15,
+ {id:'haar-set',cat:'haar',sc:'kur',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'shampoo',r:4.9,rv:15,rel:['gel','mist-nude','aloe'],
   d:'Feuchtigkeits-Shampoo (250 ml) und nährende Maske (200 ml) als Kur. Intensive Feuchtigkeit und Tiefenschutz vor Salzwasser und Chlor.',
   x:'Die Maske mit Sheabutter und 3 % Arganöl einmal pro Woche 5 Minuten einwirken lassen. Ideal als Kur nach dem Sommerurlaub oder in der trockenen Heizungsluft im Winter.'},
 
- {id:'care-trio',cat:'pflege',sc:'dusche',n:'Körperpflege-Trio: Gel, Peeling, Milk',p:59,old:72,img:'careTrio',img2:'bodyTrio',r:4.9,rv:18,badge:'Set',
+ {id:'care-trio',cat:'pflege',sc:'dusche',n:'Körperpflege-Trio: Gel, Peeling, Milk',p:59,old:72,img:'careTrio',img2:'bodyTrio',r:4.9,rv:18,badge:'Set',rel:['kerze','aloe','shampoo'],
   d:'Refreshing Shower Gel, Body Scrub und Post-Shower Milk als aufeinander abgestimmte Routine. Frischer Zitrus-Duft der Kollektion.',
   x:'Alle drei pH-hautneutral mit pflanzlichem Glyzerin. Das Peeling 1–2× pro Woche anwenden; im Winter die Body Milk großzügiger dosieren, im Sommer reicht eine dünne Schicht.'},
- {id:'gel',cat:'pflege',sc:'dusche',colors:[0,1,2],n:'Refreshing Shower Gel, 300 ml',p:19,img:'bodyTrio',img2:'careTrio',r:4.9,rv:28,
+ {id:'gel',cat:'pflege',sc:'dusche',colors:[0,1,2],n:'Refreshing Shower Gel, 300 ml',p:19,img:'bodyTrio',img2:'careTrio',r:4.9,rv:28,ml:300,rel:['care-trio','shampoo','aloe'],
   d:'Erfrischendes Duschgel mit Zitrus und Kräutern, mild und sulfatfrei. Duftgleich mit dem Eau de Parfum, pH-hautneutral.',
   x:'Sulfatfrei, pH 5,5, mit Aloe vera — auch für empfindliche und sonnenstrapazierte Haut. Ein Ganzjahresprodukt: belebend am Morgen, mild genug für zweimal tägliches Duschen.'},
- {id:'jar-trio',cat:'pflege',sc:'sonne',n:'Sonnenpflege-Trio: SPF 50, Aloe, Body Oil',p:69,old:84,img:'jarTrio',img2:'careSet',r:5.0,rv:11,badge:'Set',
+ {id:'jar-trio',cat:'pflege',sc:'sonne',n:'Sonnenpflege-Trio: SPF 50, Aloe, Body Oil',p:69,old:84,img:'jarTrio',img2:'careSet',r:5.0,rv:11,badge:'Set',rel:['aloe','tote','mist-blue'],
   d:'Sunscreen SPF 50, kühlendes Aloe-Gel und pflegendes Body Oil im Glas mit Holzdeckel. Für den Tag am Wasser und die Pflege danach.',
   x:'SPF 50 mit UVA-Breitbandschutz, alle 2 Stunden nachcremen. Das Body Oil hat 98 % Ölanteil aus Jojoba- und Mandelöl — abends auf die noch feuchte Haut. Das Sommer-Set für Strand und Pool.'},
- {id:'aloe',cat:'pflege',sc:'sonne',n:'Cooling Aloe Gel, 100 ml',p:22,img:'careSet',img2:'jarTrio',r:4.9,rv:16,
+ {id:'aloe',cat:'pflege',sc:'sonne',n:'Cooling Aloe Gel, 100 ml',p:22,img:'careSet',img2:'jarTrio',r:4.9,rv:16,ml:100,rel:['jar-trio','gel','mist-blue'],
   d:'Kühlendes Aloe-Gel für die Haut nach Sonne und Salzwasser. Zieht schnell ein, spendet sofort Feuchtigkeit.',
   x:'94 % Aloe-vera-Anteil, ohne Parfüm und Alkohol. Im Kühlschrank gelagert kühlt es nach dem Sonnenbad doppelt — der Sommer-Begleiter von Juni bis September.'},
- {id:'set-shelf',cat:'pflege',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'setShelf',img2:'towelStack',r:5.0,rv:9,badge:'Set',
+ {id:'set-shelf',cat:'pflege',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'setShelf',img2:'towelStack',r:5.0,rv:9,badge:'Set',rel:['kerze','gel','mist-nude'],
   d:'Handtuch-Set, Duschgel und Duftkerze in der Geschenkverpackung. Der Klassiker zum Verschenken. Sie sparen gegenüber dem Einzelkauf.',
   x:'Die Handtücher sind bei 60 °C waschbar (ohne Weichspüler), Duschgel und Kerze tragen den Zitrus-Duft der Kollektion. Beliebtestes Geschenk zu Weihnachten und zum Einzug.'},
 
- {id:'edp-sea',cat:'duft',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'edpTrio',img2:'edpItalia',r:4.8,rv:26,
+ {id:'edp-sea',cat:'duft',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'edpTrio',img2:'edpItalia',r:4.8,rv:26,rel:['mist-nude','gel','kerze'],
   d:'Kopfnote aus Meersalz und Bergamotte, Herz aus grünem Kardamom, Basis aus Zedernholz und weißem Moschus. In Grasse abgefüllt.',
   x:'12 % Duftölanteil, hält 6–8 Stunden auf der Haut. Ein frisch-aquatischer Tagesduft — am schönsten im Frühling und Sommer, im Büro wie am Wasser. 2 Sprühstöße auf Puls und Schlüsselbein genügen.'},
- {id:'edp-citrus',cat:'duft',sc:'edp',n:'Eau de Parfum „Citrus Accent", 50 ml',p:119,img:'edpItalia',img2:'edpTrio',r:4.8,rv:19,
+ {id:'edp-citrus',cat:'duft',sc:'edp',n:'Eau de Parfum „Citrus Accent", 50 ml',p:119,img:'edpItalia',img2:'edpTrio',r:4.8,rv:19,rel:['mist-blue','gel','aloe'],
   d:'Spritzige Zitrus-Komposition mit Zitrone, Grapefruit und Vetiver. Frisch und lebendig, für heiße Tage.',
   x:'11 % Duftölanteil, bewusst leicht gehalten — der Duft für Hochsommer und Urlaub, wenn schwere Noten zu viel wären. Hält 4–6 Stunden, gern großzügig aufgefrischt.'},
- {id:'edp-set',cat:'duft',sc:'edp',n:'Eau de Parfum Duo, 2 × 50 ml',p:199,old:238,img:'edpTrio',img2:'edpItalia',r:5.0,rv:8,badge:'Set',
+ {id:'edp-set',cat:'duft',sc:'edp',n:'Eau de Parfum Duo, 2 × 50 ml',p:199,old:238,img:'edpTrio',img2:'edpItalia',r:5.0,rv:8,badge:'Set',rel:['kerze','mist-nude','gel'],
   d:'Sea Breeze und Citrus Accent im Set — die beiden Signature-Düfte der Kollektion. Sie sparen gegenüber dem Einzelkauf.',
   x:'Sea Breeze (12 % Duftöl) als eleganter Tagesduft von Frühling bis Herbst, Citrus Accent (11 %) für die heißen Wochen — zusammen decken sie das ganze Jahr ab. Kühl und dunkel gelagert halten beide mindestens 24 Monate.'},
- {id:'mist-nude',cat:'duft',sc:'mist',n:'Body & Hair Mist, 100 ml',p:39,img:'mistNude',img2:'mistBlue',r:4.7,rv:22,badge:'Neu',
+ {id:'mist-nude',cat:'duft',sc:'mist',n:'Body & Hair Mist, 100 ml',p:39,img:'mistNude',img2:'mistBlue',r:4.7,rv:22,badge:'Neu',ml:100,rel:['edp-sea','shampoo','gel'],
   d:'Leichter Duftnebel für Haut und Haar, dezent und alltagstauglich. Pflegt und parfümiert in einem.',
   x:'3 % Duftölanteil mit pflegendem Panthenol — bewusst dezent für Alltag, Sport und Büro. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren.'},
- {id:'mist-blue',cat:'duft',sc:'mist',n:'Body & Hair Mist „Eau Fraîche", 100 ml',p:39,img:'mistBlue',img2:'mistNude',r:4.8,rv:14,
+ {id:'mist-blue',cat:'duft',sc:'mist',n:'Body & Hair Mist „Eau Fraîche", 100 ml',p:39,img:'mistBlue',img2:'mistNude',r:4.8,rv:14,ml:100,rel:['edp-citrus','aloe','gel'],
   d:'Frischer, aquatischer Duftnebel für Körper und Haar. Kühlt und erfrischt an heißen Tagen.',
   x:'3 % Duftölanteil mit Menthol-Frischeeffekt — im Sommer gekühlt aufsprühen, erfrischt sofort. Der leichte Begleiter für Strandtage und warme Nächte.'},
- {id:'kerze',cat:'duft',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'candles3',img2:'setShelf',r:4.7,rv:12,badge:'Neu',
+ {id:'kerze',cat:'duft',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'candles3',img2:'setShelf',r:4.7,rv:12,badge:'Neu',g:220,rel:['edp-sea','gel','set-essential'],
   d:'Sojawachs mit Baumwolldocht im matten Glas mit Reliefdekor, erhältlich in Rosé, Lavendel und Salbei. Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen — so brennt sie gleichmäßig ab. Besonders stimmungsvoll in Herbst und Winter.'},
 
- {id:'tote',cat:'taschen',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'bagsSet',img2:'pouchSet',r:4.9,rv:17,badge:'Bestseller',
+ {id:'tote',cat:'taschen',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'bagsSet',img2:'pouchSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
   d:'Geräumige Strandtasche mit Kordelgriffen und wasserabweisendem Innenfach. Weiß mit dem Vier-Farben-Zeichen.',
   x:'Fester Baumwoll-Canvas (450 g/m²) mit beschichtetem Innenfach für nasse Badesachen. Flecken feucht abwischen, bei Bedarf Handwäsche bei 30 °C — nicht in den Trockner.'},
- {id:'weekender',cat:'taschen',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'bagsSet',img2:'pouchSet',r:4.8,rv:9,
+ {id:'weekender',cat:'taschen',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'bagsSet',img2:'pouchSet',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
   d:'Sportlicher Weekender und passender Rucksack im Colour-Block-Design der Marke. Ideal für Kurztrips und Pooltage.',
   x:'Wasserabweisendes Gewebe aus recyceltem Polyester, einfach feucht abwischen. Der Weekender fasst 40 Liter und passt als Handgepäck — für Wochenendtrips das ganze Jahr über.'},
- {id:'pouches',cat:'taschen',sc:'etuis',n:'Etui- & Beutel-Set, 4-teilig',p:39,img:'pouchSet',img2:'bagsSet',r:4.9,rv:13,badge:'Neu',
+ {id:'pouches',cat:'taschen',sc:'etuis',n:'Etui- & Beutel-Set, 4-teilig',p:39,img:'pouchSet',img2:'bagsSet',r:4.9,rv:13,badge:'Neu',mat:'100 % Baumwolle (Beutel)',rel:['tote','mist-nude','aloe'],
   d:'Brillenetuis und Baumwollbeutel mit Wortmarke — praktisch für Sonnenbrille, Schmuck und kleine Utensilien. Vier Teile im Set.',
   x:'Die Baumwollbeutel sind bei 30 °C waschbar, die Etuis mit festem Kern bitte nur feucht abwischen. Innen weich gefüttert — Brillengläser bleiben kratzerfrei.'},
 
- {id:'thermostat',cat:'armatur',sc:'thermostate',n:'Unterputz-Thermostat „Oro"',p:890,img:'fixtures',img2:'showerGold',r:4.9,rv:14,
+ {id:'thermostat',cat:'armatur',sc:'thermostate',n:'Unterputz-Thermostat „Oro"',p:890,img:'fixtures',img2:'showerGold',r:4.9,rv:14,mat:'Massives Messing, PVD-beschichtet',rel:['regenset','set-essential','gel'],
   d:'Massives Messing, PVD-beschichtet in Gold. Thermostat mit Verbrühschutz bei 38 °C, inklusive Handbrause und Wandanschlussbogen.',
   x:'Nach dem Duschen kurz trockenwischen, das verhindert Kalkflecken. Keine Scheuermittel oder essighaltigen Reiniger — sie greifen die PVD-Beschichtung an. Montage durch den Fachbetrieb, 5 Jahre Garantie auf die Oberfläche.'},
- {id:'regenset',cat:'armatur',sc:'systeme',n:'Regenbrause-Set „Oro", 300 mm',p:1290,old:1490,img:'showerGold',img2:'fixtures',r:5.0,rv:8,
+ {id:'regenset',cat:'armatur',sc:'systeme',n:'Regenbrause-Set „Oro", 300 mm',p:1290,old:1490,img:'showerGold',img2:'fixtures',r:5.0,rv:8,mat:'Massives Messing, PVD-beschichtet',rel:['thermostat','set-essential','kerze'],
   d:'Deckenarm mit 300-mm-Regenbrause, Thermostat und Handbrause als abgestimmtes Set. Auch in Bronze, Schwarz matt und Chrom lieferbar.',
   x:'Die Silikon-Noppen der Brause nach dem Duschen kurz abreiben, das löst Kalk sofort. PVD-Oberfläche nur mit weichem Tuch und pH-neutralem Reiniger pflegen. Empfohlener Wasserdruck 2–5 bar.'}
 ];
 const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
 
+const heartSvg=`<svg viewBox="0 0 24 24"><path d="M12 20.5S4.8 16 2.9 11.7A5.2 5.2 0 0 1 12 6.9a5.2 5.2 0 0 1 9.1 4.8C19.2 16 12 20.5 12 20.5z"/></svg>`;
+const wishBtn=p=>`<button class="wbtn ${WISH.has(p.id)?'on':''}" data-wid="${p.id}"
+  onclick="wish('${p.id}',event)" aria-label="Auf die Wunschliste">${heartSvg}</button>`;
+const gpLine=p=>{const t=gpText(p);return t?`<div class="gp">${t}</div>`:''};
 function card(p){
   const d=disc(p);
   return `<article class="card" onclick="openP('${p.id}')">
     <div class="iw"><img src="${src(p.img)}" alt="${p.n}" loading="lazy">
       ${p.img2?`<img class="im2" src="${src(p.img2)}" alt="" loading="lazy">`:''}
       ${d?`<span class="badge sale">−${d} %</span>`:(p.badge?`<span class="badge">${p.badge}</span>`:'')}
-      <div class="qa" onclick="event.stopPropagation();add('${p.id}')">In den Warenkorb</div></div>
+      ${wishBtn(p)}
+      <div class="qa" onclick="event.stopPropagation();add('${p.id}')">${p.sizes?'Größe wählen':'In den Warenkorb'}</div></div>
     <div class="meta"><div class="cat">${CATS.find(c=>c.id===p.cat).n}</div><h3>${p.n}</h3>
       <div class="stars"><span class="s">${starStr(p.r)}</span> ${p.rv} Bewertungen</div>
       <div class="price2">${p.old
-        ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old">${eur(p.old)}</span>`
-        : eur(p.p)}</div></div></article>`;
+        ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
+        : eur(p.p)}</div>${gpLine(p)}</div></article>`;
 }
 const BRANDHEX=['#C9A227','#D98C6A','#7FA6A0','#8E8CB8'];
 function cardRail(p){
@@ -1507,12 +1731,13 @@ function cardRail(p){
     <div class="iw"><img src="${src(p.img)}" alt="${p.n}" loading="lazy">
       ${p.img2?`<img class="im2" src="${src(p.img2)}" alt="" loading="lazy">`:''}
       ${d?`<span class="badge sale">−${d} %</span>`:(p.badge?`<span class="badge">${p.badge}</span>`:'')}
-      <div class="qa" onclick="event.stopPropagation();add('${p.id}')">In den Warenkorb</div></div>
+      ${wishBtn(p)}
+      <div class="qa" onclick="event.stopPropagation();add('${p.id}')">${p.sizes?'Größe wählen':'In den Warenkorb'}</div></div>
     <div class="meta"><div class="cat">${CATS.find(c=>c.id===p.cat).n}</div><h3>${p.n}</h3>
       <div class="stars"><span class="s">${starStr(p.r)}</span> ${p.rv}</div>
       <div class="price2">${p.old
-        ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old">${eur(p.old)}</span>`
-        : eur(p.p)}</div>${sw}</div></article>`;
+        ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
+        : eur(p.p)}</div>${gpLine(p)}${sw}</div></article>`;
 }
 
 /* Startseite: maximal 3 ausgewählte Produkte, mobil angeschnitten scrollbar */
@@ -1535,8 +1760,8 @@ document.getElementById('catBar').innerHTML =
     `<button class="chip ${c.id==='all'?'on':''}" data-c="${c.id}" onclick="filt('${c.id}')">${c.n}</button>`).join('')+`</div>`
   + `<div class="shoptools">
      <label class="fsearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
-       <input type="search" id="shopSearch" placeholder="Suche im Shop"
-         oninput="curQ=this.value;renderShop()"></label>
+       <input type="search" id="shopSearch" placeholder="Suche im Shop" autocomplete="off"
+         oninput="curQ=this.value;renderShop();suggest()"><div class="sgg" id="sgg"></div></label>
      <span class="fcount" id="fcount"></span>
      <select class="fsel" id="sortSel" onchange="curSort=this.value;renderShop()">
        <option value="rec">Empfohlen</option><option value="asc">Preis aufsteigend</option>
@@ -1558,15 +1783,21 @@ function sortList(l){
 function renderShop(){
   const cats = curCat==='all'?CATS:CATS.filter(c=>c.id===curCat);
   const cObj = CATS.find(c=>c.id===curCat);
-  const q=curQ.trim().toLowerCase();
+  const q=curQ.trim();
   document.getElementById('shopTitle').textContent = curCat==='all'?'Alle Produkte':cObj.n;
   document.getElementById('shopSub').textContent = curCat==='all'
     ? 'Frottee, Duft, Pflege und Armaturen — die Marke zum Mitnehmen.'
     : cObj.sub;
+  if(q.length>=3)track('search',{search_term:q});
   let total=0;
-  document.getElementById('shopBody').innerHTML = cats.map(c=>{
+  /* Kategorie-Kacheln als Einstieg (nur Übersicht ohne Suche) */
+  const tiles = (curCat==='all'&&!q) ? `<div class="catgrid">${CATS.map(c=>{
+    const cnt=P.filter(p=>p.cat===c.id).length;
+    return `<div class="tcat" onclick="filt('${c.id}')"><img src="${src(c.img)}" alt="${c.n}" loading="lazy">
+      <div class="lab"><div class="n">${c.n}</div><div class="c">${cnt} Artikel</div></div></div>`}).join('')}</div>` : '';
+  const body = cats.map(c=>{
     let list=P.filter(p=>p.cat===c.id);
-    if(q) list=list.filter(p=>(p.n+' '+p.d+' '+c.n).toLowerCase().includes(q));
+    if(q) list=list.filter(p=>prodMatch(p,q));
     const subbar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:22px">
         <button class="subchip ${curSub==='all'?'on':''}" onclick="subFilt('all')">Alle</button>
         ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
@@ -1578,18 +1809,100 @@ function renderShop(){
       <div class="subhead"><h2>${c.n}</h2><span class="cnt">${list.length} Artikel</span></div>
       <p class="sub">${c.sub}</p>${subbar}
       <div class="pg">${list.map(card).join('')}</div></section>`;
-  }).join('') + (q&&total===0?`<div class="noresult">Keine Produkte zu „${curQ.trim()}“ gefunden.</div>`:'');
+  }).join('');
+  /* Kein-Treffer: nie eine leere Seite */
+  const noRes = (q&&total===0) ? `<div class="noresult"><p>Keine Produkte zu „${q}“ gefunden.</p>
+      <p style="font-size:13px;margin-top:6px">Tipp: Prüfen Sie die Schreibweise oder stöbern Sie in den Kategorien.</p></div>
+    <section class="catsec"><div class="subhead"><h2>Beliebt bei unseren Kunden</h2></div>
+      <div class="pg">${[...P].sort((a,b)=>b.r*b.rv-a.r*a.rv).slice(0,4).map(card).join('')}</div></section>` : '';
+  /* Zuletzt angesehen */
+  const seenRail = (!q&&SEEN.length>=2) ? `<section class="catsec">
+      <div class="subhead"><h2>Zuletzt angesehen</h2></div>
+      <div class="rail" style="margin-top:20px">${SEEN.map(id=>P.find(p=>p.id===id)).filter(Boolean).map(cardRail).join('')}</div>
+    </section>` : '';
+  document.getElementById('shopBody').innerHTML = tiles + body + noRes + seenRail;
   document.getElementById('fcount').textContent = total+' Artikel';
+}
+
+/* ---------- Autosuggest (ab 2 Zeichen: Produkte mit Bild + Kategorien) ---------- */
+function suggest(){
+  const box=document.getElementById('sgg'); if(!box)return;
+  const q=curQ.trim();
+  if(q.length<2){box.style.display='none';return}
+  const prods=P.filter(p=>prodMatch(p,q)).slice(0,5);
+  const cats=CATS.filter(c=>nrm(c.n).includes(nrm(q))||prods.some(p=>p.cat===c.id)).slice(0,3);
+  box.innerHTML=(prods.length?prods.map(p=>`
+      <div class="sgi" onmousedown="event.preventDefault();openP('${p.id}')">
+        <img src="${src(p.img)}" alt=""><span>${p.n}</span><b>${eur(p.p)}</b></div>`).join('')
+    :`<div class="sge">Keine direkten Treffer — Vorschläge unten im Shop.</div>`)
+    +(cats.length?`<div class="sgc">${cats.map(c=>
+      `<button onmousedown="event.preventDefault();filt('${c.id}');document.getElementById('sgg').style.display='none'">${c.n}</button>`).join('')}</div>`:'');
+  box.style.display='block';
+}
+document.addEventListener('click',e=>{
+  const box=document.getElementById('sgg');
+  if(box&&!e.target.closest('.fsearch'))box.style.display='none';
+});
+
+/* ---------- Wunschliste ---------- */
+function wish(id,ev){
+  if(ev){ev.stopPropagation();ev.preventDefault()}
+  if(WISH.has(id)){WISH.delete(id)}else{WISH.add(id);track('add_to_wishlist',{item_id:id});toast('Auf der Wunschliste gemerkt')}
+  store.set('ld_wish',[...WISH]);
+  document.querySelectorAll(`.wbtn[data-wid="${id}"]`).forEach(b=>b.classList.toggle('on',WISH.has(id)));
+  renderWishBadge();
+  if(document.getElementById('v-wunsch').classList.contains('on'))renderWish();
+}
+function renderWishBadge(){
+  const el=document.getElementById('wn'); if(!el)return;
+  el.textContent=WISH.size; el.style.display=WISH.size?'flex':'none';
+}
+function renderWish(){
+  const host=document.getElementById('wishBody'); if(!host)return;
+  const items=[...WISH].map(id=>P.find(p=>p.id===id)).filter(Boolean);
+  host.innerHTML=items.length
+    ? `<div class="pg" style="margin-top:10px">${items.map(card).join('')}</div>`
+    : `<div class="empty" style="padding:80px 20px"><p>Ihre Wunschliste ist noch leer.<br>Tippen Sie auf das Herz an einem Produkt, um es hier zu merken.</p>
+       <button class="btn ghost" onclick="go('shop')">Zum Shop</button></div>`;
 }
 renderShop();
 
 /* ---------- Produkt-Modal ---------- */
-let pmImgIdx=0, pmCur=null;
+let pmImgIdx=0, pmCur=null, pmSize=null;
+function pickSize(s){
+  pmSize=s;
+  document.querySelectorAll('.szb').forEach(b=>b.classList.toggle('on',b.dataset.s===s));
+}
+function addFromPM(){
+  if(!pmCur)return;
+  if(pmCur.sizes&&!pmSize){toast('Bitte wählen Sie eine Größe');
+    document.querySelectorAll('.szb').forEach(b=>b.style.borderColor='var(--brass)');return}
+  add(pmCur.id,pmSize||undefined);
+}
+function bundleFor(p){
+  if(p.sizes)return null;
+  const others=(p.rel||[]).map(id=>P.find(x=>x.id===id)).filter(x=>x&&!x.sizes).slice(0,2);
+  if(others.length<2)return null;
+  return [p,...others];
+}
+function addBundle(id){
+  const b=bundleFor(P.find(x=>x.id===id)); if(!b)return;
+  b.forEach(x=>{const ex=CART.find(c=>c.id===x.id&&!c.size);
+    if(ex)ex.q++; else CART.push({id:x.id,n:x.n,p:x.p,img:x.img,size:null,q:1})});
+  track('add_to_cart',{bundle:id,items:b.map(x=>x.id)});
+  update(); closeP(); cart(1); toast('3 Artikel hinzugefügt — 15 % Mengenrabatt aktiv');
+}
 function openP(id){
   const p=P.find(x=>x.id===id); if(!p)return;
-  pmCur=p; pmImgIdx=0;
+  pmCur=p; pmImgIdx=0; pmSize=null;
+  track('view_item',{item_id:id,price:p.p});
+  SEEN=[id,...SEEN.filter(x=>x!==id)].slice(0,8); store.set('ld_seen',SEEN);
   const d=disc(p);
   const gal=[p.img2,p.img];  // anderes Bild zuerst
+  const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
+  const gpT=gpText(p);
+  const bundle=bundleFor(p);
+  const bsum=bundle?bundle.reduce((s,x)=>s+x.p,0):0;
   document.getElementById('pmGrid').innerHTML=`
     <div class="pmgal">
       <div class="frame">${gal.map((g,i)=>`<img data-g="${i}" src="${src(g)}" alt="" class="${i===0?'on':''}">`).join('')}</div>
@@ -1602,20 +1915,47 @@ function openP(id){
       <div class="stars"><span class="s">${starStr(p.r)}</span> ${p.r.toFixed(1).replace('.',',')} · ${p.rv} Bewertungen</div>
       <div class="prow"><span class="now">${eur(p.p)}</span>
         ${p.old?`<span class="old">${eur(p.old)}</span><span class="pc">−${d} %</span>`:''}</div>
-      <div class="tax">inkl. MwSt., zzgl. Versand · versandkostenfrei ab 79 €</div>
+      ${p.old?`<div class="refnote">Streichpreis: niedrigster Gesamtpreis der letzten 30 Tage</div>`:''}
+      ${gpT?`<div class="refnote">Grundpreis: ${gpT}</div>`:''}
+      <div class="tax">inkl. MwSt., zzgl. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Versand</a> · versandkostenfrei ab ${eur(PROMO.freeShip)} · ${lieferzeit()}</div>
+      ${p.sizes?`<div class="sizes"><span class="slbl">Größe</span><div>
+        ${p.sizes.map(s=>`<button class="szb" data-s="${s}" onclick="pickSize('${s}')">${s}</button>`).join('')}</div></div>`:''}
       <p class="desc">${p.d}</p>
       ${p.x?`<div class="know"><span>Gut zu wissen</span><p>${p.x}</p></div>`:''}
-      <button class="btn" style="width:100%" onclick="add('${p.id}')">In den Warenkorb</button>
+      <div class="staffel"><div class="sth">Mengenrabatt — gilt auf alle Artikel im Warenkorb</div>
+        <table>
+          <tr><td>1 Artikel</td><td>${eur(p.p)} / Stück</td><td></td></tr>
+          <tr><td>ab 2 Artikeln</td><td>${eur(p.p*(1-t2/100))} / Stück</td><td>−${t2} %</td></tr>
+          <tr><td>ab 3 Artikeln</td><td>${eur(p.p*(1-t3/100))} / Stück</td><td>−${t3} %</td></tr>
+        </table></div>
+      <button class="btn" style="width:100%" onclick="addFromPM()">In den Warenkorb</button>
       <div class="usps">
-        <div><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Ab 2 Artikeln 10 %, ab 3 Artikeln 15 % Mengenrabatt</span></div>
         <div><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>30 Tage Rückgaberecht, kostenloser Rückversand</span></div>
-        <div><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Lieferung in 2–4 Werktagen</span></div>
+        <div><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Sichere Zahlung: PayPal, Klarna, Rechnung, Karte</span></div>
+      </div>
+      ${bundle?`<div class="bundle"><h3>Wird oft zusammen gekauft</h3>
+        <div class="bimgs">${bundle.map((x,i)=>`${i?'<span>+</span>':''}<img src="${src(x.img)}" alt="${x.n}" title="${x.n}">`).join('')}</div>
+        <div class="bsum">Alle 3 zusammen <b>${eur(bsum*(1-t3/100))}</b><span class="old">${eur(bsum)}</span>
+          <small>Mit ${t3} % Mengenrabatt ab 3 Artikeln, wird im Warenkorb automatisch abgezogen. Vergleichspreis: Summe der Einzelpreise.</small></div>
+        <button class="btn ghost" style="width:100%" onclick="addBundle('${p.id}')">Alle 3 in den Warenkorb</button></div>`:''}
+      <div style="margin-top:22px">
+        <details class="acc"><summary>Details &amp; Material</summary>
+          <p>${p.mat?`Material: ${p.mat}.<br>`:''}${p.ml?`Inhalt: ${p.ml} ml.<br>`:''}${p.g?`Gewicht: ${p.g} g.<br>`:''}${p.sizes?`Erhältliche Größen: ${p.sizes.join(', ')}.<br>`:''}Artikelnummer: LD-${p.id.toUpperCase()}</p></details>
+        <details class="acc"><summary>Versand &amp; Rückgabe</summary>
+          <p>Versandkostenfrei ab ${eur(PROMO.freeShip)}, darunter ${eur(PROMO.shipCost)}. ${lieferzeit()}.<br>
+          30 Tage Rückgaberecht, kostenloser Rückversand. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Alle Details</a></p></details>
       </div>
     </div>`;
+  /* Empfehlungen: redaktionell (rel) zuerst, dann gleiche Kategorie, dann Rest */
+  const relEd=(p.rel||[]).map(x=>P.find(y=>y.id===x)).filter(Boolean);
+  const relCat=P.filter(x=>x.cat===p.cat&&x.id!==p.id&&!relEd.includes(x));
+  const relRest=P.filter(x=>x.cat!==p.cat&&x.id!==p.id&&!relEd.includes(x));
   document.getElementById('pmRel').innerHTML =
-    (P.filter(x=>x.cat===p.cat&&x.id!==p.id).slice(0,4).concat(
-     P.filter(x=>x.cat!==p.cat)).slice(0,4)).map(card).join('');
+    [...new Map([...relEd,...relCat,...relRest].map(x=>[x.id,x])).values()].slice(0,4).map(card).join('');
   const w=document.getElementById('pmwrap');
+  const bar=document.getElementById('pmBar');
+  if(bar)bar.innerHTML=`<div><b>${eur(p.p)}</b>${gpT?`<small>${gpT}</small>`:''}</div>
+    <button class="btn" onclick="addFromPM()">In den Warenkorb</button>`;
   w.classList.add('on'); document.body.classList.add('pmopen');
   w.querySelector('.pmodal').scrollTop=0;
 }
@@ -1662,48 +2002,99 @@ document.getElementById('revGrid').innerHTML = REV.map(r=>`
    <div class="st">${starStr(r.s)}</div></div><q>${r.t}</q>
    <div class="prod">${r.p}</div></div>`).join('');
 
-/* ---------- Warenkorb ---------- */
-let CART=[];
+/* ---------- Warenkorb (persistent, variantenfähig) ---------- */
+let CART=store.get('ld_cart',[]);
+let wasFree=false;
+const ckey=i=>i.id+(i.size?'|'+i.size:'');
 const count=()=>CART.reduce((s,i)=>s+i.q,0);
 const sub=()=>CART.reduce((s,i)=>s+i.p*i.q,0);
-const tier=()=>{const n=count();return n>=3?.15:n>=2?.10:0};
-function add(id){
-  const p=P.find(x=>x.id===id); const ex=CART.find(x=>x.id===id);
-  if(ex)ex.q++; else CART.push({...p,q:1});
-  update(); cart(1); toast(p.n+' wurde hinzugefügt');
+const tier=()=>{const n=count();const t=PROMO.tiers.find(t=>n>=t.n);return t?t.d:0};
+function add(id,size){
+  const p=P.find(x=>x.id===id); if(!p)return;
+  if(p.sizes&&!size){openP(id);return}
+  const key=id+(size?'|'+size:'');
+  const ex=CART.find(x=>ckey(x)===key);
+  if(ex)ex.q++; else CART.push({id:p.id,n:p.n,p:p.p,img:p.img,size:size||null,q:1});
+  track('add_to_cart',{item_id:id,size:size||null,price:p.p});
+  update(); closeP(); cart(1); toast(p.n+' wurde hinzugefügt');
 }
-function chg(id,d){const i=CART.find(x=>x.id===id);if(!i)return;i.q+=d;
-  if(i.q<1)CART=CART.filter(x=>x.id!==id);update()}
-function rm(id){CART=CART.filter(x=>x.id!==id);update()}
+function chg(key,d){const i=CART.find(x=>ckey(x)===key);if(!i)return;i.q+=d;
+  if(i.q<1)CART=CART.filter(x=>ckey(x)!==key);update()}
+function rm(key){CART=CART.filter(x=>ckey(x)!==key);track('remove_from_cart',{item_key:key});update()}
+
+/* Cross-Sells im Drawer: redaktionelle Empfehlungen zuerst, max. 3,
+   jeweils ≤ 30 % des Warenkorbwerts, keine Größen-Artikel (bräuchten Auswahl) */
+function xsells(){
+  if(!CART.length)return[];
+  const s=sub(), inCart=new Set(CART.map(i=>i.id));
+  const cap=Math.max(s*.3,25);
+  const relIds=CART.flatMap(i=>{const p=P.find(x=>x.id===i.id);return p&&p.rel?p.rel:[]});
+  const pool=[...new Set(relIds)].map(id=>P.find(p=>p.id===id))
+    .concat([...P].sort((a,b)=>b.r*b.rv-a.r*a.rv))
+    .filter(p=>p&&!inCart.has(p.id)&&!p.sizes&&p.p<=cap);
+  return [...new Map(pool.map(p=>[p.id,p])).values()].slice(0,3);
+}
+function xsellHTML(){
+  const xs=xsells(); if(!xs.length)return'';
+  return `<div class="xsell"><div class="xh">Passt zu Ihrer Bestellung</div>${xs.map(p=>`
+    <div class="xi"><img src="${src(p.img)}" alt="">
+      <div class="xm"><div class="xn">${p.n}</div><div class="xp">${eur(p.p)}</div></div>
+      <button class="xadd" onclick="add('${p.id}')" aria-label="Hinzufügen">+</button></div>`).join('')}</div>`;
+}
+
+/* Gutschein: Neukundencode, exklusiv zum Mengenrabatt (der höhere gewinnt) */
+function applyCoupon(){
+  const v=(document.getElementById('cpin').value||'').trim().toUpperCase();
+  if(v===PROMO.welcome.code){COUPON=v;store.set('ld_coupon',v);track('coupon_applied',{code:v});toast('Code eingelöst');update()}
+  else toast('Dieser Code ist leider ungültig');
+}
+function rmCoupon(){COUPON=null;store.set('ld_coupon',null);update()}
+
 function update(){
-  const n=count(), s=sub(), d=tier(), ds=s*d;
-  const ship=(s-ds)>=79||n===0?0:5.90, tot=s-ds+ship;
+  store.set('ld_cart',CART);
+  const n=count(), s=sub();
+  const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
+  const mD=tier(), cD=COUPON?PROMO.welcome.d:0;
+  const useCoupon=cD>mD;
+  const d=Math.max(mD,cD), ds=s*d;
+  const dLabel=useCoupon?`${PROMO.welcome.label} (${COUPON}) −${Math.round(cD*100)} %`:`Mengenrabatt −${Math.round(mD*100)} %`;
+  const free=(s-ds)>=PROMO.freeShip;
+  const ship=free||n===0?0:PROMO.shipCost, tot=s-ds+ship;
+  if(free&&!wasFree&&n>0)toast('Gratisversand erreicht ✓');
+  wasFree=free;
   const cn=document.getElementById('cn'); cn.textContent=n; cn.style.display=n?'flex':'none';
   document.getElementById('ditems').innerHTML = n? CART.map(i=>`
     <div class="ci"><img src="${src(i.img)}" alt="">
-      <div class="m"><div class="n">${i.n}</div><div class="v">${i.c}</div>
+      <div class="m"><div class="n">${i.n}</div>${i.size?`<div class="v">Größe ${i.size}</div>`:''}
         <div class="pr">${eur(i.p*i.q)}</div>
-        <div class="qb"><button onclick="chg('${i.id}',-1)">−</button><span>${i.q}</span>
-          <button onclick="chg('${i.id}',1)">+</button></div></div>
-      <button class="rm" onclick="rm('${i.id}')">Entfernen</button></div>`).join('')
+        <div class="qb"><button onclick="chg('${ckey(i)}',-1)">−</button><span>${i.q}</span>
+          <button onclick="chg('${ckey(i)}',1)">+</button></div></div>
+      <button class="rm" onclick="rm('${ckey(i)}')">Entfernen</button></div>`).join('') + xsellHTML()
     : `<div class="empty"><p>Ihr Warenkorb ist noch leer.</p>
        <button class="btn ghost" onclick="cart(0);go('shop')">Zum Shop</button></div>`;
   document.getElementById('dfoot').innerHTML = n? `
+    <div class="cpwrap">${COUPON
+      ? `<div class="cpon">Code <b>${COUPON}</b> hinterlegt${useCoupon?'':` — der Mengenrabatt (${Math.round(mD*100)} %) ist höher und wird angewendet`}
+          <button onclick="rmCoupon()">Entfernen</button></div>`
+      : `<details class="cpd"><summary>Gutscheincode einlösen</summary>
+          <div class="cprow"><input id="cpin" placeholder="Code" onkeydown="if(event.key==='Enter')applyCoupon()">
+          <button class="btn ghost" style="padding:10px 16px" onclick="applyCoupon()">Einlösen</button></div></details>`}</div>
     <div class="sumrow"><span>Zwischensumme (${n} Artikel)</span><span>${eur(s)}</span></div>
-    ${d?`<div class="sumrow disc"><span>Mengenrabatt −${d*100} %</span><span>−${eur(ds)}</span></div>`:''}
+    ${d?`<div class="sumrow disc"><span>${dLabel}</span><span>−${eur(ds)}</span></div>`:''}
     <div class="sumrow"><span>Versand</span><span>${ship?eur(ship):'Kostenlos'}</span></div>
     <div class="sumrow tot"><span>Gesamt</span><span>${eur(tot)}</span></div>
-    <button class="btn" onclick="toast('Demo — im Live-Shop öffnet hier der Checkout.')">Zur Kasse</button>
+    <button class="btn" onclick="track('begin_checkout',{value:${tot.toFixed(2)}});toast('Demo — im Live-Shop öffnet hier der Checkout.')">Zur Kasse</button>
     <div class="note">Sichere Zahlung · PayPal, Klarna, Rechnung, Karte</div>` : '';
   let pct=0,txt='';
-  if(n===0){txt='Ab <b>2 Artikeln</b> sparen Sie automatisch 10 %.';}
-  else if(n===1){txt='Noch <b>1 Artikel</b> bis <b>10 % Rabatt</b>.';pct=33}
-  else if(n===2){txt='<b>10 % aktiv.</b> Noch 1 Artikel bis 15 %.';pct=66}
-  else{txt='<b>15 % Mengenrabatt aktiv</b> — Maximum erreicht.';pct=100}
-  if(n>0&&(s-ds)<79)txt+=` Noch ${eur(79-(s-ds))} bis zum Gratisversand.`;
+  if(n===0){txt=`Ab <b>2 Artikeln</b> sparen Sie automatisch ${t2} %.`;}
+  else if(n===1){txt=`Noch <b>1 Artikel</b> bis <b>${t2} % Rabatt</b>.`;pct=33}
+  else if(n===2){txt=`<b>${t2} % aktiv.</b> Noch 1 Artikel bis ${t3} %.`;pct=66}
+  else{txt=`<b>${t3} % Mengenrabatt aktiv</b> — Maximum erreicht.`;pct=100}
+  if(n>0&&!free){txt+=` Noch <b>${eur(PROMO.freeShip-(s-ds))}</b> bis zum Gratisversand.`}
+  else if(n>0){txt+=' Gratisversand aktiv ✓';if(free)track('promo_threshold_reached',{threshold:PROMO.freeShip})}
   document.getElementById('pmsg').innerHTML=txt;
   document.getElementById('pfill').style.width=pct+'%';
-  document.getElementById('s1').className=(s-ds)>=79?'hit':'';
+  document.getElementById('s1').className=free&&n>0?'hit':'';
   document.getElementById('s2').className=n>=2?'hit':'';
   document.getElementById('s3').className=n>=3?'hit':'';
 }
@@ -1738,15 +2129,16 @@ function terminSubmit(){
   document.getElementById('tok').style.display='block';
   toast('Anfrage eingegangen — wir melden uns.');
 }
-/* Popup nur ein einziges Mal pro Besucher (localStorage), kein Exit-Intent mehr */
+/* Popup nur ein einziges Mal pro Besucher (localStorage), erst nach 22 s Verweildauer */
 setTimeout(()=>{
   let seen=false; try{seen=!!localStorage.getItem('ld_pop')}catch(e){}
   if(!popDone&&introEnded&&!seen){
     try{localStorage.setItem('ld_pop','1')}catch(e){}
     document.getElementById('pop').classList.add('on');
   }
-},14000);
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){popClose();cart(0);mnav(0);closeP();endIntro()}});
+},22000);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){popClose();cart(0);mnav(0);closeP();endIntro();
+  const sg=document.getElementById('sgg');if(sg)sg.style.display='none'}});
 
 /* ---------- Logo-Quadrate: Farben wechseln nach einer Weile ----------
    Die Quadrate in Header- und Footer-Logo hovern alle 15 s in einer neuen
@@ -1815,7 +2207,16 @@ addEventListener('scroll',()=>hdr.classList.toggle('stuck',scrollY>40),{passive:
   window.go=function(v,cat){goOrig(v,cat);target=0;cur=0;active=false;cancelAnimationFrame(raf)};
 })();
 
+/* ---------- Initialisierung ---------- */
 update();
+renderWishBadge();
+/* Drawer-Beschriftungen aus der zentralen PROMO-Config ableiten */
+(function(){
+  const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
+  document.getElementById('s1').textContent=`Versandfrei ab ${Math.round(PROMO.freeShip)} €`;
+  document.getElementById('s2').textContent=`2 Artikel −${t2} %`;
+  document.getElementById('s3').textContent=`3 Artikel −${t3} %`;
+})();
 </script>
 </body>
 </html>
