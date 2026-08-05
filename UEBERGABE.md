@@ -46,6 +46,7 @@ Lokal ansehen: `python3 -m http.server` im Projektordner.
 | Produkte | Array `const P = [...]` |
 | Kategorien | Array `const CATS = [...]` |
 | Such-Synonyme | `const SYN = [...]` |
+| Kuratierte Kollektionen (Sale, Neuheiten, Sommer, Sets, Farben) | `const COLL = {...}` — Titel, Bild, Filter je Kachel; Sale-Prozentsatz wird aus echten Preisen berechnet (`maxSale()`) |
 | Logo-Farbpaletten | `const SQPAL = [...]` |
 | Startseiten-Produkte | `const FEATURED = [...]` |
 
@@ -58,6 +59,9 @@ Pflichtfelder: `id, cat, sc, n, p, img, img2, r, rv, d`
 - **Mit Größen?** → `sizes:['S','M','L','XL']` — Karte zeigt dann „Größe wählen", Modal erzwingt die Auswahl.
 - **Empfehlungen:** `rel:['id1','id2','id3']` — steuert „Passt dazu", Bundle und Warenkorb-Cross-Sells.
 - `x:` „Gut zu wissen"-Text (Pflege/Anwendung/Saison).
+
+## Hinweis zu den Bildern
+Vier Asset-Dateien tragen vertauschte Namen (Taschen liegen in `shampoo.webp`, Kerzen in `bagsSet.webp`, Handtücher in `candles3.webp`, ein Pflege-Set in `towelStack.webp`). Das ist im Bild-Mapping `A` am Anfang des Scripts korrigiert — beim Ersetzen der Platzhalter-Bilder vor dem Livegang am besten die Dateien richtig benennen und die vier Korrekturzeilen entfernen.
 
 ## Was bewusst nicht umgesetzt wurde
 Siehe `PLAN.md` (Abwägungstabelle) und `OFFEN.md` (Lücken inkl. dessen, was der Kunde liefern muss).

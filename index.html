@@ -344,7 +344,8 @@ footer{background:var(--ink);color:rgba(247,243,236,.6);padding:clamp(54px,7vw,8
   color:var(--paper);padding:15px 26px;font-size:13px;transition:.45s cubic-bezier(.2,.7,.3,1);text-align:center}
 .toast.on{transform:translate(-50%,0)}
 .mnav{position:fixed;inset:0;background:var(--paper);z-index:80;transform:translateY(-102%);
-  transition:.45s cubic-bezier(.2,.7,.3,1);padding:22px var(--pad);display:flex;flex-direction:column}
+  transition:.45s cubic-bezier(.2,.7,.3,1);padding:22px var(--pad);display:flex;flex-direction:column;
+  overflow-y:auto;overscroll-behavior:contain}
 .mnav.on{transform:none}
 .mnav .x{align-self:flex-end;font-size:26px;color:var(--ink-70);margin-bottom:26px}
 .mnav a{font-family:var(--serif);font-size:30px;padding:13px 0;border-bottom:1px solid var(--line)}
@@ -755,6 +756,47 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
 .mnav .sub{font-family:var(--sans);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
   padding:11px 0 11px 18px;color:var(--ink-70)}
 
+/* ============ SHOP-EINSTIEG: HERO & KOLLEKTIONEN ============ */
+.shero{position:relative;overflow:hidden;margin:8px 0 6px;background:var(--ink)}
+.shero img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.shero{aspect-ratio:21/9;min-height:340px}
+@media(max-width:760px){.shero{aspect-ratio:4/5;min-height:0}}
+.sov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,22,19,.22),rgba(26,22,19,.58))}
+.stx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;color:var(--paper);padding:26px}
+.stx .eyebrow{color:var(--brass-lo)}
+.stx h2{color:var(--paper);font-size:clamp(30px,4.6vw,54px);margin:12px 0 10px;text-shadow:0 2px 16px rgba(26,22,19,.45)}
+.stx p{color:rgba(247,243,236,.86);font-size:13.5px;max-width:46ch;margin-bottom:24px}
+.scta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.grouplbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-45);
+  font-weight:500;margin:32px 0 14px;display:flex;align-items:center;gap:12px}
+.grouplbl::after{content:'';flex:1;height:1px;background:var(--line)}
+.collgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.4vw,16px)}
+.coll{position:relative;overflow:hidden;cursor:pointer;grid-column:span 2;transition:transform .45s cubic-bezier(.2,.7,.3,1)}
+.collgrid .coll:nth-child(-n+2){grid-column:span 3}
+.coll img{width:100%;object-fit:cover;aspect-ratio:4/3;transition:1s cubic-bezier(.2,.7,.3,1);display:block}
+.collgrid .coll:nth-child(-n+2) img{aspect-ratio:16/9}
+.coll:hover{transform:translateY(-4px)}
+.coll:hover img{transform:scale(1.04)}
+.coll .lab{position:absolute;left:0;right:0;bottom:0;padding:18px;color:#fff;
+  background:linear-gradient(180deg,transparent,rgba(26,22,19,.78))}
+.coll .n{font-family:var(--serif);font-size:clamp(19px,2vw,26px);line-height:1.15}
+.coll .lk2{display:inline-block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  margin-top:7px;border-bottom:1px solid rgba(255,255,255,.55);padding-bottom:2px;opacity:.9}
+.stag{display:inline-block;background:#8C3B2E;color:#fff;font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;font-weight:500;padding:4px 9px;margin-bottom:8px}
+@media(max-width:760px){
+  .collgrid{grid-template-columns:repeat(2,1fr)}
+  .collgrid .coll{grid-column:span 1}
+  .collgrid .coll:nth-child(-n+2){grid-column:span 2}
+}
+/* Sale-Akzente (Rot nur für echte Reduzierungen) */
+.chip.salechip{color:#8C3B2E;border-color:rgba(140,59,46,.45)}
+.chip.salechip:hover{border-color:#8C3B2E}
+.chip.salechip.on{background:#8C3B2E;color:#fff;border-color:#8C3B2E}
+nav.main .salelink{color:#8C3B2E}
+nav.main .salelink:hover{border-color:#8C3B2E}
+
 </style>
 </head>
 <body class="locked">
@@ -768,6 +810,7 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
   <div class="t"><span><b>Komplettpaket</b>&nbsp; sämtliche Arbeiten und Materialien enthalten</span></div>
   <div class="t"><span><b>Sonderanfertigung</b>&nbsp; nach Maß und in Ihrer Wunschfarbe</span></div>
   <div class="t"><span><b>Versandkostenfrei ab 79 €</b>&nbsp; kostenloser Rückversand</span></div>
+  <div class="t"><span><b>Sale</b>&nbsp; bis zu −<span id="tickSale">20</span> % auf ausgewählte Artikel</span></div>
   <div class="t"><span><b>Über 400 Bäder</b>&nbsp; umgesetzt seit 2016</span></div>
 </div></div>
 
@@ -789,6 +832,7 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
           <a href="#" onclick="go('shop','armatur');return false">Armaturen</a>
           <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
         </div></span>
+      <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale</a>
       <a href="#marke" onclick="goSec('marke');return false">Die Marke</a>
       <a href="#termin" onclick="goSec('termin');return false">Beratung</a>
     </nav>
@@ -814,6 +858,8 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
   <a href="#" class="sub" onclick="go('shop','duft');mnav(0);return false">Duft &amp; Parfüm</a>
   <a href="#" class="sub" onclick="go('shop','taschen');mnav(0);return false">Taschen &amp; Accessoires</a>
   <a href="#" class="sub" onclick="go('shop','armatur');mnav(0);return false">Armaturen</a>
+  <a href="#" class="sub" style="color:#8C3B2E" onclick="go('shop','sale');mnav(0);return false">Sale</a>
+  <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
   <a href="#" class="sub" onclick="go('wunsch');renderWish();mnav(0);return false">♡ Wunschliste</a>
   <a href="#marke" onclick="mnav(0);goSec('marke');return false">Die Marke</a>
   <a href="#termin" onclick="mnav(0);goSec('termin');return false">Beratung</a>
@@ -1406,6 +1452,14 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
 <script>
 const A = {"towel": "assets/towel.webp","flacon1": "assets/flacon1.webp","flacon2": "assets/flacon2.webp","woman": "assets/woman.webp","man": "assets/man.webp","basin": "assets/basin.webp","shower": "assets/shower.webp","drain": "assets/drain.webp","knobs": "assets/knobs.webp","shower2": "assets/shower2.webp","poster": "assets/poster.webp","video": "assets/video.mp4","mono": "assets/mono.png","videowebm": "assets/videowebm.webm","editorial": "assets/editorial.webp","showerGold": "assets/showerGold.webp","fixtures": "assets/fixtures.webp","setShelf": "assets/setShelf.webp","towelsGold": "assets/towelsGold.webp","gel": "assets/gel.webp","candle": "assets/candle.webp","ral1": "assets/ral1.webp","ral2": "assets/ral2.webp","ral3": "assets/ral3.webp","ral4": "assets/ral4.webp","ral5": "assets/ral5.webp","ral6": "assets/ral6.webp","ral7": "assets/ral7.webp","ral8": "assets/ral8.webp","towelStack": "assets/towelStack.webp","bagsSet": "assets/bagsSet.webp","pouchSet": "assets/pouchSet.webp","shampoo": "assets/shampoo.webp","hairDuo": "assets/hairDuo.webp","bodyTrio": "assets/bodyTrio.webp","careTrio": "assets/careTrio.webp","jarTrio": "assets/jarTrio.webp","careSet": "assets/careSet.webp","edpTrio": "assets/edpTrio.webp","edpItalia": "assets/edpItalia.webp","mistNude": "assets/mistNude.webp","mistBlue": "assets/mistBlue.webp","candles3": "assets/candles3.webp","elegance": "assets/elegance.jpg"};
 const LOGO = {"word": [{"d": "M62 0V39H242V1461H62V1500H612V1461H433V39H742Q860 39 931.0 67.5Q1002 96 1038.5 149.5Q1075 203 1087.0 279.0Q1099 355 1099 450H1139V0Z", "x": 0.0, "s": 0.05}, {"d": "M432 469V508H1080V469ZM810 1529 1326 39H1482V0H902V39H1107L714 1256L290 39H502V0H62V39H245L769 1529Z", "x": 73.35, "s": 0.05}, {"d": "M622 1500Q845 1500 1006.0 1401.5Q1167 1303 1254.5 1133.0Q1342 963 1342 750Q1342 590 1290.0 453.5Q1238 317 1142.0 215.0Q1046 113 914.0 56.5Q782 0 622 0H62V39H242V1461H62V1500ZM433 39H622Q760 39 854.0 98.0Q948 157 1005.0 258.0Q1062 359 1087.0 486.5Q1112 614 1112 750Q1112 886 1084.0 1013.5Q1056 1141 997.5 1242.0Q939 1343 846.0 1402.0Q753 1461 622 1461H433Z", "x": 206.55, "s": 0.05}, {"d": "M751 -20Q599 -20 480.0 39.5Q361 99 278.5 205.0Q196 311 153.5 450.5Q111 590 111 750Q111 910 156.5 1049.5Q202 1189 286.0 1295.0Q370 1401 488.0 1460.5Q606 1520 751 1520Q896 1520 1013.5 1460.5Q1131 1401 1215.5 1295.0Q1300 1189 1345.0 1049.5Q1390 910 1390 750Q1390 590 1347.5 450.5Q1305 311 1223.0 205.0Q1141 99 1022.0 39.5Q903 -20 751 -20ZM751 16Q882 16 962.5 78.5Q1043 141 1086.5 246.5Q1130 352 1145.5 483.0Q1161 614 1161 750Q1161 886 1142.5 1017.0Q1124 1148 1079.0 1253.5Q1034 1359 954.0 1421.5Q874 1484 751 1484Q628 1484 548.0 1421.5Q468 1359 422.5 1253.5Q377 1148 358.5 1017.0Q340 886 340 750Q340 614 356.0 483.0Q372 352 415.0 246.5Q458 141 539.5 78.5Q621 16 751 16Z", "x": 292.15, "s": 0.05}, {"d": "M790 -20Q587 -20 434.0 80.0Q281 180 196.0 354.0Q111 528 111 750Q111 973 196.0 1146.5Q281 1320 434.0 1420.0Q587 1520 790 1520Q890 1520 980.5 1485.5Q1071 1451 1139 1389L1243 1500H1278V1090H1238Q1233 1207 1171.5 1293.0Q1110 1379 1014.5 1426.0Q919 1473 810 1473Q680 1473 589.5 1412.0Q499 1351 444.5 1247.5Q390 1144 365.0 1015.0Q340 886 340 750Q340 614 365.0 485.0Q390 356 444.5 252.5Q499 149 589.5 88.0Q680 27 810 27Q909 27 989.5 56.5Q1070 86 1129.0 138.5Q1188 191 1221.0 260.5Q1254 330 1258 410H1298V0H1263L1168 118Q1100 54 1002.5 17.0Q905 -20 790 -20Z", "x": 380.15, "s": 0.05}, {"d": "M790 -20Q587 -20 434.0 80.0Q281 180 196.0 354.0Q111 528 111 750Q111 973 196.0 1146.5Q281 1320 434.0 1420.0Q587 1520 790 1520Q890 1520 980.5 1485.5Q1071 1451 1139 1389L1243 1500H1278V1090H1238Q1233 1207 1171.5 1293.0Q1110 1379 1014.5 1426.0Q919 1473 810 1473Q680 1473 589.5 1412.0Q499 1351 444.5 1247.5Q390 1144 365.0 1015.0Q340 886 340 750Q340 614 365.0 485.0Q390 356 444.5 252.5Q499 149 589.5 88.0Q680 27 810 27Q909 27 989.5 56.5Q1070 86 1129.0 138.5Q1188 191 1221.0 260.5Q1254 330 1258 410H1298V0H1263L1168 118Q1100 54 1002.5 17.0Q905 -20 790 -20Z", "x": 464.7, "s": 0.05}, {"d": "M62 0V39H282V1461H62V1500H712V1461H472V39H712V0Z", "x": 549.25, "s": 0.05}, {"d": "M432 469V508H1080V469ZM810 1529 1326 39H1482V0H902V39H1107L714 1256L290 39H502V0H62V39H245L769 1529Z", "x": 600.95, "s": 0.05}], "ww": 678.15, "sub": [{"d": "M80 700V0H165V700ZM290 0Q392 0 471.0 44.0Q550 88 595.0 166.5Q640 245 640 350Q640 455 595.0 533.5Q550 612 471.0 656.0Q392 700 290 700H127V615H290Q349 615 398.0 596.5Q447 578 482.0 543.5Q517 509 536.0 460.0Q555 411 555 350Q555 289 536.0 240.0Q517 191 482.0 156.5Q447 122 398.0 103.5Q349 85 290 85H127V0Z", "x": 0.0, "s": 0.0215}, {"d": "M75 700V230Q75 178 91.5 134.0Q108 90 139.5 58.0Q171 26 215.0 8.0Q259 -10 313 -10Q367 -10 411.0 8.0Q455 26 486.5 58.0Q518 90 534.5 134.0Q551 178 551 230V700H466V230Q466 158 427.0 114.0Q388 70 313 70Q238 70 199.0 114.0Q160 158 160 230V700Z", "x": 23.82, "s": 0.0215}, {"d": "M106 212 38 166Q61 120 97.5 79.5Q134 39 182.5 14.5Q231 -10 288 -10Q330 -10 368.5 4.0Q407 18 437.5 44.0Q468 70 485.5 107.0Q503 144 503 190Q503 238 486.0 272.5Q469 307 442.5 331.5Q416 356 385.0 372.0Q354 388 326 398Q265 419 229.5 440.5Q194 462 179.0 486.5Q164 511 164 540Q164 574 190.0 601.5Q216 629 273 629Q314 629 342.5 613.0Q371 597 391.0 572.0Q411 547 424 521L497 563Q480 600 450.0 633.5Q420 667 377.5 688.5Q335 710 278 710Q219 710 173.0 686.5Q127 663 101.0 622.0Q75 581 75 529Q75 481 93.5 448.0Q112 415 141.0 392.5Q170 370 202.0 355.5Q234 341 260 332Q300 318 335.5 300.5Q371 283 393.0 255.0Q415 227 415 180Q415 132 381.0 101.0Q347 70 291 70Q249 70 216.0 88.0Q183 106 156.5 138.0Q130 170 106 212Z", "x": 46.48, "s": 0.0215}, {"d": "M130 350Q130 432 166.5 493.5Q203 555 262.0 590.0Q321 625 390 625Q440 625 481.5 612.0Q523 599 557.0 575.5Q591 552 615 521V633Q571 672 519.0 691.0Q467 710 390 710Q317 710 253.5 683.5Q190 657 142.0 608.5Q94 560 67.0 494.0Q40 428 40 350Q40 272 67.0 206.0Q94 140 142.0 91.5Q190 43 253.5 16.5Q317 -10 390 -10Q467 -10 519.0 9.0Q571 28 615 67V179Q591 148 557.0 124.5Q523 101 481.5 88.0Q440 75 390 75Q321 75 262.0 110.0Q203 145 166.5 207.0Q130 269 130 350Z", "x": 67.46, "s": 0.0215}, {"d": "M127 340H607V420H127ZM550 700V0H635V700ZM80 700V0H165V700Z", "x": 91.39, "s": 0.0215}, {"d": "M127 0H480V80H127ZM127 620H480V700H127ZM127 340H460V420H127ZM80 700V0H165V700Z", "x": 115.96, "s": 0.0215}, {"d": "M610 700V179L80 735V0H165V521L695 -35V700Z", "x": 136.99, "s": 0.0215}, {"d": "M127 0H480V80H127ZM127 620H480V700H127ZM127 340H460V420H127ZM80 700V0H165V700Z", "x": 178.5, "s": 0.0215}, {"d": "M205 345 445 0H550L300 345ZM80 700V0H165V700ZM127 625H270Q315 625 349.5 609.0Q384 593 403.5 563.0Q423 533 423 490Q423 447 403.5 417.0Q384 387 349.5 371.0Q315 355 270 355H127V280H270Q338 280 391.5 305.5Q445 331 476.5 378.5Q508 426 508 490Q508 555 476.5 602.0Q445 649 391.5 674.5Q338 700 270 700H127Z", "x": 199.52, "s": 0.0215}, {"d": "M80 700V0H440V80H165V700Z", "x": 220.76, "s": 0.0215}, {"d": "M127 0H480V80H127ZM127 620H480V700H127ZM127 340H460V420H127ZM80 700V0H165V700Z", "x": 239.64, "s": 0.0215}, {"d": "M147 370H260Q323 370 369.5 388.0Q416 406 442.0 441.0Q468 476 468 525Q468 585 442.0 623.5Q416 662 369.5 681.0Q323 700 260 700H80V0H270Q338 0 391.5 22.5Q445 45 476.5 90.5Q508 136 508 205Q508 253 490.0 288.0Q472 323 439.5 345.5Q407 368 364.0 379.0Q321 390 270 390H147V343H270Q304 343 332.0 334.5Q360 326 380.5 309.0Q401 292 412.0 267.0Q423 242 423 210Q423 167 403.5 137.0Q384 107 349.5 91.0Q315 75 270 75H165V625H260Q313 625 348.0 597.5Q383 570 383 520Q383 487 367.0 464.0Q351 441 323.0 429.0Q295 417 260 417H147Z", "x": 260.66, "s": 0.0215}, {"d": "M127 0H480V80H127ZM127 620H480V700H127ZM127 340H460V420H127ZM80 700V0H165V700Z", "x": 281.86, "s": 0.0215}, {"d": "M610 700V179L80 735V0H165V521L695 -35V700Z", "x": 302.89, "s": 0.0215}], "sw": 319.55};
+/* Korrektur: Im Quellpaket sind vier Dateien zyklisch vertauscht benannt.
+   Die Keys bleiben stabil, nur die Zuordnung wird hier geradegezogen:
+   Taschen liegen in shampoo.webp, Kerzen in bagsSet.webp,
+   Handtuchstapel in candles3.webp, das Shampoo bekommt gel.webp. */
+A.bagsSet   ='assets/shampoo.webp';
+A.candles3  ='assets/bagsSet.webp';
+A.towelStack='assets/candles3.webp';
+A.shampoo   ='assets/gel.webp';
 const src = k => A[k];
 
 /* ---------- Logo als SVG bauen ---------- */
@@ -1636,6 +1690,9 @@ const P=[
  {id:'set-gold',cat:'frottee',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
   d:'Die gleiche Qualität wie das Wellness-Essential, mit Wortmarke in feiner Webkante. Passend zu allen Farben der Kollektion.',
   x:'Waschbar bei 60 °C mit Colorwaschmittel, kein Weichspüler. Die Webkante vor dem Waschen glatt streichen und links waschen — so bleibt die goldene Stickerei jahrelang schön.'},
+ {id:'towel-oro',cat:'frottee',sc:'tuecher',colors:[0,3],n:'Badetuch „Oro", 70 × 140 cm',p:39,old:49,img:'towelsGold',img2:'towel',r:4.8,rv:11,mat:'100 % Baumwolle, 600 g/m²',rel:['set-gold','gel','kerze'],
+  d:'Großes Badetuch aus schwerem Frottee mit goldener Webkante. Einzeln erhältlich — passend zum Handtuch-Set „Oro".',
+  x:'Waschbar bei 60 °C, ohne Weichspüler. Vor dem ersten Gebrauch separat waschen, dann ist es sofort voll saugfähig.'},
  {id:'mantel-creme',cat:'frottee',sc:'maentel',colors:[1,2,3],n:'Waffelpiqué-Bademantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
   d:'Leichter Waffelpiqué-Mantel mit Schalkragen und zwei aufgesetzten Taschen. Trocknet schnell, ideal auch für warme Räume.',
   x:'Waschbar bei 40 °C im Schonwaschgang, trocknet über Nacht an der Luft. Der leichte Waffelpiqué ist ideal für Frühjahr und Sommer — im Winter empfehlen wir ihn über dem Pyjama.'},
@@ -1684,6 +1741,12 @@ const P=[
  {id:'kerze',cat:'duft',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'candles3',img2:'setShelf',r:4.7,rv:12,badge:'Neu',g:220,rel:['edp-sea','gel','set-essential'],
   d:'Sojawachs mit Baumwolldocht im matten Glas mit Reliefdekor, erhältlich in Rosé, Lavendel und Salbei. Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen — so brennt sie gleichmäßig ab. Besonders stimmungsvoll in Herbst und Winter.'},
+ {id:'kerze-salbei',cat:'duft',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'candle',img2:'candles3',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
+  d:'Grüner Salbei über warmem Eichenholz — der ruhige Duft der La-Doccia-Bäder für zu Hause. Sojawachs im matten Glas, Brenndauer rund 45 Stunden.',
+  x:'100 % Sojawachs mit 8 % Duftölanteil. Docht vor jedem Anzünden auf 5 mm kürzen; beim ersten Brennen die Oberfläche vollständig flüssig werden lassen.'},
+ {id:'edt-riva',cat:'duft',sc:'edp',n:'Eau de Toilette „Riva", 100 ml',p:89,img:'flacon1',img2:'flacon2',r:4.9,rv:6,badge:'Neu',rel:['mist-nude','gel','kerze-salbei'],
+  d:'Der leichte Einstieg in die Duftfamilie: Zitrus und Meersalz, weicher als das Eau de Parfum, gemacht für jeden Tag.',
+  x:'8 % Duftölanteil, hält 3–5 Stunden — bewusst leicht für den Alltag und großzügiges Auftragen. Frühling bis Herbst, im Sommer auch zum Nachsprühen unterwegs.'},
 
  {id:'tote',cat:'taschen',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'bagsSet',img2:'pouchSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
   d:'Geräumige Strandtasche mit Kordelgriffen und wasserabweisendem Innenfach. Weiß mit dem Vier-Farben-Zeichen.',
@@ -1703,6 +1766,28 @@ const P=[
   x:'Die Silikon-Noppen der Brause nach dem Duschen kurz abreiben, das löst Kalk sofort. PVD-Oberfläche nur mit weichem Tuch und pH-neutralem Reiniger pflegen. Empfohlener Wasserdruck 2–5 bar.'}
 ];
 const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
+
+/* ---------- Kuratierte Kollektionen (virtuelle Kategorien) ----------
+   Erscheinen als Einstiegs-Kacheln im Shop und sind über filt('<id>') filterbar.
+   Der Sale-Prozentsatz wird aus echten Preisen berechnet — nichts erfunden. */
+const maxSale=()=>Math.max(...P.filter(p=>p.old).map(disc));
+const COLL={
+ sale:{n:'Sale',img:'towelsGold',
+   sub:'Reduzierte Artikel. Alle Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
+   f:p=>!!p.old},
+ neu:{n:'Neuheiten',img:'mistNude',
+   sub:'Frisch in der Kollektion — die neuesten Artikel von La Doccia.',
+   f:p=>p.badge==='Neu'},
+ sommer:{n:'Must-haves für den Sommer',img:'bagsSet',
+   sub:'Sonnenpflege, leichte Düfte und Begleiter für Pool und Strand.',
+   f:p=>['jar-trio','aloe','mist-blue','mist-nude','edp-citrus','edt-riva','tote','weekender','pouches'].includes(p.id)},
+ sets:{n:'Sets & Geschenke',img:'setShelf',
+   sub:'Fertig kombiniert und schön verpackt — zum Verschenken oder Selbstbehalten.',
+   f:p=>p.badge==='Set'||/set|trio|duo/i.test(p.n)},
+ farben:{n:'In Ihren Lieblingsfarben',img:'candles3',
+   sub:'Artikel, die es in den vier Markenfarben von La Doccia gibt.',
+   f:p=>!!p.colors}
+};
 
 const heartSvg=`<svg viewBox="0 0 24 24"><path d="M12 20.5S4.8 16 2.9 11.7A5.2 5.2 0 0 1 12 6.9a5.2 5.2 0 0 1 9.1 4.8C19.2 16 12 20.5 12 20.5z"/></svg>`;
 const wishBtn=p=>`<button class="wbtn ${WISH.has(p.id)?'on':''}" data-wid="${p.id}"
@@ -1755,8 +1840,8 @@ function cardRail(p){
 /* ---------- Shop-Seite ---------- */
 let curCat='all', curSub='all', curSort='rec', curQ='';
 document.getElementById('catBar').innerHTML =
-  `<div class="chiprow">`+[{id:'all',n:'Alle Produkte'}].concat(CATS).map(c=>
-    `<button class="chip ${c.id==='all'?'on':''}" data-c="${c.id}" onclick="filt('${c.id}')">${c.n}</button>`).join('')+`</div>`
+  `<div class="chiprow">`+[{id:'all',n:'Alle Produkte'},{id:'sale',n:'Sale',cls:'salechip'},{id:'neu',n:'Neuheiten'}].concat(CATS).map(c=>
+    `<button class="chip ${c.cls||''} ${c.id==='all'?'on':''}" data-c="${c.id}" onclick="filt('${c.id}')">${c.n}</button>`).join('')+`</div>`
   + `<div class="shoptools">
      <label class="fsearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
        <input type="search" id="shopSearch" placeholder="Suche im Shop" autocomplete="off"
@@ -1769,7 +1854,10 @@ document.getElementById('catBar').innerHTML =
 function filt(id){
   curCat=id; curSub='all';
   document.querySelectorAll('#catBar .chip').forEach(c=>c.classList.toggle('on',c.dataset.c===id));
+  track('filter_used',{filter:id});
   renderShop();
+  const v=document.getElementById('v-shop');
+  if(v.classList.contains('on'))window.scrollTo({top:0,behavior:'instant'});
 }
 function subFilt(id){curSub=id;renderShop()}
 function sortList(l){
@@ -1780,20 +1868,63 @@ function sortList(l){
   return l;
 }
 function renderShop(){
+  const q=curQ.trim();
+  if(q.length>=3)track('search',{search_term:q});
+  let total=0;
+
+  /* ---- Kuratierte Kollektion (Sale, Neuheiten, Sommer, …) ---- */
+  if(COLL[curCat]){
+    const c=COLL[curCat];
+    document.getElementById('shopTitle').textContent=c.n;
+    document.getElementById('shopSub').textContent=c.sub;
+    let list=P.filter(c.f);
+    if(q)list=list.filter(p=>prodMatch(p,q));
+    list=sortList(list); total=list.length;
+    document.getElementById('shopBody').innerHTML = (total
+      ? `<section class="catsec" style="padding-top:10px"><div class="subhead"><h2>${c.n}</h2><span class="cnt">${total} Artikel</span></div>
+         <div class="pg" style="margin-top:22px">${list.map(card).join('')}</div></section>`
+      : `<div class="noresult"><p>Hier ist gerade nichts${q?` zu „${q}“`:''} — schauen Sie in den Kategorien vorbei.</p></div>`)
+      + `<div style="margin-top:40px"><button class="btn ghost" onclick="filt('all')">Alle Produkte ansehen</button></div>`;
+    document.getElementById('fcount').textContent=total+' Artikel';
+    return;
+  }
+
   const cats = curCat==='all'?CATS:CATS.filter(c=>c.id===curCat);
   const cObj = CATS.find(c=>c.id===curCat);
-  const q=curQ.trim();
   document.getElementById('shopTitle').textContent = curCat==='all'?'Alle Produkte':cObj.n;
   document.getElementById('shopSub').textContent = curCat==='all'
     ? 'Frottee, Duft, Pflege und Armaturen — die Marke zum Mitnehmen.'
     : cObj.sub;
-  if(q.length>=3)track('search',{search_term:q});
-  let total=0;
-  /* Kategorie-Kacheln als Einstieg (nur Übersicht ohne Suche) */
-  const tiles = (curCat==='all'&&!q) ? `<div class="catgrid">${CATS.map(c=>{
-    const cnt=P.filter(p=>p.cat===c.id).length;
-    return `<div class="tcat" onclick="filt('${c.id}')"><img src="${src(c.img)}" alt="${c.n}" loading="lazy">
-      <div class="lab"><div class="n">${c.n}</div><div class="c">${cnt} Artikel</div></div></div>`}).join('')}</div>` : '';
+
+  /* Einstieg (nur Übersicht ohne Suche): Hero, Kollektions-Kacheln, Kategorien */
+  let tiles='';
+  if(curCat==='all'&&!q){
+    const mS=maxSale();
+    tiles = `<div class="shero">
+        <img src="${src('poster')}" alt="La Doccia">
+        <div class="sov"></div>
+        <div class="stx">
+          <span class="eyebrow">La Doccia Kollektion</span>
+          <h2>Sale — bis zu −${mS} %</h2>
+          <p>Auf ausgewählte Artikel. Streichpreise sind die niedrigsten Preise der letzten 30 Tage.</p>
+          <div class="scta">
+            <button class="btn light" onclick="filt('sale')">Jetzt entdecken</button>
+            <button class="btn outline" onclick="filt('neu')">Neuheiten</button>
+          </div>
+        </div></div>
+      <div class="grouplbl">Aktuell</div>
+      <div class="collgrid">${Object.entries(COLL).map(([id,c])=>`
+        <div class="coll" onclick="filt('${id}')">
+          <img src="${src(c.img)}" alt="${c.n}" loading="lazy">
+          <div class="lab">${id==='sale'?`<span class="stag">Bis zu −${mS} %</span>`:''}
+            <div class="n">${c.n}</div><span class="lk2">Jetzt entdecken</span></div>
+        </div>`).join('')}</div>
+      <div class="grouplbl">Kategorien</div>
+      <div class="catgrid">${CATS.map(c=>{
+        const cnt=P.filter(p=>p.cat===c.id).length;
+        return `<div class="tcat" onclick="filt('${c.id}')"><img src="${src(c.img)}" alt="${c.n}" loading="lazy">
+          <div class="lab"><div class="n">${c.n}</div><div class="c">${cnt} Artikel</div></div></div>`}).join('')}</div>`;
+  }
   const body = cats.map(c=>{
     let list=P.filter(p=>p.cat===c.id);
     if(q) list=list.filter(p=>prodMatch(p,q));
@@ -2213,6 +2344,7 @@ renderWishBadge();
   document.getElementById('s1').textContent=`Versandfrei ab ${Math.round(PROMO.freeShip)} €`;
   document.getElementById('s2').textContent=`2 Artikel −${t2} %`;
   document.getElementById('s3').textContent=`3 Artikel −${t3} %`;
+  const ts=document.getElementById('tickSale'); if(ts)ts.textContent=maxSale();
 })();
 </script>
 </body>
