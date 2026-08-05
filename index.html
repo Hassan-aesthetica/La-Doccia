@@ -13,8 +13,8 @@
   --paper:#FBF9F5; --stone:#F1ECE4; --stone-2:#E4DCD0;
   --brass:#B79A6E; --brass-lo:#CDB58C; --clay:#8A7A66;
   --line:rgba(43,39,35,.11);
-  /* Vier Markenfarben — leicht & zeitgemäß */
-  --c1:#C9A227; --c2:#D98C6A; --c3:#7FA6A0; --c4:#8E8CB8;
+  /* Vier Markenfarben — kräftig und vorne drauf, wie im Logo */
+  --c1:#E8B400; --c2:#E85D2A; --c3:#1FA98A; --c4:#6C4FD8;
   --sans:'Jost',system-ui,sans-serif; --serif:'Bodoni Moda',Georgia,serif;
   --pad:clamp(22px,6vw,64px); --maxw:1440px;
 }
@@ -45,7 +45,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacin
   display:flex;align-items:center;justify-content:center;
   transition:opacity .8s cubic-bezier(.4,0,.2,1),visibility .8s}
 #intro.done{opacity:0;visibility:hidden}
-#intro .box{width:min(76vw,500px);animation:lockRise 1.2s cubic-bezier(.4,0,.2,1) 2.75s forwards}
+#intro .box{width:min(76vw,500px);animation:lockRise 1s cubic-bezier(.4,0,.2,1) 1.6s forwards}
 @keyframes lockRise{to{transform:translateY(-14px)}}
 #introLogo{width:100%;height:auto;overflow:visible}
 #introLogo .glow{opacity:0;animation:glowIn 1.4s ease .35s forwards}
@@ -56,11 +56,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacin
   animation:sqIn .7s cubic-bezier(.34,1.4,.5,1) forwards}
 @keyframes sqIn{from{opacity:0;transform:scale(.2) translateY(14px)}to{opacity:1;transform:none}}
 #introLogo .sub{opacity:0;transform-box:fill-box;transform-origin:center;
-  animation:subIn 1.05s cubic-bezier(.2,.7,.3,1) 1.95s forwards}
+  animation:subIn .9s cubic-bezier(.2,.7,.3,1) 1.1s forwards}
 @keyframes subIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
 #skip{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);
   font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-45);
-  opacity:0;animation:fadeIn .6s 2.3s forwards;transition:color .3s}
+  opacity:0;animation:fadeIn .6s 1.3s forwards;transition:color .3s}
 #skip:hover{color:var(--ink)}
 @keyframes fadeIn{to{opacity:1}}
 
@@ -124,16 +124,18 @@ section{padding:clamp(64px,9vw,128px) 0}
 .story .stamp span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-45)}
 @media(max-width:880px){.story{grid-template-columns:1fr}.story .stamp{left:0;bottom:-16px}}
 
-/* ============ PILLARS ============ */
-.pillars{background:var(--ink);color:var(--paper)}
-.pillars .shead h2{color:var(--paper)}
-.pillars .shead p{color:rgba(247,243,236,.66)}
-.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(247,243,236,.16)}
-.pgrid .p{background:var(--ink);padding:36px 28px 42px;transition:.4s}
-.pgrid .p:hover{background:#241E19}
-.pgrid .num{font-family:var(--serif);font-size:13px;color:var(--brass);letter-spacing:.1em;margin-bottom:24px}
+/* ============ PILLARS — hell, mit den vier Markenfarben ============ */
+.pillars{background:#fff;color:var(--ink)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.pgrid .p{background:#fff;padding:36px 28px 42px;transition:.4s}
+.pgrid .p:hover{background:var(--stone)}
+.pgrid .num{font-family:var(--serif);font-size:13px;letter-spacing:.1em;margin-bottom:24px;font-weight:500}
+.pgrid .p:nth-child(1) .num{color:var(--c1)}
+.pgrid .p:nth-child(2) .num{color:var(--c2)}
+.pgrid .p:nth-child(3) .num{color:var(--c3)}
+.pgrid .p:nth-child(4) .num{color:var(--c4)}
 .pgrid h3{font-size:23px;margin-bottom:12px}
-.pgrid p{font-size:14.5px;color:rgba(247,243,236,.64);line-height:1.65}
+.pgrid p{font-size:14.5px;color:var(--ink-70);line-height:1.65}
 @media(max-width:980px){.pgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.pgrid{grid-template-columns:1fr}}
 
@@ -220,45 +222,45 @@ section{padding:clamp(64px,9vw,128px) 0}
 .rev .prod{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45)}
 
-/* ============ TERMIN ============ */
-.termin{background:var(--clay);color:var(--paper)}
+/* ============ TERMIN — hell und leicht ============ */
+.termin{background:var(--stone);color:var(--ink)}
 .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
 @media(max-width:880px){.tgrid{grid-template-columns:1fr}}
-.termin h2{font-size:clamp(30px,4.6vw,52px);color:var(--paper);margin-bottom:18px}
-.termin p{color:rgba(247,243,236,.76);max-width:46ch;margin-bottom:26px}
-.termin .eyebrow{color:var(--brass-lo);display:block;margin-bottom:14px}
+.termin h2{font-size:clamp(30px,4.6vw,52px);color:var(--ink);margin-bottom:18px}
+.termin p{color:var(--ink-70);max-width:46ch;margin-bottom:26px}
+.termin .eyebrow{color:var(--brass);display:block;margin-bottom:14px}
 .steps{display:flex;flex-direction:column;gap:16px;margin-bottom:30px}
 .step{display:flex;gap:16px;align-items:flex-start}
-.step .n{font-family:var(--serif);font-size:13px;color:var(--brass-lo);border:1px solid rgba(247,243,236,.34);
+.step .n{font-family:var(--serif);font-size:13px;color:var(--brass);border:1px solid var(--line);background:#fff;
   width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
 .step div strong{display:block;font-weight:500;font-size:15px;margin-bottom:3px}
-.step div span{font-size:13.5px;color:rgba(247,243,236,.66)}
-.tform{background:rgba(247,243,236,.07);border:1px solid rgba(247,243,236,.2);padding:clamp(24px,3.4vw,38px)}
-.tform h3{font-size:24px;color:var(--paper);margin-bottom:6px}
-.tform .sm{font-size:13px;color:rgba(247,243,236,.6);margin-bottom:22px}
+.step div span{font-size:13.5px;color:var(--ink-70)}
+.tform{background:#fff;border:1px solid var(--line);padding:clamp(24px,3.4vw,38px);
+  box-shadow:0 24px 60px -40px rgba(26,22,19,.25)}
+.tform h3{font-size:24px;color:var(--ink);margin-bottom:6px}
+.tform .sm{font-size:13px;color:var(--ink-45);margin-bottom:22px}
 .tform label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(247,243,236,.62);margin-bottom:7px}
-.tform input,.tform select{width:100%;background:transparent;border:1px solid rgba(247,243,236,.3);
-  color:var(--paper);padding:13px 14px;font:inherit;font-size:14px;margin-bottom:16px}
-.tform input::placeholder{color:rgba(247,243,236,.4)}
-.tform input:focus,.tform select:focus{outline:none;border-color:var(--brass-lo)}
-.tform select option{color:var(--ink)}
+  color:var(--ink-45);margin-bottom:7px}
+.tform input,.tform select{width:100%;background:#fff;border:1px solid var(--line);
+  color:var(--ink);padding:13px 14px;font:inherit;font-size:14px;margin-bottom:16px}
+.tform input::placeholder{color:var(--ink-45)}
+.tform input:focus,.tform select:focus{outline:none;border-color:var(--brass)}
 .tform .btn{width:100%}
-.tform .fine{font-size:11px;color:rgba(247,243,236,.42);margin-top:14px;line-height:1.55}
-.tok{display:none;color:var(--brass-lo);font-size:15px;margin-top:18px}
+.tform .fine{font-size:11px;color:var(--ink-45);margin-top:14px;line-height:1.55}
+.tok{display:none;color:var(--brass);font-size:15px;margin-top:18px}
 
 /* ============ NEWSLETTER / SEO / FOOTER ============ */
-.nl{background:var(--ink);color:var(--paper);text-align:center}
-.nl h2{font-size:clamp(30px,5vw,54px);margin-bottom:16px;color:var(--paper)}
+.nl{background:#fff;color:var(--ink);text-align:center;border-top:1px solid var(--line)}
+.nl h2{font-size:clamp(30px,5vw,54px);margin-bottom:16px;color:var(--ink)}
 .nl .eyebrow{display:block;margin-bottom:16px}
-.nl p{color:rgba(247,243,236,.68);max-width:48ch;margin:0 auto 32px}
+.nl p{color:var(--ink-70);max-width:48ch;margin:0 auto 32px}
 .nlform{display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap}
-.nlform input{flex:1;min-width:220px;background:transparent;border:1px solid rgba(247,243,236,.34);
-  color:var(--paper);padding:15px 18px;font:inherit;font-size:14px}
-.nlform input::placeholder{color:rgba(247,243,236,.44)}
+.nlform input{flex:1;min-width:220px;background:#fff;border:1px solid var(--line);
+  color:var(--ink);padding:15px 18px;font:inherit;font-size:14px}
+.nlform input::placeholder{color:var(--ink-45)}
 .nlform input:focus{outline:none;border-color:var(--brass)}
-.nl .fine{font-size:11.5px;color:rgba(247,243,236,.4);margin-top:18px}
-.nlok{color:var(--brass-lo);font-size:15px;margin-top:20px;display:none}
+.nl .fine{font-size:11.5px;color:var(--ink-45);margin-top:18px}
+.nlok{color:var(--brass);font-size:15px;margin-top:20px;display:none}
 .seo{background:var(--stone)}
 .seo .cols{columns:2;column-gap:clamp(28px,5vw,64px);color:var(--ink-70);font-size:14.5px}
 .seo .cols p{margin-bottom:14px;break-inside:avoid}
@@ -458,8 +460,8 @@ h1,h2,h3{text-wrap:balance}
 /* Hero */
 .hero video,.hero .post{transform:none}
 .hero .veil{background:
-  linear-gradient(180deg,rgba(26,22,19,.40) 0%,rgba(26,22,19,.06) 36%,rgba(26,22,19,.84) 100%),
-  linear-gradient(100deg,rgba(26,22,19,.52) 0%,rgba(26,22,19,.18) 42%,transparent 66%)}
+  linear-gradient(180deg,rgba(26,22,19,.28) 0%,rgba(26,22,19,.04) 36%,rgba(26,22,19,.62) 100%),
+  linear-gradient(100deg,rgba(26,22,19,.38) 0%,rgba(26,22,19,.12) 42%,transparent 66%)}
 .hero h1{letter-spacing:-.012em;text-shadow:0 2px 18px rgba(26,22,19,.55),0 1px 4px rgba(26,22,19,.35)}
 .hero .inner>*{opacity:0;transform:translateY(28px);animation:heroUp 1.1s cubic-bezier(.2,.7,.3,1) forwards}
 .hero .inner>*:nth-child(1){animation-delay:.15s}
@@ -525,11 +527,14 @@ h1,h2,h3{text-wrap:balance}
 
 /* Pillars */
 .pgrid .p{position:relative}
-.pgrid .p::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--brass);
-  transform:scaleY(0);transform-origin:top;transition:.5s cubic-bezier(.2,.7,.3,1)}
-.pgrid .p:hover::before{transform:scaleY(1)}
+.pgrid .p::before{content:'';position:absolute;left:0;top:0;right:0;height:3px;
+  transform:scaleX(0);transform-origin:left;transition:.5s cubic-bezier(.2,.7,.3,1)}
+.pgrid .p:nth-child(1)::before{background:var(--c1)}
+.pgrid .p:nth-child(2)::before{background:var(--c2)}
+.pgrid .p:nth-child(3)::before{background:var(--c3)}
+.pgrid .p:nth-child(4)::before{background:var(--c4)}
+.pgrid .p:hover::before{transform:scaleX(1)}
 .pgrid h3{transition:color .3s}
-.pgrid .p:hover h3{color:var(--brass-lo)}
 
 /* Editorial-Band */
 .band img{transform:scale(1.03);transition:transform 2.4s cubic-bezier(.2,.7,.3,1)}
@@ -797,6 +802,46 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
 nav.main .salelink{color:#8C3B2E}
 nav.main .salelink:hover{border-color:#8C3B2E}
 
+/* ============ TELEFON IM HEADER ============ */
+.htel{display:flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:.06em;font-weight:400;
+  padding:6px 0;white-space:nowrap}
+.htel:hover{color:var(--brass)}
+.htel:hover .icon{stroke:var(--brass)}
+@media(max-width:1180px){.htel span{display:none}}
+
+/* ============ KATEGORIE-LEISTE (MOBIL, IMMER SICHTBAR) ============ */
+.mobcats{display:none}
+@media(max-width:960px){
+  .mobcats{display:flex;gap:20px;overflow-x:auto;padding:11px var(--pad);white-space:nowrap;
+    border-bottom:1px solid var(--line);background:rgba(247,243,236,.94);backdrop-filter:blur(12px);
+    position:sticky;top:74px;z-index:53;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    scrollbar-width:none}
+  .mobcats::-webkit-scrollbar{display:none}
+  .mobcats a{flex:none;padding:2px 0}
+  .mobcats .salelink{color:#8C3B2E;font-weight:500}
+}
+
+/* ============ FARBWÄHLER DESIGNLINIEN ============ */
+.lsw{display:flex;align-items:center;gap:8px;padding:14px 26px 0}
+.lsw button{width:23px;height:23px;border-radius:50%;border:2px solid #fff;
+  box-shadow:0 0 0 1px var(--line);transition:.2s;flex:none;padding:0}
+.lsw button:hover{transform:scale(1.12)}
+.lsw button.on{box-shadow:0 0 0 2px var(--ink)}
+.lsw .lswn{font-size:11px;letter-spacing:.08em;color:var(--ink-45);margin-left:4px}
+
+/* ============ ÖFFNUNGS-ANIMATIONEN ============ */
+@keyframes viewIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.view.on{animation:viewIn .5s cubic-bezier(.2,.7,.3,1)}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.pg .card,.collgrid .coll,.catgrid .tcat,.rail>.card{animation:cardIn .55s cubic-bezier(.2,.7,.3,1) both}
+.pg .card:nth-child(2),.collgrid .coll:nth-child(2),.catgrid .tcat:nth-child(2),.rail>.card:nth-child(2){animation-delay:.06s}
+.pg .card:nth-child(3),.collgrid .coll:nth-child(3),.catgrid .tcat:nth-child(3),.rail>.card:nth-child(3){animation-delay:.12s}
+.pg .card:nth-child(4),.collgrid .coll:nth-child(4),.catgrid .tcat:nth-child(4),.rail>.card:nth-child(4){animation-delay:.18s}
+.pg .card:nth-child(n+5),.collgrid .coll:nth-child(n+5),.rail>.card:nth-child(n+5){animation-delay:.24s}
+@media(prefers-reduced-motion:reduce){
+  .view.on,.pg .card,.collgrid .coll,.catgrid .tcat,.rail>.card{animation:none}
+}
+
 </style>
 </head>
 <body class="locked">
@@ -820,23 +865,18 @@ nav.main .salelink:hover{border-color:#8C3B2E}
       <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <a href="#" id="headLogoLink" onclick="go('home');return false"><span id="headLogoHost"></span></a>
     <nav class="main">
-      <a href="#linien" onclick="goSec('linien');return false">Designlinien</a>
-      <a href="#material" onclick="goSec('material');return false">Material</a>
-      <span class="navdrop"><a href="#" onclick="go('shop');return false">Shop</a>
-        <div class="dropm">
-          <a href="#" onclick="go('shop','frottee');return false">Bad &amp; Frottee</a>
-          <a href="#" onclick="go('shop','haar');return false">Haarpflege</a>
-          <a href="#" onclick="go('shop','pflege');return false">Körperpflege</a>
-          <a href="#" onclick="go('shop','duft');return false">Duft &amp; Parfüm</a>
-          <a href="#" onclick="go('shop','taschen');return false">Taschen &amp; Accessoires</a>
-          <a href="#" onclick="go('shop','armatur');return false">Armaturen</a>
-          <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
-        </div></span>
+      <a href="#linien" onclick="goSec('linien');return false">Duschen</a>
+      <a href="#" onclick="go('shop','parfuem');return false">Parfüm</a>
+      <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
+      <a href="#" onclick="go('shop','textil');return false">Textilien</a>
+      <a href="#" onclick="go('shop','all');return false">Shop</a>
       <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale</a>
-      <a href="#marke" onclick="goSec('marke');return false">Die Marke</a>
       <a href="#termin" onclick="goSec('termin');return false">Beratung</a>
     </nav>
     <div class="hicons">
+      <a class="htel" href="tel:+4315550100" aria-label="Telefonische Beratung">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        <span>01 555 01 00</span></a>
       <button class="cartbtn" onclick="go('wunsch');renderWish()" aria-label="Wunschliste">
         <svg class="icon" viewBox="0 0 24 24"><path d="M12 20.5S4.8 16 2.9 11.7A5.2 5.2 0 0 1 12 6.9a5.2 5.2 0 0 1 9.1 4.8C19.2 16 12 20.5 12 20.5z"/></svg>
         <i class="n" id="wn" style="display:none">0</i></button>
@@ -849,20 +889,27 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 
 <div class="mnav" id="mnav">
   <button class="x" onclick="mnav(0)">&times;</button>
-  <a href="#linien" onclick="mnav(0);goSec('linien');return false">Designlinien</a>
-  <a href="#material" onclick="mnav(0);goSec('material');return false">Material</a>
+  <a href="#linien" onclick="mnav(0);goSec('linien');return false">Duschen</a>
+  <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfüm</a>
+  <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
+  <a href="#" onclick="go('shop','textil');mnav(0);return false">Textilien</a>
   <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
-  <a href="#" class="sub" onclick="go('shop','frottee');mnav(0);return false">Bad &amp; Frottee</a>
-  <a href="#" class="sub" onclick="go('shop','haar');mnav(0);return false">Haarpflege</a>
-  <a href="#" class="sub" onclick="go('shop','pflege');mnav(0);return false">Körperpflege</a>
-  <a href="#" class="sub" onclick="go('shop','duft');mnav(0);return false">Duft &amp; Parfüm</a>
-  <a href="#" class="sub" onclick="go('shop','taschen');mnav(0);return false">Taschen &amp; Accessoires</a>
-  <a href="#" class="sub" onclick="go('shop','armatur');mnav(0);return false">Armaturen</a>
   <a href="#" class="sub" style="color:#8C3B2E" onclick="go('shop','sale');mnav(0);return false">Sale</a>
   <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
   <a href="#" class="sub" onclick="go('wunsch');renderWish();mnav(0);return false">♡ Wunschliste</a>
   <a href="#marke" onclick="mnav(0);goSec('marke');return false">Die Marke</a>
   <a href="#termin" onclick="mnav(0);goSec('termin');return false">Beratung</a>
+  <a class="sub" href="tel:+4315550100">☎ 01 555 01 00</a>
+</div>
+
+<!-- Kategorie-Leiste (mobil, immer sichtbar — direkter Weg in den Shop) -->
+<div class="mobcats">
+  <a onclick="goSec('linien')">Duschen</a>
+  <a onclick="go('shop','parfuem')">Parfüm</a>
+  <a onclick="go('shop','kosmetik')">Kosmetik</a>
+  <a onclick="go('shop','textil')">Textilien</a>
+  <a class="salelink" onclick="go('shop','sale')">Sale</a>
+  <a onclick="go('shop','neu')">Neuheiten</a>
 </div>
 
 <main class="view on" id="v-home">
@@ -893,7 +940,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
         <p>Jedes Projekt beginnt mit einer persönlichen Beratung bei Ihnen zu Hause und endet mit einem Bad, das sich anfühlt wie ein guter Hotelaufenthalt. Nur eben jeden Morgen.</p>
       </div>
       <figure class="reveal">
-        <img data-img="woman" alt="La Doccia Bad">
+        <img data-img="towel" alt="La Doccia Frottee im Morgenlicht">
         <div class="stamp"><div class="y">400+</div><span>Umgesetzte Bäder seit 2016</span></div>
       </figure>
     </div>
@@ -908,6 +955,17 @@ nav.main .salelink:hover{border-color:#8C3B2E}
         <p>Handtücher, Bademäntel, unser Eau de Toilette und die Pflegeserie. Dieselbe Handschrift wie im Bad.</p>
       </div>
       <div class="reveal" id="homeRails"></div>
+      <!-- Große Abteilungsbilder: direkter Einstieg in den Shop -->
+      <div class="teaser reveal" style="margin-top:38px">
+        <div class="tcat" onclick="go('shop','parfuem')"><img data-img="edpItalia" alt="Parfüm">
+          <div class="lab"><div class="n">Parfüm</div><div class="c">Jetzt entdecken</div></div></div>
+        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="jarTrio" alt="Kosmetik">
+          <div class="lab"><div class="n">Kosmetik</div><div class="c">Jetzt entdecken</div></div></div>
+        <div class="tcat" onclick="go('shop','textil')"><img data-img="towelsGold" alt="Textilien">
+          <div class="lab"><div class="n">Textilien</div><div class="c">Jetzt entdecken</div></div></div>
+        <div class="tcat" onclick="goSec('linien')"><img data-img="showerGold" alt="Duschbereich">
+          <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien ansehen</div></div></div>
+      </div>
       <div style="margin-top:34px">
         <button class="btn ghost" onclick="go('shop')">Alle Produkte ansehen</button>
       </div>
@@ -925,12 +983,12 @@ nav.main .salelink:hover{border-color:#8C3B2E}
       <div class="pgrid reveal">
         <div class="p"><div class="num">I</div><h3>Sonderanfertigung</h3>
           <p>Jede Dusche wird nach Aufmaß gefertigt. Schrägen, Nischen, ungewöhnliche Grundrisse — kein Standardmaß, keine Kompromisse.</p></div>
-        <div class="p"><div class="num">II</div><h3>Hochwertige Materialien</h3>
-          <p>Glas in 6 mm Stärke, Carbon-Elemente, fugenlose Oberflächen und Armaturen aus Messing statt beschichtetem Zink.</p></div>
+        <div class="p"><div class="num">II</div><h3>Veredelte Materialien</h3>
+          <p>Glas kombiniert mit Carbon und Kristall: 6 mm Sicherheitsglas, fugenlose Oberflächen und Armaturen aus massivem Messing.</p></div>
         <div class="p"><div class="num">III</div><h3>Ihre Wunschfarbe</h3>
           <p>Erhältlich im kompletten RAL-Spektrum. Von Taubenblau über Salbei bis Tiefschwarz — abgestimmt auf Ihren Raum.</p></div>
-        <div class="p"><div class="num">IV</div><h3>Alles aus einer Hand</h3>
-          <p>Im Paket sind sämtliche Arbeiten und Materialien enthalten. Ein Ansprechpartner, ein Festpreis, ein Termin.</p></div>
+        <div class="p"><div class="num">IV</div><h3>Barrierefrei &amp; durchdacht</h3>
+          <p>Bodenebener Einstieg, rutschhemmende Flächen, klare Kontraste — barrierefrei geplant, physisch wie visuell. Alles aus einer Hand, ein Festpreis.</p></div>
       </div>
     </div>
   </section>
@@ -1032,17 +1090,18 @@ nav.main .salelink:hover{border-color:#8C3B2E}
         </div>
       </div>
       <div class="tform reveal">
-        <h3>Termin anfragen</h3>
-        <div class="sm">Kostenlos und unverbindlich.</div>
-        <label for="tn">Name</label><input id="tn" placeholder="Vor- und Nachname">
-        <label for="tm">E-Mail oder Telefon</label><input id="tm" placeholder="name@beispiel.de">
-        <label for="tp">Postleitzahl</label><input id="tp" placeholder="32423">
-        <label for="tl">Interesse an</label>
+        <h3>Telefonische Designberatung</h3>
+        <div class="sm">Kostenlos und unverbindlich — wir rufen Sie an. Oder direkt: <a href="tel:+4315550100" style="color:var(--brass)">01&nbsp;555&nbsp;01&nbsp;00</a></div>
+        <label for="tn">Name</label><input id="tn" placeholder="Vor- und Nachname" autocomplete="name">
+        <label for="ttel">Telefon</label><input id="ttel" type="tel" placeholder="+43 660 …" autocomplete="tel">
+        <label for="tm">E-Mail</label><input id="tm" type="email" placeholder="name@beispiel.de" autocomplete="email">
+        <label for="tl">Gewünschte Designlinie</label>
         <select id="tl"><option>Designlinie Classic</option><option>Designlinie Comfort</option>
           <option>Designlinie Elegance</option><option>Noch unentschlossen</option></select>
-        <button class="btn light" onclick="terminSubmit()">Termin anfragen</button>
-        <div class="tok" id="tok">Danke! Wir melden uns innerhalb von 24 Stunden.</div>
-        <p class="fine">Ihre Angaben werden ausschließlich zur Terminvereinbarung verwendet.</p>
+        <label for="tw">Wunschtermin</label><input id="tw" type="date">
+        <button class="btn" onclick="terminSubmit()">Beratung anfragen</button>
+        <div class="tok" id="tok">Danke! Wir rufen Sie innerhalb von 24 Stunden an.</div>
+        <p class="fine">Ihre Angaben werden ausschließlich zur Terminvereinbarung verwendet. Barrierefreie Planung — physisch wie visuell — auf Wunsch inklusive.</p>
       </div>
     </div>
   </section>
@@ -1055,7 +1114,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
       <p class="reveal">Newsletter abonnieren und den Code sofort erhalten — gültig auf alle Accessoires und unser Eau de Toilette. Etwa zwei Mails im Monat.</p>
       <div class="nlform reveal">
         <input type="email" id="nlmail" placeholder="Ihre E-Mail-Adresse" autocomplete="email">
-        <button class="btn light" onclick="nlSubmit()">10 % sichern</button>
+        <button class="btn" onclick="nlSubmit()">10 % sichern</button>
       </div>
       <div class="nlok" id="nlok">Danke! Ihr Code <b>DOCCIA10</b> ist unterwegs.</div>
       <p class="fine">Mit der Anmeldung stimmen Sie unserer <a href="#" onclick="go('datenschutz');return false" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Datenschutzerklärung</a> zu.</p>
@@ -1464,7 +1523,7 @@ const src = k => A[k];
 
 /* ---------- Logo als SVG bauen ---------- */
 function paths(list, color){
-  return list.map((g,i)=>`<g class="gl" style="animation-delay:${(0.55+i*0.055).toFixed(2)}s">
+  return list.map((g,i)=>`<g class="gl" style="animation-delay:${(0.30+i*0.04).toFixed(2)}s">
     <g transform="translate(${g.x},0) scale(${g.s},${-g.s})"><path d="${g.d}" fill="${color}"/></g></g>`).join('');
 }
 function pathsStatic(list, color){
@@ -1473,7 +1532,7 @@ function pathsStatic(list, color){
 const BRAND=['#E8B400','#E85D2A','#1FA98A','#6C4FD8'];
 function squaresWide(size,y,x0,x1,anim){
   const centers=[0,1,2,3].map(i=>x0+(x1-x0)*i/3);
-  return BRAND.map((c,i)=>`<rect class="brandsq ${anim?'sq':''}" data-i="${i}" style="${anim?`animation-delay:${(0.75+i*0.11).toFixed(2)}s`:''}"
+  return BRAND.map((c,i)=>`<rect class="brandsq ${anim?'sq':''}" data-i="${i}" style="${anim?`animation-delay:${(0.5+i*0.07).toFixed(2)}s`:''}"
     x="${(centers[i]-size/2).toFixed(2)}" y="${y}" width="${size}" height="${size}" fill="${c}" rx="1.5"/>`).join('');
 }
 function stackedLogo(){
@@ -1519,7 +1578,7 @@ function endIntro(){
   const v=document.getElementById('heroVid');
   if(v){ try{v.currentTime=0}catch(e){} v.play().catch(()=>{}); }
 }
-setTimeout(endIntro, 3800);
+setTimeout(endIntro, 2300);
 
 /* ---------- Hero-Video ---------- */
 (function(){
@@ -1637,7 +1696,7 @@ function prodMatch(p,q){
 const LINES=[
  {n:'Classic',img:'shower2',claim:'Klar. Reduziert. Zeitlos.',from:6900,hi:0,
   f:['Fugenlose Wandflächen in einer RAL-Farbe','Sicherheitsglas 6 mm, Festteil',
-     'Unterputz-Thermostat in Chrom oder Schwarz','Edelstahl-Rinne bündig eingelassen','Demontage, Einbau und Endreinigung']},
+     'Bodenebener Einstieg — auf Wunsch barrierefrei','Unterputz-Thermostat in Chrom oder Schwarz','Demontage, Einbau und Endreinigung']},
  {n:'Comfort',img:'shower',claim:'Der meistgewählte Weg.',from:9400,hi:1,
   f:['Alles aus Classic, plus:','Regenbrause als Deckeneinbau','Handbrause mit separatem Ventil',
      'Wandnische mit indirekter Beleuchtung','Armaturen in Messing oder Bronze']},
@@ -1645,10 +1704,28 @@ const LINES=[
   f:['Alles aus Comfort, plus:','Waschbecken aus hellem Naturstein','Armaturen in Chrom gebürstet oder Nickel',
      'Hinterleuchtete Wandmarke','Spiegel mit Lichtkranz nach Maß']}
 ];
-document.getElementById('linesGrid').innerHTML = LINES.map(l=>`
+/* Farbwähler pro Dusche: klickbare Töne wechseln das Bild */
+const LINECOLORS=[
+ {n:'Weiß & Creme',c:'#EDEAE2',img:null},
+ {n:'Blassgrün',c:'#9DBBAE',img:'ral5'},
+ {n:'Taubenblau',c:'#5F7891',img:'ral4'},
+ {n:'Pastellviolett',c:'#9E8DB8',img:'ral7'},
+ {n:'Braunrot',c:'#7E2E33',img:'ral2'}
+];
+function lineColor(li,ci,btn){
+  const lc=LINECOLORS[ci];
+  document.getElementById('lineImg'+li).src=src(lc.img||LINES[li].img);
+  document.getElementById('lswn'+li).textContent=lc.n;
+  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===btn));
+  track('select_item',{line:LINES[li].n,color:lc.n});
+}
+document.getElementById('linesGrid').innerHTML = LINES.map((l,li)=>`
  <article class="line ${l.hi?'hi':''}">
    ${l.hi?'<span class="flag">Beliebteste Wahl</span>':''}
-   <img src="${src(l.img)}" alt="${l.n}" loading="lazy">
+   <img src="${src(l.img)}" id="lineImg${li}" alt="${l.n}" loading="lazy">
+   <div class="lsw">${LINECOLORS.map((lc,ci)=>`<button title="${lc.n}" style="background:${lc.c}"
+     class="${ci===0?'on':''}" onclick="lineColor(${li},${ci},this)" aria-label="${lc.n}"></button>`).join('')}
+     <span class="lswn" id="lswn${li}">Weiß &amp; Creme</span></div>
    <div class="body">
      <h3>${l.n}</h3><div class="claim">${l.claim}</div>
      <ul>${l.f.map(x=>`<li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>${x}</span></li>`).join('')}</ul>
@@ -1663,108 +1740,95 @@ document.getElementById('ralGrid').innerHTML = RAL.map(r=>`
    <div class="cap"><div class="c">${r.code}</div><div class="n">${r.n}</div></div></div>`).join('');
 
 /* ---------- Shop: Kategorien, Unterkategorien, Produkte ---------- */
+/* Drei klare Abteilungen (Vorgabe: Parfüm · Kosmetik · Textilien; Duschbereich = Designlinien) */
 const CATS=[
- {id:'frottee', n:'Bad & Frottee', img:'towelStack',
-  sub:'Bademäntel, Hand- und Badetücher aus schwerem Frottee, mit gewebter Wortmarke.',
-  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'maentel',n:'Bademäntel'}]},
- {id:'haar', n:'Haarpflege', img:'shampoo',
-  sub:'Shampoo, Kur und Maske — schützen vor Salzwasser und Chlor, spenden intensiv Feuchtigkeit.',
-  subs:[{id:'shampoo',n:'Shampoo'},{id:'kur',n:'Kur & Maske'}]},
- {id:'pflege', n:'Körperpflege', img:'careTrio',
-  sub:'Duschgel, Peeling, Body Milk und Sonnenpflege in der Duftfamilie von La Doccia.',
-  subs:[{id:'dusche',n:'Dusche & Körper'},{id:'sonne',n:'Sonne & After Sun'},{id:'sets',n:'Geschenksets'}]},
- {id:'duft', n:'Duft & Parfüm', img:'edpTrio',
+ {id:'parfuem', n:'Parfüm & Duft', img:'edpTrio',
   sub:'Eau de Parfum, Body Mist und Duftkerzen — der Duft von Meer und Zitrus, konserviert.',
   subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Body & Hair Mist'},{id:'kerzen',n:'Duftkerzen'}]},
- {id:'taschen', n:'Taschen & Accessoires', img:'bagsSet',
-  sub:'Strandtaschen, Weekender und Etuis mit dem Vier-Farben-Zeichen — für Pool, Strand und unterwegs.',
-  subs:[{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]},
- {id:'armatur', n:'Armaturen & Duschsysteme', img:'fixtures',
-  sub:'Einzelne Komponenten aus unseren Designlinien, auch ohne Komplettumbau bestellbar.',
-  subs:[{id:'thermostate',n:'Thermostate'},{id:'systeme',n:'Duschsysteme'}]}
+ {id:'kosmetik', n:'Kosmetik & Pflege', img:'careTrio',
+  sub:'Haarpflege, Dusche, Körper und Sonne — mild, sulfatfrei und duftgleich mit der Kollektion.',
+  subs:[{id:'shampoo',n:'Haarpflege'},{id:'dusche',n:'Dusche & Körper'},{id:'sonne',n:'Sonne & After Sun'},{id:'sets',n:'Geschenksets'}]},
+ {id:'textil', n:'Textilien & Accessoires', img:'towelStack',
+  sub:'Frottee, Bademäntel, Taschen und Etuis mit der gewebten Wortmarke.',
+  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'maentel',n:'Bademäntel'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
 ];
 const P=[
- {id:'set-essential',cat:'frottee',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelStack',img2:'setShelf',r:4.9,rv:34,badge:'Bestseller',mat:'100 % Baumwolle, 600 g/m²',rel:['gel','kerze','shampoo'],
+ {id:'set-essential',cat:'textil',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelStack',img2:'setShelf',r:4.9,rv:34,badge:'Bestseller',mat:'100 % Baumwolle, 600 g/m²',rel:['gel','kerze','shampoo'],
   d:'Drei Handtücher aus 600 g/m² Baumwollfrottee in Creme, Weiß und Grau, mit gewebter Wortmarke und dem Vier-Farben-Zeichen. Vorgewaschen, dadurch sofort saugfähig und formstabil.',
   x:'Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe, so bleibt der Flor weich und voluminös.'},
- {id:'set-gold',cat:'frottee',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
+ {id:'set-gold',cat:'textil',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
   d:'Die gleiche Qualität wie das Wellness-Essential, mit Wortmarke in feiner Webkante. Passend zu allen Farben der Kollektion.',
   x:'Waschbar bei 60 °C mit Colorwaschmittel, kein Weichspüler. Die Webkante vor dem Waschen glatt streichen und links waschen — so bleibt die goldene Stickerei jahrelang schön.'},
- {id:'towel-oro',cat:'frottee',sc:'tuecher',colors:[0,3],n:'Badetuch „Oro", 70 × 140 cm',p:39,old:49,img:'towelsGold',img2:'towel',r:4.8,rv:11,mat:'100 % Baumwolle, 600 g/m²',rel:['set-gold','gel','kerze'],
+ {id:'towel-oro',cat:'textil',sc:'tuecher',colors:[0,3],n:'Badetuch „Oro", 70 × 140 cm',p:39,old:49,img:'towelsGold',img2:'towel',r:4.8,rv:11,mat:'100 % Baumwolle, 600 g/m²',rel:['set-gold','gel','kerze'],
   d:'Großes Badetuch aus schwerem Frottee mit goldener Webkante. Einzeln erhältlich — passend zum Handtuch-Set „Oro".',
   x:'Waschbar bei 60 °C, ohne Weichspüler. Vor dem ersten Gebrauch separat waschen, dann ist es sofort voll saugfähig.'},
- {id:'mantel-creme',cat:'frottee',sc:'maentel',colors:[1,2,3],n:'Waffelpiqué-Bademantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
+ {id:'mantel-creme',cat:'textil',sc:'maentel',who:'damen',colors:[1,2,3],n:'Waffelpiqué-Bademantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
   d:'Leichter Waffelpiqué-Mantel mit Schalkragen und zwei aufgesetzten Taschen. Trocknet schnell, ideal auch für warme Räume.',
   x:'Waschbar bei 40 °C im Schonwaschgang, trocknet über Nacht an der Luft. Der leichte Waffelpiqué ist ideal für Frühjahr und Sommer — im Winter empfehlen wir ihn über dem Pyjama.'},
- {id:'mantel-anth',cat:'frottee',sc:'maentel',n:'Waffelpiqué-Bademantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-gold','gel','edp-sea'],
+ {id:'mantel-anth',cat:'textil',sc:'maentel',who:'herren',n:'Waffelpiqué-Bademantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-gold','gel','edp-sea'],
   d:'Der gleiche Schnitt in Anthrazit. Unisex, in den Größen S bis XL erhältlich.',
   x:'Waschbar bei 40 °C, auf links gedreht mit Colorwaschmittel — so bleibt das Anthrazit satt. Schonend trocknergeeignet, fällt normal groß aus.'},
 
- {id:'shampoo',cat:'haar',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampoo',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
+ {id:'shampoo',cat:'kosmetik',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampoo',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
   d:'Feuchtigkeitsshampoo für beanspruchtes Haar nach Sonne und Schwimmen. Schützt vor Salzwasser und Chlor, ohne zu beschweren.',
   x:'Sulfatfrei, mit Panthenol und 2 % Arganöl. Mild genug für die tägliche Wäsche — besonders wertvoll in der Badesaison von Mai bis September.'},
- {id:'haar-set',cat:'haar',sc:'kur',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'shampoo',r:4.9,rv:15,rel:['gel','mist-nude','aloe'],
+ {id:'haar-set',cat:'kosmetik',sc:'shampoo',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'shampoo',r:4.9,rv:15,rel:['gel','mist-nude','aloe'],
   d:'Feuchtigkeits-Shampoo (250 ml) und nährende Maske (200 ml) als Kur. Intensive Feuchtigkeit und Tiefenschutz vor Salzwasser und Chlor.',
   x:'Die Maske mit Sheabutter und 3 % Arganöl einmal pro Woche 5 Minuten einwirken lassen. Ideal als Kur nach dem Sommerurlaub oder in der trockenen Heizungsluft im Winter.'},
 
- {id:'care-trio',cat:'pflege',sc:'dusche',n:'Körperpflege-Trio: Gel, Peeling, Milk',p:59,old:72,img:'careTrio',img2:'bodyTrio',r:4.9,rv:18,badge:'Set',rel:['kerze','aloe','shampoo'],
+ {id:'care-trio',cat:'kosmetik',sc:'dusche',n:'Körperpflege-Trio: Gel, Peeling, Milk',p:59,old:72,img:'careTrio',img2:'bodyTrio',r:4.9,rv:18,badge:'Set',rel:['kerze','aloe','shampoo'],
   d:'Refreshing Shower Gel, Body Scrub und Post-Shower Milk als aufeinander abgestimmte Routine. Frischer Zitrus-Duft der Kollektion.',
   x:'Alle drei pH-hautneutral mit pflanzlichem Glyzerin. Das Peeling 1–2× pro Woche anwenden; im Winter die Body Milk großzügiger dosieren, im Sommer reicht eine dünne Schicht.'},
- {id:'gel',cat:'pflege',sc:'dusche',colors:[0,1,2],n:'Refreshing Shower Gel, 300 ml',p:19,img:'bodyTrio',img2:'careTrio',r:4.9,rv:28,ml:300,rel:['care-trio','shampoo','aloe'],
+ {id:'gel',cat:'kosmetik',sc:'dusche',colors:[0,1,2],n:'Refreshing Shower Gel, 300 ml',p:19,img:'bodyTrio',img2:'careTrio',r:4.9,rv:28,ml:300,rel:['care-trio','shampoo','aloe'],
   d:'Erfrischendes Duschgel mit Zitrus und Kräutern, mild und sulfatfrei. Duftgleich mit dem Eau de Parfum, pH-hautneutral.',
   x:'Sulfatfrei, pH 5,5, mit Aloe vera — auch für empfindliche und sonnenstrapazierte Haut. Ein Ganzjahresprodukt: belebend am Morgen, mild genug für zweimal tägliches Duschen.'},
- {id:'jar-trio',cat:'pflege',sc:'sonne',n:'Sonnenpflege-Trio: SPF 50, Aloe, Body Oil',p:69,old:84,img:'jarTrio',img2:'careSet',r:5.0,rv:11,badge:'Set',rel:['aloe','tote','mist-blue'],
+ {id:'jar-trio',cat:'kosmetik',sc:'sonne',n:'Sonnenpflege-Trio: SPF 50, Aloe, Body Oil',p:69,old:84,img:'jarTrio',img2:'careSet',r:5.0,rv:11,badge:'Set',rel:['aloe','tote','mist-blue'],
   d:'Sunscreen SPF 50, kühlendes Aloe-Gel und pflegendes Body Oil im Glas mit Holzdeckel. Für den Tag am Wasser und die Pflege danach.',
   x:'SPF 50 mit UVA-Breitbandschutz, alle 2 Stunden nachcremen. Das Body Oil hat 98 % Ölanteil aus Jojoba- und Mandelöl — abends auf die noch feuchte Haut. Das Sommer-Set für Strand und Pool.'},
- {id:'aloe',cat:'pflege',sc:'sonne',n:'Cooling Aloe Gel, 100 ml',p:22,img:'careSet',img2:'jarTrio',r:4.9,rv:16,ml:100,rel:['jar-trio','gel','mist-blue'],
+ {id:'aloe',cat:'kosmetik',sc:'sonne',n:'Cooling Aloe Gel, 100 ml',p:22,img:'careSet',img2:'jarTrio',r:4.9,rv:16,ml:100,rel:['jar-trio','gel','mist-blue'],
   d:'Kühlendes Aloe-Gel für die Haut nach Sonne und Salzwasser. Zieht schnell ein, spendet sofort Feuchtigkeit.',
   x:'94 % Aloe-vera-Anteil, ohne Parfüm und Alkohol. Im Kühlschrank gelagert kühlt es nach dem Sonnenbad doppelt — der Sommer-Begleiter von Juni bis September.'},
- {id:'set-shelf',cat:'pflege',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'setShelf',img2:'towelStack',r:5.0,rv:9,badge:'Set',rel:['kerze','gel','mist-nude'],
+ {id:'set-shelf',cat:'kosmetik',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'setShelf',img2:'towelStack',r:5.0,rv:9,badge:'Set',rel:['kerze','gel','mist-nude'],
   d:'Handtuch-Set, Duschgel und Duftkerze in der Geschenkverpackung. Der Klassiker zum Verschenken. Sie sparen gegenüber dem Einzelkauf.',
   x:'Die Handtücher sind bei 60 °C waschbar (ohne Weichspüler), Duschgel und Kerze tragen den Zitrus-Duft der Kollektion. Beliebtestes Geschenk zu Weihnachten und zum Einzug.'},
 
- {id:'edp-sea',cat:'duft',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'edpTrio',img2:'edpItalia',r:4.8,rv:26,rel:['mist-nude','gel','kerze'],
+ {id:'edp-sea',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'edpTrio',img2:'edpItalia',r:4.8,rv:26,rel:['mist-nude','gel','kerze'],
   d:'Kopfnote aus Meersalz und Bergamotte, Herz aus grünem Kardamom, Basis aus Zedernholz und weißem Moschus. In Grasse abgefüllt.',
   x:'12 % Duftölanteil, hält 6–8 Stunden auf der Haut. Ein frisch-aquatischer Tagesduft — am schönsten im Frühling und Sommer, im Büro wie am Wasser. 2 Sprühstöße auf Puls und Schlüsselbein genügen.'},
- {id:'edp-citrus',cat:'duft',sc:'edp',n:'Eau de Parfum „Citrus Accent", 50 ml',p:119,img:'edpItalia',img2:'edpTrio',r:4.8,rv:19,rel:['mist-blue','gel','aloe'],
+ {id:'edp-citrus',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Citrus Accent", 50 ml',p:119,img:'edpItalia',img2:'edpTrio',r:4.8,rv:19,rel:['mist-blue','gel','aloe'],
   d:'Spritzige Zitrus-Komposition mit Zitrone, Grapefruit und Vetiver. Frisch und lebendig, für heiße Tage.',
   x:'11 % Duftölanteil, bewusst leicht gehalten — der Duft für Hochsommer und Urlaub, wenn schwere Noten zu viel wären. Hält 4–6 Stunden, gern großzügig aufgefrischt.'},
- {id:'edp-set',cat:'duft',sc:'edp',n:'Eau de Parfum Duo, 2 × 50 ml',p:199,old:238,img:'edpTrio',img2:'edpItalia',r:5.0,rv:8,badge:'Set',rel:['kerze','mist-nude','gel'],
+ {id:'edp-set',cat:'parfuem',sc:'edp',n:'Eau de Parfum Duo, 2 × 50 ml',p:199,old:238,img:'edpTrio',img2:'edpItalia',r:5.0,rv:8,badge:'Set',rel:['kerze','mist-nude','gel'],
   d:'Sea Breeze und Citrus Accent im Set — die beiden Signature-Düfte der Kollektion. Sie sparen gegenüber dem Einzelkauf.',
   x:'Sea Breeze (12 % Duftöl) als eleganter Tagesduft von Frühling bis Herbst, Citrus Accent (11 %) für die heißen Wochen — zusammen decken sie das ganze Jahr ab. Kühl und dunkel gelagert halten beide mindestens 24 Monate.'},
- {id:'mist-nude',cat:'duft',sc:'mist',n:'Body & Hair Mist, 100 ml',p:39,img:'mistNude',img2:'mistBlue',r:4.7,rv:22,badge:'Neu',ml:100,rel:['edp-sea','shampoo','gel'],
+ {id:'mist-nude',cat:'parfuem',sc:'mist',n:'Body & Hair Mist, 100 ml',p:39,img:'mistNude',img2:'mistBlue',r:4.7,rv:22,badge:'Neu',ml:100,rel:['edp-sea','shampoo','gel'],
   d:'Leichter Duftnebel für Haut und Haar, dezent und alltagstauglich. Pflegt und parfümiert in einem.',
   x:'3 % Duftölanteil mit pflegendem Panthenol — bewusst dezent für Alltag, Sport und Büro. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren.'},
- {id:'mist-blue',cat:'duft',sc:'mist',n:'Body & Hair Mist „Eau Fraîche", 100 ml',p:39,img:'mistBlue',img2:'mistNude',r:4.8,rv:14,ml:100,rel:['edp-citrus','aloe','gel'],
+ {id:'mist-blue',cat:'parfuem',sc:'mist',n:'Body & Hair Mist „Eau Fraîche", 100 ml',p:39,img:'mistBlue',img2:'mistNude',r:4.8,rv:14,ml:100,rel:['edp-citrus','aloe','gel'],
   d:'Frischer, aquatischer Duftnebel für Körper und Haar. Kühlt und erfrischt an heißen Tagen.',
   x:'3 % Duftölanteil mit Menthol-Frischeeffekt — im Sommer gekühlt aufsprühen, erfrischt sofort. Der leichte Begleiter für Strandtage und warme Nächte.'},
- {id:'kerze',cat:'duft',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'candles3',img2:'setShelf',r:4.7,rv:12,badge:'Neu',g:220,rel:['edp-sea','gel','set-essential'],
+ {id:'kerze',cat:'parfuem',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'candles3',img2:'setShelf',r:4.7,rv:12,badge:'Neu',g:220,rel:['edp-sea','gel','set-essential'],
   d:'Sojawachs mit Baumwolldocht im matten Glas mit Reliefdekor, erhältlich in Rosé, Lavendel und Salbei. Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen — so brennt sie gleichmäßig ab. Besonders stimmungsvoll in Herbst und Winter.'},
- {id:'kerze-salbei',cat:'duft',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'candle',img2:'candles3',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
+ {id:'kerze-salbei',cat:'parfuem',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'candle',img2:'candles3',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
   d:'Grüner Salbei über warmem Eichenholz — der ruhige Duft der La-Doccia-Bäder für zu Hause. Sojawachs im matten Glas, Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Docht vor jedem Anzünden auf 5 mm kürzen; beim ersten Brennen die Oberfläche vollständig flüssig werden lassen.'},
- {id:'edt-riva',cat:'duft',sc:'edp',n:'Eau de Toilette „Riva", 100 ml',p:89,img:'flacon1',img2:'flacon2',r:4.9,rv:6,badge:'Neu',rel:['mist-nude','gel','kerze-salbei'],
+ {id:'edt-riva',cat:'parfuem',sc:'edp',n:'Eau de Toilette „Riva", 100 ml',p:89,img:'flacon1',img2:'flacon2',r:4.9,rv:6,badge:'Neu',rel:['mist-nude','gel','kerze-salbei'],
   d:'Der leichte Einstieg in die Duftfamilie: Zitrus und Meersalz, weicher als das Eau de Parfum, gemacht für jeden Tag.',
   x:'8 % Duftölanteil, hält 3–5 Stunden — bewusst leicht für den Alltag und großzügiges Auftragen. Frühling bis Herbst, im Sommer auch zum Nachsprühen unterwegs.'},
 
- {id:'tote',cat:'taschen',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'bagsSet',img2:'pouchSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
+ {id:'tote',cat:'textil',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'bagsSet',img2:'pouchSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
   d:'Geräumige Strandtasche mit Kordelgriffen und wasserabweisendem Innenfach. Weiß mit dem Vier-Farben-Zeichen.',
   x:'Fester Baumwoll-Canvas (450 g/m²) mit beschichtetem Innenfach für nasse Badesachen. Flecken feucht abwischen, bei Bedarf Handwäsche bei 30 °C — nicht in den Trockner.'},
- {id:'weekender',cat:'taschen',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'bagsSet',img2:'pouchSet',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
+ {id:'weekender',cat:'textil',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'bagsSet',img2:'pouchSet',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
   d:'Sportlicher Weekender und passender Rucksack im Colour-Block-Design der Marke. Ideal für Kurztrips und Pooltage.',
   x:'Wasserabweisendes Gewebe aus recyceltem Polyester, einfach feucht abwischen. Der Weekender fasst 40 Liter und passt als Handgepäck — für Wochenendtrips das ganze Jahr über.'},
- {id:'pouches',cat:'taschen',sc:'etuis',n:'Etui- & Beutel-Set, 4-teilig',p:39,img:'pouchSet',img2:'bagsSet',r:4.9,rv:13,badge:'Neu',mat:'100 % Baumwolle (Beutel)',rel:['tote','mist-nude','aloe'],
+ {id:'pouches',cat:'textil',sc:'etuis',n:'Etui- & Beutel-Set, 4-teilig',p:39,img:'pouchSet',img2:'bagsSet',r:4.9,rv:13,badge:'Neu',mat:'100 % Baumwolle (Beutel)',rel:['tote','mist-nude','aloe'],
   d:'Brillenetuis und Baumwollbeutel mit Wortmarke — praktisch für Sonnenbrille, Schmuck und kleine Utensilien. Vier Teile im Set.',
   x:'Die Baumwollbeutel sind bei 30 °C waschbar, die Etuis mit festem Kern bitte nur feucht abwischen. Innen weich gefüttert — Brillengläser bleiben kratzerfrei.'},
-
- {id:'thermostat',cat:'armatur',sc:'thermostate',n:'Unterputz-Thermostat „Oro"',p:890,img:'fixtures',img2:'showerGold',r:4.9,rv:14,mat:'Massives Messing, PVD-beschichtet',rel:['regenset','set-essential','gel'],
-  d:'Massives Messing, PVD-beschichtet in Gold. Thermostat mit Verbrühschutz bei 38 °C, inklusive Handbrause und Wandanschlussbogen.',
-  x:'Nach dem Duschen kurz trockenwischen, das verhindert Kalkflecken. Keine Scheuermittel oder essighaltigen Reiniger — sie greifen die PVD-Beschichtung an. Montage durch den Fachbetrieb, 5 Jahre Garantie auf die Oberfläche.'},
- {id:'regenset',cat:'armatur',sc:'systeme',n:'Regenbrause-Set „Oro", 300 mm',p:1290,old:1490,img:'showerGold',img2:'fixtures',r:5.0,rv:8,mat:'Massives Messing, PVD-beschichtet',rel:['thermostat','set-essential','kerze'],
-  d:'Deckenarm mit 300-mm-Regenbrause, Thermostat und Handbrause als abgestimmtes Set. Auch in Bronze, Schwarz matt und Chrom lieferbar.',
-  x:'Die Silikon-Noppen der Brause nach dem Duschen kurz abreiben, das löst Kalk sofort. PVD-Oberfläche nur mit weichem Tuch und pH-neutralem Reiniger pflegen. Empfohlener Wasserdruck 2–5 bar.'}
 ];
+/* Armaturen sind bewusst kein Shop-Artikel mehr — sie laufen über die
+   Designlinien & Beratung (Vorgabe aus dem Gespräch). */
 const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
 
 /* ---------- Kuratierte Kollektionen (virtuelle Kategorien) ----------
@@ -1807,7 +1871,7 @@ function card(p){
         ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
         : eur(p.p)}</div>${gpLine(p)}</div></article>`;
 }
-const BRANDHEX=['#C9A227','#D98C6A','#7FA6A0','#8E8CB8'];
+const BRANDHEX=BRAND;  // Produkt-Swatches in den echten, kräftigen Markenfarben
 function cardRail(p){
   const d=disc(p);
   const sw = p.colors ? `<div class="swatches">${p.colors.map(i=>`<i style="background:${BRANDHEX[i]}"></i>`).join('')}</div>` : '';
@@ -1838,7 +1902,7 @@ function cardRail(p){
 })();
 
 /* ---------- Shop-Seite ---------- */
-let curCat='all', curSub='all', curSort='rec', curQ='';
+let curCat='all', curSub='all', curSort='rec', curQ='', curWho='all';
 document.getElementById('catBar').innerHTML =
   `<div class="chiprow">`+[{id:'all',n:'Alle Produkte'},{id:'sale',n:'Sale',cls:'salechip'},{id:'neu',n:'Neuheiten'}].concat(CATS).map(c=>
     `<button class="chip ${c.cls||''} ${c.id==='all'?'on':''}" data-c="${c.id}" onclick="filt('${c.id}')">${c.n}</button>`).join('')+`</div>`
@@ -1851,8 +1915,9 @@ document.getElementById('catBar').innerHTML =
        <option value="rec">Empfohlen</option><option value="asc">Preis aufsteigend</option>
        <option value="desc">Preis absteigend</option><option value="sale">Sale zuerst</option>
      </select></div>`;
+function whoFilt(id){curWho=id;renderShop()}
 function filt(id){
-  curCat=id; curSub='all';
+  curCat=id; curSub='all'; curWho='all';
   document.querySelectorAll('#catBar .chip').forEach(c=>c.classList.toggle('on',c.dataset.c===id));
   track('filter_used',{filter:id});
   renderShop();
@@ -1919,27 +1984,45 @@ function renderShop(){
           <div class="lab">${id==='sale'?`<span class="stag">Bis zu −${mS} %</span>`:''}
             <div class="n">${c.n}</div><span class="lk2">Jetzt entdecken</span></div>
         </div>`).join('')}</div>
-      <div class="grouplbl">Kategorien</div>
+      <div class="grouplbl">Abteilungen</div>
       <div class="catgrid">${CATS.map(c=>{
         const cnt=P.filter(p=>p.cat===c.id).length;
         return `<div class="tcat" onclick="filt('${c.id}')"><img src="${src(c.img)}" alt="${c.n}" loading="lazy">
-          <div class="lab"><div class="n">${c.n}</div><div class="c">${cnt} Artikel</div></div></div>`}).join('')}</div>`;
+          <div class="lab"><div class="n">${c.n}</div><div class="c">${cnt} Artikel</div></div></div>`}).join('')}
+        <div class="tcat" onclick="goSec('linien')"><img src="${src('showerGold')}" alt="Duschbereich" loading="lazy">
+          <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien &amp; Beratung</div></div></div></div>`;
   }
-  const body = cats.map(c=>{
-    let list=P.filter(p=>p.cat===c.id);
-    if(q) list=list.filter(p=>prodMatch(p,q));
-    const subbar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:22px">
-        <button class="subchip ${curSub==='all'?'on':''}" onclick="subFilt('all')">Alle</button>
-        ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
-          onclick="subFilt('${s.id}')">${s.n}</button>`).join('')}</div>` : '';
-    if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
-    list=sortList(list); total+=list.length;
-    if(q&&!list.length) return '';
-    return `<section class="catsec">
-      <div class="subhead"><h2>${c.n}</h2><span class="cnt">${list.length} Artikel</span></div>
-      <p class="sub">${c.sub}</p>${subbar}
-      <div class="pg">${list.map(card).join('')}</div></section>`;
-  }).join('');
+  /* Übersicht = Einstiegsseite (Calzedonia-Prinzip): Kacheln + Bestseller,
+     kein 23-Produkte-Dump. Produktgrids gibt es pro Abteilung. */
+  let body='';
+  if(curCat==='all'&&!q){
+    const best=[...P].sort((a,b)=>b.r*b.rv-a.r*a.rv).slice(0,8);
+    body=`<div class="grouplbl">Bestseller</div>
+      <div class="rail">${best.map(cardRail).join('')}</div>`;
+    total=P.length;
+  }else{
+    body = cats.map(c=>{
+      let list=P.filter(p=>p.cat===c.id);
+      if(q) list=list.filter(p=>prodMatch(p,q));
+      const subbar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:12px">
+          <button class="subchip ${curSub==='all'?'on':''}" onclick="subFilt('all')">Alle</button>
+          ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
+            onclick="subFilt('${s.id}')">${s.n}</button>`).join('')}</div>` : '';
+      const whos=[...new Set(P.filter(p=>p.cat===c.id&&p.who).map(p=>p.who))];
+      const whobar = (curCat!=='all'&&whos.length) ? `<div class="subbar" style="margin-bottom:22px">
+          <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Für alle</button>
+          ${whos.map(w=>`<button class="subchip ${curWho===w?'on':''}"
+            onclick="whoFilt('${w}')">${w==='damen'?'Damen':'Herren'}</button>`).join('')}</div>` : '';
+      if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
+      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>p.who===curWho);
+      list=sortList(list); total+=list.length;
+      if(q&&!list.length) return '';
+      return `<section class="catsec">
+        <div class="subhead"><h2>${c.n}</h2><span class="cnt">${list.length} Artikel</span></div>
+        <p class="sub">${c.sub}</p>${subbar}${whobar}
+        <div class="pg">${list.map(card).join('')}</div></section>`;
+    }).join('');
+  }
   /* Kein-Treffer: nie eine leere Seite */
   const noRes = (q&&total===0) ? `<div class="noresult"><p>Keine Produkte zu „${q}“ gefunden.</p>
       <p style="font-size:13px;margin-top:6px">Tipp: Prüfen Sie die Schreibweise oder stöbern Sie in den Kategorien.</p></div>
@@ -2252,10 +2335,11 @@ function popSubmit(){
 }
 function popClose(){document.getElementById('pop').classList.remove('on')}
 function terminSubmit(){
-  const n=document.getElementById('tn').value.trim(), m=document.getElementById('tm').value.trim();
-  if(!n||!m){toast('Bitte Name und Kontakt angeben');return}
+  const n=document.getElementById('tn').value.trim(), t=document.getElementById('ttel').value.trim();
+  if(!n||!t){toast('Bitte Name und Telefonnummer angeben');return}
+  track('generate_lead',{line:document.getElementById('tl').value});
   document.getElementById('tok').style.display='block';
-  toast('Anfrage eingegangen — wir melden uns.');
+  toast('Anfrage eingegangen — wir rufen Sie an.');
 }
 /* Popup nur ein einziges Mal pro Besucher (localStorage), erst nach 22 s Verweildauer */
 setTimeout(()=>{

@@ -21,6 +21,14 @@ keine Bestandsdaten) nicht sauber umsetzbar und wurden bewusst NICHT als Attrapp
 - **Filter-Zustand in der URL**: Single-Page ohne Router. Bei Umzug auf ein Framework/Shop-System nachziehen.
 - **Produktfinder-Quiz, Shop-the-Look, Journal/SEO-Artikel**: lohnt ab größerem Sortiment bzw. wenn Content produziert wird.
 
+## Aus dem Gespräch mit Oleg — wartet auf Zulieferung
+- **Telefonnummer**: Im Header, Mobilmenü und Beratungsformular steht der Platzhalter „01 555 01 00" (`tel:+4315550100`) — durch die echte Nummer ersetzen (3 Stellen in `index.html` suchen: „5550100").
+- **Glas-Lieferanten-Link** (kommt per WhatsApp): daraus 5 echte Farbtöne für den Dusch-Farbwähler wählen — aktuell Weiß & Creme, Blassgrün, Taubenblau, Pastellviolett, Braunrot (`LINECOLORS` im Script, mit ral-Beispielbildern hinterlegt).
+- **Rahmen-Foto für die Quadrate** (kommt per WhatsApp): Rahmen-Variante des Logos testen.
+- **Thermochrome Quadrate** (Farbe wechselt mit Temperatur): als Produkt-Story/USP-Modul einbauen, sobald es real ist — nichts versprechen, was noch nicht existiert.
+- **Kinder-Kategorie**: Struktur (Damen/Herren-Filter) ist gebaut und erweitert sich automatisch, sobald Produkte ein `who:'kinder'` bekommen — aktuell gibt es keine Kinderprodukte.
+- **Viele Farben pro Produkt** (Lacoste-Prinzip, 10–25 Farben): braucht echte Varianten-Daten + Bilder je Farbe.
+
 ## Vom Kunden zu liefern
 - Telefonnummer + E-Mail (gelbe Markierungen in Impressum/Datenschutz/Widerruf/Kontakt)
 - UID-Nummer bzw. Kleinunternehmer-Hinweis, USt.-Ausweis der Preise
