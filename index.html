@@ -409,6 +409,7 @@ footer{background:var(--ink);color:rgba(247,243,236,.6);padding:clamp(54px,7vw,8
 .railnote{font-size:12.5px;color:var(--ink-45);margin-top:14px}
 .shophead{padding:clamp(40px,6vw,76px) 0 clamp(20px,3vw,30px)}
 .shophead h1{font-size:clamp(34px,6vw,64px);margin:14px 0 14px}
+#shopTitle::before{content:'';display:block;width:52px;height:6px;background:var(--dc,transparent);margin-bottom:16px}
 .shophead p{color:var(--ink-70);max-width:56ch}
 .catbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:18px 0;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -829,6 +830,45 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .lsw button.on{box-shadow:0 0 0 2px var(--ink)}
 .lsw .lswn{font-size:11px;letter-spacing:.08em;color:var(--ink-45);margin-left:4px}
 
+/* ============ GEFÜHRTER SHOP-EINSTIEG ============ */
+/* Große, leicht lesbare Luxus-Typo (Referenz: SumUp-Anzeige, nur in edel) */
+.stx .mega{font-size:clamp(46px,8vw,104px);line-height:1.02;letter-spacing:-.015em;
+  color:var(--paper);font-weight:500;margin-bottom:18px;text-shadow:0 2px 22px rgba(26,22,19,.4)}
+.stx p{font-size:clamp(14px,1.6vw,17px)}
+/* Abteilungs-Blöcke: ein Block = eine Entscheidung */
+.depts{display:flex;flex-direction:column;gap:clamp(18px,3vw,34px);margin:34px 0 0}
+.dept{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3.4vw,54px);align-items:center;
+  background:#fff;border:1px solid var(--line)}
+.dept.rev .dimg{order:2}
+.dept .dimg{cursor:pointer;overflow:hidden;height:100%}
+.dept .dimg img{width:100%;height:100%;min-height:300px;object-fit:cover;display:block;
+  transition:1.1s cubic-bezier(.2,.7,.3,1)}
+.dept .dimg:hover img{transform:scale(1.04)}
+.dept .dtx{padding:clamp(26px,3.4vw,52px)}
+.dbar{display:block;width:52px;height:6px;margin-bottom:18px}
+.dept h3{font-size:clamp(34px,4.6vw,60px);letter-spacing:-.01em;margin-bottom:12px}
+.dept .dtx>p{font-size:15px;color:var(--ink-70);max-width:44ch;margin-bottom:20px;line-height:1.65}
+.dlinks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.dlinks button{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:12px 22px;
+  border:1px solid var(--line);background:var(--paper);transition:.25s;font-weight:500}
+.dlinks button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.soon{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-45);
+  padding:12px 16px;border:1px dashed var(--line);cursor:default}
+.subchip.soon{padding:8px 14px;background:none}
+.dgew{font-size:13px;color:var(--ink-70);margin-bottom:18px}
+.dgew b{color:var(--ink);font-weight:500}
+@media(max-width:820px){
+  .dept{grid-template-columns:1fr}
+  .dept.rev .dimg{order:0}
+  .dept .dimg img{min-height:0;aspect-ratio:16/10}
+  .dept .dtx{padding:22px 20px 26px}
+}
+/* Sale/Neuheiten als schlanke Doppelzeile */
+.salerow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);margin-top:clamp(18px,3vw,34px)}
+.salerow .coll{grid-column:auto}
+.salerow .coll img{aspect-ratio:21/9}
+@media(max-width:700px){.salerow{grid-template-columns:1fr}}
+
 /* ============ ÖFFNUNGS-ANIMATIONEN ============ */
 @keyframes viewIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .view.on{animation:viewIn .5s cubic-bezier(.2,.7,.3,1)}
@@ -865,10 +905,10 @@ nav.main .salelink:hover{border-color:#8C3B2E}
       <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <a href="#" id="headLogoLink" onclick="go('home');return false"><span id="headLogoHost"></span></a>
     <nav class="main">
-      <a href="#linien" onclick="goSec('linien');return false">Duschen</a>
-      <a href="#" onclick="go('shop','parfuem');return false">Parfüm</a>
+      <a href="#linien" onclick="goSec('linien');return false">Duschkonzepte</a>
+      <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
       <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
-      <a href="#" onclick="go('shop','textil');return false">Textilien</a>
+      <a href="#" onclick="go('shop','textil');return false">Textil</a>
       <a href="#" onclick="go('shop','all');return false">Shop</a>
       <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale</a>
       <a href="#termin" onclick="goSec('termin');return false">Beratung</a>
@@ -889,10 +929,10 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 
 <div class="mnav" id="mnav">
   <button class="x" onclick="mnav(0)">&times;</button>
-  <a href="#linien" onclick="mnav(0);goSec('linien');return false">Duschen</a>
-  <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfüm</a>
+  <a href="#linien" onclick="mnav(0);goSec('linien');return false">Duschkonzepte</a>
+  <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfümerie</a>
   <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
-  <a href="#" onclick="go('shop','textil');mnav(0);return false">Textilien</a>
+  <a href="#" onclick="go('shop','textil');mnav(0);return false">Textil</a>
   <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
   <a href="#" class="sub" style="color:#8C3B2E" onclick="go('shop','sale');mnav(0);return false">Sale</a>
   <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
@@ -904,10 +944,10 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 
 <!-- Kategorie-Leiste (mobil, immer sichtbar — direkter Weg in den Shop) -->
 <div class="mobcats">
-  <a onclick="goSec('linien')">Duschen</a>
-  <a onclick="go('shop','parfuem')">Parfüm</a>
+  <a onclick="go('shop','parfuem')">Parfümerie</a>
   <a onclick="go('shop','kosmetik')">Kosmetik</a>
-  <a onclick="go('shop','textil')">Textilien</a>
+  <a onclick="go('shop','textil')">Textil</a>
+  <a onclick="goSec('linien')">Duschkonzepte</a>
   <a class="salelink" onclick="go('shop','sale')">Sale</a>
   <a onclick="go('shop','neu')">Neuheiten</a>
 </div>
@@ -1004,6 +1044,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
       <div class="lines reveal" id="linesGrid"></div>
       <p style="margin-top:34px;font-size:13.5px;color:var(--ink-45);max-width:60ch">
         Preise als Richtwerte für ein Bad bis 8 m². Der Endpreis ergibt sich nach dem Aufmaß vor Ort und ist dann verbindlich.
+        Auch für Gewerbe: Hotels, Fitnessstudios und Friseursalons betreuen wir mit eigenen Konditionen — <a href="#termin" style="color:var(--brass);text-decoration:underline;text-underline-offset:3px">sprechen Sie uns an</a>.
       </p>
     </div>
   </section>
@@ -1530,10 +1571,15 @@ function pathsStatic(list, color){
   return list.map(g=>`<g transform="translate(${g.x},0) scale(${g.s},${-g.s})"><path d="${g.d}" fill="${color}"/></g>`).join('');
 }
 const BRAND=['#E8B400','#E85D2A','#1FA98A','#6C4FD8'];
+/* Die Quadrate sind jetzt RAHMEN (Vorgabe aus Olegs Skizze):
+   fill:none + kräftiger Stroke statt gefüllter Fläche. */
 function squaresWide(size,y,x0,x1,anim){
   const centers=[0,1,2,3].map(i=>x0+(x1-x0)*i/3);
+  const sw=Math.max(2,size*0.26);
   return BRAND.map((c,i)=>`<rect class="brandsq ${anim?'sq':''}" data-i="${i}" style="${anim?`animation-delay:${(0.5+i*0.07).toFixed(2)}s`:''}"
-    x="${(centers[i]-size/2).toFixed(2)}" y="${y}" width="${size}" height="${size}" fill="${c}" rx="1.5"/>`).join('');
+    x="${(centers[i]-size/2+sw/2).toFixed(2)}" y="${(y+sw/2).toFixed(2)}"
+    width="${(size-sw).toFixed(2)}" height="${(size-sw).toFixed(2)}"
+    fill="none" stroke="${c}" stroke-width="${sw.toFixed(2)}" rx="1"/>`).join('');
 }
 function stackedLogo(){
   const {word,ww}=LOGO;
@@ -1740,15 +1786,16 @@ document.getElementById('ralGrid').innerHTML = RAL.map(r=>`
    <div class="cap"><div class="c">${r.code}</div><div class="n">${r.n}</div></div></div>`).join('');
 
 /* ---------- Shop: Kategorien, Unterkategorien, Produkte ---------- */
-/* Drei klare Abteilungen (Vorgabe: Parfüm · Kosmetik · Textilien; Duschbereich = Designlinien) */
+/* Katalogstruktur (Notizbuch): Parfümerie · Kosmetik · Textil, je Damen/Herren/Kinder.
+   Jede Abteilung hat ihre eigene Markenfarbe — Farbe führt durch die Seite. */
 const CATS=[
- {id:'parfuem', n:'Parfüm & Duft', img:'edpTrio',
+ {id:'parfuem', n:'Parfümerie', img:'edpTrio', col:'var(--c4)',
   sub:'Eau de Parfum, Body Mist und Duftkerzen — der Duft von Meer und Zitrus, konserviert.',
   subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Body & Hair Mist'},{id:'kerzen',n:'Duftkerzen'}]},
- {id:'kosmetik', n:'Kosmetik & Pflege', img:'careTrio',
+ {id:'kosmetik', n:'Kosmetik', img:'careTrio', col:'var(--c3)',
   sub:'Haarpflege, Dusche, Körper und Sonne — mild, sulfatfrei und duftgleich mit der Kollektion.',
   subs:[{id:'shampoo',n:'Haarpflege'},{id:'dusche',n:'Dusche & Körper'},{id:'sonne',n:'Sonne & After Sun'},{id:'sets',n:'Geschenksets'}]},
- {id:'textil', n:'Textilien & Accessoires', img:'towelStack',
+ {id:'textil', n:'Textil', img:'towelStack', col:'var(--c2)',
   sub:'Frottee, Bademäntel, Taschen und Etuis mit der gewebten Wortmarke.',
   subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'maentel',n:'Bademäntel'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
 ];
@@ -1916,8 +1963,8 @@ document.getElementById('catBar').innerHTML =
        <option value="desc">Preis absteigend</option><option value="sale">Sale zuerst</option>
      </select></div>`;
 function whoFilt(id){curWho=id;renderShop()}
-function filt(id){
-  curCat=id; curSub='all'; curWho='all';
+function filt(id,who){
+  curCat=id; curSub='all'; curWho=who||'all';
   document.querySelectorAll('#catBar .chip').forEach(c=>c.classList.toggle('on',c.dataset.c===id));
   track('filter_used',{filter:id});
   renderShop();
@@ -1941,6 +1988,7 @@ function renderShop(){
   if(COLL[curCat]){
     const c=COLL[curCat];
     document.getElementById('shopTitle').textContent=c.n;
+    document.getElementById('shopTitle').style.setProperty('--dc', curCat==='sale'?'#8C3B2E':'transparent');
     document.getElementById('shopSub').textContent=c.sub;
     let list=P.filter(c.f);
     if(q)list=list.filter(p=>prodMatch(p,q));
@@ -1957,40 +2005,66 @@ function renderShop(){
   const cats = curCat==='all'?CATS:CATS.filter(c=>c.id===curCat);
   const cObj = CATS.find(c=>c.id===curCat);
   document.getElementById('shopTitle').textContent = curCat==='all'?'Alle Produkte':cObj.n;
+  document.getElementById('shopTitle').style.setProperty('--dc', cObj&&cObj.col?cObj.col:'transparent');
   document.getElementById('shopSub').textContent = curCat==='all'
     ? 'Frottee, Duft, Pflege und Armaturen — die Marke zum Mitnehmen.'
     : cObj.sub;
 
-  /* Einstieg (nur Übersicht ohne Suche): Hero, Kollektions-Kacheln, Kategorien */
+  /* Einstieg: EIN ruhiger Hero mit großer Serifen-Typo, dann vier geführte
+     Abteilungs-Blöcke — niemand muss suchen, jeder wird geführt. */
   let tiles='';
   if(curCat==='all'&&!q){
     const mS=maxSale();
+    const deptImgs={parfuem:'edpItalia',kosmetik:'jarTrio',textil:'towelsGold'};
     tiles = `<div class="shero">
         <img src="${src('poster')}" alt="La Doccia">
         <div class="sov"></div>
         <div class="stx">
-          <span class="eyebrow">La Doccia Kollektion</span>
-          <h2>Sale — bis zu −${mS} %</h2>
-          <p>Auf ausgewählte Artikel. Streichpreise sind die niedrigsten Preise der letzten 30 Tage.</p>
-          <div class="scta">
-            <button class="btn light" onclick="filt('sale')">Jetzt entdecken</button>
-            <button class="btn outline" onclick="filt('neu')">Neuheiten</button>
-          </div>
+          <h2 class="mega">Schönes für<br>jeden Tag.</h2>
+          <p>Parfümerie, Kosmetik und Textil — in den Farben von La Doccia.</p>
         </div></div>
-      <div class="grouplbl">Aktuell</div>
-      <div class="collgrid">${Object.entries(COLL).map(([id,c])=>`
-        <div class="coll" onclick="filt('${id}')">
-          <img src="${src(c.img)}" alt="${c.n}" loading="lazy">
-          <div class="lab">${id==='sale'?`<span class="stag">Bis zu −${mS} %</span>`:''}
-            <div class="n">${c.n}</div><span class="lk2">Jetzt entdecken</span></div>
-        </div>`).join('')}</div>
-      <div class="grouplbl">Abteilungen</div>
-      <div class="catgrid">${CATS.map(c=>{
-        const cnt=P.filter(p=>p.cat===c.id).length;
-        return `<div class="tcat" onclick="filt('${c.id}')"><img src="${src(c.img)}" alt="${c.n}" loading="lazy">
-          <div class="lab"><div class="n">${c.n}</div><div class="c">${cnt} Artikel</div></div></div>`}).join('')}
-        <div class="tcat" onclick="goSec('linien')"><img src="${src('showerGold')}" alt="Duschbereich" loading="lazy">
-          <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien &amp; Beratung</div></div></div></div>`;
+      <div class="depts">
+        ${CATS.map((c,i)=>`
+        <section class="dept ${i%2?'rev':''}">
+          <div class="dimg" onclick="filt('${c.id}')"><img src="${src(deptImgs[c.id]||c.img)}" alt="${c.n}" loading="lazy"></div>
+          <div class="dtx">
+            <span class="dbar" style="background:${c.col}"></span>
+            <h3>${c.n}</h3>
+            <p>${c.sub}</p>
+            <div class="dlinks">
+              <button onclick="filt('${c.id}','damen')">Damen</button>
+              <button onclick="filt('${c.id}','herren')">Herren</button>
+              <span class="soon" title="Kindersortiment in Vorbereitung">Kinder — bald</span>
+            </div>
+            <button class="btn ghost" onclick="filt('${c.id}')">${c.n} entdecken</button>
+          </div>
+        </section>`).join('')}
+        <section class="dept ${CATS.length%2?'rev':''}">
+          <div class="dimg" onclick="goSec('linien')"><img src="${src('showerGold')}" alt="Duschkonzepte" loading="lazy"></div>
+          <div class="dtx">
+            <span class="dbar" style="background:var(--c1)"></span>
+            <h3>Duschkonzepte</h3>
+            <p>Ihre Dusche nach Maß — als Komplettpaket mit Festpreis, auf Wunsch barrierefrei.</p>
+            <div class="dlinks">
+              <button onclick="goSec('linien')">Klassik</button>
+              <button onclick="goSec('linien')">Komfort</button>
+              <button onclick="goSec('linien')">Elegance</button>
+            </div>
+            <p class="dgew">Auch für <b>Hotels</b>, <b>Fitnessstudios</b> und <b>Friseursalons</b> — Gewerbe-Beratung inklusive.</p>
+            <button class="btn ghost" onclick="goSec('termin')">Beratung anfragen</button>
+          </div>
+        </section>
+      </div>
+      <div class="salerow">
+        <div class="coll" onclick="filt('sale')">
+          <img src="${src(COLL.sale.img)}" alt="Sale" loading="lazy">
+          <div class="lab"><span class="stag">Bis zu −${mS} %</span><div class="n">Sale</div><span class="lk2">Jetzt entdecken</span></div>
+        </div>
+        <div class="coll" onclick="filt('neu')">
+          <img src="${src(COLL.neu.img)}" alt="Neuheiten" loading="lazy">
+          <div class="lab"><div class="n">Neuheiten</div><span class="lk2">Jetzt entdecken</span></div>
+        </div>
+      </div>`;
   }
   /* Übersicht = Einstiegsseite (Calzedonia-Prinzip): Kacheln + Bestseller,
      kein 23-Produkte-Dump. Produktgrids gibt es pro Abteilung. */
@@ -2008,13 +2082,14 @@ function renderShop(){
           <button class="subchip ${curSub==='all'?'on':''}" onclick="subFilt('all')">Alle</button>
           ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
             onclick="subFilt('${s.id}')">${s.n}</button>`).join('')}</div>` : '';
-      const whos=[...new Set(P.filter(p=>p.cat===c.id&&p.who).map(p=>p.who))];
-      const whobar = (curCat!=='all'&&whos.length) ? `<div class="subbar" style="margin-bottom:22px">
-          <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Für alle</button>
-          ${whos.map(w=>`<button class="subchip ${curWho===w?'on':''}"
-            onclick="whoFilt('${w}')">${w==='damen'?'Damen':'Herren'}</button>`).join('')}</div>` : '';
+      /* Damen/Herren führen inklusiv: Unisex-Artikel gehören zu beiden Welten */
+      const whobar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:22px">
+          <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Alle</button>
+          <button class="subchip ${curWho==='damen'?'on':''}" onclick="whoFilt('damen')">Damen</button>
+          <button class="subchip ${curWho==='herren'?'on':''}" onclick="whoFilt('herren')">Herren</button>
+          <span class="subchip soon" title="Kindersortiment in Vorbereitung">Kinder — bald</span></div>` : '';
       if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
-      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>p.who===curWho);
+      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>!p.who||p.who===curWho);
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
       return `<section class="catsec">
@@ -2368,7 +2443,7 @@ function cycleSquares(){
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('#headLogo .brandsq, #footLogo .brandsq').forEach(r=>{
     const k=+r.dataset.i||0;
-    r.setAttribute('fill',SQPAL[sqPalIdx][k]);
+    r.setAttribute('stroke',SQPAL[sqPalIdx][k]);
     if(!reduced){
       r.style.animation='none'; void r.getBoundingClientRect();
       r.style.animation=`sqIn .7s cubic-bezier(.34,1.4,.5,1) ${(k*0.12).toFixed(2)}s both`;

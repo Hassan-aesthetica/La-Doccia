@@ -26,7 +26,9 @@ keine Bestandsdaten) nicht sauber umsetzbar und wurden bewusst NICHT als Attrapp
 - **Glas-Lieferanten-Link** (kommt per WhatsApp): daraus 5 echte Farbtöne für den Dusch-Farbwähler wählen — aktuell Weiß & Creme, Blassgrün, Taubenblau, Pastellviolett, Braunrot (`LINECOLORS` im Script, mit ral-Beispielbildern hinterlegt).
 - **Rahmen-Foto für die Quadrate** (kommt per WhatsApp): Rahmen-Variante des Logos testen.
 - **Thermochrome Quadrate** (Farbe wechselt mit Temperatur): als Produkt-Story/USP-Modul einbauen, sobald es real ist — nichts versprechen, was noch nicht existiert.
-- **Kinder-Kategorie**: Struktur (Damen/Herren-Filter) ist gebaut und erweitert sich automatisch, sobald Produkte ein `who:'kinder'` bekommen — aktuell gibt es keine Kinderprodukte.
+- **Kinder-Kategorie**: In jeder Abteilung steht „Kinder — bald" (Vorgabe Notizbuch: Damen/Herren/Kinder je Abteilung). Sobald Produkte `who:'kinder'` bekommen, wird der Link aktiviert — aktuell gibt es keine Kinderprodukte, daher bewusst kein klickbarer leerer Bereich.
+- **Job/Karriere**: Steht in Olegs Notizbuch, wurde aber in einem früheren Feedback explizit entfernt („Karriere kann raus"). Aktuell draußen — bitte klären, ob eine Karriere-Seite doch gewünscht ist.
+- **Bunte Buchstaben im Logo**: Die Skizze zeigt auch mehrfarbige Buchstaben (L blau, D grün, O orange …). Umgesetzt sind bislang nur die Rahmen-Quadrate — die Wortmarke blieb bewusst einfarbig (wirkt edler). Auf Wunsch ist die bunte Variante schnell gebaut.
 - **Viele Farben pro Produkt** (Lacoste-Prinzip, 10–25 Farben): braucht echte Varianten-Daten + Bilder je Farbe.
 
 ## Vom Kunden zu liefern
