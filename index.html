@@ -29,8 +29,8 @@ a{color:inherit;text-decoration:none}
 h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
 .eyebrow{font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:500;color:var(--brass)}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 32px;
-  background:var(--ink);color:var(--paper);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 36px;
+  background:var(--ink);color:var(--paper);font-size:13px;letter-spacing:.18em;text-transform:uppercase;
   font-weight:500;border:1px solid var(--ink);transition:.35s cubic-bezier(.2,.7,.3,1)}
 .btn:hover{background:var(--brass);border-color:var(--brass)}
 .btn.ghost{background:transparent;color:var(--ink)}
@@ -79,8 +79,8 @@ header{position:sticky;top:0;z-index:55;background:rgba(247,243,236,.9);
   max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
 #headLogo{height:38px;width:auto}
 nav.main{display:flex;gap:28px}
-nav.main a{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 0;
-  border-bottom:1px solid transparent;transition:.25s}
+nav.main a{font-size:13.5px;letter-spacing:.14em;text-transform:uppercase;padding:6px 0;
+  border-bottom:1px solid transparent;transition:.25s;font-weight:400}
 nav.main a:hover{border-color:var(--ink)}
 .hicons{display:flex;align-items:center;gap:18px}
 .icon{width:21px;height:21px;stroke:var(--ink);fill:none;stroke-width:1.3}
@@ -189,10 +189,10 @@ section{padding:clamp(64px,9vw,128px) 0}
 @media(hover:none){.qa{opacity:1;transform:none}}
 .card .meta{padding-top:13px}
 .card .cat{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45)}
-.card h3{font-family:var(--sans);font-weight:400;font-size:15px;margin:5px 0 6px}
+.card h3{font-family:var(--sans);font-weight:400;font-size:16.5px;margin:6px 0 6px}
 .stars{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink-45)}
 .stars .s{color:var(--brass);letter-spacing:1px;font-size:11px}
-.price2{margin-top:8px;font-size:15px}
+.price2{margin-top:8px;font-size:17px}
 
 /* ============ REVIEWS ============ */
 .revtop{display:grid;grid-template-columns:290px 1fr;gap:clamp(28px,5vw,72px);align-items:center;
@@ -415,7 +415,7 @@ footer{background:var(--ink);color:rgba(247,243,236,.6);padding:clamp(54px,7vw,8
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   position:sticky;top:74px;background:var(--paper);z-index:30}
 .chiprow{display:flex;gap:9px;flex-wrap:wrap;align-items:center;flex:1}
-.chip{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;
+.chip{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:11px 20px;
   border:1px solid var(--line);transition:.25s;white-space:nowrap}
 .chip:hover{border-color:var(--ink)}
 .chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -774,8 +774,8 @@ nav.main .dropm a:hover{background:var(--stone);border:none}
 .stx h2{color:var(--paper);font-size:clamp(30px,4.6vw,54px);margin:12px 0 10px;text-shadow:0 2px 16px rgba(26,22,19,.45)}
 .stx p{color:rgba(247,243,236,.86);font-size:13.5px;max-width:46ch;margin-bottom:24px}
 .scta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.grouplbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-45);
-  font-weight:500;margin:32px 0 14px;display:flex;align-items:center;gap:12px}
+.grouplbl{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-70);
+  font-weight:500;margin:36px 0 16px;display:flex;align-items:center;gap:12px}
 .grouplbl::after{content:'';flex:1;height:1px;background:var(--line)}
 .collgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.4vw,16px)}
 .coll{position:relative;overflow:hidden;cursor:pointer;grid-column:span 2;transition:transform .45s cubic-bezier(.2,.7,.3,1)}
@@ -815,7 +815,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 @media(max-width:960px){
   .mobcats{display:flex;gap:20px;overflow-x:auto;padding:11px var(--pad);white-space:nowrap;
     border-bottom:1px solid var(--line);background:rgba(247,243,236,.94);backdrop-filter:blur(12px);
-    position:sticky;top:74px;z-index:53;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;
+    position:sticky;top:74px;z-index:53;font-size:13px;letter-spacing:.12em;text-transform:uppercase;
     scrollbar-width:none}
   .mobcats::-webkit-scrollbar{display:none}
   .mobcats a{flex:none;padding:2px 0}
@@ -831,6 +831,23 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .lsw .lswn{font-size:11px;letter-spacing:.08em;color:var(--ink-45);margin-left:4px}
 
 /* ============ GEFÜHRTER SHOP-EINSTIEG ============ */
+/* Fullscreen-Hero (Bernstein-Prinzip): Bild nimmt den ganzen Bildschirm ein */
+.shero.full{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
+  aspect-ratio:auto;height:calc(100svh - 118px);min-height:480px}
+@media(max-width:960px){.shero.full{height:calc(100svh - 160px);min-height:420px}}
+/* Bunte USP-Zeile */
+.usprow{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,28px);
+  padding:clamp(22px,3vw,36px) 0;border-bottom:1px solid var(--line);text-align:center}
+.usprow>div{display:flex;flex-direction:column;align-items:center;gap:4px}
+.usprow i{display:block;width:34px;height:34px;margin-bottom:6px}
+.usprow i svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.usprow b{font-size:14.5px;font-weight:500;letter-spacing:.02em}
+.usprow span{font-size:12.5px;color:var(--ink-45)}
+@media(max-width:720px){.usprow{grid-template-columns:repeat(2,1fr);gap:20px 10px}}
+/* Zahlarten & Gratisversand auf der Produktseite */
+.payrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.pay2{border:1px solid var(--line);padding:5px 11px;font-size:11px;letter-spacing:.08em;color:var(--ink-70);background:#fff}
+.freeship{color:var(--c3);font-size:13.5px;font-weight:500;margin-bottom:12px}
 /* Große, leicht lesbare Luxus-Typo (Referenz: SumUp-Anzeige, nur in edel) */
 .stx .mega{font-size:clamp(46px,8vw,104px);line-height:1.02;letter-spacing:-.015em;
   color:var(--paper);font-weight:500;margin-bottom:18px;text-shadow:0 2px 22px rgba(26,22,19,.4)}
@@ -846,10 +863,10 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .dept .dimg:hover img{transform:scale(1.04)}
 .dept .dtx{padding:clamp(26px,3.4vw,52px)}
 .dbar{display:block;width:52px;height:6px;margin-bottom:18px}
-.dept h3{font-size:clamp(34px,4.6vw,60px);letter-spacing:-.01em;margin-bottom:12px}
+.dept h3{font-size:clamp(38px,5.2vw,70px);letter-spacing:-.01em;margin-bottom:12px}
 .dept .dtx>p{font-size:15px;color:var(--ink-70);max-width:44ch;margin-bottom:20px;line-height:1.65}
 .dlinks{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.dlinks button{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:12px 22px;
+.dlinks button{font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:14px 26px;
   border:1px solid var(--line);background:var(--paper);transition:.25s;font-weight:500}
 .dlinks button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .soon{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-45);
@@ -863,10 +880,15 @@ nav.main .salelink:hover{border-color:#8C3B2E}
   .dept .dimg img{min-height:0;aspect-ratio:16/10}
   .dept .dtx{padding:22px 20px 26px}
 }
-/* Sale/Neuheiten als schlanke Doppelzeile */
+/* Sale/Neuheiten — groß und auffällig (fällt ins Gesicht) */
 .salerow{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,1.4vw,16px);margin-top:clamp(18px,3vw,34px)}
 .salerow .coll{grid-column:auto}
-.salerow .coll img{aspect-ratio:21/9}
+.salerow .coll img{aspect-ratio:16/8}
+.salerow .lab{padding:26px}
+.salerow .n{font-size:clamp(30px,4vw,54px)!important}
+.salerow .lk2{font-size:12px;margin-top:10px}
+.salerow .stag{font-size:13px;padding:7px 14px;font-weight:600}
+.salerow .is-sale .lab{background:linear-gradient(180deg,transparent 20%,rgba(126,38,28,.88))}
 @media(max-width:700px){.salerow{grid-template-columns:1fr}}
 
 /* ============ ÖFFNUNGS-ANIMATIONEN ============ */
@@ -968,6 +990,9 @@ nav.main .salelink:hover{border-color:#8C3B2E}
       </div>
     </div>
   </div>
+
+  <!-- Bunte USP-Zeile direkt unter dem Hero -->
+  <div class="wrap" id="uspHome"></div>
 
   <!-- STORY -->
   <section id="marke">
@@ -1085,7 +1110,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 
   <!-- EDITORIAL BAND -->
   <div class="band">
-    <img data-img="editorial" alt="La Doccia Duschraum">
+    <img data-img="bandneu" alt="La Doccia Duschraum">
     <div class="ov"></div>
     <div class="txt"><div class="in">
       <span class="eyebrow">Der Moment danach</span>
@@ -1560,6 +1585,17 @@ A.bagsSet   ='assets/shampoo.webp';
 A.candles3  ='assets/bagsSet.webp';
 A.towelStack='assets/candles3.webp';
 A.shampoo   ='assets/gel.webp';
+/* Neue Bilder aus dem Drive-Ordner (assets/neu/) */
+Object.assign(A,{
+  hero2:'assets/neu/ajit.jpg',            // helle Luxus-Dusche — Fullscreen-Hero Shop
+  duschgruen:'assets/neu/gold-shower-green.jpg',
+  kosmetikLife:'assets/neu/skincare-hand.jpg',
+  bandneu:'assets/neu/andrej.jpg',        // helles Marmorbad — Editorial-Band
+  bath1:'assets/neu/marble-wood-bath.jpg',
+  galP1:'assets/neu/marble-candles.jpg', galP2:'assets/neu/bild1.jpg',
+  galK1:'assets/neu/bild.jpg', galK2:'assets/neu/soaps.jpg', galK3:'assets/neu/olesia.jpg',
+  galT1:'assets/neu/spa-kit.jpg', galT2:'assets/neu/bild2.jpg'
+});
 const src = k => A[k];
 
 /* ---------- Logo als SVG bauen ---------- */
@@ -2015,17 +2051,19 @@ function renderShop(){
   let tiles='';
   if(curCat==='all'&&!q){
     const mS=maxSale();
-    const deptImgs={parfuem:'edpItalia',kosmetik:'jarTrio',textil:'towelsGold'};
-    tiles = `<div class="shero">
-        <img src="${src('poster')}" alt="La Doccia">
+    const deptImgs={parfuem:'edpItalia',kosmetik:'kosmetikLife',textil:'towelsGold'};
+    tiles = `<div class="shero full">
+        <img src="${src('hero2')}" alt="La Doccia">
         <div class="sov"></div>
         <div class="stx">
           <h2 class="mega">Schönes für<br>jeden Tag.</h2>
           <p>Parfümerie, Kosmetik und Textil — in den Farben von La Doccia.</p>
+          <div class="scta"><button class="btn light" onclick="document.querySelector('.depts').scrollIntoView({behavior:'smooth',block:'start'})">Entdecken</button></div>
         </div></div>
+      ${uspRow()}
       <div class="depts">
         ${CATS.map((c,i)=>`
-        <section class="dept ${i%2?'rev':''}">
+        <section class="dept reveal ${i%2?'rev':''}">
           <div class="dimg" onclick="filt('${c.id}')"><img src="${src(deptImgs[c.id]||c.img)}" alt="${c.n}" loading="lazy"></div>
           <div class="dtx">
             <span class="dbar" style="background:${c.col}"></span>
@@ -2033,14 +2071,14 @@ function renderShop(){
             <p>${c.sub}</p>
             <div class="dlinks">
               <button onclick="filt('${c.id}','damen')">Damen</button>
-              <button onclick="filt('${c.id}','herren')">Herren</button>
-              <span class="soon" title="Kindersortiment in Vorbereitung">Kinder — bald</span>
+              <span class="soon">Herren — in Bearbeitung</span>
+              <span class="soon">Kinder — in Bearbeitung</span>
             </div>
             <button class="btn ghost" onclick="filt('${c.id}')">${c.n} entdecken</button>
           </div>
         </section>`).join('')}
-        <section class="dept ${CATS.length%2?'rev':''}">
-          <div class="dimg" onclick="goSec('linien')"><img src="${src('showerGold')}" alt="Duschkonzepte" loading="lazy"></div>
+        <section class="dept reveal ${CATS.length%2?'rev':''}">
+          <div class="dimg" onclick="goSec('linien')"><img src="${src('duschgruen')}" alt="Duschkonzepte" loading="lazy"></div>
           <div class="dtx">
             <span class="dbar" style="background:var(--c1)"></span>
             <h3>Duschkonzepte</h3>
@@ -2055,8 +2093,8 @@ function renderShop(){
           </div>
         </section>
       </div>
-      <div class="salerow">
-        <div class="coll" onclick="filt('sale')">
+      <div class="salerow reveal">
+        <div class="coll is-sale" onclick="filt('sale')">
           <img src="${src(COLL.sale.img)}" alt="Sale" loading="lazy">
           <div class="lab"><span class="stag">Bis zu −${mS} %</span><div class="n">Sale</div><span class="lk2">Jetzt entdecken</span></div>
         </div>
@@ -2082,12 +2120,12 @@ function renderShop(){
           <button class="subchip ${curSub==='all'?'on':''}" onclick="subFilt('all')">Alle</button>
           ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
             onclick="subFilt('${s.id}')">${s.n}</button>`).join('')}</div>` : '';
-      /* Damen/Herren führen inklusiv: Unisex-Artikel gehören zu beiden Welten */
+      /* Damen führt inklusiv (Unisex zählt mit); Herren & Kinder sind in Bearbeitung */
       const whobar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:22px">
           <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Alle</button>
           <button class="subchip ${curWho==='damen'?'on':''}" onclick="whoFilt('damen')">Damen</button>
-          <button class="subchip ${curWho==='herren'?'on':''}" onclick="whoFilt('herren')">Herren</button>
-          <span class="subchip soon" title="Kindersortiment in Vorbereitung">Kinder — bald</span></div>` : '';
+          <span class="subchip soon">Herren — in Bearbeitung</span>
+          <span class="subchip soon">Kinder — in Bearbeitung</span></div>` : '';
       if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
       if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>!p.who||p.who===curWho);
       list=sortList(list); total+=list.length;
@@ -2110,6 +2148,23 @@ function renderShop(){
     </section>` : '';
   document.getElementById('shopBody').innerHTML = tiles + body + noRes + seenRail;
   document.getElementById('fcount').textContent = total+' Artikel';
+  setTimeout(obs,60);  // Scroll-Reveals für Abteilungen & Co. aktivieren
+}
+
+/* ---------- Bunte USP-Zeile (Bernstein-Prinzip: Icons in Markenfarben) ---------- */
+function uspRow(){
+  const ic={
+    truck:'<svg viewBox="0 0 24 24"><path d="M1 7h13v9H1zM14 10h4l4 3v3h-8z"/><circle cx="6" cy="18" r="1.8"/><circle cx="18" cy="18" r="1.8"/></svg>',
+    ret:'<svg viewBox="0 0 24 24"><path d="M4 9h12a5 5 0 0 1 0 10H8"/><path d="M8 5 4 9l4 4"/></svg>',
+    card:'<svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="15" rx="2"/><path d="M2 10h20"/></svg>',
+    tel:'<svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>'
+  };
+  return `<div class="usprow reveal">
+    <div><i style="color:var(--c1)">${ic.truck}</i><b>Kostenloser Versand</b><span>ab ${Math.round(PROMO.freeShip)} € Bestellwert</span></div>
+    <div><i style="color:var(--c3)">${ic.ret}</i><b>30 Tage Rückgabe</b><span>kostenloser Rückversand</span></div>
+    <div><i style="color:var(--c4)">${ic.card}</i><b>Sicher bezahlen</b><span>PayPal · Klarna · Rechnung</span></div>
+    <div><i style="color:var(--c2)">${ic.tel}</i><b>Persönliche Beratung</b><span>01 555 01 00</span></div>
+  </div>`;
 }
 
 /* ---------- Autosuggest (ab 2 Zeichen: Produkte mit Bild + Kategorien) ---------- */
@@ -2186,7 +2241,9 @@ function openP(id){
   track('view_item',{item_id:id,price:p.p});
   SEEN=[id,...SEEN.filter(x=>x!==id)].slice(0,8); store.set('ld_seen',SEEN);
   const d=disc(p);
-  const gal=[p.img2,p.img];  // anderes Bild zuerst
+  /* Galerie: eigene Bilder + passende Ambiente-Bilder der Abteilung (Drive-Fotos) */
+  const GALX={parfuem:['galP1','galP2'],kosmetik:['galK1','galK2'],textil:['galT1','galT2']};
+  const gal=[p.img2,p.img,...(p.gal||GALX[p.cat]||[])];
   const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
   const gpT=gpText(p);
   const bundle=bundleFor(p);
@@ -2207,11 +2264,16 @@ function openP(id){
       <div class="tax" style="margin-bottom:18px">inkl. MwSt., zzgl. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Versand</a> · ${lieferzeit()}</div>
       ${p.sizes?`<div class="sizes"><span class="slbl">Größe</span><div>
         ${p.sizes.map(s=>`<button class="szb" data-s="${s}" onclick="pickSize('${s}')">${s}</button>`).join('')}</div></div>`:''}
+      ${p.p>=PROMO.freeShip?`<div class="freeship">✓ Kostenloser Versand</div>`:''}
       <button class="btn" style="width:100%" onclick="addFromPM()">In den Warenkorb</button>
+      <div class="payrow">
+        <span class="pay2">PayPal</span><span class="pay2">Klarna</span><span class="pay2">Visa</span>
+        <span class="pay2">Mastercard</span><span class="pay2">Rechnung</span>
+      </div>
       <div class="trustmini">
         <span>Versandkostenfrei ab ${eur(PROMO.freeShip)}</span>
         <span>30 Tage Rückgabe</span>
-        <span>PayPal · Klarna · Rechnung</span>
+        <span>${lieferzeit()}</span>
       </div>
       <div class="tierline"><b>Mengenrabatt:</b> ab 2 Artikeln −${t2} %, ab 3 Artikeln −${t3} % — automatisch im Warenkorb.</div>
       <p class="desc">${p.d}</p>
@@ -2456,47 +2518,13 @@ setInterval(cycleSquares,15000);
 const hdr=document.querySelector('header');
 addEventListener('scroll',()=>hdr.classList.toggle('stuck',scrollY>40),{passive:true});
 
-/* ---------- Smooth Scrolling ---------- */
-(function(){
-  const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const touch=matchMedia('(hover: none)').matches;
-  if(reduced||touch) return;
-  let target=scrollY, cur=scrollY, raf=null, active=false, last=0;
-  const max=()=>document.documentElement.scrollHeight-innerHeight;
-  function tick(ts){
-    const dt=Math.min((ts-last)/1000,0.05)||0.016; last=ts;
-    cur += (target-cur)*(1-Math.exp(-dt*7.5));
-    if(Math.abs(target-cur)<0.6){cur=target;active=false}
-    window.scrollTo({top:cur,behavior:'instant'});
-    if(active) raf=requestAnimationFrame(tick);
-  }
-  function start(){if(!active){cur=scrollY;active=true;last=performance.now();raf=requestAnimationFrame(tick)}}
-  addEventListener('wheel',e=>{
-    if(document.body.classList.contains('pmopen')||document.body.style.overflow==='hidden')return;
-    if(e.ctrlKey)return;
-    e.preventDefault();
-    if(!active)target=scrollY;
-    target=Math.max(0,Math.min(max(),target+e.deltaY));
-    start();
-  },{passive:false});
-  // Anker weich anfahren
-  document.addEventListener('click',e=>{
-    const a=e.target.closest('a[href^="#"]');
-    if(!a||a.getAttribute('href')==='#')return;
-    const el=document.querySelector(a.getAttribute('href'));
-    if(!el)return;
-    e.preventDefault();
-    target=Math.max(0,Math.min(max(),el.getBoundingClientRect().top+scrollY-84));
-    start();
-  });
-  // Bei Ansichtswechsel Zustand zurücksetzen
-  const goOrig=window.go;
-  window.go=function(v,cat){goOrig(v,cat);target=0;cur=0;active=false;cancelAnimationFrame(raf)};
-})();
+/* Smooth-Scroll-Hijacking entfernt (Kundenwunsch): natives Scrollen,
+   Anker laufen weiter weich über CSS scroll-behavior. */
 
 /* ---------- Initialisierung ---------- */
 update();
 renderWishBadge();
+document.getElementById('uspHome').innerHTML=uspRow();
 /* Drawer-Beschriftungen aus der zentralen PROMO-Config ableiten */
 (function(){
   const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
