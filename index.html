@@ -89,7 +89,30 @@ nav.main a:hover{border-color:var(--ink)}
   font-weight:500;min-width:17px;height:17px;border-radius:9px;display:flex;align-items:center;
   justify-content:center;padding:0 4px;letter-spacing:0;font-style:normal}
 .burger{display:none}
-@media(max-width:960px){nav.main{display:none}.burger{display:block}#headLogo{height:30px}}
+/* Header-Suche (Bernstein: großes Pill-Suchfeld in der Mitte) */
+.hsearch{flex:1;max-width:620px;margin:0 26px;display:flex;align-items:center;gap:11px;position:relative;
+  background:#fff;border:1px solid var(--line);border-radius:999px;padding:0 20px;height:46px}
+.hsearch .icon{width:18px;height:18px;flex:none;stroke:var(--ink-45)}
+.hsearch input{flex:1;min-width:0;border:none;outline:none;background:none;font:inherit;font-size:14.5px;color:var(--ink)}
+.hsearch input::placeholder{color:var(--ink-45)}
+.hsearch .sgg{top:calc(100% + 8px);left:0;right:0;border-radius:16px}
+/* Navigationszeile unter dem Header */
+.hnav{display:flex;align-items:center;gap:28px;height:52px;max-width:var(--maxw);margin:0 auto;
+  padding-inline:var(--pad);border-top:1px solid var(--line);font-size:14px}
+.hnav a{font-weight:500;letter-spacing:.01em;transition:color .25s}
+.hnav>a:hover,.hnav .navdrop>a:hover{color:var(--brass)}
+.prodbtn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--paper);
+  border-radius:999px;padding:10px 20px;font-weight:600}
+.prodbtn:hover{background:var(--brass);color:#fff}
+.prodbtn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.hnav .salelink{color:#8C3B2E;font-weight:600}
+.hnav .svc{margin-left:auto}
+.hnav .navdrop>a{text-transform:none;font-size:14px;letter-spacing:.01em;border:none}
+.hnav .navdrop .dropm{left:0;transform:translateY(8px)}
+.hnav .navdrop:hover .dropm{transform:translateY(0)}
+.hnav .svc .dropm{left:auto;right:0}
+.hnav .svc>a::after{content:' ˅';font-size:11px;color:var(--ink-45)}
+@media(max-width:960px){.hnav,.hsearch{display:none}.burger{display:block}#headLogo{height:30px}}
 
 /* ============ HERO ============ */
 .hero{position:relative;height:min(92vh,900px);min-height:540px;overflow:hidden;background:var(--ink)}
@@ -756,8 +779,8 @@ body.pmopen{overflow:hidden}
   background:var(--paper);border:1px solid var(--line);box-shadow:0 26px 54px -26px rgba(26,22,19,.4);
   padding:10px 0;min-width:235px;opacity:0;visibility:hidden;transition:.28s;z-index:60}
 .navdrop:hover .dropm{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-nav.main .dropm a{display:block;padding:9px 22px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;border:none}
-nav.main .dropm a:hover{background:var(--stone);border:none}
+.dropm a{display:block;padding:10px 22px;font-size:13px;letter-spacing:.02em;border:none;font-weight:400}
+.dropm a:hover{background:var(--stone)}
 /* Mobilmenü: Kategorie-Unterpunkte */
 .mnav .sub{font-family:var(--sans);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
   padding:11px 0 11px 18px;color:var(--ink-70)}
@@ -834,8 +857,8 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 /* Fullscreen-Hero (Bernstein-Prinzip): Bild nimmt den ganzen Bildschirm ein,
    liegt auf Desktop UNTER dem transparenten Header */
 .shero.full{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
-  aspect-ratio:auto;height:calc(100svh - 44px);min-height:520px}
-@media(min-width:961px){.shero.full{margin-top:-74px}}
+  aspect-ratio:auto;height:calc(100svh - 44px);min-height:540px}
+@media(min-width:961px){.shero.full{margin-top:-126px}.catbar{top:126px}}
 @media(max-width:960px){.shero.full{height:calc(100svh - 170px);min-height:420px}}
 /* Kompakter Kopf: auf der Shop-Übersicht fallen Titelblock & Filterleiste weg —
    das Bild ist sofort da. Kategorien stecken in Header & Mobil-Leiste. */
@@ -849,9 +872,18 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .shero .slide.on .stx>*:nth-child(2){transition-delay:.12s}
 .shero .slide.on .stx>*:nth-child(3){transition-delay:.22s}
 .shero .slide.on .stx>*:nth-child(4){transition-delay:.32s}
-.stag.neutral{background:var(--ink);color:var(--paper)}
-.stx .stag{font-size:12.5px;padding:7px 14px;letter-spacing:.16em;margin-bottom:14px}
-.sdots{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
+.stx .stag{font-size:13px;padding:8px 16px;letter-spacing:.12em;margin-bottom:16px;font-weight:600}
+.stx .stag.tagbeige{background:#E9DFC5;color:var(--ink)}
+.stx .ssub{font-weight:600;font-size:clamp(17px,2.2vw,26px);color:#fff;margin-bottom:8px;
+  text-shadow:0 1px 12px rgba(26,22,19,.45)}
+.stx .mega{font-family:var(--sans);font-weight:700;font-size:clamp(38px,6vw,80px);letter-spacing:-.02em;line-height:1.06}
+.btn.pill{border-radius:999px;background:#fff;border-color:#fff;color:var(--ink);font-weight:600;padding:17px 38px}
+.btn.pill:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+.sbar{position:absolute;left:0;right:0;bottom:0;z-index:3;background:rgba(15,13,11,.78);color:#EDEAE2;
+  display:flex;justify-content:space-between;gap:16px;padding:13px clamp(18px,4vw,48px);font-size:13.5px;font-weight:500}
+.sbar span{white-space:nowrap}
+@media(max-width:640px){.sbar span:first-child{display:none}}
+.sdots{position:absolute;left:50%;bottom:62px;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
 .sdots button{width:9px;height:9px;border-radius:50%;background:rgba(251,249,245,.45);transition:.3s;padding:0}
 .sdots button.on{background:#FBF9F5;transform:scale(1.25)}
 /* Header transparent über dem Hero (nur Desktop), Logo wechselt auf Weiß */
@@ -859,11 +891,15 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 nav.main a,.htel{transition:color .3s,border-color .3s}
 @media(min-width:961px){
   header.clear{background:transparent;backdrop-filter:none;border-color:transparent;--hlogo:#FBF9F5;box-shadow:none}
-  header.clear nav.main a{color:#FBF9F5}
-  header.clear nav.main a:hover{border-color:#FBF9F5}
-  header.clear nav.main .salelink{color:#FFC9BC}
+  header.clear .hnav{border-color:rgba(251,249,245,.22)}
+  header.clear .hnav a{color:#FBF9F5}
+  header.clear .hnav .salelink{color:#FFC9BC}
+  header.clear .prodbtn{background:#fff;color:var(--ink)}
+  header.clear .prodbtn:hover{background:var(--brass);color:#fff}
   header.clear .htel{color:#FBF9F5}
   header.clear .icon{stroke:#FBF9F5}
+  header.clear .hsearch{border-color:transparent}
+  header.clear .hnav .svc>a::after{color:rgba(251,249,245,.6)}
 }
 /* Produkt-Reihen zwischen den Abteilungen */
 .deptrail{margin:6px 0 10px}
@@ -944,14 +980,9 @@ nav.main a,.htel{transition:color .3s,border-color .3s}
 <div id="intro"><div class="box"><div id="introHost"></div></div>
   <button id="skip" onclick="endIntro()">Überspringen</button></div>
 
+<!-- Bewertungsleiste (Bernstein-Prinzip: Vertrauen ganz oben, statisch) -->
 <div id="ticker"><div class="slot">
-  <div class="t on"><span><b style="color:var(--brass-lo)">★★★★★</b>&nbsp; 4,9 · „Gut" · 186 geprüfte Bewertungen</span></div>
-  <div class="t"><span><b>Persönliche Beratung</b>&nbsp; vor Ort in ganz Deutschland</span></div>
-  <div class="t"><span><b>Komplettpaket</b>&nbsp; sämtliche Arbeiten und Materialien enthalten</span></div>
-  <div class="t"><span><b>Sonderanfertigung</b>&nbsp; nach Maß und in Ihrer Wunschfarbe</span></div>
-  <div class="t"><span><b>Versandkostenfrei ab 79 €</b>&nbsp; kostenloser Rückversand</span></div>
-  <div class="t"><span><b>Sale</b>&nbsp; bis zu −<span id="tickSale">20</span> % auf ausgewählte Artikel</span></div>
-  <div class="t"><span><b>Über 400 Bäder</b>&nbsp; umgesetzt seit 2016</span></div>
+  <div class="t on"><span><b style="color:var(--brass-lo)">★★★★★</b>&nbsp; 4,9 &nbsp;Gut&nbsp; 186 Bewertungen</span></div>
 </div></div>
 
 <header>
@@ -959,15 +990,13 @@ nav.main a,.htel{transition:color .3s,border-color .3s}
     <button class="burger" onclick="mnav(1)" aria-label="Menü">
       <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <a href="#" id="headLogoLink" onclick="go('home');return false"><span id="headLogoHost"></span></a>
-    <nav class="main">
-      <a href="#linien" onclick="goSec('linien');return false">Duschkonzepte</a>
-      <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
-      <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
-      <a href="#" onclick="go('shop','textil');return false">Textil</a>
-      <a href="#" onclick="go('shop','all');return false">Shop</a>
-      <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale</a>
-      <a href="#termin" onclick="goSec('termin');return false">Beratung</a>
-    </nav>
+    <!-- Prominente Produktsuche (Bernstein: „Finde Dein Produkt…") -->
+    <label class="hsearch">
+      <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
+      <input id="hSearch" type="search" placeholder="Finden Sie Ihr Produkt …" autocomplete="off"
+        oninput="hSearchInput(this.value)">
+      <div class="sgg" id="hsgg"></div>
+    </label>
     <div class="hicons">
       <a class="htel" href="tel:+4315550100" aria-label="Telefonische Beratung">
         <svg class="icon" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
@@ -980,6 +1009,34 @@ nav.main a,.htel{transition:color .3s,border-color .3s}
         <i class="n" id="cn" style="display:none">0</i></button>
     </div>
   </div>
+  <!-- Navigationszeile (Bernstein: Produkte · Sale % · Trends & Inspiration · Service) -->
+  <nav class="hnav">
+    <span class="navdrop"><a href="#" class="prodbtn" onclick="go('shop');return false">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Produkte</a>
+      <div class="dropm">
+        <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
+        <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
+        <a href="#" onclick="go('shop','textil');return false">Textil</a>
+        <a href="#" onclick="goSec('linien');return false">Duschkonzepte</a>
+        <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
+      </div></span>
+    <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale&nbsp;%</a>
+    <span class="navdrop"><a href="#" onclick="go('shop','neu');return false">Trends &amp; Inspiration</a>
+      <div class="dropm">
+        <a href="#" onclick="go('shop','neu');return false">Neuheiten</a>
+        <a href="#" onclick="go('shop','sommer');return false">Must-haves für den Sommer</a>
+        <a href="#" onclick="go('shop','farben');return false">In Ihren Lieblingsfarben</a>
+        <a href="#" onclick="go('shop','sets');return false">Sets &amp; Geschenke</a>
+      </div></span>
+    <span class="navdrop svc"><a href="#" onclick="goSec('termin');return false">Service</a>
+      <div class="dropm">
+        <a href="#" onclick="goSec('termin');return false">Designberatung</a>
+        <a href="#" onclick="go('kontakt');return false">Kontakt</a>
+        <a href="#" onclick="go('faq');return false">Häufige Fragen</a>
+        <a href="#" onclick="go('versand');return false">Versand &amp; Rückgabe</a>
+        <a href="#" onclick="go('pflege');return false">Pflegehinweise</a>
+      </div></span>
+  </nav>
 </header>
 
 <div class="mnav" id="mnav">
@@ -2087,12 +2144,13 @@ function renderShop(){
     const mS=maxSale();
     const deptImgs={parfuem:'edpItalia',kosmetik:'kosmetikLife',textil:'towelsGold'};
     /* Hero-Slider: Themen wechseln (Bad / Sale / Textil-Neukunden), Bernstein-Prinzip */
+    /* Slide-Aufbau exakt wie Bernstein: Tag-Pill → fette Subline → große Headline → weiße Pill-CTA */
     const SLIDES=[
-      {img:'hero2',tag:'',h:'Schönes für<br>jeden Tag.',p:'Parfümerie, Kosmetik und Textil — in den Farben von La Doccia.',
-       cta:'Entdecken',fn:"document.querySelector('.depts').scrollIntoView({behavior:'smooth',block:'start'})"},
-      {img:'poster',tag:'Gerade im Sale',h:`Bis zu −${mS} %`,p:'Auf ausgewählte Artikel. Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
-       cta:'Zum Sale',fn:"filt('sale')",sale:true},
-      {img:'galT1',tag:'Neukundenrabatt',h:'10 % geschenkt.',p:'Mit dem Newsletter auf Ihre erste Bestellung — Code sofort per Mail.',
+      {img:'hero2',tag:'Komplettpaket · Festpreis',sub:'Für Ruhe & Wohlfühlen im Bad',h:'Duschkonzepte nach Maß',
+       cta:'Duschkonzepte entdecken',fn:"goSec('linien')"},
+      {img:'poster',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+       cta:'Sale entdecken',fn:"filt('sale')",sale:true},
+      {img:'galT1',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
@@ -2100,12 +2158,17 @@ function renderShop(){
           <img src="${src(s.img)}" alt="" ${i?'loading="lazy"':''}>
           <div class="sov"></div>
           <div class="stx">
-            ${s.tag?`<span class="stag ${s.sale?'':'neutral'}">${s.tag}</span>`:''}
+            <span class="stag ${s.sale?'':'tagbeige'}">${s.tag}</span>
+            <div class="ssub">${s.sub}</div>
             <h2 class="mega">${s.h}</h2>
-            <p>${s.p}</p>
-            <div class="scta"><button class="btn light" onclick="${s.fn.replace(/"/g,'&quot;')}">${s.cta}</button></div>
+            <div class="scta"><button class="btn pill" onclick="${s.fn.replace(/"/g,'&quot;')}">${s.cta}</button></div>
           </div></div>`).join('')}
         <div class="sdots">${SLIDES.map((_,i)=>`<button class="${i===0?'on':''}" onclick="goSlide(${i})" aria-label="Bild ${i+1}"></button>`).join('')}</div>
+        <div class="sbar">
+          <span>La Doccia · Wien</span>
+          <span>↺&nbsp; 30 Tage Rückgabe</span>
+          <span>✓&nbsp; Über 400 umgesetzte Bäder</span>
+        </div>
       </div>
       ${uspRow()}
       <div class="depts">
@@ -2258,7 +2321,27 @@ function suggest(){
 document.addEventListener('click',e=>{
   const box=document.getElementById('sgg');
   if(box&&!e.target.closest('.fsearch'))box.style.display='none';
+  const hbox=document.getElementById('hsgg');
+  if(hbox&&!e.target.closest('.hsearch'))hbox.style.display='none';
 });
+
+/* ---------- Header-Suche („Finden Sie Ihr Produkt …") ---------- */
+function hSearchInput(v){
+  curQ=v;
+  if(!document.getElementById('v-shop').classList.contains('on')) go('shop');
+  renderShop(); hSuggest();
+}
+function hSuggest(){
+  const box=document.getElementById('hsgg'); if(!box)return;
+  const q=curQ.trim();
+  if(q.length<2){box.style.display='none';return}
+  const prods=P.filter(p=>prodMatch(p,q)).slice(0,6);
+  box.innerHTML=prods.length?prods.map(p=>`
+      <div class="sgi" onmousedown="event.preventDefault();openP('${p.id}')">
+        <img src="${src(p.img)}" alt=""><span>${p.n}</span><b>${eur(p.p)}</b></div>`).join('')
+    :`<div class="sge">Keine Treffer — Vorschläge unten im Shop.</div>`;
+  box.style.display='block';
+}
 
 /* ---------- Wunschliste ---------- */
 function wish(id,ev){
