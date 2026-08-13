@@ -564,8 +564,8 @@ h1,h2,h3{text-wrap:balance}
 .band img{transform:scale(1.03);transition:transform 2.4s cubic-bezier(.2,.7,.3,1)}
 .band:hover img{transform:scale(1)}
 
-/* Header beim Scrollen */
-header{transition:box-shadow .4s,height .4s}
+/* Header beim Scrollen — weiche Übergänge auch für den Transparent-Zustand */
+header{transition:background .55s ease,border-color .55s ease,box-shadow .4s,height .4s}
 header.stuck{box-shadow:0 12px 34px -26px rgba(26,22,19,.5)}
 
 /* Feiner Rand statt harter Kante */
@@ -876,7 +876,8 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .stx .stag.tagbeige{background:#E9DFC5;color:var(--ink)}
 .stx .ssub{font-weight:600;font-size:clamp(17px,2.2vw,26px);color:#fff;margin-bottom:8px;
   text-shadow:0 1px 12px rgba(26,22,19,.45)}
-.stx .mega{font-family:var(--sans);font-weight:700;font-size:clamp(38px,6vw,80px);letter-spacing:-.02em;line-height:1.06}
+/* Hero-Titel im Vogue-Stil: Bodoni-Serife, groß und elegant */
+.stx .mega{font-family:var(--serif);font-weight:500;font-size:clamp(44px,7vw,96px);letter-spacing:-.01em;line-height:1.04}
 .btn.pill{border-radius:999px;background:#fff;border-color:#fff;color:var(--ink);font-weight:600;padding:17px 38px}
 .btn.pill:hover{background:var(--brass);border-color:var(--brass);color:#fff}
 .sbar{position:absolute;left:0;right:0;bottom:0;z-index:3;background:rgba(15,13,11,.78);color:#EDEAE2;
@@ -887,8 +888,8 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .sdots button{width:9px;height:9px;border-radius:50%;background:rgba(251,249,245,.45);transition:.3s;padding:0}
 .sdots button.on{background:#FBF9F5;transform:scale(1.25)}
 /* Header transparent über dem Hero (nur Desktop), Logo wechselt auf Weiß */
-#headLogo path{transition:fill .35s}
-nav.main a,.htel{transition:color .3s,border-color .3s}
+#headLogo path{transition:fill .6s ease}
+.hnav a,.htel,.icon,.prodbtn{transition:color .5s ease,border-color .5s ease,background .5s ease,stroke .5s ease}
 @media(min-width:961px){
   header.clear{background:transparent;backdrop-filter:none;border-color:transparent;--hlogo:#FBF9F5;box-shadow:none}
   header.clear .hnav{border-color:rgba(251,249,245,.22)}
@@ -1056,6 +1057,7 @@ nav.main a,.htel{transition:color .3s,border-color .3s}
 
 <!-- Kategorie-Leiste (mobil, immer sichtbar — direkter Weg in den Shop) -->
 <div class="mobcats">
+  <a onclick="go('shop')" style="font-weight:600">Shop</a>
   <a onclick="go('shop','parfuem')">Parfümerie</a>
   <a onclick="go('shop','kosmetik')">Kosmetik</a>
   <a onclick="go('shop','textil')">Textil</a>
@@ -1075,8 +1077,8 @@ nav.main a,.htel{transition:color .3s,border-color .3s}
       <h1 class="reveal">Eine Dusche, die den Tag beginnt.</h1>
       <p class="reveal">Wir planen und bauen Duschkonzepte nach Maß — vom ersten Aufmaß bis zur letzten Fuge. Ein Ansprechpartner, ein Festpreis, ein Termin.</p>
       <div class="cta reveal">
-        <a href="#termin" class="btn light">Beratungstermin sichern</a>
-        <a href="#linien" class="btn outline">Designlinien ansehen</a>
+        <a href="#" class="btn light" onclick="go('shop');return false">Zum Shop</a>
+        <a href="#termin" class="btn outline">Beratungstermin sichern</a>
       </div>
     </div>
   </div>
@@ -2281,7 +2283,8 @@ setInterval(()=>{if(document.querySelector('#heroSlider'))showSlide(slideIdx+1)}
 function headerClear(){
   const onLanding=document.getElementById('v-shop').classList.contains('on')&&curCat==='all'&&!curQ.trim();
   const hero=document.querySelector('.shero.full');
-  const clear=onLanding&&hero&&innerWidth>960&&scrollY<Math.max(120,hero.offsetHeight-90);
+  /* Wechsel früher: schon nach ~1/3 des Heros wird der Header wieder dunkel */
+  const clear=onLanding&&hero&&innerWidth>960&&scrollY<Math.max(120,hero.offsetHeight*0.35);
   document.querySelector('header').classList.toggle('clear',!!clear);
 }
 addEventListener('scroll',headerClear,{passive:true});
