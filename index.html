@@ -97,13 +97,14 @@ nav.main a:hover{border-color:var(--ink)}
 .hsearch input::placeholder{color:var(--ink-45)}
 .hsearch .sgg{top:calc(100% + 8px);left:0;right:0;border-radius:16px}
 /* Navigationszeile unter dem Header */
-.hnav{display:flex;align-items:center;gap:30px;height:56px;max-width:var(--maxw);margin:0 auto;
+.hnav{display:flex;align-items:center;gap:30px;height:62px;max-width:var(--maxw);margin:0 auto;
   padding-inline:var(--pad);border-top:1px solid var(--line);font-size:15.5px}
 .hnav a{font-weight:500;letter-spacing:.01em;transition:color .25s}
 .hnav>a:hover,.hnav .navdrop>a:hover{color:var(--brass)}
-.prodbtn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--paper);
-  border-radius:999px;padding:11px 22px;font-weight:600;font-size:15.5px}
-.prodbtn:hover{background:var(--brass);color:#fff}
+.hnav .navdrop>a.prodbtn{display:inline-flex;align-items:center;gap:11px;background:var(--ink);color:var(--paper);
+  border-radius:999px;padding:13px 28px;font-weight:600;font-size:16px;
+  box-shadow:0 2px 14px -6px rgba(26,22,19,.35)}
+.hnav .navdrop>a.prodbtn:hover{background:var(--brass);color:#fff}
 .prodbtn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
 /* Sale als roter Pill — fällt sofort ins Auge */
 .hnav .salelink{background:#8C3B2E;color:#fff!important;font-weight:600;border-radius:999px;padding:10px 21px;font-size:15.5px}
@@ -942,12 +943,14 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 .freeship{color:#2E9E5B;font-size:14.5px;font-weight:600;margin-bottom:12px}
 /* Verfügbarkeit: grüner Punkt (Bernstein-Prinzip) */
 .stock{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--ink);margin:0 0 16px}
-.stock i{width:10px;height:10px;border-radius:50%;background:#2E9E5B;flex:none;
-  animation:stockpulse 2.6s cubic-bezier(.4,0,.5,1) infinite}
+/* Flüssiger Puls: transform+opacity (GPU) statt Schatten-Repaint */
+.stock i{position:relative;width:10px;height:10px;border-radius:50%;background:#2E9E5B;flex:none}
+.stock i::after{content:'';position:absolute;inset:0;border-radius:50%;background:#2E9E5B;
+  opacity:.4;animation:stockpulse 2.4s ease-out infinite;will-change:transform,opacity}
 @keyframes stockpulse{
-  0%{box-shadow:0 0 0 0 rgba(46,158,91,.38)}
-  70%{box-shadow:0 0 0 10px rgba(46,158,91,0)}
-  100%{box-shadow:0 0 0 0 rgba(46,158,91,0)}}
+  0%{transform:scale(1);opacity:.4}
+  75%{transform:scale(2.8);opacity:0}
+  100%{transform:scale(2.8);opacity:0}}
 .stock span{color:var(--ink-45);font-weight:400;font-size:13.5px}
 /* Kundenstimmen auf der Produktseite */
 .prevs{margin-top:24px}
@@ -1463,7 +1466,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
     <p>Es gelten die zum Bestellzeitpunkt angegebenen Preise. <mark>[Angaben zur Umsatzsteuer ergänzen — Ausweis oder Hinweis auf Kleinunternehmerregelung.]</mark> Akzeptierte Zahlungsarten: <mark>[Zahlungsarten ergänzen, z. B. PayPal, Kreditkarte, Rechnung.]</mark></p>
 
     <h2>§ 4 Lieferung und Versandkosten</h2>
-    <p>Die Lieferung erfolgt an die von Ihnen angegebene Adresse. <mark>[Liefergebiete, Lieferzeiten und Versandkosten ergänzen. Aktuell auf der Website: versandkostenfrei ab 79 €.]</mark></p>
+    <p>Die Lieferung erfolgt an die von Ihnen angegebene Adresse. <mark>[Liefergebiete und Lieferzeiten ergänzen. Aktuell auf der Website: Versand grundsätzlich kostenlos.]</mark></p>
 
     <h2>§ 5 Eigentumsvorbehalt</h2>
     <p>Die gelieferte Ware bleibt bis zur vollständigen Bezahlung Eigentum des Anbieters.</p>
@@ -1578,7 +1581,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
     <p>Ja — Wandflächen, Armaturen und Rinne sind im kompletten RAL-Spektrum möglich und werden auf einen Ton abgestimmt.</p>
 
     <h2>Wie schnell wird meine Shop-Bestellung geliefert?</h2>
-    <p>Innerhalb von 2 bis 4 Werktagen. Ab 79 € Bestellwert liefern wir versandkostenfrei, darunter berechnen wir 5,90 €.</p>
+    <p>Innerhalb von 2 bis 4 Werktagen — versandkostenfrei, ohne Mindestbestellwert.</p>
 
     <h2>Kann ich Artikel zurückgeben?</h2>
     <p>Ja, innerhalb von 30 Tagen — der Rückversand ist kostenlos. Details finden Sie unter <a href="#" onclick="go('versand');return false">Versand &amp; Rücksendung</a> und in der <a href="#" onclick="go('widerruf');return false">Widerrufsbelehrung</a>.</p>
@@ -1595,7 +1598,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
     <p class="lead">Alle Informationen zu Lieferung, Versandkosten und Rückgabe Ihrer Shop-Bestellung.</p>
 
     <h2>Versandkosten</h2>
-    <p>Ab einem Bestellwert von 79 € liefern wir versandkostenfrei. Darunter berechnen wir pauschal 5,90 € pro Bestellung.</p>
+    <p>Wir liefern versandkostenfrei — für jede Bestellung, ohne Mindestbestellwert. Auch der Rückversand ist kostenlos.</p>
 
     <h2>Lieferzeit</h2>
     <p>Bestellungen verlassen unser Lager in der Regel am nächsten Werktag und sind innerhalb von 2 bis 4 Werktagen bei Ihnen. Sobald Ihre Bestellung unterwegs ist, erhalten Sie eine Versandbestätigung mit Sendungsverfolgung.</p>
@@ -1679,7 +1682,7 @@ nav.main .salelink:hover{border-color:#8C3B2E}
   <div class="dprog">
     <div class="msg" id="pmsg"></div>
     <div class="track"><div class="fill" id="pfill"></div></div>
-    <div class="steps"><span id="s1">Versandfrei ab 79 €</span><span id="s2">2 Artikel −10 %</span>
+    <div class="steps"><span id="s1">Kostenloser Versand</span><span id="s2">2 Artikel −10 %</span>
       <span id="s3">3 Artikel −15 %</span></div>
   </div>
   <div class="ditems" id="ditems"></div>
@@ -1837,7 +1840,7 @@ function obs(){document.querySelectorAll('.reveal:not(.in)').forEach(e=>io.obser
    Regeln: Neukundenrabatt und Mengenrabatt stapeln sich nicht — der höhere gewinnt.
    Gratisversand stapelt immer. Alle Schwellen nur hier ändern. */
 const PROMO={
-  freeShip:79, shipCost:5.90,
+  freeShip:0, shipCost:0,   // Versand ist IMMER kostenlos (freeShip>0 würde eine Schwelle aktivieren)
   tiers:[{n:3,d:.15},{n:2,d:.10}],
   welcome:{code:'DOCCIA10',d:.10,label:'Neukundenrabatt'}
 };
@@ -2358,7 +2361,7 @@ function uspRow(){
     tel:'<svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>'
   };
   return `<div class="usprow reveal">
-    <div><i style="color:var(--c1)">${ic.truck}</i><b>Kostenloser Versand</b><span>ab ${Math.round(PROMO.freeShip)} € Bestellwert</span></div>
+    <div><i style="color:var(--c1)">${ic.truck}</i><b>Kostenloser Versand</b><span>${PROMO.freeShip>0?'ab '+Math.round(PROMO.freeShip)+' € Bestellwert':'auf alle Bestellungen'}</span></div>
     <div><i style="color:var(--c3)">${ic.ret}</i><b>30 Tage Rückgabe</b><span>kostenloser Rückversand</span></div>
     <div><i style="color:var(--c4)">${ic.card}</i><b>Sicher bezahlen</b><span>PayPal · Klarna · Rechnung</span></div>
     <div><i style="color:var(--c2)">${ic.tel}</i><b>Persönliche Beratung</b><span>01 555 01 00</span></div>
@@ -2492,7 +2495,7 @@ function openP(id){
       <div class="prow"><span class="now">${eur(p.p)}</span>
         ${p.old?`<span class="old">${eur(p.old)}</span><span class="pc">−${d} %</span>`:''}</div>
       ${p.old||gpT?`<div class="refnote">${[p.old?'Streichpreis: niedrigster Preis der letzten 30 Tage':'',gpT?`Grundpreis: ${gpT}`:''].filter(Boolean).join(' · ')}</div>`:''}
-      <div class="tax" style="margin-bottom:14px">inkl. MwSt., zzgl. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Versand</a></div>
+      <div class="tax" style="margin-bottom:14px">inkl. MwSt. · <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">kostenloser Versand</a></div>
       <div class="stock"><i></i>Auf Lager&nbsp;<span>· ${lieferzeit()}</span></div>
       ${p.sizes?`<div class="sizes"><span class="slbl">Größe</span><div>
         ${p.sizes.map(s=>`<button class="szb" data-s="${s}" onclick="pickSize('${s}')">${s}</button>`).join('')}</div></div>`:''}
@@ -2506,7 +2509,7 @@ function openP(id){
         <span class="pay2">Rechnung</span>
       </div>
       <div class="trustmini">
-        <span>Versandkostenfrei ab ${eur(PROMO.freeShip)}</span>
+        <span>Kostenloser Versand &amp; Rückversand</span>
         <span>30 Tage Rückgabe</span>
         <span>${lieferzeit()}</span>
       </div>
@@ -2525,7 +2528,7 @@ function openP(id){
         <details class="acc"><summary>Details &amp; Material</summary>
           <p>${p.mat?`Material: ${p.mat}.<br>`:''}${p.ml?`Inhalt: ${p.ml} ml.<br>`:''}${p.g?`Gewicht: ${p.g} g.<br>`:''}${p.sizes?`Erhältliche Größen: ${p.sizes.join(', ')}.<br>`:''}Artikelnummer: LD-${p.id.toUpperCase()}</p></details>
         <details class="acc"><summary>Versand &amp; Rückgabe</summary>
-          <p>Versandkostenfrei ab ${eur(PROMO.freeShip)}, darunter ${eur(PROMO.shipCost)}. ${lieferzeit()}.<br>
+          <p>${PROMO.freeShip>0?`Versandkostenfrei ab ${eur(PROMO.freeShip)}, darunter ${eur(PROMO.shipCost)}.`:'Kostenloser Versand für alle Bestellungen.'} ${lieferzeit()}.<br>
           30 Tage Rückgaberecht, kostenloser Rückversand. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Alle Details</a></p></details>
       </div>
       <div class="prevs">
@@ -2650,7 +2653,7 @@ function update(){
   const dLabel=useCoupon?`${PROMO.welcome.label} (${COUPON}) −${Math.round(cD*100)} %`:`Mengenrabatt −${Math.round(mD*100)} %`;
   const free=(s-ds)>=PROMO.freeShip;
   const ship=free||n===0?0:PROMO.shipCost, tot=s-ds+ship;
-  if(free&&!wasFree&&n>0)toast('Gratisversand erreicht ✓');
+  if(PROMO.freeShip>0&&free&&!wasFree&&n>0)toast('Gratisversand erreicht ✓');
   wasFree=free;
   const cn=document.getElementById('cn'); cn.textContent=n; cn.style.display=n?'flex':'none';
   document.getElementById('ditems').innerHTML = n? CART.map(i=>`
@@ -2680,8 +2683,10 @@ function update(){
   else if(n===1){txt=`Noch <b>1 Artikel</b> bis <b>${t2} % Rabatt</b>.`;pct=33}
   else if(n===2){txt=`<b>${t2} % aktiv.</b> Noch 1 Artikel bis ${t3} %.`;pct=66}
   else{txt=`<b>${t3} % Mengenrabatt aktiv</b> — Maximum erreicht.`;pct=100}
-  if(n>0&&!free){txt+=` Noch <b>${eur(PROMO.freeShip-(s-ds))}</b> bis zum Gratisversand.`}
-  else if(n>0){txt+=' Gratisversand aktiv ✓';if(free)track('promo_threshold_reached',{threshold:PROMO.freeShip})}
+  if(PROMO.freeShip>0){
+    if(n>0&&!free){txt+=` Noch <b>${eur(PROMO.freeShip-(s-ds))}</b> bis zum Gratisversand.`}
+    else if(n>0){txt+=' Gratisversand aktiv ✓';if(free)track('promo_threshold_reached',{threshold:PROMO.freeShip})}
+  }else if(n>0){txt+=' Versand kostenlos.'}
   document.getElementById('pmsg').innerHTML=txt;
   document.getElementById('pfill').style.width=pct+'%';
   document.getElementById('s1').className=free&&n>0?'hit':'';
@@ -2771,7 +2776,7 @@ document.getElementById('uspHome').innerHTML=uspRow();
 /* Drawer-Beschriftungen aus der zentralen PROMO-Config ableiten */
 (function(){
   const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
-  document.getElementById('s1').textContent=`Versandfrei ab ${Math.round(PROMO.freeShip)} €`;
+  document.getElementById('s1').textContent=PROMO.freeShip>0?`Versandfrei ab ${Math.round(PROMO.freeShip)} €`:'Kostenloser Versand';
   document.getElementById('s2').textContent=`2 Artikel −${t2} %`;
   document.getElementById('s3').textContent=`3 Artikel −${t3} %`;
   const ts=document.getElementById('tickSale'); if(ts)ts.textContent=maxSale();
