@@ -97,20 +97,20 @@ nav.main a:hover{border-color:var(--ink)}
 .hsearch input::placeholder{color:var(--ink-45)}
 .hsearch .sgg{top:calc(100% + 8px);left:0;right:0;border-radius:16px}
 /* Navigationszeile unter dem Header */
-.hnav{display:flex;align-items:center;gap:28px;height:52px;max-width:var(--maxw);margin:0 auto;
-  padding-inline:var(--pad);border-top:1px solid var(--line);font-size:14px}
+.hnav{display:flex;align-items:center;gap:30px;height:56px;max-width:var(--maxw);margin:0 auto;
+  padding-inline:var(--pad);border-top:1px solid var(--line);font-size:15.5px}
 .hnav a{font-weight:500;letter-spacing:.01em;transition:color .25s}
 .hnav>a:hover,.hnav .navdrop>a:hover{color:var(--brass)}
 .prodbtn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--paper);
-  border-radius:999px;padding:10px 20px;font-weight:600}
+  border-radius:999px;padding:11px 22px;font-weight:600;font-size:15.5px}
 .prodbtn:hover{background:var(--brass);color:#fff}
 .prodbtn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
 /* Sale als roter Pill — fällt sofort ins Auge */
-.hnav .salelink{background:#8C3B2E;color:#fff!important;font-weight:600;border-radius:999px;padding:9px 18px}
+.hnav .salelink{background:#8C3B2E;color:#fff!important;font-weight:600;border-radius:999px;padding:10px 21px;font-size:15.5px}
 .hnav .salelink:hover{background:#A8473A;color:#fff}
-.hnav .hsoon{color:var(--ink-45);cursor:default;font-weight:500;border-bottom:1px dotted var(--ink-45)}
+.hnav .hsoon{color:var(--ink-45);cursor:default;font-weight:500;border-bottom:1px dotted var(--ink-45);font-size:15.5px}
 .hnav .svc{margin-left:auto}
-.hnav .navdrop>a{text-transform:none;font-size:14px;letter-spacing:.01em;border:none}
+.hnav .navdrop>a{text-transform:none;font-size:15.5px;letter-spacing:.01em;border:none}
 .hnav .navdrop .dropm{left:0;transform:translateY(8px)}
 .hnav .navdrop:hover .dropm{transform:translateY(0)}
 .hnav .svc .dropm{left:auto;right:0}
@@ -795,8 +795,8 @@ body.pmopen{overflow:hidden}
 @media(max-width:760px){.shero{aspect-ratio:4/5;min-height:0}}
 /* Overlay: oben dunkel (Header-Text lesbar), Mitte Vignette (Hero-Text lesbar), unten dunkel (Balken) */
 .sov{position:absolute;inset:0;background:
-  radial-gradient(ellipse 68% 55% at 50% 52%,rgba(15,13,11,.36),transparent 72%),
-  linear-gradient(180deg,rgba(15,13,11,.52) 0%,rgba(15,13,11,.10) 28%,rgba(15,13,11,.14) 62%,rgba(15,13,11,.66) 100%)}
+  radial-gradient(ellipse 70% 58% at 50% 50%,rgba(15,13,11,.48),transparent 74%),
+  linear-gradient(180deg,rgba(15,13,11,.55) 0%,rgba(15,13,11,.14) 28%,rgba(15,13,11,.18) 62%,rgba(15,13,11,.7) 100%)}
 .stx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;color:var(--paper);padding:26px}
 .stx .eyebrow{color:var(--brass-lo)}
@@ -907,8 +907,8 @@ nav.main .salelink:hover{border-color:#8C3B2E}
   header.clear .hnav>a,header.clear .hnav .navdrop>a,header.clear .hnav .hsoon{color:#FBF9F5}
   header.clear .dropm a{color:var(--ink)}
   header.clear .hnav .hsoon{opacity:.65}
-  header.clear .prodbtn{background:#fff;color:var(--ink)}
-  header.clear .prodbtn:hover{background:var(--brass);color:#fff}
+  header.clear .hnav .navdrop>a.prodbtn{background:#fff;color:var(--ink)}
+  header.clear .hnav .navdrop>a.prodbtn:hover{background:var(--brass);color:#fff}
   header.clear .htel{color:#FBF9F5}
   header.clear .icon{stroke:#FBF9F5}
   header.clear .hsearch{border-color:transparent}
@@ -928,15 +928,26 @@ nav.main .salelink:hover{border-color:#8C3B2E}
 /* Zahlarten & Gratisversand auf der Produktseite */
 .payrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
 .pay2{border:1px solid var(--line);padding:6px 12px;font-size:12px;letter-spacing:.04em;color:var(--ink-70);background:#fff;font-weight:500}
-.pay2.paypal{color:#003087;border-color:rgba(0,48,135,.35);font-weight:700;font-style:italic}
-.pay2.klarna{background:#FFB3C7;border-color:#FFB3C7;color:#17120F;font-weight:700}
-.pay2.visa{color:#1A1F71;border-color:rgba(26,31,113,.35);font-weight:800;font-style:italic;letter-spacing:.08em}
-.pay2.mc{color:#EB001B;border-color:rgba(235,0,27,.3);font-weight:700}
+/* Zahlarten 1:1 in den Original-Markenfarben */
+.pay2.paypal{font-weight:700;font-style:italic;letter-spacing:0}
+.pay2.paypal i{color:#003087;font-style:italic}
+.pay2.paypal b{color:#0070BA;font-style:italic}
+.pay2.klarna{background:#FFB3C7;border-color:#FFB3C7;color:#0A0B09;font-weight:700;letter-spacing:0}
+.pay2.visa{color:#1A1F71;border-color:rgba(26,31,113,.3);font-weight:800;font-style:italic;letter-spacing:.06em}
+.pay2.mc{display:inline-flex;align-items:center;gap:7px;color:#141413;font-weight:600;letter-spacing:0}
+.mcc{position:relative;width:25px;height:15px;flex:none}
+.mcc::before,.mcc::after{content:'';position:absolute;top:0;width:15px;height:15px;border-radius:50%}
+.mcc::before{left:0;background:#EB001B}
+.mcc::after{right:0;background:#F79E1B;opacity:.9}
 .freeship{color:#2E9E5B;font-size:14.5px;font-weight:600;margin-bottom:12px}
 /* Verfügbarkeit: grüner Punkt (Bernstein-Prinzip) */
 .stock{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--ink);margin:0 0 16px}
-.stock i{width:10px;height:10px;border-radius:50%;background:#2E9E5B;flex:none;animation:stockpulse 2.2s infinite}
-@keyframes stockpulse{0%,100%{box-shadow:0 0 0 3px rgba(46,158,91,.15)}50%{box-shadow:0 0 0 7px rgba(46,158,91,.22)}}
+.stock i{width:10px;height:10px;border-radius:50%;background:#2E9E5B;flex:none;
+  animation:stockpulse 2.6s cubic-bezier(.4,0,.5,1) infinite}
+@keyframes stockpulse{
+  0%{box-shadow:0 0 0 0 rgba(46,158,91,.38)}
+  70%{box-shadow:0 0 0 10px rgba(46,158,91,0)}
+  100%{box-shadow:0 0 0 0 rgba(46,158,91,0)}}
 .stock span{color:var(--ink-45);font-weight:400;font-size:13.5px}
 /* Kundenstimmen auf der Produktseite */
 .prevs{margin-top:24px}
@@ -2186,17 +2197,15 @@ function renderShop(){
     const mS=maxSale();
     const deptImgs={parfuem:'edpItalia',kosmetik:'kosmetikLife',textil:'towelsGold'};
     /* Hero-Slider: Themen wechseln (Bad / Sale / Textil-Neukunden), Bernstein-Prinzip */
-    /* Slide-Aufbau wie Bernstein. Reihenfolge: PRODUKTE zuerst (Badeartikel,
-       Textil, Parfüm — das Kerngeschäft), Sale, Neukunden; Duschkonzepte zuletzt. */
+    /* 3 Slides, nur hochauflösende Bilder. Produkte primär:
+       1) Frau im Bad (Badeartikel)  2) Sale  3) Neukundenrabatt (Parfüm) */
     const SLIDES=[
-      {img:'galK1',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
+      {img:'poster',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
        cta:'Jetzt shoppen',fn:"document.querySelector('.depts').scrollIntoView({behavior:'smooth',block:'start'})"},
-      {img:'poster',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+      {img:'towelsGold',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true},
-      {img:'galT1',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
-       cta:'Code sichern',fn:"popOpen()"},
-      {img:'hero2',tag:'Komplettpaket · Festpreis',sub:'Für Ruhe & Wohlfühlen im Bad',h:'Duschkonzepte nach Maß',
-       cta:'Duschkonzepte entdecken',fn:"goSec('linien')"}
+      {img:'edpItalia',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+       cta:'Code sichern',fn:"popOpen()"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
@@ -2311,16 +2320,23 @@ function renderShop(){
   headerClear();
 }
 
-/* ---------- Hero-Slider ---------- */
-let slideIdx=0;
+/* ---------- Hero-Slider ----------
+   Automatik alle 8 s; ein Klick auf einen Punkt setzt den Timer zurück
+   und pausiert die Automatik 15 s — kein schnelles Weiterspringen mehr. */
+let slideIdx=0, slideHold=0;
 function showSlide(i){
   const s=[...document.querySelectorAll('#heroSlider .slide')]; if(!s.length)return;
   slideIdx=((i%s.length)+s.length)%s.length;
   s.forEach((el,k)=>el.classList.toggle('on',k===slideIdx));
   document.querySelectorAll('#heroSlider .sdots button').forEach((d,k)=>d.classList.toggle('on',k===slideIdx));
+  slideHold=Date.now();
 }
-function goSlide(i){showSlide(i)}
-setInterval(()=>{if(document.querySelector('#heroSlider'))showSlide(slideIdx+1)},8000);
+function goSlide(i){showSlide(i);slideHold=Date.now()+7000}  // manuell: +7 s extra Ruhe
+setInterval(()=>{
+  if(!document.querySelector('#heroSlider'))return;
+  if(Date.now()-slideHold<8000)return;
+  showSlide(slideIdx+1);
+},500);
 
 /* ---------- Header über dem Hero: transparent, Logo weiß; beim Scrollen wieder dunkel ---------- */
 function headerClear(){
@@ -2483,8 +2499,11 @@ function openP(id){
       ${p.p>=PROMO.freeShip?`<div class="freeship">✓ Kostenloser Versand</div>`:''}
       <button class="btn" style="width:100%" onclick="addFromPM()">In den Warenkorb</button>
       <div class="payrow">
-        <span class="pay2 paypal">PayPal</span><span class="pay2 klarna">Klarna.</span><span class="pay2 visa">VISA</span>
-        <span class="pay2 mc">Mastercard</span><span class="pay2">Rechnung</span>
+        <span class="pay2 paypal"><i>Pay</i><b>Pal</b></span>
+        <span class="pay2 klarna">Klarna.</span>
+        <span class="pay2 visa">VISA</span>
+        <span class="pay2 mc"><em class="mcc"></em>mastercard</span>
+        <span class="pay2">Rechnung</span>
       </div>
       <div class="trustmini">
         <span>Versandkostenfrei ab ${eur(PROMO.freeShip)}</span>
