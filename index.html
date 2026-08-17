@@ -1739,12 +1739,10 @@ Object.assign(A,{
   galP1:'assets/neu/marble-candles.jpg', galP2:'assets/neu/bild1.jpg',
   galK1:'assets/neu/bild.jpg', galK2:'assets/neu/soaps.jpg', galK3:'assets/neu/olesia.jpg',
   galT1:'assets/neu/spa-kit.jpg', galT2:'assets/neu/bild2.jpg',
-  /* Hero-Fotos in 1920px (Pexels, frei nutzbar) */
-  heroTowels:'assets/hero/px-8535619.jpg',    // bunte Handtücher
-  heroSale:'assets/hero/px-1961784.jpg',      // knallrote Tulpen + Flakon
-  heroCandles:'assets/hero/px-11848191.jpg',  // Pastell-Keramikkerzen
-  collSale:'assets/hero/px-7755656.jpg',      // rosa Handtuchrollen auf Blau
-  collTowels:'assets/hero/px-5833316.jpg'     // gelbe Handtuchrollen
+  /* La-Doccia-Markenbilder, auf 1920px hochskaliert für den Fullscreen-Hero */
+  posterXL:'assets/neu/poster-1920.jpg',      // Frau im Bad (nativ 1920)
+  towelsXL:'assets/neu/towelsGold-1920.jpg',  // bestickte LA-DOCCIA-Handtücher
+  edpXL:'assets/neu/edpItalia-1920.jpg'       // gelb-orange LA-DOCCIA-Flakons
 });
 const src = k => A[k];
 
@@ -2069,7 +2067,7 @@ const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
    Der Sale-Prozentsatz wird aus echten Preisen berechnet — nichts erfunden. */
 const maxSale=()=>Math.max(...P.filter(p=>p.old).map(disc));
 const COLL={
- sale:{n:'Sale',img:'collSale',
+ sale:{n:'Sale',img:'candles3',
    sub:'Reduzierte Artikel. Alle Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
    f:p=>!!p.old},
  neu:{n:'Neuheiten',img:'mistNude',
@@ -2209,13 +2207,13 @@ function renderShop(){
     /* Hero-Slider: Themen wechseln (Bad / Sale / Textil-Neukunden), Bernstein-Prinzip */
     /* 3 Slides, nur hochauflösende Bilder. Produkte primär:
        1) Frau im Bad (Badeartikel)  2) Sale  3) Neukundenrabatt (Parfüm) */
-    /* Farbige Slides in 1920px — knallig wie das Logo */
+    /* Markenbilder im La-Doccia-Stil, alle 1920px */
     const SLIDES=[
-      {img:'heroTowels',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
+      {img:'posterXL',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
        cta:'Jetzt shoppen',fn:"document.querySelector('.salerow').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'heroSale',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+      {img:'towelsXL',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true},
-      {img:'heroCandles',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+      {img:'edpXL',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
