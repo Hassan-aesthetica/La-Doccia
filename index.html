@@ -12,7 +12,7 @@
   /* Kein Braun mehr: neutrales Schwarz/Weiß als Bühne, die Logo-Farben knallen */
   --ink:#17171B; --ink-70:rgba(23,23,27,.72); --ink-45:rgba(23,23,27,.48);
   --paper:#FFFFFF; --stone:#F5F5F8; --stone-2:#E9E9F0;
-  --brass:#E85D2A; --brass-lo:#FFB25C; --clay:#6C4FD8;
+  --brass:#E85D2A; --brass-lo:#FFB25C; --gold:#C9A227; --clay:#6C4FD8;
   --line:rgba(23,23,27,.12);
   /* Vier Markenfarben — kräftig und vorne drauf, wie im Logo */
   --c1:#E8B400; --c2:#E85D2A; --c3:#1FA98A; --c4:#6C4FD8;
@@ -219,7 +219,7 @@ section{padding:clamp(64px,9vw,128px) 0}
 .card .cat{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45)}
 .card h3{font-family:var(--sans);font-weight:400;font-size:16.5px;margin:6px 0 6px}
 .stars{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--ink-45)}
-.stars .s{color:var(--brass);letter-spacing:1px;font-size:11px}
+.stars .s{color:var(--gold);letter-spacing:1px;font-size:11px}
 .price2{margin-top:8px;font-size:17px}
 
 /* ============ REVIEWS ============ */
@@ -227,11 +227,11 @@ section{padding:clamp(64px,9vw,128px) 0}
   margin-bottom:clamp(34px,5vw,56px)}
 @media(max-width:980px){.revtop{grid-template-columns:1fr}}
 .score{text-align:center;border:1px solid var(--line);padding:32px 24px;background:#fff}
-.score .big{font-family:var(--serif);font-size:60px;line-height:1;color:var(--brass)}
-.score .st{color:var(--brass);font-size:17px;letter-spacing:3px;margin:10px 0 8px}
+.score .big{font-family:var(--serif);font-size:60px;line-height:1;color:var(--ink)}
+.score .st{color:var(--gold);font-size:17px;letter-spacing:3px;margin:10px 0 8px}
 .score .cnt{font-size:12.5px;color:var(--ink-45)}
 .score .vf{display:inline-flex;gap:6px;margin-top:14px;font-size:10.5px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--brass);border:1px solid var(--brass);padding:5px 11px}
+  text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:5px 11px}
 .bars{display:flex;flex-direction:column;gap:9px}
 .bar{display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--ink-70)}
 .bar .lbl{width:34px;flex:none}
@@ -245,7 +245,7 @@ section{padding:clamp(64px,9vw,128px) 0}
 .rev .who{font-size:13.5px;font-weight:500}
 .rev .who span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--brass);font-weight:400;margin-top:4px}
-.rev .st{color:var(--brass);font-size:12px;letter-spacing:2px;flex:none}
+.rev .st{color:var(--gold);font-size:12px;letter-spacing:2px;flex:none}
 .rev q{font-size:14.5px;color:var(--ink-70);line-height:1.7;quotes:none;display:block;flex:1}
 .rev .prod{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;
   letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45)}
@@ -321,7 +321,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
 .dhead h3{font-size:20px}
 .dprog{padding:16px 24px;border-bottom:1px solid var(--line);background:var(--stone)}
 .dprog .msg{font-size:12.5px;margin-bottom:10px}
-.dprog .msg b{color:var(--brass);font-weight:500}
+.dprog .msg b{color:var(--ink);font-weight:600}
 .dprog .track{height:5px;background:#fff;position:relative}
 .dprog .fill{position:absolute;inset:0 auto 0 0;background:var(--brass);width:0;transition:.6s}
 .dprog .steps{display:flex;justify-content:space-between;margin-top:8px;font-size:10px;
@@ -333,7 +333,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
 .ci .m{flex:1;min-width:0}
 .ci .m .n{font-size:14px;margin-bottom:3px}
 .ci .m .v{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-45)}
-.ci .m .pr{font-size:14px;margin-top:8px;color:var(--brass)}
+.ci .m .pr{font-size:14px;margin-top:8px;color:var(--ink);font-weight:500}
 .ci .qb{display:flex;align-items:center;margin-top:10px;border:1px solid var(--line);width:fit-content}
 .ci .qb button{width:28px;height:28px;font-size:14px;color:var(--ink-70)}
 .ci .qb span{width:24px;text-align:center;font-size:12.5px}
@@ -341,7 +341,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
   align-self:flex-start}
 .dfoot{border-top:1px solid var(--line);padding:20px 24px 24px}
 .sumrow{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:9px;color:var(--ink-70)}
-.sumrow.disc{color:var(--brass);font-weight:500}
+.sumrow.disc{color:#2E9E5B;font-weight:500}
 .sumrow.tot{font-size:18px;color:var(--ink);margin:14px 0 4px;padding-top:14px;border-top:1px solid var(--line)}
 .dfoot .btn{width:100%;margin-top:14px}
 .dfoot .note{font-size:11px;color:var(--ink-45);text-align:center;margin-top:12px}
@@ -519,7 +519,7 @@ h1,h2,h3{text-wrap:balance}
 .card:hover .iw::after{border-color:rgba(232,93,42,.42)}
 .card h3{transition:color .3s;line-height:1.35}
 .card:hover h3{color:var(--brass)}
-.price2{color:var(--brass);font-weight:400}
+.price2{color:var(--ink);font-weight:500}
 .badge{backdrop-filter:blur(4px)}
 
 /* Designlinien */
@@ -626,9 +626,9 @@ header.stuck{box-shadow:0 12px 34px -26px rgba(20,20,24,.5)}
 .pminfo .crumb{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);margin-bottom:14px}
 .pminfo h2{font-size:clamp(26px,3.2vw,38px);margin-bottom:10px}
 .pminfo .prow{display:flex;align-items:baseline;gap:12px;margin:16px 0 4px}
-.pminfo .now{font-size:26px;color:var(--brass)}
+.pminfo .now{font-size:26px;color:var(--ink);font-weight:600}
 .pminfo .old{font-size:16px;color:var(--ink-45);text-decoration:line-through}
-.pminfo .pc{background:var(--brass);color:#fff;font-size:11px;font-weight:500;padding:3px 8px;letter-spacing:.08em}
+.pminfo .pc{background:var(--ink);color:#fff;font-size:11px;font-weight:500;padding:3px 8px;letter-spacing:.08em}
 .pminfo .tax{font-size:11.5px;color:var(--ink-45);margin-bottom:20px}
 .pminfo .desc{color:var(--ink-70);margin-bottom:24px;max-width:50ch}
 .pminfo .desc{margin-top:18px}
@@ -734,7 +734,7 @@ body.pmopen{overflow:hidden}
 .bimgs img:hover{border-color:var(--brass)}
 .bimgs span{color:var(--ink-45);font-size:13px}
 .bsum{font-size:13.5px;white-space:nowrap}
-.bsum b{color:var(--brass);font-size:16px;margin-left:4px}
+.bsum b{color:var(--ink);font-size:16px;margin-left:4px;font-weight:600}
 .bsum .old{color:var(--ink-45);text-decoration:line-through;font-size:12px;margin-left:6px}
 .bnote{color:var(--ink-45);font-size:11px;line-height:1.5;margin-bottom:12px}
 .btn.slim{padding:11px 22px;font-size:11px;width:100%}
@@ -751,7 +751,7 @@ body.pmopen{overflow:hidden}
 .xi{display:flex;gap:10px;align-items:center;padding:7px 0}
 .xi img{width:44px;height:44px;object-fit:cover;background:#fff;flex:none}
 .xi .xn{font-size:12.5px;line-height:1.35}
-.xi .xp{font-size:12px;color:var(--brass);margin-top:2px}
+.xi .xp{font-size:12px;color:var(--ink-70);margin-top:2px}
 .xi .xadd{margin-left:auto;width:34px;height:34px;border:1px solid var(--line);font-size:16px;flex:none;transition:.2s}
 .xi .xadd:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 /* Gutscheinfeld (einklappbar) */
@@ -956,7 +956,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 /* Kundenstimmen auf der Produktseite */
 .prevs{margin-top:24px}
 .prev{background:#fff;border:1px solid var(--line);padding:15px 17px;margin-top:10px}
-.prev .pst{color:var(--brass);font-size:12.5px;letter-spacing:2px}
+.prev .pst{color:var(--gold);font-size:12.5px;letter-spacing:2px}
 .prev .pst span{color:#2E9E5B;font-size:11.5px;letter-spacing:.04em;margin-left:10px;font-weight:600}
 .prev p{font-size:14.5px;color:var(--ink-70);margin:8px 0 6px;line-height:1.65}
 .prev b{font-size:13px;font-weight:600}
@@ -1032,7 +1032,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 
 <!-- Bewertungsleiste (Bernstein-Prinzip: Vertrauen ganz oben, statisch) -->
 <div id="ticker"><div class="slot">
-  <div class="t on"><span><b style="color:var(--brass-lo)">★★★★★</b>&nbsp; 4,9 &nbsp;Gut&nbsp; 186 Bewertungen</span></div>
+  <div class="t on"><span><b style="color:#D9B84A">★★★★★</b>&nbsp; 4,9 &nbsp;Gut&nbsp; 186 Bewertungen</span></div>
 </div></div>
 
 <header>
@@ -1125,7 +1125,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="veil"></div>
     <div class="scrollcue"><span>Scrollen</span><i></i></div>
     <div class="inner">
-      <span class="eyebrow reveal">Individuelle Bad-Interieurs</span>
+      <span class="eyebrow reveal">Individuelle Duschkonzepte</span>
       <h1 class="reveal">Eine Dusche, die den Tag beginnt.</h1>
       <p class="reveal">Wir planen und bauen Duschkonzepte nach Maß — vom ersten Aufmaß bis zur letzten Fuge. Ein Ansprechpartner, ein Festpreis, ein Termin.</p>
       <div class="cta reveal">
@@ -1144,13 +1144,13 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="txt reveal">
         <span class="eyebrow">Die Marke</span>
         <h2>Duschen erleben — nicht nur duschen.</h2>
-        <p>Die meisten Bäder werden gebaut, damit sie funktionieren. Wir bauen sie, damit sie etwas auslösen. Der Moment unter der Dusche ist der erste ehrliche Moment des Tages — und der verdient mehr als weiße Fliesen und einen Vorhang.</p>
-        <p>La Doccia entstand aus genau dieser Überzeugung: dass ein Bad ein Interieur ist und kein Funktionsraum. Wir arbeiten mit fugenlosen Oberflächen, Glas und Carbon, mit Armaturen in Ihrer Wunschfarbe und mit Maßen, die zu Ihrem Raum passen — nicht zum Katalog.</p>
-        <p>Jedes Projekt beginnt mit einer persönlichen Beratung bei Ihnen zu Hause und endet mit einem Bad, das sich anfühlt wie ein guter Hotelaufenthalt. Nur eben jeden Morgen.</p>
+        <p>Die meisten Duschen werden eingebaut, damit sie funktionieren. Wir bauen sie, damit sie etwas auslösen. Der Moment unter der Dusche ist der erste ehrliche Moment des Tages — und der verdient mehr als weiße Fliesen und einen Vorhang.</p>
+        <p>La Doccia entstand aus genau dieser Überzeugung: dass eine Dusche ein Interieur ist und kein Funktionsraum. Wir arbeiten mit fugenlosen Oberflächen, Glas und Carbon, mit Armaturen in Ihrer Wunschfarbe und mit Maßen, die zu Ihrem Raum passen — nicht zum Katalog.</p>
+        <p>Jedes Projekt beginnt mit einer persönlichen Beratung bei Ihnen zu Hause und endet mit einem Ergebnis, das sich anfühlt wie ein guter Hotelaufenthalt. Nur eben jeden Morgen.</p>
       </div>
       <figure class="reveal">
         <img data-img="towel" alt="La Doccia Frottee im Morgenlicht">
-        <div class="stamp"><div class="y">400+</div><span>Umgesetzte Bäder seit 2016</span></div>
+        <div class="stamp"><div class="y">400+</div><span>Umgesetzte Projekte seit 2016</span></div>
       </figure>
     </div>
   </section>
@@ -1161,7 +1161,7 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="shead reveal">
         <span class="eyebrow">La Doccia Kollektion</span>
         <h2>Textil, Duft und Pflege — die Marke zum Mitnehmen.</h2>
-        <p>Handtücher, Bademäntel, unser Eau de Toilette und die Pflegeserie. Dieselbe Handschrift wie im Bad.</p>
+        <p>Handtücher, Morgenmäntel, unser Eau de Toilette und die Pflegeserie. Dieselbe Handschrift wie unter der Dusche.</p>
       </div>
       <div class="reveal" id="homeRails"></div>
       <!-- Große Abteilungsbilder: direkter Einstieg in den Shop -->
@@ -1207,12 +1207,12 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="wrap">
       <div class="shead reveal">
         <span class="eyebrow">Designlinien</span>
-        <h2>Drei Wege zu Ihrem Bad.</h2>
+        <h2>Drei Wege zu Ihrer Dusche.</h2>
         <p>Jede Linie ist ein Komplettpaket: Planung, Material, Demontage, Einbau und Endreinigung. Nach der Beratung vor Ort erhalten Sie ein verbindliches Festpreisangebot.</p>
       </div>
       <div class="lines reveal" id="linesGrid"></div>
       <p style="margin-top:34px;font-size:13.5px;color:var(--ink-45);max-width:60ch">
-        Preise als Richtwerte für ein Bad bis 8 m². Der Endpreis ergibt sich nach dem Aufmaß vor Ort und ist dann verbindlich.
+        Preise als Richtwerte für einen Duschraum bis 8 m². Der Endpreis ergibt sich nach dem Aufmaß vor Ort und ist dann verbindlich.
         Auch für Gewerbe: Hotels, Fitnessstudios und Friseursalons betreuen wir mit eigenen Konditionen — <a href="#termin" style="color:var(--brass);text-decoration:underline;text-underline-offset:3px">sprechen Sie uns an</a>.
       </p>
     </div>
@@ -1224,7 +1224,7 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="shead reveal">
         <span class="eyebrow">Material &amp; Handwerk</span>
         <h2>Die Details, die man erst nach Jahren bemerkt.</h2>
-        <p>Was ein Bad langfristig gut macht, sieht man selten auf dem ersten Foto — sondern merkt man beim täglichen Gebrauch.</p>
+        <p>Was einen Duschraum langfristig gut macht, sieht man selten auf dem ersten Foto — sondern merkt man beim täglichen Gebrauch.</p>
       </div>
       <div class="details reveal">
         <div class="det"><figure><img data-img="drain" alt="Abflussrinne"></figure>
@@ -1234,8 +1234,8 @@ nav.main .salelink:hover{border-color:#E0231C}
           <h3>Armaturen nach Wahl</h3>
           <p>Massives Messing mit Kristallgriffen oder puristisch in Bronze. Thermostat mit Verbrühschutz serienmäßig.</p></div>
         <div class="det"><figure><img data-img="basin" alt="Waschbecken"></figure>
-          <h3>Naturstein &amp; Onyx</h3>
-          <p>Handverlesene Becken aus Onyxmarmor, jedes ein Unikat. Auf Wunsch mit hinterleuchteter Wandmarke.</p></div>
+          <h3>Carbon &amp; Glas</h3>
+          <p>Leichte Carbon-Elemente, 6-mm-Sicherheitsglas und Kristallgriffe — modern, robust und pflegeleicht.</p></div>
       </div>
     </div>
   </section>
@@ -1259,7 +1259,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="txt"><div class="in">
       <span class="eyebrow">Der Moment danach</span>
       <h2>Warm, still, und ganz kurz gehört der Tag nur Ihnen.</h2>
-      <p>Fugenlose Wände, Licht durch mattiertes Glas, eine Bank aus Eiche. Kein Bad von der Stange.</p>
+      <p>Fugenlose Wände, Licht durch mattiertes Glas, eine Bank aus Eiche. Nichts von der Stange.</p>
       <a href="#termin" class="btn light">Beratungstermin sichern</a>
     </div></div>
   </div>
@@ -1289,7 +1289,7 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="reveal">
         <span class="eyebrow">Beratung</span>
         <h2>In 30 Minuten wissen Sie, was möglich ist.</h2>
-        <p>Wir kommen zu Ihnen, messen auf und zeigen Ihnen anhand von Mustern, wie Ihr Bad aussehen kann. Kostenlos und unverbindlich.</p>
+        <p>Wir kommen zu Ihnen, messen auf und zeigen Ihnen anhand von Mustern, wie Ihr Duschraum aussehen kann. Kostenlos und unverbindlich.</p>
         <div class="steps">
           <div class="step"><span class="n">1</span><div><strong>Termin wählen</strong>
             <span>Sie nennen uns zwei Wunschtermine, wir bestätigen innerhalb von 24 Stunden.</span></div></div>
@@ -1336,10 +1336,10 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="wrap">
       <h2 style="font-size:clamp(23px,3.2vw,34px);margin-bottom:24px;max-width:24ch">Individuelle Duschkonzepte von La Doccia</h2>
       <div class="cols">
-        <p>La Doccia plant und baut individuelle Bad-Interieurs und Duschkonzepte als Sonderanfertigung. Vom Aufmaß über die Materialauswahl bis zur Endreinigung erhalten Sie sämtliche Arbeiten und Materialien aus einer Hand — mit einem Ansprechpartner und einem verbindlichen Festpreis.</p>
-        <p>Unsere drei Designlinien Classic, Comfort und Elegance decken unterschiedliche Ansprüche ab, von der klaren Grundausstattung bis zum Naturstein-Interieur mit hinterleuchteter Wandmarke. Alle Linien sind im kompletten RAL-Farbspektrum erhältlich.</p>
+        <p>La Doccia plant und baut individuelle Duschkonzepte und Interieurs als Sonderanfertigung. Vom Aufmaß über die Materialauswahl bis zur Endreinigung erhalten Sie sämtliche Arbeiten und Materialien aus einer Hand — mit einem Ansprechpartner und einem verbindlichen Festpreis.</p>
+        <p>Unsere drei Designlinien Classic, Comfort und Elegance decken unterschiedliche Ansprüche ab, von der klaren Grundausstattung bis zum Interieur mit hinterleuchteter Wandmarke. Alle Linien sind im kompletten RAL-Farbspektrum erhältlich.</p>
         <p>Wir arbeiten mit fugenlosen Oberflächen, Sicherheitsglas in 6 mm Stärke, Carbon-Elementen und Armaturen aus massivem Messing. Die bündig eingelassene Edelstahlrinne lässt sich zur Reinigung herausnehmen und kommt ohne Silikonrand aus.</p>
-        <p>Ergänzend führen wir Accessoires in derselben Handschrift: Frottee-Handtücher und Bademäntel mit gestickter Wortmarke sowie unser Eau de Toilette. Vereinbaren Sie einen kostenlosen Beratungstermin — wir kommen zu Ihnen.</p>
+        <p>Ergänzend führen wir Accessoires in derselben Handschrift: Frottee-Handtücher und Morgenmäntel mit gestickter Wortmarke sowie unser Eau de Toilette. Vereinbaren Sie einen kostenlosen Beratungstermin — wir kommen zu Ihnen.</p>
       </div>
     </div>
   </section>
@@ -1381,7 +1381,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     </p>
 
     <h2>Unternehmensgegenstand</h2>
-    <p>Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe und Handelsagent (freies Gewerbe). Planung und Ausführung individueller Bad-Interieurs sowie Handel mit Accessoires, Textilien und Pflegeprodukten.</p>
+    <p>Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe und Handelsagent (freies Gewerbe). Planung und Ausführung individueller Duschkonzepte und Interieurs sowie Handel mit Accessoires, Textilien und Pflegeprodukten.</p>
 
     <h2>Gewerberechtliche Angaben</h2>
     <p>
@@ -1451,7 +1451,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Rechtliches</span>
     <h1>Allgemeine Geschäftsbedingungen</h1>
-    <p class="lead">Diese Bedingungen gelten für alle Bestellungen über den Online-Shop von La Doccia sowie für beauftragte Bad- und Duschprojekte.</p>
+    <p class="lead">Diese Bedingungen gelten für alle Bestellungen über den Online-Shop von La Doccia sowie für beauftragte Duschprojekte.</p>
 
     <div class="legalnote" style="margin-top:0;margin-bottom:34px">
       <strong>Wichtiger Hinweis:</strong> Dies ist eine Struktur-Vorlage mit den gesicherten Firmendaten. Die mit <mark>gelb</mark> markierten Stellen müssen ergänzt und die gesamten AGB vor der Veröffentlichung fachkundig geprüft werden — für den Shop-Teil eignet sich die IT-Recht Kanzlei, für Österreich zusätzlich die Wirtschaftskammer (WKO).
@@ -1461,7 +1461,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Diese AGB gelten für Verträge zwischen Oleg Neufeld, La Doccia, Landstraßer Hauptstraße 71/2, 1030 Wien (nachfolgend „Anbieter") und seinen Kundinnen und Kunden. Maßgeblich ist die zum Zeitpunkt der Bestellung gültige Fassung.</p>
 
     <h2>§ 2 Vertragsschluss</h2>
-    <p>Die Darstellung der Produkte im Online-Shop stellt kein bindendes Angebot dar. Mit der Bestellung geben Sie ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Auftragsbestätigung bzw. mit Auslieferung der Ware zustande. Bei Bad- und Duschprojekten kommt der Vertrag mit Ihrer schriftlichen Annahme des Festpreisangebots zustande.</p>
+    <p>Die Darstellung der Produkte im Online-Shop stellt kein bindendes Angebot dar. Mit der Bestellung geben Sie ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Auftragsbestätigung bzw. mit Auslieferung der Ware zustande. Bei Duschprojekten kommt der Vertrag mit Ihrer schriftlichen Annahme des Festpreisangebots zustande.</p>
 
     <h2>§ 3 Preise und Zahlung</h2>
     <p>Es gelten die zum Bestellzeitpunkt angegebenen Preise. <mark>[Angaben zur Umsatzsteuer ergänzen — Ausweis oder Hinweis auf Kleinunternehmerregelung.]</mark> Akzeptierte Zahlungsarten: <mark>[Zahlungsarten ergänzen, z. B. PayPal, Kreditkarte, Rechnung.]</mark></p>
@@ -1519,7 +1519,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Sie tragen die unmittelbaren Kosten der Rücksendung der Waren. <mark>[Falls kostenloser Rückversand angeboten wird, hier anpassen — auf der Website ist aktuell „kostenloser Rückversand" genannt.]</mark></p>
 
     <h2>Ausschluss des Widerrufsrechts</h2>
-    <p>Das Widerrufsrecht besteht nicht bei Waren, die nach Kundenspezifikation angefertigt werden oder eindeutig auf persönliche Bedürfnisse zugeschnitten sind — dies betrifft insbesondere individuell geplante Bad- und Duschprojekte sowie Sonderanfertigungen.</p>
+    <p>Das Widerrufsrecht besteht nicht bei Waren, die nach Kundenspezifikation angefertigt werden oder eindeutig auf persönliche Bedürfnisse zugeschnitten sind — dies betrifft insbesondere individuell geplante Duschprojekte sowie Sonderanfertigungen.</p>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1540,7 +1540,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Service</span>
     <h1>Kontakt</h1>
-    <p class="lead">Ob Frage zum Shop, zu einer Bestellung oder zu Ihrem Badprojekt — wir sind persönlich für Sie da und antworten in der Regel innerhalb eines Werktags.</p>
+    <p class="lead">Ob Frage zum Shop, zu einer Bestellung oder zu Ihrem Projekt — wir sind persönlich für Sie da und antworten in der Regel innerhalb eines Werktags.</p>
 
     <h2>So erreichen Sie uns</h2>
     <p>
@@ -1554,8 +1554,8 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h2>Erreichbarkeit</h2>
     <p>Montag bis Freitag von 9 bis 18 Uhr. Beratungstermine vor Ort vergeben wir auch abends und samstags — je nachdem, was für Sie am besten passt.</p>
 
-    <h2>Beratung zu Ihrem Badprojekt</h2>
-    <p>Für Duschkonzepte und Badumbauten empfehlen wir den kostenlosen Beratungstermin bei Ihnen zu Hause: Aufmaß, Materialmuster und Farbberatung in rund 30 bis 60 Minuten.</p>
+    <h2>Beratung zu Ihrem Projekt</h2>
+    <p>Für Duschkonzepte und Umbauten empfehlen wir den kostenlosen Beratungstermin bei Ihnen zu Hause: Aufmaß, Materialmuster und Farbberatung in rund 30 bis 60 Minuten.</p>
     <button class="btn" onclick="goSec('termin')" style="margin-top:8px">Beratungstermin anfragen</button>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
@@ -1567,13 +1567,13 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Service</span>
     <h1>Häufige Fragen</h1>
-    <p class="lead">Die Antworten auf die Fragen, die uns am häufigsten erreichen — zum Badumbau und zum Shop.</p>
+    <p class="lead">Die Antworten auf die Fragen, die uns am häufigsten erreichen — zum Duschumbau und zum Shop.</p>
 
     <h2>Wie läuft die Beratung ab?</h2>
     <p>Sie nennen uns zwei Wunschtermine, wir bestätigen innerhalb von 24 Stunden. Beim Termin bei Ihnen zu Hause nehmen wir Maß, zeigen Materialmuster und beraten zu Farben. Innerhalb von fünf Werktagen erhalten Sie ein verbindliches Festpreisangebot.</p>
 
     <h2>Was kostet eine neue Dusche?</h2>
-    <p>Unsere Designlinien beginnen bei 6.900 € (Classic), 9.400 € (Comfort) und 13.800 € (Elegance) — jeweils als Komplettpaket für ein Bad bis 8 m², inklusive sämtlicher Arbeiten und Materialien. Der Endpreis ergibt sich nach dem Aufmaß und ist dann verbindlich.</p>
+    <p>Unsere Designlinien beginnen bei 6.900 € (Classic), 9.400 € (Comfort) und 13.800 € (Elegance) — jeweils als Komplettpaket für einen Duschraum bis 8 m², inklusive sämtlicher Arbeiten und Materialien. Der Endpreis ergibt sich nach dem Aufmaß und ist dann verbindlich.</p>
 
     <h2>Wie lange dauert der Umbau?</h2>
     <p>Je nach Umfang in der Regel ein bis zwei Wochen von der Demontage bis zur Endreinigung. Den genauen Zeitplan erhalten Sie mit dem Angebot.</p>
@@ -1611,7 +1611,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Sie können Artikel innerhalb von 30 Tagen nach Erhalt zurückgeben — der Rückversand ist kostenlos. Melden Sie die Rücksendung kurz per E-Mail an, Sie erhalten dann ein vorfrankiertes Retourenlabel. Die Erstattung erfolgt innerhalb von 14 Tagen nach Eingang der Ware.</p>
 
     <h2>Ausnahmen</h2>
-    <p>Aus Hygienegründen sind geöffnete Pflege- und Duftprodukte von der Rückgabe ausgeschlossen. Sonderanfertigungen — insbesondere individuell geplante Bad- und Duschprojekte — sind vom Widerruf ausgenommen. Ihr gesetzliches Widerrufsrecht bleibt davon unberührt: <a href="#" onclick="go('widerruf');return false">Zur Widerrufsbelehrung</a>.</p>
+    <p>Aus Hygienegründen sind geöffnete Pflege- und Duftprodukte von der Rückgabe ausgeschlossen. Sonderanfertigungen — insbesondere individuell geplante Duschprojekte — sind vom Widerruf ausgenommen. Ihr gesetzliches Widerrufsrecht bleibt davon unberührt: <a href="#" onclick="go('widerruf');return false">Zur Widerrufsbelehrung</a>.</p>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1624,7 +1624,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h1>Pflegehinweise</h1>
     <p class="lead">Damit Frottee, Armaturen und Oberflächen lange so aussehen wie am ersten Tag — die wichtigsten Hinweise aus unserer Werkstatt.</p>
 
-    <h2>Frottee &amp; Bademäntel</h2>
+    <h2>Frottee &amp; Morgenmäntel</h2>
     <p>Vor dem ersten Gebrauch separat waschen. Danach bei 60 °C mit Colorwaschmittel, ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Temperatur; das hält den Flor weich und voluminös.</p>
 
     <h2>Armaturen aus Messing</h2>
@@ -1632,9 +1632,6 @@ nav.main .salelink:hover{border-color:#E0231C}
 
     <h2>Fugenlose Oberflächen</h2>
     <p>Mit Wasser und einem Abzieher genügt die tägliche Pflege. Einmal pro Woche mit einem pH-neutralen Reiniger und weichem Tuch wischen. Mikrokratzer lassen sich bei mineralischen Oberflächen nachpolieren — sprechen Sie uns an.</p>
-
-    <h2>Naturstein &amp; Onyx</h2>
-    <p>Nur pH-neutrale Steinseife verwenden, niemals Zitrus- oder Essigreiniger. Stehende Feuchtigkeit abwischen und das Becken ein- bis zweimal jährlich mit einer Steinimprägnierung auffrischen.</p>
 
     <h2>Duftkerzen</h2>
     <p>Den Docht vor jedem Anzünden auf etwa 5 mm kürzen und die Kerze beim ersten Brennen so lange brennen lassen, bis die Oberfläche vollständig flüssig ist — so bildet sich kein Brennkanal.</p>
@@ -1648,7 +1645,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="fgrid">
       <div>
         <span id="footLogoHost"></span>
-        <p>Individuelle Bad-Interieurs und Duschkonzepte als Sonderanfertigung. Beratung vor Ort, Umsetzung aus einer Hand.</p>
+        <p>Individuelle Duschkonzepte als Sonderanfertigung. Beratung vor Ort, Umsetzung aus einer Hand.</p>
       </div>
       <div><h4>Leistungen</h4><ul>
         <li><a href="#" onclick="goSec('linien');return false">Duschkonzepte</a></li>
@@ -1740,9 +1737,16 @@ Object.assign(A,{
   galK1:'assets/neu/bild.jpg', galK2:'assets/neu/soaps.jpg', galK3:'assets/neu/olesia.jpg',
   galT1:'assets/neu/spa-kit.jpg', galT2:'assets/neu/bild2.jpg',
   /* La-Doccia-Markenbilder, auf 1920px hochskaliert für den Fullscreen-Hero */
-  posterXL:'assets/neu/poster-1920.jpg',      // Frau im Bad (nativ 1920)
+  posterXL:'assets/neu/poster-1920.jpg',      // Frau unter der Dusche (nativ 1920)
   towelsXL:'assets/neu/towelsGold-1920.jpg',  // bestickte LA-DOCCIA-Handtücher
-  edpXL:'assets/neu/edpItalia-1920.jpg'       // gelb-orange LA-DOCCIA-Flakons
+  edpXL:'assets/neu/edpItalia-1920.jpg',      // gelb-orange LA-DOCCIA-Flakons
+  /* Neue Interieur-Fotos (17.08.) */
+  heroArch:'assets/neu/amazingrenders-14345209.jpg', // Beton-Duschraum mit Lichtstrahlen
+  archGold:'assets/neu/carlos-montelara-3450804-5861727.jpg',
+  woodView:'assets/neu/perqued-10813266.jpg',
+  darkSpa:'assets/neu/ron-lach-9145354.jpg',
+  brassDetail:'assets/neu/cottonbro-4153144.jpg',
+  basketSet:'assets/neu/shkrabaanthony-6187615.jpg'
 });
 const src = k => A[k];
 
@@ -1930,8 +1934,8 @@ const LINES=[
  {n:'Comfort',img:'shower',claim:'Der meistgewählte Weg.',from:9400,hi:1,
   f:['Alles aus Classic, plus:','Regenbrause als Deckeneinbau','Handbrause mit separatem Ventil',
      'Wandnische mit indirekter Beleuchtung','Armaturen in Messing oder Bronze']},
- {n:'Elegance',img:'elegance',claim:'Naturstein und Licht.',from:13800,hi:0,
-  f:['Alles aus Comfort, plus:','Waschbecken aus hellem Naturstein','Armaturen in Chrom gebürstet oder Nickel',
+ {n:'Elegance',img:'elegance',claim:'Kristall und Licht.',from:13800,hi:0,
+  f:['Alles aus Comfort, plus:','Aufsatzbecken in Ihrer Wunschfarbe','Armaturen in Chrom gebürstet oder Nickel',
      'Hinterleuchtete Wandmarke','Spiegel mit Lichtkranz nach Maß']}
 ];
 /* Farbwähler pro Dusche: klickbare Töne wechseln das Bild */
@@ -1980,8 +1984,8 @@ const CATS=[
   sub:'Haarpflege, Dusche, Körper und Sonne — mild, sulfatfrei und duftgleich mit der Kollektion.',
   subs:[{id:'shampoo',n:'Haarpflege'},{id:'dusche',n:'Dusche & Körper'},{id:'sonne',n:'Sonne & After Sun'},{id:'sets',n:'Geschenksets'}]},
  {id:'textil', n:'Textil', img:'towelStack', col:'var(--c2)',
-  sub:'Frottee, Bademäntel, Taschen und Etuis mit der gewebten Wortmarke.',
-  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'maentel',n:'Bademäntel'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
+  sub:'Frottee, Morgenmäntel, Taschen und Etuis mit der gewebten Wortmarke.',
+  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'maentel',n:'Morgenmäntel'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
 ];
 const P=[
  {id:'set-essential',cat:'textil',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelStack',img2:'setShelf',r:4.9,rv:34,badge:'Bestseller',mat:'100 % Baumwolle, 600 g/m²',rel:['gel','kerze','shampoo'],
@@ -1990,19 +1994,19 @@ const P=[
  {id:'set-gold',cat:'textil',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
   d:'Die gleiche Qualität wie das Wellness-Essential, mit Wortmarke in feiner Webkante. Passend zu allen Farben der Kollektion.',
   x:'Waschbar bei 60 °C mit Colorwaschmittel, kein Weichspüler. Die Webkante vor dem Waschen glatt streichen und links waschen — so bleibt die goldene Stickerei jahrelang schön.'},
- {id:'towel-oro',cat:'textil',sc:'tuecher',colors:[0,3],n:'Badetuch „Oro", 70 × 140 cm',p:39,old:49,img:'towelsGold',img2:'towel',r:4.8,rv:11,mat:'100 % Baumwolle, 600 g/m²',rel:['set-gold','gel','kerze'],
-  d:'Großes Badetuch aus schwerem Frottee mit goldener Webkante. Einzeln erhältlich — passend zum Handtuch-Set „Oro".',
+ {id:'towel-oro',cat:'textil',sc:'tuecher',colors:[0,3],n:'Duschtuch „Oro", 70 × 140 cm',p:39,old:49,img:'towelsGold',img2:'towel',r:4.8,rv:11,mat:'100 % Baumwolle, 600 g/m²',rel:['set-gold','gel','kerze'],
+  d:'Großes Duschtuch aus schwerem Frottee mit goldener Webkante. Einzeln erhältlich — passend zum Handtuch-Set „Oro".',
   x:'Waschbar bei 60 °C, ohne Weichspüler. Vor dem ersten Gebrauch separat waschen, dann ist es sofort voll saugfähig.'},
- {id:'mantel-creme',cat:'textil',sc:'maentel',who:'damen',colors:[1,2,3],n:'Waffelpiqué-Bademantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
+ {id:'mantel-creme',cat:'textil',sc:'maentel',who:'damen',colors:[1,2,3],n:'Waffelpiqué-Morgenmantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
   d:'Leichter Waffelpiqué-Mantel mit Schalkragen und zwei aufgesetzten Taschen. Trocknet schnell, ideal auch für warme Räume.',
   x:'Waschbar bei 40 °C im Schonwaschgang, trocknet über Nacht an der Luft. Der leichte Waffelpiqué ist ideal für Frühjahr und Sommer — im Winter empfehlen wir ihn über dem Pyjama.'},
- {id:'mantel-anth',cat:'textil',sc:'maentel',who:'herren',n:'Waffelpiqué-Bademantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-gold','gel','edp-sea'],
+ {id:'mantel-anth',cat:'textil',sc:'maentel',who:'herren',n:'Waffelpiqué-Morgenmantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-gold','gel','edp-sea'],
   d:'Der gleiche Schnitt in Anthrazit. Unisex, in den Größen S bis XL erhältlich.',
   x:'Waschbar bei 40 °C, auf links gedreht mit Colorwaschmittel — so bleibt das Anthrazit satt. Schonend trocknergeeignet, fällt normal groß aus.'},
 
  {id:'shampoo',cat:'kosmetik',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampoo',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
   d:'Feuchtigkeitsshampoo für beanspruchtes Haar nach Sonne und Schwimmen. Schützt vor Salzwasser und Chlor, ohne zu beschweren.',
-  x:'Sulfatfrei, mit Panthenol und 2 % Arganöl. Mild genug für die tägliche Wäsche — besonders wertvoll in der Badesaison von Mai bis September.'},
+  x:'Sulfatfrei, mit Panthenol und 2 % Arganöl. Mild genug für die tägliche Wäsche — besonders wertvoll in der Sommersaison von Mai bis September.'},
  {id:'haar-set',cat:'kosmetik',sc:'shampoo',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'shampoo',r:4.9,rv:15,rel:['gel','mist-nude','aloe'],
   d:'Feuchtigkeits-Shampoo (250 ml) und nährende Maske (200 ml) als Kur. Intensive Feuchtigkeit und Tiefenschutz vor Salzwasser und Chlor.',
   x:'Die Maske mit Sheabutter und 3 % Arganöl einmal pro Woche 5 Minuten einwirken lassen. Ideal als Kur nach dem Sommerurlaub oder in der trockenen Heizungsluft im Winter.'},
@@ -2042,7 +2046,7 @@ const P=[
   d:'Sojawachs mit Baumwolldocht im matten Glas mit Reliefdekor, erhältlich in Rosé, Lavendel und Salbei. Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen — so brennt sie gleichmäßig ab. Besonders stimmungsvoll in Herbst und Winter.'},
  {id:'kerze-salbei',cat:'parfuem',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'candle',img2:'candles3',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
-  d:'Grüner Salbei über warmem Eichenholz — der ruhige Duft der La-Doccia-Bäder für zu Hause. Sojawachs im matten Glas, Brenndauer rund 45 Stunden.',
+  d:'Grüner Salbei über warmem Eichenholz — der ruhige Duft der La-Doccia-Interieurs für zu Hause. Sojawachs im matten Glas, Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Docht vor jedem Anzünden auf 5 mm kürzen; beim ersten Brennen die Oberfläche vollständig flüssig werden lassen.'},
  {id:'edt-riva',cat:'parfuem',sc:'edp',n:'Eau de Toilette „Riva", 100 ml',p:89,img:'flacon1',img2:'flacon2',r:4.9,rv:6,badge:'Neu',rel:['mist-nude','gel','kerze-salbei'],
   d:'Der leichte Einstieg in die Duftfamilie: Zitrus und Meersalz, weicher als das Eau de Parfum, gemacht für jeden Tag.',
@@ -2050,7 +2054,7 @@ const P=[
 
  {id:'tote',cat:'textil',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'bagsSet',img2:'pouchSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
   d:'Geräumige Strandtasche mit Kordelgriffen und wasserabweisendem Innenfach. Weiß mit dem Vier-Farben-Zeichen.',
-  x:'Fester Baumwoll-Canvas (450 g/m²) mit beschichtetem Innenfach für nasse Badesachen. Flecken feucht abwischen, bei Bedarf Handwäsche bei 30 °C — nicht in den Trockner.'},
+  x:'Fester Baumwoll-Canvas (450 g/m²) mit beschichtetem Innenfach für nasse Sachen vom Pool. Flecken feucht abwischen, bei Bedarf Handwäsche bei 30 °C — nicht in den Trockner.'},
  {id:'weekender',cat:'textil',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'bagsSet',img2:'pouchSet',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
   d:'Sportlicher Weekender und passender Rucksack im Colour-Block-Design der Marke. Ideal für Kurztrips und Pooltage.',
   x:'Wasserabweisendes Gewebe aus recyceltem Polyester, einfach feucht abwischen. Der Weekender fasst 40 Liter und passt als Handgepäck — für Wochenendtrips das ganze Jahr über.'},
@@ -2102,7 +2106,7 @@ function card(p){
     <div class="meta"><div class="cat">${CATS.find(c=>c.id===p.cat).n}</div><h3>${p.n}</h3>
       <div class="stars"><span class="s">${starStr(p.r)}</span> ${p.rv} Bewertungen</div>
       <div class="price2">${p.old
-        ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
+        ? `<span>${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
         : eur(p.p)}</div>${gpLine(p)}</div></article>`;
 }
 const BRANDHEX=BRAND;  // Produkt-Swatches in den echten, kräftigen Markenfarben
@@ -2118,7 +2122,7 @@ function cardRail(p){
     <div class="meta"><div class="cat">${CATS.find(c=>c.id===p.cat).n}</div><h3>${p.n}</h3>
       <div class="stars"><span class="s">${starStr(p.r)}</span> ${p.rv}</div>
       <div class="price2">${p.old
-        ? `<span style="color:var(--brass)">${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
+        ? `<span>${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
         : eur(p.p)}</div>${gpLine(p)}${sw}</div></article>`;
 }
 
@@ -2209,9 +2213,9 @@ function renderShop(){
        1) Frau im Bad (Badeartikel)  2) Sale  3) Neukundenrabatt (Parfüm) */
     /* Markenbilder im La-Doccia-Stil, alle 1920px */
     const SLIDES=[
-      {img:'posterXL',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
+      {img:'posterXL',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
        cta:'Jetzt shoppen',fn:"document.querySelector('.salerow').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'towelsXL',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+      {img:'heroArch',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true},
       {img:'edpXL',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"}
@@ -2230,7 +2234,7 @@ function renderShop(){
         <div class="sbar">
           <span>La Doccia · Wien</span>
           <span>↺&nbsp; 30 Tage Rückgabe</span>
-          <span>✓&nbsp; Über 400 umgesetzte Bäder</span>
+          <span>✓&nbsp; Über 400 umgesetzte Projekte</span>
         </div>
       </div>
       ${uspRow()}
@@ -2445,7 +2449,7 @@ const PREVPOOL=[
  {w:'Sarah B.',t:'Die Qualität merkt man sofort. Klare Empfehlung.'},
  {w:'Michael R.',t:'Unkomplizierte Lieferung, Produkt wie auf den Bildern. Gerne wieder.'},
  {w:'Anna L.',t:'Einmal verschenkt, einmal selbst behalten — beides ein Volltreffer.'},
- {w:'Thomas W.',t:'Wirkt sehr edel im Bad und ist angenehm im Alltag.'}
+ {w:'Thomas W.',t:'Wirkt sehr edel im Regal und ist angenehm im Alltag.'}
 ];
 function pickRevs(p){
   const h=[...p.id].reduce((s,c)=>s+c.charCodeAt(0),0);
@@ -2592,7 +2596,7 @@ const REV=[
  {w:'Familie Brandt, Hannover',s:5,p:'Designlinie Comfort',
   t:'Vom Aufmaß bis zur letzten Fuge elf Tage — und der Preis war am Ende exakt der aus dem Angebot. Die Rinne lässt sich wirklich herausnehmen, das war für uns das Argument.'},
  {w:'Dr. Kowalski, Berlin',s:5,p:'Designlinie Elegance',
-  t:'Das Onyxbecken ist ein Möbelstück, kein Waschbecken. Was mich überzeugt hat: Man hat uns von zwei Ideen aktiv abgeraten, weil sie im Alltag Ärger gemacht hätten.'},
+  t:'Wirkt jeden Morgen wie ein Hotel-Spa. Was mich überzeugt hat: Man hat uns von zwei Ideen aktiv abgeraten, weil sie im Alltag Ärger gemacht hätten.'},
  {w:'M. Sievers, Bielefeld',s:4,p:'Designlinie Classic',
   t:'Sehr sauberes Handwerk und ein guter Preis. Der Beratungstermin hat sich um eine Woche verschoben, dafür lief die Umsetzung dann exakt nach Plan.'}
 ];
