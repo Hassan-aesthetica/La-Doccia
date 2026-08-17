@@ -66,10 +66,10 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacin
 @keyframes fadeIn{to{opacity:1}}
 
 /* ============ TICKER / HEADER ============ */
-#ticker{background:var(--ink);color:var(--paper);font-size:11.5px;letter-spacing:.16em;
-  text-transform:uppercase;height:38px;display:flex;align-items:center;justify-content:center;
+#ticker{background:var(--ink);color:var(--paper);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;height:28px;display:flex;align-items:center;justify-content:center;
   overflow:hidden;position:relative;z-index:60}
-#ticker .slot{position:relative;height:38px;width:100%;max-width:680px;text-align:center}
+#ticker .slot{position:relative;height:28px;width:100%;max-width:680px;text-align:center}
 #ticker .t{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   opacity:0;transform:translateY(8px);transition:.6s}
 #ticker .t.on{opacity:1;transform:none}
@@ -865,8 +865,8 @@ nav.main .salelink:hover{border-color:#E0231C}
 /* Fullscreen-Hero (Bernstein-Prinzip): Bild nimmt den ganzen Bildschirm ein,
    liegt auf Desktop UNTER dem transparenten Header */
 .shero.full{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
-  aspect-ratio:auto;height:calc(100svh - 44px);min-height:540px}
-@media(min-width:961px){.shero.full{margin-top:-126px}.catbar{top:126px}}
+  aspect-ratio:auto;height:calc(100svh - 28px);min-height:540px}
+@media(min-width:961px){.shero.full{margin-top:-136px}.catbar{top:136px}}
 @media(max-width:960px){.shero.full{height:calc(100svh - 170px);min-height:420px}}
 /* Kompakter Kopf: auf der Shop-Übersicht fallen Titelblock & Filterleiste weg —
    das Bild ist sofort da. Kategorien stecken in Header & Mobil-Leiste. */
@@ -1738,7 +1738,13 @@ Object.assign(A,{
   bath1:'assets/neu/marble-wood-bath.jpg',
   galP1:'assets/neu/marble-candles.jpg', galP2:'assets/neu/bild1.jpg',
   galK1:'assets/neu/bild.jpg', galK2:'assets/neu/soaps.jpg', galK3:'assets/neu/olesia.jpg',
-  galT1:'assets/neu/spa-kit.jpg', galT2:'assets/neu/bild2.jpg'
+  galT1:'assets/neu/spa-kit.jpg', galT2:'assets/neu/bild2.jpg',
+  /* Hero-Fotos in 1920px (Pexels, frei nutzbar) */
+  heroTowels:'assets/hero/px-8535619.jpg',    // bunte Handtücher
+  heroSale:'assets/hero/px-1961784.jpg',      // knallrote Tulpen + Flakon
+  heroCandles:'assets/hero/px-11848191.jpg',  // Pastell-Keramikkerzen
+  collSale:'assets/hero/px-7755656.jpg',      // rosa Handtuchrollen auf Blau
+  collTowels:'assets/hero/px-5833316.jpg'     // gelbe Handtuchrollen
 });
 const src = k => A[k];
 
@@ -2063,7 +2069,7 @@ const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
    Der Sale-Prozentsatz wird aus echten Preisen berechnet — nichts erfunden. */
 const maxSale=()=>Math.max(...P.filter(p=>p.old).map(disc));
 const COLL={
- sale:{n:'Sale',img:'towelsGold',
+ sale:{n:'Sale',img:'collSale',
    sub:'Reduzierte Artikel. Alle Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
    f:p=>!!p.old},
  neu:{n:'Neuheiten',img:'mistNude',
@@ -2203,13 +2209,13 @@ function renderShop(){
     /* Hero-Slider: Themen wechseln (Bad / Sale / Textil-Neukunden), Bernstein-Prinzip */
     /* 3 Slides, nur hochauflösende Bilder. Produkte primär:
        1) Frau im Bad (Badeartikel)  2) Sale  3) Neukundenrabatt (Parfüm) */
-    /* Farbige Slides — wie das Logo: Pastell-Kerzen, violette Dusche, gelb-orange Flakons */
+    /* Farbige Slides in 1920px — knallig wie das Logo */
     const SLIDES=[
-      {img:'candles3',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
+      {img:'heroTowels',tag:'Badeartikel & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Alles für Ihr Bad',
        cta:'Jetzt shoppen',fn:"document.querySelector('.salerow').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'ral7',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+      {img:'heroSale',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true},
-      {img:'edpItalia',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+      {img:'heroCandles',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
