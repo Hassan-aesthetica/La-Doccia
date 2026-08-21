@@ -797,7 +797,7 @@ body.pmopen{overflow:hidden}
 @media(max-width:760px){.shero{aspect-ratio:4/5;min-height:0}}
 /* Overlay: oben dunkel (Header-Text lesbar), Mitte Vignette (Hero-Text lesbar), unten dunkel (Balken) */
 .sov{position:absolute;inset:0;background:
-  radial-gradient(ellipse 70% 58% at 50% 50%,rgba(15,13,11,.48),transparent 74%),
+  radial-gradient(ellipse 62% 70% at 26% 52%,rgba(15,13,11,.5),transparent 72%),
   linear-gradient(180deg,rgba(15,13,11,.55) 0%,rgba(15,13,11,.14) 28%,rgba(15,13,11,.18) 62%,rgba(15,13,11,.7) 100%)}
 .stx{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;color:var(--paper);padding:26px}
@@ -895,7 +895,10 @@ nav.main .salelink:hover{border-color:#E0231C}
 @media(max-width:640px){.sbar span:first-child{display:none}.sbar{font-size:13.5px;padding:15px 18px}}
 .sdots{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
 /* Hero-Inhalt über dem Balken halten + Text besser lesbar */
-.shero.full .stx{padding-bottom:130px}
+.shero.full .stx{padding:0 40% 130px clamp(24px,7vw,110px);align-items:flex-start;text-align:left}
+.shero.full .scta{justify-content:flex-start}
+.shero .slide img{object-position:68% center}
+@media(max-width:760px){.shero.full .stx{padding:0 8% 130px 8%}}
 .stx .mega{text-shadow:0 3px 28px rgba(15,13,11,.55),0 1px 6px rgba(15,13,11,.4)}
 .stx .ssub{text-shadow:0 2px 14px rgba(15,13,11,.6)}
 .sdots button{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.45);transition:.3s;padding:0}
@@ -1168,9 +1171,9 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="teaser reveal" style="margin-top:38px">
         <div class="tcat" onclick="go('shop','parfuem')"><img data-img="edpItalia" alt="Parfüm">
           <div class="lab"><div class="n">Parfüm</div><div class="c">Jetzt entdecken</div></div></div>
-        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="jarTrio" alt="Kosmetik">
+        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="sunSet" alt="Kosmetik">
           <div class="lab"><div class="n">Kosmetik</div><div class="c">Jetzt entdecken</div></div></div>
-        <div class="tcat" onclick="go('shop','textil')"><img data-img="towelsGold" alt="Textilien">
+        <div class="tcat" onclick="go('shop','textil')"><img data-img="towelsBunt" alt="Textilien">
           <div class="lab"><div class="n">Textilien</div><div class="c">Jetzt entdecken</div></div></div>
         <div class="tcat" onclick="goSec('linien')"><img data-img="showerGold" alt="Duschbereich">
           <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien ansehen</div></div></div>
@@ -1763,6 +1766,23 @@ Object.assign(A,{
   beachSet:'assets/v2/hf-q.jpg',      // Strand-Set bunt
   pxWood:'assets/v2/px-3872898.jpg',
   pxRed:'assets/v2/px-4176566.jpg',   // weiße Spender auf Knallrot
+  /* Finale Marken-Renders mit eingebranntem Logo (assets/v3/, siehe BILDER.md im Drive) */
+  heroFamilie:'assets/v3/hero-produktfamilie.webp', // Sortiment vor Color-Blocking (Text links)
+  heroStudio:'assets/v3/hero-studio.webp',          // Farbpodeste, harte Schatten (Sale)
+  heroStrand:'assets/v3/hero-strand.webp',
+  heroPool:'assets/v3/hero-pool.webp',
+  heroBadezimmer:'assets/v3/hero-badezimmer.webp',
+  heroFlatlay:'assets/v3/hero-flatlay.webp',        // Sortiment von oben (Newsletter)
+  taschenNeu:'assets/v3/taschen.webp',
+  seifenspenderNeu:'assets/v3/seifenspender.webp',
+  parfumsNeu:'assets/v3/parfums.webp',
+  sonnenpflegeNeu:'assets/v3/sonnenpflege.webp',
+  seifenNeu:'assets/v3/seifen.webp',
+  shampooNeu:'assets/v3/shampoo-duschgel.webp',
+  kerzenNeu:'assets/v3/kerzen.webp',
+  haarbuerstenNeu:'assets/v3/haarbuersten.webp',
+  handtuecherNeu:'assets/v3/handtuecher.webp',
+  geschenksetNeu:'assets/v3/geschenkset.webp',
   pxRed2:'assets/v2/px-4176618.jpg',
   pxBottles:'assets/v2/px-4176488.jpg'
 });
@@ -2002,27 +2022,18 @@ const CATS=[
   sub:'Haarpflege, Dusche, Körper und Sonne — mild, sulfatfrei und duftgleich mit der Kollektion.',
   subs:[{id:'shampoo',n:'Haarpflege'},{id:'dusche',n:'Dusche & Körper'},{id:'sonne',n:'Sonne & After Sun'},{id:'sets',n:'Geschenksets'}]},
  {id:'textil', n:'Textil', img:'towelsBunt', col:'var(--c2)',
-  sub:'Frottee, Morgenmäntel, Taschen und Etuis mit der gewebten Wortmarke.',
-  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'maentel',n:'Morgenmäntel'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
+  sub:'Frottee, Taschen und Etuis mit der gewebten Wortmarke.',
+  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
 ];
 const P=[
  {id:'set-essential',cat:'textil',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelsBunt',img2:'towelStack',r:4.9,rv:34,badge:'Bestseller',mat:'100 % Baumwolle, 600 g/m²',rel:['gel','kerze','shampoo'],
   d:'Drei Handtücher aus 600 g/m² Baumwollfrottee in Creme, Weiß und Grau, mit gewebter Wortmarke und dem Vier-Farben-Zeichen. Vorgewaschen, dadurch sofort saugfähig und formstabil.',
   x:'Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe, so bleibt der Flor weich und voluminös.'},
- {id:'set-gold',cat:'textil',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'towelStack',img2:'towel',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
+ {id:'set-gold',cat:'textil',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'handtuecherNeu',img2:'towelsBunt',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
   d:'Die gleiche Qualität wie das Wellness-Essential, mit Wortmarke in feiner Webkante. Passend zu allen Farben der Kollektion.',
   x:'Waschbar bei 60 °C mit Colorwaschmittel, kein Weichspüler. Die Webkante vor dem Waschen glatt streichen und links waschen — so bleibt die goldene Stickerei jahrelang schön.'},
- {id:'towel-oro',cat:'textil',sc:'tuecher',colors:[0,3],n:'Duschtuch „Oro", 70 × 140 cm',p:39,old:49,img:'towelsGold',img2:'towel',r:4.8,rv:11,mat:'100 % Baumwolle, 600 g/m²',rel:['set-gold','gel','kerze'],
-  d:'Großes Duschtuch aus schwerem Frottee mit goldener Webkante. Einzeln erhältlich — passend zum Handtuch-Set „Oro".',
-  x:'Waschbar bei 60 °C, ohne Weichspüler. Vor dem ersten Gebrauch separat waschen, dann ist es sofort voll saugfähig.'},
- {id:'mantel-creme',cat:'textil',sc:'maentel',who:'damen',colors:[1,2,3],n:'Waffelpiqué-Morgenmantel, Creme',p:149,img:'woman',img2:'editorial',r:4.9,rv:22,badge:'Neu',sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-essential','mist-nude','gel'],
-  d:'Leichter Waffelpiqué-Mantel mit Schalkragen und zwei aufgesetzten Taschen. Trocknet schnell, ideal auch für warme Räume.',
-  x:'Waschbar bei 40 °C im Schonwaschgang, trocknet über Nacht an der Luft. Der leichte Waffelpiqué ist ideal für Frühjahr und Sommer — im Winter empfehlen wir ihn über dem Pyjama.'},
- {id:'mantel-anth',cat:'textil',sc:'maentel',who:'herren',n:'Waffelpiqué-Morgenmantel, Anthrazit',p:149,img:'man',img2:'shower',r:4.7,rv:17,sizes:['S','M','L','XL'],mat:'100 % Baumwolle (Waffelpiqué)',rel:['set-gold','gel','edp-sea'],
-  d:'Der gleiche Schnitt in Anthrazit. Unisex, in den Größen S bis XL erhältlich.',
-  x:'Waschbar bei 40 °C, auf links gedreht mit Colorwaschmittel — so bleibt das Anthrazit satt. Schonend trocknergeeignet, fällt normal groß aus.'},
 
- {id:'shampoo',cat:'kosmetik',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampoo',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
+ {id:'shampoo',cat:'kosmetik',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampooNeu',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
   d:'Feuchtigkeitsshampoo für beanspruchtes Haar nach Sonne und Schwimmen. Schützt vor Salzwasser und Chlor, ohne zu beschweren.',
   x:'Sulfatfrei, mit Panthenol und 2 % Arganöl. Mild genug für die tägliche Wäsche — besonders wertvoll in der Sommersaison von Mai bis September.'},
  {id:'haar-set',cat:'kosmetik',sc:'shampoo',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'brushes',r:4.9,rv:15,rel:['gel','mist-nude','aloe'],
@@ -2041,11 +2052,11 @@ const P=[
  {id:'aloe',cat:'kosmetik',sc:'sonne',n:'Cooling Aloe Gel, 100 ml',p:22,img:'careSet',img2:'tubes',r:4.9,rv:16,ml:100,rel:['jar-trio','gel','mist-blue'],
   d:'Kühlendes Aloe-Gel für die Haut nach Sonne und Salzwasser. Zieht schnell ein, spendet sofort Feuchtigkeit.',
   x:'94 % Aloe-vera-Anteil, ohne Parfüm und Alkohol. Im Kühlschrank gelagert kühlt es nach dem Sonnenbad doppelt — der Sommer-Begleiter von Juni bis September.'},
- {id:'set-shelf',cat:'kosmetik',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'setShelf',img2:'towelStack',r:5.0,rv:9,badge:'Set',rel:['kerze','gel','mist-nude'],
+ {id:'set-shelf',cat:'kosmetik',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'geschenksetNeu',img2:'setShelf',r:5.0,rv:9,badge:'Set',rel:['kerze','gel','mist-nude'],
   d:'Handtuch-Set, Duschgel und Duftkerze in der Geschenkverpackung. Der Klassiker zum Verschenken. Sie sparen gegenüber dem Einzelkauf.',
   x:'Die Handtücher sind bei 60 °C waschbar (ohne Weichspüler), Duschgel und Kerze tragen den Zitrus-Duft der Kollektion. Beliebtestes Geschenk zu Weihnachten und zum Einzug.'},
 
- {id:'edp-sea',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'edpTrio',img2:'edpItalia',r:4.8,rv:26,rel:['mist-nude','gel','kerze'],
+ {id:'edp-sea',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'parfumsNeu',img2:'edpTrio',r:4.8,rv:26,rel:['mist-nude','gel','kerze'],
   d:'Kopfnote aus Meersalz und Bergamotte, Herz aus grünem Kardamom, Basis aus Zedernholz und weißem Moschus. In Grasse abgefüllt.',
   x:'12 % Duftölanteil, hält 6–8 Stunden auf der Haut. Ein frisch-aquatischer Tagesduft — am schönsten im Frühling und Sommer, im Büro wie am Wasser. 2 Sprühstöße auf Puls und Schlüsselbein genügen.'},
  {id:'edp-citrus',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Citrus Accent", 50 ml',p:119,img:'edpItalia',img2:'edpTrio',r:4.8,rv:19,rel:['mist-blue','gel','aloe'],
@@ -2063,7 +2074,7 @@ const P=[
  {id:'kerze',cat:'parfuem',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'cupsBunt',img2:'candles3',r:4.7,rv:12,badge:'Neu',g:220,rel:['edp-sea','gel','set-essential'],
   d:'Sojawachs mit Baumwolldocht im matten Glas mit Reliefdekor, erhältlich in Rosé, Lavendel und Salbei. Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen — so brennt sie gleichmäßig ab. Besonders stimmungsvoll in Herbst und Winter.'},
- {id:'kerze-salbei',cat:'parfuem',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'candle',img2:'candles3',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
+ {id:'kerze-salbei',cat:'parfuem',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'kerzenNeu',img2:'candle',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
   d:'Grüner Salbei über warmem Eichenholz — der ruhige Duft der La-Doccia-Interieurs für zu Hause. Sojawachs im matten Glas, Brenndauer rund 45 Stunden.',
   x:'100 % Sojawachs mit 8 % Duftölanteil. Docht vor jedem Anzünden auf 5 mm kürzen; beim ersten Brennen die Oberfläche vollständig flüssig werden lassen.'},
  {id:'edt-riva',cat:'parfuem',sc:'edp',n:'Eau de Toilette „Riva", 100 ml',p:89,img:'flacon1',img2:'flacon2',r:4.9,rv:6,badge:'Neu',rel:['mist-nude','gel','kerze-salbei'],
@@ -2073,7 +2084,7 @@ const P=[
  {id:'tote',cat:'textil',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'beachSet',img2:'bagsSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
   d:'Geräumige Strandtasche mit Kordelgriffen und wasserabweisendem Innenfach. Weiß mit dem Vier-Farben-Zeichen.',
   x:'Fester Baumwoll-Canvas (450 g/m²) mit beschichtetem Innenfach für nasse Sachen vom Pool. Flecken feucht abwischen, bei Bedarf Handwäsche bei 30 °C — nicht in den Trockner.'},
- {id:'weekender',cat:'textil',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'bagRow',img2:'bagsSet',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
+ {id:'weekender',cat:'textil',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'taschenNeu',img2:'bagRow',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
   d:'Sportlicher Weekender und passender Rucksack im Colour-Block-Design der Marke. Ideal für Kurztrips und Pooltage.',
   x:'Wasserabweisendes Gewebe aus recyceltem Polyester, einfach feucht abwischen. Der Weekender fasst 40 Liter und passt als Handgepäck — für Wochenendtrips das ganze Jahr über.'},
  {id:'pouches',cat:'textil',sc:'etuis',n:'Etui- & Beutel-Set, 4-teilig',p:39,img:'bagsBunt',img2:'pouchSet',r:4.9,rv:13,badge:'Neu',mat:'100 % Baumwolle (Beutel)',rel:['tote','mist-nude','aloe'],
@@ -2232,16 +2243,16 @@ function renderShop(){
     /* Markenbilder im La-Doccia-Stil, alle 1920px */
     /* Knallige Produkt-Slides — die Farben SIND die Marke */
     const SLIDES=[
-      {img:'towelsBunt',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
+      {img:'heroFamilie',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
        cta:'Jetzt shoppen',fn:"document.querySelector('.salerow').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'pxRed',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+      {img:'heroStudio',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true},
-      {img:'parfumTrio',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+      {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
-          <img src="${src(s.img)}" alt="" ${i?'loading="lazy"':''}>
+          <img src="${src(s.img)}" alt="" ${i?'loading="lazy"':'fetchpriority="high"'}>
           <div class="sov"></div>
           <div class="stx">
             <span class="stag ${s.sale?'':'tagbeige'}">${s.tag}</span>
@@ -2505,7 +2516,7 @@ function openP(id){
   SEEN=[id,...SEEN.filter(x=>x!==id)].slice(0,8); store.set('ld_seen',SEEN);
   const d=disc(p);
   /* Galerie: eigene Bilder + passende Ambiente-Bilder der Abteilung (Drive-Fotos) */
-  const GALX={parfuem:['pxWood','galP1'],kosmetik:['pxRed2','brushes'],textil:['soapsBunt','galT1']};
+  const GALX={parfuem:['parfumsNeu','galP1'],kosmetik:['seifenNeu','seifenspenderNeu'],textil:['handtuecherNeu','soapsBunt']};
   const gal=[p.img2,p.img,...(p.gal||GALX[p.cat]||[])];
   const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
   const gpT=gpText(p);
