@@ -1025,6 +1025,32 @@ nav.main .salelink:hover{border-color:#E0231C}
   .view.on,.pg .card,.collgrid .coll,.catgrid .tcat,.rail>.card{animation:none}
 }
 
+/* ---------- Calzedonia-PLP: Breadcrumb, große Versal-Titel, Text-Link-Subkategorien ---------- */
+.shophead{text-align:center;padding-top:clamp(26px,4vw,48px)}
+.shophead h1{text-transform:uppercase;letter-spacing:.1em;font-size:clamp(28px,4.2vw,52px);margin:12px 0 12px}
+.shophead p{margin:0 auto}
+.crumb2{font-size:12px;letter-spacing:.08em;color:var(--ink-70)}
+.crumb2 a{cursor:pointer;color:inherit}
+.crumb2 a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.crumb2 b{color:var(--ink);font-weight:600}
+.subbar{display:flex;flex-wrap:wrap;gap:4px 22px;justify-content:center}
+.subchip{border:0;background:none;border-radius:0;padding:7px 2px;font-size:12px;letter-spacing:.14em;color:var(--ink);opacity:.5;border-bottom:2px solid transparent}
+.subchip:hover{opacity:1;color:var(--ink);border-color:transparent}
+.subchip.on{background:none;color:var(--ink);opacity:1;border-bottom:2px solid var(--ink)}
+.subchip.soon{opacity:.35}
+.catsec .subhead{justify-content:center}
+.catsec>.sub{text-align:center;margin-left:auto;margin-right:auto}
+.pg{gap:clamp(20px,3vw,44px) clamp(14px,1.8vw,24px)}
+/* ---------- Gucci-Wortmarke am Footer-Ende ---------- */
+.bigmark{font-family:var(--serif);font-weight:600;letter-spacing:.04em;text-align:center;color:#fff;
+  font-size:clamp(40px,10.5vw,164px);line-height:1;padding:clamp(34px,5vw,70px) 10px clamp(22px,3.4vw,46px);
+  white-space:nowrap;user-select:none;overflow:hidden}
+/* ---------- CRO: Microcopy & Social Proof direkt an der Kaufentscheidung ---------- */
+.ctamicro{font-size:12.5px;font-weight:600;margin-top:9px;color:var(--ink)}
+.ctamicro em{font-style:normal;color:#2E9E5B}
+.ctaproof{font-size:13px;background:var(--stone);padding:11px 13px;border-radius:9px;margin-top:12px;line-height:1.55}
+.ctaproof .s{color:var(--gold);letter-spacing:1px;margin-right:6px}
+.ctaproof b{font-weight:600}
 </style>
 </head>
 <body class="locked">
@@ -1070,6 +1096,7 @@ nav.main .salelink:hover{border-color:#E0231C}
         <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
         <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
         <a href="#" onclick="go('shop','textil');return false">Textil</a>
+        <a href="#" onclick="go('shop','zubehoer');return false">Duschzubehör</a>
         <a href="#" onclick="goSec('linien');return false">Duschkonzepte</a>
         <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
       </div></span>
@@ -1101,6 +1128,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfümerie</a>
   <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
   <a href="#" onclick="go('shop','textil');mnav(0);return false">Textil</a>
+  <a href="#" onclick="go('shop','zubehoer');mnav(0);return false">Duschzubehör</a>
   <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
   <a href="#" class="sub" style="color:#E0231C" onclick="go('shop','sale');mnav(0);return false">Sale</a>
   <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
@@ -1116,6 +1144,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a onclick="go('shop','parfuem')">Parfümerie</a>
   <a onclick="go('shop','kosmetik')">Kosmetik</a>
   <a onclick="go('shop','textil')">Textil</a>
+  <a onclick="go('shop','zubehoer')">Duschzubehör</a>
   <a onclick="goSec('linien')">Duschkonzepte</a>
   <a class="salelink" onclick="go('shop','sale')">Sale</a>
   <a onclick="go('shop','neu')">Neuheiten</a>
@@ -1169,12 +1198,12 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="reveal" id="homeRails"></div>
       <!-- Große Abteilungsbilder: direkter Einstieg in den Shop -->
       <div class="teaser reveal" style="margin-top:38px">
-        <div class="tcat" onclick="go('shop','parfuem')"><img data-img="edpItalia" alt="Parfüm">
-          <div class="lab"><div class="n">Parfüm</div><div class="c">Jetzt entdecken</div></div></div>
-        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="sunSet" alt="Kosmetik">
-          <div class="lab"><div class="n">Kosmetik</div><div class="c">Jetzt entdecken</div></div></div>
-        <div class="tcat" onclick="go('shop','textil')"><img data-img="towelsBunt" alt="Textilien">
-          <div class="lab"><div class="n">Textilien</div><div class="c">Jetzt entdecken</div></div></div>
+        <div class="tcat" onclick="go('shop','parfuem')"><img data-img="assets/p/01_eau-de-parfum-damen_c.webp" alt="Parfümerie">
+          <div class="lab"><div class="n">Parfümerie</div><div class="c">Kaufen</div></div></div>
+        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="assets/p/22_haarmaske_c.webp" alt="Kosmetik">
+          <div class="lab"><div class="n">Kosmetik</div><div class="c">Kaufen</div></div></div>
+        <div class="tcat" onclick="go('shop','textil')"><img data-img="assets/p/43_morgenmantel-kimono_c.webp" alt="Textil">
+          <div class="lab"><div class="n">Textil</div><div class="c">Kaufen</div></div></div>
         <div class="tcat" onclick="goSec('linien')"><img data-img="showerGold" alt="Duschbereich">
           <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien ansehen</div></div></div>
       </div>
@@ -1351,9 +1380,9 @@ nav.main .salelink:hover{border-color:#E0231C}
 <!-- ============ SHOP-SEITE ============ -->
 <main class="view on" id="v-shop">
   <div class="wrap shophead">
-    <span class="eyebrow">La Doccia Shop</span>
+    <div class="crumb2" id="shopCrumb"><a onclick="filt('all')">Shop</a></div>
     <h1 id="shopTitle">Alle Produkte</h1>
-    <p id="shopSub">Frottee, Duft, Pflege und Armaturen — die Marke zum Mitnehmen.</p>
+    <p id="shopSub">Parfümerie, Kosmetik, Textil und Duschzubehör — die Marke zum Mitnehmen.</p>
   </div>
   <div class="wrap">
     <div class="catbar" id="catBar"></div>
@@ -1673,6 +1702,7 @@ nav.main .salelink:hover{border-color:#E0231C}
         <span class="pay">Visa</span><span class="pay">Mastercard</span><span class="pay">Rechnung</span></div>
     </div>
   </div>
+  <div class="bigmark" aria-hidden="true">LA&nbsp;DOCCIA</div>
 </footer>
 
 <!-- CART -->
@@ -1786,7 +1816,7 @@ Object.assign(A,{
   pxRed2:'assets/v2/px-4176618.jpg',
   pxBottles:'assets/v2/px-4176488.jpg'
 });
-const src = k => A[k];
+const src = k => A[k]||k;
 
 /* ---------- Logo als SVG bauen ---------- */
 function paths(list, color){
@@ -2015,81 +2045,90 @@ document.getElementById('ralGrid').innerHTML = RAL.map(r=>`
 /* Katalogstruktur (Notizbuch): Parfümerie · Kosmetik · Textil, je Damen/Herren/Kinder.
    Jede Abteilung hat ihre eigene Markenfarbe — Farbe führt durch die Seite. */
 const CATS=[
- {id:'parfuem', n:'Parfümerie', img:'edpTrio', col:'var(--c4)',
-  sub:'Eau de Parfum, Body Mist und Duftkerzen — der Duft von Meer und Zitrus, konserviert.',
-  subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Body & Hair Mist'},{id:'kerzen',n:'Duftkerzen'}]},
- {id:'kosmetik', n:'Kosmetik', img:'sunSet', col:'var(--c3)',
-  sub:'Haarpflege, Dusche, Körper und Sonne — mild, sulfatfrei und duftgleich mit der Kollektion.',
-  subs:[{id:'shampoo',n:'Haarpflege'},{id:'dusche',n:'Dusche & Körper'},{id:'sonne',n:'Sonne & After Sun'},{id:'sets',n:'Geschenksets'}]},
- {id:'textil', n:'Textil', img:'towelsBunt', col:'var(--c2)',
-  sub:'Frottee, Taschen und Etuis mit der gewebten Wortmarke.',
-  subs:[{id:'tuecher',n:'Handtücher & Sets'},{id:'bags',n:'Taschen & Weekender'},{id:'etuis',n:'Etuis & Beutel'}]}
+ {id:'parfuem', n:'Parfümerie', img:'assets/p/01_eau-de-parfum-damen_c.webp', col:'var(--c4)',
+  sub:'Eau de Parfum, Körperspray, Duftkerzen und Raumduft — der Duft der Kollektion, konserviert.',
+  subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Körperspray'},{id:'kerzen',n:'Kerzen & Raumduft'}]},
+ {id:'kosmetik', n:'Kosmetik', img:'assets/p/22_haarmaske_c.webp', col:'var(--c3)',
+  sub:'Dusche, Körper, Haar, Zahnpflege und Seifen — mild, sulfatfrei und duftgleich mit der Kollektion.',
+  subs:[{id:'dusche',n:'Dusche'},{id:'koerper',n:'Körperpflege'},{id:'haar',n:'Haarpflege'},{id:'mund',n:'Zahnpflege'},{id:'tools',n:'Bürsten & Tools'},{id:'seife',n:'Seifen'}]},
+ {id:'textil', n:'Textil', img:'assets/p/43_morgenmantel-kimono_c.webp', col:'var(--c2)',
+  sub:'Frottee, Morgenmäntel, Taschen und Accessoires mit der gewebten Wortmarke.',
+  subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'},{id:'schuhe',n:'Hausschuhe & Pantoletten'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
+ {id:'zubehoer', n:'Duschzubehör', img:'assets/s/S2_duschset-komplett_c.webp', col:'var(--c1)',
+  sub:'Seifenschalen, Spender, Regal und Antirutschmatte — Zubehör aus der Welt der Duschkonzepte.',
+  subs:[{id:'zub',n:'Alle Artikel'}]}
 ];
 const P=[
- {id:'set-essential',cat:'textil',sc:'tuecher',colors:[0,1,2,3],n:'Frottee-Set „Wellness-Essential"',p:79,img:'towelsBunt',img2:'towelStack',r:4.9,rv:34,badge:'Bestseller',mat:'100 % Baumwolle, 600 g/m²',rel:['gel','kerze','shampoo'],
-  d:'Drei Handtücher aus 600 g/m² Baumwollfrottee in Creme, Weiß und Grau, mit gewebter Wortmarke und dem Vier-Farben-Zeichen. Vorgewaschen, dadurch sofort saugfähig und formstabil.',
-  x:'Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe, so bleibt der Flor weich und voluminös.'},
- {id:'set-gold',cat:'textil',sc:'tuecher',colors:[0,3],n:'Handtuch-Set „Oro"',p:99,old:129,img:'handtuecherNeu',img2:'towelsBunt',r:4.8,rv:21,mat:'100 % Baumwolle, 600 g/m²',rel:['kerze','gel','mist-nude'],
-  d:'Die gleiche Qualität wie das Wellness-Essential, mit Wortmarke in feiner Webkante. Passend zu allen Farben der Kollektion.',
-  x:'Waschbar bei 60 °C mit Colorwaschmittel, kein Weichspüler. Die Webkante vor dem Waschen glatt streichen und links waschen — so bleibt die goldene Stickerei jahrelang schön.'},
-
- {id:'shampoo',cat:'kosmetik',sc:'shampoo',n:'Moisturizing Shampoo, 250 ml',p:24,img:'shampooNeu',img2:'hairDuo',r:4.8,rv:23,badge:'Neu',ml:250,rel:['haar-set','gel','aloe'],
-  d:'Feuchtigkeitsshampoo für beanspruchtes Haar nach Sonne und Schwimmen. Schützt vor Salzwasser und Chlor, ohne zu beschweren.',
-  x:'Sulfatfrei, mit Panthenol und 2 % Arganöl. Mild genug für die tägliche Wäsche — besonders wertvoll in der Sommersaison von Mai bis September.'},
- {id:'haar-set',cat:'kosmetik',sc:'shampoo',n:'Feuchtigkeits-Set: Shampoo & Maske',p:44,old:53,img:'hairDuo',img2:'brushes',r:4.9,rv:15,rel:['gel','mist-nude','aloe'],
-  d:'Feuchtigkeits-Shampoo (250 ml) und nährende Maske (200 ml) als Kur. Intensive Feuchtigkeit und Tiefenschutz vor Salzwasser und Chlor.',
-  x:'Die Maske mit Sheabutter und 3 % Arganöl einmal pro Woche 5 Minuten einwirken lassen. Ideal als Kur nach dem Sommerurlaub oder in der trockenen Heizungsluft im Winter.'},
-
- {id:'care-trio',cat:'kosmetik',sc:'dusche',n:'Körperpflege-Trio: Gel, Peeling, Milk',p:59,old:72,img:'careTrio',img2:'bodyTrio',r:4.9,rv:18,badge:'Set',rel:['kerze','aloe','shampoo'],
-  d:'Refreshing Shower Gel, Body Scrub und Post-Shower Milk als aufeinander abgestimmte Routine. Frischer Zitrus-Duft der Kollektion.',
-  x:'Alle drei pH-hautneutral mit pflanzlichem Glyzerin. Das Peeling 1–2× pro Woche anwenden; im Winter die Body Milk großzügiger dosieren, im Sommer reicht eine dünne Schicht.'},
- {id:'gel',cat:'kosmetik',sc:'dusche',colors:[0,1,2],n:'Refreshing Shower Gel, 300 ml',p:19,img:'bodyTrio',img2:'pxRed',r:4.9,rv:28,ml:300,rel:['care-trio','shampoo','aloe'],
-  d:'Erfrischendes Duschgel mit Zitrus und Kräutern, mild und sulfatfrei. Duftgleich mit dem Eau de Parfum, pH-hautneutral.',
-  x:'Sulfatfrei, pH 5,5, mit Aloe vera — auch für empfindliche und sonnenstrapazierte Haut. Ein Ganzjahresprodukt: belebend am Morgen, mild genug für zweimal tägliches Duschen.'},
- {id:'jar-trio',cat:'kosmetik',sc:'sonne',n:'Sonnenpflege-Trio: SPF 50, Aloe, Body Oil',p:69,old:84,img:'sunSet',img2:'jarTrio',r:5.0,rv:11,badge:'Set',rel:['aloe','tote','mist-blue'],
-  d:'Sunscreen SPF 50, kühlendes Aloe-Gel und pflegendes Body Oil im Glas mit Holzdeckel. Für den Tag am Wasser und die Pflege danach.',
-  x:'SPF 50 mit UVA-Breitbandschutz, alle 2 Stunden nachcremen. Das Body Oil hat 98 % Ölanteil aus Jojoba- und Mandelöl — abends auf die noch feuchte Haut. Das Sommer-Set für Strand und Pool.'},
- {id:'aloe',cat:'kosmetik',sc:'sonne',n:'Cooling Aloe Gel, 100 ml',p:22,img:'careSet',img2:'tubes',r:4.9,rv:16,ml:100,rel:['jar-trio','gel','mist-blue'],
-  d:'Kühlendes Aloe-Gel für die Haut nach Sonne und Salzwasser. Zieht schnell ein, spendet sofort Feuchtigkeit.',
-  x:'94 % Aloe-vera-Anteil, ohne Parfüm und Alkohol. Im Kühlschrank gelagert kühlt es nach dem Sonnenbad doppelt — der Sommer-Begleiter von Juni bis September.'},
- {id:'set-shelf',cat:'kosmetik',sc:'sets',n:'Geschenkset „Ablage"',p:139,old:168,img:'geschenksetNeu',img2:'setShelf',r:5.0,rv:9,badge:'Set',rel:['kerze','gel','mist-nude'],
-  d:'Handtuch-Set, Duschgel und Duftkerze in der Geschenkverpackung. Der Klassiker zum Verschenken. Sie sparen gegenüber dem Einzelkauf.',
-  x:'Die Handtücher sind bei 60 °C waschbar (ohne Weichspüler), Duschgel und Kerze tragen den Zitrus-Duft der Kollektion. Beliebtestes Geschenk zu Weihnachten und zum Einzug.'},
-
- {id:'edp-sea',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Sea Breeze", 50 ml',p:119,img:'parfumsNeu',img2:'edpTrio',r:4.8,rv:26,rel:['mist-nude','gel','kerze'],
-  d:'Kopfnote aus Meersalz und Bergamotte, Herz aus grünem Kardamom, Basis aus Zedernholz und weißem Moschus. In Grasse abgefüllt.',
-  x:'12 % Duftölanteil, hält 6–8 Stunden auf der Haut. Ein frisch-aquatischer Tagesduft — am schönsten im Frühling und Sommer, im Büro wie am Wasser. 2 Sprühstöße auf Puls und Schlüsselbein genügen.'},
- {id:'edp-citrus',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Citrus Accent", 50 ml',p:119,img:'edpItalia',img2:'edpTrio',r:4.8,rv:19,rel:['mist-blue','gel','aloe'],
-  d:'Spritzige Zitrus-Komposition mit Zitrone, Grapefruit und Vetiver. Frisch und lebendig, für heiße Tage.',
-  x:'11 % Duftölanteil, bewusst leicht gehalten — der Duft für Hochsommer und Urlaub, wenn schwere Noten zu viel wären. Hält 4–6 Stunden, gern großzügig aufgefrischt.'},
- {id:'edp-set',cat:'parfuem',sc:'edp',n:'Eau de Parfum Duo, 2 × 50 ml',p:199,old:238,img:'parfumTrio',img2:'edpTrio',r:5.0,rv:8,badge:'Set',rel:['kerze','mist-nude','gel'],
-  d:'Sea Breeze und Citrus Accent im Set — die beiden Signature-Düfte der Kollektion. Sie sparen gegenüber dem Einzelkauf.',
-  x:'Sea Breeze (12 % Duftöl) als eleganter Tagesduft von Frühling bis Herbst, Citrus Accent (11 %) für die heißen Wochen — zusammen decken sie das ganze Jahr ab. Kühl und dunkel gelagert halten beide mindestens 24 Monate.'},
- {id:'mist-nude',cat:'parfuem',sc:'mist',n:'Body & Hair Mist, 100 ml',p:39,img:'mistNude',img2:'mistBlue',r:4.7,rv:22,badge:'Neu',ml:100,rel:['edp-sea','shampoo','gel'],
-  d:'Leichter Duftnebel für Haut und Haar, dezent und alltagstauglich. Pflegt und parfümiert in einem.',
-  x:'3 % Duftölanteil mit pflegendem Panthenol — bewusst dezent für Alltag, Sport und Büro. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren.'},
- {id:'mist-blue',cat:'parfuem',sc:'mist',n:'Body & Hair Mist „Eau Fraîche", 100 ml',p:39,img:'mistBlue',img2:'mistNude',r:4.8,rv:14,ml:100,rel:['edp-citrus','aloe','gel'],
-  d:'Frischer, aquatischer Duftnebel für Körper und Haar. Kühlt und erfrischt an heißen Tagen.',
-  x:'3 % Duftölanteil mit Menthol-Frischeeffekt — im Sommer gekühlt aufsprühen, erfrischt sofort. Der leichte Begleiter für Strandtage und warme Nächte.'},
- {id:'kerze',cat:'parfuem',sc:'kerzen',colors:[1,3,2],n:'Duftkerze „Romantic Ambience", 220 g',p:44,old:54,img:'cupsBunt',img2:'candles3',r:4.7,rv:12,badge:'Neu',g:220,rel:['edp-sea','gel','set-essential'],
-  d:'Sojawachs mit Baumwolldocht im matten Glas mit Reliefdekor, erhältlich in Rosé, Lavendel und Salbei. Brenndauer rund 45 Stunden.',
-  x:'100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen — so brennt sie gleichmäßig ab. Besonders stimmungsvoll in Herbst und Winter.'},
- {id:'kerze-salbei',cat:'parfuem',sc:'kerzen',n:'Duftkerze „Salbei & Eiche", 220 g',p:39,img:'kerzenNeu',img2:'candle',r:4.8,rv:7,badge:'Neu',g:220,rel:['kerze','edp-sea','gel'],
-  d:'Grüner Salbei über warmem Eichenholz — der ruhige Duft der La-Doccia-Interieurs für zu Hause. Sojawachs im matten Glas, Brenndauer rund 45 Stunden.',
-  x:'100 % Sojawachs mit 8 % Duftölanteil. Docht vor jedem Anzünden auf 5 mm kürzen; beim ersten Brennen die Oberfläche vollständig flüssig werden lassen.'},
- {id:'edt-riva',cat:'parfuem',sc:'edp',n:'Eau de Toilette „Riva", 100 ml',p:89,img:'flacon1',img2:'flacon2',r:4.9,rv:6,badge:'Neu',rel:['mist-nude','gel','kerze-salbei'],
-  d:'Der leichte Einstieg in die Duftfamilie: Zitrus und Meersalz, weicher als das Eau de Parfum, gemacht für jeden Tag.',
-  x:'8 % Duftölanteil, hält 3–5 Stunden — bewusst leicht für den Alltag und großzügiges Auftragen. Frühling bis Herbst, im Sommer auch zum Nachsprühen unterwegs.'},
-
- {id:'tote',cat:'textil',sc:'bags',n:'Strandtasche „La Doccia"',p:69,img:'beachSet',img2:'bagsSet',r:4.9,rv:17,badge:'Bestseller',mat:'100 % Baumwoll-Canvas, 450 g/m²',rel:['pouches','jar-trio','set-essential'],
-  d:'Geräumige Strandtasche mit Kordelgriffen und wasserabweisendem Innenfach. Weiß mit dem Vier-Farben-Zeichen.',
-  x:'Fester Baumwoll-Canvas (450 g/m²) mit beschichtetem Innenfach für nasse Sachen vom Pool. Flecken feucht abwischen, bei Bedarf Handwäsche bei 30 °C — nicht in den Trockner.'},
- {id:'weekender',cat:'textil',sc:'bags',n:'Weekender & Rucksack-Set',p:129,old:159,img:'taschenNeu',img2:'bagRow',r:4.8,rv:9,mat:'100 % recyceltes Polyester',rel:['pouches','tote','mist-nude'],
-  d:'Sportlicher Weekender und passender Rucksack im Colour-Block-Design der Marke. Ideal für Kurztrips und Pooltage.',
-  x:'Wasserabweisendes Gewebe aus recyceltem Polyester, einfach feucht abwischen. Der Weekender fasst 40 Liter und passt als Handgepäck — für Wochenendtrips das ganze Jahr über.'},
- {id:'pouches',cat:'textil',sc:'etuis',n:'Etui- & Beutel-Set, 4-teilig',p:39,img:'bagsBunt',img2:'pouchSet',r:4.9,rv:13,badge:'Neu',mat:'100 % Baumwolle (Beutel)',rel:['tote','mist-nude','aloe'],
-  d:'Brillenetuis und Baumwollbeutel mit Wortmarke — praktisch für Sonnenbrille, Schmuck und kleine Utensilien. Vier Teile im Set.',
-  x:'Die Baumwollbeutel sind bei 30 °C waschbar, die Etuis mit festem Kern bitte nur feucht abwischen. Innen weich gefüttert — Brillengläser bleiben kratzerfrei.'},
+ {id:'p01',cat:'parfuem',sc:'edp',n:"Eau de Parfum „Sea Breeze“, 50 ml",p:119,img:'assets/p/01_eau-de-parfum-damen_b.webp',img2:'assets/p/01_eau-de-parfum-damen_c.webp',gal:["assets/p/01_eau-de-parfum-damen_c.webp"],r:4.8,rv:36,badge:"Bestseller",who:"damen",rel:["p02", "p03", "p04"],d:"Der Signature-Duft für Damen: Meersalz und Bergamotte in der Kopfnote, grüner Kardamom im Herzen, Zedernholz und weißer Moschus in der Basis.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
+ {id:'p02',cat:'parfuem',sc:'edp',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',r:4.9,rv:7,who:"herren",rel:["p01", "p03", "p04"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
+ {id:'p03',cat:'parfuem',sc:'edp',n:"Taschenzerstäuber, 10 ml",p:24,img:'assets/p/03_taschenzerstaeuber_a.webp',r:5.0,rv:14,rel:["p01", "p02", "p04"],d:"Nachfüllbarer Zerstäuber im Taschenformat — Ihr Duft im Handgepäck, büro- und flugtauglich.",x:"Lässt sich direkt aus dem Flakon befüllen und reicht für rund 120 Sprühstöße. Flugtauglich unter 100 ml."},
+ {id:'p04',cat:'parfuem',sc:'edp',n:"Duft-Probierset, 5 × 2 ml",p:19,img:'assets/p/04_duft-probierset_a.webp',r:4.6,rv:21,badge:"Set",rel:["p01", "p02", "p03"],d:"Alle fünf Düfte der Kollektion als Probierset — finden Sie Ihren Favoriten, bevor Sie sich festlegen.",x:"Beim Kauf eines 50-ml-Flakons innerhalb von 30 Tagen rechnen wir den Preis des Probiersets an — Beleg genügt."},
+ {id:'p05',cat:'parfuem',sc:'mist',n:"Körperspray „Agrumi“, 100 ml",p:29,img:'assets/p/05_koerperspray_a.webp',r:4.7,rv:28,ml:100,rel:["p01", "p02", "p03"],d:"Leichter Duftnebel für Haut und Haar — dezent, frisch und alltagstauglich.",x:"3 % Duftölanteil mit pflegendem Panthenol. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren."},
+ {id:'p06',cat:'parfuem',sc:'kerzen',n:"Duftkerze, 220 g",p:44,old:54,img:'assets/p/06_duftkerze-220g_a.webp',img2:'assets/p/06_duftkerze-220g_b.webp',gal:["assets/p/06_duftkerze-220g_b.webp", "assets/p/06_duftkerze-220g_c.webp"],r:4.8,rv:35,g:220,rel:["p07", "p08", "p01"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p07',cat:'parfuem',sc:'kerzen',n:"Duftkerze klein, 90 g",p:24,img:'assets/p/07_duftkerze-90g_c.webp',r:4.9,rv:6,g:90,rel:["p06", "p08", "p01"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p08',cat:'parfuem',sc:'kerzen',n:"Raumduft-Diffuser, 100 ml",p:39,img:'assets/p/08_raumduft-diffuser_a.webp',img2:'assets/p/08_raumduft-diffuser_b.webp',gal:["assets/p/08_raumduft-diffuser_b.webp", "assets/p/08_raumduft-diffuser_c.webp"],r:5.0,rv:13,badge:"Neu",rel:["p06", "p07", "p01"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p09',cat:'kosmetik',sc:'dusche',n:"Duschgel, 250 ml",p:14,img:'assets/p/09_duschgel-250_a.webp',r:4.6,rv:20,badge:"Bestseller",ml:250,rel:["p10", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'p10',cat:'kosmetik',sc:'dusche',n:"Duschgel, 500 ml",p:22,old:26,img:'assets/p/10_duschgel-500_a.webp',r:4.8,rv:36,ml:500,rel:["p09", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'p11',cat:'kosmetik',sc:'dusche',n:"Duschöl, 200 ml",p:19,img:'assets/p/11_duschoel_a.webp',r:4.9,rv:7,ml:200,rel:["p09", "p10", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'p12',cat:'kosmetik',sc:'dusche',n:"Duschpeeling, 200 ml",p:18,img:'assets/p/12_duschpeeling_a.webp',r:5.0,rv:14,ml:200,rel:["p09", "p10", "p11"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'p13',cat:'kosmetik',sc:'koerper',n:"Bodylotion, 250 ml",p:19,img:'assets/p/13_bodylotion_a.webp',r:4.6,rv:21,ml:250,rel:["p14", "p15", "p16"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
+ {id:'p14',cat:'kosmetik',sc:'koerper',n:"Body Butter, 200 ml",p:24,old:29,img:'assets/p/14_body-butter_a.webp',r:4.7,rv:28,ml:200,rel:["p13", "p15", "p16"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
+ {id:'p15',cat:'kosmetik',sc:'koerper',n:"Handcreme, 50 ml",p:12,img:'assets/p/15_handcreme-50_b.webp',img2:'assets/p/15_handcreme-50_c.webp',gal:["assets/p/15_handcreme-50_c.webp"],r:4.8,rv:35,ml:50,rel:["p13", "p14", "p16"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
+ {id:'p16',cat:'kosmetik',sc:'koerper',n:"Handcreme-Mini-Set, 3 × 30 ml",p:24,img:'assets/p/16_handcreme-mini-set_a.webp',r:4.9,rv:6,badge:"Set",rel:["p13", "p14", "p15"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
+ {id:'p17',cat:'kosmetik',sc:'koerper',n:"Lippenbalsam",p:9,img:'assets/p/17_lippenbalsam_b.webp',img2:'assets/p/17_lippenbalsam_c.webp',gal:["assets/p/17_lippenbalsam_c.webp"],r:5.0,rv:13,rel:["p13", "p14", "p15"],d:"Pflegender Lippenbalsam mit Sheabutter und einem Hauch Zitrus — der kleinste Artikel der Kollektion, immer dabei.",x:"Ohne Mineralöl, mit Bienenwachs und Sheabutter. Passt in jede Kosmetiktasche — auch als Mitgebsel beliebt."},
+ {id:'p18',cat:'kosmetik',sc:'koerper',n:"Sonnencreme SPF 50, 150 ml",p:24,img:'assets/p/18_sonnencreme_a.webp',r:4.6,rv:20,ml:150,rel:["p13", "p14", "p15"],d:"Sonnenschutz SPF 50 mit UVA-Breitbandschutz — zieht schnell ein, klebt nicht, weißelt nicht.",x:"Alle 2 Stunden nachcremen, nach dem Schwimmen sofort. Auch fürs Gesicht geeignet."},
+ {id:'p19',cat:'kosmetik',sc:'haar',n:"Shampoo, 250 ml",p:16,img:'assets/p/19_shampoo-250_a.webp',r:4.7,rv:27,ml:250,rel:["p20", "p21", "p22"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p20',cat:'kosmetik',sc:'haar',n:"Shampoo, 500 ml",p:26,old:32,img:'assets/p/20_shampoo-500_a.webp',r:4.9,rv:7,ml:500,rel:["p19", "p21", "p22"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p21',cat:'kosmetik',sc:'haar',n:"Conditioner, 250 ml",p:18,img:'assets/p/21_conditioner_b.webp',img2:'assets/p/21_conditioner_c.webp',gal:["assets/p/21_conditioner_c.webp"],r:5.0,rv:14,ml:250,rel:["p19", "p20", "p22"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p22',cat:'kosmetik',sc:'haar',n:"Haarmaske, 200 ml",p:24,old:32,img:'assets/p/22_haarmaske_a.webp',img2:'assets/p/22_haarmaske_b.webp',gal:["assets/p/22_haarmaske_b.webp", "assets/p/22_haarmaske_c.webp"],r:4.6,rv:21,ml:200,rel:["p19", "p20", "p21"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p23',cat:'kosmetik',sc:'haar',n:"Haaröl, 100 ml",p:22,img:'assets/p/23_haaroel_a.webp',r:4.7,rv:28,ml:100,rel:["p19", "p20", "p21"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p24',cat:'kosmetik',sc:'haar',n:"Trockenshampoo, 150 ml",p:16,img:'assets/p/24_trockenshampoo_b.webp',img2:'assets/p/24_trockenshampoo_c.webp',gal:["assets/p/24_trockenshampoo_c.webp"],r:4.8,rv:35,badge:"Neu",ml:150,rel:["p19", "p20", "p21"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p25',cat:'kosmetik',sc:'mund',n:"Zahnbürste",p:6,img:'assets/p/25_zahnbuerste_a.webp',r:4.9,rv:6,rel:["p26", "p27", "S7"],d:"Klare Formen, weiche Borsten, Markenfarben — Zahnpflege, die auf der Ablage gut aussieht.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
+ {id:'p26',cat:'kosmetik',sc:'mund',n:"Zahnbürsten-Duo",p:10,img:'assets/p/26_zahnbuerste-2er_a.webp',r:5.0,rv:13,badge:"Set",rel:["p25", "p27", "S7"],d:"Klare Formen, weiche Borsten, Markenfarben — Zahnpflege, die auf der Ablage gut aussieht.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
+ {id:'p27',cat:'kosmetik',sc:'mund',n:"Zahnputzbecher",p:14,img:'assets/p/27_zahnputzbecher_a.webp',r:4.6,rv:20,rel:["p25", "p26", "S7"],d:"Klare Formen, weiche Borsten, Markenfarben — Zahnpflege, die auf der Ablage gut aussieht.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
+ {id:'p28',cat:'kosmetik',sc:'tools',n:"Paddle-Haarbürste",p:29,img:'assets/p/28_haarbuerste-paddle_a.webp',img2:'assets/p/28_haarbuerste-paddle_b.webp',gal:["assets/p/28_haarbuerste-paddle_b.webp", "assets/p/28_haarbuerste-paddle_c.webp"],r:4.7,rv:27,badge:"Bestseller",rel:["p29", "p30", "p31"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
+ {id:'p29',cat:'kosmetik',sc:'tools',n:"Taschenhaarbürste",p:16,img:'assets/p/29_taschenhaarbuerste_a.webp',r:4.8,rv:34,rel:["p28", "p30", "p31"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
+ {id:'p30',cat:'kosmetik',sc:'tools',n:"Kamm",p:12,img:'assets/p/30_kamm_a.webp',r:5.0,rv:14,rel:["p28", "p29", "p31"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
+ {id:'p31',cat:'kosmetik',sc:'tools',n:"Nagelfeile",p:8,img:'assets/p/31_nagelfeile_a.webp',r:4.6,rv:21,rel:["p28", "p29", "p30"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
+ {id:'p32',cat:'kosmetik',sc:'tools',n:"Nagelfeile Mini",p:5,img:'assets/p/32_nagelfeile-mini_a.webp',img2:'assets/p/32_nagelfeile-mini_b.webp',gal:["assets/p/32_nagelfeile-mini_b.webp"],r:4.7,rv:28,rel:["p28", "p29", "p30"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
+ {id:'p33',cat:'kosmetik',sc:'tools',n:"Maniküre-Etui, 7-teilig",p:39,img:'assets/p/33_manikuere-etui_a.webp',r:4.8,rv:35,rel:["p28", "p29", "p30"],d:"Sieben Werkzeuge im Reißverschluss-Etui: Schere, Knipser, Feilen, Pinzette und mehr — Maniküre komplett.",x:"Werkzeuge aus rostfreiem Stahl, Etui feucht abwischbar. Auch als Geschenk eine sichere Wahl."},
+ {id:'p34',cat:'kosmetik',sc:'tools',n:"Pinzette",p:12,img:'assets/p/34_pinzette_a.webp',r:4.9,rv:6,rel:["p28", "p29", "p30"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
+ {id:'p35',cat:'kosmetik',sc:'seife',n:"Seifenstück, 100 g",p:9,img:'assets/p/35_seifenstueck_a.webp',r:5.0,rv:13,g:100,rel:["p36", "p09", "p10"],d:"Seife mit dem Zitrus-Duft der Kollektion — rückfettend und mild zur Haut.",x:"Mit pflanzlichem Glyzerin, ohne Palmöl. Das Seifenstück auf einer Schale trocken lagern, dann hält es doppelt so lange."},
+ {id:'p36',cat:'kosmetik',sc:'seife',n:"Flüssigseife, 300 ml",p:14,img:'assets/p/36_fluessigseife_a.webp',r:4.6,rv:20,ml:300,rel:["p35", "p09", "p10"],d:"Seife mit dem Zitrus-Duft der Kollektion — rückfettend und mild zur Haut.",x:"Mit pflanzlichem Glyzerin, ohne Palmöl. Das Seifenstück auf einer Schale trocken lagern, dann hält es doppelt so lange."},
+ {id:'p37',cat:'textil',sc:'tuecher',n:"Gästehandtuch, 30 × 50 cm",p:9,img:'assets/p/37_gaestehandtuch_a.webp',r:4.7,rv:27,mat:"100 % Baumwolle, 600 g/m²",rel:["p38", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p38',cat:'textil',sc:'tuecher',n:"Handtuch, 50 × 100 cm",p:16,img:'assets/p/38_handtuch-50x100_a.webp',r:4.8,rv:34,badge:"Bestseller",mat:"100 % Baumwolle, 600 g/m²",rel:["p37", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p39',cat:'textil',sc:'tuecher',n:"Duschtuch, 70 × 140 cm",p:29,img:'assets/p/39_duschtuch_a.webp',r:4.9,rv:5,mat:"100 % Baumwolle, 600 g/m²",rel:["p37", "p38", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p40',cat:'textil',sc:'tuecher',n:"Duschtuch XL, 100 × 180 cm",p:39,img:'assets/p/40_badetuch_a.webp',r:4.6,rv:21,mat:"100 % Baumwolle, 600 g/m²",rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p41',cat:'textil',sc:'tuecher',n:"Handtuch-Set, 4-teilig",p:49,old:59,img:'assets/p/41_handtuch-set-4_a.webp',r:4.7,rv:28,badge:"Set",mat:"100 % Baumwolle, 600 g/m²",colors:[0, 1, 2, 3],rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p42',cat:'textil',sc:'maentel',n:"Morgenmantel Frottee",p:89,img:'assets/p/42_morgenmantel-frottee_a.webp',r:4.8,rv:35,mat:"100 % Baumwolle, 400 g/m²",sizes:["S", "M", "L", "XL"],rel:["p43", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
+ {id:'p43',cat:'textil',sc:'maentel',n:"Morgenmantel Kimono",p:99,old:129,img:'assets/p/43_morgenmantel-kimono_a.webp',img2:'assets/p/43_morgenmantel-kimono_b.webp',gal:["assets/p/43_morgenmantel-kimono_b.webp", "assets/p/43_morgenmantel-kimono_c.webp"],r:4.9,rv:6,mat:"100 % Baumwolle, 300 g/m²",sizes:["S", "M", "L", "XL"],rel:["p42", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
+ {id:'p44',cat:'textil',sc:'maentel',n:"Haarturban",p:19,img:'assets/p/44_haarturban_a.webp',img2:'assets/p/44_haarturban_b.webp',gal:["assets/p/44_haarturban_b.webp", "assets/p/44_haarturban_c.webp"],r:5.0,rv:13,mat:"100 % Baumwolle, 350 g/m²",rel:["p42", "p43", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
+ {id:'p45',cat:'textil',sc:'maentel',n:"Waschhandschuh",p:8,img:'assets/p/45_waschhandschuh_a.webp',r:4.6,rv:20,mat:"100 % Baumwolle, 500 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
+ {id:'p46',cat:'textil',sc:'maentel',n:"Duschvorleger, 50 × 80 cm",p:29,img:'assets/p/46_badematte_a.webp',img2:'assets/p/46_badematte_c.webp',gal:["assets/p/46_badematte_c.webp"],r:4.7,rv:27,mat:"100 % Baumwolle, 900 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
+ {id:'p47',cat:'textil',sc:'schuhe',n:"Hausschuhe",p:34,img:'assets/p/47_hausschuhe_a.webp',r:4.8,rv:34,mat:"Obermaterial Baumwollfrottee, Sohle rutschhemmend",sizes:["36/37", "38/39", "40/41", "42/43"],rel:["p48", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
+ {id:'p48',cat:'textil',sc:'schuhe',n:"Pantoletten",p:29,img:'assets/p/48_badeschlappen_a.webp',img2:'assets/p/48_badeschlappen_b.webp',gal:["assets/p/48_badeschlappen_b.webp"],r:4.9,rv:5,mat:"EVA, wasserfest",sizes:["36/37", "38/39", "40/41", "42/43"],rel:["p47", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
+ {id:'p49',cat:'textil',sc:'taschen',n:"Kosmetiktasche klein",p:24,img:'assets/p/49_kosmetiktasche-klein_b.webp',img2:'assets/p/49_kosmetiktasche-klein_c.webp',gal:["assets/p/49_kosmetiktasche-klein_c.webp"],r:5.0,rv:12,mat:"Baumwoll-Canvas, beschichtet",rel:["p50", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p50',cat:'textil',sc:'taschen',n:"Kosmetiktasche groß",p:34,old:42,img:'assets/p/50_kosmetiktasche-gross_a.webp',r:4.7,rv:28,mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p51',cat:'textil',sc:'taschen',n:"Kulturbeutel",p:39,img:'assets/p/51_kulturbeutel_b.webp',img2:'assets/p/51_kulturbeutel_c.webp',gal:["assets/p/51_kulturbeutel_c.webp"],r:4.8,rv:35,badge:"Bestseller",mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p50", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p52',cat:'textil',sc:'acc',n:"Taschenspiegel",p:14,img:'assets/p/52_taschenspiegel_a.webp',img2:'assets/p/52_taschenspiegel_c.webp',gal:["assets/p/52_taschenspiegel_c.webp"],r:4.9,rv:6,rel:["p53", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
+ {id:'p53',cat:'textil',sc:'acc',n:"Kartenetui",p:24,img:'assets/p/53_kartenetui_a.webp',r:5.0,rv:13,mat:"Recyceltes Leder",rel:["p52", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
+ {id:'p54',cat:'textil',sc:'acc',n:"Schlüsselanhänger",p:12,img:'assets/p/54_schluesselanhaenger_a.webp',r:4.6,rv:20,rel:["p52", "p53", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
+ {id:'p55',cat:'textil',sc:'acc',n:"Trinkflasche, 500 ml",p:29,img:'assets/p/55_trinkflasche_a.webp',r:4.7,rv:27,rel:["p52", "p53", "p54"],d:"Doppelwandige Trinkflasche im Markendesign — hält 12 Stunden heiß und 24 Stunden kalt.",x:"Edelstahl, BPA-frei, dicht. Von Hand spülen, nicht in die Mikrowelle."},
+ {id:'p56',cat:'zubehoer',sc:'zub',n:"Seifenschale",p:16,img:'assets/p/56_seifenschale_a.webp',r:4.8,rv:34,rel:["p57", "p58", "p59"],d:"Duschzubehör aus der Welt der La-Doccia-Duschkonzepte — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
+ {id:'p57',cat:'zubehoer',sc:'zub',n:"Seifenspender-Set, 2-teilig",p:39,img:'assets/p/57_seifenspender-set_a.webp',r:4.9,rv:5,badge:"Set",rel:["p56", "p58", "p59"],d:"Zwei Seifenspender aus mattem Glas mit gravierter Wortmarke — für Seife und Lotion am Waschplatz.",x:"Nachfüllbar, Pumpe aus Metall. Feucht abwischen; die Gravur ist dauerhaft eingebrannt."},
+ {id:'p58',cat:'zubehoer',sc:'zub',n:"Glasabzieher",p:24,img:'assets/p/58_glasabzieher_a.webp',r:5.0,rv:12,badge:"Bestseller",rel:["p56", "p57", "p59"],d:"Duschzubehör aus der Welt der La-Doccia-Duschkonzepte — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
+ {id:'p59',cat:'zubehoer',sc:'zub',n:"Duschregal",p:49,img:'assets/p/59_duschregal_a.webp',r:4.6,rv:19,rel:["p56", "p57", "p58"],d:"Duschregal aus pulverbeschichtetem Metall — hängt ohne Bohren, rostet nicht, hält die ganze Routine.",x:"Werkzeuglose Montage an der Glaswand oder am Brausekopf. Ablauföffnungen gegen stehendes Wasser."},
+ {id:'p60',cat:'zubehoer',sc:'zub',n:"Antirutschmatte",p:19,img:'assets/p/60_antirutschmatte_a.webp',r:4.8,rv:35,rel:["p56", "p57", "p58"],d:"Antirutschmatte mit starkem Saughalt — Sicherheit, die man nicht sieht, aber jeden Tag spürt.",x:"Saugnäpfe auf glattem Untergrund fest andrücken. Waschbar bei 30 °C — hygienischer als jede Einwegmatte."},
+ {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
+ {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p01", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
+ {id:'S4',cat:'kosmetik',sc:'haar',n:"Haarpflege-Set",p:59,img:'assets/s/S4_haarpflege-set_a.webp',img2:'assets/s/S4_haarpflege-set_b.webp',gal:["assets/s/S4_haarpflege-set_b.webp", "assets/s/S4_haarpflege-set_c.webp"],r:4.6,rv:14,badge:"Set",rel:["p19", "p20", "p21"],d:"Shampoo, Conditioner und Haarmaske als Kur-Set — die volle Routine für beanspruchtes Haar.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'S5',cat:'textil',sc:'taschen',n:"Handtaschen-Set",p:79,img:'assets/s/S5_handtaschen-set_a.webp',img2:'assets/s/S5_handtaschen-set_b.webp',gal:["assets/s/S5_handtaschen-set_b.webp", "assets/s/S5_handtaschen-set_c.webp"],r:4.7,rv:21,badge:"Set",rel:["p49", "p50", "p51"],d:"Kosmetiktasche, Kulturbeutel und Taschenspiegel im Set — gepackt in einer Minute.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'S6',cat:'textil',sc:'taschen',n:"Reiseset",p:44,img:'assets/s/S6_reiseset_a.webp',img2:'assets/s/S6_reiseset_b.webp',gal:["assets/s/S6_reiseset_b.webp", "assets/s/S6_reiseset_c.webp"],r:4.8,rv:28,badge:"Set",rel:["p49", "p50", "p51"],d:"Kulturbeutel mit Reisegrößen der Pflege-Kollektion — handgepäcktauglich und nachfüllbar.",x:"Alle Flaschen unter 100 ml und auslaufsicher — direkt in den Sicherheitsbeutel am Flughafen."},
+ {id:'S7',cat:'kosmetik',sc:'mund',n:"Zahnpflege-Set",p:24,img:'assets/s/S7_zahnpflege-set_a.webp',img2:'assets/s/S7_zahnpflege-set_b.webp',gal:["assets/s/S7_zahnpflege-set_b.webp", "assets/s/S7_zahnpflege-set_c.webp"],r:4.9,rv:35,badge:"Set",rel:["p25", "p26", "p27"],d:"Zwei Zahnbürsten und Zahnputzbecher im Set — der Waschplatz im Markenlook.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
+ {id:'S8',cat:'textil',sc:'tuecher',n:"Handtuch-Set, 3-teilig",p:99,img:'assets/s/S8_handtuch-set-3_a.webp',img2:'assets/s/S8_handtuch-set-3_b.webp',gal:["assets/s/S8_handtuch-set-3_b.webp", "assets/s/S8_handtuch-set-3_c.webp"],r:5.0,rv:6,badge:"Set",mat:"100 % Baumwolle, 600 g/m²",rel:["p37", "p38", "p39"],d:"Gästehandtuch, Handtuch und Duschtuch in einer Farbe — der abgestimmte Einstieg ins Frottee-Sortiment.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'S9',cat:'kosmetik',sc:'dusche',n:"Duschpflege-Set",p:49,img:'assets/s/S9_duschpflege-set_a.webp',img2:'assets/s/S9_duschpflege-set_b.webp',gal:["assets/s/S9_duschpflege-set_b.webp", "assets/s/S9_duschpflege-set_c.webp"],r:4.6,rv:13,badge:"Set",rel:["p09", "p10", "p11"],d:"Duschgel und Duschöl mit Waschhandschuh — die tägliche Pflege als Set.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'S10',cat:'kosmetik',sc:'koerper',n:"Neukundenset",p:39,old:49,img:'assets/s/S10_neukundenset_a.webp',img2:'assets/s/S10_neukundenset_b.webp',gal:["assets/s/S10_neukundenset_b.webp", "assets/s/S10_neukundenset_c.webp"],r:4.6,rv:5,badge:"Set",rel:["p13", "p14", "p15"],d:"Das Kennenlern-Set zum Vorteilspreis: Duschgel, Handcreme und Lippenbalsam — ideal für die erste Bestellung.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."}
 ];
 /* Armaturen sind bewusst kein Shop-Artikel mehr — sie laufen über die
    Designlinien & Beratung (Vorgabe aus dem Gespräch). */
@@ -2100,22 +2139,22 @@ const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
    Der Sale-Prozentsatz wird aus echten Preisen berechnet — nichts erfunden. */
 const maxSale=()=>Math.max(...P.filter(p=>p.old).map(disc));
 const COLL={
- sale:{n:'Sale',img:'soapsBunt',
+ sale:{n:'Sale',img:'assets/p/41_handtuch-set-4_a.webp',
    sub:'Reduzierte Artikel. Alle Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
    f:p=>!!p.old},
- neu:{n:'Neuheiten',img:'cupsBunt',
+ neu:{n:'Neuheiten',img:'assets/s/S1_willkommensset_c.webp',
    sub:'Frisch in der Kollektion — die neuesten Artikel von La Doccia.',
    f:p=>p.badge==='Neu'},
- sommer:{n:'Must-haves für den Sommer',img:'beachSet',
+ sommer:{n:'Must-haves für den Sommer',img:'assets/p/18_sonnencreme_a.webp',
    sub:'Sonnenpflege, leichte Düfte und Begleiter für Pool und Strand.',
-   f:p=>['jar-trio','aloe','mist-blue','mist-nude','edp-citrus','edt-riva','tote','weekender','pouches'].includes(p.id)},
- sets:{n:'Sets & Geschenke',img:'setShelf',
+   f:p=>['p18','p05','p24','p55','p47','p48','S6'].includes(p.id)},
+ sets:{n:'Sets & Geschenke',img:'assets/s/S3_duft-geschenkbox_a.webp',
    sub:'Fertig kombiniert und schön verpackt — zum Verschenken oder Selbstbehalten.',
    f:p=>p.badge==='Set'||/set|trio|duo/i.test(p.n)},
- farben:{n:'In Ihren Lieblingsfarben',img:'tubes',
+ farben:{n:'In Ihren Lieblingsfarben',img:'assets/p/41_handtuch-set-4_a.webp',
    sub:'Artikel, die es in den vier Markenfarben von La Doccia gibt.',
    f:p=>!!p.colors},
- damen:{n:'Damen',img:'towel',
+ damen:{n:'Damen',img:'assets/p/01_eau-de-parfum-damen_b.webp',
    sub:'Ausgewählt für Damen — inklusive aller Unisex-Artikel der Kollektion.',
    f:p=>!p.who||p.who==='damen'}
 };
@@ -2158,7 +2197,7 @@ function cardRail(p){
 /* Startseite: maximal 3 ausgewählte Produkte, mobil angeschnitten scrollbar */
 (function(){
   const host=document.getElementById('homeRails'); if(!host)return;
-  const FEATURED=['set-essential','edp-sea','care-trio'];
+  const FEATURED=['S2','p01','p42'];
   const items=FEATURED.map(id=>P.find(p=>p.id===id)).filter(Boolean);
   host.innerHTML = `
     <div class="railhead">
@@ -2199,6 +2238,12 @@ function sortList(l){
   if(curSort==='sale')l.sort((a,b)=>disc(b)-disc(a));
   return l;
 }
+function crumb2(name){
+  const el=document.getElementById('shopCrumb'); if(!el)return;
+  el.innerHTML = name
+    ? `<a onclick="go('home')">Startseite</a> &nbsp;/&nbsp; <a onclick="filt('all')">Shop</a> &nbsp;/&nbsp; <b>${name}</b>`
+    : `<a onclick="go('home')">Startseite</a> &nbsp;/&nbsp; <b>Shop</b>`;
+}
 function renderShop(){
   const q=curQ.trim();
   if(q.length>=3)track('search',{search_term:q});
@@ -2210,6 +2255,7 @@ function renderShop(){
     document.getElementById('shopTitle').textContent=c.n;
     document.getElementById('shopTitle').style.setProperty('--dc', curCat==='sale'?'#E0231C':'transparent');
     document.getElementById('shopSub').textContent=c.sub;
+    crumb2(c.n);
     let list=P.filter(c.f);
     if(q)list=list.filter(p=>prodMatch(p,q));
     list=sortList(list); total=list.length;
@@ -2227,8 +2273,9 @@ function renderShop(){
   document.getElementById('shopTitle').textContent = curCat==='all'?'Alle Produkte':cObj.n;
   document.getElementById('shopTitle').style.setProperty('--dc', cObj&&cObj.col?cObj.col:'transparent');
   document.getElementById('shopSub').textContent = curCat==='all'
-    ? 'Frottee, Duft, Pflege und Armaturen — die Marke zum Mitnehmen.'
+    ? 'Parfümerie, Kosmetik, Textil und Duschzubehör — die Marke zum Mitnehmen.'
     : cObj.sub;
+  crumb2(curCat==='all'?null:cObj.n);
 
   /* Einstieg: EIN ruhiger Hero mit großer Serifen-Typo, dann vier geführte
      Abteilungs-Blöcke — niemand muss suchen, jeder wird geführt. */
@@ -2236,7 +2283,7 @@ function renderShop(){
   let tiles='';
   if(curCat==='all'&&!q){
     const mS=maxSale();
-    const deptImgs={parfuem:'edpItalia',kosmetik:'sunSet',textil:'towelsBunt'};
+    const deptImgs={};  /* CATS.img sind bereits die Katalog-Szenen (_c) */
     /* Hero-Slider: Themen wechseln (Bad / Sale / Textil-Neukunden), Bernstein-Prinzip */
     /* 3 Slides, nur hochauflösende Bilder. Produkte primär:
        1) Frau im Bad (Badeartikel)  2) Sale  3) Neukundenrabatt (Parfüm) */
@@ -2341,9 +2388,14 @@ function renderShop(){
       if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>!p.who||p.who===curWho);
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
-      return `<section class="catsec">
-        <div class="subhead"><h2>${c.n}</h2><span class="cnt">${list.length} Artikel</span></div>
-        <p class="sub">${c.sub}</p>${subbar}${whobar}
+      /* Bei einer einzelnen Abteilung steht der große Titel schon oben —
+         die Section-Überschrift wäre doppelt (Calzedonia: Titel, Sub-Links, Grid). */
+      const head = curCat==='all'
+        ? `<div class="subhead"><h2>${c.n}</h2><span class="cnt">${list.length} Artikel</span></div>
+           <p class="sub">${c.sub}</p>`
+        : '';
+      return `<section class="catsec" ${curCat!=='all'?'style="padding-top:6px"':''}>
+        ${head}${subbar}${whobar}
         <div class="pg">${list.map(card).join('')}</div></section>`;
     }).join('');
   }
@@ -2516,8 +2568,7 @@ function openP(id){
   SEEN=[id,...SEEN.filter(x=>x!==id)].slice(0,8); store.set('ld_seen',SEEN);
   const d=disc(p);
   /* Galerie: eigene Bilder + passende Ambiente-Bilder der Abteilung (Drive-Fotos) */
-  const GALX={parfuem:['parfumsNeu','galP1'],kosmetik:['seifenNeu','seifenspenderNeu'],textil:['handtuecherNeu','soapsBunt']};
-  const gal=[p.img2,p.img,...(p.gal||GALX[p.cat]||[])];
+  const gal=[p.img,...(p.gal||[])];
   const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
   const gpT=gpText(p);
   const bundle=bundleFor(p);
@@ -2541,6 +2592,7 @@ function openP(id){
         ${p.sizes.map(s=>`<button class="szb" data-s="${s}" onclick="pickSize('${s}')">${s}</button>`).join('')}</div></div>`:''}
       ${p.p>=PROMO.freeShip?`<div class="freeship">✓ Kostenloser Versand</div>`:''}
       <button class="btn" style="width:100%" onclick="addFromPM()">In den Warenkorb</button>
+      <div class="ctamicro"><em>✓</em> Kostenlose Retoure, 30 Tage Zeit — Sie gehen kein Risiko ein.</div>
       <div class="payrow">
         <span class="pay2 paypal"><i>Pay</i><b>Pal</b></span>
         <span class="pay2 klarna">Klarna.</span>
@@ -2548,6 +2600,7 @@ function openP(id){
         <span class="pay2 mc"><em class="mcc"></em>mastercard</span>
         <span class="pay2">Rechnung</span>
       </div>
+      <div class="ctaproof"><span class="s">★★★★★</span>„${pickRevs(p)[0].t}“ <b>— ${pickRevs(p)[0].w}</b></div>
       <div class="trustmini">
         <span>Kostenloser Versand &amp; Rückversand</span>
         <span>30 Tage Rückgabe</span>

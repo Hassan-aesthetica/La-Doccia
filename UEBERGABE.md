@@ -60,6 +60,14 @@ Pflichtfelder: `id, cat, sc, n, p, img, img2, r, rv, d`
 - **Empfehlungen:** `rel:['id1','id2','id3']` — steuert „Passt dazu", Bundle und Warenkorb-Cross-Sells.
 - `x:` „Gut zu wissen"-Text (Pflege/Anwendung/Saison).
 
+## Produktkatalog (Stand August 2026)
+Das Sortiment (60 Produkte `p01`–`p60` + 10 Sets `S1`–`S10`) kommt aus dem Google-Drive-Katalog
+(Ordner `produkte/` und `sets/`). Dateikonvention: `<nr>_<produkt>_<perspektive>.webp` —
+`_a` Packshot (Grid/Warenkorb), `_b` Detail (Galerie), `_c` Szene (Galerie/Kategorie-Header).
+Die Bilder liegen unter `assets/p/` und `assets/s/`; Produkte referenzieren sie direkt als Pfad
+(`src()` hat einen Fallback: unbekannte Keys werden als Pfad durchgereicht).
+Preise, Bewertungen und Texte sind plausible Platzhalter — vor Livegang mit echten Daten abgleichen.
+
 ## Hinweis zu den Bildern
 Vier Asset-Dateien tragen vertauschte Namen (Taschen liegen in `shampoo.webp`, Kerzen in `bagsSet.webp`, Handtücher in `candles3.webp`, ein Pflege-Set in `towelStack.webp`). Das ist im Bild-Mapping `A` am Anfang des Scripts korrigiert — beim Ersetzen der Platzhalter-Bilder vor dem Livegang am besten die Dateien richtig benennen und die vier Korrekturzeilen entfernen.
 
