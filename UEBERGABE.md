@@ -68,6 +68,11 @@ Die Bilder liegen unter `assets/p/` und `assets/s/`; Produkte referenzieren sie 
 (`src()` hat einen Fallback: unbekannte Keys werden als Pfad durchgereicht).
 Preise, Bewertungen und Texte sind plausible Platzhalter — vor Livegang mit echten Daten abgleichen.
 
+## Galerie-Qualitätskontrolle
+`qc.html` (nur intern, nicht verlinkt) zeigt alle Produktgalerien als Kontaktbogen:
+`http://localhost:4602/qc.html?p=0` … `?p=11` — je 6 Produkte pro Seite. Damit lässt sich
+schnell prüfen, ob alle Bilder eines Artikels dasselbe Produkt in derselben Farbe zeigen.
+
 ## Hinweis zu den Bildern
 Vier Asset-Dateien tragen vertauschte Namen (Taschen liegen in `shampoo.webp`, Kerzen in `bagsSet.webp`, Handtücher in `candles3.webp`, ein Pflege-Set in `towelStack.webp`). Das ist im Bild-Mapping `A` am Anfang des Scripts korrigiert — beim Ersetzen der Platzhalter-Bilder vor dem Livegang am besten die Dateien richtig benennen und die vier Korrekturzeilen entfernen.
 
