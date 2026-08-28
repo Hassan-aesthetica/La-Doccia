@@ -2314,8 +2314,8 @@ function renderShop(){
        cta:'Jetzt shoppen',fn:"document.querySelector('.gsplit').scrollIntoView({behavior:'smooth',block:'center'})"},
       {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true,right:true},
-      {img:'assets/e/hero-robe.jpg',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
-       cta:'Code sichern',fn:"popOpen()",right:true}
+      {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+       cta:'Code sichern',fn:"popOpen()"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
