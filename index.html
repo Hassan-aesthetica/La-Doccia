@@ -437,7 +437,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
 .railnote{font-size:12.5px;color:var(--ink-45);margin-top:14px}
 .shophead{padding:clamp(40px,6vw,76px) 0 clamp(20px,3vw,30px)}
 .shophead h1{font-size:clamp(34px,6vw,64px);margin:14px 0 14px}
-#shopTitle::before{content:'';display:block;width:52px;height:6px;background:var(--dc,transparent);margin-bottom:16px}
+#shopTitle::after{content:'';display:block;width:52px;height:4px;border-radius:2px;background:var(--dc,transparent);margin:14px auto 0}
 .shophead p{color:var(--ink-70);max-width:56ch}
 .catbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:18px 0;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
@@ -892,7 +892,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   display:flex;justify-content:space-between;align-items:center;gap:16px;
   padding:18px clamp(18px,4vw,48px);font-size:15px;font-weight:500;letter-spacing:.02em}
 .sbar span{white-space:nowrap}
-@media(max-width:640px){.sbar span:first-child{display:none}.sbar{font-size:13.5px;padding:15px 18px}}
+@media(max-width:640px){.sbar span:last-child{display:none}.sbar{font-size:13.5px;padding:15px 18px;justify-content:center;gap:22px}}
 .sdots{position:absolute;left:50%;bottom:78px;transform:translateX(-50%);display:flex;gap:9px;z-index:3}
 /* Hero-Inhalt über dem Balken halten + Text besser lesbar */
 .shero.full .stx{padding:0 40% 130px clamp(24px,7vw,110px);align-items:flex-start;text-align:left}
@@ -1849,7 +1849,8 @@ function paths(list, color){
 function pathsStatic(list, color){
   return list.map(g=>`<g transform="translate(${g.x},0) scale(${g.s},${-g.s})"><path d="${g.d}" fill="${color}"/></g>`).join('');
 }
-const BRAND=['#E8B400','#E85D2A','#1FA98A','#6C4FD8','#FFFFFF'];
+const BRAND=['#E8B400','#E85D2A','#1FA98A','#6C4FD8'];
+const SELCOLS=[...BRAND,'#FFFFFF'];  /* Auswahlfarben für Produkte (inkl. Weiß) — nicht fürs Logo */
 const COLNAMES=['Gelb','Orange','Türkis','Violett','Weiß'];
 /* Die Quadrate sind jetzt RAHMEN (Vorgabe aus Olegs Skizze):
    fill:none + kräftiger Stroke statt gefüllter Fläche. */
@@ -2201,7 +2202,7 @@ function card(p){
         ? `<span>${eur(p.p)}</span><span class="old" title="Niedrigster Gesamtpreis der letzten 30 Tage">${eur(p.old)}</span>`
         : eur(p.p)}</div>${gpLine(p)}</div></article>`;
 }
-const BRANDHEX=BRAND;  // Produkt-Swatches in den echten, kräftigen Markenfarben
+const BRANDHEX=SELCOLS;  // Produkt-Swatches in den echten, kräftigen Markenfarben
 function cardRail(p){
   const d=disc(p);
   const sw = p.colors ? `<div class="swatches">${p.colors.map(i=>`<i style="background:${BRANDHEX[i]}"></i>`).join('')}</div>` : '';
@@ -2318,7 +2319,7 @@ function renderShop(){
     const SLIDES=[
       {img:'assets/e/hero-parfum.jpg',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
        cta:'Jetzt shoppen',fn:"document.querySelector('.gsplit').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+      {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS}&nbsp;% sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true,right:true},
       {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"}
@@ -2410,7 +2411,7 @@ function renderShop(){
     body = cats.map(c=>{
       let list=P.filter(p=>p.cat===c.id);
       if(q) list=list.filter(p=>prodMatch(p,q));
-      const subbar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:12px">
+      const subbar = (curCat!=='all'&&c.subs.length>1) ? `<div class="subbar" style="margin-bottom:12px">
           <button class="subchip ${curSub==='all'?'on':''}" onclick="subFilt('all')">Alle</button>
           ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
             onclick="subFilt('${s.id}')">${s.n}</button>`).join('')}</div>` : '';
@@ -2631,7 +2632,7 @@ function openP(id){
       <div class="tax" style="margin-bottom:14px">inkl. MwSt. · <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">kostenloser Versand</a></div>
       <div class="stock"><i></i>Auf Lager&nbsp;<span>· ${lieferzeit()}</span></div>
       ${p.colors?`<div class="sizes"><span class="slbl">Farbe: <b id="colLbl">${COLNAMES[p.colors[0]]}</b></span><div>
-        ${p.colors.map((ci,i)=>`<button class="colb ${i===0?'on':''}" data-c="${COLNAMES[ci]}" style="background:${BRAND[ci]}"
+        ${p.colors.map((ci,i)=>`<button class="colb ${i===0?'on':''}" data-c="${COLNAMES[ci]}" style="background:${SELCOLS[ci]}"
           title="${COLNAMES[ci]}" aria-label="${COLNAMES[ci]}"
           onclick="pickCol('${COLNAMES[ci]}');document.getElementById('colLbl').textContent='${COLNAMES[ci]}'"></button>`).join('')}</div></div>`:''}
       ${p.sizes?`<div class="sizes"><span class="slbl">Größe</span><div>
