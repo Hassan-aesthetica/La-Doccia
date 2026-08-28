@@ -31,12 +31,12 @@ keine Bestandsdaten) nicht sauber umsetzbar und wurden bewusst NICHT als Attrapp
 - **Bunte Buchstaben im Logo**: Die Skizze zeigt auch mehrfarbige Buchstaben (L blau, D grün, O orange …). Umgesetzt sind bislang nur die Rahmen-Quadrate — die Wortmarke blieb bewusst einfarbig (wirkt edler). Auf Wunsch ist die bunte Variante schnell gebaut.
 - **Viele Farben pro Produkt** (Lacoste-Prinzip, 10–25 Farben): braucht echte Varianten-Daten + Bilder je Farbe.
 
-## Bildkatalog — Rest-Synchronisation
-Vom Drive-Katalog sind alle 70 Artikel mit mindestens einem Vollformat-Bild eingebunden.
-Noch offen: Bei 8 Produkten (01, 07, 15, 17, 21, 24, 49, 51) fehlt der `_a`-Packshot lokal
-(aktuell zeigt das Grid dort `_b`/`_c`), und bei vielen Produkten fehlen die `_b`/`_c`-Galeriebilder.
-Die Dateien liegen im Drive (`produkte/`-Ordner) — bei Gelegenheit nachladen nach `assets/p/`
-und im `P`-Array `img`/`gal` ergänzen (Konvention siehe UEBERGABE.md).
+## Bildkatalog — vollständig synchronisiert
+Alle 70 Artikel haben jetzt die komplette Galerie: `_a`-Packshot im Grid plus `_b`-Detail
+und `_c`-Szene aus dem Drive-Katalog; personenbezogene Artikel (Parfüm, Handtücher,
+Morgenmäntel, Taschen, Handcreme, Hausschuhe) tragen zusätzlich ein KI-Kampagnenbild
+mit Person (assets/e/). Die Hausschuhe (p47) wurden neu gestaltet
+(assets/p/47_hausschuhe_neu_*.jpg) — die alten Drive-Dateien 47_* bleiben ungenutzt liegen.
 
 ## KI-Kampagnenbilder (assets/e/)
 Die Editorial-Bilder mit Menschen (Hero, Gucci-Kacheln, Abteilungen, Kollektionen) sind
