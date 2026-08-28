@@ -133,7 +133,7 @@ nav.main a:hover{border-color:var(--ink)}
 .reveal{opacity:0;transform:translateY(26px);transition:1s cubic-bezier(.2,.7,.3,1)}
 .reveal.in{opacity:1;transform:none}
 
-section{padding:clamp(64px,9vw,128px) 0}
+section{padding:clamp(36px,5vw,68px) 0}
 .shead{max-width:660px;margin-bottom:clamp(34px,5vw,58px)}
 .shead .eyebrow{display:block;margin-bottom:16px}
 .shead h2{font-size:clamp(31px,5.2vw,58px);margin-bottom:18px}
@@ -897,7 +897,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 /* Hero-Inhalt über dem Balken halten + Text besser lesbar */
 .shero.full .stx{padding:0 40% 130px clamp(24px,7vw,110px);align-items:flex-start;text-align:left}
 .shero.full .scta{justify-content:flex-start}
-.shero .slide img{object-position:68% center}
+.shero .slide img{object-position:center}
 @media(max-width:760px){.shero.full .stx{padding:0 8% 130px 8%}}
 .stx .mega{text-shadow:0 3px 28px rgba(15,13,11,.55),0 1px 6px rgba(15,13,11,.4)}
 .stx .ssub{text-shadow:0 2px 14px rgba(15,13,11,.6)}
@@ -1045,6 +1045,25 @@ nav.main .salelink:hover{border-color:#E0231C}
 .bigmark{font-family:var(--serif);font-weight:600;letter-spacing:.04em;text-align:center;color:#fff;
   font-size:clamp(40px,10.5vw,164px);line-height:1;padding:clamp(34px,5vw,70px) 10px clamp(22px,3.4vw,46px);
   white-space:nowrap;user-select:none;overflow:hidden}
+/* ---------- Gucci-Split: zwei volle Editorial-Kacheln mit KAUFEN ---------- */
+.gsplit{display:grid;grid-template-columns:1fr 1fr;gap:0;
+  margin:0 calc(50% - 50vw);width:100vw}
+.gtile{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/5;max-height:820px}
+.gtile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.7,.3,1)}
+.gtile:hover img{transform:scale(1.045)}
+.glab{position:absolute;inset:auto 0 0 0;padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;
+  align-items:center;gap:16px;background:linear-gradient(transparent,rgba(23,23,27,.5))}
+.glab h3{color:#fff;font-family:var(--serif);font-weight:500;font-size:clamp(24px,3.2vw,42px);
+  letter-spacing:.08em;text-transform:uppercase;text-shadow:0 2px 16px rgba(20,20,24,.4)}
+.gbtn{background:#fff;color:var(--ink);padding:12px 32px;border-radius:999px;font-size:12px;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:transform .25s}
+.gtile:hover .gbtn{transform:translateY(-2px)}
+@media(max-width:700px){.gsplit{grid-template-columns:1fr}.gtile{aspect-ratio:4/5;max-height:none}}
+/* Hero-Slides mit Person links: Text rechtsbündig auf der freien Fläche */
+.shero.full .stx.txr{padding:0 clamp(24px,7vw,110px) 130px 42%;align-items:flex-end;text-align:right}
+.shero.full .stx.txr .scta{justify-content:flex-end}
+@media(max-width:760px){.shero.full .stx.txr{padding:0 8% 130px 8%;align-items:flex-start;text-align:left}
+  .shero.full .stx.txr .scta{justify-content:flex-start}}
 /* ---------- CRO: Microcopy & Social Proof direkt an der Kaufentscheidung ---------- */
 .ctamicro{font-size:12.5px;font-weight:600;margin-top:9px;color:var(--ink)}
 .ctamicro em{font-style:normal;color:#2E9E5B}
@@ -2142,10 +2161,10 @@ const COLL={
  sale:{n:'Sale',img:'assets/p/41_handtuch-set-4_a.webp',
    sub:'Reduzierte Artikel. Alle Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
    f:p=>!!p.old},
- neu:{n:'Neuheiten',img:'assets/s/S1_willkommensset_c.webp',
+ neu:{n:'Neuheiten',img:'assets/e/spa-friends.jpg',
    sub:'Frisch in der Kollektion — die neuesten Artikel von La Doccia.',
    f:p=>p.badge==='Neu'},
- sommer:{n:'Must-haves für den Sommer',img:'assets/p/18_sonnencreme_a.webp',
+ sommer:{n:'Must-haves für den Sommer',img:'assets/e/hand-creme.jpg',
    sub:'Sonnenpflege, leichte Düfte und Begleiter für Pool und Strand.',
    f:p=>['p18','p05','p24','p55','p47','p48','S6'].includes(p.id)},
  sets:{n:'Sets & Geschenke',img:'assets/s/S3_duft-geschenkbox_a.webp',
@@ -2154,7 +2173,7 @@ const COLL={
  farben:{n:'In Ihren Lieblingsfarben',img:'assets/p/41_handtuch-set-4_a.webp',
    sub:'Artikel, die es in den vier Markenfarben von La Doccia gibt.',
    f:p=>!!p.colors},
- damen:{n:'Damen',img:'assets/p/01_eau-de-parfum-damen_b.webp',
+ damen:{n:'Damen',img:'assets/e/damen-tote.jpg',
    sub:'Ausgewählt für Damen — inklusive aller Unisex-Artikel der Kollektion.',
    f:p=>!p.who||p.who==='damen'}
 };
@@ -2283,25 +2302,27 @@ function renderShop(){
   let tiles='';
   if(curCat==='all'&&!q){
     const mS=maxSale();
-    const deptImgs={};  /* CATS.img sind bereits die Katalog-Szenen (_c) */
+    /* Abteilungs-Bilder auf der Landing: Editorial-Kampagnen mit Menschen */
+    const deptImgs={kosmetik:'assets/e/dept-kosmetik.jpg',textil:'assets/e/dept-taschen.jpg',
+      parfuem:'assets/p/01_eau-de-parfum-damen_c.webp',zubehoer:'assets/s/S2_duschset-komplett_c.webp'};
     /* Hero-Slider: Themen wechseln (Bad / Sale / Textil-Neukunden), Bernstein-Prinzip */
     /* 3 Slides, nur hochauflösende Bilder. Produkte primär:
        1) Frau im Bad (Badeartikel)  2) Sale  3) Neukundenrabatt (Parfüm) */
     /* Markenbilder im La-Doccia-Stil, alle 1920px */
     /* Knallige Produkt-Slides — die Farben SIND die Marke */
     const SLIDES=[
-      {img:'heroFamilie',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
-       cta:'Jetzt shoppen',fn:"document.querySelector('.salerow').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'heroStudio',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
-       cta:'Sale entdecken',fn:"filt('sale')",sale:true},
-      {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
-       cta:'Code sichern',fn:"popOpen()"}
+      {img:'assets/e/hero-parfum.jpg',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
+       cta:'Jetzt shoppen',fn:"document.querySelector('.gsplit').scrollIntoView({behavior:'smooth',block:'center'})"},
+      {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS} % sparen`,
+       cta:'Sale entdecken',fn:"filt('sale')",sale:true,right:true},
+      {img:'assets/e/hero-robe.jpg',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+       cta:'Code sichern',fn:"popOpen()",right:true}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
           <img src="${src(s.img)}" alt="" ${i?'loading="lazy"':'fetchpriority="high"'}>
           <div class="sov"></div>
-          <div class="stx">
+          <div class="stx ${s.right?'txr':''}">
             <span class="stag ${s.sale?'':'tagbeige'}">${s.tag}</span>
             <div class="ssub">${s.sub}</div>
             <h2 class="mega">${s.h}</h2>
@@ -2315,6 +2336,16 @@ function renderShop(){
         </div>
       </div>
       ${uspRow()}
+      <div class="gsplit reveal">
+        <div class="gtile" onclick="filt('parfuem')">
+          <img src="assets/e/dept-parfum.jpg" alt="Parfümerie" loading="lazy">
+          <div class="glab"><h3>Parfümerie</h3><span class="gbtn">Kaufen</span></div>
+        </div>
+        <div class="gtile" onclick="filt('textil')">
+          <img src="assets/e/dept-textil.jpg" alt="Textil" loading="lazy">
+          <div class="glab"><h3>Textil</h3><span class="gbtn">Kaufen</span></div>
+        </div>
+      </div>
       <div class="salerow reveal">
         <div class="coll is-sale" onclick="filt('sale')">
           <img src="${src(COLL.sale.img)}" alt="Sale" loading="lazy">
