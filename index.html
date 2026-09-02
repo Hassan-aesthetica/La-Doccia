@@ -1098,6 +1098,18 @@ nav.main .salelink:hover{border-color:#E0231C}
 .wbig:hover{border-color:var(--ink)}
 .wbig svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.7}
 .wbig.on svg{fill:#E0231C;stroke:#E0231C}
+/* ---------- Usability: Tastatur-Fokus, Tap-Targets, Nach-oben-Button ---------- */
+.btn:focus-visible,.chip:focus-visible,.subchip:focus-visible,.colb:focus-visible,
+.szb:focus-visible,.gtile:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+@media(max-width:760px){
+  .subchip{padding:10px 4px;font-size:12.5px}
+  .chip{padding:12px 16px}
+  .colb{width:34px;height:34px}
+}
+#toTop{position:fixed;right:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;
+  border:1px solid var(--line);background:#fff;color:var(--ink);font-size:19px;cursor:pointer;
+  box-shadow:0 8px 26px -10px rgba(20,20,24,.35);opacity:0;pointer-events:none;transition:opacity .3s}
+#toTop.on{opacity:1;pointer-events:auto}
 </style>
 </head>
 <body class="locked">
@@ -2143,18 +2155,18 @@ const P=[
  {id:'p34',cat:'kosmetik',sc:'tools',n:"Pinzette",p:12,img:'assets/p/34_pinzette_a.webp',img2:'assets/p/34_pinzette_b.webp',gal:["assets/p/34_pinzette_b.webp", "assets/p/34_pinzette_c.webp"],r:4.9,rv:6,rel:["p28", "p29", "p30"],d:"Werkzeug fürs tägliche Ritual — präzise gearbeitet, angenehm in der Hand, im Farbcode der Marke.",x:"Feucht abwischen genügt. Bürsten regelmäßig von Haaren befreien und mit mildem Shampoo auswaschen — so halten sie Jahre."},
  {id:'p35',cat:'kosmetik',sc:'seife',n:"Seifenstück, 100 g",p:9,img:'assets/p/35_seifenstueck_a.webp',img2:'assets/p/35_seifenstueck_b.webp',gal:["assets/p/35_seifenstueck_b.webp", "assets/p/35_seifenstueck_c.webp"],r:5.0,rv:13,g:100,rel:["p36", "p09", "p10"],d:"Seife mit dem Zitrus-Duft der Kollektion — rückfettend und mild zur Haut.",x:"Mit pflanzlichem Glyzerin, ohne Palmöl. Das Seifenstück auf einer Schale trocken lagern, dann hält es doppelt so lange."},
  {id:'p36',cat:'kosmetik',sc:'seife',n:"Flüssigseife, 300 ml",p:14,img:'assets/p/36_fluessigseife_a.webp',img2:'assets/p/36_fluessigseife_b.webp',gal:["assets/p/36_fluessigseife_b.webp", "assets/p/36_fluessigseife_c.webp"],r:4.6,rv:20,ml:300,rel:["p35", "p09", "p10"],d:"Seife mit dem Zitrus-Duft der Kollektion — rückfettend und mild zur Haut.",x:"Mit pflanzlichem Glyzerin, ohne Palmöl. Das Seifenstück auf einer Schale trocken lagern, dann hält es doppelt so lange."},
- {id:'p37',cat:'textil',sc:'tuecher',n:"Gästehandtuch, 30 × 50 cm",p:9,img:'assets/p/37_gaestehandtuch_a.webp',img2:'assets/p/37_gaestehandtuch_b.webp',gal:["assets/p/37_gaestehandtuch_b.webp", "assets/p/37_gaestehandtuch_c.webp"],r:4.7,rv:27,mat:"100 % Baumwolle, 600 g/m²",colors:[1,2,3],rel:["p38", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
- {id:'p38',cat:'textil',sc:'tuecher',n:"Handtuch, 50 × 100 cm",p:16,img:'assets/p/38_handtuch-50x100_a.webp',img2:'assets/p/38_handtuch-50x100_b.webp',gal:["assets/p/38_handtuch-50x100_b.webp", "assets/p/38_handtuch-50x100_c.webp"],r:4.8,rv:34,badge:"Bestseller",mat:"100 % Baumwolle, 600 g/m²",colors:[3,0,2],rel:["p37", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
- {id:'p39',cat:'textil',sc:'tuecher',n:"Duschtuch, 70 × 140 cm",p:29,img:'assets/p/39_duschtuch_a.webp',img2:'assets/p/39_duschtuch_b.webp',gal:["assets/p/39_duschtuch_b.webp", "assets/p/39_duschtuch_c.webp"],r:4.9,rv:5,mat:"100 % Baumwolle, 600 g/m²",colors:[2,0,3],rel:["p37", "p38", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
- {id:'p40',cat:'textil',sc:'tuecher',n:"Duschtuch XL, 100 × 180 cm",p:39,img:'assets/p/40_badetuch_a.webp',img2:'assets/p/40_badetuch_b.webp',gal:["assets/p/40_badetuch_b.webp", "assets/p/40_badetuch_c.webp"],r:4.6,rv:21,mat:"100 % Baumwolle, 600 g/m²",colors:[0,2,3],rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p37',cat:'textil',sc:'tuecher',n:"Gästehandtuch, 30 × 50 cm",p:9,img:'assets/p/37_gaestehandtuch_a.webp',img2:'assets/p/37_gaestehandtuch_b.webp',gal:["assets/p/37_gaestehandtuch_b.webp", "assets/p/37_gaestehandtuch_c.webp"],r:4.7,rv:27,mat:"100 % Baumwolle, 600 g/m²",colors:[1,2,3],cimg:{Orange:'assets/p/37_gaestehandtuch_a.webp',Türkis:'assets/p/39_duschtuch_a.webp',Violett:'assets/p/38_handtuch-50x100_a.webp'},rel:["p38", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p38',cat:'textil',sc:'tuecher',n:"Handtuch, 50 × 100 cm",p:16,img:'assets/p/38_handtuch-50x100_a.webp',img2:'assets/p/38_handtuch-50x100_b.webp',gal:["assets/p/38_handtuch-50x100_b.webp", "assets/p/38_handtuch-50x100_c.webp"],r:4.8,rv:34,badge:"Bestseller",mat:"100 % Baumwolle, 600 g/m²",colors:[3,0,2],cimg:{Violett:'assets/p/38_handtuch-50x100_a.webp',Gelb:'assets/p/40_badetuch_a.webp',Türkis:'assets/p/39_duschtuch_a.webp'},rel:["p37", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p39',cat:'textil',sc:'tuecher',n:"Duschtuch, 70 × 140 cm",p:29,img:'assets/p/39_duschtuch_a.webp',img2:'assets/p/39_duschtuch_b.webp',gal:["assets/p/39_duschtuch_b.webp", "assets/p/39_duschtuch_c.webp"],r:4.9,rv:5,mat:"100 % Baumwolle, 600 g/m²",colors:[2,0,3],cimg:{Türkis:'assets/p/39_duschtuch_a.webp',Gelb:'assets/p/40_badetuch_a.webp',Violett:'assets/p/38_handtuch-50x100_a.webp'},rel:["p37", "p38", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p40',cat:'textil',sc:'tuecher',n:"Duschtuch XL, 100 × 180 cm",p:39,img:'assets/p/40_badetuch_a.webp',img2:'assets/p/40_badetuch_b.webp',gal:["assets/p/40_badetuch_b.webp", "assets/p/40_badetuch_c.webp"],r:4.6,rv:21,mat:"100 % Baumwolle, 600 g/m²",colors:[0,2,3],cimg:{Gelb:'assets/p/40_badetuch_a.webp',Türkis:'assets/p/39_duschtuch_a.webp',Violett:'assets/p/38_handtuch-50x100_a.webp'},rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
  {id:'p41',cat:'textil',sc:'tuecher',n:"Handtuch-Set, 4-teilig",p:49,old:59,img:'assets/p/41_handtuch-set-4_a.webp',img2:'assets/p/41_handtuch-set-4_b.webp',gal:["assets/p/41_handtuch-set-4_b.webp", "assets/p/41_handtuch-set-4_c.webp", "assets/e/sale-towels.jpg"],r:4.7,rv:28,badge:"Set",mat:"100 % Baumwolle, 600 g/m²",colors:[0, 1, 2, 3],rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
  {id:'p42',cat:'textil',sc:'maentel',n:"Morgenmantel Frottee",p:89,img:'assets/p/42_morgenmantel-frottee_a.webp',img2:'assets/p/42_morgenmantel-frottee_b.webp',gal:["assets/p/42_morgenmantel-frottee_b.webp", "assets/p/42_morgenmantel-frottee_c.webp", "assets/e/person-frottee-mantel.jpg"],r:4.8,rv:35,mat:"100 % Baumwolle, 400 g/m²",sizes:["S", "M", "L", "XL"],rel:["p43", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p43',cat:'textil',sc:'maentel',n:"Morgenmantel Kimono",p:99,old:129,img:'assets/p/43_morgenmantel-kimono_a.webp',img2:'assets/p/43_morgenmantel-kimono_b.webp',gal:["assets/p/43_morgenmantel-kimono_b.webp", "assets/p/43_morgenmantel-kimono_c.webp", "assets/e/person-kimono.jpg"],r:4.9,rv:6,mat:"100 % Baumwolle, 300 g/m²",sizes:["S", "M", "L", "XL"],rel:["p42", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p44',cat:'textil',sc:'maentel',n:"Haarturban",p:19,img:'assets/p/44_haarturban_a.webp',img2:'assets/p/44_haarturban_b.webp',gal:["assets/p/44_haarturban_b.webp", "assets/p/44_haarturban_c.webp", "assets/e/person-turban.jpg"],r:5.0,rv:13,mat:"100 % Baumwolle, 350 g/m²",rel:["p42", "p43", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p45',cat:'textil',sc:'maentel',n:"Waschhandschuh",p:8,img:'assets/p/45_waschhandschuh_a.webp',img2:'assets/p/45_waschhandschuh_b.webp',gal:["assets/p/45_waschhandschuh_b.webp", "assets/p/45_waschhandschuh_c.webp"],r:4.6,rv:20,mat:"100 % Baumwolle, 500 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p46',cat:'textil',sc:'maentel',n:"Duschvorleger, 50 × 80 cm",p:29,img:'assets/p/46_badematte_a.webp',img2:'assets/p/46_badematte_b.webp',gal:["assets/p/46_badematte_b.webp", "assets/p/46_badematte_c.webp"],r:4.7,rv:27,mat:"100 % Baumwolle, 900 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
- {id:'p47',cat:'textil',sc:'schuhe',n:"Hausschuhe",p:34,img:'assets/p/47_hausschuhe_neu_a.jpg',img2:'assets/p/47_hausschuhe_neu_b.jpg',gal:["assets/p/47_hausschuhe_neu_b.jpg", "assets/p/47_hausschuhe_neu_c.jpg"],r:4.8,rv:34,mat:"Obermaterial Baumwollfrottee, Sohle rutschhemmend",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[4,0,2],rel:["p48", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
- {id:'p48',cat:'textil',sc:'schuhe',n:"Pantoletten",p:29,img:'assets/p/48_badeschlappen_a.webp',img2:'assets/p/48_badeschlappen_b.webp',gal:["assets/p/48_badeschlappen_b.webp", "assets/e/person-pantoletten.jpg"],r:4.9,rv:5,mat:"EVA, wasserfest",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[0,2,4],rel:["p47", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
+ {id:'p47',cat:'textil',sc:'schuhe',n:"Hausschuhe",p:34,img:'assets/p/47_hausschuhe_neu_a.jpg',img2:'assets/p/47_hausschuhe_neu_b.jpg',gal:["assets/p/47_hausschuhe_neu_b.jpg", "assets/p/47_hausschuhe_neu_c.jpg"],r:4.8,rv:34,mat:"Obermaterial Baumwollfrottee, Sohle rutschhemmend",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[4,0,2],cimg:{Weiß:'assets/p/47_hausschuhe_neu_a.jpg',Gelb:'assets/p/47_hausschuhe_gelb.jpg',Türkis:'assets/p/47_hausschuhe_tuerkis.jpg'},rel:["p48", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
+ {id:'p48',cat:'textil',sc:'schuhe',n:"Pantoletten",p:29,img:'assets/p/48_badeschlappen_a.webp',img2:'assets/p/48_badeschlappen_b.webp',gal:["assets/p/48_badeschlappen_b.webp", "assets/e/person-pantoletten.jpg"],r:4.9,rv:5,mat:"EVA, wasserfest",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[0,2,4],cimg:{Gelb:'assets/p/48_badeschlappen_a.webp',Türkis:'assets/p/48_badeschlappen_tuerkis.jpg',Weiß:'assets/p/48_badeschlappen_weiss.jpg'},rel:["p47", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
  {id:'p49',cat:'textil',sc:'taschen',n:"Kosmetiktasche klein",p:24,img:'assets/p/49_kosmetiktasche-klein_a.webp',img2:'assets/p/49_kosmetiktasche-klein_b.webp',gal:["assets/p/49_kosmetiktasche-klein_b.webp", "assets/p/49_kosmetiktasche-klein_c.webp", "assets/e/person-kosmetiktasche.jpg"],r:5.0,rv:12,mat:"Baumwoll-Canvas, beschichtet",rel:["p50", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
  {id:'p50',cat:'textil',sc:'taschen',n:"Kosmetiktasche groß",p:34,old:42,img:'assets/p/50_kosmetiktasche-gross_a.webp',img2:'assets/p/50_kosmetiktasche-gross_b.webp',gal:["assets/p/50_kosmetiktasche-gross_b.webp", "assets/p/50_kosmetiktasche-gross_c.webp"],r:4.7,rv:28,mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
  {id:'p51',cat:'textil',sc:'taschen',n:"Kulturbeutel",p:39,img:'assets/p/51_kulturbeutel_a.webp',img2:'assets/p/51_kulturbeutel_b.webp',gal:["assets/p/51_kulturbeutel_b.webp", "assets/p/51_kulturbeutel_c.webp"],r:4.8,rv:35,badge:"Bestseller",mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p50", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
@@ -2272,6 +2284,7 @@ document.getElementById('catBar').innerHTML =
 function whoFilt(id){curWho=id;renderShop()}
 function filt(id,who){
   curCat=id; curSub='all'; curWho=who||'all';
+  if(!window.NAVLOCK)history.pushState({v:'shop',cat:id},'');
   document.querySelectorAll('#catBar .chip').forEach(c=>c.classList.toggle('on',c.dataset.c===id));
   track('filter_used',{filter:id});
   renderShop();
@@ -2504,6 +2517,13 @@ function headerClear(){
 addEventListener('scroll',headerClear,{passive:true});
 addEventListener('resize',headerClear,{passive:true});
 
+/* ---------- Nach-oben-Button (erscheint nach ~2 Bildschirmhöhen) ---------- */
+const toTop=document.createElement('button');
+toTop.id='toTop'; toTop.textContent='↑'; toTop.setAttribute('aria-label','Nach oben');
+toTop.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+document.body.appendChild(toTop);
+addEventListener('scroll',()=>toTop.classList.toggle('on',scrollY>innerHeight*2),{passive:true});
+
 /* ---------- Bunte USP-Zeile (Bernstein-Prinzip: Icons in Markenfarben) ---------- */
 function uspRow(){
   const ic={
@@ -2605,6 +2625,15 @@ function pickSize(s){
 function pickCol(c){
   pmCol=c;
   document.querySelectorAll('.colb').forEach(b=>b.classList.toggle('on',b.dataset.c===c));
+  const lbl=document.getElementById('colLbl'); if(lbl)lbl.textContent=c;
+  /* Farbvarianten-Bild: das Hauptbild wechselt mit der gewählten Farbe */
+  if(pmCur&&pmCur.cimg&&pmCur.cimg[c]){
+    const im=document.querySelector('#pmGrid .frame img[data-g="0"]');
+    const th=document.querySelector('.pmthumbs button[data-t="0"] img');
+    if(im)im.src=src(pmCur.cimg[c]);
+    if(th)th.src=src(pmCur.cimg[c]);
+    pmShow(0);
+  }
 }
 function addFromPM(){
   if(!pmCur)return;
@@ -2728,14 +2757,32 @@ function closeP(){
   document.body.classList.remove('pmopen');
 }
 
-/* Routing */
+/* Routing — mit Browser-History: Zurück-Taste führt durch Views und Kategorien */
 function go(v,cat){
   document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
   document.getElementById('v-'+v).classList.add('on');
   if(v==='shop'&&cat) filt(cat);
+  else if(!window.NAVLOCK)history.pushState({v:v,cat:v==='shop'?curCat:null},'');
   window.scrollTo(0,0); setTimeout(obs,50);
   if(typeof headerClear==='function')headerClear();
 }
+window.NAVLOCK=false;
+addEventListener('popstate',e=>{
+  const s=e.state||{v:'shop',cat:'all'};
+  window.NAVLOCK=true;
+  if(document.getElementById('pmwrap').classList.contains('on')){closeP();window.NAVLOCK=false;return}
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+  document.getElementById('v-'+(s.v||'shop')).classList.add('on');
+  if(s.v==='shop'||!s.v)filt(s.cat||'all');
+  window.scrollTo(0,0); headerClear();
+  window.NAVLOCK=false;
+});
+/* Escape schließt Produktmodal und Warenkorb */
+addEventListener('keydown',e=>{
+  if(e.key!=='Escape')return;
+  if(document.getElementById('pmwrap').classList.contains('on'))closeP();
+  else cart(0);
+});
 /* Zu einer Sektion der Startseite springen — auch von Unterseiten aus */
 function goSec(id){
   if(!document.getElementById('v-home').classList.contains('on')) go('home');
