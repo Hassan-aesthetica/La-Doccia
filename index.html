@@ -1098,6 +1098,15 @@ nav.main .salelink:hover{border-color:#E0231C}
 .wbig:hover{border-color:var(--ink)}
 .wbig svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.7}
 .wbig.on svg{fill:#E0231C;stroke:#E0231C}
+/* ---------- Duschkonzepte kompakt ---------- */
+.line.lite{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,36px);
+  display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.line.lite .lbar{width:46px;height:5px;border-radius:3px;background:var(--lc)}
+.line.lite h3{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);font-weight:500}
+.line.lite .claim{color:var(--ink-70);font-size:14.5px}
+.line.lite .price{margin-top:auto}
+.line.lite.hi{border-color:var(--ink);box-shadow:0 18px 44px -24px rgba(20,20,24,.3)}
+.linefoot{margin-top:30px;font-size:13.5px;color:var(--ink-70);text-align:center;max-width:64ch;margin-left:auto;margin-right:auto}
 /* ---------- Usability: Tastatur-Fokus, Tap-Targets, Nach-oben-Button ---------- */
 .btn:focus-visible,.chip:focus-visible,.subchip:focus-visible,.colb:focus-visible,
 .szb:focus-visible,.gtile:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
@@ -1212,7 +1221,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 <main class="view" id="v-home">
   <!-- HERO -->
   <div class="hero">
-    <video id="heroVid" muted playsinline preload="auto"></video>
+    <img class="post" data-img="duschgruen" alt="La Doccia Duschkonzept in Grün">
     <div class="veil"></div>
     <div class="scrollcue"><span>Scrollen</span><i></i></div>
     <div class="inner">
@@ -1235,9 +1244,8 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="txt reveal">
         <span class="eyebrow">Die Marke</span>
         <h2>Duschen erleben — nicht nur duschen.</h2>
-        <p>Die meisten Duschen werden eingebaut, damit sie funktionieren. Wir bauen sie, damit sie etwas auslösen. Der Moment unter der Dusche ist der erste ehrliche Moment des Tages — und der verdient mehr als weiße Fliesen und einen Vorhang.</p>
-        <p>La Doccia entstand aus genau dieser Überzeugung: dass eine Dusche ein Interieur ist und kein Funktionsraum. Wir arbeiten mit fugenlosen Oberflächen, Glas und Carbon, mit Armaturen in Ihrer Wunschfarbe und mit Maßen, die zu Ihrem Raum passen — nicht zum Katalog.</p>
-        <p>Jedes Projekt beginnt mit einer persönlichen Beratung bei Ihnen zu Hause und endet mit einem Ergebnis, das sich anfühlt wie ein guter Hotelaufenthalt. Nur eben jeden Morgen.</p>
+        <p>Eine Dusche ist für uns Interieur, kein Funktionsraum: fugenlose Oberflächen, Glas und Carbon, Farben nach Wunsch — gefertigt nach Ihrem Maß, nicht nach Katalog.</p>
+        <p>Jedes Projekt beginnt mit einer persönlichen Beratung bei Ihnen zu Hause — und endet mit einem Festpreis, der hält.</p>
       </div>
       <figure class="reveal">
         <img data-img="towel" alt="La Doccia Frottee im Morgenlicht">
@@ -1263,7 +1271,7 @@ nav.main .salelink:hover{border-color:#E0231C}
           <div class="lab"><div class="n">Kosmetik</div><div class="c">Kaufen</div></div></div>
         <div class="tcat" onclick="go('shop','textil')"><img data-img="assets/p/43_morgenmantel-kimono_c.webp" alt="Textil">
           <div class="lab"><div class="n">Textil</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="goSec('linien')"><img data-img="showerGold" alt="Duschbereich">
+        <div class="tcat" onclick="goSec('linien')"><img data-img="duschgruen" alt="Duschkonzepte">
           <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien ansehen</div></div></div>
       </div>
       <div style="margin-top:34px">
@@ -1284,7 +1292,7 @@ nav.main .salelink:hover{border-color:#E0231C}
         <div class="p"><div class="num">I</div><h3>Sonderanfertigung</h3>
           <p>Jede Dusche wird nach Aufmaß gefertigt. Schrägen, Nischen, ungewöhnliche Grundrisse — kein Standardmaß, keine Kompromisse.</p></div>
         <div class="p"><div class="num">II</div><h3>Veredelte Materialien</h3>
-          <p>Glas kombiniert mit Carbon und Kristall: 6 mm Sicherheitsglas, fugenlose Oberflächen und Armaturen aus massivem Messing.</p></div>
+          <p>Glas kombiniert mit Carbon und Kristall: 6 mm Sicherheitsglas, fugenlose Oberflächen und Griffe aus geschliffenem Kristall.</p></div>
         <div class="p"><div class="num">III</div><h3>Ihre Wunschfarbe</h3>
           <p>Erhältlich im kompletten RAL-Spektrum. Von Taubenblau über Salbei bis Tiefschwarz — abgestimmt auf Ihren Raum.</p></div>
         <div class="p"><div class="num">IV</div><h3>Barrierefrei &amp; durchdacht</h3>
@@ -1297,51 +1305,19 @@ nav.main .salelink:hover{border-color:#E0231C}
   <section id="linien">
     <div class="wrap">
       <div class="shead reveal">
-        <span class="eyebrow">Designlinien</span>
-        <h2>Drei Wege zu Ihrer Dusche.</h2>
-        <p>Jede Linie ist ein Komplettpaket: Planung, Material, Demontage, Einbau und Endreinigung. Nach der Beratung vor Ort erhalten Sie ein verbindliches Festpreisangebot.</p>
+        <span class="eyebrow">Duschkonzepte</span>
+        <h2>Drei Linien. Ein Festpreis.</h2>
+        <p>Jede Linie ist ein Komplettpaket von der Planung bis zur Endreinigung — den Rest besprechen wir persönlich.</p>
       </div>
       <div class="lines reveal" id="linesGrid"></div>
-      <p style="margin-top:34px;font-size:13.5px;color:var(--ink-45);max-width:60ch">
-        Preise als Richtwerte für einen Duschraum bis 8 m². Der Endpreis ergibt sich nach dem Aufmaß vor Ort und ist dann verbindlich.
-        Auch für Gewerbe: Hotels, Fitnessstudios und Friseursalons betreuen wir mit eigenen Konditionen — <a href="#termin" style="color:var(--brass);text-decoration:underline;text-underline-offset:3px">sprechen Sie uns an</a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- MATERIAL -->
-  <section id="material" style="background:var(--stone)">
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow">Material &amp; Handwerk</span>
-        <h2>Die Details, die man erst nach Jahren bemerkt.</h2>
-        <p>Was einen Duschraum langfristig gut macht, sieht man selten auf dem ersten Foto — sondern merkt man beim täglichen Gebrauch.</p>
-      </div>
-      <div class="details reveal">
-        <div class="det"><figure><img data-img="drain" alt="Abflussrinne"></figure>
-          <h3>Fugenlose Rinne</h3>
-          <p>Bündig eingelassene Edelstahlrinne, herausnehmbar zur Reinigung — kein Silikonrand, der vergilbt.</p></div>
-        <div class="det"><figure><img data-img="knobs" alt="Armaturen"></figure>
-          <h3>Armaturen nach Wahl</h3>
-          <p>Massives Messing mit Kristallgriffen oder puristisch in Bronze. Thermostat mit Verbrühschutz serienmäßig.</p></div>
-        <div class="det"><figure><img data-img="basin" alt="Waschbecken"></figure>
-          <h3>Carbon &amp; Glas</h3>
-          <p>Leichte Carbon-Elemente, 6-mm-Sicherheitsglas und Kristallgriffe — modern, robust und pflegeleicht.</p></div>
+      <p class="linefoot reveal">Auch für <b>Hotels</b>, <b>Fitnessstudios</b> und <b>Friseursalons</b> — mit eigenen Konditionen.
+        Richtpreise bis 8 m² Duschraum; verbindlich wird der Preis nach dem Aufmaß vor Ort.</p>
+      <div class="reveal" style="margin-top:26px;text-align:center">
+        <a href="#termin" class="btn">Kostenlose Beratung anfragen</a>
       </div>
     </div>
   </section>
 
-  <!-- FARBWELT -->
-  <section id="farben">
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow">Farbwelt</span>
-        <h2>Ihre Dusche im kompletten RAL-Spektrum.</h2>
-        <p>Wandflächen, Armaturen und Rinne stimmen wir auf einen Farbton ab. Fünf Beispiele aus umgesetzten Projekten — möglich ist jeder RAL-Ton.</p>
-      </div>
-      <div class="ral reveal" id="ralGrid"></div>
-    </div>
-  </section>
 
   <!-- EDITORIAL BAND -->
   <div class="band">
@@ -1350,7 +1326,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="txt"><div class="in">
       <span class="eyebrow">Der Moment danach</span>
       <h2>Warm, still, und ganz kurz gehört der Tag nur Ihnen.</h2>
-      <p>Fugenlose Wände, Licht durch mattiertes Glas, eine Bank aus Eiche. Nichts von der Stange.</p>
+      <p>Fugenlose Wände, Licht durch mattiertes Glas, Farben nach Wunsch. Nichts von der Stange.</p>
       <a href="#termin" class="btn light">Beratungstermin sichern</a>
     </div></div>
   </div>
@@ -1740,7 +1716,6 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div><h4>Leistungen</h4><ul>
         <li><a href="#" onclick="goSec('linien');return false">Duschkonzepte</a></li>
         <li><a href="#" onclick="go('shop');return false">Accessoires</a></li>
-        <li><a href="#" onclick="goSec('material');return false">Material &amp; Baustoffe</a></li>
         <li><a href="#" onclick="goSec('termin');return false">Beratung</a></li></ul></div>
       <div><h4>Service</h4><ul>
         <li><a href="#" onclick="go('kontakt');return false">Kontakt</a></li>
@@ -1942,24 +1917,7 @@ function endIntro(){
 }
 setTimeout(endIntro, 2300);
 
-/* ---------- Hero-Video ---------- */
-(function(){
-  const v=document.getElementById('heroVid');
-  v.poster=A.poster;
-  const blobURL=(b64,type)=>{
-    const bin=atob(b64), arr=new Uint8Array(bin.length);
-    for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);
-    return URL.createObjectURL(new Blob([arr],{type}));
-  };
-  try{
-    const test=document.createElement('video');
-    const useWebm = A.videowebm && test.canPlayType('video/webm; codecs="vp9"');
-    v.src = useWebm ? A.videowebm : A.video;
-    v.load();
-    v.addEventListener('canplay',()=>{if(introEnded)v.play().catch(()=>{})});
-    v.addEventListener('error',()=>{ if(useWebm){ v.src=A.video; v.load(); } });
-  }catch(e){ v.style.display='none'; }
-})();
+/* Hero: statisches Duschkonzept-Bild — das frühere Video zeigte eine braune Hotel-Szene (Vorgabe: kein Braun) */
 document.querySelectorAll('[data-img]').forEach(el=>{el.src=src(el.dataset.img)});
 
 /* ---------- Helfer ---------- */
@@ -2066,40 +2024,17 @@ const LINES=[
   f:['Alles aus Comfort, plus:','Aufsatzbecken in Ihrer Wunschfarbe','Armaturen in Chrom gebürstet oder Nickel',
      'Hinterleuchtete Wandmarke','Spiegel mit Lichtkranz nach Maß']}
 ];
-/* Farbwähler pro Dusche: klickbare Töne wechseln das Bild */
-const LINECOLORS=[
- {n:'Weiß & Creme',c:'#EDEAE2',img:null},
- {n:'Blassgrün',c:'#9DBBAE',img:'ral5'},
- {n:'Taubenblau',c:'#5F7891',img:'ral4'},
- {n:'Pastellviolett',c:'#9E8DB8',img:'ral7'},
- {n:'Braunrot',c:'#7E2E33',img:'ral2'}
-];
-function lineColor(li,ci,btn){
-  const lc=LINECOLORS[ci];
-  document.getElementById('lineImg'+li).src=src(lc.img||LINES[li].img);
-  document.getElementById('lswn'+li).textContent=lc.n;
-  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===btn));
-  track('select_item',{line:LINES[li].n,color:lc.n});
-}
+/* Duschkonzepte: bewusst nur angeschnitten — Name, Claim, ab-Preis, Beratung.
+   (Farbwähler & Detail-Features kommen zurück, sobald echte Glasfarben/Daten vorliegen.) */
+const LINECOL=['var(--c1)','var(--c3)','var(--c4)'];
 document.getElementById('linesGrid').innerHTML = LINES.map((l,li)=>`
- <article class="line ${l.hi?'hi':''}">
+ <article class="line lite ${l.hi?'hi':''}" style="--lc:${LINECOL[li]}">
    ${l.hi?'<span class="flag">Beliebteste Wahl</span>':''}
-   <img src="${src(l.img)}" id="lineImg${li}" alt="${l.n}" loading="lazy">
-   <div class="lsw">${LINECOLORS.map((lc,ci)=>`<button title="${lc.n}" style="background:${lc.c}"
-     class="${ci===0?'on':''}" onclick="lineColor(${li},${ci},this)" aria-label="${lc.n}"></button>`).join('')}
-     <span class="lswn" id="lswn${li}">Weiß &amp; Creme</span></div>
-   <div class="body">
-     <h3>${l.n}</h3><div class="claim">${l.claim}</div>
-     <ul>${l.f.map(x=>`<li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>${x}</span></li>`).join('')}</ul>
-     <div class="price"><div class="from">Komplettpaket ab</div><div class="v">${l.from.toLocaleString('de-DE')} €</div></div>
-     <a href="#termin" class="btn ghost">Beratung zu ${l.n}</a>
-   </div></article>`).join('');
-
-/* ---------- Farbwelt ---------- */
-const RAL=[{"k": "ral2", "code": "RAL 3011", "n": "Braunrot"}, {"k": "ral3", "code": "RAL 4005", "n": "Blaulila"}, {"k": "ral4", "code": "RAL 5014", "n": "Taubenblau"}, {"k": "ral5", "code": "RAL 6021", "n": "Blassgrün"}, {"k": "ral7", "code": "RAL 4009", "n": "Pastellviolett"}];
-document.getElementById('ralGrid').innerHTML = RAL.map(r=>`
- <div class="sw"><img src="${src(r.k)}" alt="${r.n}" loading="lazy">
-   <div class="cap"><div class="c">${r.code}</div><div class="n">${r.n}</div></div></div>`).join('');
+   <span class="lbar"></span>
+   <h3>${l.n}</h3><div class="claim">${l.claim}</div>
+   <div class="price"><div class="from">Komplettpaket ab</div><div class="v">${l.from.toLocaleString('de-DE')} €</div></div>
+   <a href="#termin" class="btn ghost slim">Beratung anfragen</a>
+ </article>`).join('');
 
 /* ---------- Shop: Kategorien, Unterkategorien, Produkte ---------- */
 /* Katalogstruktur (Notizbuch): Parfümerie · Kosmetik · Textil, je Damen/Herren/Kinder.
