@@ -31,11 +31,11 @@ keine Bestandsdaten) nicht sauber umsetzbar und wurden bewusst NICHT als Attrapp
 - **Bunte Buchstaben im Logo**: Die Skizze zeigt auch mehrfarbige Buchstaben (L blau, D grün, O orange …). Umgesetzt sind bislang nur die Rahmen-Quadrate — die Wortmarke blieb bewusst einfarbig (wirkt edler). Auf Wunsch ist die bunte Variante schnell gebaut.
 - **Viele Farben pro Produkt** (Lacoste-Prinzip, 10–25 Farben): braucht echte Varianten-Daten + Bilder je Farbe.
 
-## Vorgemerkt: Produktvideo Regenjacke „Perla“ (p62)
-Gewünscht ist ein kurzes Produktvideo: eine Person hält die Jacke unter fließendes Wasser,
-das Wasser perlt sichtbar ab. Als Vorlage dient das Tropfen-Makro (assets/p/62_regenjacke_b.jpg).
-Nächster Schritt: Video generieren (image-to-video) und auf der Produktseite als erstes
-Galerie-Element einbinden.
+## Erledigt: Produktvideo Regenjacke „Perla“ (p62)
+5-Sekunden-Loop (assets/p/62_regenjacke_video.mp4, stumm, 1:1): Hände halten die Jacke
+unter fließendes Wasser, die Tropfen perlen ab. Läuft als zweites Galerie-Element auf der
+Produktseite (Video-Thumbnail mit ▶). Die Galerie unterstützt jetzt generell .mp4-Einträge —
+Poster-Konvention: gleicher Pfad mit `_poster.jpg`.
 
 ## Bildkatalog — vollständig synchronisiert
 Alle 70 Artikel haben jetzt die komplette Galerie: `_a`-Packshot im Grid plus `_b`-Detail

@@ -1098,6 +1098,11 @@ nav.main .salelink:hover{border-color:#E0231C}
 .wbig:hover{border-color:var(--ink)}
 .wbig svg{width:22px;height:22px;fill:none;stroke:var(--ink);stroke-width:1.7}
 .wbig.on svg{fill:#E0231C;stroke:#E0231C}
+.pmgal .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .35s}
+.pmgal .frame video.on{opacity:1}
+.pmthumbs button.vth{position:relative}
+.pmthumbs button.vth::after{content:'▶';position:absolute;inset:0;display:grid;place-items:center;
+  color:#fff;font-size:15px;background:rgba(23,23,27,.28);border-radius:inherit;pointer-events:none}
 /* ---------- Duschkonzepte kompakt ---------- */
 .line.lite{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,36px);
   display:flex;flex-direction:column;gap:12px;align-items:flex-start}
@@ -2116,7 +2121,7 @@ const P=[
  {id:'p59',cat:'zubehoer',sc:'zub',n:"Duschregal",p:49,img:'assets/p/59_duschregal_a.webp',img2:'assets/p/59_duschregal_b.webp',gal:["assets/p/59_duschregal_b.webp", "assets/p/59_duschregal_c.webp"],r:4.6,rv:19,rel:["p56", "p57", "p58"],d:"Duschregal aus pulverbeschichtetem Metall — hängt ohne Bohren, rostet nicht, hält die ganze Routine.",x:"Werkzeuglose Montage an der Glaswand oder am Brausekopf. Ablauföffnungen gegen stehendes Wasser."},
  {id:'p60',cat:'zubehoer',sc:'zub',n:"Antirutschmatte",p:19,img:'assets/p/60_antirutschmatte_a.webp',img2:'assets/p/60_antirutschmatte_b.webp',gal:["assets/p/60_antirutschmatte_b.webp", "assets/p/60_antirutschmatte_c.webp"],r:4.8,rv:35,rel:["p56", "p57", "p58"],d:"Antirutschmatte mit starkem Saughalt — Sicherheit, die man nicht sieht, aber jeden Tag spürt.",x:"Saugnäpfe auf glattem Untergrund fest andrücken. Waschbar bei 30 °C — hygienischer als jede Einwegmatte."},
  {id:'p61',cat:'textil',sc:'acc',n:'Armband „Quattro“',p:19,img:'assets/p/61_armband_gelb_a.jpg',img2:'assets/p/61_armband_b.jpg',gal:["assets/p/61_armband_b.jpg","assets/p/61_armband_c.jpg"],r:4.9,rv:12,badge:'Neu',colors:[0,2,3],cimg:{Gelb:'assets/p/61_armband_gelb_a.jpg','Türkis':'assets/p/61_armband_tuerkis_a.jpg',Violett:'assets/p/61_armband_violett_a.jpg'},rel:["p54","p53","p55"],d:'Gewebtes Textilarmband mit eingewebter Wortmarke und den vier Quadraten — Verschluss aus gebürstetem Edelstahl.',x:'Wasserfest und hautfreundlich: bleibt beim Duschen, Schwimmen und Sport einfach am Arm. Feucht abwischen genügt.'},
- {id:'p62',cat:'textil',sc:'jacken',n:'Regenjacke „Perla“',p:149,img:'assets/p/62_regenjacke_tuerkis_a.jpg',img2:'assets/p/62_regenjacke_b.jpg',gal:["assets/p/62_regenjacke_b.jpg","assets/p/62_regenjacke_c.jpg"],r:4.8,rv:7,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],colors:[2,0,3],cimg:{'Türkis':'assets/p/62_regenjacke_tuerkis_a.jpg',Gelb:'assets/p/62_regenjacke_gelb_a.jpg',Violett:'assets/p/62_regenjacke_violett_a.jpg'},rel:["p42","p51","p55"],d:'Wasserdichte Regenjacke mit Kapuze im klaren La-Doccia-Design — das Wasser perlt sichtbar von der Oberfläche ab.',x:'Wassersäule 10.000 mm, verschweißte Nähte, PFC-freie Imprägnierung. Bei 30 °C waschen und die Imprägnierung anschließend im Trockner kurz reaktivieren.'},
+ {id:'p62',cat:'textil',sc:'jacken',n:'Regenjacke „Perla“',p:149,img:'assets/p/62_regenjacke_tuerkis_a.jpg',img2:'assets/p/62_regenjacke_b.jpg',gal:["assets/p/62_regenjacke_video.mp4","assets/p/62_regenjacke_b.jpg","assets/p/62_regenjacke_c.jpg"],r:4.8,rv:7,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],colors:[2,0,3],cimg:{'Türkis':'assets/p/62_regenjacke_tuerkis_a.jpg',Gelb:'assets/p/62_regenjacke_gelb_a.jpg',Violett:'assets/p/62_regenjacke_violett_a.jpg'},rel:["p42","p51","p55"],d:'Wasserdichte Regenjacke mit Kapuze im klaren La-Doccia-Design — das Wasser perlt sichtbar von der Oberfläche ab.',x:'Wassersäule 10.000 mm, verschweißte Nähte, PFC-freie Imprägnierung. Bei 30 °C waschen und die Imprägnierung anschließend im Trockner kurz reaktivieren.'},
  {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p01", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
@@ -2578,12 +2583,19 @@ function pickCol(c){
     pmSetGal(imgs);
   }
 }
+const isVid=f=>/\.mp4$/.test(f);
+const vidPoster=f=>f.replace('.mp4','_poster.jpg');
+const galFrameEl=(g,i)=>isVid(g)
+  ?`<video data-g="${i}" src="${src(g)}" poster="${vidPoster(g)}" muted loop autoplay playsinline class="${i===0?'on':''}"></video>`
+  :`<img data-g="${i}" src="${src(g)}" alt="" class="${i===0?'on':''}">`;
+const galThumbEl=(g,i)=>`<button class="${i===0?'on':''} ${isVid(g)?'vth':''}" data-t="${i}"
+  onclick="pmShow(${i})"><img src="${isVid(g)?vidPoster(g):src(g)}" alt=""></button>`;
 function pmSetGal(imgs){
   const fr=document.querySelector('#pmGrid .frame');
   const th=document.querySelector('#pmGrid .pmthumbs');
   if(!fr||!th)return;
-  fr.innerHTML=imgs.map((g,i)=>`<img data-g="${i}" src="${src(g)}" alt="" class="${i===0?'on':''}">`).join('');
-  th.innerHTML=imgs.map((g,i)=>`<button class="${i===0?'on':''}" data-t="${i}" onclick="pmShow(${i})"><img src="${src(g)}" alt=""></button>`).join('');
+  fr.innerHTML=imgs.map(galFrameEl).join('');
+  th.innerHTML=imgs.map(galThumbEl).join('');
   pmImgIdx=0;
 }
 function addFromPM(){
@@ -2621,9 +2633,8 @@ function openP(id){
   const bsum=bundle?bundle.reduce((s,x)=>s+x.p,0):0;
   document.getElementById('pmGrid').innerHTML=`
     <div class="pmgal">
-      <div class="frame">${gal.map((g,i)=>`<img data-g="${i}" src="${src(g)}" alt="" class="${i===0?'on':''}">`).join('')}</div>
-      <div class="pmthumbs">${gal.map((g,i)=>`<button class="${i===0?'on':''}" data-t="${i}"
-        onclick="pmShow(${i})"><img src="${src(g)}" alt=""></button>`).join('')}</div>
+      <div class="frame">${gal.map(galFrameEl).join('')}</div>
+      <div class="pmthumbs">${gal.map(galThumbEl).join('')}</div>
     </div>
     <div class="pminfo">
       <div class="crumb">Shop / ${CATS.find(c=>c.id===p.cat).n}</div>
@@ -2702,7 +2713,7 @@ function openP(id){
 }
 function pmShow(i){
   if(i===pmImgIdx)return; pmImgIdx=i;
-  document.querySelectorAll('#pmGrid .frame img').forEach(im=>im.classList.toggle('on',+im.dataset.g===i));
+  document.querySelectorAll('#pmGrid .frame img, #pmGrid .frame video').forEach(im=>im.classList.toggle('on',+im.dataset.g===i));
   document.querySelectorAll('.pmthumbs button').forEach(b=>b.classList.toggle('on',+b.dataset.t===i));
 }
 function closeP(){
