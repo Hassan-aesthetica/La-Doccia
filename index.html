@@ -1072,7 +1072,9 @@ nav.main .salelink:hover{border-color:#E0231C}
 @media(max-width:760px){.shero.full .stx.txr{padding:0 8% 130px 8%;align-items:flex-start;text-align:left}
   .shero.full .stx.txr .scta{justify-content:flex-start}}
 /* ---------- NEU-Seite: statische Hero-Banner ---------- */
-.nwhero{position:relative;overflow:hidden;border-radius:18px;height:min(62vh,520px)}
+.nwhero{position:relative;overflow:hidden;border-radius:18px;height:min(62vh,520px);color:#fff}
+.nwhero .mega,.nwhero .ntx{color:#fff;text-shadow:0 2px 18px rgba(20,20,24,.45)}
+.nwhero.top{width:100vw;margin-left:calc(50% - 50vw);border-radius:0;height:min(74vh,640px)}
 .nwhero img{width:100%;height:100%;object-fit:cover;display:block}
 .nwhero .ntx{position:absolute;inset:auto auto 0 0;right:0;padding:clamp(22px,4vw,46px);
   display:flex;flex-direction:column;align-items:flex-start;gap:14px;
@@ -1196,7 +1198,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <a href="#" class="neulink" onclick="go('shop','neuwelt');return false">Neu</a>
     <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale&nbsp;%</a>
     <a href="#" onclick="go('shop','damen');return false">Damen</a>
-    <a href="#" onclick="go('shop','mode');setTimeout(()=>whoFilt('kinder'),200);return false">Kinder</a>
+    <a href="#" onclick="go('shop','kinderwelt');return false">Kinder</a>
     <span class="hsoon" title="In Bearbeitung">Herren</span>
     <span class="navdrop"><a href="#" onclick="go('shop','neu');return false">Trends &amp; Inspiration</a>
       <div class="dropm">
@@ -2176,12 +2178,12 @@ const P=[
  {id:'p79',cat:'schmuck',sc:'mehr',n:'Pin „Spilla“',p:19,img:'assets/p/79_a.jpg',r:4.8,rv:7,badge:'Neu',rel:["p80","p81","p53"],d:'Emaille-Pin mit den vier Quadraten auf goldenem Steg — fürs Revers, die Tasche oder den Kulturbeutel.',x:'Butterfly-Verschluss, Emaille kratzfest gebrannt.'},
  {id:'p80',cat:'schmuck',sc:'mehr',n:'Haarspange „Fermaglio“',p:22,img:'assets/p/80_a.jpg',r:4.8,rv:11,badge:'Neu',rel:["p79","p44","p28"],d:'Goldene Haarspange mit vier Emaille-Quadraten — hält auch nasses Haar.',x:'Wasserfest und rostfrei — hält vom Duschraum bis zum Abend. Federmechanismus.'},
  {id:'p81',cat:'schmuck',sc:'mehr',n:'Charm „Ciondolo“',p:15,img:'assets/p/81_a.jpg',r:4.9,rv:13,badge:'Neu',rel:["p73","p54","p49"],d:'Kleiner Quadrat-Charm in Violett mit Clip — für Taschen, Ketten und Schlüsselbund.',x:'Passt an p49–p51, p73 und jeden Karabiner. Emaille kratzfest, vergoldet.'},
- {id:'p82',cat:'mode',sc:'jacken',who:'kinder',n:'Kinder-Regenjacke „Salto“',p:69,img:'assets/p/82_a.jpg',r:4.9,rv:14,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["98/104","110/116","122/128"],rel:["p83","p85","p62"],d:'Sonnengelbe Kinder-Regenjacke mit verspieltem Quadrate-Muster und türkisem Kapuzenfutter — das Wasser perlt ab, die Pfütze ruft.',x:'Wassersäule 10.000 mm, reflektierende Details, Namensschild innen. Bei 30 °C waschen.'},
- {id:'p83',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Gummistiefel „Splash“',p:34,img:'assets/p/83_a.jpg',r:4.8,rv:17,badge:'Neu',mat:'Naturkautschuk, wasserdicht',sizes:["24/25","26/27","28/29","30/31"],rel:["p82","p84","p63"],d:'Türkise Gummistiefel mit bunten Quadraten und orangen Anziehschlaufen — für kleine Pfützenspringer.',x:'100 % wasserdicht, rutschfeste Sohle, herausnehmbares Fußbett. Anziehschlaufen für kleine Hände.'},
- {id:'p84',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Schlappen „Piccolo“',p:17,img:'assets/p/84_a.jpg',r:4.7,rv:11,badge:'Neu',mat:'EVA, wasserfest',sizes:["24/25","26/27","28/29","30/31"],rel:["p48","p83","p67"],d:'Orange Kinder-Pantoletten mit dicker weißer Sohle und Quadrate-Print — für Pool, Strand und Garten.',x:'Wasserfest, federleicht, waschbar. Breiter Riemen für sicheren Halt.'},
- {id:'p85',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Sneaker „Salto“, wasserdicht',p:54,img:'assets/p/85_a.jpg',r:4.9,rv:9,badge:'Neu',mat:'Recyceltes Mesh, wasserdichte Membran',sizes:["24/25","26/27","28/29","30/31"],rel:["p64","p82","p83"],d:'Weißer Kinder-Sneaker mit Regenbogen-Schnellverschluss und dem Vier-Farben-Streifen — wasserdicht für jeden Schulweg.',x:'Elastische Schnürung ohne Binden, wasserdichte Membran, waschbare Sohle.'},
- {id:'p86',cat:'mode',sc:'huete',who:'kinder',n:'Kinder-Sommerhut „Sole Mini“',p:19,img:'assets/p/86_a.jpg',r:4.8,rv:8,badge:'Neu',mat:'100 % Baumwolle',sizes:["50","52","54"],rel:["p88","p89","p84"],d:'Weißer Bucket-Hut für Kinder mit dem bunten Quadrate-Band — UV-Schutz, der gern getragen wird.',x:'UPF 50+, waschbar bei 30 °C, Kinnband abnehmbar.'},
- {id:'p87',cat:'kosmetik',sc:'haar',who:'kinder',n:'Kinder-Shampoo „Bolla“, 250 ml',p:12,img:'assets/p/87_a.jpg',r:4.9,rv:16,badge:'Neu',ml:250,rel:["p19","p96","p82"],d:'Mildes Kinder-Shampoo in der Verlaufsflasche mit Blubber-Kappe — keine Tränen, viel Schaum.',x:'Ohne Tränen-Formel, pH-hautneutral, ohne Parfümallergene. Auch als Duschgel nutzbar.'},
+ {id:'p82',cat:'mode',sc:'jacken',who:'kinder',n:'Kinder-Regenjacke „Salto“',p:69,img:'assets/p/82_a.jpg',img2:'assets/p/82_b.jpg',gal:["assets/p/82_b.jpg", "assets/p/82_c.jpg"],r:4.9,rv:14,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["98/104","110/116","122/128"],rel:["p83","p85","p62"],d:'Sonnengelbe Kinder-Regenjacke mit verspieltem Quadrate-Muster und türkisem Kapuzenfutter — das Wasser perlt ab, die Pfütze ruft.',x:'Wassersäule 10.000 mm, reflektierende Details, Namensschild innen. Bei 30 °C waschen.'},
+ {id:'p83',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Gummistiefel „Splash“',p:34,img:'assets/p/83_a.jpg',img2:'assets/p/83_b.jpg',gal:["assets/p/83_b.jpg", "assets/p/83_c.jpg"],r:4.8,rv:17,badge:'Neu',mat:'Naturkautschuk, wasserdicht',sizes:["24/25","26/27","28/29","30/31"],rel:["p82","p84","p63"],d:'Türkise Gummistiefel mit bunten Quadraten und orangen Anziehschlaufen — für kleine Pfützenspringer.',x:'100 % wasserdicht, rutschfeste Sohle, herausnehmbares Fußbett. Anziehschlaufen für kleine Hände.'},
+ {id:'p84',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Schlappen „Piccolo“',p:17,img:'assets/p/84_a.jpg',img2:'assets/p/84_b.jpg',gal:["assets/p/84_b.jpg", "assets/p/84_c.jpg"],r:4.7,rv:11,badge:'Neu',mat:'EVA, wasserfest',sizes:["24/25","26/27","28/29","30/31"],rel:["p48","p83","p67"],d:'Orange Kinder-Pantoletten mit dicker weißer Sohle und Quadrate-Print — für Pool, Strand und Garten.',x:'Wasserfest, federleicht, waschbar. Breiter Riemen für sicheren Halt.'},
+ {id:'p85',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Sneaker „Salto“, wasserdicht',p:54,img:'assets/p/85_a.jpg',img2:'assets/p/85_b.jpg',gal:["assets/p/85_b.jpg", "assets/p/85_c.jpg"],r:4.9,rv:9,badge:'Neu',mat:'Recyceltes Mesh, wasserdichte Membran',sizes:["24/25","26/27","28/29","30/31"],rel:["p64","p82","p83"],d:'Weißer Kinder-Sneaker mit Regenbogen-Schnellverschluss und dem Vier-Farben-Streifen — wasserdicht für jeden Schulweg.',x:'Elastische Schnürung ohne Binden, wasserdichte Membran, waschbare Sohle.'},
+ {id:'p86',cat:'mode',sc:'huete',who:'kinder',n:'Kinder-Sommerhut „Sole Mini“',p:19,img:'assets/p/86_a.jpg',img2:'assets/p/86_b.jpg',gal:["assets/p/86_b.jpg", "assets/p/86_c.jpg"],r:4.8,rv:8,badge:'Neu',mat:'100 % Baumwolle',sizes:["50","52","54"],rel:["p88","p89","p84"],d:'Weißer Bucket-Hut für Kinder mit dem bunten Quadrate-Band — UV-Schutz, der gern getragen wird.',x:'UPF 50+, waschbar bei 30 °C, Kinnband abnehmbar.'},
+ {id:'p87',cat:'kosmetik',sc:'haar',who:'kinder',n:'Kinder-Shampoo „Bolla“, 250 ml',p:12,img:'assets/p/87_a.jpg',img2:'assets/p/87_b.jpg',gal:["assets/p/87_b.jpg", "assets/p/87_c.jpg"],r:4.9,rv:16,badge:'Neu',ml:250,rel:["p19","p96","p82"],d:'Mildes Kinder-Shampoo in der Verlaufsflasche mit Blubber-Kappe — keine Tränen, viel Schaum.',x:'Ohne Tränen-Formel, pH-hautneutral, ohne Parfümallergene. Auch als Duschgel nutzbar.'},
  {id:'p88',cat:'mode',sc:'huete',who:'damen',n:'Sommerhut „Sole“',p:49,img:'assets/p/88_a.jpg',r:4.9,rv:12,badge:'Neu',mat:'Papierstroh-Geflecht',sizes:["S/M","L/XL"],rel:["p89","p86","p18"],d:'Weißer Sommerhut mit weit schwingender Krempe und dem schmalen Quadrate-Band — Schatten, der gut aussieht.',x:'UPF 50+, formstabil, mit verstellbarem Innenband. Zum Transport flach rollbar.'},
  {id:'p89',cat:'mode',sc:'huete',who:'damen',n:'Bucket Hat „Bianco“',p:39,img:'assets/p/89_a.jpg',r:4.8,rv:10,badge:'Neu',mat:'Baumwoll-Twill',sizes:["S/M","L/XL"],rel:["p88","p86","p64"],d:'Weißer Bucket Hat aus festem Twill mit gestickter Wortmarke — der Sommer-Klassiker der Kollektion.',x:'Waschbar bei 30 °C, behält die Form. Passt zu allem — vom Duschtuch bis zur Regenjacke.'},
  {id:'p90',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Giardino“, 50 ml',p:119,img:'assets/p/90_a.jpg',r:4.9,rv:11,badge:'Neu',rel:["p01","p91","p05"],d:'Grüner Garten nach dem Regen: Feige, grüne Blätter und Vetiver im Verlaufs-Flakon von Türkis zu Klarglas.',x:'11 % Duftölanteil, hält 5–7 Stunden. Der frische Duft für Frühling und Sommer.'},
@@ -2324,13 +2326,10 @@ function renderShop(){
 
   /* ---- Eigene Oberkategorie: NEU — die neuen Kollektionen mit ihren eigenen Heros ---- */
   if(curCat==='neuwelt'){
-    document.getElementById('shopTitle').textContent='Neu bei La Doccia';
-    document.getElementById('shopTitle').style.setProperty('--dc','var(--c1)');
-    document.getElementById('shopSub').textContent='Die neuen Kollektionen — Sommer, Kinder und die neue Pflege.';
-    crumb2('Neu');
+    document.getElementById('v-shop').classList.add('landing');  /* kein Kategorie-Kopf, keine Chipleiste */
     const rail=(ids)=>`<div class="rail">${ids.map(id=>P.find(p=>p.id===id)).filter(Boolean).map(cardRail).join('')}</div>`;
     document.getElementById('shopBody').innerHTML=`
-      <div class="nwhero reveal">
+      <div class="nwhero top reveal">
         <img src="assets/e/hero-sommer.jpg" alt="Sommerhüte" loading="lazy">
         <div class="ntx"><span class="stag tagbeige">Sommer-Neuheiten</span>
           <h2 class="mega">Weiße Hüte,<br>blaues Meer.</h2>
@@ -2341,14 +2340,35 @@ function renderShop(){
         <img src="assets/e/hero-kinder.jpg" alt="Kinderabteilung" loading="lazy">
         <div class="ntx"><span class="stag tagbeige">Neu: Kinderabteilung</span>
           <h2 class="mega">Kleine Füße,<br>große Pfützen.</h2>
-          <button class="btn pill" onclick="filt('mode');setTimeout(()=>whoFilt('kinder'),150)">Für Kinder entdecken</button></div>
+          <button class="btn pill" onclick="filt('kinderwelt')">Für Kinder entdecken</button></div>
       </div>
       <div class="grouplbl" style="margin-top:26px">Für Kinder</div>${rail(['p82','p83','p85','p84','p86','p87'])}
       <div class="grouplbl" style="margin-top:46px">Neue Pflege &amp; Düfte</div>${rail(['p90','p91','p92','p93','p94','p95','p96'])}
       <div class="grouplbl" style="margin-top:46px">Neu in Mode</div>${rail(['p62','p71','p64','p63','p68','p69'])}
       <div style="margin-top:38px;text-align:center"><button class="btn ghost" onclick="filt('neu')">Alle Neuheiten als Liste</button></div>`;
     document.getElementById('fcount').textContent='Neuheiten';
-    document.getElementById('v-shop').classList.remove('landing');
+    setTimeout(obs,60); headerClear();
+    return;
+  }
+
+  /* ---- Eigene Welt: KINDER — Kinder-Hero ganz oben wie auf der Startseite ---- */
+  if(curCat==='kinderwelt'){
+    document.getElementById('v-shop').classList.add('landing');
+    const kids=P.filter(p=>p.who==='kinder');
+    document.getElementById('shopBody').innerHTML=`
+      <div class="nwhero top reveal">
+        <img src="assets/e/hero-kinder.jpg" alt="La Doccia Kinder" loading="lazy">
+        <div class="ntx"><span class="stag">La Doccia Kinder</span>
+          <h2 class="mega">Kleine Füße,<br>große Pfützen.</h2>
+          <button class="btn pill" onclick="document.querySelector('#shopBody .pg').scrollIntoView({behavior:'smooth',block:'start'})">Jetzt entdecken</button></div>
+      </div>
+      ${uspRow()}
+      <section class="catsec" style="padding-top:8px">
+        <div class="subhead"><h2>Für Kinder</h2><span class="cnt">${kids.length} Artikel</span></div>
+        <p class="sub">Regenjacken, Stiefel, Schlappen, Sneaker, Sommerhut und mildes Shampoo — wasserfest wie die Großen.</p>
+        <div class="pg" style="margin-top:22px">${kids.map(card).join('')}</div>
+      </section>`;
+    document.getElementById('fcount').textContent=kids.length+' Artikel';
     setTimeout(obs,60); headerClear();
     return;
   }
