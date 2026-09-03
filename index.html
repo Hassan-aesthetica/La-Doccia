@@ -1059,6 +1059,11 @@ nav.main .salelink:hover{border-color:#E0231C}
   letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:transform .25s}
 .gtile:hover .gbtn{transform:translateY(-2px)}
 @media(max-width:700px){.gsplit{grid-template-columns:1fr}.gtile{height:min(72vh,560px)}}
+.catgrid{grid-template-columns:repeat(3,1fr)}
+.catgrid .gtile{height:min(52vh,460px)}
+.catgrid .glab h3{font-size:clamp(20px,2.2vw,30px)}
+.catgrid .gbtn{padding:10px 26px;font-size:11px}
+@media(max-width:700px){.catgrid{grid-template-columns:repeat(2,1fr)}.catgrid .gtile{height:44vw}}
 /* Hero-Slides mit Person links: Text rechtsbündig auf der freien Fläche */
 .shero.full .stx.txr{padding:0 clamp(24px,7vw,110px) 130px 42%;align-items:flex-end;text-align:right}
 .shero.full .stx.txr .scta{justify-content:flex-end}
@@ -1170,6 +1175,8 @@ nav.main .salelink:hover{border-color:#E0231C}
         <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
         <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
         <a href="#" onclick="go('shop','textil');return false">Textil</a>
+        <a href="#" onclick="go('shop','mode');return false">Mode</a>
+        <a href="#" onclick="go('shop','schmuck');return false">Schmuck</a>
         <a href="#" onclick="go('shop','zubehoer');return false">Duschzubehör</a>
         <a href="#" onclick="goSec('linien');return false">Duschkonzepte</a>
         <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
@@ -1202,6 +1209,8 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfümerie</a>
   <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
   <a href="#" onclick="go('shop','textil');mnav(0);return false">Textil</a>
+  <a href="#" onclick="go('shop','mode');mnav(0);return false">Mode</a>
+  <a href="#" onclick="go('shop','schmuck');mnav(0);return false">Schmuck</a>
   <a href="#" onclick="go('shop','zubehoer');mnav(0);return false">Duschzubehör</a>
   <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
   <a href="#" class="sub" style="color:#E0231C" onclick="go('shop','sale');mnav(0);return false">Sale</a>
@@ -1218,6 +1227,8 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a onclick="go('shop','parfuem')">Parfümerie</a>
   <a onclick="go('shop','kosmetik')">Kosmetik</a>
   <a onclick="go('shop','textil')">Textil</a>
+  <a onclick="go('shop','mode')">Mode</a>
+  <a onclick="go('shop','schmuck')">Schmuck</a>
   <a onclick="go('shop','zubehoer')">Duschzubehör</a>
   <a onclick="goSec('linien')">Duschkonzepte</a>
   <a class="salelink" onclick="go('shop','sale')">Sale</a>
@@ -2047,15 +2058,21 @@ document.getElementById('linesGrid').innerHTML = LINES.map((l,li)=>`
    Jede Abteilung hat ihre eigene Markenfarbe — Farbe führt durch die Seite. */
 const CATS=[
  {id:'parfuem', n:'Parfümerie', img:'assets/p/01_eau-de-parfum-damen_c.webp', col:'var(--c4)',
-  sub:'Eau de Parfum, Körperspray, Duftkerzen und Raumduft — der Duft der Kollektion, konserviert.',
+  sub:'Eau de Parfum, Körperspray, Duftkerzen und Raumduft — der Duft der Kollektion.',
   subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Körperspray'},{id:'kerzen',n:'Kerzen & Raumduft'}]},
  {id:'kosmetik', n:'Kosmetik', img:'assets/p/22_haarmaske_c.webp', col:'var(--c3)',
-  sub:'Dusche, Körper, Haar, Zahnpflege und Seifen — mild, sulfatfrei und duftgleich mit der Kollektion.',
+  sub:'Dusche, Körper, Haar, Zahnpflege und Seifen — mild und duftgleich mit der Kollektion.',
   subs:[{id:'dusche',n:'Dusche'},{id:'koerper',n:'Körperpflege'},{id:'haar',n:'Haarpflege'},{id:'mund',n:'Zahnpflege'},{id:'tools',n:'Bürsten & Tools'},{id:'seife',n:'Seifen'}]},
  {id:'textil', n:'Textil', img:'assets/p/43_morgenmantel-kimono_c.webp', col:'var(--c2)',
-  sub:'Frottee, Morgenmäntel, Taschen und Accessoires mit der gewebten Wortmarke.',
-  subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'},{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Hausschuhe & Pantoletten'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
- {id:'zubehoer', n:'Duschzubehör', img:'assets/s/S2_duschset-komplett_c.webp', col:'var(--c1)',
+  sub:'Handtücher, Morgenmäntel und Frottee mit der gewebten Wortmarke.',
+  subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'}]},
+ {id:'mode', n:'Mode', img:'assets/e/hero-regen_poster.jpg', col:'var(--c1)',
+  sub:'Wasserdichte Jacken und Schuhe, Taschen und Accessoires — Regen ist unser Element.',
+  subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
+ {id:'schmuck', n:'Schmuck', img:'assets/p/74_kette_a.jpg', col:'var(--gold)',
+  sub:'Die vier Quadrate als Schmuck — wasserfest, bleibt beim Duschen einfach an.',
+  subs:[{id:'ohrringe',n:'Ohrringe'},{id:'ketten',n:'Ketten'},{id:'armschmuck',n:'Armschmuck'},{id:'mehr',n:'Ringe & mehr'}]},
+ {id:'zubehoer', n:'Duschzubehör', img:'assets/s/S2_duschset-komplett_c.webp', col:'var(--c3)',
   sub:'Seifenschalen, Spender, Regal und Antirutschmatte — Zubehör aus der Welt der Duschkonzepte.',
   subs:[{id:'zub',n:'Alle Artikel'}]}
 ];
@@ -2106,28 +2123,47 @@ const P=[
  {id:'p44',cat:'textil',sc:'maentel',n:"Haarturban",p:19,img:'assets/p/44_haarturban_a.webp',img2:'assets/p/44_haarturban_b.webp',gal:["assets/p/44_haarturban_b.webp", "assets/p/44_haarturban_c.webp", "assets/e/person-turban.jpg"],r:5.0,rv:13,mat:"100 % Baumwolle, 350 g/m²",rel:["p42", "p43", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p45',cat:'textil',sc:'maentel',n:"Waschhandschuh",p:8,img:'assets/p/45_waschhandschuh_a.webp',img2:'assets/p/45_waschhandschuh_b.webp',gal:["assets/p/45_waschhandschuh_b.webp", "assets/p/45_waschhandschuh_c.webp"],r:4.6,rv:20,mat:"100 % Baumwolle, 500 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p46',cat:'textil',sc:'maentel',n:"Duschvorleger, 50 × 80 cm",p:29,img:'assets/p/46_badematte_a.webp',img2:'assets/p/46_badematte_b.webp',gal:["assets/p/46_badematte_b.webp", "assets/p/46_badematte_c.webp"],r:4.7,rv:27,mat:"100 % Baumwolle, 900 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
- {id:'p47',cat:'textil',sc:'schuhe',n:"Hausschuhe",p:34,img:'assets/p/47_hausschuhe_neu_a.jpg',img2:'assets/p/47_hausschuhe_neu_b.jpg',gal:["assets/p/47_hausschuhe_neu_b.jpg", "assets/p/47_hausschuhe_neu_c.jpg"],r:4.8,rv:34,mat:"Obermaterial Baumwollfrottee, Sohle rutschhemmend",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[4,0,2],cimg:{Weiß:'assets/p/47_hausschuhe_neu_a.jpg',Gelb:'assets/p/47_hausschuhe_gelb.jpg',Türkis:'assets/p/47_hausschuhe_tuerkis.jpg'},rel:["p48", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
- {id:'p48',cat:'textil',sc:'schuhe',n:"Pantoletten",p:29,img:'assets/p/48_badeschlappen_a.webp',img2:'assets/p/48_badeschlappen_b.webp',gal:["assets/p/48_badeschlappen_b.webp", "assets/e/person-pantoletten.jpg"],r:4.9,rv:5,mat:"EVA, wasserfest",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[0,2,4],cimg:{Gelb:'assets/p/48_badeschlappen_a.webp',Türkis:'assets/p/48_badeschlappen_tuerkis.jpg',Weiß:'assets/p/48_badeschlappen_weiss.jpg'},rel:["p47", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
- {id:'p49',cat:'textil',sc:'taschen',n:"Kosmetiktasche klein",p:24,img:'assets/p/49_kosmetiktasche-klein_a.webp',img2:'assets/p/49_kosmetiktasche-klein_b.webp',gal:["assets/p/49_kosmetiktasche-klein_b.webp", "assets/p/49_kosmetiktasche-klein_c.webp", "assets/e/person-kosmetiktasche.jpg"],r:5.0,rv:12,mat:"Baumwoll-Canvas, beschichtet",rel:["p50", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
- {id:'p50',cat:'textil',sc:'taschen',n:"Kosmetiktasche groß",p:34,old:42,img:'assets/p/50_kosmetiktasche-gross_a.webp',img2:'assets/p/50_kosmetiktasche-gross_b.webp',gal:["assets/p/50_kosmetiktasche-gross_b.webp", "assets/p/50_kosmetiktasche-gross_c.webp"],r:4.7,rv:28,mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
- {id:'p51',cat:'textil',sc:'taschen',n:"Kulturbeutel",p:39,img:'assets/p/51_kulturbeutel_a.webp',img2:'assets/p/51_kulturbeutel_b.webp',gal:["assets/p/51_kulturbeutel_b.webp", "assets/p/51_kulturbeutel_c.webp"],r:4.8,rv:35,badge:"Bestseller",mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p50", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
- {id:'p52',cat:'textil',sc:'acc',n:"Taschenspiegel",p:14,img:'assets/p/52_taschenspiegel_a.webp',img2:'assets/p/52_taschenspiegel_b.webp',gal:["assets/p/52_taschenspiegel_b.webp", "assets/p/52_taschenspiegel_c.webp"],r:4.9,rv:6,rel:["p53", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
- {id:'p53',cat:'textil',sc:'acc',n:"Kartenetui",p:24,img:'assets/p/53_kartenetui_a.webp',img2:'assets/p/53_kartenetui_b.webp',gal:["assets/p/53_kartenetui_b.webp", "assets/p/53_kartenetui_c.webp"],r:5.0,rv:13,mat:"Recyceltes Leder",rel:["p52", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
- {id:'p54',cat:'textil',sc:'acc',n:"Schlüsselanhänger",p:12,img:'assets/p/54_schluesselanhaenger_a.webp',img2:'assets/p/54_schluesselanhaenger_b.webp',gal:["assets/p/54_schluesselanhaenger_b.webp", "assets/p/54_schluesselanhaenger_c.webp"],r:4.6,rv:20,rel:["p52", "p53", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
- {id:'p55',cat:'textil',sc:'acc',n:"Trinkflasche, 500 ml",p:29,img:'assets/p/55_trinkflasche_a.webp',img2:'assets/p/55_trinkflasche_b.webp',gal:["assets/p/55_trinkflasche_b.webp", "assets/p/55_trinkflasche_c.webp"],r:4.7,rv:27,rel:["p52", "p53", "p54"],d:"Doppelwandige Trinkflasche im Markendesign — hält 12 Stunden heiß und 24 Stunden kalt.",x:"Edelstahl, BPA-frei, dicht. Von Hand spülen, nicht in die Mikrowelle."},
+ {id:'p47',cat:'mode',sc:'schuhe',n:"Hausschuhe",p:34,img:'assets/p/47_hausschuhe_neu_a.jpg',img2:'assets/p/47_hausschuhe_neu_b.jpg',gal:["assets/p/47_hausschuhe_neu_b.jpg", "assets/p/47_hausschuhe_neu_c.jpg"],r:4.8,rv:34,mat:"Obermaterial Baumwollfrottee, Sohle rutschhemmend",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[4,0,2],cimg:{Weiß:'assets/p/47_hausschuhe_neu_a.jpg',Gelb:'assets/p/47_hausschuhe_gelb.jpg',Türkis:'assets/p/47_hausschuhe_tuerkis.jpg'},rel:["p48", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
+ {id:'p48',cat:'mode',sc:'schuhe',n:"Pantoletten",p:29,img:'assets/p/48_badeschlappen_a.webp',img2:'assets/p/48_badeschlappen_b.webp',gal:["assets/p/48_badeschlappen_b.webp", "assets/e/person-pantoletten.jpg"],r:4.9,rv:5,mat:"EVA, wasserfest",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[0,2,4],cimg:{Gelb:'assets/p/48_badeschlappen_a.webp',Türkis:'assets/p/48_badeschlappen_tuerkis.jpg',Weiß:'assets/p/48_badeschlappen_weiss.jpg'},rel:["p47", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
+ {id:'p49',cat:'mode',sc:'taschen',n:"Kosmetiktasche klein",p:24,img:'assets/p/49_kosmetiktasche-klein_a.webp',img2:'assets/p/49_kosmetiktasche-klein_b.webp',gal:["assets/p/49_kosmetiktasche-klein_b.webp", "assets/p/49_kosmetiktasche-klein_c.webp", "assets/e/person-kosmetiktasche.jpg"],r:5.0,rv:12,mat:"Baumwoll-Canvas, beschichtet",rel:["p50", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p50',cat:'mode',sc:'taschen',n:"Kosmetiktasche groß",p:34,old:42,img:'assets/p/50_kosmetiktasche-gross_a.webp',img2:'assets/p/50_kosmetiktasche-gross_b.webp',gal:["assets/p/50_kosmetiktasche-gross_b.webp", "assets/p/50_kosmetiktasche-gross_c.webp"],r:4.7,rv:28,mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p51", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p51',cat:'mode',sc:'taschen',n:"Kulturbeutel",p:39,img:'assets/p/51_kulturbeutel_a.webp',img2:'assets/p/51_kulturbeutel_b.webp',gal:["assets/p/51_kulturbeutel_b.webp", "assets/p/51_kulturbeutel_c.webp"],r:4.8,rv:35,badge:"Bestseller",mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p50", "S5"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p52',cat:'mode',sc:'acc',n:"Taschenspiegel",p:14,img:'assets/p/52_taschenspiegel_a.webp',img2:'assets/p/52_taschenspiegel_b.webp',gal:["assets/p/52_taschenspiegel_b.webp", "assets/p/52_taschenspiegel_c.webp"],r:4.9,rv:6,rel:["p53", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
+ {id:'p53',cat:'mode',sc:'acc',n:"Kartenetui",p:24,img:'assets/p/53_kartenetui_a.webp',img2:'assets/p/53_kartenetui_b.webp',gal:["assets/p/53_kartenetui_b.webp", "assets/p/53_kartenetui_c.webp"],r:5.0,rv:13,mat:"Recyceltes Leder",rel:["p52", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
+ {id:'p54',cat:'mode',sc:'acc',n:"Schlüsselanhänger",p:12,img:'assets/p/54_schluesselanhaenger_a.webp',img2:'assets/p/54_schluesselanhaenger_b.webp',gal:["assets/p/54_schluesselanhaenger_b.webp", "assets/p/54_schluesselanhaenger_c.webp"],r:4.6,rv:20,rel:["p52", "p53", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
+ {id:'p55',cat:'mode',sc:'acc',n:"Trinkflasche, 500 ml",p:29,img:'assets/p/55_trinkflasche_a.webp',img2:'assets/p/55_trinkflasche_b.webp',gal:["assets/p/55_trinkflasche_b.webp", "assets/p/55_trinkflasche_c.webp"],r:4.7,rv:27,rel:["p52", "p53", "p54"],d:"Doppelwandige Trinkflasche im Markendesign — hält 12 Stunden heiß und 24 Stunden kalt.",x:"Edelstahl, BPA-frei, dicht. Von Hand spülen, nicht in die Mikrowelle."},
  {id:'p56',cat:'zubehoer',sc:'zub',n:"Seifenschale",p:16,img:'assets/p/56_seifenschale_a.webp',img2:'assets/p/56_seifenschale_b.webp',gal:["assets/p/56_seifenschale_b.webp", "assets/p/56_seifenschale_c.webp"],r:4.8,rv:34,rel:["p57", "p58", "p59"],d:"Duschzubehör aus der Welt der La-Doccia-Duschkonzepte — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
  {id:'p57',cat:'zubehoer',sc:'zub',n:"Seifenspender-Set, 2-teilig",p:39,img:'assets/p/57_seifenspender-set_a.webp',img2:'assets/p/57_seifenspender-set_b.webp',gal:["assets/p/57_seifenspender-set_b.webp", "assets/p/57_seifenspender-set_c.webp"],r:4.9,rv:5,badge:"Set",rel:["p56", "p58", "p59"],d:"Zwei Seifenspender aus mattem Glas mit gravierter Wortmarke — für Seife und Lotion am Waschplatz.",x:"Nachfüllbar, Pumpe aus Metall. Feucht abwischen; die Gravur ist dauerhaft eingebrannt."},
  {id:'p58',cat:'zubehoer',sc:'zub',n:"Glasabzieher",p:24,img:'assets/p/58_glasabzieher_a.webp',img2:'assets/p/58_glasabzieher_b.webp',gal:["assets/p/58_glasabzieher_b.webp", "assets/p/58_glasabzieher_c.webp"],r:5.0,rv:12,badge:"Bestseller",rel:["p56", "p57", "p59"],d:"Duschzubehör aus der Welt der La-Doccia-Duschkonzepte — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
  {id:'p59',cat:'zubehoer',sc:'zub',n:"Duschregal",p:49,img:'assets/p/59_duschregal_a.webp',img2:'assets/p/59_duschregal_b.webp',gal:["assets/p/59_duschregal_b.webp", "assets/p/59_duschregal_c.webp"],r:4.6,rv:19,rel:["p56", "p57", "p58"],d:"Duschregal aus pulverbeschichtetem Metall — hängt ohne Bohren, rostet nicht, hält die ganze Routine.",x:"Werkzeuglose Montage an der Glaswand oder am Brausekopf. Ablauföffnungen gegen stehendes Wasser."},
  {id:'p60',cat:'zubehoer',sc:'zub',n:"Antirutschmatte",p:19,img:'assets/p/60_antirutschmatte_a.webp',img2:'assets/p/60_antirutschmatte_b.webp',gal:["assets/p/60_antirutschmatte_b.webp", "assets/p/60_antirutschmatte_c.webp"],r:4.8,rv:35,rel:["p56", "p57", "p58"],d:"Antirutschmatte mit starkem Saughalt — Sicherheit, die man nicht sieht, aber jeden Tag spürt.",x:"Saugnäpfe auf glattem Untergrund fest andrücken. Waschbar bei 30 °C — hygienischer als jede Einwegmatte."},
- {id:'p61',cat:'textil',sc:'acc',n:'Armband „Quattro“',p:19,img:'assets/p/61_armband_gelb_a.jpg',img2:'assets/p/61_armband_b.jpg',gal:["assets/p/61_armband_b.jpg","assets/p/61_armband_c.jpg"],r:4.9,rv:12,badge:'Neu',colors:[0,2,3],cimg:{Gelb:'assets/p/61_armband_gelb_a.jpg','Türkis':'assets/p/61_armband_tuerkis_a.jpg',Violett:'assets/p/61_armband_violett_a.jpg'},rel:["p54","p53","p55"],d:'Gewebtes Textilarmband mit eingewebter Wortmarke und den vier Quadraten — Verschluss aus gebürstetem Edelstahl.',x:'Wasserfest und hautfreundlich: bleibt beim Duschen, Schwimmen und Sport einfach am Arm. Feucht abwischen genügt.'},
- {id:'p62',cat:'textil',sc:'jacken',n:'Regenjacke „Perla“',p:149,img:'assets/p/62_regenjacke_tuerkis_a.jpg',img2:'assets/p/62_regenjacke_b.jpg',gal:["assets/p/62_regenjacke_video.mp4","assets/p/62_regenjacke_b.jpg","assets/p/62_regenjacke_c.jpg"],r:4.8,rv:7,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],colors:[2,0,3],cimg:{'Türkis':'assets/p/62_regenjacke_tuerkis_a.jpg',Gelb:'assets/p/62_regenjacke_gelb_a.jpg',Violett:'assets/p/62_regenjacke_violett_a.jpg'},rel:["p42","p51","p55"],d:'Wasserdichte Regenjacke mit Kapuze im klaren La-Doccia-Design — das Wasser perlt sichtbar von der Oberfläche ab.',x:'Wassersäule 10.000 mm, verschweißte Nähte, PFC-freie Imprägnierung. Bei 30 °C waschen und die Imprägnierung anschließend im Trockner kurz reaktivieren.'},
+ {id:'p61',cat:'schmuck',sc:'armschmuck',n:'Armband „Quattro“',p:19,img:'assets/p/61_armband_gelb_a.jpg',img2:'assets/p/61_armband_b.jpg',gal:["assets/p/61_armband_b.jpg","assets/p/61_armband_c.jpg"],r:4.9,rv:12,badge:'Neu',colors:[0,2,3],cimg:{Gelb:'assets/p/61_armband_gelb_a.jpg','Türkis':'assets/p/61_armband_tuerkis_a.jpg',Violett:'assets/p/61_armband_violett_a.jpg'},rel:["p54","p53","p55"],d:'Gewebtes Textilarmband mit eingewebter Wortmarke und den vier Quadraten — Verschluss aus gebürstetem Edelstahl.',x:'Wasserfest und hautfreundlich: bleibt beim Duschen, Schwimmen und Sport einfach am Arm. Feucht abwischen genügt.'},
+ {id:'p62',cat:'mode',sc:'jacken',n:'Regenjacke „Perla“',p:149,img:'assets/p/62_regenjacke_tuerkis_a.jpg',img2:'assets/p/62_regenjacke_b.jpg',gal:["assets/p/62_regenjacke_video.mp4","assets/p/62_regenjacke_b.jpg","assets/p/62_regenjacke_c.jpg"],r:4.8,rv:7,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],colors:[2,0,3],cimg:{'Türkis':'assets/p/62_regenjacke_tuerkis_a.jpg',Gelb:'assets/p/62_regenjacke_gelb_a.jpg',Violett:'assets/p/62_regenjacke_violett_a.jpg'},rel:["p42","p51","p55"],d:'Wasserdichte Regenjacke mit Kapuze im klaren La-Doccia-Design — das Wasser perlt sichtbar von der Oberfläche ab.',x:'Wassersäule 10.000 mm, verschweißte Nähte, PFC-freie Imprägnierung. Bei 30 °C waschen und die Imprägnierung anschließend im Trockner kurz reaktivieren.'},
+ {id:'p63',cat:'mode',sc:'schuhe',n:'Regenstiefel „Pioggia“',p:79,img:'assets/p/63_a.jpg',r:4.8,rv:18,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'Naturkautschuk, wasserdicht',rel:["p62","p64","p48"],d:'Kniehohe Regenstiefel aus glänzendem Naturkautschuk in Türkis — wasserdicht bis zum Rand.',x:'100 % wasserdicht, rutschhemmende Profilsohle, herausnehmbares Frottee-Fußbett. Innen abwischbar.'},
+ {id:'p64',cat:'mode',sc:'schuhe',n:'Sneaker „Asciutto“, wasserdicht',p:129,img:'assets/p/64_a.jpg',r:4.9,rv:22,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'Recyceltes Mesh, wasserdichte Membran',rel:["p63","p62","p47"],d:'Weißer Sneaker mit wasserdichter Membran und dem Vier-Farben-Streifen an der Sohle — trocken bei jedem Wetter.',x:'Wassersäule 10.000 mm bei voller Atmungsaktivität. Flecken feucht abwischen, Einlegesohle waschbar.'},
+ {id:'p65',cat:'mode',sc:'schuhe',n:'Chelsea-Boot „Lucido“, wasserdicht',p:119,img:'assets/p/65_a.jpg',r:4.7,rv:14,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'Gummiertes Leder, wasserdicht',rel:["p63","p64","p69"],d:'Wasserdichter Chelsea-Boot in Violett mit elastischem Einstieg — der elegante Schuh für Regentage.',x:'Verschweißte Sohle, wasserdichtes Obermaterial. Mit feuchtem Tuch pflegen, kein Imprägnierspray nötig.'},
+ {id:'p66',cat:'mode',sc:'schuhe',n:'Loafer „Giallo“, wasserfest',p:89,img:'assets/p/66_a.jpg',r:4.8,rv:11,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'Gummierter Feinstoff, wasserfest',rel:["p64","p65","p47"],d:'Gelber Loafer mit gummierter Oberfläche und weißer Sohle — Büro-tauglich, regenfest.',x:'Wasserfest bis starker Regen, abwischbar. Herausnehmbares Fußbett, rutschhemmende Sohle.'},
+ {id:'p67',cat:'mode',sc:'schuhe',n:'Sandale „Estate“, wasserfest',p:59,img:'assets/p/67_a.jpg',r:4.6,rv:9,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'EVA & Softriemen, wasserfest',rel:["p48","p66","p55"],d:'Sportliche Sandale in Orange mit weicher Dämpfung — für Pool, Strand und Sommerregen.',x:'Komplett wasserfest, schnelltrocknende Riemen, waschbar bei 30 °C.'},
+ {id:'p68',cat:'mode',sc:'jacken',n:'Anorak „Tempesta“',p:139,img:'assets/p/68_a.jpg',r:4.8,rv:13,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p70","p63"],d:'Gelber Anorak mit halbem Reißverschluss und Kängurutasche — das Wasser perlt einfach ab.',x:'Wassersäule 10.000 mm, verschweißte Nähte. Bei 30 °C waschen, Imprägnierung im Trockner reaktivieren.'},
+ {id:'p69',cat:'mode',sc:'jacken',n:'Parka „Riparo“',p:189,img:'assets/p/69_a.jpg',r:4.9,rv:8,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p68","p65"],d:'Langer wasserdichter Parka in Violett — bedeckt bis über den Oberschenkel, mit großen Pattentaschen.',x:'Wassersäule 10.000 mm, verschweißte Nähte, verstellbare Kapuze. Bei 30 °C waschen.'},
+ {id:'p70',cat:'mode',sc:'jacken',n:'Windbreaker „Vento“',p:99,img:'assets/p/70_a.jpg',r:4.7,rv:16,badge:'Neu',mat:'100 % Ripstop-Polyester, wasserabweisend',sizes:["S","M","L","XL"],rel:["p68","p62","p67"],d:'Ultraleichter Windbreaker in Orange — passt gefaltet in die eigene Brusttasche.',x:'Wasserabweisend und winddicht, 98 Gramm leicht. Ideal für Sport, Reise und Wetterumschwünge.'},
+ {id:'p71',cat:'mode',sc:'jacken',n:'Trenchcoat „Milano“, wasserdicht',p:199,img:'assets/p/71_a.jpg',r:4.9,rv:6,badge:'Neu',mat:'Technisches Gabardine-Gewebe, wasserdicht',sizes:["S","M","L","XL"],rel:["p69","p62","p65"],d:'Eleganter wasserdichter Trenchcoat in Off-White mit Gürtel — Klassiker-Silhouette, moderne Membran.',x:'Wasserdicht mit klassischer Optik: verdeckte Knopfleiste, verschweißte Nähte. Professionelle Pflege empfohlen.'},
+ {id:'p72',cat:'schmuck',sc:'ohrringe',n:'Ohrstecker „Quattro“',p:29,img:'assets/p/72_a.jpg',r:4.9,rv:21,badge:'Neu',rel:["p73","p74","p61"],d:'Ohrstecker in gebürstetem Gold — je ein offenes Quadrat mit Emaille in Türkis und Violett.',x:'Wasserfest und nickelfrei — bleibt beim Duschen und Schwimmen einfach an. 925er-Silberstift, vergoldet.'},
+ {id:'p73',cat:'schmuck',sc:'ohrringe',n:'Creolen „Cerchio“',p:39,img:'assets/p/73_a.jpg',r:4.8,rv:15,badge:'Neu',rel:["p72","p75","p76"],d:'Goldene Creolen mit kleinen Quadrat-Charms in Gelb und Orange — dezent bunt.',x:'Wasserfest und nickelfrei, Steckverschluss. Charms abnehmbar und mit p81 kombinierbar.'},
+ {id:'p74',cat:'schmuck',sc:'ketten',n:'Kette „Pendente“',p:49,img:'assets/p/74_kette_a.jpg',r:4.9,rv:19,badge:'Neu',rel:["p75","p72","p61"],d:'Feine Goldkette mit einem offenen Quadrat-Anhänger in Türkis-Emaille — das Markenzeichen zum Tragen.',x:'Wasserfest und nickelfrei — bleibt beim Duschen an. Länge 45 cm, mit 5-cm-Verlängerung.'},
+ {id:'p75',cat:'schmuck',sc:'ketten',n:'Gliederkette „Catena“',p:59,img:'assets/p/75_a.jpg',r:4.8,rv:12,badge:'Neu',rel:["p74","p78","p73"],d:'Goldene Gliederkette mit vier kleinen Emaille-Quadraten in den Markenfarben.',x:'Wasserfest und nickelfrei. Länge 42 cm, Karabinerverschluss.'},
+ {id:'p76',cat:'schmuck',sc:'armschmuck',n:'Armreif „Rigido“',p:45,img:'assets/p/76_a.jpg',r:4.9,rv:10,badge:'Neu',rel:["p61","p77","p74"],d:'Schmaler goldener Armreif mit vier eingelegten Emaille-Quadraten.',x:'Wasserfest und nickelfrei — duschen, schwimmen, Sport: alles kein Problem. Innenmaß 60 mm.'},
+ {id:'p77',cat:'schmuck',sc:'mehr',n:'Ring „Anello“',p:35,img:'assets/p/77_a.jpg',r:4.8,rv:14,badge:'Neu',rel:["p76","p72","p74"],d:'Goldener Ring mit einem offenen Quadrat in Türkis-Emaille als Ringkopf.',x:'Wasserfest und nickelfrei. Größen 52–60 — bei Unsicherheit eine Nummer größer wählen.'},
+ {id:'p78',cat:'schmuck',sc:'ketten',n:'Fußkettchen „Cavigliera“',p:25,img:'assets/p/78_a.jpg',r:4.7,rv:9,badge:'Neu',rel:["p75","p67","p61"],d:'Zartes goldenes Fußkettchen mit einem orangen Quadrat-Charm — der Sommer-Klassiker.',x:'Wasserfest — für Pool und Strand gemacht. Länge 24 cm mit Verlängerung.'},
+ {id:'p79',cat:'schmuck',sc:'mehr',n:'Pin „Spilla“',p:19,img:'assets/p/79_a.jpg',r:4.8,rv:7,badge:'Neu',rel:["p80","p81","p53"],d:'Emaille-Pin mit den vier Quadraten auf goldenem Steg — fürs Revers, die Tasche oder den Kulturbeutel.',x:'Butterfly-Verschluss, Emaille kratzfest gebrannt.'},
+ {id:'p80',cat:'schmuck',sc:'mehr',n:'Haarspange „Fermaglio“',p:22,img:'assets/p/80_a.jpg',r:4.8,rv:11,badge:'Neu',rel:["p79","p44","p28"],d:'Goldene Haarspange mit vier Emaille-Quadraten — hält auch nasses Haar.',x:'Wasserfest und rostfrei — hält vom Duschraum bis zum Abend. Federmechanismus.'},
+ {id:'p81',cat:'schmuck',sc:'mehr',n:'Charm „Ciondolo“',p:15,img:'assets/p/81_a.jpg',r:4.9,rv:13,badge:'Neu',rel:["p73","p54","p49"],d:'Kleiner Quadrat-Charm in Violett mit Clip — für Taschen, Ketten und Schlüsselbund.',x:'Passt an p49–p51, p73 und jeden Karabiner. Emaille kratzfest, vergoldet.'},
  {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p01", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
  {id:'S4',cat:'kosmetik',sc:'haar',n:"Haarpflege-Set",p:59,img:'assets/s/S4_haarpflege-set_a.webp',img2:'assets/s/S4_haarpflege-set_b.webp',gal:["assets/s/S4_haarpflege-set_b.webp", "assets/s/S4_haarpflege-set_c.webp"],r:4.6,rv:14,badge:"Set",rel:["p19", "p20", "p21"],d:"Shampoo, Conditioner und Haarmaske als Kur-Set — die volle Routine für beanspruchtes Haar.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
- {id:'S5',cat:'textil',sc:'taschen',n:"Handtaschen-Set",p:79,img:'assets/s/S5_handtaschen-set_a.webp',img2:'assets/s/S5_handtaschen-set_b.webp',gal:["assets/s/S5_handtaschen-set_b.webp", "assets/s/S5_handtaschen-set_c.webp"],r:4.7,rv:21,badge:"Set",rel:["p49", "p50", "p51"],d:"Kosmetiktasche, Kulturbeutel und Taschenspiegel im Set — gepackt in einer Minute.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
- {id:'S6',cat:'textil',sc:'taschen',n:"Reiseset",p:44,img:'assets/s/S6_reiseset_a.webp',img2:'assets/s/S6_reiseset_b.webp',gal:["assets/s/S6_reiseset_b.webp", "assets/s/S6_reiseset_c.webp"],r:4.8,rv:28,badge:"Set",rel:["p49", "p50", "p51"],d:"Kulturbeutel mit Reisegrößen der Pflege-Kollektion — handgepäcktauglich und nachfüllbar.",x:"Alle Flaschen unter 100 ml und auslaufsicher — direkt in den Sicherheitsbeutel am Flughafen."},
+ {id:'S5',cat:'mode',sc:'taschen',n:"Handtaschen-Set",p:79,img:'assets/s/S5_handtaschen-set_a.webp',img2:'assets/s/S5_handtaschen-set_b.webp',gal:["assets/s/S5_handtaschen-set_b.webp", "assets/s/S5_handtaschen-set_c.webp"],r:4.7,rv:21,badge:"Set",rel:["p49", "p50", "p51"],d:"Kosmetiktasche, Kulturbeutel und Taschenspiegel im Set — gepackt in einer Minute.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'S6',cat:'mode',sc:'taschen',n:"Reiseset",p:44,img:'assets/s/S6_reiseset_a.webp',img2:'assets/s/S6_reiseset_b.webp',gal:["assets/s/S6_reiseset_b.webp", "assets/s/S6_reiseset_c.webp"],r:4.8,rv:28,badge:"Set",rel:["p49", "p50", "p51"],d:"Kulturbeutel mit Reisegrößen der Pflege-Kollektion — handgepäcktauglich und nachfüllbar.",x:"Alle Flaschen unter 100 ml und auslaufsicher — direkt in den Sicherheitsbeutel am Flughafen."},
  {id:'S7',cat:'kosmetik',sc:'mund',n:"Zahnpflege-Set",p:24,img:'assets/s/S7_zahnpflege-set_a.webp',img2:'assets/s/S7_zahnpflege-set_b.webp',gal:["assets/s/S7_zahnpflege-set_b.webp", "assets/s/S7_zahnpflege-set_c.webp"],r:4.9,rv:35,badge:"Set",rel:["p25", "p26", "p27"],d:"Zwei Zahnbürsten und Zahnputzbecher im Set — der Waschplatz im Markenlook.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
  {id:'S8',cat:'textil',sc:'tuecher',n:"Handtuch-Set, 3-teilig",p:99,img:'assets/s/S8_handtuch-set-3_a.webp',img2:'assets/s/S8_handtuch-set-3_b.webp',gal:["assets/s/S8_handtuch-set-3_b.webp", "assets/s/S8_handtuch-set-3_c.webp"],r:5.0,rv:6,badge:"Set",mat:"100 % Baumwolle, 600 g/m²",rel:["p37", "p38", "p39"],d:"Gästehandtuch, Handtuch und Duschtuch in einer Farbe — der abgestimmte Einstieg ins Frottee-Sortiment.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
  {id:'S9',cat:'kosmetik',sc:'dusche',n:"Duschpflege-Set",p:49,img:'assets/s/S9_duschpflege-set_a.webp',img2:'assets/s/S9_duschpflege-set_b.webp',gal:["assets/s/S9_duschpflege-set_b.webp", "assets/s/S9_duschpflege-set_c.webp"],r:4.6,rv:13,badge:"Set",rel:["p09", "p10", "p11"],d:"Duschgel und Duschöl mit Waschhandschuh — die tägliche Pflege als Set.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
@@ -2326,15 +2362,12 @@ function renderShop(){
         </div>
       </div>
       ${uspRow()}
-      <div class="gsplit reveal">
-        <div class="gtile" onclick="filt('parfuem')">
-          <img src="assets/e/dept-parfum.jpg" alt="Parfümerie" loading="lazy">
-          <div class="glab"><h3>Parfümerie</h3><span class="gbtn">Kaufen</span></div>
-        </div>
-        <div class="gtile" onclick="filt('textil')">
-          <img src="assets/e/dept-textil.jpg" alt="Textil" loading="lazy">
-          <div class="glab"><h3>Textil</h3><span class="gbtn">Kaufen</span></div>
-        </div>
+      <!-- Die Karte der Seite: alle sechs Abteilungen auf einen Blick — niemand verirrt sich -->
+      <div class="gsplit catgrid reveal">
+        ${CATS.map(c=>`<div class="gtile" onclick="filt('${c.id}')">
+          <img src="${src(c.img)}" alt="${c.n}" loading="lazy">
+          <div class="glab"><h3>${c.n}</h3><span class="gbtn">Kaufen</span></div>
+        </div>`).join('')}
       </div>
       <!-- Bestseller direkt nach den Kategorie-Kacheln: Social Proof + einfache Wahl
            ist der stärkste Kaufauslöser — Sale/Neuheiten laufen über Nav und Hero-Slide,
@@ -2346,42 +2379,15 @@ function renderShop(){
         </div>
         <div class="rail">${[...P].sort((a,b)=>b.r*b.rv-a.r*a.rv).slice(0,8).map(cardRail).join('')}</div>
       </div>
-      <div class="depts">
-        ${CATS.map((c,i)=>`
-        <section class="dept reveal ${i%2?'rev':''}" style="background:color-mix(in srgb, ${c.col} 7%, #fff)">
-          <div class="dimg" onclick="filt('${c.id}')"><img src="${src(deptImgs[c.id]||c.img)}" alt="${c.n}" loading="lazy"></div>
-          <div class="dtx">
-            <span class="dbar" style="background:${c.col}"></span>
-            <h3>${c.n}</h3>
-            <p>${c.sub}</p>
-            <div class="dlinks">
-              <button onclick="filt('${c.id}','damen')">Damen</button>
-              <span class="soon">Herren — in Bearbeitung</span>
-              <span class="soon">Kinder — in Bearbeitung</span>
-            </div>
-            <button class="btn ghost" onclick="filt('${c.id}')">${c.n} entdecken</button>
-          </div>
-        </section>
-        <div class="deptrail reveal">
-          <div class="grouplbl">Beliebt in der Abteilung ${c.n}</div>
-          <div class="rail">${P.filter(p=>p.cat===c.id&&!TOP8.includes(p.id)).sort((a,b)=>b.r*b.rv-a.r*a.rv).slice(0,4).map(cardRail).join('')}</div>
-        </div>`).join('')}
-        <section class="dept reveal ${CATS.length%2?'rev':''}" style="background:color-mix(in srgb, var(--c1) 8%, #fff)">
-          <div class="dimg" onclick="goSec('linien')"><img src="${src('duschgruen')}" alt="Duschkonzepte" loading="lazy"></div>
-          <div class="dtx">
-            <span class="dbar" style="background:var(--c1)"></span>
-            <h3>Duschkonzepte</h3>
-            <p>Ihre Dusche nach Maß — als Komplettpaket mit Festpreis, auf Wunsch barrierefrei.</p>
-            <div class="dlinks">
-              <button onclick="goSec('linien')">Klassik</button>
-              <button onclick="goSec('linien')">Komfort</button>
-              <button onclick="goSec('linien')">Elegance</button>
-            </div>
-            <p class="dgew">Auch für <b>Hotels</b>, <b>Fitnessstudios</b> und <b>Friseursalons</b> — Gewerbe-Beratung inklusive.</p>
-            <button class="btn ghost" onclick="goSec('termin')">Beratung anfragen</button>
-          </div>
-        </section>
-      </div>`;
+      <section class="dept reveal" style="background:color-mix(in srgb, var(--c3) 7%, #fff)">
+        <div class="dimg" onclick="goSec('linien')"><img src="${src('duschgruen')}" alt="Duschkonzepte" loading="lazy"></div>
+        <div class="dtx">
+          <span class="dbar" style="background:var(--c3)"></span>
+          <h3>Duschkonzepte</h3>
+          <p>Ihre Dusche nach Maß — drei Linien, ein Festpreis, auf Wunsch barrierefrei. Auch für Hotels, Fitnessstudios und Friseursalons.</p>
+          <button class="btn ghost" onclick="goSec('termin')">Kostenlose Beratung anfragen</button>
+        </div>
+      </section>`;
   }
   /* Übersicht = Einstiegsseite (Calzedonia-Prinzip): Kacheln + Bestseller,
      kein 23-Produkte-Dump. Produktgrids gibt es pro Abteilung. */
