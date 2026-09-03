@@ -31,13 +31,10 @@ keine Bestandsdaten) nicht sauber umsetzbar und wurden bewusst NICHT als Attrapp
 - **Bunte Buchstaben im Logo**: Die Skizze zeigt auch mehrfarbige Buchstaben (L blau, D grün, O orange …). Umgesetzt sind bislang nur die Rahmen-Quadrate — die Wortmarke blieb bewusst einfarbig (wirkt edler). Auf Wunsch ist die bunte Variante schnell gebaut.
 - **Viele Farben pro Produkt** (Lacoste-Prinzip, 10–25 Farben): braucht echte Varianten-Daten + Bilder je Farbe.
 
-## Hero-Video Teil 2 wartet auf Credits
-Das Hero-Regenvideo wurde neu gedreht (Shot 1: Low Angle über die Pfütze, sauber, läuft).
-Shot 2 (frontal: Frau läuft auf die Kamera zu, Wasser perlt ab, korrektes Brustlogo) ist
-vorbereitet — das Startbild mit fehlerfreiem Logo liegt bei Higgsfield (Job 66abe1b5).
-Sobald Credits aufgeladen sind: 5-s-Clip generieren (Kling 3.0, std, ohne Ton, 16:9,
-Startbild 66abe1b5-ab90-45b4-bb5a-e2d06d919e16) und als hero-regen-2.mp4 einbinden;
-der Slider soll die beiden Clips dann nacheinander abspielen (onended-Wechsel).
+## Erledigt: Hero-Video (zwei Clips mit Cut)
+Shot 1 (Low Angle über die Pfütze) und Shot 2 (frontal, Wasser perlt ab, lesbares
+Brustlogo, Blick in die Kamera) laufen als Sequenz im Hero-Slide (hero-regen.mp4 +
+hero-regen-2.mp4, onended-Wechsel, Loop über beide).
 
 ## Erledigt: Produktvideo Regenjacke „Perla“ (p62)
 5-Sekunden-Loop (assets/p/62_regenjacke_video.mp4, stumm, 1:1): Hände halten die Jacke
