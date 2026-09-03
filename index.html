@@ -874,7 +874,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 /* Slider */
 .shero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;pointer-events:none}
 .shero .slide.on{opacity:1;pointer-events:auto}
-.shero .slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.shero .slide img,.shero .slide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .shero .slide .stx>*{opacity:0;transform:translateY(20px);transition:.7s cubic-bezier(.2,.7,.3,1)}
 .shero .slide.on .stx>*{opacity:1;transform:none}
 .shero .slide.on .stx>*:nth-child(2){transition-delay:.12s}
@@ -2302,11 +2302,15 @@ function renderShop(){
       {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS}&nbsp;% sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true,right:true},
       {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
-       cta:'Code sichern',fn:"popOpen()"}
+       cta:'Code sichern',fn:"popOpen()"},
+      {img:'assets/e/hero-regen.mp4',tag:'Neu: Regenjacke „Perla“',sub:'Wasserdicht — das Wasser perlt einfach ab',h:'Bleib trocken.<br>Bleib bunt.',
+       cta:'Jacke entdecken',fn:"openP('p62')"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
-          <img src="${src(s.img)}" alt="" ${i?'loading="lazy"':'fetchpriority="high"'}>
+          ${/\.mp4$/.test(s.img)
+            ?`<video src="${src(s.img)}" poster="${s.img.replace('.mp4','_poster.jpg')}" muted loop autoplay playsinline></video>`
+            :`<img src="${src(s.img)}" alt="" ${i?'loading="lazy"':'fetchpriority="high"'}>`}
           <div class="sov"></div>
           <div class="stx ${s.right?'txr':''}">
             <span class="stag ${s.sale?'':'tagbeige'}">${s.tag}</span>
