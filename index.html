@@ -2349,7 +2349,8 @@ function renderShop(){
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
           ${/\.mp4$/.test(s.img)
-            ?`<video src="${src(s.img)}" poster="${s.img.replace('.mp4','_poster.jpg')}" muted loop autoplay playsinline></video>`
+            ?`<video src="${src(s.img)}" poster="${s.img.replace('.mp4','_poster.jpg')}" muted autoplay playsinline
+               ${s.seq?`data-seq="${s.seq.join(',')}" onended="heroNext(this)" onerror="this.loop=true;this.src='${s.img}';this.play()"`:'loop'}></video>`
             :`<img src="${src(s.img)}" alt="" ${i?'loading="lazy"':'fetchpriority="high"'}>`}
           <div class="sov"></div>
           <div class="stx ${s.right?'txr':''}">
@@ -2453,6 +2454,14 @@ function renderShop(){
    Automatik alle 8 s; ein Klick auf einen Punkt setzt den Timer zurück
    und pausiert die Automatik 15 s — kein schnelles Weiterspringen mehr. */
 let slideIdx=0, slideHold=0;
+/* Hero-Video-Sequenz: Clips nacheinander (Cut), am Ende von vorn */
+let heroSeqIdx=0;
+function heroNext(v){
+  const seq=(v.dataset.seq||'').split(',').filter(Boolean);
+  if(seq.length<2){v.currentTime=0;v.play().catch(()=>{});return}
+  heroSeqIdx=(heroSeqIdx+1)%seq.length;
+  v.src=seq[heroSeqIdx]; v.play().catch(()=>{});
+}
 function showSlide(i){
   const s=[...document.querySelectorAll('#heroSlider .slide')]; if(!s.length)return;
   slideIdx=((i%s.length)+s.length)%s.length;
