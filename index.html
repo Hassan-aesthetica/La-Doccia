@@ -108,6 +108,8 @@ nav.main a:hover{border-color:var(--ink)}
 .hnav .navdrop>a.prodbtn:hover{background:var(--brass);color:#fff}
 .prodbtn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
 /* Sale als roter Pill — fällt sofort ins Auge */
+.hnav .neulink{background:var(--c1);color:var(--ink)!important;font-weight:600;border-radius:999px;padding:10px 21px;font-size:15.5px}
+.hnav .neulink:hover{background:#F5C51D;color:var(--ink)!important}
 .hnav .salelink{background:#E0231C;color:#fff!important;font-weight:600;border-radius:999px;padding:10px 21px;font-size:15.5px}
 .hnav .salelink:hover{background:#F23A2E;color:#fff}
 .hnav .hsoon{color:var(--ink-45);cursor:default;font-weight:500;border-bottom:1px dotted var(--ink-45);font-size:15.5px}
@@ -1069,6 +1071,15 @@ nav.main .salelink:hover{border-color:#E0231C}
 .shero.full .stx.txr .scta{justify-content:flex-end}
 @media(max-width:760px){.shero.full .stx.txr{padding:0 8% 130px 8%;align-items:flex-start;text-align:left}
   .shero.full .stx.txr .scta{justify-content:flex-start}}
+/* ---------- NEU-Seite: statische Hero-Banner ---------- */
+.nwhero{position:relative;overflow:hidden;border-radius:18px;height:min(62vh,520px)}
+.nwhero img{width:100%;height:100%;object-fit:cover;display:block}
+.nwhero .ntx{position:absolute;inset:auto auto 0 0;right:0;padding:clamp(22px,4vw,46px);
+  display:flex;flex-direction:column;align-items:flex-start;gap:14px;
+  background:linear-gradient(transparent,rgba(23,23,27,.45))}
+.nwhero .mega{font-size:clamp(30px,4.6vw,58px)}
+.nwhero .stag{background:var(--c1);color:var(--ink)}
+@media(max-width:700px){.nwhero{height:56vw;min-height:300px;border-radius:12px}}
 /* ---------- CRO: Microcopy & Social Proof direkt an der Kaufentscheidung ---------- */
 .ctamicro{font-size:12.5px;font-weight:600;margin-top:9px;color:var(--ink)}
 .ctamicro em{font-style:normal;color:#2E9E5B}
@@ -1172,6 +1183,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <span class="navdrop"><a href="#" class="prodbtn" onclick="go('shop');return false">
         <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Produkte</a>
       <div class="dropm">
+        <a href="#" onclick="go('shop','neuwelt');return false" style="color:var(--brass);font-weight:600">Neu</a>
         <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
         <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
         <a href="#" onclick="go('shop','textil');return false">Textil</a>
@@ -1181,13 +1193,14 @@ nav.main .salelink:hover{border-color:#E0231C}
         <a href="#" onclick="goSec('linien');return false">Duschkonzepte</a>
         <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
       </div></span>
+    <a href="#" class="neulink" onclick="go('shop','neuwelt');return false">Neu</a>
     <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale&nbsp;%</a>
     <a href="#" onclick="go('shop','damen');return false">Damen</a>
+    <a href="#" onclick="go('shop','mode');setTimeout(()=>whoFilt('kinder'),200);return false">Kinder</a>
     <span class="hsoon" title="In Bearbeitung">Herren</span>
-    <span class="hsoon" title="In Bearbeitung">Kinder</span>
     <span class="navdrop"><a href="#" onclick="go('shop','neu');return false">Trends &amp; Inspiration</a>
       <div class="dropm">
-        <a href="#" onclick="go('shop','neu');return false">Neuheiten</a>
+        <a href="#" onclick="go('shop','neuwelt');return false">Neuheiten</a>
         <a href="#" onclick="go('shop','sommer');return false">Must-haves für den Sommer</a>
         <a href="#" onclick="go('shop','farben');return false">In Ihren Lieblingsfarben</a>
         <a href="#" onclick="go('shop','sets');return false">Sets &amp; Geschenke</a>
@@ -1206,6 +1219,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 <div class="mnav" id="mnav">
   <button class="x" onclick="mnav(0)">&times;</button>
   <a href="#linien" onclick="mnav(0);goSec('linien');return false">Duschkonzepte</a>
+  <a href="#" onclick="go('shop','neuwelt');mnav(0);return false">Neu</a>
   <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfümerie</a>
   <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
   <a href="#" onclick="go('shop','textil');mnav(0);return false">Textil</a>
@@ -1232,7 +1246,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a onclick="go('shop','zubehoer')">Duschzubehör</a>
   <a onclick="goSec('linien')">Duschkonzepte</a>
   <a class="salelink" onclick="go('shop','sale')">Sale</a>
-  <a onclick="go('shop','neu')">Neuheiten</a>
+  <a onclick="go('shop','neuwelt')">Neu</a>
 </div>
 
 <main class="view" id="v-home">
@@ -2308,6 +2322,37 @@ function renderShop(){
   if(q.length>=3)track('search',{search_term:q});
   let total=0;
 
+  /* ---- Eigene Oberkategorie: NEU — die neuen Kollektionen mit ihren eigenen Heros ---- */
+  if(curCat==='neuwelt'){
+    document.getElementById('shopTitle').textContent='Neu bei La Doccia';
+    document.getElementById('shopTitle').style.setProperty('--dc','var(--c1)');
+    document.getElementById('shopSub').textContent='Die neuen Kollektionen — Sommer, Kinder und die neue Pflege.';
+    crumb2('Neu');
+    const rail=(ids)=>`<div class="rail">${ids.map(id=>P.find(p=>p.id===id)).filter(Boolean).map(cardRail).join('')}</div>`;
+    document.getElementById('shopBody').innerHTML=`
+      <div class="nwhero reveal">
+        <img src="assets/e/hero-sommer.jpg" alt="Sommerhüte" loading="lazy">
+        <div class="ntx"><span class="stag tagbeige">Sommer-Neuheiten</span>
+          <h2 class="mega">Weiße Hüte,<br>blaues Meer.</h2>
+          <button class="btn pill" onclick="filt('mode');setTimeout(()=>subFilt('huete'),150)">Hüte entdecken</button></div>
+      </div>
+      <div class="grouplbl" style="margin-top:26px">Sommerhüte</div>${rail(['p88','p89','p86','p18','p55'])}
+      <div class="nwhero reveal" style="margin-top:46px">
+        <img src="assets/e/hero-kinder.jpg" alt="Kinderabteilung" loading="lazy">
+        <div class="ntx"><span class="stag tagbeige">Neu: Kinderabteilung</span>
+          <h2 class="mega">Kleine Füße,<br>große Pfützen.</h2>
+          <button class="btn pill" onclick="filt('mode');setTimeout(()=>whoFilt('kinder'),150)">Für Kinder entdecken</button></div>
+      </div>
+      <div class="grouplbl" style="margin-top:26px">Für Kinder</div>${rail(['p82','p83','p85','p84','p86','p87'])}
+      <div class="grouplbl" style="margin-top:46px">Neue Pflege &amp; Düfte</div>${rail(['p90','p91','p92','p93','p94','p95','p96'])}
+      <div class="grouplbl" style="margin-top:46px">Neu in Mode</div>${rail(['p62','p71','p64','p63','p68','p69'])}
+      <div style="margin-top:38px;text-align:center"><button class="btn ghost" onclick="filt('neu')">Alle Neuheiten als Liste</button></div>`;
+    document.getElementById('fcount').textContent='Neuheiten';
+    document.getElementById('v-shop').classList.remove('landing');
+    setTimeout(obs,60); headerClear();
+    return;
+  }
+
   /* ---- Kuratierte Kollektion (Sale, Neuheiten, Sommer, …) ---- */
   if(COLL[curCat]){
     const c=COLL[curCat];
@@ -2359,11 +2404,7 @@ function renderShop(){
       {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"},
       {img:'assets/e/hero-regen.mp4',seq:['assets/e/hero-regen.mp4','assets/e/hero-regen-2.mp4'],tag:'Neu: Regenjacke „Perla“',sub:'Wasserdicht — das Wasser perlt einfach ab',h:'Bleib trocken.<br>Bleib bunt.',
-       cta:'Jacke entdecken',fn:"openP('p62')"},
-      {img:'assets/e/hero-sommer.jpg',tag:'Sommer-Neuheiten',sub:'Weiße Sommerhüte für Damen und Kinder',h:'Weiße Hüte,<br>blaues Meer.',
-       cta:'Hüte entdecken',fn:"filt('mode');setTimeout(()=>subFilt('huete'),150)"},
-      {img:'assets/e/hero-kinder.jpg',tag:'Neu: Kinderabteilung',sub:'Regenjacken, Stiefel, Schlappen und mehr — für die Kleinen',h:'Kleine Füße,<br>große Pfützen.',
-       cta:'Für Kinder entdecken',fn:"filt('mode');setTimeout(()=>whoFilt('kinder'),150)"}
+       cta:'Jacke entdecken',fn:"openP('p62')"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
