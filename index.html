@@ -1059,8 +1059,12 @@ nav.main .salelink:hover{border-color:#E0231C}
   letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:transform .25s}
 .gtile:hover .gbtn{transform:translateY(-2px)}
 @media(max-width:700px){.gsplit{grid-template-columns:1fr}.gtile{height:min(72vh,560px)}}
-.catgrid{grid-template-columns:repeat(3,1fr)}
-.catgrid .gtile{height:min(52vh,460px)}
+.catgrid{grid-template-columns:repeat(3,1fr);gap:2px;background:#fff}
+.catgrid .gtile{height:min(52vh,460px);background:#F2F2F5}
+.catgrid .gtile img{object-fit:contain;padding:6% 6% 16%;box-sizing:border-box}
+.catgrid .glab{background:none}
+.catgrid .glab h3{color:var(--ink);text-shadow:none}
+.catgrid .gbtn{border:1px solid var(--line);box-shadow:0 4px 14px -6px rgba(20,20,24,.25)}
 .catgrid .glab h3{font-size:clamp(20px,2.2vw,30px)}
 .catgrid .gbtn{padding:10px 26px;font-size:11px}
 @media(max-width:700px){.catgrid{grid-template-columns:repeat(2,1fr)}.catgrid .gtile{height:44vw}}
@@ -1282,11 +1286,11 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="reveal" id="homeRails"></div>
       <!-- Große Abteilungsbilder: direkter Einstieg in den Shop -->
       <div class="teaser reveal" style="margin-top:38px">
-        <div class="tcat" onclick="go('shop','parfuem')"><img data-img="assets/p/01_eau-de-parfum-damen_c.webp" alt="Parfümerie">
+        <div class="tcat" onclick="go('shop','parfuem')"><img data-img="assets/p/01_eau-de-parfum-damen_a.webp" alt="Parfümerie">
           <div class="lab"><div class="n">Parfümerie</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="assets/p/22_haarmaske_c.webp" alt="Kosmetik">
+        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="assets/p/14_body-butter_a.webp" alt="Kosmetik">
           <div class="lab"><div class="n">Kosmetik</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="go('shop','textil')"><img data-img="assets/p/43_morgenmantel-kimono_c.webp" alt="Textil">
+        <div class="tcat" onclick="go('shop','textil')"><img data-img="assets/p/42_morgenmantel-frottee_a.webp" alt="Textil">
           <div class="lab"><div class="n">Textil</div><div class="c">Kaufen</div></div></div>
         <div class="tcat" onclick="goSec('linien')"><img data-img="duschgruen" alt="Duschkonzepte">
           <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien ansehen</div></div></div>
@@ -1987,6 +1991,10 @@ function lieferzeit(){
 
 /* ---------- Suche: Normalisierung, Synonyme, Tippfehlertoleranz ---------- */
 const SYN=[
+ ['jacke','regenjacke','parka','anorak','windbreaker','trenchcoat','mantel'],
+ ['schuhe','sneaker','stiefel','gummistiefel','boots','loafer','sandale','schlappen'],
+ ['schmuck','ohrringe','ohrstecker','creolen','kette','halskette','ring','armreif','armband','pin','brosche'],
+ ['wasserdicht','wasserfest','regen','regenfest'],
  ['handtuch','tuch','badetuch','frottee','towel'],
  ['bademantel','mantel','morgenmantel'],
  ['parfum','parfuem','duft','eau de parfum','edp'],
@@ -2057,22 +2065,22 @@ document.getElementById('linesGrid').innerHTML = LINES.map((l,li)=>`
 /* Katalogstruktur (Notizbuch): Parfümerie · Kosmetik · Textil, je Damen/Herren/Kinder.
    Jede Abteilung hat ihre eigene Markenfarbe — Farbe führt durch die Seite. */
 const CATS=[
- {id:'parfuem', n:'Parfümerie', img:'assets/p/01_eau-de-parfum-damen_c.webp', col:'var(--c4)',
+ {id:'parfuem', n:'Parfümerie', img:'assets/p/01_eau-de-parfum-damen_a.webp', col:'var(--c4)',
   sub:'Eau de Parfum, Körperspray, Duftkerzen und Raumduft — der Duft der Kollektion.',
   subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Körperspray'},{id:'kerzen',n:'Kerzen & Raumduft'}]},
- {id:'kosmetik', n:'Kosmetik', img:'assets/p/22_haarmaske_c.webp', col:'var(--c3)',
+ {id:'kosmetik', n:'Kosmetik', img:'assets/p/14_body-butter_a.webp', col:'var(--c3)',
   sub:'Dusche, Körper, Haar, Zahnpflege und Seifen — mild und duftgleich mit der Kollektion.',
   subs:[{id:'dusche',n:'Dusche'},{id:'koerper',n:'Körperpflege'},{id:'haar',n:'Haarpflege'},{id:'mund',n:'Zahnpflege'},{id:'tools',n:'Bürsten & Tools'},{id:'seife',n:'Seifen'}]},
- {id:'textil', n:'Textil', img:'assets/p/43_morgenmantel-kimono_c.webp', col:'var(--c2)',
+ {id:'textil', n:'Textil', img:'assets/p/41_handtuch-set-4_a.webp', col:'var(--c2)',
   sub:'Handtücher, Morgenmäntel und Frottee mit der gewebten Wortmarke.',
   subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'}]},
- {id:'mode', n:'Mode', img:'assets/e/hero-regen_poster.jpg', col:'var(--c1)',
+ {id:'mode', n:'Mode', img:'assets/p/62_regenjacke_tuerkis_a.jpg', col:'var(--c1)',
   sub:'Wasserdichte Jacken und Schuhe, Taschen und Accessoires — Regen ist unser Element.',
   subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
  {id:'schmuck', n:'Schmuck', img:'assets/p/74_kette_a.jpg', col:'var(--gold)',
   sub:'Die vier Quadrate als Schmuck — wasserfest, bleibt beim Duschen einfach an.',
   subs:[{id:'ohrringe',n:'Ohrringe'},{id:'ketten',n:'Ketten'},{id:'armschmuck',n:'Armschmuck'},{id:'mehr',n:'Ringe & mehr'}]},
- {id:'zubehoer', n:'Duschzubehör', img:'assets/s/S2_duschset-komplett_c.webp', col:'var(--c3)',
+ {id:'zubehoer', n:'Duschzubehör', img:'assets/p/57_seifenspender-set_a.webp', col:'var(--c3)',
   sub:'Seifenschalen, Spender, Regal und Antirutschmatte — Zubehör aus der Welt der Duschkonzepte.',
   subs:[{id:'zub',n:'Alle Artikel'}]}
 ];
@@ -2236,7 +2244,7 @@ function cardRail(p){
 /* Startseite: maximal 3 ausgewählte Produkte, mobil angeschnitten scrollbar */
 (function(){
   const host=document.getElementById('homeRails'); if(!host)return;
-  const FEATURED=['S2','p01','p42'];
+  const FEATURED=['p62','p01','S2'];
   const items=FEATURED.map(id=>P.find(p=>p.id===id)).filter(Boolean);
   host.innerHTML = `
     <div class="railhead">
