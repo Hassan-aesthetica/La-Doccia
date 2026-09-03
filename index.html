@@ -2072,7 +2072,7 @@ const CATS=[
   subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'}]},
  {id:'mode', n:'Mode', img:'assets/p/62_regenjacke_b.jpg', col:'var(--c1)',
   sub:'Wasserdichte Jacken und Schuhe, Taschen und Accessoires — Regen ist unser Element.',
-  subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
+  subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'huete',n:'Hüte'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
  {id:'schmuck', n:'Schmuck', img:'assets/p/72_a.jpg', col:'var(--gold)',
   sub:'Die vier Quadrate als Schmuck — wasserfest, bleibt beim Duschen einfach an.',
   subs:[{id:'ohrringe',n:'Ohrringe'},{id:'ketten',n:'Ketten'},{id:'armschmuck',n:'Armschmuck'},{id:'mehr',n:'Ringe & mehr'}]},
@@ -2162,6 +2162,21 @@ const P=[
  {id:'p79',cat:'schmuck',sc:'mehr',n:'Pin „Spilla“',p:19,img:'assets/p/79_a.jpg',r:4.8,rv:7,badge:'Neu',rel:["p80","p81","p53"],d:'Emaille-Pin mit den vier Quadraten auf goldenem Steg — fürs Revers, die Tasche oder den Kulturbeutel.',x:'Butterfly-Verschluss, Emaille kratzfest gebrannt.'},
  {id:'p80',cat:'schmuck',sc:'mehr',n:'Haarspange „Fermaglio“',p:22,img:'assets/p/80_a.jpg',r:4.8,rv:11,badge:'Neu',rel:["p79","p44","p28"],d:'Goldene Haarspange mit vier Emaille-Quadraten — hält auch nasses Haar.',x:'Wasserfest und rostfrei — hält vom Duschraum bis zum Abend. Federmechanismus.'},
  {id:'p81',cat:'schmuck',sc:'mehr',n:'Charm „Ciondolo“',p:15,img:'assets/p/81_a.jpg',r:4.9,rv:13,badge:'Neu',rel:["p73","p54","p49"],d:'Kleiner Quadrat-Charm in Violett mit Clip — für Taschen, Ketten und Schlüsselbund.',x:'Passt an p49–p51, p73 und jeden Karabiner. Emaille kratzfest, vergoldet.'},
+ {id:'p82',cat:'mode',sc:'jacken',who:'kinder',n:'Kinder-Regenjacke „Salto“',p:69,img:'assets/p/82_a.jpg',r:4.9,rv:14,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["98/104","110/116","122/128"],rel:["p83","p85","p62"],d:'Sonnengelbe Kinder-Regenjacke mit verspieltem Quadrate-Muster und türkisem Kapuzenfutter — das Wasser perlt ab, die Pfütze ruft.',x:'Wassersäule 10.000 mm, reflektierende Details, Namensschild innen. Bei 30 °C waschen.'},
+ {id:'p83',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Gummistiefel „Splash“',p:34,img:'assets/p/83_a.jpg',r:4.8,rv:17,badge:'Neu',mat:'Naturkautschuk, wasserdicht',sizes:["24/25","26/27","28/29","30/31"],rel:["p82","p84","p63"],d:'Türkise Gummistiefel mit bunten Quadraten und orangen Anziehschlaufen — für kleine Pfützenspringer.',x:'100 % wasserdicht, rutschfeste Sohle, herausnehmbares Fußbett. Anziehschlaufen für kleine Hände.'},
+ {id:'p84',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Schlappen „Piccolo“',p:17,img:'assets/p/84_a.jpg',r:4.7,rv:11,badge:'Neu',mat:'EVA, wasserfest',sizes:["24/25","26/27","28/29","30/31"],rel:["p48","p83","p67"],d:'Orange Kinder-Pantoletten mit dicker weißer Sohle und Quadrate-Print — für Pool, Strand und Garten.',x:'Wasserfest, federleicht, waschbar. Breiter Riemen für sicheren Halt.'},
+ {id:'p85',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Sneaker „Salto“, wasserdicht',p:54,img:'assets/p/85_a.jpg',r:4.9,rv:9,badge:'Neu',mat:'Recyceltes Mesh, wasserdichte Membran',sizes:["24/25","26/27","28/29","30/31"],rel:["p64","p82","p83"],d:'Weißer Kinder-Sneaker mit Regenbogen-Schnellverschluss und dem Vier-Farben-Streifen — wasserdicht für jeden Schulweg.',x:'Elastische Schnürung ohne Binden, wasserdichte Membran, waschbare Sohle.'},
+ {id:'p86',cat:'mode',sc:'huete',who:'kinder',n:'Kinder-Sommerhut „Sole Mini“',p:19,img:'assets/p/86_a.jpg',r:4.8,rv:8,badge:'Neu',mat:'100 % Baumwolle',sizes:["50","52","54"],rel:["p88","p89","p84"],d:'Weißer Bucket-Hut für Kinder mit dem bunten Quadrate-Band — UV-Schutz, der gern getragen wird.',x:'UPF 50+, waschbar bei 30 °C, Kinnband abnehmbar.'},
+ {id:'p87',cat:'kosmetik',sc:'haar',who:'kinder',n:'Kinder-Shampoo „Bolla“, 250 ml',p:12,img:'assets/p/87_a.jpg',r:4.9,rv:16,badge:'Neu',ml:250,rel:["p19","p96","p82"],d:'Mildes Kinder-Shampoo in der Verlaufsflasche mit Blubber-Kappe — keine Tränen, viel Schaum.',x:'Ohne Tränen-Formel, pH-hautneutral, ohne Parfümallergene. Auch als Duschgel nutzbar.'},
+ {id:'p88',cat:'mode',sc:'huete',who:'damen',n:'Sommerhut „Sole“',p:49,img:'assets/p/88_a.jpg',r:4.9,rv:12,badge:'Neu',mat:'Papierstroh-Geflecht',sizes:["S/M","L/XL"],rel:["p89","p86","p18"],d:'Weißer Sommerhut mit weit schwingender Krempe und dem schmalen Quadrate-Band — Schatten, der gut aussieht.',x:'UPF 50+, formstabil, mit verstellbarem Innenband. Zum Transport flach rollbar.'},
+ {id:'p89',cat:'mode',sc:'huete',who:'damen',n:'Bucket Hat „Bianco“',p:39,img:'assets/p/89_a.jpg',r:4.8,rv:10,badge:'Neu',mat:'Baumwoll-Twill',sizes:["S/M","L/XL"],rel:["p88","p86","p64"],d:'Weißer Bucket Hat aus festem Twill mit gestickter Wortmarke — der Sommer-Klassiker der Kollektion.',x:'Waschbar bei 30 °C, behält die Form. Passt zu allem — vom Duschtuch bis zur Regenjacke.'},
+ {id:'p90',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Giardino“, 50 ml',p:119,img:'assets/p/90_a.jpg',r:4.9,rv:11,badge:'Neu',rel:["p01","p91","p05"],d:'Grüner Garten nach dem Regen: Feige, grüne Blätter und Vetiver im Verlaufs-Flakon von Türkis zu Klarglas.',x:'11 % Duftölanteil, hält 5–7 Stunden. Der frische Duft für Frühling und Sommer.'},
+ {id:'p91',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Tramonto“, 50 ml',p:129,img:'assets/p/91_a.jpg',r:4.9,rv:7,badge:'Neu',rel:["p90","p02","p06"],d:'Sonnenuntergang im Flakon: Orangenblüte, Sandelholz und Vanille im Verlauf von Orange zu Violett.',x:'13 % Duftölanteil, hält 7–9 Stunden. Der warme Abendduft der Kollektion.'},
+ {id:'p92',cat:'kosmetik',sc:'haar',n:'Shampoo „Volume“, 250 ml',p:19,img:'assets/p/92_a.jpg',r:4.8,rv:13,badge:'Neu',ml:250,rel:["p19","p93","p21"],d:'Volumen-Shampoo in der schimmernden Violett-Flasche — Fülle ohne Beschweren.',x:'Mit Reisprotein und Panthenol, sulfatfrei. Für feines Haar, tägliche Anwendung.'},
+ {id:'p93',cat:'kosmetik',sc:'haar',n:'Shampoo „Repair“, 250 ml',p:19,img:'assets/p/93_a.jpg',r:4.9,rv:9,badge:'Neu',ml:250,rel:["p92","p22","p23"],d:'Repair-Shampoo in der Amber-Gold-Flasche — Aufbau für strapaziertes Haar.',x:'Mit Keratin und Arganöl, sulfatfrei. Nach Sonne, Färben oder Hitze-Styling.'},
+ {id:'p94',cat:'kosmetik',sc:'koerper',n:'Lippenbalsam „Berry“',p:9,img:'assets/p/94_a.jpg',r:4.9,rv:18,badge:'Neu',rel:["p95","p17","p15"],d:'Beeren-Lippenbalsam in der runden Violett-Tube — mit zartem Farbschimmer.',x:'Mit Sheabutter und Beerenwachs, leicht tönend. Ohne Mineralöl.'},
+ {id:'p95',cat:'kosmetik',sc:'koerper',n:'Lippenbalsam „Citrus“',p:9,img:'assets/p/95_a.jpg',r:4.8,rv:15,badge:'Neu',rel:["p94","p17","p18"],d:'Zitrus-Lippenbalsam im Gelb-Orange-Verlauf — frisch, pflegend, sommerlich.',x:'Mit Sheabutter und Zitrusöl, mit LSF 15. Ohne Mineralöl.'},
+ {id:'p96',cat:'kosmetik',sc:'dusche',n:'Duschgel „Tropic“, 250 ml',p:16,img:'assets/p/96_a.jpg',r:4.8,rv:12,badge:'Neu',ml:250,rel:["p09","p96","p87"],d:'Tropisches Duschgel im Türkis-Limette-Verlauf — Kokoswasser und Limette unter der Dusche.',x:'Sulfatfrei, pH 5,5. Der Urlaubs-Duft für jeden Morgen.'},
  {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p01", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
@@ -2344,7 +2359,11 @@ function renderShop(){
       {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"},
       {img:'assets/e/hero-regen.mp4',seq:['assets/e/hero-regen.mp4','assets/e/hero-regen-2.mp4'],tag:'Neu: Regenjacke „Perla“',sub:'Wasserdicht — das Wasser perlt einfach ab',h:'Bleib trocken.<br>Bleib bunt.',
-       cta:'Jacke entdecken',fn:"openP('p62')"}
+       cta:'Jacke entdecken',fn:"openP('p62')"},
+      {img:'assets/e/hero-sommer.jpg',tag:'Sommer-Neuheiten',sub:'Weiße Sommerhüte für Damen und Kinder',h:'Weiße Hüte,<br>blaues Meer.',
+       cta:'Hüte entdecken',fn:"filt('mode');setTimeout(()=>subFilt('huete'),150)"},
+      {img:'assets/e/hero-kinder.jpg',tag:'Neu: Kinderabteilung',sub:'Regenjacken, Stiefel, Schlappen und mehr — für die Kleinen',h:'Kleine Füße,<br>große Pfützen.',
+       cta:'Für Kinder entdecken',fn:"filt('mode');setTimeout(()=>whoFilt('kinder'),150)"}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
@@ -2417,10 +2436,10 @@ function renderShop(){
       const whobar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:22px">
           <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Alle</button>
           <button class="subchip ${curWho==='damen'?'on':''}" onclick="whoFilt('damen')">Damen</button>
-          <span class="subchip soon">Herren — in Bearbeitung</span>
-          <span class="subchip soon">Kinder — in Bearbeitung</span></div>` : '';
+          <button class="subchip ${curWho==='kinder'?'on':''}" onclick="whoFilt('kinder')">Kinder</button>
+          <span class="subchip soon">Herren — in Bearbeitung</span></div>` : '';
       if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
-      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>!p.who||p.who===curWho);
+      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>curWho==='kinder' ? p.who==='kinder' : (!p.who||p.who===curWho));
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
       /* Bei einer einzelnen Abteilung steht der große Titel schon oben —
