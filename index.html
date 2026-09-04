@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>LA DOCCIA — Duschen erleben</title>
+<title>LA DOCCIA — Schönes für jeden Tag</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1121,7 +1121,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 .pmthumbs button.vth{position:relative}
 .pmthumbs button.vth::after{content:'▶';position:absolute;inset:0;display:grid;place-items:center;
   color:#fff;font-size:15px;background:rgba(23,23,27,.28);border-radius:inherit;pointer-events:none}
-/* ---------- Duschkonzepte kompakt ---------- */
+/* ---------- (frei) ---------- */
 .line.lite{background:#fff;border:1px solid var(--line);border-radius:16px;padding:clamp(24px,3vw,36px);
   display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .line.lite .lbar{width:46px;height:5px;border-radius:3px;background:var(--lc)}
@@ -1191,13 +1191,13 @@ nav.main .salelink:hover{border-color:#E0231C}
         <a href="#" onclick="go('shop','textil');return false">Textil</a>
         <a href="#" onclick="go('shop','mode');return false">Mode</a>
         <a href="#" onclick="go('shop','schmuck');return false">Schmuck</a>
-        <a href="#" onclick="go('shop','zubehoer');return false">Duschzubehör</a>
-        <a href="#" onclick="goSec('linien');return false">Duschkonzepte</a>
+        <a href="#" onclick="go('shop','zubehoer');return false">Zubehör</a>
         <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
       </div></span>
     <a href="#" class="neulink" onclick="go('shop','neuwelt');return false">Neu</a>
     <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale&nbsp;%</a>
-    <a href="#" onclick="go('shop','damen');return false">Damen</a>
+    <a href="#" onclick="go('shop','damenwelt');return false">Damen</a>
+    <a href="#" onclick="go('shop','sport');return false">Sport</a>
     <a href="#" onclick="go('shop','kinderwelt');return false">Kinder</a>
     <span class="hsoon" title="In Bearbeitung">Herren</span>
     <span class="navdrop"><a href="#" onclick="go('shop','neu');return false">Trends &amp; Inspiration</a>
@@ -1207,9 +1207,8 @@ nav.main .salelink:hover{border-color:#E0231C}
         <a href="#" onclick="go('shop','farben');return false">In Ihren Lieblingsfarben</a>
         <a href="#" onclick="go('shop','sets');return false">Sets &amp; Geschenke</a>
       </div></span>
-    <span class="navdrop svc"><a href="#" onclick="goSec('termin');return false">Service</a>
+    <span class="navdrop svc"><a href="#" onclick="go('kontakt');return false">Service</a>
       <div class="dropm">
-        <a href="#" onclick="goSec('termin');return false">Designberatung</a>
         <a href="#" onclick="go('kontakt');return false">Kontakt</a>
         <a href="#" onclick="go('faq');return false">Häufige Fragen</a>
         <a href="#" onclick="go('versand');return false">Versand &amp; Rückgabe</a>
@@ -1220,20 +1219,21 @@ nav.main .salelink:hover{border-color:#E0231C}
 
 <div class="mnav" id="mnav">
   <button class="x" onclick="mnav(0)">&times;</button>
-  <a href="#linien" onclick="mnav(0);goSec('linien');return false">Duschkonzepte</a>
   <a href="#" onclick="go('shop','neuwelt');mnav(0);return false">Neu</a>
+  <a href="#" onclick="go('shop','damenwelt');mnav(0);return false">Damen</a>
+  <a href="#" onclick="go('shop','sport');mnav(0);return false">Sport</a>
+  <a href="#" onclick="go('shop','kinderwelt');mnav(0);return false">Kinder</a>
   <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfümerie</a>
   <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
   <a href="#" onclick="go('shop','textil');mnav(0);return false">Textil</a>
   <a href="#" onclick="go('shop','mode');mnav(0);return false">Mode</a>
   <a href="#" onclick="go('shop','schmuck');mnav(0);return false">Schmuck</a>
-  <a href="#" onclick="go('shop','zubehoer');mnav(0);return false">Duschzubehör</a>
+  <a href="#" onclick="go('shop','zubehoer');mnav(0);return false">Zubehör</a>
   <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
   <a href="#" class="sub" style="color:#E0231C" onclick="go('shop','sale');mnav(0);return false">Sale</a>
   <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
   <a href="#" class="sub" onclick="go('wunsch');renderWish();mnav(0);return false">♡ Wunschliste</a>
   <a href="#marke" onclick="mnav(0);goSec('marke');return false">Die Marke</a>
-  <a href="#termin" onclick="mnav(0);goSec('termin');return false">Beratung</a>
   <a class="sub" href="tel:+4315550100">☎ 01 555 01 00</a>
 </div>
 
@@ -1245,8 +1245,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a onclick="go('shop','textil')">Textil</a>
   <a onclick="go('shop','mode')">Mode</a>
   <a onclick="go('shop','schmuck')">Schmuck</a>
-  <a onclick="go('shop','zubehoer')">Duschzubehör</a>
-  <a onclick="goSec('linien')">Duschkonzepte</a>
+  <a onclick="go('shop','zubehoer')">Zubehör</a>
   <a class="salelink" onclick="go('shop','sale')">Sale</a>
   <a onclick="go('shop','neuwelt')">Neu</a>
 </div>
@@ -1254,16 +1253,16 @@ nav.main .salelink:hover{border-color:#E0231C}
 <main class="view" id="v-home">
   <!-- HERO -->
   <div class="hero">
-    <img class="post" data-img="duschgruen" alt="La Doccia Duschkonzept in Grün">
+    <img class="post" src="assets/e/hero-parfum.jpg" alt="La Doccia Kollektion">
     <div class="veil"></div>
     <div class="scrollcue"><span>Scrollen</span><i></i></div>
     <div class="inner">
-      <span class="eyebrow reveal">Individuelle Duschkonzepte</span>
-      <h1 class="reveal">Eine Dusche, die den Tag beginnt.</h1>
-      <p class="reveal">Wir planen und bauen Duschkonzepte nach Maß — vom ersten Aufmaß bis zur letzten Fuge. Ein Ansprechpartner, ein Festpreis, ein Termin.</p>
+      <span class="eyebrow reveal">La Doccia — Wien</span>
+      <h1 class="reveal">Schönes für jeden Tag.</h1>
+      <p class="reveal">Parfümerie, Kosmetik, Mode und Schmuck — eine Handschrift, vier Farben, alles wasserfest gedacht.</p>
       <div class="cta reveal">
         <a href="#" class="btn light" onclick="go('shop');return false">Zum Shop</a>
-        <a href="#termin" class="btn outline">Beratungstermin sichern</a>
+        <a href="#" class="btn outline" onclick="go('shop','neuwelt');return false">Neuheiten ansehen</a>
       </div>
     </div>
   </div>
@@ -1276,13 +1275,13 @@ nav.main .salelink:hover{border-color:#E0231C}
     <div class="wrap story">
       <div class="txt reveal">
         <span class="eyebrow">Die Marke</span>
-        <h2>Duschen erleben — nicht nur duschen.</h2>
-        <p>Eine Dusche ist für uns Interieur, kein Funktionsraum: fugenlose Oberflächen, Glas und Carbon, Farben nach Wunsch — gefertigt nach Ihrem Maß, nicht nach Katalog.</p>
-        <p>Jedes Projekt beginnt mit einer persönlichen Beratung bei Ihnen zu Hause — und endet mit einem Festpreis, der hält.</p>
+        <h2>Eine Handschrift. Vier Farben.</h2>
+        <p>La Doccia steht für den ersten ehrlichen Moment des Tages: Wasser, Licht und Farbe. Vier Quadrate, eine Handschrift — vom Parfüm bis zur Regenjacke.</p>
+        <p>Alles in unserer Kollektion ist wasserfest gedacht: Schmuck, der beim Duschen anbleibt, Jacken, an denen der Regen abperlt, und Pflege, die den Morgen schöner macht.</p>
       </div>
       <figure class="reveal">
         <img data-img="towel" alt="La Doccia Frottee im Morgenlicht">
-        <div class="stamp"><div class="y">400+</div><span>Umgesetzte Projekte seit 2016</span></div>
+        <div class="stamp"><div class="y">4</div><span>Farben, eine Handschrift — seit 2016</span></div>
       </figure>
     </div>
   </section>
@@ -1304,8 +1303,8 @@ nav.main .salelink:hover{border-color:#E0231C}
           <div class="lab"><div class="n">Kosmetik</div><div class="c">Kaufen</div></div></div>
         <div class="tcat" onclick="go('shop','textil')"><img data-img="assets/p/42_morgenmantel-frottee_b.webp" alt="Textil">
           <div class="lab"><div class="n">Textil</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="goSec('linien')"><img data-img="duschgruen" alt="Duschkonzepte">
-          <div class="lab"><div class="n">Duschbereich</div><div class="c">Designlinien ansehen</div></div></div>
+        <div class="tcat" onclick="go('shop','neuwelt')"><img data-img="assets/e/hero-sommer.jpg" alt="Neuheiten">
+          <div class="lab"><div class="n">Neu</div><div class="c">Kollektion ansehen</div></div></div>
       </div>
       <div style="margin-top:34px">
         <button class="btn ghost" onclick="go('shop')">Alle Produkte ansehen</button>
@@ -1314,108 +1313,8 @@ nav.main .salelink:hover{border-color:#E0231C}
   </section>
 
 
-  <!-- PILLARS -->
-  <section class="pillars">
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow">Was uns unterscheidet</span>
-        <h2>Vier Gründe, warum Kunden uns weiterempfehlen.</h2>
-      </div>
-      <div class="pgrid reveal">
-        <div class="p"><div class="num">I</div><h3>Sonderanfertigung</h3>
-          <p>Jede Dusche wird nach Aufmaß gefertigt. Schrägen, Nischen, ungewöhnliche Grundrisse — kein Standardmaß, keine Kompromisse.</p></div>
-        <div class="p"><div class="num">II</div><h3>Veredelte Materialien</h3>
-          <p>Glas kombiniert mit Carbon und Kristall: 6 mm Sicherheitsglas, fugenlose Oberflächen und Griffe aus geschliffenem Kristall.</p></div>
-        <div class="p"><div class="num">III</div><h3>Ihre Wunschfarbe</h3>
-          <p>Erhältlich im kompletten RAL-Spektrum. Von Taubenblau über Salbei bis Tiefschwarz — abgestimmt auf Ihren Raum.</p></div>
-        <div class="p"><div class="num">IV</div><h3>Barrierefrei &amp; durchdacht</h3>
-          <p>Bodenebener Einstieg, rutschhemmende Flächen, klare Kontraste — barrierefrei geplant, physisch wie visuell. Alles aus einer Hand, ein Festpreis.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DESIGNLINIEN -->
-  <section id="linien">
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow">Duschkonzepte</span>
-        <h2>Drei Linien. Ein Festpreis.</h2>
-        <p>Jede Linie ist ein Komplettpaket von der Planung bis zur Endreinigung — den Rest besprechen wir persönlich.</p>
-      </div>
-      <div class="lines reveal" id="linesGrid"></div>
-      <p class="linefoot reveal">Auch für <b>Hotels</b>, <b>Fitnessstudios</b> und <b>Friseursalons</b> — mit eigenen Konditionen.
-        Richtpreise bis 8 m² Duschraum; verbindlich wird der Preis nach dem Aufmaß vor Ort.</p>
-      <div class="reveal" style="margin-top:26px;text-align:center">
-        <a href="#termin" class="btn">Kostenlose Beratung anfragen</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- EDITORIAL BAND -->
-  <div class="band">
-    <img data-img="bandneu" alt="La Doccia Duschraum">
-    <div class="ov"></div>
-    <div class="txt"><div class="in">
-      <span class="eyebrow">Der Moment danach</span>
-      <h2>Warm, still, und ganz kurz gehört der Tag nur Ihnen.</h2>
-      <p>Fugenlose Wände, Licht durch mattiertes Glas, Farben nach Wunsch. Nichts von der Stange.</p>
-      <a href="#termin" class="btn light">Beratungstermin sichern</a>
-    </div></div>
-  </div>
-
-  <!-- REVIEWS -->
-  <section>
-    <div class="wrap">
-      <div class="shead reveal">
-        <span class="eyebrow">Referenzen</span>
-        <h2>Was unsere Kunden sagen.</h2>
-      </div>
-      <div class="revtop reveal">
-        <div class="score">
-          <div class="big">4,9</div><div class="st">★★★★★</div>
-          <div class="cnt">aus 186 geprüften Bewertungen</div>
-          <div class="vf">✓ Verifizierte Projekte</div>
-        </div>
-        <div class="bars" id="bars"></div>
-      </div>
-      <div class="rgrid reveal" id="revGrid"></div>
-    </div>
-  </section>
 
   <!-- TERMIN -->
-  <section class="termin" id="termin">
-    <div class="wrap tgrid">
-      <div class="reveal">
-        <span class="eyebrow">Beratung</span>
-        <h2>In 30 Minuten wissen Sie, was möglich ist.</h2>
-        <p>Wir kommen zu Ihnen, messen auf und zeigen Ihnen anhand von Mustern, wie Ihr Duschraum aussehen kann. Kostenlos und unverbindlich.</p>
-        <div class="steps">
-          <div class="step"><span class="n">1</span><div><strong>Termin wählen</strong>
-            <span>Sie nennen uns zwei Wunschtermine, wir bestätigen innerhalb von 24 Stunden.</span></div></div>
-          <div class="step"><span class="n">2</span><div><strong>Beratung vor Ort</strong>
-            <span>Aufmaß, Materialmuster, Farbberatung — bei Ihnen zu Hause, rund 30 bis 60 Minuten.</span></div></div>
-          <div class="step"><span class="n">3</span><div><strong>Festpreisangebot</strong>
-            <span>Innerhalb von fünf Werktagen, verbindlich kalkuliert und ohne versteckte Posten.</span></div></div>
-        </div>
-      </div>
-      <div class="tform reveal">
-        <h3>Telefonische Designberatung</h3>
-        <div class="sm">Kostenlos und unverbindlich — wir rufen Sie an. Oder direkt: <a href="tel:+4315550100" style="color:var(--brass)">01&nbsp;555&nbsp;01&nbsp;00</a></div>
-        <label for="tn">Name</label><input id="tn" placeholder="Vor- und Nachname" autocomplete="name">
-        <label for="ttel">Telefon</label><input id="ttel" type="tel" placeholder="+43 660 …" autocomplete="tel">
-        <label for="tm">E-Mail</label><input id="tm" type="email" placeholder="name@beispiel.de" autocomplete="email">
-        <label for="tl">Gewünschte Designlinie</label>
-        <select id="tl"><option>Designlinie Classic</option><option>Designlinie Comfort</option>
-          <option>Designlinie Elegance</option><option>Noch unentschlossen</option></select>
-        <label for="tw">Wunschtermin</label><input id="tw" type="date">
-        <button class="btn" onclick="terminSubmit()">Beratung anfragen</button>
-        <div class="tok" id="tok">Danke! Wir rufen Sie innerhalb von 24 Stunden an.</div>
-        <p class="fine">Ihre Angaben werden ausschließlich zur Terminvereinbarung verwendet. Barrierefreie Planung — physisch wie visuell — auf Wunsch inklusive.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- NEWSLETTER -->
   <section class="nl">
     <div class="wrap">
@@ -1432,17 +1331,6 @@ nav.main .salelink:hover{border-color:#E0231C}
   </section>
 
   <!-- SEO -->
-  <section class="seo">
-    <div class="wrap">
-      <h2 style="font-size:clamp(23px,3.2vw,34px);margin-bottom:24px;max-width:24ch">Individuelle Duschkonzepte von La Doccia</h2>
-      <div class="cols">
-        <p>La Doccia plant und baut individuelle Duschkonzepte und Interieurs als Sonderanfertigung. Vom Aufmaß über die Materialauswahl bis zur Endreinigung erhalten Sie sämtliche Arbeiten und Materialien aus einer Hand — mit einem Ansprechpartner und einem verbindlichen Festpreis.</p>
-        <p>Unsere drei Designlinien Classic, Comfort und Elegance decken unterschiedliche Ansprüche ab, von der klaren Grundausstattung bis zum Interieur mit hinterleuchteter Wandmarke. Alle Linien sind im kompletten RAL-Farbspektrum erhältlich.</p>
-        <p>Wir arbeiten mit fugenlosen Oberflächen, Sicherheitsglas in 6 mm Stärke, Carbon-Elementen und Armaturen aus massivem Messing. Die bündig eingelassene Edelstahlrinne lässt sich zur Reinigung herausnehmen und kommt ohne Silikonrand aus.</p>
-        <p>Ergänzend führen wir Accessoires in derselben Handschrift: Frottee-Handtücher und Morgenmäntel mit gestickter Wortmarke sowie unser Eau de Toilette. Vereinbaren Sie einen kostenlosen Beratungstermin — wir kommen zu Ihnen.</p>
-      </div>
-    </div>
-  </section>
 </main>
 
 <!-- ============ SHOP-SEITE ============ -->
@@ -1450,7 +1338,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap shophead">
     <div class="crumb2" id="shopCrumb"><a onclick="filt('all')">Shop</a></div>
     <h1 id="shopTitle">Alle Produkte</h1>
-    <p id="shopSub">Parfümerie, Kosmetik, Textil und Duschzubehör — die Marke zum Mitnehmen.</p>
+    <p id="shopSub">Parfümerie, Kosmetik, Mode und Schmuck — die Marke zum Mitnehmen.</p>
   </div>
   <div class="wrap">
     <div class="catbar" id="catBar"></div>
@@ -1468,7 +1356,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h2>Medieninhaber und Diensteanbieter</h2>
     <p>
       Oleg Neufeld<br>
-      La Doccia — Duschen erleben<br>
+      La Doccia<br>
       Landstraßer Hauptstraße 71/2<br>
       1030 Wien<br>
       Österreich
@@ -1481,7 +1369,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     </p>
 
     <h2>Unternehmensgegenstand</h2>
-    <p>Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe und Handelsagent (freies Gewerbe). Planung und Ausführung individueller Duschkonzepte und Interieurs sowie Handel mit Accessoires, Textilien und Pflegeprodukten.</p>
+    <p>Handelsgewerbe mit Ausnahme der reglementierten Handelsgewerbe und Handelsagent (freies Gewerbe). Handel mit Parfümeriewaren, Kosmetik, Accessoires, Textilien und Pflegeprodukten.</p>
 
     <h2>Gewerberechtliche Angaben</h2>
     <p>
@@ -1654,9 +1542,6 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h2>Erreichbarkeit</h2>
     <p>Montag bis Freitag von 9 bis 18 Uhr. Beratungstermine vor Ort vergeben wir auch abends und samstags — je nachdem, was für Sie am besten passt.</p>
 
-    <h2>Beratung zu Ihrem Projekt</h2>
-    <p>Für Duschkonzepte und Umbauten empfehlen wir den kostenlosen Beratungstermin bei Ihnen zu Hause: Aufmaß, Materialmuster und Farbberatung in rund 30 bis 60 Minuten.</p>
-    <button class="btn" onclick="goSec('termin')" style="margin-top:8px">Beratungstermin anfragen</button>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1669,8 +1554,6 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h1>Häufige Fragen</h1>
     <p class="lead">Die Antworten auf die Fragen, die uns am häufigsten erreichen — zum Duschumbau und zum Shop.</p>
 
-    <h2>Wie läuft die Beratung ab?</h2>
-    <p>Sie nennen uns zwei Wunschtermine, wir bestätigen innerhalb von 24 Stunden. Beim Termin bei Ihnen zu Hause nehmen wir Maß, zeigen Materialmuster und beraten zu Farben. Innerhalb von fünf Werktagen erhalten Sie ein verbindliches Festpreisangebot.</p>
 
     <h2>Was kostet eine neue Dusche?</h2>
     <p>Unsere Designlinien beginnen bei 6.900 € (Classic), 9.400 € (Comfort) und 13.800 € (Elegance) — jeweils als Komplettpaket für einen Duschraum bis 8 m², inklusive sämtlicher Arbeiten und Materialien. Der Endpreis ergibt sich nach dem Aufmaß und ist dann verbindlich.</p>
@@ -1744,12 +1627,13 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap">
     <div class="fgrid">
       <div>
-        <p>Individuelle Duschkonzepte als Sonderanfertigung. Beratung vor Ort, Umsetzung aus einer Hand.</p>
+        <p>Parfümerie, Kosmetik, Mode und Schmuck aus Wien — eine Handschrift, vier Farben.</p>
       </div>
       <div><h4>Leistungen</h4><ul>
-        <li><a href="#" onclick="goSec('linien');return false">Duschkonzepte</a></li>
-        <li><a href="#" onclick="go('shop');return false">Accessoires</a></li>
-        <li><a href="#" onclick="goSec('termin');return false">Beratung</a></li></ul></div>
+        <li><a href="#" onclick="go('shop','neuwelt');return false">Neuheiten</a></li>
+        <li><a href="#" onclick="go('shop','damenwelt');return false">Damen</a></li>
+        <li><a href="#" onclick="go('shop','kinderwelt');return false">Kinder</a></li>
+        <li><a href="#" onclick="go('shop');return false">Accessoires</a></li></ul></div>
       <div><h4>Service</h4><ul>
         <li><a href="#" onclick="go('kontakt');return false">Kontakt</a></li>
         <li><a href="#" onclick="go('faq');return false">Häufige Fragen</a></li>
@@ -1950,7 +1834,7 @@ function endIntro(){
 }
 setTimeout(endIntro, 2300);
 
-/* Hero: statisches Duschkonzept-Bild — das frühere Video zeigte eine braune Hotel-Szene (Vorgabe: kein Braun) */
+
 document.querySelectorAll('[data-img]').forEach(el=>{el.src=src(el.dataset.img)});
 
 /* ---------- Helfer ---------- */
@@ -2050,28 +1934,6 @@ function prodMatch(p,q){
 }
 
 /* ---------- Designlinien ---------- */
-const LINES=[
- {n:'Classic',img:'shower2',claim:'Klar. Reduziert. Zeitlos.',from:6900,hi:0,
-  f:['Fugenlose Wandflächen in einer RAL-Farbe','Sicherheitsglas 6 mm, Festteil',
-     'Bodenebener Einstieg — auf Wunsch barrierefrei','Unterputz-Thermostat in Chrom oder Schwarz','Demontage, Einbau und Endreinigung']},
- {n:'Comfort',img:'shower',claim:'Der meistgewählte Weg.',from:9400,hi:1,
-  f:['Alles aus Classic, plus:','Regenbrause als Deckeneinbau','Handbrause mit separatem Ventil',
-     'Wandnische mit indirekter Beleuchtung','Armaturen in Messing oder Bronze']},
- {n:'Elegance',img:'elegance',claim:'Kristall und Licht.',from:13800,hi:0,
-  f:['Alles aus Comfort, plus:','Aufsatzbecken in Ihrer Wunschfarbe','Armaturen in Chrom gebürstet oder Nickel',
-     'Hinterleuchtete Wandmarke','Spiegel mit Lichtkranz nach Maß']}
-];
-/* Duschkonzepte: bewusst nur angeschnitten — Name, Claim, ab-Preis, Beratung.
-   (Farbwähler & Detail-Features kommen zurück, sobald echte Glasfarben/Daten vorliegen.) */
-const LINECOL=['var(--c1)','var(--c3)','var(--c4)'];
-document.getElementById('linesGrid').innerHTML = LINES.map((l,li)=>`
- <article class="line lite ${l.hi?'hi':''}" style="--lc:${LINECOL[li]}">
-   ${l.hi?'<span class="flag">Beliebteste Wahl</span>':''}
-   <span class="lbar"></span>
-   <h3>${l.n}</h3><div class="claim">${l.claim}</div>
-   <div class="price"><div class="from">Komplettpaket ab</div><div class="v">${l.from.toLocaleString('de-DE')} €</div></div>
-   <a href="#termin" class="btn ghost slim">Beratung anfragen</a>
- </article>`).join('');
 
 /* ---------- Shop: Kategorien, Unterkategorien, Produkte ---------- */
 /* Katalogstruktur (Notizbuch): Parfümerie · Kosmetik · Textil, je Damen/Herren/Kinder.
@@ -2088,23 +1950,22 @@ const CATS=[
   subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'}]},
  {id:'mode', n:'Mode', img:'assets/p/62_regenjacke_b.jpg', col:'var(--c1)',
   sub:'Wasserdichte Jacken und Schuhe, Taschen und Accessoires — Regen ist unser Element.',
-  subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'huete',n:'Hüte'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
+  subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'sport',n:'Sport'},{id:'huete',n:'Hüte'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
  {id:'schmuck', n:'Schmuck', img:'assets/p/72_a.jpg', col:'var(--gold)',
   sub:'Die vier Quadrate als Schmuck — wasserfest, bleibt beim Duschen einfach an.',
   subs:[{id:'ohrringe',n:'Ohrringe'},{id:'ketten',n:'Ketten'},{id:'armschmuck',n:'Armschmuck'},{id:'mehr',n:'Ringe & mehr'}]},
- {id:'zubehoer', n:'Duschzubehör', img:'assets/p/57_seifenspender-set_b.webp', col:'var(--c3)',
-  sub:'Seifenschalen, Spender, Regal und Antirutschmatte — Zubehör aus der Welt der Duschkonzepte.',
+ {id:'zubehoer', n:'Zubehör', img:'assets/p/57_seifenspender-set_b.webp', col:'var(--c3)',
+  sub:'Seifenschalen, Spender, Regal und Antirutschmatte — schönes Zubehör fürs Zuhause.',
   subs:[{id:'zub',n:'Alle Artikel'}]}
 ];
 const P=[
- {id:'p01',cat:'parfuem',sc:'edp',n:"Eau de Parfum „Sea Breeze“, 50 ml",p:119,img:'assets/p/01_eau-de-parfum-damen_a.webp',img2:'assets/p/01_eau-de-parfum-damen_c.webp',gal:["assets/p/01_eau-de-parfum-damen_c.webp", "assets/e/dept-parfum.jpg"],r:4.8,rv:36,badge:"Bestseller",who:"damen",rel:["p02", "p03", "p04"],d:"Der Signature-Duft für Damen: Meersalz und Bergamotte in der Kopfnote, grüner Kardamom im Herzen, Zedernholz und weißer Moschus in der Basis.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
- {id:'p02',cat:'parfuem',sc:'edp',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',img2:'assets/p/02_eau-de-parfum-herren_b.webp',gal:["assets/p/02_eau-de-parfum-herren_b.webp", "assets/p/02_eau-de-parfum-herren_c.webp", "assets/e/edp-herren-mann.jpg"],r:4.9,rv:7,who:"herren",rel:["p01", "p03", "p04"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
- {id:'p03',cat:'parfuem',sc:'edp',n:"Taschenzerstäuber, 10 ml",p:24,img:'assets/p/03_taschenzerstaeuber_a.webp',img2:'assets/p/03_taschenzerstaeuber_c.webp',gal:["assets/p/03_taschenzerstaeuber_c.webp"],r:5.0,rv:14,rel:["p01", "p02", "p04"],d:"Nachfüllbarer Zerstäuber im Taschenformat — Ihr Duft im Handgepäck, büro- und flugtauglich.",x:"Lässt sich direkt aus dem Flakon befüllen und reicht für rund 120 Sprühstöße. Flugtauglich unter 100 ml."},
- {id:'p04',cat:'parfuem',sc:'edp',n:"Duft-Probierset, 5 × 2 ml",p:19,img:'assets/p/04_duft-probierset_a.webp',img2:'assets/p/04_duft-probierset_b.webp',gal:["assets/p/04_duft-probierset_b.webp", "assets/p/04_duft-probierset_c.webp"],r:4.6,rv:21,badge:"Set",rel:["p01", "p02", "p03"],d:"Alle fünf Düfte der Kollektion als Probierset — finden Sie Ihren Favoriten, bevor Sie sich festlegen.",x:"Beim Kauf eines 50-ml-Flakons innerhalb von 30 Tagen rechnen wir den Preis des Probiersets an — Beleg genügt."},
- {id:'p05',cat:'parfuem',sc:'mist',n:"Körperspray „Agrumi“, 100 ml",p:29,img:'assets/p/05_koerperspray_a.webp',img2:'assets/e/spray-detail.jpg',gal:["assets/e/spray-detail.jpg"],r:4.7,rv:28,ml:100,rel:["p01", "p02", "p03"],d:"Leichter Duftnebel für Haut und Haar — dezent, frisch und alltagstauglich.",x:"3 % Duftölanteil mit pflegendem Panthenol. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren."},
- {id:'p06',cat:'parfuem',sc:'kerzen',n:"Duftkerze, 220 g",p:44,old:54,img:'assets/p/06_duftkerze-220g_a.webp',img2:'assets/p/06_duftkerze-220g_b.webp',gal:["assets/p/06_duftkerze-220g_b.webp", "assets/p/06_duftkerze-220g_c.webp"],r:4.8,rv:35,g:220,rel:["p07", "p08", "p01"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
- {id:'p07',cat:'parfuem',sc:'kerzen',n:"Duftkerze klein, 90 g",p:24,img:'assets/p/07_duftkerze-90g_a.webp',img2:'assets/p/07_duftkerze-90g_b.webp',gal:["assets/p/07_duftkerze-90g_b.webp", "assets/p/07_duftkerze-90g_c.webp"],r:4.9,rv:6,g:90,rel:["p06", "p08", "p01"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
- {id:'p08',cat:'parfuem',sc:'kerzen',n:"Raumduft-Diffuser, 100 ml",p:39,img:'assets/p/08_raumduft-diffuser_a.webp',img2:'assets/p/08_raumduft-diffuser_c.webp',gal:["assets/p/08_raumduft-diffuser_c.webp"],r:5.0,rv:13,badge:"Neu",rel:["p06", "p07", "p01"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p02',cat:'parfuem',sc:'edp',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',img2:'assets/p/02_eau-de-parfum-herren_b.webp',gal:["assets/p/02_eau-de-parfum-herren_b.webp", "assets/p/02_eau-de-parfum-herren_c.webp", "assets/e/edp-herren-mann.jpg"],r:4.9,rv:7,who:"herren",rel:["p98", "p03", "p04"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
+ {id:'p03',cat:'parfuem',sc:'edp',n:"Taschenzerstäuber, 10 ml",p:24,img:'assets/p/03_taschenzerstaeuber_a.webp',img2:'assets/p/03_taschenzerstaeuber_c.webp',gal:["assets/p/03_taschenzerstaeuber_c.webp"],r:5.0,rv:14,rel:["p98", "p02", "p04"],d:"Nachfüllbarer Zerstäuber im Taschenformat — Ihr Duft im Handgepäck, büro- und flugtauglich.",x:"Lässt sich direkt aus dem Flakon befüllen und reicht für rund 120 Sprühstöße. Flugtauglich unter 100 ml."},
+ {id:'p04',cat:'parfuem',sc:'edp',n:"Duft-Probierset, 5 × 2 ml",p:19,img:'assets/p/04_duft-probierset_a.webp',img2:'assets/p/04_duft-probierset_b.webp',gal:["assets/p/04_duft-probierset_b.webp", "assets/p/04_duft-probierset_c.webp"],r:4.6,rv:21,badge:"Set",rel:["p98", "p02", "p03"],d:"Alle fünf Düfte der Kollektion als Probierset — finden Sie Ihren Favoriten, bevor Sie sich festlegen.",x:"Beim Kauf eines 50-ml-Flakons innerhalb von 30 Tagen rechnen wir den Preis des Probiersets an — Beleg genügt."},
+ {id:'p05',cat:'parfuem',sc:'mist',n:"Körperspray „Agrumi“, 100 ml",p:29,img:'assets/p/05_koerperspray_a.webp',img2:'assets/e/spray-detail.jpg',gal:["assets/e/spray-detail.jpg"],r:4.7,rv:28,ml:100,rel:["p98", "p02", "p03"],d:"Leichter Duftnebel für Haut und Haar — dezent, frisch und alltagstauglich.",x:"3 % Duftölanteil mit pflegendem Panthenol. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren."},
+ {id:'p06',cat:'parfuem',sc:'kerzen',n:"Duftkerze, 220 g",p:44,old:54,img:'assets/p/06_duftkerze-220g_a.webp',img2:'assets/p/06_duftkerze-220g_b.webp',gal:["assets/p/06_duftkerze-220g_b.webp", "assets/p/06_duftkerze-220g_c.webp"],r:4.8,rv:35,g:220,rel:["p07", "p08", "p98"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p07',cat:'parfuem',sc:'kerzen',n:"Duftkerze klein, 90 g",p:24,img:'assets/p/07_duftkerze-90g_a.webp',img2:'assets/p/07_duftkerze-90g_b.webp',gal:["assets/p/07_duftkerze-90g_b.webp", "assets/p/07_duftkerze-90g_c.webp"],r:4.9,rv:6,g:90,rel:["p06", "p08", "p98"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p08',cat:'parfuem',sc:'kerzen',n:"Raumduft-Diffuser, 100 ml",p:39,img:'assets/p/08_raumduft-diffuser_a.webp',img2:'assets/p/08_raumduft-diffuser_c.webp',gal:["assets/p/08_raumduft-diffuser_c.webp"],r:5.0,rv:13,badge:"Neu",rel:["p06", "p07", "p98"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
  {id:'p09',cat:'kosmetik',sc:'dusche',n:"Duschgel, 250 ml",p:14,img:'assets/p/09_duschgel-250_a.webp',img2:'assets/p/09_duschgel-250_b.webp',gal:["assets/p/09_duschgel-250_b.webp", "assets/e/dept-kosmetik.jpg"],r:4.6,rv:20,badge:"Bestseller",ml:250,rel:["p10", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p10',cat:'kosmetik',sc:'dusche',n:"Duschgel, 500 ml",p:22,old:26,img:'assets/p/10_duschgel-500_a.webp',img2:'assets/p/10_duschgel-500_detail.jpg',gal:["assets/p/10_duschgel-500_detail.jpg"],r:4.8,rv:36,ml:500,rel:["p09", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p11',cat:'kosmetik',sc:'dusche',n:"Duschöl, 200 ml",p:19,img:'assets/p/11_duschoel_a.webp',img2:'assets/p/11_duschoel_b.webp',gal:["assets/p/11_duschoel_b.webp", "assets/p/11_duschoel_c.webp"],r:4.9,rv:7,ml:200,rel:["p09", "p10", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
@@ -2152,9 +2013,9 @@ const P=[
  {id:'p53',cat:'mode',sc:'acc',n:"Kartenetui",p:24,img:'assets/p/53_kartenetui_a.webp',img2:'assets/p/53_kartenetui_b.webp',gal:["assets/p/53_kartenetui_b.webp", "assets/p/53_kartenetui_c.webp"],r:5.0,rv:13,mat:"Recyceltes Leder",rel:["p52", "p54", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
  {id:'p54',cat:'mode',sc:'acc',n:"Schlüsselanhänger",p:12,img:'assets/p/54_schluesselanhaenger_a.webp',img2:'assets/p/54_schluesselanhaenger_b.webp',gal:["assets/p/54_schluesselanhaenger_b.webp", "assets/p/54_schluesselanhaenger_c.webp"],r:4.6,rv:20,rel:["p52", "p53", "p55"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
  {id:'p55',cat:'mode',sc:'acc',n:"Trinkflasche, 500 ml",p:29,img:'assets/p/55_trinkflasche_a.webp',img2:'assets/p/55_trinkflasche_b.webp',gal:["assets/p/55_trinkflasche_b.webp", "assets/p/55_trinkflasche_c.webp"],r:4.7,rv:27,rel:["p52", "p53", "p54"],d:"Doppelwandige Trinkflasche im Markendesign — hält 12 Stunden heiß und 24 Stunden kalt.",x:"Edelstahl, BPA-frei, dicht. Von Hand spülen, nicht in die Mikrowelle."},
- {id:'p56',cat:'zubehoer',sc:'zub',n:"Seifenschale",p:16,img:'assets/p/56_seifenschale_a.webp',img2:'assets/p/56_seifenschale_b.webp',gal:["assets/p/56_seifenschale_b.webp", "assets/p/56_seifenschale_c.webp"],r:4.8,rv:34,rel:["p57", "p58", "p59"],d:"Duschzubehör aus der Welt der La-Doccia-Duschkonzepte — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
+ {id:'p56',cat:'zubehoer',sc:'zub',n:"Seifenschale",p:16,img:'assets/p/56_seifenschale_a.webp',img2:'assets/p/56_seifenschale_b.webp',gal:["assets/p/56_seifenschale_b.webp", "assets/p/56_seifenschale_c.webp"],r:4.8,rv:34,rel:["p57", "p58", "p59"],d:"Zubehör im La-Doccia-Design — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
  {id:'p57',cat:'zubehoer',sc:'zub',n:"Seifenspender-Set, 2-teilig",p:39,img:'assets/p/57_seifenspender-set_a.webp',img2:'assets/p/57_seifenspender-set_b.webp',gal:["assets/p/57_seifenspender-set_b.webp", "assets/p/57_seifenspender-set_c.webp"],r:4.9,rv:5,badge:"Set",rel:["p56", "p58", "p59"],d:"Zwei Seifenspender aus mattem Glas mit gravierter Wortmarke — für Seife und Lotion am Waschplatz.",x:"Nachfüllbar, Pumpe aus Metall. Feucht abwischen; die Gravur ist dauerhaft eingebrannt."},
- {id:'p58',cat:'zubehoer',sc:'zub',n:"Glasabzieher",p:24,img:'assets/p/58_glasabzieher_a.webp',img2:'assets/p/58_glasabzieher_b.webp',gal:["assets/p/58_glasabzieher_b.webp", "assets/p/58_glasabzieher_c.webp"],r:5.0,rv:12,badge:"Bestseller",rel:["p56", "p57", "p59"],d:"Duschzubehör aus der Welt der La-Doccia-Duschkonzepte — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
+ {id:'p58',cat:'zubehoer',sc:'zub',n:"Glasabzieher",p:24,img:'assets/p/58_glasabzieher_a.webp',img2:'assets/p/58_glasabzieher_b.webp',gal:["assets/p/58_glasabzieher_b.webp", "assets/p/58_glasabzieher_c.webp"],r:5.0,rv:12,badge:"Bestseller",rel:["p56", "p57", "p59"],d:"Zubehör im La-Doccia-Design — Glas, Metall und klare Linien statt Plastik-Look.",x:"Feucht abwischen, Kalk mit einem Tropfen Zitronensäure lösen. Werkzeuglose Montage — keine Bohrlöcher nötig."},
  {id:'p59',cat:'zubehoer',sc:'zub',n:"Duschregal",p:49,img:'assets/p/59_duschregal_a.webp',img2:'assets/p/59_duschregal_b.webp',gal:["assets/p/59_duschregal_b.webp", "assets/p/59_duschregal_c.webp"],r:4.6,rv:19,rel:["p56", "p57", "p58"],d:"Duschregal aus pulverbeschichtetem Metall — hängt ohne Bohren, rostet nicht, hält die ganze Routine.",x:"Werkzeuglose Montage an der Glaswand oder am Brausekopf. Ablauföffnungen gegen stehendes Wasser."},
  {id:'p60',cat:'zubehoer',sc:'zub',n:"Antirutschmatte",p:19,img:'assets/p/60_antirutschmatte_a.webp',img2:'assets/p/60_antirutschmatte_b.webp',gal:["assets/p/60_antirutschmatte_b.webp", "assets/p/60_antirutschmatte_c.webp"],r:4.8,rv:35,rel:["p56", "p57", "p58"],d:"Antirutschmatte mit starkem Saughalt — Sicherheit, die man nicht sieht, aber jeden Tag spürt.",x:"Saugnäpfe auf glattem Untergrund fest andrücken. Waschbar bei 30 °C — hygienischer als jede Einwegmatte."},
  {id:'p61',cat:'schmuck',sc:'armschmuck',n:'Armband „Quattro“',p:19,img:'assets/p/61_armband_gelb_a.jpg',img2:'assets/p/61_armband_b.jpg',gal:["assets/p/61_armband_b.jpg","assets/p/61_armband_c.jpg"],r:4.9,rv:12,badge:'Neu',colors:[0,2,3],cimg:{Gelb:'assets/p/61_armband_gelb_a.jpg','Türkis':'assets/p/61_armband_tuerkis_a.jpg',Violett:'assets/p/61_armband_violett_a.jpg'},rel:["p54","p53","p55"],d:'Gewebtes Textilarmband mit eingewebter Wortmarke und den vier Quadraten — Verschluss aus gebürstetem Edelstahl.',x:'Wasserfest und hautfreundlich: bleibt beim Duschen, Schwimmen und Sport einfach am Arm. Feucht abwischen genügt.'},
@@ -2164,15 +2025,15 @@ const P=[
  {id:'p65',cat:'mode',sc:'schuhe',n:'Chelsea-Boot „Lucido“, wasserdicht',p:119,img:'assets/p/65_a.jpg',img2:'assets/p/65_b.jpg',gal:["assets/p/65_b.jpg", "assets/p/65_c.jpg"],r:4.7,rv:14,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'Gummiertes Leder, wasserdicht',rel:["p63","p64","p69"],d:'Wasserdichter Chelsea-Boot in Violett mit elastischem Einstieg — der elegante Schuh für Regentage.',x:'Verschweißte Sohle, wasserdichtes Obermaterial. Mit feuchtem Tuch pflegen, kein Imprägnierspray nötig.'},
  {id:'p66',cat:'mode',sc:'schuhe',n:'Loafer „Giallo“, wasserfest',p:89,img:'assets/p/66_a.jpg',img2:'assets/p/66_b.jpg',gal:["assets/p/66_b.jpg", "assets/p/66_c.jpg"],r:4.8,rv:11,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'Gummierter Feinstoff, wasserfest',rel:["p64","p65","p47"],d:'Gelber Loafer mit gummierter Oberfläche und weißer Sohle — Büro-tauglich, regenfest.',x:'Wasserfest bis starker Regen, abwischbar. Herausnehmbares Fußbett, rutschhemmende Sohle.'},
  {id:'p67',cat:'mode',sc:'schuhe',n:'Sandale „Estate“, wasserfest',p:59,img:'assets/p/67_a.jpg',img2:'assets/p/67_b.jpg',gal:["assets/p/67_b.jpg", "assets/p/67_c.jpg"],r:4.6,rv:9,badge:'Neu',sizes:["36/37","38/39","40/41","42/43"],mat:'EVA & Softriemen, wasserfest',rel:["p48","p66","p55"],d:'Sportliche Sandale in Orange mit weicher Dämpfung — für Pool, Strand und Sommerregen.',x:'Komplett wasserfest, schnelltrocknende Riemen, waschbar bei 30 °C.'},
- {id:'Kastiger Colorblock-Anorak in Türkis und Gelb mit Half-Zip und Kängurutasche — das Wasser perlt einfach ab.',cat:'mode',sc:'jacken',n:'Anorak „Tempesta“',p:139,img:'assets/p/68_a.jpg',img2:'assets/p/68_b.jpg',gal:["assets/p/68_b.jpg"],r:4.8,rv:13,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p70","p63"],d:'Gelber Anorak mit halbem Reißverschluss und Kängurutasche — das Wasser perlt einfach ab.',x:'Wassersäule 10.000 mm, getapte Nähte, elastischer Saum. Bei 30 °C waschen, Imprägnierung im Trockner reaktivieren.'},
+ {id:'p68',cat:'mode',sc:'jacken',n:'Anorak „Tempesta“',p:139,img:'assets/p/68_a.jpg',img2:'assets/p/68_b.jpg',gal:["assets/p/68_b.jpg"],r:4.8,rv:13,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p70","p63"],d:'Kastiger Colorblock-Anorak in Türkis und Gelb mit Half-Zip und Kängurutasche — das Wasser perlt einfach ab.',x:'Wassersäule 10.000 mm, getapte Nähte, elastischer Saum. Bei 30 °C waschen, Imprägnierung im Trockner reaktivieren.'},
  {id:'p69',cat:'mode',sc:'jacken',n:'Parka „Riparo“',p:189,img:'assets/p/69_a.jpg',img2:'assets/p/69_b.jpg',gal:["assets/p/69_b.jpg", "assets/p/69_c.jpg"],r:4.9,rv:8,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p68","p65"],d:'Langer wasserdichter Parka in Violett — bedeckt bis über den Oberschenkel, mit großen Pattentaschen.',x:'Wassersäule 10.000 mm, verschweißte Nähte, verstellbare Kapuze. Bei 30 °C waschen.'},
- {id:'Kurz geschnittener Windbreaker mit Stehkragen und diagonalem Farbverlauf von Orange zu Violett — 98 Gramm leicht.',cat:'mode',sc:'jacken',n:'Windbreaker „Vento“',p:99,img:'assets/p/70_a.jpg',img2:'assets/p/70_b.jpg',gal:["assets/p/70_b.jpg"],r:4.7,rv:16,badge:'Neu',mat:'100 % Ripstop-Polyester, wasserabweisend',sizes:["S","M","L","XL"],rel:["p68","p62","p67"],d:'Ultraleichter Windbreaker in Orange — passt gefaltet in die eigene Brusttasche.',x:'Wasserabweisend und winddicht, reflektierender Reißverschluss. Passt gefaltet in die eigene Brusttasche.'},
+ {id:'p70',cat:'mode',sc:'jacken',n:'Windbreaker „Vento“',p:99,img:'assets/p/70_a.jpg',img2:'assets/p/70_b.jpg',gal:["assets/p/70_b.jpg"],r:4.7,rv:16,badge:'Neu',mat:'100 % Ripstop-Polyester, wasserabweisend',sizes:["S","M","L","XL"],rel:["p68","p62","p67"],d:'Kurz geschnittener Windbreaker mit Stehkragen und diagonalem Farbverlauf von Orange zu Violett — 98 Gramm leicht.',x:'Wasserabweisend und winddicht, reflektierender Reißverschluss. Passt gefaltet in die eigene Brusttasche.'},
  {id:'p71',cat:'mode',sc:'jacken',n:'Trenchcoat „Milano“, wasserdicht',p:199,img:'assets/p/71_a.jpg',img2:'assets/p/71_b.jpg',gal:["assets/p/71_b.jpg", "assets/p/71_c.jpg"],r:4.9,rv:6,badge:'Neu',mat:'Technisches Gabardine-Gewebe, wasserdicht',sizes:["S","M","L","XL"],rel:["p69","p62","p65"],d:'Eleganter wasserdichter Trenchcoat in Off-White mit Gürtel — Klassiker-Silhouette, moderne Membran.',x:'Wasserdicht mit klassischer Optik: verdeckte Knopfleiste, verschweißte Nähte. Professionelle Pflege empfohlen.'},
- {id:'p72',cat:'schmuck',sc:'ohrringe',n:'Ohrstecker „Quattro“',p:29,img:'assets/p/72_a.jpg',r:4.9,rv:21,badge:'Neu',rel:["p73","p74","p61"],d:'Ohrstecker in gebürstetem Gold — je ein offenes Quadrat mit Emaille in Türkis und Violett.',x:'Wasserfest und nickelfrei — bleibt beim Duschen und Schwimmen einfach an. 925er-Silberstift, vergoldet.'},
+ {id:'p72',cat:'schmuck',sc:'ohrringe',n:'Ohrstecker „Quattro“',p:29,img:'assets/p/72_a.jpg',img2:'assets/p/72_b.jpg',gal:['assets/p/72_b.jpg'],r:4.9,rv:21,badge:'Neu',rel:["p73","p74","p61"],d:'Ohrstecker in gebürstetem Gold — je ein offenes Quadrat mit Emaille in Türkis und Violett.',x:'Wasserfest und nickelfrei — bleibt beim Duschen und Schwimmen einfach an. 925er-Silberstift, vergoldet.'},
  {id:'p73',cat:'schmuck',sc:'ohrringe',n:'Creolen „Cerchio“',p:39,img:'assets/p/73_a.jpg',r:4.8,rv:15,badge:'Neu',rel:["p72","p75","p76"],d:'Goldene Creolen mit kleinen Quadrat-Charms in Gelb und Orange — dezent bunt.',x:'Wasserfest und nickelfrei, Steckverschluss. Charms abnehmbar und mit p81 kombinierbar.'},
- {id:'p74',cat:'schmuck',sc:'ketten',n:'Kette „Pendente“',p:49,img:'assets/p/74_kette_a.jpg',r:4.9,rv:19,badge:'Neu',rel:["p75","p72","p61"],d:'Feine Goldkette mit einem offenen Quadrat-Anhänger in Türkis-Emaille — das Markenzeichen zum Tragen.',x:'Wasserfest und nickelfrei — bleibt beim Duschen an. Länge 45 cm, mit 5-cm-Verlängerung.'},
+ {id:'p74',cat:'schmuck',sc:'ketten',n:'Kette „Pendente“',p:49,img:'assets/p/74_kette_a.jpg',img2:'assets/p/74_b.jpg',gal:['assets/p/74_b.jpg'],r:4.9,rv:19,badge:'Neu',rel:["p75","p72","p61"],d:'Feine Goldkette mit einem offenen Quadrat-Anhänger in Türkis-Emaille — das Markenzeichen zum Tragen.',x:'Wasserfest und nickelfrei — bleibt beim Duschen an. Länge 45 cm, mit 5-cm-Verlängerung.'},
  {id:'p75',cat:'schmuck',sc:'ketten',n:'Gliederkette „Catena“',p:59,img:'assets/p/75_a.jpg',r:4.8,rv:12,badge:'Neu',rel:["p74","p78","p73"],d:'Goldene Gliederkette mit vier kleinen Emaille-Quadraten in den Markenfarben.',x:'Wasserfest und nickelfrei. Länge 42 cm, Karabinerverschluss.'},
- {id:'p76',cat:'schmuck',sc:'armschmuck',n:'Armreif „Rigido“',p:45,img:'assets/p/76_a.jpg',r:4.9,rv:10,badge:'Neu',rel:["p61","p77","p74"],d:'Schmaler goldener Armreif mit vier eingelegten Emaille-Quadraten.',x:'Wasserfest und nickelfrei — duschen, schwimmen, Sport: alles kein Problem. Innenmaß 60 mm.'},
+ {id:'p76',cat:'schmuck',sc:'armschmuck',n:'Armreif „Rigido“',p:45,img:'assets/p/76_a.jpg',img2:'assets/p/76_b.jpg',gal:['assets/p/76_b.jpg'],r:4.9,rv:10,badge:'Neu',rel:["p61","p77","p74"],d:'Schmaler goldener Armreif mit vier eingelegten Emaille-Quadraten.',x:'Wasserfest und nickelfrei — duschen, schwimmen, Sport: alles kein Problem. Innenmaß 60 mm.'},
  {id:'p77',cat:'schmuck',sc:'mehr',n:'Ring „Anello“',p:35,img:'assets/p/77_a.jpg',r:4.8,rv:14,badge:'Neu',rel:["p76","p72","p74"],d:'Goldener Ring mit einem offenen Quadrat in Türkis-Emaille als Ringkopf.',x:'Wasserfest und nickelfrei. Größen 52–60 — bei Unsicherheit eine Nummer größer wählen.'},
  {id:'p78',cat:'schmuck',sc:'ketten',n:'Fußkettchen „Cavigliera“',p:25,img:'assets/p/78_a.jpg',r:4.7,rv:9,badge:'Neu',rel:["p75","p67","p61"],d:'Zartes goldenes Fußkettchen mit einem orangen Quadrat-Charm — der Sommer-Klassiker.',x:'Wasserfest — für Pool und Strand gemacht. Länge 24 cm mit Verlängerung.'},
  {id:'p79',cat:'schmuck',sc:'mehr',n:'Pin „Spilla“',p:19,img:'assets/p/79_a.jpg',r:4.8,rv:7,badge:'Neu',rel:["p80","p81","p53"],d:'Emaille-Pin mit den vier Quadraten auf goldenem Steg — fürs Revers, die Tasche oder den Kulturbeutel.',x:'Butterfly-Verschluss, Emaille kratzfest gebrannt.'},
@@ -2184,23 +2045,28 @@ const P=[
  {id:'p85',cat:'mode',sc:'schuhe',who:'kinder',n:'Kinder-Sneaker „Salto“, wasserdicht',p:54,img:'assets/p/85_a.jpg',img2:'assets/p/85_b.jpg',gal:["assets/p/85_b.jpg", "assets/p/85_c.jpg"],r:4.9,rv:9,badge:'Neu',mat:'Recyceltes Mesh, wasserdichte Membran',sizes:["24/25","26/27","28/29","30/31"],rel:["p64","p82","p83"],d:'Weißer Kinder-Sneaker mit Regenbogen-Schnellverschluss und dem Vier-Farben-Streifen — wasserdicht für jeden Schulweg.',x:'Elastische Schnürung ohne Binden, wasserdichte Membran, waschbare Sohle.'},
  {id:'p86',cat:'mode',sc:'huete',who:'kinder',n:'Kinder-Sommerhut „Sole Mini“',p:19,img:'assets/p/86_a.jpg',img2:'assets/p/86_b.jpg',gal:["assets/p/86_b.jpg", "assets/p/86_c.jpg"],r:4.8,rv:8,badge:'Neu',mat:'100 % Baumwolle',sizes:["50","52","54"],rel:["p88","p89","p84"],d:'Weißer Bucket-Hut für Kinder mit dem bunten Quadrate-Band — UV-Schutz, der gern getragen wird.',x:'UPF 50+, waschbar bei 30 °C, Kinnband abnehmbar.'},
  {id:'p87',cat:'kosmetik',sc:'haar',who:'kinder',n:'Kinder-Shampoo „Bolla“, 250 ml',p:12,img:'assets/p/87_a.jpg',img2:'assets/p/87_b.jpg',gal:["assets/p/87_b.jpg", "assets/p/87_c.jpg"],r:4.9,rv:16,badge:'Neu',ml:250,rel:["p19","p96","p82"],d:'Mildes Kinder-Shampoo in der Verlaufsflasche mit Blubber-Kappe — keine Tränen, viel Schaum.',x:'Ohne Tränen-Formel, pH-hautneutral, ohne Parfümallergene. Auch als Duschgel nutzbar.'},
- {id:'p88',cat:'mode',sc:'huete',who:'damen',n:'Sommerhut „Sole“',p:49,img:'assets/p/88_a.jpg',r:4.9,rv:12,badge:'Neu',mat:'Papierstroh-Geflecht',sizes:["S/M","L/XL"],rel:["p89","p86","p18"],d:'Weißer Sommerhut mit weit schwingender Krempe und dem schmalen Quadrate-Band — Schatten, der gut aussieht.',x:'UPF 50+, formstabil, mit verstellbarem Innenband. Zum Transport flach rollbar.'},
+ {id:'p88',cat:'mode',sc:'huete',who:'damen',n:'Sommerhut „Sole“',p:49,img:'assets/p/88_a.jpg',img2:'assets/p/88_b.jpg',gal:['assets/p/88_b.jpg'],r:4.9,rv:12,badge:'Neu',mat:'Papierstroh-Geflecht',sizes:["S/M","L/XL"],rel:["p89","p86","p18"],d:'Weißer Sommerhut mit weit schwingender Krempe und dem schmalen Quadrate-Band — Schatten, der gut aussieht.',x:'UPF 50+, formstabil, mit verstellbarem Innenband. Zum Transport flach rollbar.'},
  {id:'p89',cat:'mode',sc:'huete',who:'damen',n:'Bucket Hat „Bianco“',p:39,img:'assets/p/89_a.jpg',r:4.8,rv:10,badge:'Neu',mat:'Baumwoll-Twill',sizes:["S/M","L/XL"],rel:["p88","p86","p64"],d:'Weißer Bucket Hat aus festem Twill mit gestickter Wortmarke — der Sommer-Klassiker der Kollektion.',x:'Waschbar bei 30 °C, behält die Form. Passt zu allem — vom Duschtuch bis zur Regenjacke.'},
- {id:'p90',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Giardino“, 50 ml',p:119,img:'assets/p/90_a.jpg',r:4.9,rv:11,badge:'Neu',rel:["p01","p91","p05"],d:'Grüner Garten nach dem Regen: Feige, grüne Blätter und Vetiver im Verlaufs-Flakon von Türkis zu Klarglas.',x:'11 % Duftölanteil, hält 5–7 Stunden. Der frische Duft für Frühling und Sommer.'},
+ {id:'p90',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Giardino“, 50 ml',p:119,img:'assets/p/90_a.jpg',r:4.9,rv:11,badge:'Neu',rel:["p98","p91","p05"],d:'Grüner Garten nach dem Regen: Feige, grüne Blätter und Vetiver im Verlaufs-Flakon von Türkis zu Klarglas.',x:'11 % Duftölanteil, hält 5–7 Stunden. Der frische Duft für Frühling und Sommer.'},
  {id:'p91',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Tramonto“, 50 ml',p:129,img:'assets/p/91_a.jpg',r:4.9,rv:7,badge:'Neu',rel:["p90","p02","p06"],d:'Sonnenuntergang im Flakon: Orangenblüte, Sandelholz und Vanille im Verlauf von Orange zu Violett.',x:'13 % Duftölanteil, hält 7–9 Stunden. Der warme Abendduft der Kollektion.'},
  {id:'p92',cat:'kosmetik',sc:'haar',n:'Shampoo „Volume“, 250 ml',p:19,img:'assets/p/92_a.jpg',r:4.8,rv:13,badge:'Neu',ml:250,rel:["p19","p93","p21"],d:'Volumen-Shampoo in der schimmernden Violett-Flasche — Fülle ohne Beschweren.',x:'Mit Reisprotein und Panthenol, sulfatfrei. Für feines Haar, tägliche Anwendung.'},
  {id:'p93',cat:'kosmetik',sc:'haar',n:'Shampoo „Repair“, 250 ml',p:19,img:'assets/p/93_a.jpg',r:4.9,rv:9,badge:'Neu',ml:250,rel:["p92","p22","p23"],d:'Repair-Shampoo in der Amber-Gold-Flasche — Aufbau für strapaziertes Haar.',x:'Mit Keratin und Arganöl, sulfatfrei. Nach Sonne, Färben oder Hitze-Styling.'},
  {id:'p94',cat:'kosmetik',sc:'koerper',n:'Lippenbalsam „Berry“',p:9,img:'assets/p/94_a.jpg',r:4.9,rv:18,badge:'Neu',rel:["p95","p17","p15"],d:'Beeren-Lippenbalsam in der runden Violett-Tube — mit zartem Farbschimmer.',x:'Mit Sheabutter und Beerenwachs, leicht tönend. Ohne Mineralöl.'},
  {id:'p95',cat:'kosmetik',sc:'koerper',n:'Lippenbalsam „Citrus“',p:9,img:'assets/p/95_a.jpg',r:4.8,rv:15,badge:'Neu',rel:["p94","p17","p18"],d:'Zitrus-Lippenbalsam im Gelb-Orange-Verlauf — frisch, pflegend, sommerlich.',x:'Mit Sheabutter und Zitrusöl, mit LSF 15. Ohne Mineralöl.'},
  {id:'p96',cat:'kosmetik',sc:'dusche',n:'Duschgel „Tropic“, 250 ml',p:16,img:'assets/p/96_a.jpg',r:4.8,rv:12,badge:'Neu',ml:250,rel:["p09","p96","p87"],d:'Tropisches Duschgel im Türkis-Limette-Verlauf — Kokoswasser und Limette unter der Dusche.',x:'Sulfatfrei, pH 5,5. Der Urlaubs-Duft für jeden Morgen.'},
- {id:'p97',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Notte“, 50 ml',p:159,img:'assets/p/97_a.jpg',img2:'assets/p/luxus-trio.jpg',gal:["assets/p/luxus-trio.jpg"],r:5.0,rv:6,badge:'Neu',rel:["p91","p90","p02"],d:'Das schwarze Juwel der Kollektion: Oud, schwarze Vanille und Ambra im Flakon aus schwarzem Glas mit Goldschimmer.',x:'15 % Duftölanteil, hält über 10 Stunden — der Abendduft für besondere Anlässe. In der Geschenkbox mit Magnetverschluss.'},
- {id:'p98',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Marmo“, 50 ml',p:149,img:'assets/p/98_a.jpg',img2:'assets/p/luxus-trio.jpg',gal:["assets/p/luxus-trio.jpg"],r:4.9,rv:8,badge:'Neu',rel:["p97","p01","p90"],d:'Kühle Eleganz: weißer Moschus, Iris und ein Hauch nasser Stein — im Flakon mit echter Marmor-Maserung, jedes Stück ein Unikat.',x:'12 % Duftölanteil, hält 7–9 Stunden. Der cleane Signature-Duft für jeden Tag mit Anspruch.'},
- {id:'p99',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Prisma“, 50 ml',p:139,img:'assets/p/99_a.jpg',img2:'assets/p/luxus-trio.jpg',gal:["assets/p/luxus-trio.jpg"],r:4.9,rv:5,badge:'Neu',rel:["p90","p91","p97"],d:'Licht in Duftform: Bergamotte, Neroli und weiße Blüten im facettierten Kristallflakon, der das Licht in Farben bricht.',x:'12 % Duftölanteil, hält 6–8 Stunden. Frisch-blumig — die vier Quadrate als Lichtspektrum gedacht.'},
+ {id:'p97',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Notte“, 50 ml',p:159,img:'assets/p/97_a.jpg',img2:'assets/p/97_b.jpg',gal:['assets/p/97_b.jpg'],r:5.0,rv:6,badge:'Neu',rel:["p91","p90","p02"],d:'Das schwarze Juwel der Kollektion: Oud, schwarze Vanille und Ambra im Flakon aus schwarzem Glas mit Goldschimmer.',x:'15 % Duftölanteil, hält über 10 Stunden — der Abendduft für besondere Anlässe. In der Geschenkbox mit Magnetverschluss.'},
+ {id:'p98',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Marmo“, 50 ml',p:149,img:'assets/p/98_a.jpg',img2:'assets/p/98_b.jpg',gal:['assets/p/98_b.jpg'],r:4.9,rv:8,badge:'Neu',rel:["p97","p99","p90"],d:'Kühle Eleganz: weißer Moschus, Iris und ein Hauch nasser Stein — im Flakon mit echter Marmor-Maserung, jedes Stück ein Unikat.',x:'12 % Duftölanteil, hält 7–9 Stunden. Der cleane Signature-Duft für jeden Tag mit Anspruch.'},
+ {id:'p99',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Prisma“, 50 ml',p:139,img:'assets/p/99_a.jpg',img2:'assets/p/99_b.jpg',gal:['assets/p/99_b.jpg'],r:4.9,rv:5,badge:'Neu',rel:["p90","p91","p97"],d:'Licht in Duftform: Bergamotte, Neroli und weiße Blüten im facettierten Kristallflakon, der das Licht in Farben bricht.',x:'12 % Duftölanteil, hält 6–8 Stunden. Frisch-blumig — die vier Quadrate als Lichtspektrum gedacht.'},
  {id:'p100',cat:'kosmetik',sc:'koerper',n:'Körperöl „Oro“, 100 ml',p:34,img:'assets/p/100_a.jpg',r:4.9,rv:9,badge:'Neu',ml:100,rel:["p13","p14","p97"],d:'Trockenöl mit feinem Goldschimmer in der Pipettenflasche — Glow für Haut und Haar.',x:'98 % Ölanteil aus Jojoba und Mandel, zieht schnell ein. Auf die feuchte Haut oder in die Längen geben.'},
  {id:'p101',cat:'kosmetik',sc:'dusche',n:'Badesalz „Cristalli“, 400 g',p:24,img:'assets/p/101_a.jpg',r:4.8,rv:7,badge:'Neu',g:400,rel:["p96","p11","p100"],d:'Grobes Badesalz in den vier Markenfarben, geschichtet im Apothekerglas mit Korkdeckel — fast zu schön zum Auflösen.',x:'Mit Meersalz und ätherischen Ölen, je Farbe eine Duftnote. 2–3 Esslöffel ins warme Wasser.'},
+ {id:'p102',cat:'mode',sc:'sport',who:'damen',n:'Leggings „Motion“',p:59,img:'assets/p/102_a.jpg',img2:'assets/p/102_b.jpg',gal:['assets/p/102_b.jpg','assets/p/105_b.jpg'],r:4.9,rv:15,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p103","p104","p105"],d:'High-Waist-Leggings in Violett mit formendem Seamless-Strick — blickdicht, weich, stützend.',x:'Squat-proof getestet, flache Nähte, kein Verrutschen. Bei 30 °C waschen, kein Trockner.'},
+ {id:'p103',cat:'mode',sc:'sport',who:'damen',n:'Sport-Bra „Support“',p:39,img:'assets/p/103_a.jpg',img2:'assets/p/103_b.jpg',gal:['assets/p/103_b.jpg'],r:4.8,rv:12,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p102","p106","p104"],d:'Racerback-Bra in Türkis mit mittlerem Halt — für Studio, Yoga und Alltag.',x:'Herausnehmbare Pads, atmungsaktiver Seamless-Strick. Bei 30 °C im Wäschenetz waschen.'},
+ {id:'p104',cat:'mode',sc:'sport',who:'damen',n:'Biker-Shorts „Sprint“',p:34,img:'assets/p/104_a.jpg',img2:'assets/p/104_b.jpg',gal:['assets/p/104_b.jpg'],r:4.8,rv:10,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p102","p103","p106"],d:'High-Waist-Radlerhose in Orange — formend, blickdicht, ohne Aufrollen am Bein.',x:'Silikonfreier Halt am Saum, flache Nähte. Bei 30 °C waschen.'},
+ {id:'p105',cat:'mode',sc:'sport',who:'damen',n:'Zip-Jacke „Warm-up“',p:69,img:'assets/p/105_a.jpg',img2:'assets/p/105_b.jpg',gal:['assets/p/105_b.jpg'],r:4.9,rv:8,badge:'Neu',mat:'88 % Polyester, 12 % Elasthan',sizes:["XS","S","M","L"],rel:["p102","p103","p70"],d:'Cropped Trainingsjacke in Gelb mit Stehkragen und Daumenlöchern — das Layer für davor und danach.',x:'Vier-Wege-Stretch, schnelltrocknend. Bei 30 °C waschen.'},
+ {id:'p106',cat:'mode',sc:'sport',who:'damen',n:'Trainings-Top „Flow“',p:29,img:'assets/p/106_a.jpg',img2:'assets/p/106_b.jpg',gal:['assets/p/106_b.jpg'],r:4.7,rv:9,badge:'Neu',mat:'100 % recyceltes Polyester',sizes:["XS","S","M","L"],rel:["p103","p102","p105"],d:'Lässiges weißes Trainingsshirt mit überschnittenen Schultern — luftig über Bra und Leggings.',x:'Federleicht und atmungsaktiv, bleibt geruchsneutral. Bei 30 °C waschen.'},
  {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
- {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p01", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
+ {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p98", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
  {id:'S4',cat:'kosmetik',sc:'haar',n:"Haarpflege-Set",p:59,img:'assets/s/S4_haarpflege-set_a.webp',img2:'assets/s/S4_haarpflege-set_b.webp',gal:["assets/s/S4_haarpflege-set_b.webp", "assets/s/S4_haarpflege-set_c.webp"],r:4.6,rv:14,badge:"Set",rel:["p19", "p20", "p21"],d:"Shampoo, Conditioner und Haarmaske als Kur-Set — die volle Routine für beanspruchtes Haar.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
  {id:'S5',cat:'mode',sc:'taschen',n:"Handtaschen-Set",p:79,img:'assets/s/S5_handtaschen-set_a.webp',img2:'assets/s/S5_handtaschen-set_b.webp',gal:["assets/s/S5_handtaschen-set_b.webp", "assets/s/S5_handtaschen-set_c.webp"],r:4.7,rv:21,badge:"Set",rel:["p49", "p50", "p51"],d:"Kosmetiktasche, Kulturbeutel und Taschenspiegel im Set — gepackt in einer Minute.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
  {id:'S6',cat:'mode',sc:'taschen',n:"Reiseset",p:44,img:'assets/s/S6_reiseset_a.webp',img2:'assets/s/S6_reiseset_b.webp',gal:["assets/s/S6_reiseset_b.webp", "assets/s/S6_reiseset_c.webp"],r:4.8,rv:28,badge:"Set",rel:["p49", "p50", "p51"],d:"Kulturbeutel mit Reisegrößen der Pflege-Kollektion — handgepäcktauglich und nachfüllbar.",x:"Alle Flaschen unter 100 ml und auslaufsicher — direkt in den Sicherheitsbeutel am Flughafen."},
@@ -2233,6 +2099,9 @@ const COLL={
  farben:{n:'In Ihren Lieblingsfarben',img:'assets/p/41_handtuch-set-4_a.webp',
    sub:'Artikel, die es in den vier Markenfarben von La Doccia gibt.',
    f:p=>!!p.colors},
+ sport:{n:'Sport',img:'assets/e/hero-sport.jpg',
+   sub:'Seamless-Leggings, Bras und Tops — moderne Sportkleidung in den vier Markenfarben.',
+   f:p=>p.sc==='sport'},
  damen:{n:'Damen',img:'assets/e/damen-tote.jpg',
    sub:'Ausgewählt für Damen — inklusive aller Unisex-Artikel der Kollektion.',
    f:p=>!p.who||p.who==='damen'}
@@ -2276,7 +2145,7 @@ function cardRail(p){
 /* Startseite: maximal 3 ausgewählte Produkte, mobil angeschnitten scrollbar */
 (function(){
   const host=document.getElementById('homeRails'); if(!host)return;
-  const FEATURED=['p62','p01','S2'];
+  const FEATURED=['p62','p97','S2'];
   const items=FEATURED.map(id=>P.find(p=>p.id===id)).filter(Boolean);
   host.innerHTML = `
     <div class="railhead">
@@ -2357,6 +2226,28 @@ function renderShop(){
     return;
   }
 
+  /* ---- Eigene Welt: DAMEN — kuratiert über alle Kategorien ---- */
+  if(curCat==='damenwelt'){
+    document.getElementById('v-shop').classList.add('landing');
+    const rail=(ids)=>`<div class="rail">${ids.map(id=>P.find(p=>p.id===id)).filter(Boolean).map(cardRail).join('')}</div>`;
+    document.getElementById('shopBody').innerHTML=`
+      <div class="nwhero top reveal">
+        <img src="assets/e/hero-damen.jpg" alt="La Doccia Damen" loading="lazy">
+        <div class="ntx"><span class="stag">La Doccia Damen</span>
+          <h2 class="mega">Für jeden Tag.<br>Für jedes Wetter.</h2>
+          <button class="btn pill" onclick="document.querySelector('#shopBody .grouplbl').scrollIntoView({behavior:'smooth',block:'start'})">Jetzt entdecken</button></div>
+      </div>
+      ${uspRow()}
+      <div class="grouplbl" style="margin-top:8px">Sport</div>${rail(['p102','p103','p104','p105','p106'])}
+      <div class="grouplbl" style="margin-top:40px">Jacken &amp; Hüte</div>${rail(['p62','p71','p69','p88','p89'])}
+      <div class="grouplbl" style="margin-top:40px">Düfte &amp; Pflege</div>${rail(['p97','p98','p91','p100','p94'])}
+      <div class="grouplbl" style="margin-top:40px">Schmuck</div>${rail(['p72','p74','p76','p61','p77'])}
+      <div style="margin-top:38px;text-align:center"><button class="btn ghost" onclick="filt('damen')">Alles für Damen als Liste</button></div>`;
+    document.getElementById('fcount').textContent='Damen';
+    setTimeout(obs,60); headerClear();
+    return;
+  }
+
   /* ---- Eigene Welt: KINDER — Kinder-Hero ganz oben wie auf der Startseite ---- */
   if(curCat==='kinderwelt'){
     document.getElementById('v-shop').classList.add('landing');
@@ -2403,7 +2294,7 @@ function renderShop(){
   document.getElementById('shopTitle').textContent = curCat==='all'?'Alle Produkte':cObj.n;
   document.getElementById('shopTitle').style.setProperty('--dc', cObj&&cObj.col?cObj.col:'transparent');
   document.getElementById('shopSub').textContent = curCat==='all'
-    ? 'Parfümerie, Kosmetik, Textil und Duschzubehör — die Marke zum Mitnehmen.'
+    ? 'Parfümerie, Kosmetik, Mode und Schmuck — die Marke zum Mitnehmen.'
     : cObj.sub;
   crumb2(curCat==='all'?null:cObj.n);
 
@@ -2427,7 +2318,7 @@ function renderShop(){
        cta:'Jetzt shoppen',fn:"document.querySelector('.gsplit').scrollIntoView({behavior:'smooth',block:'center'})"},
       {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS}&nbsp;% sparen`,
        cta:'Sale entdecken',fn:"filt('sale')",sale:true,right:true},
-      {img:'heroFlatlay',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
+      {img:'assets/e/spa-friends.jpg',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
        cta:'Code sichern',fn:"popOpen()"},
       {img:'assets/e/hero-regen.mp4',seq:['assets/e/hero-regen.mp4','assets/e/hero-regen-2.mp4'],tag:'Neu: Regenjacke „Perla“',sub:'Wasserdicht — das Wasser perlt einfach ab',h:'Bleib trocken.<br>Bleib bunt.',
        cta:'Jacke entdecken',fn:"openP('p62')"}
@@ -2449,7 +2340,7 @@ function renderShop(){
         <div class="sbar">
           <span>La Doccia · Wien</span>
           <span>↺&nbsp; 30 Tage Rückgabe</span>
-          <span>✓&nbsp; Über 400 umgesetzte Projekte</span>
+          <span>✓&nbsp; Kostenloser Versand &amp; Rückversand</span>
         </div>
       </div>
       ${uspRow()}
@@ -2469,16 +2360,7 @@ function renderShop(){
           <p class="railsub">Was unsere Kundinnen und Kunden am häufigsten kaufen.</p></div>
         </div>
         <div class="rail">${[...P].sort((a,b)=>b.r*b.rv-a.r*a.rv).slice(0,8).map(cardRail).join('')}</div>
-      </div>
-      <section class="dept reveal" style="background:color-mix(in srgb, var(--c3) 7%, #fff)">
-        <div class="dimg" onclick="goSec('linien')"><img src="${src('duschgruen')}" alt="Duschkonzepte" loading="lazy"></div>
-        <div class="dtx">
-          <span class="dbar" style="background:var(--c3)"></span>
-          <h3>Duschkonzepte</h3>
-          <p>Ihre Dusche nach Maß — drei Linien, ein Festpreis, auf Wunsch barrierefrei. Auch für Hotels, Fitnessstudios und Friseursalons.</p>
-          <button class="btn ghost" onclick="goSec('termin')">Kostenlose Beratung anfragen</button>
-        </div>
-      </section>`;
+      </div>`;
   }
   /* Übersicht = Einstiegsseite (Calzedonia-Prinzip): Kacheln + Bestseller,
      kein 23-Produkte-Dump. Produktgrids gibt es pro Abteilung. */
@@ -2863,24 +2745,6 @@ function goSec(id){
     if(el)window.scrollTo({top:el.getBoundingClientRect().top+scrollY-84,behavior:'smooth'})},80);
 }
 
-/* ---------- Bewertungen ---------- */
-const dist=[[5,91,169],[4,7,13],[3,1,2],[2,1,1],[1,0,1]];
-document.getElementById('bars').innerHTML = dist.map(([s,pc,n])=>`
- <div class="bar"><span class="lbl">${s} ★</span><span class="track">
- <span class="fill" data-pc="${pc}"></span></span><span class="pc">${n}</span></div>`).join('');
-function fillBars(){document.querySelectorAll('.bar .fill').forEach(f=>f.style.width=f.dataset.pc+'%')}
-const REV=[
- {w:'Familie Brandt, Hannover',s:5,p:'Designlinie Comfort',
-  t:'Vom Aufmaß bis zur letzten Fuge elf Tage — und der Preis war am Ende exakt der aus dem Angebot. Die Rinne lässt sich wirklich herausnehmen, das war für uns das Argument.'},
- {w:'Dr. Kowalski, Berlin',s:5,p:'Designlinie Elegance',
-  t:'Wirkt jeden Morgen wie ein Hotel-Spa. Was mich überzeugt hat: Man hat uns von zwei Ideen aktiv abgeraten, weil sie im Alltag Ärger gemacht hätten.'},
- {w:'M. Sievers, Bielefeld',s:4,p:'Designlinie Classic',
-  t:'Sehr sauberes Handwerk und ein guter Preis. Der Beratungstermin hat sich um eine Woche verschoben, dafür lief die Umsetzung dann exakt nach Plan.'}
-];
-document.getElementById('revGrid').innerHTML = REV.map(r=>`
- <div class="rev"><div class="top"><div class="who">${r.w}<span>Verifiziertes Projekt</span></div>
-   <div class="st">${starStr(r.s)}</div></div><q>${r.t}</q>
-   <div class="prod">${r.p}</div></div>`).join('');
 
 /* ---------- Warenkorb (persistent, variantenfähig) ---------- */
 let CART=store.get('ld_cart',[]);
@@ -3009,13 +2873,6 @@ function popSubmit(){
 }
 function popClose(){document.getElementById('pop').classList.remove('on')}
 function popOpen(){document.getElementById('pop').classList.add('on')}  // bewusst geöffnet (Hero-Slide)
-function terminSubmit(){
-  const n=document.getElementById('tn').value.trim(), t=document.getElementById('ttel').value.trim();
-  if(!n||!t){toast('Bitte Name und Telefonnummer angeben');return}
-  track('generate_lead',{line:document.getElementById('tl').value});
-  document.getElementById('tok').style.display='block';
-  toast('Anfrage eingegangen — wir rufen Sie an.');
-}
 /* Popup nur ein einziges Mal pro Besucher (localStorage), erst nach 22 s Verweildauer */
 setTimeout(()=>{
   let seen=false; try{seen=!!localStorage.getItem('ld_pop')}catch(e){}
