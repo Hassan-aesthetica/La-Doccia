@@ -412,14 +412,19 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
 .band .eyebrow{color:var(--brass-lo)}
 .teaser{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.6vw,20px)}
 @media(max-width:900px){.teaser{grid-template-columns:repeat(2,1fr)}}
-.tcat{position:relative;overflow:hidden;cursor:pointer;background:#fff}
+.tcat{position:relative;overflow:hidden;cursor:pointer;background:#fff;border-radius:14px}
 .tcat img{width:100%;aspect-ratio:3/4;object-fit:cover;transition:1s cubic-bezier(.2,.7,.3,1)}
 .tcat:hover img{transform:scale(1.05)}
-.tcat .lab{position:absolute;left:0;right:0;bottom:0;padding:18px;color:#fff;
-  background:linear-gradient(180deg,transparent,rgba(20,20,24,.5) 34%,rgba(20,20,24,.86));
-  text-shadow:0 1px 10px rgba(20,20,24,.55)}
-.tcat .lab .n{font-family:var(--serif);font-size:21px}
-.tcat .lab .c{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;opacity:.78;margin-top:3px}
+.tcat .lab{position:absolute;left:10px;right:10px;bottom:10px;border-radius:12px;
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:12px 14px;color:var(--ink);
+  background:rgba(255,255,255,.93);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 10px 28px -16px rgba(20,20,24,.35)}
+.tcat .lab .n{font-family:var(--serif);font-size:19px;display:flex;align-items:center;gap:9px;min-width:0}
+.tcat .lab .n .sq{width:12px;height:12px;border:3px solid var(--kachel-col,var(--brass));border-radius:2px;flex:none}
+.tcat .lab .c{font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  background:var(--ink);color:#fff;padding:8px 16px;border-radius:999px;flex:none;transition:background .3s}
+.tcat:hover .lab .c{background:var(--kachel-col,var(--brass))}
 
 /* Angeschnittenes Produktband */
 .railhead{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;
@@ -1063,15 +1068,19 @@ nav.main .salelink:hover{border-color:#E0231C}
 .gtile:hover .gbtn{transform:translateY(-2px)}
 @media(max-width:700px){.gsplit{grid-template-columns:1fr}.gtile{height:min(72vh,560px)}}
 .catgrid{grid-template-columns:repeat(3,1fr)}
-.catgrid .gtile{height:min(52vh,460px)}
+.catgrid .gtile{height:min(52vh,460px);border-radius:14px}
 .catgrid .glab{
-  background:rgba(23,23,27,.62);
-  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
-  border-top:3px solid var(--kachel-col,transparent);
-  padding:clamp(14px,1.8vw,20px);gap:10px;
+  inset:auto 10px 10px 10px;flex-direction:row;align-items:center;justify-content:space-between;
+  background:rgba(255,255,255,.93);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  border-radius:12px;padding:13px 16px;gap:12px;
+  box-shadow:0 10px 28px -16px rgba(20,20,24,.35);
 }
-.catgrid .glab h3{font-size:clamp(20px,2.2vw,30px)}
-.catgrid .gbtn{padding:10px 26px;font-size:11px}
+.catgrid .glab h3{color:var(--ink);text-transform:none;letter-spacing:0;text-shadow:none;
+  font-size:clamp(17px,1.8vw,23px);display:flex;align-items:center;gap:10px;min-width:0}
+.catgrid .glab h3 .sq{width:13px;height:13px;border:3px solid var(--kachel-col,var(--brass));border-radius:2px;flex:none}
+.catgrid .gbtn{padding:9px 20px;font-size:10.5px;background:var(--ink);color:#fff;transition:background .3s,transform .25s}
+.catgrid .gtile:hover .gbtn{background:var(--kachel-col,var(--brass))}
+@media(max-width:700px){.catgrid .glab{padding:10px 12px}.catgrid .gbtn{padding:8px 14px;font-size:9.5px}}
 @media(max-width:700px){.catgrid{grid-template-columns:repeat(2,1fr)}.catgrid .gtile{height:44vw}}
 /* Hero-Slides mit Person links: Text rechtsbündig auf der freien Fläche */
 .shero.full .stx.txr{padding:0 clamp(24px,7vw,110px) 130px 42%;align-items:flex-end;text-align:right}
@@ -1304,14 +1313,14 @@ nav.main .salelink:hover{border-color:#E0231C}
       <div class="reveal" id="homeRails"></div>
       <!-- Große Abteilungsbilder: direkter Einstieg in den Shop -->
       <div class="teaser reveal" style="margin-top:38px">
-        <div class="tcat" onclick="go('shop','parfuem')"><img data-img="assets/p/01_eau-de-parfum-damen_b.webp" alt="Parfümerie">
-          <div class="lab"><div class="n">Parfümerie</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="go('shop','kosmetik')"><img data-img="assets/p/22_haarmaske_b.webp" alt="Kosmetik">
-          <div class="lab"><div class="n">Kosmetik</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="go('shop','textil')"><img data-img="assets/p/42_morgenmantel-frottee_b.webp" alt="Textil">
-          <div class="lab"><div class="n">Textil</div><div class="c">Kaufen</div></div></div>
-        <div class="tcat" onclick="go('shop','neuwelt')"><img data-img="assets/e/hero-sommer.jpg" alt="Neuheiten">
-          <div class="lab"><div class="n">Neu</div><div class="c">Kollektion ansehen</div></div></div>
+        <div class="tcat" style="--kachel-col:var(--c4)" onclick="go('shop','parfuem')"><img data-img="assets/p/01_eau-de-parfum-damen_b.webp" alt="Parfümerie">
+          <div class="lab"><div class="n"><span class="sq"></span>Parfümerie</div><div class="c">Entdecken</div></div></div>
+        <div class="tcat" style="--kachel-col:var(--c3)" onclick="go('shop','kosmetik')"><img data-img="assets/p/22_haarmaske_b.webp" alt="Kosmetik">
+          <div class="lab"><div class="n"><span class="sq"></span>Kosmetik</div><div class="c">Entdecken</div></div></div>
+        <div class="tcat" style="--kachel-col:var(--c2)" onclick="go('shop','textil')"><img data-img="assets/p/42_morgenmantel-frottee_b.webp" alt="Textil">
+          <div class="lab"><div class="n"><span class="sq"></span>Textil</div><div class="c">Entdecken</div></div></div>
+        <div class="tcat" style="--kachel-col:var(--c1)" onclick="go('shop','neuwelt')"><img data-img="assets/e/hero-sommer.jpg" alt="Neuheiten">
+          <div class="lab"><div class="n"><span class="sq"></span>Neu</div><div class="c">Entdecken</div></div></div>
       </div>
       <div style="margin-top:34px">
         <button class="btn ghost" onclick="go('shop')">Alle Produkte ansehen</button>
@@ -2361,7 +2370,7 @@ function renderShop(){
       <div class="gsplit catgrid reveal">
         ${CATS.map(c=>`<div class="gtile" style="--kachel-col:${c.col}" onclick="filt('${c.id}')">
           <img src="${src(c.img)}" alt="${c.n}" loading="lazy">
-          <div class="glab"><h3>${c.n}</h3><span class="gbtn">Kaufen</span></div>
+          <div class="glab"><h3><span class="sq"></span>${c.n}</h3><span class="gbtn">Entdecken</span></div>
         </div>`).join('')}
       </div>
       <!-- Bestseller direkt nach den Kategorie-Kacheln: Social Proof + einfache Wahl
