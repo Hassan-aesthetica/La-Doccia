@@ -1080,6 +1080,20 @@ nav.main .salelink:hover{border-color:#E0231C}
 .catgrid .glab h3 .sq{width:13px;height:13px;border:3px solid var(--kachel-col,var(--brass));border-radius:2px;flex:none}
 .catgrid .gbtn{padding:9px 20px;font-size:10.5px;background:var(--ink);color:#fff;transition:background .3s,transform .25s}
 .catgrid .gtile:hover .gbtn{background:var(--kachel-col,var(--brass))}
+.catgrid .gtile.empty{opacity:.5;cursor:default}
+.catgrid .gtile.empty img{filter:grayscale(.5)}
+/* Einstieg nach Olegs Vorgabe: Vollbild, nur die drei Türen — kein konkurrierender Text */
+.shero.full .stx{display:none}
+.whoenter{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);
+  display:flex;justify-content:center;gap:clamp(10px,2vw,22px);z-index:6;pointer-events:none}
+.whoenter button{pointer-events:auto;font-family:var(--serif);font-size:clamp(17px,2.2vw,26px);
+  letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(23,23,27,.28);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  border:1.5px solid rgba(255,255,255,.85);border-radius:999px;
+  padding:clamp(12px,1.6vw,18px) clamp(26px,4vw,52px);cursor:pointer;
+  transition:background .3s,transform .3s;text-shadow:0 1px 12px rgba(20,20,24,.5)}
+.whoenter button:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+@media(max-width:700px){.whoenter{flex-direction:column;align-items:center;gap:12px}}
 @media(max-width:700px){.catgrid .glab{padding:10px 12px}.catgrid .gbtn{padding:8px 14px;font-size:9.5px}}
 @media(max-width:700px){.catgrid{grid-template-columns:repeat(2,1fr)}.catgrid .gtile{height:44vw}}
 /* Hero-Slides mit Person links: Text rechtsbündig auf der freien Fläche */
@@ -1198,24 +1212,11 @@ nav.main .salelink:hover{border-color:#E0231C}
   </div>
   <!-- Navigationszeile (Bernstein: Produkte · Sale % · Trends & Inspiration · Service) -->
   <nav class="hnav">
-    <span class="navdrop"><a href="#" class="prodbtn" onclick="go('shop');return false">
-        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Produkte</a>
-      <div class="dropm">
-        <a href="#" onclick="go('shop','neuwelt');return false" style="color:var(--brass);font-weight:600">Neu</a>
-        <a href="#" onclick="go('shop','parfuem');return false">Parfümerie</a>
-        <a href="#" onclick="go('shop','kosmetik');return false">Kosmetik</a>
-        <a href="#" onclick="go('shop','textil');return false">Textil</a>
-        <a href="#" onclick="go('shop','mode');return false">Mode</a>
-        <a href="#" onclick="go('shop','schmuck');return false">Schmuck</a>
-        <a href="#" onclick="go('shop','zubehoer');return false">Zubehör</a>
-        <a href="#" onclick="go('shop','all');return false" style="color:var(--brass)">Alle Produkte</a>
-      </div></span>
     <a href="#" class="neulink" onclick="go('shop','neuwelt');return false">Neu</a>
     <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale&nbsp;%</a>
     <a href="#" onclick="go('shop','damenwelt');return false">Damen</a>
-    <a href="#" onclick="go('shop','sport');return false">Sport</a>
+    <a href="#" onclick="go('shop','herrenwelt');return false">Herren</a>
     <a href="#" onclick="go('shop','kinderwelt');return false">Kinder</a>
-    <span class="hsoon" title="In Bearbeitung">Herren</span>
     <span class="navdrop"><a href="#" onclick="go('shop','neu');return false">Trends &amp; Inspiration</a>
       <div class="dropm">
         <a href="#" onclick="go('shop','neuwelt');return false">Neuheiten</a>
@@ -1237,15 +1238,8 @@ nav.main .salelink:hover{border-color:#E0231C}
   <button class="x" onclick="mnav(0)">&times;</button>
   <a href="#" onclick="go('shop','neuwelt');mnav(0);return false">Neu</a>
   <a href="#" onclick="go('shop','damenwelt');mnav(0);return false">Damen</a>
-  <a href="#" onclick="go('shop','sport');mnav(0);return false">Sport</a>
+  <a href="#" onclick="go('shop','herrenwelt');mnav(0);return false">Herren</a>
   <a href="#" onclick="go('shop','kinderwelt');mnav(0);return false">Kinder</a>
-  <a href="#" onclick="go('shop','parfuem');mnav(0);return false">Parfümerie</a>
-  <a href="#" onclick="go('shop','kosmetik');mnav(0);return false">Kosmetik</a>
-  <a href="#" onclick="go('shop','textil');mnav(0);return false">Textil</a>
-  <a href="#" onclick="go('shop','mode');mnav(0);return false">Mode</a>
-  <a href="#" onclick="go('shop','schmuck');mnav(0);return false">Schmuck</a>
-  <a href="#" onclick="go('shop','zubehoer');mnav(0);return false">Zubehör</a>
-  <a href="#" onclick="go('shop');mnav(0);return false">Shop</a>
   <a href="#" class="sub" style="color:#E0231C" onclick="go('shop','sale');mnav(0);return false">Sale</a>
   <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
   <a href="#" class="sub" onclick="go('wunsch');renderWish();mnav(0);return false">♡ Wunschliste</a>
@@ -1975,7 +1969,7 @@ const CATS=[
   subs:[{id:'zub',n:'Alle Artikel'}]}
 ];
 const P=[
- {id:'p02',cat:'parfuem',sc:'edp',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',img2:'assets/p/02_eau-de-parfum-herren_b.webp',gal:["assets/p/02_eau-de-parfum-herren_b.webp", "assets/p/02_eau-de-parfum-herren_c.webp", "assets/e/edp-herren-mann.jpg"],r:4.9,rv:7,who:"herren",rel:["p98", "p03", "p04"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
+ {id:'p02',cat:'parfuem',sc:'edp',who:'herren',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',img2:'assets/p/02_eau-de-parfum-herren_b.webp',gal:["assets/p/02_eau-de-parfum-herren_b.webp", "assets/p/02_eau-de-parfum-herren_c.webp", "assets/e/edp-herren-mann.jpg"],r:4.9,rv:7,who:"herren",rel:["p98", "p03", "p04"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
  {id:'p03',cat:'parfuem',sc:'edp',n:"Taschenzerstäuber, 10 ml",p:24,img:'assets/p/03_taschenzerstaeuber_a.webp',img2:'assets/p/03_taschenzerstaeuber_c.webp',gal:["assets/p/03_taschenzerstaeuber_c.webp"],r:5.0,rv:14,rel:["p98", "p02", "p04"],d:"Nachfüllbarer Zerstäuber im Taschenformat — Ihr Duft im Handgepäck, büro- und flugtauglich.",x:"Lässt sich direkt aus dem Flakon befüllen und reicht für rund 120 Sprühstöße. Flugtauglich unter 100 ml."},
  {id:'p04',cat:'parfuem',sc:'edp',n:"Duft-Probierset, 5 × 2 ml",p:19,img:'assets/p/04_duft-probierset_a.webp',img2:'assets/p/04_duft-probierset_b.webp',gal:["assets/p/04_duft-probierset_b.webp", "assets/p/04_duft-probierset_c.webp"],r:4.6,rv:21,badge:"Set",rel:["p98", "p02", "p03"],d:"Alle fünf Düfte der Kollektion als Probierset — finden Sie Ihren Favoriten, bevor Sie sich festlegen.",x:"Beim Kauf eines 50-ml-Flakons innerhalb von 30 Tagen rechnen wir den Preis des Probiersets an — Beleg genügt."},
  {id:'p05',cat:'parfuem',sc:'mist',n:"Körperspray „Agrumi“, 100 ml",p:29,img:'assets/p/05_koerperspray_a.webp',img2:'assets/e/spray-detail.jpg',gal:["assets/e/spray-detail.jpg"],r:4.7,rv:28,ml:100,rel:["p98", "p02", "p03"],d:"Leichter Duftnebel für Haut und Haar — dezent, frisch und alltagstauglich.",x:"3 % Duftölanteil mit pflegendem Panthenol. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren."},
@@ -2075,14 +2069,13 @@ const P=[
  {id:'p99',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Prisma“, 50 ml',p:139,img:'assets/p/99_a.jpg',img2:'assets/p/99_b.jpg',gal:['assets/p/99_b.jpg'],r:4.9,rv:5,badge:'Neu',rel:["p90","p91","p97"],d:'Licht in Duftform: Bergamotte, Neroli und weiße Blüten im facettierten Kristallflakon, der das Licht in Farben bricht.',x:'12 % Duftölanteil, hält 6–8 Stunden. Frisch-blumig — die vier Quadrate als Lichtspektrum gedacht.'},
  {id:'p100',cat:'kosmetik',sc:'koerper',n:'Körperöl „Oro“, 100 ml',p:34,img:'assets/p/100_a.jpg',img2:'assets/p/100_b.jpg',gal:['assets/p/100_b.jpg'],r:4.9,rv:9,badge:'Neu',ml:100,rel:["p13","p14","p97"],d:'Trockenöl mit feinem Goldschimmer in der Pipettenflasche — Glow für Haut und Haar.',x:'98 % Ölanteil aus Jojoba und Mandel, zieht schnell ein. Auf die feuchte Haut oder in die Längen geben.'},
  {id:'p101',cat:'kosmetik',sc:'dusche',n:'Badesalz „Cristalli“, 400 g',p:24,img:'assets/p/101_a.jpg',img2:'assets/p/101_b.jpg',gal:['assets/p/101_b.jpg'],r:4.8,rv:7,badge:'Neu',g:400,rel:["p96","p11","p100"],d:'Grobes Badesalz in den vier Markenfarben, geschichtet im Apothekerglas mit Korkdeckel — fast zu schön zum Auflösen.',x:'Mit Meersalz und ätherischen Ölen, je Farbe eine Duftnote. 2–3 Esslöffel ins warme Wasser.'},
- {id:'p102',cat:'mode',sc:'sport',who:'damen',n:'Leggings „Motion“',p:59,img:'assets/p/102_a.jpg',img2:'assets/p/102_b.jpg',gal:['assets/p/102_c.jpg','assets/p/102_d.jpg','assets/p/102_b.jpg'],r:4.9,rv:15,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p103","p104","p105"],d:'High-Waist-Leggings in Violett mit formendem Seamless-Strick — blickdicht, weich, stützend.',x:'Squat-proof getestet, flache Nähte, kein Verrutschen. Bei 30 °C waschen, kein Trockner.'},
- {id:'p103',cat:'mode',sc:'sport',who:'damen',n:'Sport-Bra „Support“',p:39,img:'assets/p/103_a.jpg',img2:'assets/p/103_b.jpg',gal:['assets/p/103_b.jpg'],r:4.8,rv:12,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p102","p106","p104"],d:'Racerback-Bra in Türkis mit mittlerem Halt — für Studio, Yoga und Alltag.',x:'Herausnehmbare Pads, atmungsaktiver Seamless-Strick. Bei 30 °C im Wäschenetz waschen.'},
- {id:'p104',cat:'mode',sc:'sport',who:'damen',n:'Biker-Shorts „Sprint“',p:34,img:'assets/p/104_a.jpg',img2:'assets/p/104_b.jpg',gal:['assets/p/104_b.jpg'],r:4.8,rv:10,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p102","p103","p106"],d:'High-Waist-Radlerhose in Orange — formend, blickdicht, ohne Aufrollen am Bein.',x:'Silikonfreier Halt am Saum, flache Nähte. Bei 30 °C waschen.'},
+ {id:'p102',cat:'mode',sc:'sport',who:'damen',n:'Leggings „Motion“',p:59,img:'assets/p/102_a.jpg',img2:'assets/p/102_b.jpg',gal:['assets/p/102_c.jpg','assets/p/102_d.jpg','assets/p/102_b.jpg'],r:4.9,rv:15,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p103","p105","p106"],d:'High-Waist-Leggings in Violett mit formendem Seamless-Strick — blickdicht, weich, stützend.',x:'Squat-proof getestet, flache Nähte, kein Verrutschen. Bei 30 °C waschen, kein Trockner.'},
+ {id:'p103',cat:'mode',sc:'sport',who:'damen',n:'Sport-Bra „Support“',p:39,img:'assets/p/103_a.jpg',img2:'assets/p/103_b.jpg',gal:['assets/p/103_b.jpg'],r:4.8,rv:12,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p102","p106","p105"],d:'Racerback-Bra in Türkis mit mittlerem Halt — für Studio, Yoga und Alltag.',x:'Herausnehmbare Pads, atmungsaktiver Seamless-Strick. Bei 30 °C im Wäschenetz waschen.'},
  {id:'p105',cat:'mode',sc:'sport',who:'damen',n:'Zip-Jacke „Warm-up“',p:69,img:'assets/p/105_a.jpg',img2:'assets/p/105_b.jpg',gal:['assets/p/105_b.jpg'],r:4.9,rv:8,badge:'Neu',mat:'88 % Polyester, 12 % Elasthan',sizes:["XS","S","M","L"],rel:["p102","p103","p70"],d:'Cropped Trainingsjacke in Gelb mit Stehkragen und Daumenlöchern — das Layer für davor und danach.',x:'Vier-Wege-Stretch, schnelltrocknend. Bei 30 °C waschen.'},
  {id:'p106',cat:'mode',sc:'sport',who:'damen',n:'Trainings-Top „Flow“',p:29,img:'assets/p/106_a.jpg',img2:'assets/p/106_b.jpg',gal:['assets/p/106_b.jpg'],r:4.7,rv:9,badge:'Neu',mat:'100 % recyceltes Polyester',sizes:["XS","S","M","L"],rel:["p103","p102","p105"],d:'Lässiges weißes Trainingsshirt mit überschnittenen Schultern — luftig über Bra und Leggings.',x:'Federleicht und atmungsaktiv, bleibt geruchsneutral. Bei 30 °C waschen.'},
  {id:'p107',cat:'mode',sc:'sport',who:'damen',n:'Sport-Shorts „Pace“',p:32,img:'assets/p/107_a.jpg',img2:'assets/p/107_b.jpg',gal:['assets/p/107_b.jpg'],r:4.8,rv:7,badge:'Neu',mat:'76 % Polyamid, 24 % Elasthan (Seamless)',sizes:["XS","S","M","L"],rel:["p102","p103","p109"],d:'Seamless High-Waist-Shorts in Grün — formend und blickdicht, für Studio und Sommerläufe.',x:'Flache Nähte, kein Aufrollen am Bein. Bei 30 °C waschen, kein Trockner.'},
  {id:'p108',cat:'mode',sc:'sport',who:'damen',n:'Sporttasche „Palestra“',p:49,img:'assets/p/108_a.jpg',img2:'assets/p/108_b.jpg',gal:['assets/p/108_b.jpg'],r:4.9,rv:6,badge:'Neu',mat:'100 % recyceltes Polyester',rel:["p109","p102","p105"],d:'Geräumige Trainingstasche in tiefem Violett mit gewebtem Quadrate-Label — Fach für Nasses inklusive.',x:'Separates Bodenfach für Schuhe oder nasse Handtücher, Innentasche mit Reißverschluss. Abwischbar.'},
- {id:'p109',cat:'mode',sc:'sport',who:'damen',n:'Trinkflasche „Idra“, 750 ml',p:24,img:'assets/p/109_a.jpg',img2:'assets/p/109_b.jpg',gal:['assets/p/109_b.jpg'],r:4.8,rv:11,badge:'Neu',rel:["p108","p102","p104"],d:'Doppelwandige Edelstahlflasche in mattem Türkis mit den vier Quadraten — hält 24 h kalt.',x:'Auslaufsicher, passt in gängige Flaschenhalter. Von Hand spülen, nicht für kohlensäurehaltige Getränke.'},
+ {id:'p109',cat:'mode',sc:'sport',who:'damen',n:'Trinkflasche „Idra“, 750 ml',p:24,img:'assets/p/109_a.jpg',img2:'assets/p/109_b.jpg',gal:['assets/p/109_b.jpg'],r:4.8,rv:11,badge:'Neu',rel:["p108","p102","p107"],d:'Doppelwandige Edelstahlflasche in mattem Türkis mit den vier Quadraten — hält 24 h kalt.',x:'Auslaufsicher, passt in gängige Flaschenhalter. Von Hand spülen, nicht für kohlensäurehaltige Getränke.'},
  {id:'p110',cat:'textil',sc:'maentel',who:'kinder',n:'Kinder-Bademantel „Nuvola“',p:44,img:'assets/p/110_a.jpg',img2:'assets/p/110_b.jpg',gal:['assets/p/110_b.jpg'],r:4.9,rv:12,badge:'Neu',mat:'100 % Baumwolle (Frottee)',sizes:["98/104","110/116","122/128"],rel:["p111","p82","p87"],d:'Türkiser Frottee-Bademantel mit Kapuze und Quadrate-Futter in Gelb — kuschelig nach Bad und Schwimmkurs.',x:'Saugstarkes Frottee, aufgesetzte Taschen, Aufhänger im Kragen. Bei 60 °C waschbar.'},
  {id:'p111',cat:'textil',sc:'tuecher',who:'kinder',n:'Kinder-Poncho „Onda“',p:29,img:'assets/p/111_a.jpg',img2:'assets/p/111_b.jpg',gal:['assets/p/111_b.jpg'],r:4.8,rv:9,badge:'Neu',mat:'100 % Baumwolle',rel:["p110","p84","p86"],d:'Sonnengelber Kapuzen-Poncho aus Frottee mit orangem Saum und Quadrate-Bordüre — überwerfen, fertig.',x:'Für Schwimmbad und Strand, trocknet schnell, eine Größe für 2–6 Jahre. Bei 60 °C waschbar.'},
  {id:'p112',cat:'mode',sc:'acc',who:'kinder',n:'Kinder-Regenschirm „Goccia“',p:22,img:'assets/p/112_a.jpg',img2:'assets/p/112_b.jpg',gal:['assets/p/112_b.jpg'],r:4.9,rv:8,badge:'Neu',rel:["p82","p83","p85"],d:'Oranger Kinderschirm mit Quadrate-Kante und türkisem Griff — Regen wird zum Lieblingswetter.',x:'Leichtgängig zu öffnen, abgerundete Spitzen, Ø 72 cm. Griff für kleine Hände.'},
@@ -2248,6 +2241,55 @@ function renderShop(){
     return;
   }
 
+  /* ---- Baukasten: identische Rubrik-Kacheln für Damen/Herren/Kinder ---- */
+  const WELTRUB=[
+    {n:'Parfüm',cat:'parfuem',img:'assets/p/97_b.jpg',col:'var(--c4)',kimg:'assets/p/87_a.jpg'},
+    {n:'Kosmetik',cat:'kosmetik',img:'assets/p/92_a.jpg',col:'var(--c3)',kimg:'assets/p/87_a.jpg'},
+    {n:'Mode',cat:'mode',sub:'jacken',img:'assets/p/71_a.jpg',col:'var(--c1)',kimg:'assets/p/82_a.jpg'},
+    {n:'Schuhe',cat:'mode',sub:'schuhe',img:'assets/p/64_a.jpg',col:'var(--c2)',kimg:'assets/p/83_a.jpg'},
+    {n:'Textil',cat:'textil',img:'assets/e/hero-towels.jpg',col:'var(--c1)',kimg:'assets/p/110_a.jpg'},
+    {n:'Schmuck',cat:'schmuck',img:'assets/p/74_b.jpg',col:'var(--gold)'},
+    {n:'Sportartikel',cat:'mode',sub:'sport',img:'assets/e/hero-sport.jpg',col:'var(--c3)'},
+    {n:'Zubehör',cat:'zubehoer',img:'assets/p/57_seifenspender-set_b.webp',col:'var(--c3)'}
+  ];
+  function weltCount(r,who){
+    return P.filter(p=>p.cat===r.cat&&(!r.sub||p.sc===r.sub)
+      &&((who==='kinder'||who==='herren')?p.who===who:(!p.who||p.who===who))).length;
+  }
+  window.weltGo=function(cat,sub,who){ filt(cat,who); if(sub){curSub=sub;renderShop();} };
+  function weltTiles(who){
+    return `<div class="gsplit catgrid reveal" style="margin-top:6px">${WELTRUB.map(r=>{
+      const n=weltCount(r,who);
+      const img=(who==='kinder'&&r.kimg)?r.kimg:r.img;
+      return n
+        ? `<div class="gtile" style="--kachel-col:${r.col}" onclick="weltGo('${r.cat}','${r.sub||''}','${who}')">
+             <img src="${src(img)}" alt="${r.n}" loading="lazy">
+             <div class="glab"><h3><span class="sq"></span>${r.n}</h3><span class="gbtn">Entdecken</span></div></div>`
+        : `<div class="gtile empty" style="--kachel-col:${r.col}">
+             <img src="${src(img)}" alt="${r.n}" loading="lazy">
+             <div class="glab"><h3><span class="sq"></span>${r.n}</h3><span class="gbtn">Bald da</span></div></div>`;
+    }).join('')}</div>`;
+  }
+
+  /* ---- Eigene Welt: HERREN — gleicher Baukasten, Sortiment im Aufbau ---- */
+  if(curCat==='herrenwelt'){
+    document.getElementById('v-shop').classList.add('landing');
+    document.getElementById('shopBody').innerHTML=`
+      <div class="nwhero top reveal" style="background:#17171B">
+        <img src="assets/p/97_b.jpg" alt="La Doccia Herren" loading="lazy" style="object-position:center 35%;opacity:.85">
+        <div class="ntx"><span class="stag">La Doccia Herren</span>
+          <h2 class="mega">Der Anfang<br>ist gemacht.</h2>
+          <button class="btn pill" onclick="openP('p02')">Vetiver Noir entdecken</button></div>
+      </div>
+      ${uspRow()}
+      <div class="grouplbl" style="margin-top:8px">Für Herren</div>
+      ${weltTiles('herren')}
+      <p style="margin-top:26px;color:var(--ink-45);text-align:center">Die Herrenkollektion wächst — den Anfang macht unser Eau de Parfum „Vetiver Noir".</p>`;
+    document.getElementById('fcount').textContent='Herren';
+    setTimeout(obs,60); headerClear();
+    return;
+  }
+
   /* ---- Eigene Welt: DAMEN — kuratiert über alle Kategorien ---- */
   if(curCat==='damenwelt'){
     document.getElementById('v-shop').classList.add('landing');
@@ -2260,10 +2302,8 @@ function renderShop(){
           <button class="btn pill" onclick="document.querySelector('#shopBody .grouplbl').scrollIntoView({behavior:'smooth',block:'start'})">Jetzt entdecken</button></div>
       </div>
       ${uspRow()}
-      <div class="grouplbl" style="margin-top:8px">Sport</div>${rail(['p102','p103','p104','p105','p106'])}
-      <div class="grouplbl" style="margin-top:40px">Jacken &amp; Hüte</div>${rail(['p62','p71','p69','p88','p89'])}
-      <div class="grouplbl" style="margin-top:40px">Düfte &amp; Pflege</div>${rail(['p97','p98','p91','p100','p94'])}
-      <div class="grouplbl" style="margin-top:40px">Schmuck</div>${rail(['p72','p74','p76','p61','p77'])}
+      <div class="grouplbl" style="margin-top:8px">Für Damen</div>
+      ${weltTiles('damen')}
       <div style="margin-top:38px;text-align:center"><button class="btn ghost" onclick="filt('damen')">Alles für Damen als Liste</button></div>`;
     document.getElementById('fcount').textContent='Damen';
     setTimeout(obs,60); headerClear();
@@ -2282,6 +2322,8 @@ function renderShop(){
           <button class="btn pill" onclick="document.querySelector('#shopBody .pg').scrollIntoView({behavior:'smooth',block:'start'})">Jetzt entdecken</button></div>
       </div>
       ${uspRow()}
+      <div class="grouplbl" style="margin-top:8px">Für Kinder</div>
+      ${weltTiles('kinder')}
       <section class="catsec" style="padding-top:8px">
         <div class="subhead"><h2>Für Kinder</h2><span class="cnt">${kids.length} Artikel</span></div>
         <p class="sub">Regenjacken, Stiefel, Schlappen, Sneaker, Sommerhut und mildes Shampoo — wasserfest wie die Großen.</p>
@@ -2336,14 +2378,14 @@ function renderShop(){
     /* Markenbilder im La-Doccia-Stil, alle 1920px */
     /* Knallige Produkt-Slides — die Farben SIND die Marke */
     const SLIDES=[
-      {img:'assets/e/hero-parfum.jpg',tag:'Accessoires & mehr',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
-       cta:'Jetzt shoppen',fn:"document.querySelector('.gsplit').scrollIntoView({behavior:'smooth',block:'center'})"},
-      {img:'assets/e/sale-towels.jpg',tag:'Gerade im Sale',sub:'Auf ausgewählte Artikel — 30-Tage-Bestpreise',h:`Bis zu −${mS}&nbsp;% sparen`,
-       cta:'Sale entdecken',fn:"filt('sale')",sale:true,right:true},
-      {img:'assets/e/spa-friends.jpg',tag:'Neukundenrabatt',sub:'Mit dem Newsletter zur ersten Bestellung',h:'10 % geschenkt',
-       cta:'Code sichern',fn:"popOpen()"},
-      {img:'assets/e/hero-regen.mp4',seq:['assets/e/hero-regen.mp4','assets/e/hero-regen-2.mp4'],tag:'Neu: Regenjacke „Perla“',sub:'Wasserdicht — das Wasser perlt einfach ab',h:'Bleib trocken.<br>Bleib bunt.',
-       cta:'Jacke entdecken',fn:"openP('p62')"}
+      {img:'assets/e/hero-parfum.jpg',tag:'La Doccia — Wien',sub:'Parfüm · Kosmetik · Textil — die Marke zum Mitnehmen',h:'Schönes für<br>jeden Tag.',
+       cta:'Jetzt entdecken',fn:"document.querySelector('.gsplit').scrollIntoView({behavior:'smooth',block:'center'})"},
+      {img:'assets/e/hero-regen.mp4',seq:['assets/e/hero-regen.mp4','assets/e/hero-regen-2.mp4'],tag:'Regenjacke „Perla“',sub:'Wasserdicht — das Wasser perlt einfach ab',h:'Bleib trocken.<br>Bleib bunt.',
+       cta:'Jacke entdecken',fn:"openP('p62')"},
+      {img:'assets/e/hero-towels.jpg',tag:'Frottee in vier Farben',sub:'Handtücher, Mäntel und mehr — mit gesticktem Logo',h:'Weich.<br>Wasserfest gedacht.',
+       cta:'Textil entdecken',fn:"filt('textil')"},
+      {img:'assets/e/hero-kinder.jpg',tag:'La Doccia Kinder',sub:'Regenjacken, Stiefel und mildes Shampoo',h:'Kleine Füße,<br>große Pfützen.',
+       cta:'Kinderwelt entdecken',fn:"filt('kinderwelt')",right:true}
     ];
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
@@ -2358,6 +2400,11 @@ function renderShop(){
             <h2 class="mega">${s.h}</h2>
             <div class="scta"><button class="btn pill" onclick="${s.fn.replace(/"/g,'&quot;')}">${s.cta}</button></div>
           </div></div>`).join('')}
+        <div class="whoenter">
+          <button onclick="go('shop','damenwelt')">Damen</button>
+          <button onclick="go('shop','herrenwelt')">Herren</button>
+          <button onclick="go('shop','kinderwelt')">Kinder</button>
+        </div>
         <div class="sdots">${SLIDES.map((_,i)=>`<button class="${i===0?'on':''}" onclick="goSlide(${i})" aria-label="Bild ${i+1}"></button>`).join('')}</div>
         <div class="sbar">
           <span>La Doccia · Wien</span>
@@ -2368,8 +2415,12 @@ function renderShop(){
       ${uspRow()}
       <!-- Die Karte der Seite: alle sechs Abteilungen auf einen Blick — niemand verirrt sich -->
       <div class="gsplit catgrid reveal">
-        ${CATS.map(c=>`<div class="gtile" style="--kachel-col:${c.col}" onclick="filt('${c.id}')">
-          <img src="${src(c.img)}" alt="${c.n}" loading="lazy">
+        ${[
+          {n:'Damen',img:'assets/e/hero-damen.jpg',col:'var(--c4)',fn:"go('shop','damenwelt')"},
+          {n:'Herren',img:'assets/p/97_b.jpg',col:'var(--c2)',fn:"go('shop','herrenwelt')"},
+          {n:'Kinder',img:'assets/e/hero-kinder.jpg',col:'var(--c1)',fn:"go('shop','kinderwelt')"}
+        ].map(c=>`<div class="gtile" style="--kachel-col:${c.col}" onclick="${c.fn}">
+          <img src="${c.img}" alt="${c.n}" loading="lazy">
           <div class="glab"><h3><span class="sq"></span>${c.n}</h3><span class="gbtn">Entdecken</span></div>
         </div>`).join('')}
       </div>
@@ -2408,9 +2459,9 @@ function renderShop(){
           <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Alle</button>
           <button class="subchip ${curWho==='damen'?'on':''}" onclick="whoFilt('damen')">Damen</button>
           <button class="subchip ${curWho==='kinder'?'on':''}" onclick="whoFilt('kinder')">Kinder</button>
-          <span class="subchip soon">Herren — in Bearbeitung</span></div>` : '';
+          <button class="subchip ${curWho==='herren'?'on':''}" onclick="whoFilt('herren')">Herren</button></div>` : '';
       if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
-      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>curWho==='kinder' ? p.who==='kinder' : (!p.who||p.who===curWho));
+      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>(curWho==='kinder'||curWho==='herren') ? p.who===curWho : (!p.who||p.who===curWho));
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
       /* Bei einer einzelnen Abteilung steht der große Titel schon oben —
