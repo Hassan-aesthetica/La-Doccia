@@ -1199,7 +1199,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="hbar">
     <button class="burger" onclick="mnav(1)" aria-label="Menü">
       <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-    <a href="#" id="headLogoLink" onclick="go('shop');return false"><span id="headLogoHost"></span></a>
+    <a href="#" id="headLogoLink" onclick="goHome();return false" aria-label="Zur Startseite"><span id="headLogoHost"></span></a>
     <!-- Prominente Produktsuche (Bernstein: „Finde Dein Produkt…") -->
     <label class="hsearch">
       <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
@@ -2193,6 +2193,11 @@ document.getElementById('catBar').innerHTML =
        <option value="rec">Empfohlen</option><option value="new">Neueste zuerst</option><option value="asc">Preis aufsteigend</option>
        <option value="desc">Preis absteigend</option><option value="sale">Sale zuerst</option>
      </select></div>`;
+function goHome(){
+  curQ=''; const s=document.getElementById('q'); if(s)s.value='';
+  const sg=document.getElementById('sgg'); if(sg)sg.style.display='none';
+  go('shop','all'); window.scrollTo({top:0,behavior:'auto'});
+}
 function whoFilt(id){curWho=id;renderShop()}
 function filt(id,who){
   curCat=id; curSub='all'; curWho=who||'all';
@@ -2401,7 +2406,7 @@ function renderShop(){
     tiles = `<div class="shero full" id="heroSlider">
         ${SLIDES.map((s,i)=>`<div class="slide ${i===0?'on':''}">
           ${/\.mp4$/.test(s.img)
-            ?`<video src="${src(s.img)}" poster="${s.img.replace('.mp4','_poster.jpg')}" muted autoplay playsinline
+            ?`<video src="${src(s.img)}" poster="${s.img.replace('.mp4','_poster.jpg')}" muted playsinline preload="none"
                ${s.seq?`data-seq="${s.seq.join(',')}" onended="heroNext(this)" onerror="this.loop=true;this.src='${s.img}';this.play()"`:'loop'}></video>`
             :`<img src="${src(s.img)}" alt="" ${i?'loading="lazy"':'fetchpriority="high"'}>`}
           <div class="sov"></div>
@@ -2517,7 +2522,12 @@ function heroNext(v){
 function showSlide(i){
   const s=[...document.querySelectorAll('#heroSlider .slide')]; if(!s.length)return;
   slideIdx=((i%s.length)+s.length)%s.length;
-  s.forEach((el,k)=>el.classList.toggle('on',k===slideIdx));
+  s.forEach((el,k)=>{
+    el.classList.toggle('on',k===slideIdx);
+    /* Videos sparen Bandbreite: laufen nur auf dem aktiven Slide */
+    const v=el.querySelector('video');
+    if(v){ if(k===slideIdx){ v.play().catch(()=>{}); } else { v.pause(); } }
+  });
   document.querySelectorAll('#heroSlider .sdots button').forEach((d,k)=>d.classList.toggle('on',k===slideIdx));
   slideHold=Date.now();
 }
