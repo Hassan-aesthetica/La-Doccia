@@ -1089,11 +1089,19 @@ nav.main .salelink:hover{border-color:#E0231C}
 .whoenter button{pointer-events:auto;font-family:var(--serif);font-size:clamp(17px,2.2vw,26px);
   letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(23,23,27,.28);
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
-  border:1.5px solid rgba(255,255,255,.85);border-radius:999px;
+  border:1.5px solid rgba(255,255,255,.85);border-bottom:3px solid var(--wc,#fff);border-radius:999px;
   padding:clamp(12px,1.6vw,18px) clamp(26px,4vw,52px);cursor:pointer;
-  transition:background .3s,transform .3s;text-shadow:0 1px 12px rgba(20,20,24,.5)}
-.whoenter button:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
-@media(max-width:700px){.whoenter{flex-direction:column;align-items:center;gap:12px}}
+  transition:background .35s,transform .3s,border-color .35s;text-shadow:0 1px 12px rgba(20,20,24,.5)}
+/* Desktop: der Mauszeiger löst die Farbe aus — Button füllt sich in seiner Weltfarbe */
+@media(hover:hover){
+  .whoenter button:hover{background:var(--wc);border-color:var(--wc);transform:translateY(-2px);text-shadow:none}
+}
+@media(max-width:700px){
+  .whoenter{flex-direction:column;align-items:center;gap:12px}
+  /* Handy: kein Hover — die Farbe sitzt dauerhaft dezent im unteren Rand */
+  .whoenter button{width:min(70vw,260px);background:rgba(23,23,27,.38)}
+  .whoenter button:active{background:var(--wc)}
+}
 @media(max-width:700px){
   /* Handy: nur Quadrat + Name — Button weg, sonst verdecken sich die Begriffe */
   .catgrid .gbtn{display:none}
@@ -1966,7 +1974,7 @@ const CATS=[
   subs:[{id:'tuecher',n:'Handtücher'},{id:'maentel',n:'Morgenmäntel & Frottee'}]},
  {id:'mode', n:'Mode', img:'assets/p/62_regenjacke_b.jpg', col:'var(--c1)',
   sub:'Wasserdichte Jacken und Schuhe, Taschen und Accessoires — Regen ist unser Element.',
-  subs:[{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'sport',n:'Sport'},{id:'huete',n:'Hüte'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
+  subs:[{id:'kleidung',n:'Kleidung'},{id:'jacken',n:'Jacken'},{id:'schuhe',n:'Schuhe'},{id:'sport',n:'Sport'},{id:'huete',n:'Hüte'},{id:'taschen',n:'Taschen & Etuis'},{id:'acc',n:'Accessoires'}]},
  {id:'schmuck', n:'Schmuck', img:'assets/p/72_a.jpg', col:'var(--gold)',
   sub:'Die vier Quadrate als Schmuck — wasserfest, bleibt beim Duschen einfach an.',
   subs:[{id:'ohrringe',n:'Ohrringe'},{id:'ketten',n:'Ketten'},{id:'armschmuck',n:'Armschmuck'},{id:'mehr',n:'Ringe & mehr'}]},
@@ -2083,11 +2091,20 @@ const P=[
  {id:'p110',cat:'textil',sc:'maentel',who:'kinder',n:'Kinder-Bademantel „Nuvola“',p:44,img:'assets/p/110_a.jpg',img2:'assets/p/110_b.jpg',gal:['assets/p/110_b.jpg'],r:4.9,rv:12,badge:'Neu',mat:'100 % Baumwolle (Frottee)',sizes:["98/104","110/116","122/128"],rel:["p111","p82","p87"],d:'Türkiser Frottee-Bademantel mit Kapuze und Quadrate-Futter in Gelb — kuschelig nach Bad und Schwimmkurs.',x:'Saugstarkes Frottee, aufgesetzte Taschen, Aufhänger im Kragen. Bei 60 °C waschbar.'},
  {id:'p111',cat:'textil',sc:'tuecher',who:'kinder',n:'Kinder-Poncho „Onda“',p:29,img:'assets/p/111_a.jpg',img2:'assets/p/111_b.jpg',gal:['assets/p/111_b.jpg'],r:4.8,rv:9,badge:'Neu',mat:'100 % Baumwolle',rel:["p110","p84","p86"],d:'Sonnengelber Kapuzen-Poncho aus Frottee mit orangem Saum und Quadrate-Bordüre — überwerfen, fertig.',x:'Für Schwimmbad und Strand, trocknet schnell, eine Größe für 2–6 Jahre. Bei 60 °C waschbar.'},
  {id:'p112',cat:'mode',sc:'acc',who:'kinder',n:'Kinder-Regenschirm „Goccia“',p:22,img:'assets/p/112_a.jpg',img2:'assets/p/112_b.jpg',gal:['assets/p/112_b.jpg'],r:4.9,rv:8,badge:'Neu',rel:["p82","p83","p85"],d:'Oranger Kinderschirm mit Quadrate-Kante und türkisem Griff — Regen wird zum Lieblingswetter.',x:'Leichtgängig zu öffnen, abgerundete Spitzen, Ø 72 cm. Griff für kleine Hände.'},
- {id:'p113',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Quattro“, 50 ml',p:159,img:'assets/p/113_a.jpg',r:5.0,rv:4,badge:'Neu',rel:["p114","p115","p97"],d:'Unser Signature-Flakon nach eigener Werkstatt-Skizze: gefrostetes Glas, vier Farbsegmente, vier Silben — La·Do·cc·ia. Der Deckel ist ein Glaswürfel, der sich wie ein Zauberwürfel aufdreht.',x:'13 % Duftölanteil, hält 7–9 Stunden. Limitierte Erstauflage — jede Flasche nummeriert. Design angemeldet zum Schutz ab Erstveröffentlichung.'},
- {id:'p114',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Cubo“, 50 ml',p:139,img:'assets/p/114_a.jpg',r:4.9,rv:3,badge:'Neu',rel:["p113","p115","p97"],d:'Der Würfel aus Glas: vier Seiten, vier Farben, ein Duft. Der kleine Glaswürfel obendrauf dreht sich zum Öffnen — zack, mit zwei Händen.',x:'12 % Duftölanteil, hält 6–8 Stunden. Steht wie ein Designobjekt im Regal — genau so gedacht.'},
+ {id:'p113',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Quattro“, 50 ml',p:159,img:'assets/p/113_a.jpg',r:5.0,rv:4,badge:'Neu',rel:["p114","p115","p97"],d:'Unser Signature-Flakon: vier massive Glasblöcke in den Markenfarben, elegant versetzt gestapelt — Architektur zum Aufsprühen. Gefrostetes Glas, Würfelkappe aus Metall.',x:'13 % Duftölanteil, hält 7–9 Stunden. Limitierte Erstauflage — jede Flasche nummeriert. Design angemeldet zum Schutz ab Erstveröffentlichung.'},
+ {id:'p114',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Cubo“, 50 ml',p:139,img:'assets/p/114_a.jpg',r:4.9,rv:3,badge:'Neu',rel:["p113","p115","p97"],d:'Der Turm aus vier Würfeln: jeder leicht gegen den nächsten gedreht, innen fließt der Duft von Gelb nach Violett. Ein Guss, klare Kanten, Würfelkappe.',x:'12 % Duftölanteil, hält 6–8 Stunden. Steht wie ein Designobjekt im Regal — genau so gedacht.'},
  {id:'p115',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Colore“, 50 ml',p:119,img:'assets/p/115_gelb.jpg',r:4.8,rv:5,badge:'Neu',colors:[0,1,2,3],cimg:{Gelb:'assets/p/115_gelb.jpg',Orange:'assets/p/115_orange.jpg','Türkis':'assets/p/115_tuerkis.jpg',Violett:'assets/p/115_violett.jpg'},rel:["p113","p114","p03"],d:'Die Signature-Flasche in einer Farbe komplett — wählen Sie Ihre: Gelb, Orange, Türkis oder Violett. Jede Farbe trägt ihren eigenen Duftcharakter.',x:'Gelb: Zitrus & Neroli. Orange: Ambra & Vanille. Türkis: Meersalz & Feige. Violett: Iris & Sandelholz. Je 11 % Duftölanteil.'},
  {id:'p116',cat:'mode',sc:'schuhe',who:'damen',n:'Plateau-Sneaker „Nuvola“',p:139,img:'assets/p/116_a.jpg',r:4.9,rv:2,badge:'Neu',mat:'Canvas, Gummisohle',sizes:["36","37","38","39","40","41"],rel:["p64","p65","p102"],d:'Der Statement-Sneaker: cremeweiße Bumper-Sohle mit weicher, runder Kappe — wolkig dick, federleicht getragen.',x:'Geprägtes LA DOCCIA an der Ferse, vier gestickte Quadrate am Schaft. Sohle abwischbar, Obermaterial imprägniert.'},
  {id:'p117',cat:'mode',sc:'taschen',who:'damen',n:'Handtasche „Quadra“',p:89,img:'assets/p/117_a.jpg',r:4.9,rv:3,badge:'Neu',mat:'Genarbtes Kunstleder, Baumwollfutter',rel:["p49","p50","p61"],d:'Strukturierte Handtasche in Creme mit großem eingelegtem Quadrat in Türkis — das Logo als Form, nicht als Aufdruck.',x:'Goldgeprägte Wortmarke, Magnetverschluss, Innenfach mit Reißverschluss. Mit Imprägnierspray wetterfest.'},
+ {id:'p118',cat:'mode',sc:'kleidung',who:'herren',n:'T-Shirt „Essenziale“',p:29,img:'assets/p/118_a.jpg',img2:'assets/p/118_b.jpg',gal:['assets/p/118_b.jpg','assets/p/118_video.mp4'],r:4.9,rv:4,badge:'Neu',mat:'100 % Bio-Baumwolle, 220 g/m²',sizes:["S","M","L","XL"],rel:["p119","p121","p122"],d:'Das schwere weiße T-Shirt mit der kleinen Wortmarke auf der Brust — die Basis der Herrenlinie.',x:'Vorgewaschen, verstärkte Schulternähte. Bei 30 °C waschen, kein Trockner.'},
+ {id:'p119',cat:'mode',sc:'kleidung',who:'herren',n:'Hoodie „Comodo“',p:69,img:'assets/p/119_a.jpg',img2:'assets/p/119_b.jpg',gal:['assets/p/119_b.jpg'],r:4.9,rv:3,badge:'Neu',mat:'80 % Baumwolle, 20 % Polyester (angeraut)',sizes:["S","M","L","XL"],rel:["p118","p121","p126"],d:'Anthrazitfarbener Hoodie mit weißen Kordeln und gesticktem Brustlogo — schwer, weich, sauber verarbeitet.',x:'Innen angeraut, Bündchen mit Elasthan. Bei 30 °C auf links waschen.'},
+ {id:'p120',cat:'mode',sc:'kleidung',who:'herren',n:'Poloshirt „Marina“',p:49,img:'assets/p/120_a.jpg',r:4.8,rv:3,badge:'Neu',mat:'100 % Piqué-Baumwolle',sizes:["S","M","L","XL"],rel:["p118","p122","p123"],d:'Piqué-Polo in Türkis mit weißem Logostick — vom Frühstück bis zum Abendessen richtig angezogen.',x:'Formstabiler Kragen, seitliche Schlitze. Bei 30 °C waschen, in Form ziehen.'},
+ {id:'p121',cat:'mode',sc:'kleidung',who:'herren',n:'Jogginghose „Rilassato“',p:59,img:'assets/p/121_a.jpg',img2:'assets/p/121_b.jpg',gal:['assets/p/121_b.jpg'],r:4.8,rv:2,badge:'Neu',mat:'80 % Baumwolle, 20 % Polyester',sizes:["S","M","L","XL"],rel:["p119","p118","p123"],d:'Graumelierte Jogginghose mit schmalem Bein und Logodruck am Oberschenkel — bequem, ohne schlampig zu wirken.',x:'Eingrifftaschen mit Reißverschluss, Bündchen am Saum. Bei 30 °C waschen.'},
+ {id:'p122',cat:'mode',sc:'huete',who:'herren',n:'Cap „Quadro“',p:29,img:'assets/p/122_a.jpg',img2:'assets/p/122_b.jpg',gal:['assets/p/122_b.jpg'],r:4.9,rv:5,badge:'Neu',mat:'100 % Baumwoll-Twill',rel:["p118","p120","p123"],d:'Weiße Six-Panel-Cap mit gesticktem LA DOCCIA und den vier Quadraten — sitzt, passt, steht jedem.',x:'Größenverstellbar mit Metallschließe. Nicht waschen, feucht abwischen und lufttrocknen.'},
+ {id:'p123',cat:'mode',sc:'kleidung',who:'herren',n:'Loafer-Socken, 3er-Pack',p:19,img:'assets/p/123_a.jpg',r:4.9,rv:5,badge:'Neu',mat:'80 % merzerisierte Baumwolle, 18 % Polyamid, 2 % Elasthan',sizes:["39-42","43-46"],rel:["p118","p121","p122"],d:'Drei Paar feine Anzugsocken — Schwarz, Königsblau, Schokoladenbraun — mit den vier eingestrickten Quadraten am Bund. Gemacht für Loafer.',x:'Feinstrick aus merzerisierter Baumwolle, verstärkte Ferse und Spitze. Bei 40 °C waschbar.'},
+ {id:'p124',cat:'textil',sc:'maentel',who:'herren',n:'Morgenmantel „Uomo“',p:99,img:'assets/p/124_a.jpg',img2:'assets/p/124_b.jpg',gal:['assets/p/124_b.jpg'],r:4.9,rv:2,badge:'Neu',mat:'100 % Baumwolle (Waffelpiqué)',sizes:["M","L","XL"],rel:["p125","p42","p118"],d:'Steingrauer Waffelpiqué-Mantel mit Schalkragen — leicht, schnell trocknend, mit gesticktem Brustlogo.',x:'Zwei aufgesetzte Taschen, Gürtelschlaufen. Bei 60 °C waschbar, trocknergeeignet.'},
+ {id:'p125',cat:'textil',sc:'tuecher',who:'herren',n:'Saunatuch, 80 × 200 cm',p:34,img:'assets/p/125_a.jpg',img2:'assets/p/125_b.jpg',gal:['assets/p/125_b.jpg','assets/p/125_video.mp4'],r:4.9,rv:4,badge:'Neu',mat:'100 % Baumwolle, 500 g/m²',rel:["p124","p39","p40"],d:'Extralanges Saunatuch in Weiß mit türkiser Webbordüre und Tonstick — großzügig geschnitten.',x:'Bei 60 °C waschbar, trocknergeeignet. Vor dem ersten Gebrauch separat waschen.'},
+ {id:'p126',cat:'mode',sc:'jacken',who:'herren',n:'Regenjacke „Perla Uomo“',p:149,img:'assets/p/126_a.jpg',img2:'assets/p/126_b.jpg',gal:['assets/p/126_b.jpg','assets/p/126_video.mp4'],r:5.0,rv:3,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p119","p118"],d:'Die Perla für ihn: mattes Petrol, weißer Reißverschluss, das Wasser perlt sichtbar ab.',x:'Wassersäule 10.000 mm, getapte Nähte, verstellbare Kapuze. Imprägnierung im Trockner reaktivierbar.'},
  {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'S3',cat:'parfuem',sc:'edp',n:"Duft-Geschenkbox",p:129,img:'assets/s/S3_duft-geschenkbox_a.webp',img2:'assets/s/S3_duft-geschenkbox_b.webp',gal:["assets/s/S3_duft-geschenkbox_b.webp", "assets/s/S3_duft-geschenkbox_c.webp"],r:5.0,rv:7,badge:"Set",rel:["p113", "p02", "p03"],d:"Beide Signature-Düfte mit Duftkerze in der Geschenkbox — das große Duft-Geschenk der Kollektion.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
@@ -2256,17 +2273,12 @@ function renderShop(){
   }
 
   /* ---- Baukasten: identische Rubrik-Kacheln für Damen/Herren/Kinder ---- */
-  /* Reihenfolge exakt nach Olegs Zettel: Mode, Parfüm, Kosmetik, Kleidung,
-     Schuhe, Schmuck, Sportartikel, ganz unten Zubehör */
+  /* Vier klare Rubriken; jedes Bild pro Welt ein anderes (img=Damen, himg=Herren, kimg=Kinder) */
   const WELTRUB=[
-    {n:'Mode',cat:'mode',sub:'jacken',img:'assets/p/71_a.jpg',col:'var(--c1)',kimg:'assets/p/82_a.jpg'},
-    {n:'Parfüm',cat:'parfuem',img:'assets/p/97_b.jpg',col:'var(--c4)',kimg:'assets/p/87_a.jpg'},
-    {n:'Kosmetik',cat:'kosmetik',img:'assets/p/92_a.jpg',col:'var(--c3)',kimg:'assets/p/87_a.jpg'},
-    {n:'Kleidung & Textil',cat:'textil',img:'assets/e/hero-towels.jpg',col:'var(--c1)',kimg:'assets/p/110_a.jpg'},
-    {n:'Schuhe',cat:'mode',sub:'schuhe',img:'assets/p/64_a.jpg',col:'var(--c2)',kimg:'assets/p/83_a.jpg'},
-    {n:'Schmuck',cat:'schmuck',img:'assets/p/74_b.jpg',col:'var(--gold)'},
-    {n:'Sportartikel',cat:'mode',sub:'sport',img:'assets/e/hero-sport.jpg',col:'var(--c3)'},
-    {n:'Zubehör',cat:'zubehoer',img:'assets/p/57_seifenspender-set_b.webp',col:'var(--c3)'}
+    {n:'Mode',cat:'mode',img:'assets/p/71_a.jpg',himg:'assets/p/119_a.jpg',kimg:'assets/p/82_a.jpg',col:'var(--c1)'},
+    {n:'Parfüm',cat:'parfuem',img:'assets/p/91_a.jpg',himg:'assets/p/02_eau-de-parfum-herren_a.webp',kimg:'assets/p/87_a.jpg',col:'var(--c4)'},
+    {n:'Schuhe',cat:'mode',sub:'schuhe',img:'assets/p/116_a.jpg',himg:'assets/p/64_a.jpg',kimg:'assets/p/83_a.jpg',col:'var(--c2)'},
+    {n:'Textil',cat:'textil',img:'assets/p/41_handtuch-set-4_a.webp',himg:'assets/p/124_a.jpg',kimg:'assets/p/110_a.jpg',col:'var(--c3)'}
   ];
   function weltCount(r,who){
     return P.filter(p=>p.cat===r.cat&&(!r.sub||p.sc===r.sub)
@@ -2274,33 +2286,31 @@ function renderShop(){
   }
   window.weltGo=function(cat,sub,who){ filt(cat,who); if(sub){curSub=sub;renderShop();} };
   function weltTiles(who){
-    return `<div class="gsplit catgrid reveal" style="margin-top:6px">${WELTRUB.map(r=>{
-      const n=weltCount(r,who);
-      const img=(who==='kinder'&&r.kimg)?r.kimg:r.img;
-      return n
-        ? `<div class="gtile" style="--kachel-col:${r.col}" onclick="weltGo('${r.cat}','${r.sub||''}','${who}')">
+    /* Leere Rubriken erscheinen gar nicht — nur volle Kacheln, Bild je Welt */
+    return `<div class="gsplit catgrid reveal" style="margin-top:6px">${WELTRUB
+      .filter(r=>weltCount(r,who)>0)
+      .map(r=>{
+        const img=(who==='kinder'&&r.kimg)?r.kimg:(who==='herren'&&r.himg)?r.himg:r.img;
+        return `<div class="gtile" style="--kachel-col:${r.col}" onclick="weltGo('${r.cat}','${r.sub||''}','${who}')">
              <img src="${src(img)}" alt="${r.n}" loading="lazy">
-             <div class="glab"><h3><span class="sq"></span>${r.n}</h3><span class="gbtn">Entdecken</span></div></div>`
-        : `<div class="gtile empty" style="--kachel-col:${r.col}">
-             <img src="${src(img)}" alt="${r.n}" loading="lazy">
-             <div class="glab"><h3><span class="sq"></span>${r.n}</h3><span class="gbtn">Bald da</span></div></div>`;
-    }).join('')}</div>`;
+             <div class="glab"><h3><span class="sq"></span>${r.n}</h3><span class="gbtn">Entdecken</span></div></div>`;
+      }).join('')}</div>`;
   }
 
   /* ---- Eigene Welt: HERREN — gleicher Baukasten, Sortiment im Aufbau ---- */
   if(curCat==='herrenwelt'){
     document.getElementById('v-shop').classList.add('landing');
     document.getElementById('shopBody').innerHTML=`
-      <div class="nwhero top reveal" style="background:#17171B">
-        <img src="assets/p/97_b.jpg" alt="La Doccia Herren" loading="lazy" style="object-position:center 35%;opacity:.85">
+      <div class="nwhero top reveal">
+        <img src="assets/e/hero-herren.jpg" alt="La Doccia Herren" loading="lazy" style="object-position:center 20%">
         <div class="ntx"><span class="stag">La Doccia Herren</span>
-          <h2 class="mega">Der Anfang<br>ist gemacht.</h2>
-          <button class="btn pill" onclick="openP('p02')">Vetiver Noir entdecken</button></div>
+          <h2 class="mega">Einfach gut<br>angezogen.</h2>
+          <button class="btn pill" onclick="document.querySelector('#shopBody .grouplbl').scrollIntoView({behavior:'smooth',block:'start'})">Jetzt entdecken</button></div>
       </div>
       ${uspRow()}
       <div class="grouplbl" style="margin-top:8px">Für Herren</div>
       ${weltTiles('herren')}
-      <p style="margin-top:26px;color:var(--ink-45);text-align:center">Die Herrenkollektion wächst — den Anfang macht unser Eau de Parfum „Vetiver Noir".</p>`;
+      <p style="margin-top:26px;color:var(--ink-45);text-align:center">Zehn Teile, eine Handschrift — von T-Shirt bis Saunatuch, dazu der Herrenduft „Vetiver Noir".</p>`;
     document.getElementById('fcount').textContent='Herren';
     setTimeout(obs,60); headerClear();
     return;
@@ -2417,9 +2427,9 @@ function renderShop(){
             <div class="scta"><button class="btn pill" onclick="${s.fn.replace(/"/g,'&quot;')}">${s.cta}</button></div>
           </div></div>`).join('')}
         <div class="whoenter">
-          <button onclick="go('shop','damenwelt')">Damen</button>
-          <button onclick="go('shop','herrenwelt')">Herren</button>
-          <button onclick="go('shop','kinderwelt')">Kinder</button>
+          <button style="--wc:var(--c4)" onclick="go('shop','damenwelt')">Damen</button>
+          <button style="--wc:var(--c3)" onclick="go('shop','herrenwelt')">Herren</button>
+          <button style="--wc:var(--c1)" onclick="go('shop','kinderwelt')">Kinder</button>
         </div>
         <div class="sdots">${SLIDES.map((_,i)=>`<button class="${i===0?'on':''}" onclick="goSlide(${i})" aria-label="Bild ${i+1}"></button>`).join('')}</div>
         <div class="sbar">
@@ -2433,7 +2443,7 @@ function renderShop(){
       <div class="gsplit catgrid reveal">
         ${[
           {n:'Damen',img:'assets/e/hero-damen.jpg',col:'var(--c4)',fn:"go('shop','damenwelt')"},
-          {n:'Herren',img:'assets/p/97_b.jpg',col:'var(--c2)',fn:"go('shop','herrenwelt')"},
+          {n:'Herren',img:'assets/e/hero-herren.jpg',col:'var(--c2)',fn:"go('shop','herrenwelt')"},
           {n:'Kinder',img:'assets/e/hero-kinder.jpg',col:'var(--c1)',fn:"go('shop','kinderwelt')"}
         ].map(c=>`<div class="gtile" style="--kachel-col:${c.col}" onclick="${c.fn}">
           <img src="${c.img}" alt="${c.n}" loading="lazy">
