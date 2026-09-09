@@ -1081,6 +1081,14 @@ nav.main .salelink:hover{border-color:#E0231C}
 .catgrid .gbtn{padding:9px 20px;font-size:10.5px;background:var(--ink);color:#fff;transition:background .3s,transform .25s}
 .catgrid .gtile:hover .gbtn{background:var(--kachel-col,var(--brass))}
 .catgrid .gtile.empty{opacity:.5;cursor:default}
+/* Dezente KI-Kennzeichnung auf großen Bildflächen (Details im Impressum) */
+#pmGrid .frame{position:relative}
+#pmGrid .frame::after,.shero.full .slide::after,.nwhero::after{
+  content:"KI-generiertes Bild";position:absolute;right:8px;bottom:6px;z-index:4;
+  font-size:9px;letter-spacing:.06em;color:#fff;background:rgba(23,23,27,.38);
+  padding:2px 7px;border-radius:999px;pointer-events:none;
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.shero.full .slide::after{bottom:64px}
 .catgrid .gtile.empty img{filter:grayscale(.5)}
 /* Einstieg nach Olegs Vorgabe: Vollbild, nur die drei Türen — kein konkurrierender Text */
 .shero.full .stx{display:none}
@@ -1410,6 +1418,9 @@ nav.main .salelink:hover{border-color:#E0231C}
       Umsatzsteuer-Identifikationsnummer (UID): <mark>[ATU-Nummer ergänzen, oder Hinweis auf Kleinunternehmerregelung]</mark>
     </p>
 
+    <h2>Bildnachweis / KI-generierte Inhalte</h2>
+    <p>Die Produkt-, Kampagnen- und Modelfotos auf dieser Website sind mit Unterstützung künstlicher Intelligenz erstellt worden. Abgebildete Personen existieren nicht. Die Bilder dienen der Produktvisualisierung; maßgeblich für Kaufentscheidungen sind die Produktbeschreibungen.</p>
+
     <h2>Verbraucherschlichtung / Online-Streitbeilegung</h2>
     <p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
 
@@ -1438,14 +1449,17 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h2>Verarbeitung beim Besuch der Website</h2>
     <p>Beim Aufruf dieser Website werden durch den Hosting-Anbieter automatisch technische Zugriffsdaten in Server-Logfiles gespeichert (IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browsertyp). Rechtsgrundlage ist unser berechtigtes Interesse am sicheren und stabilen Betrieb der Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
 
-    <h2>Kontakt- und Terminanfragen</h2>
-    <p>Wenn Sie über das Terminformular oder per Nachricht Kontakt aufnehmen, verarbeiten wir die von Ihnen angegebenen Daten (Name, Kontaktdaten, Postleitzahl, Anliegen) ausschließlich zur Bearbeitung Ihrer Anfrage und Terminvereinbarung. Rechtsgrundlage ist die Anbahnung bzw. Erfüllung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO).</p>
+    <h2>Kontaktanfragen</h2>
+    <p>Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, verarbeiten wir die von Ihnen angegebenen Daten (Name, Kontaktdaten, Anliegen) ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist die Anbahnung bzw. Erfüllung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO).</p>
 
     <h2>Newsletter</h2>
     <p>Für den Newsletterversand verarbeiten wir Ihre E-Mail-Adresse auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, etwa über den Abmeldelink in jeder Newsletter-E-Mail.</p>
 
     <h2>Bestellabwicklung im Shop</h2>
     <p><mark>[Sobald der Shop echte Bestellungen abwickelt: Angaben zu Zahlungsdienstleistern, Versanddienstleistern und Speicherfristen ergänzen.]</mark></p>
+
+    <h2>Google Fonts</h2>
+    <p>Diese Website bindet Schriftarten von Google Fonts ein. Beim Seitenaufruf wird dabei Ihre IP-Adresse an Server von Google übertragen. <mark>[Empfehlung vor Livegang: Schriften lokal hosten — dann entfällt dieser Abschnitt.]</mark></p>
 
     <h2>Ihre Rechte</h2>
     <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Zudem können Sie sich bei der österreichischen Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>) beschweren.</p>
@@ -1463,7 +1477,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Rechtliches</span>
     <h1>Allgemeine Geschäftsbedingungen</h1>
-    <p class="lead">Diese Bedingungen gelten für alle Bestellungen über den Online-Shop von La Doccia sowie für beauftragte Duschprojekte.</p>
+    <p class="lead">Diese Bedingungen gelten für alle Bestellungen über den Online-Shop von La Doccia.</p>
 
     <div class="legalnote" style="margin-top:0;margin-bottom:34px">
       <strong>Wichtiger Hinweis:</strong> Dies ist eine Struktur-Vorlage mit den gesicherten Firmendaten. Die mit <mark>gelb</mark> markierten Stellen müssen ergänzt und die gesamten AGB vor der Veröffentlichung fachkundig geprüft werden — für den Shop-Teil eignet sich die IT-Recht Kanzlei, für Österreich zusätzlich die Wirtschaftskammer (WKO).
@@ -1473,7 +1487,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Diese AGB gelten für Verträge zwischen Oleg Neufeld, La Doccia, Landstraßer Hauptstraße 71/2, 1030 Wien (nachfolgend „Anbieter") und seinen Kundinnen und Kunden. Maßgeblich ist die zum Zeitpunkt der Bestellung gültige Fassung.</p>
 
     <h2>§ 2 Vertragsschluss</h2>
-    <p>Die Darstellung der Produkte im Online-Shop stellt kein bindendes Angebot dar. Mit der Bestellung geben Sie ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Auftragsbestätigung bzw. mit Auslieferung der Ware zustande. Bei Duschprojekten kommt der Vertrag mit Ihrer schriftlichen Annahme des Festpreisangebots zustande.</p>
+    <p>Die Darstellung der Produkte im Online-Shop stellt kein bindendes Angebot dar. Mit der Bestellung geben Sie ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Auftragsbestätigung bzw. mit Auslieferung der Ware zustande.</p>
 
     <h2>§ 3 Preise und Zahlung</h2>
     <p>Es gelten die zum Bestellzeitpunkt angegebenen Preise. <mark>[Angaben zur Umsatzsteuer ergänzen — Ausweis oder Hinweis auf Kleinunternehmerregelung.]</mark> Akzeptierte Zahlungsarten: <mark>[Zahlungsarten ergänzen, z. B. PayPal, Kreditkarte, Rechnung.]</mark></p>
@@ -1531,7 +1545,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Sie tragen die unmittelbaren Kosten der Rücksendung der Waren. <mark>[Falls kostenloser Rückversand angeboten wird, hier anpassen — auf der Website ist aktuell „kostenloser Rückversand" genannt.]</mark></p>
 
     <h2>Ausschluss des Widerrufsrechts</h2>
-    <p>Das Widerrufsrecht besteht nicht bei Waren, die nach Kundenspezifikation angefertigt werden oder eindeutig auf persönliche Bedürfnisse zugeschnitten sind — dies betrifft insbesondere individuell geplante Duschprojekte sowie Sonderanfertigungen.</p>
+    <p>Das Widerrufsrecht besteht nicht bei Waren, die nach Kundenspezifikation angefertigt werden, sowie bei versiegelten Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur Rückgabe geeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde — das betrifft insbesondere geöffnete Parfüms und Kosmetikprodukte.</p>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1552,7 +1566,7 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Service</span>
     <h1>Kontakt</h1>
-    <p class="lead">Ob Frage zum Shop, zu einer Bestellung oder zu Ihrem Projekt — wir sind persönlich für Sie da und antworten in der Regel innerhalb eines Werktags.</p>
+    <p class="lead">Ob Frage zum Shop, zu einer Bestellung oder zu einem Produkt — wir sind persönlich für Sie da und antworten in der Regel innerhalb eines Werktags.</p>
 
     <h2>So erreichen Sie uns</h2>
     <p>
@@ -1564,7 +1578,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     </p>
 
     <h2>Erreichbarkeit</h2>
-    <p>Montag bis Freitag von 9 bis 18 Uhr. Beratungstermine vor Ort vergeben wir auch abends und samstags — je nachdem, was für Sie am besten passt.</p>
+    <p>Montag bis Freitag von 9 bis 18 Uhr. E-Mails beantworten wir in der Regel innerhalb eines Werktags.</p>
 
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
@@ -1576,17 +1590,17 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Service</span>
     <h1>Häufige Fragen</h1>
-    <p class="lead">Die Antworten auf die Fragen, die uns am häufigsten erreichen — zum Duschumbau und zum Shop.</p>
+    <p class="lead">Die Antworten auf die Fragen, die uns am häufigsten erreichen.</p>
 
 
-    <h2>Was kostet eine neue Dusche?</h2>
-    <p>Unsere Designlinien beginnen bei 6.900 € (Classic), 9.400 € (Comfort) und 13.800 € (Elegance) — jeweils als Komplettpaket für einen Duschraum bis 8 m², inklusive sämtlicher Arbeiten und Materialien. Der Endpreis ergibt sich nach dem Aufmaß und ist dann verbindlich.</p>
+    <h2>Sind die Produktbilder echt?</h2>
+    <p>Unsere Produkt- und Kampagnenbilder sind KI-generierte Visualisierungen — abgebildete Personen existieren nicht. Maßgeblich sind die Produktbeschreibungen; Details dazu im <a href="#" onclick="go('impressum');return false">Impressum</a>.</p>
 
-    <h2>Wie lange dauert der Umbau?</h2>
-    <p>Je nach Umfang in der Regel ein bis zwei Wochen von der Demontage bis zur Endreinigung. Den genauen Zeitplan erhalten Sie mit dem Angebot.</p>
+    <h2>Ist der Schmuck wirklich wasserfest?</h2>
+    <p>Ja — unser Schmuck ist vergoldeter Edelstahl mit Emaille und bleibt beim Händewaschen und Duschen einfach an. Parfüm und Chlorwasser sollten Sie trotzdem meiden, das gilt für jeden Schmuck.</p>
 
-    <h2>Kann ich jede Farbe wählen?</h2>
-    <p>Ja — Wandflächen, Armaturen und Rinne sind im kompletten RAL-Spektrum möglich und werden auf einen Ton abgestimmt.</p>
+    <h2>Welche Farben gibt es?</h2>
+    <p>Unsere Kollektion lebt in vier Markenfarben — Gelb, Orange, Türkis und Violett. Viele Artikel gibt es in mehreren dieser Farben; die Auswahl finden Sie direkt auf der Produktseite.</p>
 
     <h2>Wie schnell wird meine Shop-Bestellung geliefert?</h2>
     <p>Innerhalb von 2 bis 4 Werktagen — versandkostenfrei, ohne Mindestbestellwert.</p>
@@ -1618,7 +1632,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Sie können Artikel innerhalb von 30 Tagen nach Erhalt zurückgeben — der Rückversand ist kostenlos. Melden Sie die Rücksendung kurz per E-Mail an, Sie erhalten dann ein vorfrankiertes Retourenlabel. Die Erstattung erfolgt innerhalb von 14 Tagen nach Eingang der Ware.</p>
 
     <h2>Ausnahmen</h2>
-    <p>Aus Hygienegründen sind geöffnete Pflege- und Duftprodukte von der Rückgabe ausgeschlossen. Sonderanfertigungen — insbesondere individuell geplante Duschprojekte — sind vom Widerruf ausgenommen. Ihr gesetzliches Widerrufsrecht bleibt davon unberührt: <a href="#" onclick="go('widerruf');return false">Zur Widerrufsbelehrung</a>.</p>
+    <p>Aus Hygienegründen sind geöffnete Pflege- und Duftprodukte von der Rückgabe ausgeschlossen. Ihr gesetzliches Widerrufsrecht bleibt davon unberührt: <a href="#" onclick="go('widerruf');return false">Zur Widerrufsbelehrung</a>.</p>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1629,16 +1643,19 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="wrap legal">
     <span class="eyebrow">Service</span>
     <h1>Pflegehinweise</h1>
-    <p class="lead">Damit Frottee, Armaturen und Oberflächen lange so aussehen wie am ersten Tag — die wichtigsten Hinweise aus unserer Werkstatt.</p>
+    <p class="lead">Damit Frottee, Kleidung, Schmuck und Düfte lange so schön bleiben wie am ersten Tag.</p>
 
     <h2>Frottee &amp; Morgenmäntel</h2>
     <p>Vor dem ersten Gebrauch separat waschen. Danach bei 60 °C mit Colorwaschmittel, ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Temperatur; das hält den Flor weich und voluminös.</p>
 
-    <h2>Armaturen aus Messing</h2>
-    <p>Nach dem Duschen kurz mit einem weichen Tuch trockenwischen, das verhindert Kalkflecken. Keine scheuernden Mittel oder essighaltigen Reiniger verwenden — sie greifen die PVD-Beschichtung an. Bei Kalk hilft ein mildes, pH-neutrales Reinigungsmittel.</p>
+    <h2>Regenjacken &amp; wasserfeste Kleidung</h2>
+    <p>Bei 30 °C mit Flüssigwaschmittel waschen, ohne Weichspüler. Die Imprägnierung lässt sich im Trockner bei niedriger Temperatur reaktivieren — so perlt das Wasser wieder wie am ersten Tag.</p>
 
-    <h2>Fugenlose Oberflächen</h2>
-    <p>Mit Wasser und einem Abzieher genügt die tägliche Pflege. Einmal pro Woche mit einem pH-neutralen Reiniger und weichem Tuch wischen. Mikrokratzer lassen sich bei mineralischen Oberflächen nachpolieren — sprechen Sie uns an.</p>
+    <h2>Schmuck</h2>
+    <p>Vergoldeter Edelstahl mit Emaille verträgt Wasser problemlos. Parfüm, Cremes und Chlorwasser meiden, gelegentlich mit einem weichen Tuch polieren — mehr braucht es nicht.</p>
+
+    <h2>Parfüms</h2>
+    <p>Kühl, trocken und dunkel lagern — nicht im Bad neben der Dusche. So bleibt ein Duft mindestens 24 Monate stabil.</p>
 
     <h2>Duftkerzen</h2>
     <p>Den Docht vor jedem Anzünden auf etwa 5 mm kürzen und die Kerze beim ersten Brennen so lange brennen lassen, bis die Oberfläche vollständig flüssig ist — so bildet sich kein Brennkanal.</p>
@@ -2097,7 +2114,7 @@ const P=[
  {id:'p124',cat:'textil',sc:'maentel',who:'herren',n:'Morgenmantel „Uomo“',p:99,img:'assets/p/124_a.jpg',img2:'assets/p/124_b.jpg',gal:['assets/p/124_b.jpg'],r:4.9,rv:2,badge:'Neu',mat:'100 % Baumwolle (Waffelpiqué)',sizes:["M","L","XL"],rel:["p125","p42","p120"],d:'Steingrauer Waffelpiqué-Mantel mit Schalkragen — leicht, schnell trocknend, mit gesticktem Brustlogo.',x:'Zwei aufgesetzte Taschen, Gürtelschlaufen. Bei 60 °C waschbar, trocknergeeignet.'},
  {id:'p125',cat:'textil',sc:'tuecher',who:'herren',n:'Saunatuch, 80 × 200 cm',p:34,img:'assets/p/125_a.jpg',img2:'assets/p/125_b.jpg',gal:['assets/p/125_b.jpg','assets/p/125_video.mp4'],r:4.9,rv:4,badge:'Neu',mat:'100 % Baumwolle, 500 g/m²',rel:["p124","p39","p40"],d:'Extralanges Saunatuch in Weiß mit türkiser Webbordüre und Tonstick — großzügig geschnitten.',x:'Bei 60 °C waschbar, trocknergeeignet. Vor dem ersten Gebrauch separat waschen.'},
  {id:'p126',cat:'mode',sc:'jacken',who:'herren',n:'Regenjacke „Perla Uomo“',p:149,img:'assets/p/126_a.jpg',img2:'assets/p/126_b.jpg',gal:['assets/p/126_b.jpg','assets/p/126_video.mp4'],r:5.0,rv:3,badge:'Neu',mat:'100 % Polyester, PFC-frei imprägniert',sizes:["S","M","L","XL"],rel:["p62","p126","p120"],d:'Die Perla für ihn: mattes Petrol, weißer Reißverschluss, das Wasser perlt sichtbar ab.',x:'Wassersäule 10.000 mm, getapte Nähte, verstellbare Kapuze. Imprägnierung im Trockner reaktivierbar.'},
- {id:'p127',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Blocco“, 50 ml',p:149,img:'assets/p/127_a.jpg',r:5.0,rv:2,badge:'Neu',rel:["p113","p114","p115"],d:'Der Block nach eigener Skizze: ein massiver Glasquader ohne eine einzige Rundung, exakt gerade Linien. Kein klassischer Deckel — nur eine feine Fuge verrät den integrierten Drehmechanismus. Darauf: knallige Farbfelder in den vier Markenfarben.',x:'14 % Duftölanteil, hält 7–9 Stunden. Steht wie ein Architekturmodell im Regal. Design zum Schutz angemeldet.'},
+ {id:'p127',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Blocco“, 50 ml',p:149,img:'assets/p/127_a.jpg',r:5.0,rv:2,badge:'Neu',rel:["p113","p114","p115"],d:'Der Block nach eigener Skizze: ein massiver Glasquader ohne eine einzige Rundung, exakt gerade Linien. Kein klassischer Deckel — nur eine feine Fuge verrät den integrierten Drehmechanismus. Im Inneren glüht der Duft in den vier Markenfarben — wie Licht im Eisblock.',x:'14 % Duftölanteil, hält 7–9 Stunden. Steht wie ein Architekturmodell im Regal. Design zum Schutz angemeldet.'},
  {id:'S1',cat:'kosmetik',sc:'koerper',n:"Willkommensset",p:49,img:'assets/s/S1_willkommensset_a.webp',img2:'assets/s/S1_willkommensset_b.webp',gal:["assets/s/S1_willkommensset_b.webp", "assets/s/S1_willkommensset_c.webp"],r:4.8,rv:29,badge:"Set",rel:["p13", "p14", "p15"],d:"Duschgel, Bodylotion und Seifenstück als Einstieg in die Kollektion — schön verpackt, sofort verschenkbar.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'S2',cat:'kosmetik',sc:'dusche',n:"Duschset komplett",p:69,old:89,img:'assets/s/S2_duschset-komplett_a.webp',img2:'assets/s/S2_duschset-komplett_b.webp',gal:["assets/s/S2_duschset-komplett_b.webp", "assets/s/S2_duschset-komplett_c.webp"],r:4.9,rv:36,badge:"Set",rel:["p09", "p10", "p11"],d:"Die komplette Dusch-Routine: Duschgel, Duschöl und Duschpeeling im Set — Sie sparen gegenüber dem Einzelkauf.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'S4',cat:'kosmetik',sc:'haar',n:"Haarpflege-Set",p:59,img:'assets/s/S4_haarpflege-set_a.webp',img2:'assets/s/S4_haarpflege-set_b.webp',gal:["assets/s/S4_haarpflege-set_b.webp", "assets/s/S4_haarpflege-set_c.webp"],r:4.6,rv:14,badge:"Set",rel:["p19", "p20", "p21"],d:"Shampoo, Conditioner und Haarmaske als Kur-Set — die volle Routine für beanspruchtes Haar.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
@@ -2126,7 +2143,7 @@ const COLL={
  sommer:{n:'Must-haves für den Sommer',img:'assets/e/hand-creme.jpg',
    sub:'Sonnenpflege, leichte Düfte und Begleiter für Pool und Strand.',
    f:p=>['p18','p05','p24','p55','p47','p48','S6'].includes(p.id)},
- sets:{n:'Sets & Geschenke',img:'assets/s/S3_duft-geschenkbox_a.webp',
+ sets:{n:'Sets & Geschenke',img:'assets/s/S2_duschset-komplett_a.webp',
    sub:'Fertig kombiniert und schön verpackt — zum Verschenken oder Selbstbehalten.',
    f:p=>p.badge==='Set'||/set|trio|duo/i.test(p.n)},
  farben:{n:'In Ihren Lieblingsfarben',img:'assets/p/41_handtuch-set-4_a.webp',
