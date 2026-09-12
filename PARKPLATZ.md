@@ -20,6 +20,9 @@ ggf. anpassen). Reihenfolge = Zeitpunkt der Entfernung, Neueste zuletzt.
 | EdP „Marmo" | p98 | 98_a/98_b.jpg | Marmor-Optik („altmodisch" — Oleg) |
 | EdP „Prisma" | p99 | 99_a/99_b.jpg | Klarglas |
 | Parfüm-Puzzle, 4 × 2 ml | p04 | 04_puzzle.jpg | Mini-Flakons als Puzzleteile |
+| EdP „Blocco" | p127 | 127_a.jpg (+ Varianten assets/e/flakon-blocco-*.jpg) | Klarglas-Block, Farbverlauf innen |
+| Shampoo, 250 ml | p19 | 19_shampoo-250_*.webp | Basis-Shampoo („Volume"/„Repair" sind im Shop) |
+| Shampoo, 500 ml | p20 | 20_shampoo-500_*.webp | |
 
 ## Sets (komplett geparkt)
 | Produkt | frühere ID | Bilder |
