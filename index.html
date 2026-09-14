@@ -1081,6 +1081,11 @@ nav.main .salelink:hover{border-color:#E0231C}
 .catgrid .gbtn{padding:9px 20px;font-size:10.5px;background:var(--ink);color:#fff;transition:background .3s,transform .25s}
 .catgrid .gtile:hover .gbtn{background:var(--kachel-col,var(--brass))}
 .catgrid .gtile.empty{opacity:.5;cursor:default}
+/* „Alles als Liste": farbig, damit er nicht übersehen wird (Oleg 12.9.) */
+.allesbtn{background:linear-gradient(90deg,var(--c1),var(--c2) 34%,var(--c3) 67%,var(--c4));
+  color:#fff;font-weight:600;letter-spacing:.08em;border:none;
+  box-shadow:0 10px 26px -12px rgba(108,79,216,.55)}
+.allesbtn:hover{transform:translateY(-2px)}
 /* Dezente KI-Kennzeichnung auf großen Bildflächen (Details im Impressum) */
 #pmGrid .frame{position:relative}
 #pmGrid .frame::after,.shero.full .slide::after,.nwhero::after{
@@ -1605,7 +1610,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Innerhalb von 2 bis 4 Werktagen — versandkostenfrei, ohne Mindestbestellwert.</p>
 
     <h2>Kann ich Artikel zurückgeben?</h2>
-    <p>Ja, innerhalb von 30 Tagen — der Rückversand ist kostenlos. Details finden Sie unter <a href="#" onclick="go('versand');return false">Versand &amp; Rücksendung</a> und in der <a href="#" onclick="go('widerruf');return false">Widerrufsbelehrung</a>.</p>
+    <p>Ja, innerhalb der gesetzlichen Frist von 14 Tagen — der Rückversand ist kostenlos. Details finden Sie unter <a href="#" onclick="go('versand');return false">Versand &amp; Rücksendung</a> und in der <a href="#" onclick="go('widerruf');return false">Widerrufsbelehrung</a>.</p>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1628,7 +1633,7 @@ nav.main .salelink:hover{border-color:#E0231C}
     <p>Wir liefern nach Österreich und Deutschland. <mark>[Weitere Länder und ggf. abweichende Konditionen ergänzen.]</mark></p>
 
     <h2>Rücksendung</h2>
-    <p>Sie können Artikel innerhalb von 30 Tagen nach Erhalt zurückgeben — der Rückversand ist kostenlos. Melden Sie die Rücksendung kurz per E-Mail an, Sie erhalten dann ein vorfrankiertes Retourenlabel. Die Erstattung erfolgt innerhalb von 14 Tagen nach Eingang der Ware.</p>
+    <p>Sie können Artikel innerhalb von 14 Tagen nach Erhalt zurückgeben — der Rückversand ist kostenlos. Melden Sie die Rücksendung kurz per E-Mail an, Sie erhalten dann ein vorfrankiertes Retourenlabel. Die Erstattung erfolgt innerhalb von 14 Tagen nach Eingang der Ware.</p>
 
     <h2>Ausnahmen</h2>
     <p>Aus Hygienegründen sind geöffnete Pflege- und Duftprodukte von der Rückgabe ausgeschlossen. Ihr gesetzliches Widerrufsrecht bleibt davon unberührt: <a href="#" onclick="go('widerruf');return false">Zur Widerrufsbelehrung</a>.</p>
@@ -2089,8 +2094,8 @@ const P=[
  {id:'p114',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Cubo“, 50 ml',p:139,img:'assets/p/114_a.jpg',r:4.9,rv:3,badge:'Neu',rel:["p113","p115","p113"],d:'Der Turm aus vier Würfeln: jeder leicht gegen den nächsten gedreht, innen fließt der Duft von Gelb nach Violett. Ein Guss, klare Kanten, Würfelkappe.',x:'12 % Duftölanteil, hält 6–8 Stunden. Steht wie ein Designobjekt im Regal — genau so gedacht.'},
  {id:'p115',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Colore“, 50 ml',p:119,img:'assets/p/115_gelb.jpg',r:4.8,rv:5,badge:'Neu',colors:[0,1,2,3],cimg:{Gelb:'assets/p/115_gelb.jpg',Orange:'assets/p/115_orange.jpg','Türkis':'assets/p/115_tuerkis.jpg',Violett:'assets/p/115_violett.jpg'},rel:["p113","p114","p03"],d:'Die Signature-Flasche in einer Farbe komplett — wählen Sie Ihre: Gelb, Orange, Türkis oder Violett. Jede Farbe trägt ihren eigenen Duftcharakter.',x:'Gelb: Zitrus & Neroli. Orange: Ambra & Vanille. Türkis: Meersalz & Feige. Violett: Iris & Sandelholz. Je 11 % Duftölanteil.'},
  {id:'p116',cat:'mode',sc:'schuhe',who:'damen',n:'Plateau-Sneaker „Nuvola“',p:139,img:'assets/p/116_a.jpg',r:4.9,rv:2,badge:'Neu',mat:'Canvas, Gummisohle',sizes:["36","37","38","39","40","41"],rel:["p64","p65","p105"],d:'Der Statement-Sneaker: cremeweiße Bumper-Sohle mit weicher, runder Kappe — wolkig dick, federleicht getragen.',x:'Geprägtes LA DOCCIA an der Ferse, vier gestickte Quadrate am Schaft. Sohle abwischbar, Obermaterial imprägniert.'},
- {id:'p117',cat:'mode',sc:'taschen',who:'damen',n:'Handtasche „Quadra“',p:89,img:'assets/p/117_a.jpg',r:4.9,rv:3,badge:'Neu',mat:'Genarbtes Kunstleder, Baumwollfutter',rel:["p49","p50","p61"],d:'Strukturierte Handtasche in Creme mit großem eingelegtem Quadrat in Türkis — das Logo als Form, nicht als Aufdruck.',x:'Goldgeprägte Wortmarke, Magnetverschluss, Innenfach mit Reißverschluss. Mit Imprägnierspray wetterfest.'},
- {id:'p120',cat:'mode',sc:'kleidung',who:'herren',n:'Poloshirt „Marina“',p:49,img:'assets/p/120_a.jpg',img2:'assets/p/120_b.jpg',gal:['assets/p/120_b.jpg'],r:4.8,rv:3,badge:'Neu',mat:'100 % Piqué-Baumwolle',sizes:["S","M","L","XL"],rel:["p120","p122","p126"],d:'Piqué-Polo in Türkis mit weißem Logostick — vom Frühstück bis zum Abendessen richtig angezogen.',x:'Formstabiler Kragen, seitliche Schlitze. Bei 30 °C waschen, in Form ziehen.'},
+ {id:'p117',cat:'mode',sc:'taschen',who:'damen',n:'Handtasche „Quadra“',p:189,img:'assets/p/117_a.jpg',r:4.9,rv:3,badge:'Neu',mat:'Genarbtes Kunstleder, Baumwollfutter',rel:["p49","p50","p61"],d:'Strukturierte Handtasche in Creme mit großem eingelegtem Quadrat in Türkis — das Logo als Form, nicht als Aufdruck.',x:'Goldgeprägte Wortmarke, Magnetverschluss, Innenfach mit Reißverschluss. Mit Imprägnierspray wetterfest.'},
+ {id:'p120',cat:'mode',sc:'kleidung',who:'herren',n:'Poloshirt „Marina“',p:79,img:'assets/p/120_a.jpg',img2:'assets/p/120_b.jpg',gal:['assets/p/120_b.jpg'],r:4.8,rv:3,badge:'Neu',mat:'100 % Piqué-Baumwolle',sizes:["S","M","L","XL"],rel:["p120","p122","p126"],d:'Piqué-Polo in Türkis mit weißem Logostick — vom Frühstück bis zum Abendessen richtig angezogen.',x:'Formstabiler Kragen, seitliche Schlitze. Bei 30 °C waschen, in Form ziehen.'},
  {id:'p122',cat:'mode',sc:'huete',who:'herren',n:'Cap „Quadro“',p:29,img:'assets/p/122_a.jpg',img2:'assets/p/122_b.jpg',gal:['assets/p/122_b.jpg'],r:4.9,rv:5,badge:'Neu',mat:'100 % Baumwoll-Twill',rel:["p120","p120","p126"],d:'Weiße Six-Panel-Cap mit gesticktem LA DOCCIA und den vier Quadraten — sitzt, passt, steht jedem.',x:'Größenverstellbar mit Metallschließe. Nicht waschen, feucht abwischen und lufttrocknen.'},
  {id:'p124',cat:'textil',sc:'maentel',who:'herren',n:'Morgenmantel „Uomo“',p:99,img:'assets/p/124_a.jpg',img2:'assets/p/124_b.jpg',gal:['assets/p/124_b.jpg'],r:4.9,rv:2,badge:'Neu',mat:'100 % Baumwolle (Waffelpiqué)',sizes:["M","L","XL"],rel:["p125","p42","p120"],d:'Steingrauer Waffelpiqué-Mantel mit Schalkragen — leicht, schnell trocknend, mit gesticktem Brustlogo.',x:'Zwei aufgesetzte Taschen, Gürtelschlaufen. Bei 60 °C waschbar, trocknergeeignet.'},
  {id:'p125',cat:'textil',sc:'tuecher',who:'herren',n:'Saunatuch, 80 × 200 cm',p:34,img:'assets/p/125_a.jpg',img2:'assets/p/125_b.jpg',gal:['assets/p/125_b.jpg','assets/p/125_video.mp4'],r:4.9,rv:4,badge:'Neu',mat:'100 % Baumwolle, 500 g/m²',rel:["p124","p39","p40"],d:'Extralanges Saunatuch in Weiß mit türkiser Webbordüre und Tonstick — großzügig geschnitten.',x:'Bei 60 °C waschbar, trocknergeeignet. Vor dem ersten Gebrauch separat waschen.'},
@@ -2187,6 +2192,12 @@ document.getElementById('catBar').innerHTML =
        <option value="rec">Empfohlen</option><option value="new">Neueste zuerst</option><option value="asc">Preis aufsteigend</option>
        <option value="desc">Preis absteigend</option><option value="sale">Sale zuerst</option>
      </select></div>`;
+window.whoFiltAll=function(who){
+  /* komplette Liste einer Welt: alle Kategorien, who-gefiltert */
+  if(who==='herren'||who==='kinder'){ filt('all'); curWho=who;
+    curCat='wliste_'+who; renderShop(); return; }
+  filt('damen');
+};
 function goHome(){
   curQ=''; const s=document.getElementById('q'); if(s)s.value='';
   const sg=document.getElementById('sgg'); if(sg)sg.style.display='none';
@@ -2250,15 +2261,17 @@ function renderShop(){
   }
 
   /* ---- Baukasten: identische Rubrik-Kacheln für Damen/Herren/Kinder ---- */
-  /* Vier klare Rubriken; jedes Bild pro Welt ein anderes (img=Damen, himg=Herren, kimg=Kinder) */
+  /* Rubriken nach Olegs Vorgabe 12.9.: Mode, Parfüm, Schuhe & Taschen, Sport.
+     Textil läuft über „Alles als Liste" (Bild je Welt: img=Damen, himg=Herren, kimg=Kinder) */
   const WELTRUB=[
     {n:'Mode',cat:'mode',img:'assets/p/71_a.jpg',himg:'assets/p/126_a.jpg',kimg:'assets/p/82_a.jpg',col:'var(--c1)'},
     {n:'Parfüm',cat:'parfuem',img:'assets/p/113_a.jpg',himg:'assets/p/02_eau-de-parfum-herren_a.webp',kimg:'assets/p/87_a.jpg',col:'var(--c4)'},
-    {n:'Schuhe',cat:'mode',sub:'schuhe',img:'assets/p/116_a.jpg',himg:'assets/p/64_a.jpg',kimg:'assets/p/83_a.jpg',col:'var(--c2)'},
-    {n:'Textil',cat:'textil',img:'assets/p/41_handtuch-set-4_a.webp',himg:'assets/p/124_a.jpg',kimg:'assets/p/110_a.jpg',col:'var(--c3)'}
+    {n:'Schuhe & Taschen',cat:'mode',sub:'schuhetaschen',img:'assets/p/116_a.jpg',himg:'assets/p/64_a.jpg',kimg:'assets/p/83_a.jpg',col:'var(--c2)'},
+    {n:'Sport',cat:'mode',sub:'sport',img:'assets/p/105_a.jpg',himg:'assets/p/122_a.jpg',kimg:'assets/p/85_a.jpg',col:'var(--c3)'}
   ];
   function weltCount(r,who){
-    return P.filter(p=>p.cat===r.cat&&(!r.sub||p.sc===r.sub)
+    const scOk=p=>!r.sub || (r.sub==='schuhetaschen' ? (p.sc==='schuhe'||p.sc==='taschen') : p.sc===r.sub);
+    return P.filter(p=>p.cat===r.cat&&scOk(p)
       &&((who==='kinder'||who==='herren')?p.who===who:(!p.who||p.who===who))).length;
   }
   window.weltGo=function(cat,sub,who){ filt(cat,who); if(sub){curSub=sub;renderShop();} };
@@ -2287,7 +2300,7 @@ function renderShop(){
       ${uspRow()}
       <div class="grouplbl" style="margin-top:8px">Für Herren</div>
       ${weltTiles('herren')}
-      <p style="margin-top:26px;color:var(--ink-45);text-align:center">Kuratiert statt viel: Polo, Cap, Regenjacke, Morgenmantel und Saunatuch — dazu der Herrenduft „Vetiver Noir".</p>`;
+      <div style="margin-top:38px;text-align:center"><button class="btn pill allesbtn" onclick="whoFiltAll('herren')">Alles für Herren als Liste</button></div>`;
     document.getElementById('fcount').textContent='Herren';
     setTimeout(obs,60); headerClear();
     return;
@@ -2307,7 +2320,7 @@ function renderShop(){
       ${uspRow()}
       <div class="grouplbl" style="margin-top:8px">Für Damen</div>
       ${weltTiles('damen')}
-      <div style="margin-top:38px;text-align:center"><button class="btn ghost" onclick="filt('damen')">Alles für Damen als Liste</button></div>`;
+      <div style="margin-top:38px;text-align:center"><button class="btn pill allesbtn" onclick="filt('damen')">Alles für Damen als Liste</button></div>`;
     document.getElementById('fcount').textContent='Damen';
     setTimeout(obs,60); headerClear();
     return;
@@ -2331,9 +2344,27 @@ function renderShop(){
         <div class="subhead"><h2>Für Kinder</h2><span class="cnt">${kids.length} Artikel</span></div>
         <p class="sub">Regenjacken, Stiefel, Schlappen, Sneaker, Sommerhut und mildes Shampoo — wasserfest wie die Großen.</p>
         <div class="pg" style="margin-top:22px">${kids.map(card).join('')}</div>
-      </section>`;
+      </section>
+      <div style="margin-top:26px;text-align:center"><button class="btn pill allesbtn" onclick="whoFiltAll('kinder')">Alles für Kinder als Liste</button></div>`;
     document.getElementById('fcount').textContent=kids.length+' Artikel';
     setTimeout(obs,60); headerClear();
+    return;
+  }
+
+  /* ---- Komplettliste je Welt (Alles für Herren/Kinder) ---- */
+  if(curCat==='wliste_herren'||curCat==='wliste_kinder'){
+    const who=curCat.split('_')[1];
+    const nice=who==='herren'?'Herren':'Kinder';
+    document.getElementById('shopTitle').textContent='Alles für '+nice;
+    document.getElementById('shopSub').textContent='Die komplette Auswahl für '+nice+' — über alle Kategorien.';
+    crumb2('Alles für '+nice);
+    let list=P.filter(p=>p.who===who);
+    if(q)list=list.filter(p=>prodMatch(p,q));
+    list=sortList(list);
+    document.getElementById('shopBody').innerHTML=`<section class="catsec" style="padding-top:10px">
+      <div class="subhead"><h2>Alles für ${nice}</h2><span class="cnt">${list.length} Artikel</span></div>
+      <div class="pg" style="margin-top:22px">${list.map(card).join('')}</div></section>`;
+    document.getElementById('fcount').textContent=list.length+' Artikel';
     return;
   }
 
@@ -2411,7 +2442,7 @@ function renderShop(){
         <div class="sdots">${SLIDES.map((_,i)=>`<button class="${i===0?'on':''}" onclick="goSlide(${i})" aria-label="Bild ${i+1}"></button>`).join('')}</div>
         <div class="sbar">
           <span>La Doccia · Wien</span>
-          <span>↺&nbsp; 30 Tage Rückgabe</span>
+          <span>↺&nbsp; 14 Tage Rückgabe</span>
           <span>✓&nbsp; Kostenloser Versand &amp; Rückversand</span>
         </div>
       </div>
@@ -2463,7 +2494,7 @@ function renderShop(){
           <button class="subchip ${curWho==='damen'?'on':''}" onclick="whoFilt('damen')">Damen</button>
           <button class="subchip ${curWho==='kinder'?'on':''}" onclick="whoFilt('kinder')">Kinder</button>
           <button class="subchip ${curWho==='herren'?'on':''}" onclick="whoFilt('herren')">Herren</button></div>` : '';
-      if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>p.sc===curSub);
+      if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>curSub==='schuhetaschen' ? (p.sc==='schuhe'||p.sc==='taschen') : p.sc===curSub);
       if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>(curWho==='kinder'||curWho==='herren') ? p.who===curWho : (!p.who||p.who===curWho));
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
@@ -2553,7 +2584,7 @@ function uspRow(){
   };
   return `<div class="usprow reveal">
     <div><i style="color:var(--c1)">${ic.truck}</i><b>Kostenloser Versand</b><span>${PROMO.freeShip>0?'ab '+Math.round(PROMO.freeShip)+' € Bestellwert':'auf alle Bestellungen'}</span></div>
-    <div><i style="color:var(--c3)">${ic.ret}</i><b>30 Tage Rückgabe</b><span>kostenloser Rückversand</span></div>
+    <div><i style="color:var(--c3)">${ic.ret}</i><b>14 Tage Rückgabe</b><span>kostenloser Rückversand</span></div>
     <div><i style="color:var(--c4)">${ic.card}</i><b>Sicher bezahlen</b><span>PayPal · Klarna · Rechnung</span></div>
     <div><i style="color:var(--c2)">${ic.tel}</i><b>Persönliche Beratung</b><span>01 555 01 00</span></div>
   </div>`;
@@ -2742,7 +2773,7 @@ function openP(id){
       <div class="ctaproof"><span class="s">★★★★★</span>„${pickRevs(p)[0].t}“ <b>— ${pickRevs(p)[0].w}</b></div>
       <div class="trustmini">
         <span>Kostenloser Versand &amp; Rückversand</span>
-        <span>30 Tage Rückgabe</span>
+        <span>14 Tage Rückgabe</span>
         <span>${lieferzeit()}</span>
       </div>
       <div class="tierline"><b>Mengenrabatt:</b> ab 2 Artikeln −${t2} %, ab 3 Artikeln −${t3} % — automatisch im Warenkorb.</div>
@@ -2761,7 +2792,7 @@ function openP(id){
           <p>${p.mat?`Material: ${p.mat}.<br>`:''}${p.ml?`Inhalt: ${p.ml} ml.<br>`:''}${p.g?`Gewicht: ${p.g} g.<br>`:''}${p.sizes?`Erhältliche Größen: ${p.sizes.join(', ')}.<br>`:''}Artikelnummer: LD-${p.id.toUpperCase()}</p></details>
         <details class="acc"><summary>Versand &amp; Rückgabe</summary>
           <p>${PROMO.freeShip>0?`Versandkostenfrei ab ${eur(PROMO.freeShip)}, darunter ${eur(PROMO.shipCost)}.`:'Kostenloser Versand für alle Bestellungen.'} ${lieferzeit()}.<br>
-          30 Tage Rückgaberecht, kostenloser Rückversand. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Alle Details</a></p></details>
+          14 Tage Rückgaberecht, kostenloser Rückversand. <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">Alle Details</a></p></details>
       </div>
       <div class="prevs">
         <div class="xh">Das sagen Kunden</div>
