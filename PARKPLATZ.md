@@ -23,6 +23,7 @@ ggf. anpassen). Reihenfolge = Zeitpunkt der Entfernung, Neueste zuletzt.
 | EdP „Blocco" | p127 | 127_a.jpg (+ Varianten assets/e/flakon-blocco-*.jpg) | Klarglas-Block, Farbverlauf innen |
 | Shampoo, 250 ml | p19 | 19_shampoo-250_*.webp | Basis-Shampoo („Volume"/„Repair" sind im Shop) |
 | Shampoo, 500 ml | p20 | 20_shampoo-500_*.webp | |
+| EdP „Dado" (Würfel) | p129 | 129_a.jpg | monochromer Glaswürfel violett |
 
 ## Sets (komplett geparkt)
 | Produkt | frühere ID | Bilder |
