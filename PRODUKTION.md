@@ -188,3 +188,29 @@ vorhandenen Bildern ableiten.
    Vorteil BG/PL: alles EU — kein Zoll, kurze Wege, gleiche Normen.
 6. **Logistik:** Beide Länder liefern per Spedition in 3–7 Tagen nach Wien.
    Lagerstart: kleines Lager oder Fulfillment-Dienstleister in Wien/Umgebung.
+
+
+---
+
+## 5. NACHTRAG (Call 12.09.) — Kundenkarte & Material
+
+### Kundenkarten-Hersteller (Recherche 15.09.)
+Design-Konzept liegt vor: `assets/e/kundenkarte-konzept.jpg` (matt schwarz,
+Goldfolien-Prägung, QR). Anbieter für kleine Auflagen (DE/AT):
+- **cardwork.de** — personalisierte Karten, gut für kleine/mittlere Auflagen, QR-Kundenkarten
+- **identible.de** — Expressdruck, schwarze Rohkarten lagernd
+- **nfcw.de** — NFC-Karten (Karte ans Handy halten → Website öffnet, edler als QR)
+- **plastikkarten.at** (Creative Card, AT) — ab 1 Stück, gut für Muster
+- **onlineprinters.de / wir-machen-druck.de** — günstig für größere Auflagen, NFC optional
+Empfehlung: 2–3 Muster bestellen (matt schwarz + Goldfolie, einmal mit NFC-Chip),
+Kosten grob 1–3 €/Karte bei 500 Stück, NFC +0,50–1 €.
+
+### Stoff-Kunststoff-Mix (Olegs „geile Jacke von früher")
+Das gesuchte Material heißt in der Branche:
+- **Softshell** (Polyester-Elasthan-Laminat) — wasserabweisend, weich, kein Rascheln
+- **beschichtete Baumwolle / „Coated Cotton" (Wachs- oder PU-Beschichtung)** —
+  Stoff-Optik mit Regenschutz, „Krokodil-Optik" möglich über Prägung
+- **TPU-laminierte Strickstoffe** — der Mix aus Textilgefühl und Kunststoff-Schutz
+Für Hemden: dicht gewebte Baumwolle mit DWR-Imprägnierung (wasserabweisend,
+hemdtauglich). In Herstellergesprächen nach „Softshell", „PU-coated cotton"
+und „DWR-Finish" fragen.
