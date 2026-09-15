@@ -49,7 +49,7 @@ ggf. anpassen). Reihenfolge = Zeitpunkt der Entfernung, Neueste zuletzt.
 | Leggings „Motion" (violett) | p102 | 102_a–d.jpg | |
 | Sport-Bra „Support" (grün) | p103 | 103_a/103_b.jpg | |
 | Sport-Shorts „Pace" (grün) | p107 | 107_a/107_b.jpg | |
-| Herren-T-Shirt „Essenziale" | p118 | 118_a/118_b.jpg + 118_video.mp4 | Redesign mit Quadrate-Print |
+
 | Herren-Hoodie „Comodo" | p119 | 119_a/119_b.jpg | Creme mit Quadrate-Tape |
 | Herren-Jogginghose „Rilassato" | p121 | 121_a/121_b.jpg | |
 | Loafer-Socken 3er | p123 | 123_a.jpg | Schwarz/Königsblau/Braun |

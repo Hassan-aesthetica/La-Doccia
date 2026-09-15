@@ -1572,6 +1572,9 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h1>Kontakt</h1>
     <p class="lead">Ob Frage zum Shop, zu einer Bestellung oder zu einem Produkt — wir sind persönlich für Sie da und antworten in der Regel innerhalb eines Werktags.</p>
 
+    <h2>Persönliche Beratung — echte Menschen</h2>
+    <p>Bei uns landen Sie nicht bei einem Bot: In der Startphase beraten wir Sie persönlich am Telefon — zu Größen, Farben und Geschenken. Versprochen.</p>
+
     <h2>So erreichen Sie uns</h2>
     <p>
       La Doccia — Oleg Neufeld<br>
@@ -1907,7 +1910,19 @@ const store={get(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v==
 /* ---------- Tracking-Stub: schreibt nur in den dataLayer, lädt kein Skript.
    Echtes Tracking erst nach Consent-System — siehe OFFEN.md ---------- */
 window.dataLayer=window.dataLayer||[];
-function track(ev,data){window.dataLayer.push(Object.assign({event:ev},data||{}))}
+/* Klick-Statistik je Produkt (für Herstellergespräche): localStorage-Zähler.
+   Auswertung intern über die Konsole: ldStats() — sortierte Liste aller view_item. */
+window.ldStats=function(){
+  const s=store.get('ld_stats')||{};
+  return Object.entries(s).sort((a,b)=>b[1]-a[1])
+    .map(([id,n])=>({id,klicks:n,name:(P.find(p=>p.id===id)||{}).n||id}));
+};
+function track(ev,data){
+  window.dataLayer.push(Object.assign({event:ev},data||{}));
+  if(ev==='view_item'&&data&&data.item_id){
+    const s=store.get('ld_stats')||{}; s[data.item_id]=(s[data.item_id]||0)+1; store.set('ld_stats',s);
+  }
+}
 
 /* ---------- Wunschliste & Zuletzt angesehen (persistent) ---------- */
 let WISH=new Set(store.get('ld_wish',[]));
@@ -2100,6 +2115,7 @@ const P=[
  {id:'p115',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Colore“, 50 ml',p:119,img:'assets/p/115_gelb.jpg',r:4.8,rv:5,badge:'Neu',colors:[0,1,2,3],cimg:{Gelb:'assets/p/115_gelb.jpg',Orange:'assets/p/115_orange.jpg','Türkis':'assets/p/115_tuerkis.jpg',Violett:'assets/p/115_violett.jpg'},rel:["p113","p114","p03"],d:'Die Signature-Flasche in einer Farbe komplett — wählen Sie Ihre: Gelb, Orange, Türkis oder Violett. Jede Farbe trägt ihren eigenen Duftcharakter.',x:'Gelb: Zitrus & Neroli. Orange: Ambra & Vanille. Türkis: Meersalz & Feige. Violett: Iris & Sandelholz. Je 11 % Duftölanteil.'},
  {id:'p116',cat:'mode',sc:'schuhe',who:'damen',n:'Plateau-Sneaker „Nuvola“',p:139,img:'assets/p/116_a.jpg',r:4.9,rv:2,badge:'Neu',mat:'Canvas, Gummisohle',sizes:["36","37","38","39","40","41"],rel:["p64","p65","p105"],d:'Der Statement-Sneaker: cremeweiße Bumper-Sohle mit weicher, runder Kappe — wolkig dick, federleicht getragen.',x:'Geprägtes LA DOCCIA an der Ferse, vier gestickte Quadrate am Schaft. Sohle abwischbar, Obermaterial imprägniert.'},
  {id:'p117',cat:'mode',sc:'taschen',who:'damen',n:'Handtasche „Quadra“',p:189,img:'assets/p/117_neu_a.jpg',r:4.9,rv:3,badge:'Neu',mat:'Genarbtes Leder, Baumwollfutter',rel:["p132","p49","p108"],d:'Streng quadratisch mit eckigen Griffen, goldener Ziernaht an jeder Kante und dem goldgefassten Kristall-Quadrat auf der Front — strahlt in der Sonne.',x:'Goldene Hardware, Magnetverschluss, Innenfach mit Reißverschluss. Naht-Varianten (Gold/Schwarz/Grün) in Vorbereitung.'},
+ {id:'p118',cat:'mode',sc:'kleidung',who:'herren',n:'T-Shirt „Essenziale“',p:79,img:'assets/p/118_a.jpg',img2:'assets/p/118_b.jpg',gal:['assets/p/118_b.jpg','assets/p/118_video.mp4'],r:4.9,rv:4,badge:'Neu',mat:'100 % Bio-Baumwolle, 220 g/m²',sizes:["S","M","L","XL"],rel:["p130","p131","p122"],d:'Das schwere off-white T-Shirt mit den vier großen Hohlquadraten und der Serifen-Wortmarke auf der Brust — das Statement-Piece der Herrenlinie.',x:'Vorgewaschen, verstärkte Schulternähte, Rippkragen mit türkiser Linie. Bei 30 °C waschen.'},
  {id:'p120',cat:'mode',sc:'kleidung',who:'herren',n:'Poloshirt „Marina“',p:79,img:'assets/p/120_a.jpg',img2:'assets/p/120_b.jpg',gal:['assets/p/120_b.jpg'],r:4.8,rv:3,badge:'Neu',mat:'100 % Piqué-Baumwolle',sizes:["S","M","L","XL"],rel:["p120","p122","p126"],d:'Piqué-Polo in Türkis mit weißem Logostick — vom Frühstück bis zum Abendessen richtig angezogen.',x:'Formstabiler Kragen, seitliche Schlitze. Bei 30 °C waschen, in Form ziehen.'},
  {id:'p122',cat:'mode',sc:'huete',who:'herren',n:'Cap „Quadro“',p:49,img:'assets/p/122_neu_a.jpg',r:4.9,rv:5,badge:'Neu',mat:'100 % Baumwoll-Twill',rel:["p130","p120","p131"],d:'Die Luxus-Cap: alle sechs Panels mit fetter goldener Ziernaht abgesteppt, goldenes LA DOCCIA mit den vier Quadraten — die Cap fürs Golfspiel, nicht für den Regen.',x:'Goldene Metallschließe, größenverstellbar. Nicht waschen, feucht abwischen.'},
  {id:'p124',cat:'textil',sc:'maentel',who:'herren',n:'Morgenmantel „Uomo“',p:99,img:'assets/p/124_a.jpg',img2:'assets/p/124_b.jpg',gal:['assets/p/124_b.jpg'],r:4.9,rv:2,badge:'Neu',mat:'100 % Baumwolle (Waffelpiqué)',sizes:["M","L","XL"],rel:["p125","p42","p120"],d:'Steingrauer Waffelpiqué-Mantel mit Schalkragen — leicht, schnell trocknend, mit gesticktem Brustlogo.',x:'Zwei aufgesetzte Taschen, Gürtelschlaufen. Bei 60 °C waschbar, trocknergeeignet.'},
