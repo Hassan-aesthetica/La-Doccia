@@ -23,6 +23,9 @@ ggf. anpassen). Reihenfolge = Zeitpunkt der Entfernung, Neueste zuletzt.
 | EdP „Blocco" | p127 | 127_a.jpg (+ Varianten assets/e/flakon-blocco-*.jpg) | Klarglas-Block, Farbverlauf innen |
 | Shampoo, 250 ml | p19 | 19_shampoo-250_*.webp | Basis-Shampoo („Volume"/„Repair" sind im Shop) |
 | Shampoo, 500 ml | p20 | 20_shampoo-500_*.webp | |
+| Taschenzerstäuber 10 ml | p03 | 03_taschenzerstaeuber_*.webp | |
+| EdP „Quartetto" (geviertelter Würfel) | p139 | 139_a.jpg | |
+| EdP „Colore" (einfarbige Flasche, 4 Farben) | p115 | 115_gelb/orange/tuerkis/violett.jpg | |
 | EdP „Dado" (Würfel) | p129 | 129_a.jpg | monochromer Glaswürfel violett |
 
 ## Sets (komplett geparkt)
