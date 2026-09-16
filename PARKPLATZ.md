@@ -73,3 +73,4 @@ Noch im Shop aus Zubehör: nur die Antirutschmatte (p60).
    oder neu anlegen nach dem Schema in UEBERGABE.md.
 2. Vor `];` des `P`-Arrays einfügen, `rel`-Verweise auf aktuelle IDs prüfen.
 3. Bilder liegen unverändert unter `assets/p/` bzw. `assets/s/`.
+- **p130 Poloshirt „Marina Oro"** (49 €, assets/p/130_a.jpg) — entfernt 16.9., da Dublette zum Premium-Polo „Bottone" (p149). Wiederherstellen: P-Eintrag aus Git (commit a2248be) zurückkopieren, sc ist jetzt 'oberteile'.
