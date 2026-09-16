@@ -214,3 +214,23 @@ Das gesuchte Material heißt in der Branche:
 Für Hemden: dicht gewebte Baumwolle mit DWR-Imprägnierung (wasserabweisend,
 hemdtauglich). In Herstellergesprächen nach „Softshell", „PU-coated cotton"
 und „DWR-Finish" fragen.
+
+## Preis-Architektur (16.9.) — Positionierung Richtung Hugo Boss
+Benchmarks live von hugoboss.com recherchiert (16.9.): Strickpolos 150–160 €,
+Jacken 299–499 €, Leder-Sneaker 160–450 €, Derbys/Loafer 199 €, Ledertaschen 370–450 €.
+La Doccia positioniert sich als neue Marke knapp darunter:
+
+| Rubrik | La Doccia | Boss-Anker |
+|---|---|---|
+| T-Shirts | 79–99 | 59–79 |
+| Polos | 99 / Premium 149–159 | 100–160 |
+| Hemden | 129–149 | 99–149 |
+| Strick | 69 (Kind) – 179 | 149–199 |
+| Hosen | 149 | 129–179 |
+| Jacken/Mäntel | 149 (Kind) – 399 | 299–499 |
+| Regen | 89 (Kind) – 299 | 299–449 |
+| Schuhe | 99–249 (Premium ab 149) | 160–450 |
+| Taschen | 229–349 | 160–450 |
+| Caps/Hüte | 24–79 | 45–60 |
+Kosmetik/Textil bleiben bewusst erschwinglich (Zwei-Schienen-Strategie, Oleg 12.9.).
+Sale nur noch auf Einstiegsartikeln — Premium (z. B. Quadra) wird nicht rabattiert.
