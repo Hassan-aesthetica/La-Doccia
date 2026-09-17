@@ -1243,7 +1243,6 @@ nav.main .salelink:hover{border-color:#E0231C}
   <!-- Navigationszeile (Bernstein: Produkte · Sale % · Trends & Inspiration · Service) -->
   <nav class="hnav">
     <a href="#" class="neulink" onclick="go('shop','neuwelt');return false">Neu</a>
-    <a href="#" class="salelink" onclick="go('shop','sale');return false">Sale&nbsp;%</a>
     <a href="#" onclick="go('shop','damenwelt');return false">Damen</a>
     <a href="#" onclick="go('shop','herrenwelt');return false">Herren</a>
     <a href="#" onclick="go('shop','kinderwelt');return false">Kinder</a>
@@ -1269,7 +1268,6 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a href="#" onclick="go('shop','damenwelt');mnav(0);return false">Damen</a>
   <a href="#" onclick="go('shop','herrenwelt');mnav(0);return false">Herren</a>
   <a href="#" onclick="go('shop','kinderwelt');mnav(0);return false">Kinder</a>
-  <a href="#" class="sub" style="color:#E0231C" onclick="go('shop','sale');mnav(0);return false">Sale</a>
   <a href="#" class="sub" onclick="go('shop','neu');mnav(0);return false">Neuheiten</a>
   <a href="#" class="sub" onclick="go('wunsch');renderWish();mnav(0);return false">♡ Wunschliste</a>
   <a href="#marke" onclick="mnav(0);goSec('marke');return false">Die Marke</a>
@@ -1282,7 +1280,6 @@ nav.main .salelink:hover{border-color:#E0231C}
   <a onclick="go('shop','herrenwelt')" style="font-weight:600">Herren</a>
   <a onclick="go('shop','kinderwelt')" style="font-weight:600">Kinder</a>
   <a onclick="go('shop','neuwelt')">Neu</a>
-  <a class="salelink" onclick="go('shop','sale')">Sale</a>
   <a onclick="go('shop')">Alle Produkte</a>
 </div>
 
@@ -1351,20 +1348,6 @@ nav.main .salelink:hover{border-color:#E0231C}
 
 
   <!-- TERMIN -->
-  <!-- NEWSLETTER -->
-  <section class="nl">
-    <div class="wrap">
-      <span class="eyebrow reveal">Willkommensrabatt</span>
-      <h2 class="reveal">10 % auf Ihre erste Bestellung.</h2>
-      <p class="reveal">Newsletter abonnieren und den Code sofort erhalten — gültig auf alle Accessoires und unser Eau de Toilette. Etwa zwei Mails im Monat.</p>
-      <div class="nlform reveal">
-        <input type="email" id="nlmail" placeholder="Ihre E-Mail-Adresse" autocomplete="email">
-        <button class="btn" onclick="nlSubmit()">10 % sichern</button>
-      </div>
-      <div class="nlok" id="nlok">Danke! Ihr Code <b>DOCCIA10</b> ist unterwegs.</div>
-      <p class="fine">Mit der Anmeldung stimmen Sie unserer <a href="#" onclick="go('datenschutz');return false" style="color:inherit;text-decoration:underline;text-underline-offset:2px">Datenschutzerklärung</a> zu.</p>
-    </div>
-  </section>
 
   <!-- SEO -->
 </main>
@@ -1456,8 +1439,6 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h2>Kontaktanfragen</h2>
     <p>Wenn Sie per E-Mail oder Telefon Kontakt aufnehmen, verarbeiten wir die von Ihnen angegebenen Daten (Name, Kontaktdaten, Anliegen) ausschließlich zur Bearbeitung Ihrer Anfrage. Rechtsgrundlage ist die Anbahnung bzw. Erfüllung eines Vertrags (Art. 6 Abs. 1 lit. b DSGVO).</p>
 
-    <h2>Newsletter</h2>
-    <p>Für den Newsletterversand verarbeiten wir Ihre E-Mail-Adresse auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Sie können die Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, etwa über den Abmeldelink in jeder Newsletter-E-Mail.</p>
 
     <h2>Bestellabwicklung im Shop</h2>
     <p><mark>[Sobald der Shop echte Bestellungen abwickelt: Angaben zu Zahlungsdienstleistern, Versanddienstleistern und Speicherfristen ergänzen.]</mark></p>
@@ -1711,26 +1692,13 @@ nav.main .salelink:hover{border-color:#E0231C}
   <div class="dprog">
     <div class="msg" id="pmsg"></div>
     <div class="track"><div class="fill" id="pfill"></div></div>
-    <div class="steps"><span id="s1">Kostenloser Versand</span><span id="s2">2 Artikel −10 %</span>
-      <span id="s3">3 Artikel −15 %</span></div>
+    <div class="steps"><span id="s1">Kostenloser Versand &amp; Rückversand</span></div>
   </div>
   <div class="ditems" id="ditems"></div>
   <div class="dfoot" id="dfoot"></div>
 </aside>
 
 <!-- POPUP -->
-<div class="pop" id="pop"><div class="popbox">
-  <button class="popclose" onclick="popClose()">&times;</button>
-  <div class="imgside"><img data-img="towel" alt=""></div>
-  <div class="popbody" id="popbody">
-    <span class="eyebrow">Willkommen bei La Doccia</span>
-    <h3>10 % auf Ihre erste Bestellung</h3>
-    <p>Newsletter abonnieren und den Code sofort erhalten. Etwa zwei Mails im Monat, jederzeit abbestellbar.</p>
-    <input type="email" id="popmail" placeholder="Ihre E-Mail-Adresse" autocomplete="email">
-    <button class="btn" onclick="popSubmit()">Code anfordern</button>
-    <p class="fine">Gültig 30 Tage auf Accessoires und Eau de Toilette, nicht kombinierbar mit anderen Aktionen.</p>
-  </div>
-</div></div>
 
 
 <!-- PRODUKT-MODAL -->
@@ -1901,8 +1869,7 @@ function obs(){document.querySelectorAll('.reveal:not(.in)').forEach(e=>io.obser
    Gratisversand stapelt immer. Alle Schwellen nur hier ändern. */
 const PROMO={
   freeShip:0, shipCost:0,   // Versand ist IMMER kostenlos (freeShip>0 würde eine Schwelle aktivieren)
-  tiers:[{n:3,d:.15},{n:2,d:.10}],
-  welcome:{code:'DOCCIA10',d:.10,label:'Neukundenrabatt'}
+  tiers:[{n:3,d:0},{n:2,d:0}]
 };
 const store={get(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v==null?f:v}catch(e){return f}},
   set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -1927,7 +1894,7 @@ function track(ev,data){
 /* ---------- Wunschliste & Zuletzt angesehen (persistent) ---------- */
 let WISH=new Set(store.get('ld_wish',[]));
 let SEEN=store.get('ld_seen',[]);
-let COUPON=store.get('ld_coupon',null);
+let COUPON=null;
 
 /* ---------- Grundpreis (PAngV): Pflicht bei Pflegeprodukten.
    Produkte mit ml/g bekommen ihn automatisch; EdP (klassisches Parfüm) und
@@ -2021,19 +1988,19 @@ const CATS=[
 const P=[
  {id:'p02',cat:'parfuem',sc:'edp',who:'herren',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',img2:'assets/p/02_eau-de-parfum-herren_b.webp',gal:["assets/p/02_eau-de-parfum-herren_b.webp", "assets/p/02_eau-de-parfum-herren_c.webp", "assets/e/edp-herren-mann.jpg"],r:4.9,rv:7,who:"herren",rel:["p113", "p141", "p141"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
  {id:'p05',cat:'parfuem',sc:'mist',n:"Körperspray „Agrumi“, 100 ml",p:29,img:'assets/p/05_koerperspray_a.webp',img2:'assets/e/spray-detail.jpg',gal:["assets/e/spray-detail.jpg"],r:4.7,rv:28,ml:100,rel:["p113", "p02", "p141"],d:"Leichter Duftnebel für Haut und Haar — dezent, frisch und alltagstauglich.",x:"3 % Duftölanteil mit pflegendem Panthenol. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren."},
- {id:'p06',cat:'parfuem',sc:'kerzen',n:"Duftkerze, 220 g",p:49,old:59,img:'assets/p/06_duftkerze-220g_a.webp',img2:'assets/p/06_duftkerze-220g_b.webp',gal:["assets/p/06_duftkerze-220g_b.webp", "assets/p/06_duftkerze-220g_c.webp"],r:4.8,rv:35,g:220,rel:["p07", "p06", "p113"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
+ {id:'p06',cat:'parfuem',sc:'kerzen',n:"Duftkerze, 220 g",p:49,img:'assets/p/06_duftkerze-220g_a.webp',img2:'assets/p/06_duftkerze-220g_b.webp',gal:["assets/p/06_duftkerze-220g_b.webp", "assets/p/06_duftkerze-220g_c.webp"],r:4.8,rv:35,g:220,rel:["p07", "p06", "p113"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
  {id:'p07',cat:'parfuem',sc:'kerzen',n:"Duftkerze klein, 90 g",p:24,img:'assets/p/07_duftkerze-90g_a.webp',img2:'assets/p/07_duftkerze-90g_b.webp',gal:["assets/p/07_duftkerze-90g_b.webp", "assets/p/07_duftkerze-90g_c.webp"],r:4.9,rv:6,g:90,rel:["p06", "p06", "p113"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
  {id:'p09',cat:'kosmetik',sc:'dusche',n:"Duschgel, 250 ml",p:14,img:'assets/p/09_duschgel-250_a.webp',img2:'assets/p/09_duschgel-250_b.webp',gal:["assets/p/09_duschgel-250_b.webp", "assets/e/dept-kosmetik.jpg"],r:4.6,rv:20,badge:"Bestseller",ml:250,rel:["p10", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
- {id:'p10',cat:'kosmetik',sc:'dusche',n:"Duschgel, 500 ml",p:22,old:26,img:'assets/p/10_duschgel-500_a.webp',img2:'assets/p/10_duschgel-500_detail.jpg',gal:["assets/p/10_duschgel-500_detail.jpg"],r:4.8,rv:36,ml:500,rel:["p09", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
+ {id:'p10',cat:'kosmetik',sc:'dusche',n:"Duschgel, 500 ml",p:22,img:'assets/p/10_duschgel-500_a.webp',img2:'assets/p/10_duschgel-500_detail.jpg',gal:["assets/p/10_duschgel-500_detail.jpg"],r:4.8,rv:36,ml:500,rel:["p09", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p11',cat:'kosmetik',sc:'dusche',n:"Duschöl, 200 ml",p:19,img:'assets/p/11_duschoel_a.webp',img2:'assets/p/11_duschoel_b.webp',gal:["assets/p/11_duschoel_b.webp", "assets/p/11_duschoel_c.webp"],r:4.9,rv:7,ml:200,rel:["p09", "p10", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p12',cat:'kosmetik',sc:'dusche',n:"Duschpeeling, 200 ml",p:18,img:'assets/p/12_duschpeeling_a.webp',img2:'assets/p/12_duschpeeling_b.webp',gal:["assets/p/12_duschpeeling_b.webp", "assets/p/12_duschpeeling_c.webp"],r:5.0,rv:14,ml:200,rel:["p09", "p10", "p11"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p13',cat:'kosmetik',sc:'koerper',n:"Bodylotion, 250 ml",p:19,img:'assets/p/13_neu_a.jpg',r:4.8,rv:41,ml:250,rel:["p14", "p15", "p100"],d:"Leichte Bodylotion im Verlaufs-Flakon von Gelb zu Weiß — zieht schnell ein, duftet dezent nach der Kollektion.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Auf die noch feuchte Haut auftragen — so bindet sie die Feuchtigkeit am besten."},
- {id:'p14',cat:'kosmetik',sc:'koerper',n:"Body Butter, 200 ml",p:24,old:29,img:'assets/p/14_body-butter_a.webp',img2:'assets/p/14_body-butter_b.webp',gal:["assets/p/14_body-butter_b.webp", "assets/p/14_body-butter_c.webp"],r:4.7,rv:28,ml:200,rel:["p13", "p15", "p16"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
+ {id:'p14',cat:'kosmetik',sc:'koerper',n:"Body Butter, 200 ml",p:24,img:'assets/p/14_body-butter_a.webp',img2:'assets/p/14_body-butter_b.webp',gal:["assets/p/14_body-butter_b.webp", "assets/p/14_body-butter_c.webp"],r:4.7,rv:28,ml:200,rel:["p13", "p15", "p16"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'p15',cat:'kosmetik',sc:'koerper',n:"Handcreme, 50 ml",p:12,img:'assets/p/15_handcreme-50_a.webp',img2:'assets/p/15_handcreme-50_b.webp',gal:["assets/p/15_handcreme-50_b.webp", "assets/p/15_handcreme-50_c.webp", "assets/e/person-handcreme.jpg"],r:4.8,rv:35,ml:50,rel:["p13", "p14", "p16"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'p16',cat:'kosmetik',sc:'koerper',n:"Handcreme-Mini-Set, 3 × 30 ml",p:24,img:'assets/p/16_handcreme-mini-set_a.webp',img2:'assets/p/16_handcreme-mini-set_b.webp',gal:["assets/p/16_handcreme-mini-set_b.webp", "assets/p/16_handcreme-mini-set_c.webp"],r:4.9,rv:6,badge:"Set",rel:["p13", "p14", "p15"],d:"Pflege für jeden Tag: zieht schnell ein, duftet dezent nach der Kollektion und hinterlässt kein Fett auf der Haut.",x:"Mit Sheabutter und Panthenol, ohne Mineralöl. Im Winter großzügiger dosieren, im Sommer reicht eine dünne Schicht auf der noch feuchten Haut."},
  {id:'p17',cat:'kosmetik',sc:'koerper',n:"Lippenbalsam",p:9,img:'assets/p/17_lippenbalsam_a.webp',img2:'assets/p/17_lippenbalsam_b.webp',gal:["assets/p/17_lippenbalsam_b.webp", "assets/p/17_lippenbalsam_c.webp"],r:5.0,rv:13,rel:["p13", "p14", "p15"],d:"Pflegender Lippenbalsam mit Sheabutter und einem Hauch Zitrus — der kleinste Artikel der Kollektion, immer dabei.",x:"Ohne Mineralöl, mit Bienenwachs und Sheabutter. Passt in jede Kosmetiktasche — auch als Mitgebsel beliebt."},
  {id:'p21',cat:'kosmetik',sc:'haar',n:"Conditioner, 250 ml",p:18,img:'assets/p/21_conditioner_a.webp',img2:'assets/p/21_conditioner_detail.jpg',gal:["assets/p/21_conditioner_detail.jpg"],r:5.0,rv:14,ml:250,rel:["p92", "p93", "p22"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
- {id:'p22',cat:'kosmetik',sc:'haar',n:"Haarmaske, 200 ml",p:24,old:32,img:'assets/p/22_haarmaske_a.webp',img2:'assets/p/22_haarmaske_b.webp',gal:["assets/p/22_haarmaske_b.webp", "assets/p/22_haarmaske_c.webp"],r:4.6,rv:21,ml:200,rel:["p92", "p93", "p21"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
+ {id:'p22',cat:'kosmetik',sc:'haar',n:"Haarmaske, 200 ml",p:24,img:'assets/p/22_haarmaske_a.webp',img2:'assets/p/22_haarmaske_b.webp',gal:["assets/p/22_haarmaske_b.webp", "assets/p/22_haarmaske_c.webp"],r:4.6,rv:21,ml:200,rel:["p92", "p93", "p21"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
  {id:'p24',cat:'kosmetik',sc:'haar',n:"Trockenshampoo, 150 ml",p:16,img:'assets/p/24_trockenshampoo_a.webp',img2:'assets/p/24_trockenshampoo_b.webp',gal:["assets/p/24_trockenshampoo_b.webp", "assets/p/24_trockenshampoo_c.webp"],r:4.8,rv:35,badge:"Neu",ml:150,rel:["p92", "p93", "p21"],d:"Haarpflege für beanspruchtes Haar nach Sonne, Salzwasser und Chlor — pflegt, ohne zu beschweren.",x:"Sulfatfrei, mit Panthenol und Arganöl. Mild genug für die tägliche Wäsche; als Kur einmal pro Woche 5 Minuten einwirken lassen."},
  {id:'p25',cat:'kosmetik',sc:'mund',n:"Zahnbürste",p:6,img:'assets/p/25_zahnbuerste_a.webp',img2:'assets/p/25_zahnbuerste_b.webp',gal:["assets/p/25_zahnbuerste_b.webp", "assets/p/25_zahnbuerste_c.webp"],r:4.9,rv:6,rel:["p26", "p26", "p25"],d:"Klare Formen, weiche Borsten, Markenfarben — Zahnpflege, die auf der Ablage gut aussieht.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
  {id:'p26',cat:'kosmetik',sc:'mund',n:"Zahnbürsten-Duo",p:10,img:'assets/p/26_zahnbuerste-2er_a.webp',img2:'assets/p/26_zahnbuerste-2er_b.webp',gal:["assets/p/26_zahnbuerste-2er_b.webp", "assets/p/26_zahnbuerste-2er_c.webp"],r:5.0,rv:13,badge:"Set",rel:["p25", "p26", "p25"],d:"Klare Formen, weiche Borsten, Markenfarben — Zahnpflege, die auf der Ablage gut aussieht.",x:"Borsten mittelweich, zahnfleischschonend. Alle 3 Monate wechseln — deshalb gibt es das Duo im Vorteilspack."},
@@ -2049,16 +2016,16 @@ const P=[
  {id:'p38',cat:'textil',sc:'tuecher',n:"Handtuch, 50 × 100 cm",p:16,img:'assets/p/38_handtuch-50x100_a.webp',img2:'assets/p/38_handtuch-50x100_b.webp',gal:["assets/p/38_handtuch-50x100_b.webp", "assets/p/38_handtuch-50x100_c.webp"],r:4.8,rv:34,badge:"Bestseller",mat:"100 % Baumwolle, 600 g/m²",colors:[3,0,2],cimg:{Violett:'assets/p/38_handtuch-50x100_a.webp',Gelb:'assets/p/40_badetuch_a.webp',Türkis:'assets/p/39_duschtuch_a.webp'},rel:["p37", "p39", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
  {id:'p39',cat:'textil',sc:'tuecher',n:"Duschtuch, 70 × 140 cm",p:29,img:'assets/p/39_duschtuch_a.webp',img2:'assets/p/39_duschtuch_b.webp',gal:["assets/p/39_duschtuch_b.webp", "assets/p/39_duschtuch_c.webp"],r:4.9,rv:5,mat:"100 % Baumwolle, 600 g/m²",colors:[2,0,3],cimg:{Türkis:'assets/p/39_duschtuch_a.webp',Gelb:'assets/p/40_badetuch_a.webp',Violett:'assets/p/38_handtuch-50x100_a.webp'},rel:["p37", "p38", "p40"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
  {id:'p40',cat:'textil',sc:'tuecher',n:"Duschtuch XL, 100 × 180 cm",p:39,img:'assets/p/40_badetuch_a.webp',img2:'assets/p/40_badetuch_b.webp',gal:["assets/p/40_badetuch_b.webp", "assets/p/40_badetuch_c.webp"],r:4.6,rv:21,mat:"100 % Baumwolle, 600 g/m²",colors:[0,2,3],cimg:{Gelb:'assets/p/40_badetuch_a.webp',Türkis:'assets/p/39_duschtuch_a.webp',Violett:'assets/p/38_handtuch-50x100_a.webp'},rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
- {id:'p41',cat:'textil',sc:'tuecher',n:"Handtuch-Set, 4-teilig",p:59,old:69,img:'assets/p/41_handtuch-set-4_a.webp',img2:'assets/p/41_handtuch-set-4_b.webp',gal:["assets/p/41_handtuch-set-4_b.webp", "assets/p/41_handtuch-set-4_c.webp", "assets/e/sale-towels.jpg"],r:4.7,rv:28,badge:"Set",mat:"100 % Baumwolle, 600 g/m²",colors:[0, 1, 2, 3],rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
+ {id:'p41',cat:'textil',sc:'tuecher',n:"Handtuch-Set, 4-teilig",p:59,img:'assets/p/41_handtuch-set-4_a.webp',img2:'assets/p/41_handtuch-set-4_b.webp',gal:["assets/p/41_handtuch-set-4_b.webp", "assets/p/41_handtuch-set-4_c.webp"],r:4.7,rv:28,badge:"Set",mat:"100 % Baumwolle, 600 g/m²",colors:[0, 1, 2, 3],rel:["p37", "p38", "p39"],d:"Baumwollfrottee mit 600 g/m² und gewebter Wortmarke — dicht, saugstark und formstabil, vorgewaschen.",x:"Waschbar bei 60 °C, bitte ohne Weichspüler — er legt sich um die Fasern und mindert die Saugkraft. Trocknergeeignet bei niedriger Stufe."},
  {id:'p42',cat:'textil',sc:'maentel',n:"Morgenmantel Frottee",p:99,img:'assets/p/42_morgenmantel-frottee_a.webp',img2:'assets/p/42_morgenmantel-frottee_b.webp',gal:["assets/p/42_morgenmantel-frottee_b.webp", "assets/p/42_morgenmantel-frottee_c.webp", "assets/e/person-frottee-mantel.jpg"],r:4.8,rv:35,mat:"100 % Baumwolle, 400 g/m²",sizes:["S", "M", "L", "XL"],rel:["p43", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
- {id:'p43',cat:'textil',sc:'maentel',n:"Morgenmantel Kimono",p:119,old:139,img:'assets/p/43_morgenmantel-kimono_a.webp',img2:'assets/p/43_morgenmantel-kimono_b.webp',gal:["assets/p/43_morgenmantel-kimono_b.webp", "assets/p/43_morgenmantel-kimono_c.webp", "assets/e/person-kimono.jpg"],r:4.9,rv:6,mat:"100 % Baumwolle, 300 g/m²",sizes:["S", "M", "L", "XL"],rel:["p42", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
+ {id:'p43',cat:'textil',sc:'maentel',n:"Morgenmantel Kimono",p:119,img:'assets/p/43_morgenmantel-kimono_a.webp',img2:'assets/p/43_morgenmantel-kimono_b.webp',gal:["assets/p/43_morgenmantel-kimono_b.webp", "assets/p/43_morgenmantel-kimono_c.webp", "assets/e/person-kimono.jpg"],r:4.9,rv:6,mat:"100 % Baumwolle, 300 g/m²",sizes:["S", "M", "L", "XL"],rel:["p42", "p44", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p44',cat:'textil',sc:'maentel',n:"Haarturban",p:19,img:'assets/p/44_haarturban_a.webp',img2:'assets/p/44_haarturban_b.webp',gal:["assets/p/44_haarturban_b.webp", "assets/p/44_haarturban_c.webp", "assets/e/person-turban.jpg"],r:5.0,rv:13,mat:"100 % Baumwolle, 350 g/m²",rel:["p42", "p43", "p45"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p45',cat:'textil',sc:'maentel',n:"Waschhandschuh",p:8,img:'assets/p/45_waschhandschuh_a.webp',img2:'assets/p/45_waschhandschuh_b.webp',gal:["assets/p/45_waschhandschuh_b.webp", "assets/p/45_waschhandschuh_c.webp"],r:4.6,rv:20,mat:"100 % Baumwolle, 500 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p46',cat:'textil',sc:'maentel',n:"Duschvorleger, 50 × 80 cm",p:29,img:'assets/p/46_badematte_a.webp',img2:'assets/p/46_badematte_b.webp',gal:["assets/p/46_badematte_b.webp", "assets/p/46_badematte_c.webp"],r:4.7,rv:27,mat:"100 % Baumwolle, 900 g/m²",rel:["p42", "p43", "p44"],d:"Weiches Baumwollfrottee mit der gewebten Wortmarke — für den Morgen, der sich wie Urlaub anfühlt.",x:"Waschbar bei 40 °C, kein Weichspüler. Vor dem ersten Tragen einmal waschen — dann ist der Flor am weichsten."},
  {id:'p47',cat:'mode',sc:'schuhe',n:"Hausschuhe",p:34,img:'assets/p/47_hausschuhe_neu_a.jpg',img2:'assets/p/47_hausschuhe_neu_b.jpg',gal:["assets/p/47_hausschuhe_neu_b.jpg", "assets/p/47_hausschuhe_neu_c.jpg"],r:4.8,rv:34,mat:"Obermaterial Baumwollfrottee, Sohle rutschhemmend",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[4,0,2],cimg:{Weiß:'assets/p/47_hausschuhe_neu_a.jpg',Gelb:'assets/p/47_hausschuhe_gelb.jpg',Türkis:'assets/p/47_hausschuhe_tuerkis.jpg'},rel:["p48", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
  {id:'p48',cat:'mode',sc:'schuhe',n:"Pantoletten",p:29,img:'assets/p/48_badeschlappen_a.webp',img2:'assets/p/48_badeschlappen_b.webp',gal:["assets/p/48_badeschlappen_b.webp", "assets/e/person-pantoletten.jpg"],r:4.9,rv:5,mat:"EVA, wasserfest",sizes:["36/37", "38/39", "40/41", "42/43"],colors:[0,2,4],cimg:{Gelb:'assets/p/48_badeschlappen_a.webp',Türkis:'assets/p/48_badeschlappen_tuerkis.jpg',Weiß:'assets/p/48_badeschlappen_weiss.jpg'},rel:["p47", "p37", "p38"],d:"Leicht, bequem und rutschhemmend — für Duschraum, Pool und Hotelmorgen.",x:"Die Sohle ist rutschhemmend profiliert. Feucht abwischen bzw. bei 30 °C waschen (Frottee-Modelle)."},
  {id:'p49',cat:'mode',sc:'taschen',n:"Kosmetiktasche klein",p:24,img:'assets/p/49_kosmetiktasche-klein_a.webp',img2:'assets/p/49_kosmetiktasche-klein_b.webp',gal:["assets/p/49_kosmetiktasche-klein_b.webp", "assets/p/49_kosmetiktasche-klein_c.webp", "assets/e/person-kosmetiktasche.jpg"],r:5.0,rv:12,mat:"Baumwoll-Canvas, beschichtet",rel:["p50", "p51", "p49"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
- {id:'p50',cat:'mode',sc:'taschen',n:"Kosmetiktasche groß",p:34,old:42,img:'assets/p/50_kosmetiktasche-gross_a.webp',img2:'assets/p/50_kosmetiktasche-gross_b.webp',gal:["assets/p/50_kosmetiktasche-gross_b.webp", "assets/p/50_kosmetiktasche-gross_c.webp"],r:4.7,rv:28,mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p51", "p49"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
+ {id:'p50',cat:'mode',sc:'taschen',n:"Kosmetiktasche groß",p:34,img:'assets/p/50_kosmetiktasche-gross_a.webp',img2:'assets/p/50_kosmetiktasche-gross_b.webp',gal:["assets/p/50_kosmetiktasche-gross_b.webp", "assets/p/50_kosmetiktasche-gross_c.webp"],r:4.7,rv:28,mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p51", "p49"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
  {id:'p51',cat:'mode',sc:'taschen',n:"Kulturbeutel",p:39,img:'assets/p/51_kulturbeutel_a.webp',img2:'assets/p/51_kulturbeutel_b.webp',gal:["assets/p/51_kulturbeutel_b.webp", "assets/p/51_kulturbeutel_c.webp"],r:4.8,rv:35,badge:"Bestseller",mat:"Baumwoll-Canvas, beschichtet",rel:["p49", "p50", "p49"],d:"Fester Baumwoll-Canvas mit beschichtetem, abwischbarem Innenfutter und dem Vier-Farben-Zeichen.",x:"Innen beschichtet — ausgelaufene Kosmetik einfach feucht auswischen. Außen bei Bedarf Handwäsche bei 30 °C, nicht in den Trockner."},
  {id:'p52',cat:'mode',sc:'acc',n:"Taschenspiegel",p:14,img:'assets/p/52_taschenspiegel_a.webp',img2:'assets/p/52_taschenspiegel_b.webp',gal:["assets/p/52_taschenspiegel_b.webp", "assets/p/52_taschenspiegel_c.webp"],r:4.9,rv:6,rel:["p49", "p49", "p109"],d:"Kleine Begleiter im Markendesign — gemacht für Handtasche, Reise und den Alltag unterwegs.",x:"Feucht abwischen genügt. Gravuren und Druck sind abriebfest — gemacht für den täglichen Gebrauch."},
  {id:'p60',cat:'zubehoer',sc:'zub',n:"Antirutschmatte",p:19,img:'assets/p/60_antirutschmatte_a.webp',img2:'assets/p/60_antirutschmatte_b.webp',gal:["assets/p/60_antirutschmatte_b.webp", "assets/p/60_antirutschmatte_c.webp"],r:4.8,rv:35,rel:["p60", "p60", "p60"],d:"Antirutschmatte mit starkem Saughalt — Sicherheit, die man nicht sieht, aber jeden Tag spürt.",x:"Saugnäpfe auf glattem Untergrund fest andrücken. Waschbar bei 30 °C — hygienischer als jede Einwegmatte."},
@@ -2152,9 +2119,6 @@ const disc=p=>p.old?Math.round((1-p.p/p.old)*100):0;
    Der Sale-Prozentsatz wird aus echten Preisen berechnet — nichts erfunden. */
 const maxSale=()=>Math.max(...P.filter(p=>p.old).map(disc));
 const COLL={
- sale:{n:'Sale',img:'assets/p/41_handtuch-set-4_a.webp',
-   sub:'Reduzierte Artikel. Alle Streichpreise sind die niedrigsten Preise der letzten 30 Tage.',
-   f:p=>!!p.old},
  neu:{n:'Neuheiten',img:'assets/e/spa-friends.jpg',
    sub:'Frisch in der Kollektion — die neuesten Artikel von La Doccia.',
    f:p=>p.badge==='Neu'},
@@ -2223,7 +2187,7 @@ function cardRail(p){
 /* ---------- Shop-Seite ---------- */
 let curCat='all', curSub='all', curSort='rec', curQ='', curWho='all';
 document.getElementById('catBar').innerHTML =
-  `<div class="chiprow">`+[{id:'all',n:'Alle Produkte'},{id:'sale',n:'Sale',cls:'salechip'},{id:'neu',n:'Neuheiten'}].concat(CATS).map(c=>
+  `<div class="chiprow">`+[{id:'all',n:'Alle Produkte'},{id:'neu',n:'Neuheiten'}].concat(CATS).map(c=>
     `<button class="chip ${c.cls||''} ${c.id==='all'?'on':''}" data-c="${c.id}" onclick="filt('${c.id}')">${c.n}</button>`).join('')+`</div>`
   + `<div class="shoptools">
      <label class="fsearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.5-4.5"/></svg>
@@ -2232,7 +2196,7 @@ document.getElementById('catBar').innerHTML =
      <span class="fcount" id="fcount"></span>
      <select class="fsel" id="sortSel" onchange="curSort=this.value;renderShop()">
        <option value="rec">Empfohlen</option><option value="new">Neueste zuerst</option><option value="asc">Preis aufsteigend</option>
-       <option value="desc">Preis absteigend</option><option value="sale">Sale zuerst</option>
+       <option value="desc">Preis absteigend</option>
      </select></div>`;
 window.whoFiltAll=function(who){
   /* komplette Liste einer Welt: alle Kategorien, who-gefiltert */
@@ -2260,7 +2224,6 @@ function sortList(l){
   l=[...l];
   if(curSort==='asc')l.sort((a,b)=>a.p-b.p);
   if(curSort==='desc')l.sort((a,b)=>b.p-a.p);
-  if(curSort==='sale')l.sort((a,b)=>disc(b)-disc(a));
   if(curSort==='new')l.sort((a,b)=>(b.badge==='Neu'?1:0)-(a.badge==='Neu'?1:0));
   return l;
 }
@@ -2788,7 +2751,7 @@ function addBundle(id){
   b.forEach(x=>{const ex=CART.find(c=>c.id===x.id&&!c.size);
     if(ex)ex.q++; else CART.push({id:x.id,n:x.n,p:x.p,img:x.img,size:null,q:1})});
   track('add_to_cart',{bundle:id,items:b.map(x=>x.id)});
-  update(); closeP(); cart(1); toast('3 Artikel hinzugefügt — 15 % Mengenrabatt aktiv');
+  update(); closeP(); cart(1); toast('Alle 3 Artikel im Warenkorb');
 }
 function openP(id){
   const p=P.find(x=>x.id===id); if(!p)return;
@@ -2845,15 +2808,13 @@ function openP(id){
         <span>14 Tage Rückgabe</span>
         <span>${lieferzeit()}</span>
       </div>
-      <div class="tierline"><b>Mengenrabatt:</b> ab 2 Artikeln −${t2} %, ab 3 Artikeln −${t3} % — automatisch im Warenkorb.</div>
       <p class="desc">${p.d}</p>
       ${bundle?`<div class="bundle">
         <div class="xh">Wird oft zusammen gekauft</div>
         <div class="brow">
           <div class="bimgs">${bundle.map((x,i)=>`${i?'<span>+</span>':''}<img src="${src(x.img)}" alt="${x.n}" title="${x.n}" onclick="openP('${x.id}')">`).join('')}</div>
-          <div class="bsum">Alle 3: <b>${eur(bsum*(1-t3/100))}</b><span class="old">${eur(bsum)}</span></div>
+          <div class="bsum">Alle 3 zusammen: <b>${eur(bsum)}</b></div>
         </div>
-        <div class="bnote">${t3} % Mengenrabatt, automatisch im Warenkorb abgezogen. Vergleich: Summe der Einzelpreise.</div>
         <button class="btn ghost slim" onclick="addBundle('${p.id}')">Alle 3 in den Warenkorb</button></div>`:''}
       <div class="accs">
         ${p.x?`<details class="acc"><summary>Gut zu wissen</summary><p>${p.x}</p></details>`:''}
@@ -2968,22 +2929,15 @@ function xsellHTML(){
       <button class="xadd" onclick="add('${p.id}')" aria-label="Hinzufügen">+</button></div>`).join('')}</div>`;
 }
 
-/* Gutschein: Neukundencode, exklusiv zum Mengenrabatt (der höhere gewinnt) */
-function applyCoupon(){
-  const v=(document.getElementById('cpin').value||'').trim().toUpperCase();
-  if(v===PROMO.welcome.code){COUPON=v;store.set('ld_coupon',v);track('coupon_applied',{code:v});toast('Code eingelöst');update()}
-  else toast('Dieser Code ist leider ungültig');
-}
-function rmCoupon(){COUPON=null;store.set('ld_coupon',null);update()}
 
 function update(){
   store.set('ld_cart',CART);
   const n=count(), s=sub();
   const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
-  const mD=tier(), cD=COUPON?PROMO.welcome.d:0;
+  const mD=0, cD=0;
   const useCoupon=cD>mD;
   const d=Math.max(mD,cD), ds=s*d;
-  const dLabel=useCoupon?`${PROMO.welcome.label} (${COUPON}) −${Math.round(cD*100)} %`:`Mengenrabatt −${Math.round(mD*100)} %`;
+  const dLabel='';
   const free=(s-ds)>=PROMO.freeShip;
   const ship=free||n===0?0:PROMO.shipCost, tot=s-ds+ship;
   if(PROMO.freeShip>0&&free&&!wasFree&&n>0)toast('Gratisversand erreicht ✓');
@@ -2999,12 +2953,6 @@ function update(){
     : `<div class="empty"><p>Ihr Warenkorb ist noch leer.</p>
        <button class="btn ghost" onclick="cart(0);go('shop')">Zum Shop</button></div>`;
   document.getElementById('dfoot').innerHTML = n? `
-    <div class="cpwrap">${COUPON
-      ? `<div class="cpon">Code <b>${COUPON}</b> hinterlegt${useCoupon?'':` — der Mengenrabatt (${Math.round(mD*100)} %) ist höher und wird angewendet`}
-          <button onclick="rmCoupon()">Entfernen</button></div>`
-      : `<details class="cpd"><summary>Gutscheincode einlösen</summary>
-          <div class="cprow"><input id="cpin" placeholder="Code" onkeydown="if(event.key==='Enter')applyCoupon()">
-          <button class="btn ghost" style="padding:10px 16px" onclick="applyCoupon()">Einlösen</button></div></details>`}</div>
     <div class="sumrow"><span>Zwischensumme (${n} Artikel)</span><span>${eur(s)}</span></div>
     ${d?`<div class="sumrow disc"><span>${dLabel}</span><span>−${eur(ds)}</span></div>`:''}
     <div class="sumrow"><span>Versand</span><span>${ship?eur(ship):'Kostenlos'}</span></div>
@@ -3013,20 +2961,9 @@ function update(){
     <div class="xor"><span>oder</span></div>
     <button class="btn" onclick="track('begin_checkout',{value:${tot.toFixed(2)}});toast('Demo — im Live-Shop öffnet hier der Checkout.')">Zur Kasse</button>
     <div class="note">Sichere Zahlung · PayPal, Klarna, Rechnung, Karte</div>` : '';
-  let pct=0,txt='';
-  if(n===0){txt=`Ab <b>2 Artikeln</b> sparen Sie automatisch ${t2} %.`;}
-  else if(n===1){txt=`Noch <b>1 Artikel</b> bis <b>${t2} % Rabatt</b>.`;pct=33}
-  else if(n===2){txt=`<b>${t2} % aktiv.</b> Noch 1 Artikel bis ${t3} %.`;pct=66}
-  else{txt=`<b>${t3} % Mengenrabatt aktiv</b> — Maximum erreicht.`;pct=100}
-  if(PROMO.freeShip>0){
-    if(n>0&&!free){txt+=` Noch <b>${eur(PROMO.freeShip-(s-ds))}</b> bis zum Gratisversand.`}
-    else if(n>0){txt+=' Gratisversand aktiv ✓';if(free)track('promo_threshold_reached',{threshold:PROMO.freeShip})}
-  }else if(n>0){txt+=' Versand kostenlos.'}
-  document.getElementById('pmsg').innerHTML=txt;
-  document.getElementById('pfill').style.width=pct+'%';
-  document.getElementById('s1').className=free&&n>0?'hit':'';
-  document.getElementById('s2').className=n>=2?'hit':'';
-  document.getElementById('s3').className=n>=3?'hit':'';
+  document.getElementById('pmsg').innerHTML='';
+  document.getElementById('pfill').style.width=(n>0?100:0)+'%';
+  document.getElementById('s1').className=n>0?'hit':'';
 }
 function cart(o){document.getElementById('drawer').classList.toggle('on',!!o);
   document.getElementById('scrim').classList.toggle('on',!!o);
@@ -3034,34 +2971,7 @@ function cart(o){document.getElementById('drawer').classList.toggle('on',!!o);
 function mnav(o){document.getElementById('mnav').classList.toggle('on',!!o)}
 
 /* ---------- Formulare ---------- */
-let popDone=false;
-function nlSubmit(){
-  const v=document.getElementById('nlmail').value;
-  if(!/.+@.+\..+/.test(v)){toast('Bitte geben Sie eine gültige E-Mail-Adresse ein');return}
-  document.getElementById('nlok').style.display='block';
-  document.getElementById('nlmail').value=''; popDone=true;
-  toast('Willkommen! Ihr Code: DOCCIA10');
-}
-function popSubmit(){
-  const v=document.getElementById('popmail').value;
-  if(!/.+@.+\..+/.test(v)){toast('Bitte geben Sie eine gültige E-Mail-Adresse ein');return}
-  document.getElementById('popbody').innerHTML=`
-    <span class="eyebrow">Willkommen bei La Doccia</span><h3>Ihr Code ist da.</h3>
-    <p>Lösen Sie ihn direkt an der Kasse ein — 30 Tage gültig.</p>
-    <div class="code">DOCCIA10</div>
-    <button class="btn" onclick="popClose()">Weiter stöbern</button>`;
-  popDone=true;
-}
-function popClose(){document.getElementById('pop').classList.remove('on')}
-function popOpen(){document.getElementById('pop').classList.add('on')}  // bewusst geöffnet (Hero-Slide)
-/* Popup nur ein einziges Mal pro Besucher (localStorage), erst nach 22 s Verweildauer */
-setTimeout(()=>{
-  let seen=false; try{seen=!!localStorage.getItem('ld_pop')}catch(e){}
-  if(!popDone&&introEnded&&!seen){
-    try{localStorage.setItem('ld_pop','1')}catch(e){}
-    document.getElementById('pop').classList.add('on');
-  }
-},22000);
+function popClose(){const p=document.getElementById('pop');if(p)p.classList.remove('on')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){popClose();cart(0);mnav(0);closeP();endIntro();
   const sg=document.getElementById('sgg');if(sg)sg.style.display='none'}});
 
@@ -3102,13 +3012,6 @@ update();
 renderWishBadge();
 document.getElementById('uspHome').innerHTML=uspRow();
 /* Drawer-Beschriftungen aus der zentralen PROMO-Config ableiten */
-(function(){
-  const t2=Math.round(PROMO.tiers.find(t=>t.n===2).d*100), t3=Math.round(PROMO.tiers.find(t=>t.n===3).d*100);
-  document.getElementById('s1').textContent=PROMO.freeShip>0?`Versandfrei ab ${Math.round(PROMO.freeShip)} €`:'Kostenloser Versand';
-  document.getElementById('s2').textContent=`2 Artikel −${t2} %`;
-  document.getElementById('s3').textContent=`3 Artikel −${t3} %`;
-  const ts=document.getElementById('tickSale'); if(ts)ts.textContent=maxSale();
-})();
 </script>
 </body>
 </html>
