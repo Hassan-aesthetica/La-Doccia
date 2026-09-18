@@ -74,3 +74,4 @@ Noch im Shop aus Zubehör: nur die Antirutschmatte (p60).
 2. Vor `];` des `P`-Arrays einfügen, `rel`-Verweise auf aktuelle IDs prüfen.
 3. Bilder liegen unverändert unter `assets/p/` bzw. `assets/s/`.
 - **p130 Poloshirt „Marina Oro"** (49 €, assets/p/130_a.jpg) — entfernt 16.9., da Dublette zum Premium-Polo „Bottone" (p149). Wiederherstellen: P-Eintrag aus Git (commit a2248be) zurückkopieren, sc ist jetzt 'oberteile'.
+- **p06 Duftkerze 220 g** (49 €, assets/p/06_duftkerze-220g_a.webp) & **p07 Duftkerze klein 90 g** (24 €, assets/p/07_duftkerze-90g_a.webp) — entfernt 18.9. (Hassan: „alle Kerzendüfte raus"). Mit entfernt: Unterkategorie „Kerzen & Raumduft" (sc:'kerzen') aus parfuem-subs, Pflegehinweis „Duftkerzen", Such-Synonym ['kerze','duftkerze','candle']. Wiederherstellen: P-Einträge aus Git (commit 834b6b7) zurück + Subkategorie/Synonym wieder ergänzen.

@@ -1645,8 +1645,6 @@ nav.main .salelink:hover{border-color:#E0231C}
     <h2>Parfüms</h2>
     <p>Kühl, trocken und dunkel lagern — nicht im Bad neben der Dusche. So bleibt ein Duft mindestens 24 Monate stabil.</p>
 
-    <h2>Duftkerzen</h2>
-    <p>Den Docht vor jedem Anzünden auf etwa 5 mm kürzen und die Kerze beim ersten Brennen so lange brennen lassen, bis die Oberfläche vollständig flüssig ist — so bildet sich kein Brennkanal.</p>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
   </div>
@@ -1923,7 +1921,6 @@ const SYN=[
  ['parfum','parfuem','duft','eau de parfum','edp'],
  ['duschgel','gel','dusche','shower'],
  ['lotion','creme','milk','body'],
- ['kerze','duftkerze','candle'],
  ['tasche','beutel','shopper','strandtasche'],
  ['rucksack','backpack','weekender','reisetasche'],
  ['etui','case','brillenetui'],
@@ -1967,8 +1964,8 @@ function prodMatch(p,q){
    Jede Abteilung hat ihre eigene Markenfarbe — Farbe führt durch die Seite. */
 const CATS=[
  {id:'parfuem', n:'Parfümerie', img:'assets/p/01_eau-de-parfum-damen_b.webp', col:'var(--c4)',
-  sub:'Eau de Parfum, Körperspray, Duftkerzen und Raumduft — der Duft der Kollektion.',
-  subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Körperspray'},{id:'kerzen',n:'Kerzen & Raumduft'}]},
+  sub:'Eau de Parfum und Körperspray — der Duft der Kollektion.',
+  subs:[{id:'edp',n:'Eau de Parfum'},{id:'mist',n:'Körperspray'}]},
  {id:'kosmetik', n:'Kosmetik', img:'assets/p/22_haarmaske_b.webp', col:'var(--c3)',
   sub:'Dusche, Körper, Haar, Zahnpflege und Seifen — mild und duftgleich mit der Kollektion.',
   subs:[{id:'dusche',n:'Dusche'},{id:'koerper',n:'Körperpflege'},{id:'haar',n:'Haarpflege'},{id:'mund',n:'Zahnpflege'},{id:'tools',n:'Bürsten & Tools'},{id:'seife',n:'Seifen'}]},
@@ -1988,8 +1985,6 @@ const CATS=[
 const P=[
  {id:'p02',cat:'parfuem',sc:'edp',who:'herren',n:"Eau de Parfum „Vetiver Noir“, 50 ml",p:119,img:'assets/p/02_eau-de-parfum-herren_a.webp',img2:'assets/p/02_eau-de-parfum-herren_b.webp',gal:["assets/p/02_eau-de-parfum-herren_b.webp", "assets/p/02_eau-de-parfum-herren_c.webp", "assets/e/edp-herren-mann.jpg"],r:4.9,rv:7,who:"herren",rel:["p113", "p141", "p141"],d:"Der Herrenduft der Kollektion: dunkler Vetiver, Grapefruit und schwarzer Pfeffer über warmem Amber — klar, trocken, erwachsen.",x:"10–12 % Duftölanteil, hält 6–8 Stunden auf der Haut. 2 Sprühstöße auf Puls und Schlüsselbein genügen. Kühl und dunkel gelagert mindestens 24 Monate haltbar."},
  {id:'p05',cat:'parfuem',sc:'mist',n:"Körperspray „Agrumi“, 100 ml",p:29,img:'assets/p/05_koerperspray_a.webp',img2:'assets/e/spray-detail.jpg',gal:["assets/e/spray-detail.jpg"],r:4.7,rv:28,ml:100,rel:["p113", "p02", "p141"],d:"Leichter Duftnebel für Haut und Haar — dezent, frisch und alltagstauglich.",x:"3 % Duftölanteil mit pflegendem Panthenol. Ganzjährig einsetzbar, auch ins trockene Haar sprühbar, ohne es zu beschweren."},
- {id:'p06',cat:'parfuem',sc:'kerzen',n:"Duftkerze, 220 g",p:49,img:'assets/p/06_duftkerze-220g_a.webp',img2:'assets/p/06_duftkerze-220g_b.webp',gal:["assets/p/06_duftkerze-220g_b.webp", "assets/p/06_duftkerze-220g_c.webp"],r:4.8,rv:35,g:220,rel:["p07", "p06", "p113"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
- {id:'p07',cat:'parfuem',sc:'kerzen',n:"Duftkerze klein, 90 g",p:24,img:'assets/p/07_duftkerze-90g_a.webp',img2:'assets/p/07_duftkerze-90g_b.webp',gal:["assets/p/07_duftkerze-90g_b.webp", "assets/p/07_duftkerze-90g_c.webp"],r:4.9,rv:6,g:90,rel:["p06", "p06", "p113"],d:"Sojawachs mit Baumwolldocht im matten Glas — der ruhige Duft der La-Doccia-Interieurs für zu Hause.",x:"100 % Sojawachs mit 8 % Duftölanteil. Den Docht vor jedem Anzünden auf 5 mm kürzen und beim ersten Brennen die Oberfläche vollständig flüssig werden lassen."},
  {id:'p09',cat:'kosmetik',sc:'dusche',n:"Duschgel, 250 ml",p:14,img:'assets/p/09_duschgel-250_a.webp',img2:'assets/p/09_duschgel-250_b.webp',gal:["assets/p/09_duschgel-250_b.webp", "assets/e/dept-kosmetik.jpg"],r:4.6,rv:20,badge:"Bestseller",ml:250,rel:["p10", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p10',cat:'kosmetik',sc:'dusche',n:"Duschgel, 500 ml",p:22,img:'assets/p/10_duschgel-500_a.webp',img2:'assets/p/10_duschgel-500_detail.jpg',gal:["assets/p/10_duschgel-500_detail.jpg"],r:4.8,rv:36,ml:500,rel:["p09", "p11", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
  {id:'p11',cat:'kosmetik',sc:'dusche',n:"Duschöl, 200 ml",p:19,img:'assets/p/11_duschoel_a.webp',img2:'assets/p/11_duschoel_b.webp',gal:["assets/p/11_duschoel_b.webp", "assets/p/11_duschoel_c.webp"],r:4.9,rv:7,ml:200,rel:["p09", "p10", "p12"],d:"Milde Reinigung mit dem Zitrus-Duft der Kollektion — sulfatfrei und pH-hautneutral.",x:"Sulfatfrei, pH 5,5, mit Aloe vera und pflanzlichem Glyzerin — mild genug für zweimal tägliches Duschen, auch bei empfindlicher Haut."},
