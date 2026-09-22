@@ -2209,8 +2209,8 @@ const COLL={
    sub:'Seamless-Leggings, Bras und Tops — moderne Sportkleidung in den vier Markenfarben.',
    f:p=>p.sc==='sport'},
  damen:{n:'Damen',img:'assets/e/damen-tote.jpg',
-   sub:'Ausgewählt für Damen — inklusive aller Unisex-Artikel der Kollektion.',
-   f:p=>!p.who||p.who==='damen'}
+   sub:'Mode und Parfümerie für Damen — inklusive aller Unisex-Düfte.',
+   f:p=>(p.cat==='mode'||p.cat==='parfuem')&&(!p.who||p.who==='damen')}
 };
 
 const heartSvg=`<svg viewBox="0 0 24 24"><path d="M12 20.5S4.8 16 2.9 11.7A5.2 5.2 0 0 1 12 6.9a5.2 5.2 0 0 1 9.1 4.8C19.2 16 12 20.5 12 20.5z"/></svg>`;
@@ -2433,7 +2433,7 @@ function renderShop(){
   /* ---- Eigene Welt: KINDER — Kinder-Hero ganz oben wie auf der Startseite ---- */
   if(curCat==='kinderwelt'){
     document.getElementById('v-shop').classList.add('landing');
-    const kids=P.filter(p=>p.who==='kinder');
+    const kids=P.filter(p=>p.who==='kinder'&&(p.cat==='mode'||p.cat==='parfuem'));
     document.getElementById('shopBody').innerHTML=`
       <div class="nwhero top reveal">
         <img src="assets/e/hero-kinder.jpg" alt="La Doccia Kinder" loading="lazy">
@@ -2446,7 +2446,7 @@ function renderShop(){
       ${weltTiles('kinder')}
       <section class="catsec" style="padding-top:8px">
         <div class="subhead"><h2>Für Kinder</h2><span class="cnt">${kids.length} Artikel</span></div>
-        <p class="sub">Regenjacken, Stiefel, Schlappen, Sneaker, Sommerhut und mildes Shampoo — wasserfest wie die Großen.</p>
+        <p class="sub">Regenjacken, Stiefel, Sneaker, Sommerhut und der eigene Kinderduft — wasserfest wie die Großen.</p>
         <div class="pg" style="margin-top:22px">${kids.map(card).join('')}</div>
       </section>
       <div style="margin-top:26px;text-align:center"><button class="btn pill allesbtn" onclick="whoFiltAll('kinder')">Alles für Kinder als Liste</button></div>`;
@@ -2460,9 +2460,9 @@ function renderShop(){
     const who=curCat.split('_')[1];
     const nice=who==='herren'?'Herren':'Kinder';
     document.getElementById('shopTitle').textContent='Alles für '+nice;
-    document.getElementById('shopSub').textContent='Die komplette Auswahl für '+nice+' — über alle Kategorien.';
+    document.getElementById('shopSub').textContent='Mode und Parfümerie für '+nice+' — nach Rubriken geordnet.';
     crumb2('Alles für '+nice);
-    let list=P.filter(p=>p.who===who||(who==='herren'&&p.cat==='parfuem'&&!p.who));
+    let list=P.filter(p=>(p.cat==='mode'||p.cat==='parfuem')&&(p.who===who||(who==='herren'&&p.cat==='parfuem'&&!p.who)));
     if(q)list=list.filter(p=>prodMatch(p,q));
     list=sortList(list);
     document.getElementById('shopBody').innerHTML=`<section class="catsec" style="padding-top:10px">
@@ -2619,7 +2619,7 @@ function renderShop(){
           ${c.subs.map(s=>`<button class="subchip ${curSub===s.id?'on':''}"
             onclick="subFilt('${s.id}')">${s.n}</button>`).join('')}</div>` : '';
       /* Damen führt inklusiv (Unisex zählt mit); Herren & Kinder sind in Bearbeitung */
-      const whobar = curCat!=='all' ? `<div class="subbar" style="margin-bottom:22px">
+      const whobar = (curCat==='mode'||curCat==='parfuem') ? `<div class="subbar" style="margin-bottom:22px">
           <button class="subchip ${curWho==='all'?'on':''}" onclick="whoFilt('all')">Alle</button>
           <button class="subchip ${curWho==='damen'?'on':''}" onclick="whoFilt('damen')">Damen</button>
           <button class="subchip ${curWho==='kinder'?'on':''}" onclick="whoFilt('kinder')">Kinder</button>
