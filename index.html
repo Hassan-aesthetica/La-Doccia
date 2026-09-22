@@ -4,6 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>LA DOCCIA — Schönes für jeden Tag</title>
+<meta name="description" content="LA DOCCIA — die Wiener Marke mit einer Handschrift und vier Farben: Parfüm im Würfel, Mode mit goldener Ziernaht, wasserfeste Begleiter für jeden Tag.">
+<meta property="og:title" content="LA DOCCIA — Schönes für jeden Tag">
+<meta property="og:description" content="Eine Handschrift, vier Farben. Parfüm im Würfel, Mode mit goldener Ziernaht — entworfen in Wien.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://raw.githubusercontent.com/Hassan-aesthetica/la-doccia/main/assets/e/hero-parfum.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#17171B">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -1213,6 +1220,7 @@ nav.main .salelink:hover{border-color:#E0231C}
 .iw img{opacity:0;transition:opacity .45s ease, transform 1.1s cubic-bezier(.2,.7,.3,1)}
 .iw img.ld{opacity:1}
 html{scroll-behavior:smooth}
+.sizetab{border-collapse:collapse;font-size:13px;margin-top:6px}.sizetab th,.sizetab td{border:1px solid rgba(20,20,24,.14);padding:6px 12px;text-align:left}.sizetab th{font-weight:600}
 </style>
 </head>
 <body class="locked">
@@ -1637,6 +1645,43 @@ html{scroll-behavior:smooth}
 </main>
 
 <!-- ============ PFLEGEHINWEISE ============ -->
+
+<main class="view" id="v-marke">
+  <div class="wrap legal" style="max-width:760px">
+    <h1>Die Marke</h1>
+    <p style="font-size:17px"><b>Eine Handschrift, vier Farben.</b> LA DOCCIA beginnt beim ersten ehrlichen
+    Moment des Tages: Wasser, Licht und Farbe. Daraus wurde eine Formsprache — das Quadrat.
+    Vier offene Quadrate in Gelb, Orange, Türkis und Violett bilden unsere Wortmarke,
+    und sie tauchen überall wieder auf: als Würfel unserer Parfüms, als Steppung auf Jacken,
+    als Stickerei auf Caps, als Kristall an Tasche und Sneaker.</p>
+    <h2>Vom Blatt Papier zum Flakon</h2>
+    <p>Jedes Parfüm der Kollektion begann als Handskizze des Gründers — gerade Linien,
+    scharfe Kanten, kein sichtbarer Deckel. Heute gibt es jede Form zweimal:
+    lackiert in kräftiger Farbe oder als <i>Vetro</i>-Edition aus satiniertem Glas mit
+    gravierter Goldschrift.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0">
+      <img src="referenzen/parfuem-skizze-1.jpg" alt="Original-Skizze des Gründers" loading="lazy" style="width:100%;border-radius:4px">
+      <img src="assets/p/148_glas_a.jpg" alt="Eau de Parfum Torre Vetro" loading="lazy" style="width:100%;border-radius:4px">
+    </div>
+    <h2>Wir verstecken Nähte nicht. Wir feiern sie.</h2>
+    <p>Wo andere Marken Nähte kaschieren, setzen wir sie in Gold und Farbe sichtbar auf
+    T-Shirts, Mäntel, Schuhe und Taschen — als Zeichen für Qualität, die nichts zu verbergen hat.</p>
+    <h2>Entworfen in Wien. Geschützt in Deutschland.</h2>
+    <p>Wort-Bild-Marke und Design sind beim Deutschen Patent- und Markenamt hinterlegt.
+    Produziert wird mit ausgewählten Manufakturen in Europa.</p>
+    <button class="btn ghost" onclick="go('shop')" style="margin-top:28px">Zur Kollektion</button>
+  </div>
+</main>
+
+<main class="view" id="v-stats">
+  <div class="wrap legal" style="max-width:720px">
+    <h1>Produkt-Statistik</h1>
+    <p>Aufrufe der Produktseiten auf diesem Gerät (für Herstellergespräche).
+    <button class="btn ghost slim" style="margin-left:10px" onclick="statsCSV()">Als CSV herunterladen</button></p>
+    <div id="statsBody" style="margin-top:18px"></div>
+    <button class="btn ghost" onclick="go('shop')" style="margin-top:28px">Zurück zum Shop</button>
+  </div>
+</main>
 <main class="view" id="v-pflege">
   <div class="wrap legal">
     <span class="eyebrow">Service</span>
@@ -1676,12 +1721,14 @@ html{scroll-behavior:smooth}
         <li><a href="#" onclick="go('faq');return false">Häufige Fragen</a></li>
         <li><a href="#" onclick="go('versand');return false">Versand &amp; Lieferung</a></li>
         <li><a href="#" onclick="go('versand');return false">Rücksendung</a></li>
-        <li><a href="#" onclick="go('pflege');return false">Pflegehinweise</a></li></ul></div>
+        <li><a href="#" onclick="go('pflege');return false">Pflegehinweise</a></li>
+        <li><a href="#" onclick="go('marke');return false">Die Marke</a></li></ul></div>
       <div><h4>Rechtliches</h4><ul>
         <li><a href="#" onclick="go('agb');return false">AGB</a></li>
         <li><a href="#" onclick="go('widerruf');return false">Widerrufsrecht</a></li>
         <li><a href="#" onclick="go('datenschutz');return false">Datenschutz</a></li>
-        <li><a href="#" onclick="go('impressum');return false">Impressum</a></li></ul></div>
+        <li><a href="#" onclick="go('impressum');return false">Impressum</a></li>
+        <li><a href="#" onclick="go('stats');renderStats();return false" style="opacity:.55">Statistik (intern)</a></li></ul></div>
     </div>
     <div class="fbot">
       <span>© 2026 La Doccia — Oleg Neufeld, Wien. <mark style="background:#F6E7A8;padding:1px 5px;border-radius:2px">[Preisangaben USt. prüfen]</mark></span>
@@ -1791,6 +1838,8 @@ Object.assign(A,{
   pxBottles:'assets/v2/px-4176488.jpg'
 });
 const src = k => A[k]||k;
+const tsrc=u=>u&&u.indexOf('assets/p/')===0&&!/\.mp4$/.test(u)?u.replace('assets/p/','assets/t/'):u;
+
 
 /* ---------- Logo als SVG bauen ---------- */
 function paths(list, color){
@@ -1899,6 +1948,27 @@ function track(ev,data){
   }
 }
 
+
+/* ---------- Produkt-Statistik: Ansicht + CSV-Export ---------- */
+function statsRows(){
+  const s=store.get('ld_stats')||{};
+  return Object.entries(s).map(([id,n])=>{const p=P.find(x=>x.id===id);return p?{id,n,name:p.n,preis:p.p}:null})
+    .filter(Boolean).sort((a,b)=>b.n-a.n);
+}
+function renderStats(){
+  const rows=statsRows();
+  document.getElementById('statsBody').innerHTML = rows.length
+    ? `<table class="sizetab" style="width:100%"><tr><th>#</th><th>Produkt</th><th>Preis</th><th>Aufrufe</th></tr>
+       ${rows.map((r,i)=>`<tr><td>${i+1}</td><td>${r.name}</td><td>${r.preis} €</td><td><b>${r.n}</b></td></tr>`).join('')}</table>`
+    : '<p>Noch keine Daten — Produktseiten öffnen, dann erscheinen hier die Zähler.</p>';
+}
+function statsCSV(){
+  const rows=statsRows();
+  const csv='Produkt;Preis;Aufrufe\n'+rows.map(r=>`"${r.name}";${r.preis};${r.n}`).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob(["\ufeff"+csv],{type:'text/csv;charset=utf-8'}));
+  a.download='la-doccia-statistik.csv'; a.click();
+}
 /* ---------- Wunschliste & Zuletzt angesehen (persistent) ---------- */
 let WISH=new Set(store.get('ld_wish',[]));
 let SEEN=store.get('ld_seen',[]);
@@ -2074,19 +2144,19 @@ const P=[
  {id:'p137',cat:'mode',sc:'taschen',who:'damen',n:'Baguette „Lunga“',p:249,img:'assets/p/137_a.jpg',img2:'assets/p/137_a_v2.jpg',gal:["assets/p/137_a_v2.jpg", "assets/p/137_a_v3.jpg"],r:4.9,rv:2,badge:'Neu',mat:'Genarbtes Leder',rel:["p117","p136","p116"],d:'Die längliche Form der Familie: schmale Baguette-Tasche mit exakt geraden Kanten, goldener Ziernaht und den vier goldgefassten Quadraten auf der Front.',x:'Unter den Arm oder in die Hand — Magnetverschluss, goldene Füße am Boden.'},
  {id:'p138',cat:'mode',sc:'oberteile',who:'herren',n:'Sommerhemd „Quadri“',p:129,img:'assets/p/138_a.jpg',img2:'assets/p/138_a_v2.jpg',gal:["assets/p/138_a_v2.jpg", "assets/p/138_a_v3.jpg"],r:4.9,rv:2,badge:'Neu',mat:'100 % Baumwolle',sizes:["S","M","L","XL"],rel:["p131","p149","p122"],d:'Das Sommerhemd mit dem gestreuten Quadrate-Print — wie Farbtropfen im Regen, elegant statt laut. Goldene Quadrat-Knöpfe, türkise Ziernaht am Kragen.',x:'Reverskragen, gerader Saum — lässt sich offen oder geschlossen tragen. Bei 30 °C waschen.'},
  {id:'p140',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Duo“, 30 ml',p:99,img:'assets/p/140_a.jpg',img2:'assets/p/140_b.jpg',gal:["assets/p/140_b.jpg", "assets/p/140_c.jpg"],r:4.9,rv:2,badge:'Neu',rel:["p128","p141","p128"],d:'Zwei Würfel, zwei Farben: Türkis unten, Violett oben, ein geschlossener Block — der kleine Bruder des Turms. Die Öffnung sitzt unsichtbar im oberen Würfel.',x:'12 % Duftölanteil. Handlich fürs Regal und die Reise.'},
- {id:'p161',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Duo Vetro“, 30 ml',p:99,img:'assets/p/140_glas_a.jpg',img2:'assets/p/140_glas_b.jpg',gal:["assets/p/140_glas_b.jpg", "assets/p/140_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p140","p162","p160"],d:'Zwei Würfel, Türkis und Violett, als Edition aus satiniertem, undurchsichtigem Glas. Gleiche Form wie „Duo“, neues Material.',x:'Satinierte Glas-Edition — dieselbe Duftkomposition wie „Duo“. Design geschützt.'},
+ {id:'p161',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Duo Vetro“, 30 ml',p:99,img:'assets/p/140_glas_a.jpg',img2:'assets/p/140_glas_b.jpg',gal:["assets/p/140_glas_b.jpg", "assets/p/140_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p140","p162","p160"],d:'Zwei Würfel, Türkis und Violett, als Edition aus satiniertem, undurchsichtigem Glas. Gleiche Form wie „Duo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Duo“. Design geschützt.'},
  {id:'p141',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo“, 15 ml',p:59,img:'assets/p/141_a.jpg',img2:'assets/p/141_b.jpg',gal:["assets/p/141_b.jpg", "assets/p/141_c.jpg"],r:4.9,rv:3,badge:'Neu',rel:["p140","p128","p141"],d:'Ein einzelner Würfel in Gelb mit Golddeckel — das Reiseformat der Turm-Familie, klein wie ein Schmuckstück.',x:'Flugtauglich unter 100 ml. Auch schön als Geschenk zum Kennenlernen.'},
  {id:'p165',cat:'parfuem',sc:'edp',who:'kinder',n:'Kinder-Duft „Cubetto“, 50 ml',p:39,img:'assets/p/165_a.jpg',img2:'assets/p/165_b.jpg',gal:["assets/p/165_b.jpg", "assets/p/165_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p114","p87"],d:'Der verspielte Würfelturm für die Kleinen: vier bunte Würfel zum Stapeln-Anschauen, ganz ohne Alkohol. Sanft, mild und in den vier Farben der Marke.',x:'Ohne Alkohol, dermatologisch mild \u2014 ein zarter, fruchtig-frischer Duft für Kinderhaut. 50 ml. KI-Design geschützt.'},
- {id:'p162',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo Vetro“, 15 ml',p:59,img:'assets/p/141_glas_a.jpg',img2:'assets/p/141_glas_b.jpg',gal:["assets/p/141_glas_b.jpg", "assets/p/141_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p161","p164"],d:'Der einzelne gelbe Würfel mit Golddeckel als satinierte Glas-Edition — das Reiseformat in neuem Material. Gleiche Form wie „Piccolo“.',x:'Satinierte Glas-Edition — dieselbe Duftkomposition wie „Piccolo“. Design geschützt.'},
+ {id:'p162',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo Vetro“, 15 ml',p:59,img:'assets/p/141_glas_a.jpg',img2:'assets/p/141_glas_b.jpg',gal:["assets/p/141_glas_b.jpg", "assets/p/141_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p161","p164"],d:'Der einzelne gelbe Würfel mit Golddeckel als satinierte Glas-Edition — das Reiseformat in neuem Material. Gleiche Form wie „Piccolo“.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Piccolo“. Design geschützt.'},
  {id:'p142',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo“, 75 ml',p:189,img:'assets/p/142_a.jpg',img2:'assets/p/142_b.jpg',gal:["assets/p/142_b.jpg", "assets/p/142_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p128","p128","p140"],d:'Der Wolkenkratzer: sechs dünne Glasscheiben in den Markenfarben übereinander, oben bündig geschlossen — das große Format der Familie.',x:'15 % Duftölanteil — der langlebigste Duft der Kollektion.'},
- {id:'p163',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo Vetro“, 75 ml',p:189,img:'assets/p/142_glas_a.jpg',img2:'assets/p/142_glas_b.jpg',gal:["assets/p/142_glas_b.jpg", "assets/p/142_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p142","p159","p164"],d:'Der Wolkenkratzer als satinierte Glas-Edition: sechs Farbschichten übereinander, undurchsichtig, mit weichem Glas-Schimmer. Gleiche Form wie „Grattacielo“, neues Material.',x:'Satinierte Glas-Edition — dieselbe Duftkomposition wie „Grattacielo“. Design geschützt.'},
+ {id:'p163',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo Vetro“, 75 ml',p:189,img:'assets/p/142_glas_a.jpg',img2:'assets/p/142_glas_b.jpg',gal:["assets/p/142_glas_b.jpg", "assets/p/142_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p142","p159","p164"],d:'Der Wolkenkratzer als satinierte Glas-Edition: sechs Farbschichten übereinander, undurchsichtig, mit weichem Glas-Schimmer. Gleiche Form wie „Grattacielo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Grattacielo“. Design geschützt.'},
  {id:'p143',cat:'mode',sc:'jacken',who:'herren',n:'Daunenjacke „Piuma“',p:399,img:'assets/p/143_schwarz.jpg',img2:'assets/p/143_schwarz_v2.jpg',gal:["assets/p/143_schwarz_v2.jpg", "assets/p/143_schwarz_v3.jpg"],colors:[5,2,4],cimg:{Schwarz:'assets/p/143_schwarz.jpg','Türkis':'assets/p/143_tuerkis.jpg',Weiß:'assets/p/143_weiss.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Recyceltes Polyamid, Daune (RDS)',sizes:["S","M","L","XL"],rel:["p126","p146","p149"],d:'Unsere Daunenjacke mit dem Quadrat-Stepp: statt Querstreifen wölbt sich jede Kammer als Quadrat. Goldener Reißverschluss, Brustbadge mit den vier Quadraten.',x:'Warm, leicht, wasserabweisend. Bei 30 °C im Schonwaschgang, mit Tennisbällen trocknen.'},
  {id:'p144',cat:'mode',sc:'jacken',who:'damen',n:'Daunenjacke „Piuma Donna“',p:379,img:'assets/p/144_violett.jpg',img2:'assets/p/144_violett_v2.jpg',gal:["assets/p/144_violett_v2.jpg", "assets/p/144_violett_v3.jpg"],colors:[3,4,1],cimg:{Violett:'assets/p/144_violett.jpg',Weiß:'assets/p/144_weiss.jpg',Orange:'assets/p/144_orange.jpg'},r:5.0,rv:3,badge:'Neu',mat:'Recyceltes Polyamid, Daune (RDS)',sizes:["XS","S","M","L"],rel:["p143","p117","p116"],d:'Die cropped Version mit Quadrat-Steppung und Goldzipper — Volumen oben, Taille frei.',x:'Warm, federleicht, wasserabweisend. Bei 30 °C im Schonwaschgang.'},
  {id:'p145',cat:'mode',sc:'oberteile',who:'damen',n:'Strickpullover „Quadretti“',p:179,img:'assets/p/145_creme.jpg',img2:'assets/p/145_creme_v2.jpg',gal:["assets/p/145_creme_v2.jpg", "assets/p/145_creme_v3.jpg"],colors:[4,5],cimg:{Weiß:'assets/p/145_creme.jpg',Schwarz:'assets/p/145_anthrazit.jpg'},r:4.9,rv:2,badge:'Neu',mat:'70 % Wolle, 30 % Baumwolle',sizes:["XS","S","M","L"],rel:["p134","p144","p116"],d:'Cremefarbener Strick mit eingestrickten Hohlquadraten in den vier Markenfarben — verspielt, aber teuer gedacht. Goldfaden an Kragen und Bündchen.',x:'Intarsien-Strick, kein Aufdruck. Handwäsche oder Wollprogramm.'},
  {id:'p146',cat:'mode',sc:'sport',who:'herren',n:'Track-Jacke „Pista“',p:199,img:'assets/p/146_weiss.jpg',img2:'assets/p/146_weiss_v2.jpg',gal:["assets/p/146_weiss_v2.jpg", "assets/p/146_weiss_v3.jpg"],colors:[4,5],cimg:{Weiß:'assets/p/146_weiss.jpg',Schwarz:'assets/p/146_schwarz.jpg'},r:4.9,rv:2,badge:'Neu',mat:'Technischer Jersey',sizes:["S","M","L","XL"],rel:["p143","p133","p122"],d:'Retro-Sportjacke mit dem Quadrate-Band an beiden Ärmeln und goldener Stickerei — Sport als Mode.',x:'Rippkragen mit Türkis-Orange-Tipping. Bei 30 °C waschen.'},
  {id:'p147',cat:'mode',sc:'jacken',who:'kinder',n:'Kinder-Daunenjacke „Piumino“',p:149,img:'assets/p/147_weiss.jpg',img2:'assets/p/147_weiss_v2.jpg',gal:["assets/p/147_weiss_v2.jpg", "assets/p/147_weiss_v3.jpg"],colors:[4,0,2],cimg:{Weiß:'assets/p/147_weiss.jpg',Gelb:'assets/p/147_gelb.jpg','Türkis':'assets/p/147_tuerkis.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Matter Baumwoll-Mix, Wattierung',sizes:["98/104","110/116","122/128"],rel:["p82","p83","p87"],d:'Die Mini-Piuma in Mattoptik: Quadrat-Steppung, kuschelige Kapuze mit farbigem Futter und die vier Quadrate als Stickerei auf der Brust.',x:'Wattiert statt Daune — pflegeleicht und tierfreundlich. Bei 30 °C waschbar.'},
  {id:'p148',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre“, 100 ml',p:199,img:'assets/p/148_a.jpg',img2:'assets/p/148_b.jpg',gal:["assets/p/148_b.jpg", "assets/p/148_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p128","p142","p128"],d:'Der große Turm: fünf Farbwürfel übereinander, und die Wortmarke läuft senkrecht über die Kanten — die Quadrate sitzen mitten in den Buchstaben. Das Sammlerstück der Kollektion.',x:'15 % Duftölanteil, 100 ml. Der oberste Würfel ist der Deckel. Design geschützt.'},
- {id:'p159',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre Vetro“, 100 ml',p:199,img:'assets/p/148_glas_a.jpg',img2:'assets/p/148_glas_b.jpg',gal:["assets/p/148_glas_b.jpg", "assets/p/148_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p148","p163","p160"],d:'Der große Turm als Edition aus satiniertem, undurchsichtigem Glas: fünf Farbwürfel übereinander mit senkrechter Wortmarke. Gleiche Form wie „Torre“, neues Material — mattes Glas mit weichem Schimmer.',x:'Satinierte Glas-Edition — dieselbe Duftkomposition wie „Torre“. Design geschützt.'},
+ {id:'p159',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre Vetro“, 100 ml',p:199,img:'assets/p/148_glas_a.jpg',img2:'assets/p/148_glas_b.jpg',gal:["assets/p/148_glas_b.jpg", "assets/p/148_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p148","p163","p160"],d:'Der große Turm als Edition aus satiniertem, undurchsichtigem Glas: fünf Farbwürfel übereinander mit senkrechter Wortmarke. Gleiche Form wie „Torre“, neues Material — mattes Glas mit weichem Schimmer.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Torre“. Design geschützt.'},
 {id:'p149',cat:'mode',sc:'oberteile',who:'herren',n:'Premium-Polo „Bottone“',p:149,img:'assets/p/149_a.jpg',img2:'assets/p/149_a_v2.jpg',gal:["assets/p/149_a_v2.jpg", "assets/p/149_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Baumwoll-Piqué',sizes:["S","M","L","XL"],rel:["p146","p122","p120"],d:'Das Polo mit den goldenen Quadrat-Knöpfen — leicht abgerundet wie die Quadrate im Logo. Goldene Ziernähte an Knopfleiste, Kragen und Ärmeln.',x:'Gestickte Gold-Wortmarke mit den vier Quadraten. Bei 30 °C waschen, Knöpfe unempfindlich.'},
 {id:'p150',cat:'mode',sc:'sport',who:'damen',n:'Track-Jacke „Pista Donna“',p:189,img:'assets/p/150_a.jpg',img2:'assets/p/150_a_v2.jpg',gal:["assets/p/150_a_v2.jpg", "assets/p/150_a_v3.jpg"],r:4.9,rv:2,badge:'Neu',mat:'Technischer Jersey',sizes:["XS","S","M","L"],rel:["p146","p108","p143"],d:'Die Pista für Damen: tailliert, mit dem Quadrate-Band an beiden Ärmeln, farbigen Ziernähten und goldenem Reißverschluss — Sport als Mode.',x:'Stehkragen, zwei Reißverschlusstaschen. Bei 30 °C waschen.'},
 {id:'p151',cat:'mode',sc:'oberteile',who:'kinder',n:'Kinder-Strickpulli „Quadretti Mini“',p:69,img:'assets/p/151_a.jpg',img2:'assets/p/151_a_v2.jpg',gal:["assets/p/151_a_v2.jpg", "assets/p/151_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Weiche Wollmischung',sizes:["98/104","110/116","122/128"],rel:["p147","p87","p82"],d:'Kuscheliger Strick in Creme mit verstreuten bunten Quadraten — das Quadretti-Muster für die Kleinen.',x:'Rippbündchen an Kragen und Ärmeln. Wollwaschgang, liegend trocknen.'},
@@ -2101,9 +2171,9 @@ const P=[
  {id:'p111',cat:'textil',sc:'tuecher',who:'kinder',n:'Kinder-Poncho „Onda“',p:29,img:'assets/p/111_a.jpg',img2:'assets/p/111_b.jpg',gal:['assets/p/111_b.jpg'],r:4.8,rv:9,badge:'Neu',mat:'100 % Baumwolle',rel:["p110","p84","p86"],d:'Sonnengelber Kapuzen-Poncho aus Frottee mit orangem Saum und Quadrate-Bordüre — überwerfen, fertig.',x:'Für Schwimmbad und Strand, trocknet schnell, eine Größe für 2–6 Jahre. Bei 60 °C waschbar.'},
  {id:'p112',cat:'mode',sc:'acc',who:'kinder',n:'Kinder-Regenschirm „Goccia“',p:22,img:'assets/p/112_a.jpg',img2:'assets/p/112_b.jpg',gal:['assets/p/112_b.jpg', "assets/p/112_a_v2.jpg", "assets/p/112_a_v3.jpg"],r:4.9,rv:8,badge:'Neu',rel:["p82","p83","p85"],d:'Oranger Kinderschirm mit Quadrate-Kante und türkisem Griff — Regen wird zum Lieblingswetter.',x:'Leichtgängig zu öffnen, abgerundete Spitzen, Ø 72 cm. Griff für kleine Hände.'},
  {id:'p113',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Quattro“, 50 ml',p:159,img:'assets/p/113_a.jpg',img2:'assets/p/113_b.jpg',gal:["assets/p/113_b.jpg", "assets/p/113_c.jpg"],r:5.0,rv:4,badge:'Neu',rel:["p128","p148","p140"],d:'Vier gefrostete Farbsegmente in einer Flasche — Gelb, Orange, Türkis, Violett. Kein sichtbarer Deckel: die Öffnung sitzt unsichtbar im obersten Segment.',x:'13 % Duftölanteil, hält 7–9 Stunden. Design geschützt, Erstveröffentlichung dokumentiert.'},
- {id:'p160',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Quattro Vetro“, 50 ml',p:159,img:'assets/p/113_glas_a.jpg',img2:'assets/p/113_glas_b.jpg',gal:["assets/p/113_glas_b.jpg", "assets/p/113_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p113","p159","p161"],d:'Die vier Farbsegmente als satinierte Glas-Edition — undurchsichtig, mit weichem Schimmer und messerscharfen Kanten. Gleiche Form wie „Quattro“, neues Material.',x:'Satinierte Glas-Edition — dieselbe Duftkomposition wie „Quattro“. Design geschützt.'},
+ {id:'p160',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Quattro Vetro“, 50 ml',p:159,img:'assets/p/113_glas_a.jpg',img2:'assets/p/113_glas_b.jpg',gal:["assets/p/113_glas_b.jpg", "assets/p/113_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p113","p159","p161"],d:'Die vier Farbsegmente als satinierte Glas-Edition — undurchsichtig, mit weichem Schimmer und messerscharfen Kanten. Gleiche Form wie „Quattro“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Quattro“. Design geschützt.'},
  {id:'p114',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Cubo“, 50 ml',p:139,img:'assets/p/114_a.jpg',img2:'assets/p/114_b.jpg',gal:["assets/p/114_b.jpg", "assets/p/114_c.jpg"],r:4.9,rv:3,badge:'Neu',rel:["p113","p128","p113"],d:'Der Turm aus vier Würfeln: jeder leicht gegen den nächsten gedreht, innen fließt der Duft von Gelb nach Violett. Ein Guss, klare Kanten, Würfelkappe.',x:'12 % Duftölanteil, hält 6–8 Stunden. Steht wie ein Designobjekt im Regal — genau so gedacht.'},
- {id:'p164',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Cubo Vetro“, 50 ml',p:139,img:'assets/p/114_glas_a.jpg',img2:'assets/p/114_glas_b.jpg',gal:["assets/p/114_glas_b.jpg", "assets/p/114_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p114","p163","p162"],d:'Der gedrehte Würfelturm als satinierte Glas-Edition — undurchsichtiges Glas mit klaren Kanten. Gleiche Form wie „Cubo“, neues Material.',x:'Satinierte Glas-Edition — dieselbe Duftkomposition wie „Cubo“. Design geschützt.'},
+ {id:'p164',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Cubo Vetro“, 50 ml',p:139,img:'assets/p/114_glas_a.jpg',img2:'assets/p/114_glas_b.jpg',gal:["assets/p/114_glas_b.jpg", "assets/p/114_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p114","p163","p162"],d:'Der gedrehte Würfelturm als satinierte Glas-Edition — undurchsichtiges Glas mit klaren Kanten. Gleiche Form wie „Cubo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Cubo“. Design geschützt.'},
  {id:'p116',cat:'mode',sc:'schuhe',who:'damen',n:'Plateau-Sneaker „Nuvola“',p:179,img:'assets/p/116_a.jpg',img2:'assets/p/116_a_v2.jpg',gal:["assets/p/116_a_v2.jpg", "assets/p/116_a_v3.jpg"],colors:[4,2,0],cimg:{Weiß:'assets/p/116_a.jpg','Türkis':'assets/p/116_tuerkis.jpg',Gelb:'assets/p/116_gelb.jpg'},r:4.9,rv:2,badge:'Neu',mat:'Canvas, Gummisohle',sizes:["36","37","38","39","40","41"],rel:["p64","p65","p105"],d:'Der Statement-Sneaker: cremeweiße Bumper-Sohle mit weicher, runder Kappe — wolkig dick, federleicht getragen.',x:'Geprägtes LA DOCCIA an der Ferse, vier gestickte Quadrate am Schaft. Sohle abwischbar, Obermaterial imprägniert.'},
  {id:'p117',cat:'mode',sc:'taschen',who:'damen',n:'Handtasche „Quadra“',p:349,img:'assets/p/117_neu_a.jpg',img2:'assets/p/117_neu_a_v2.jpg',gal:["assets/p/117_neu_a_v2.jpg", "assets/p/117_neu_a_v3.jpg"],colors:[6,5,7],cimg:{Gold:'assets/p/117_neu_a.jpg',Schwarz:'assets/p/117_naht-schwarz.jpg','Grün':'assets/p/117_naht-gruen.jpg'},r:4.9,rv:3,badge:'Neu',mat:'Genarbtes Leder, Baumwollfutter',rel:["p136","p137","p132"],d:'Streng quadratisch mit eckigen Griffen und dem goldgefassten Kristall-Quadrat. Die Ziernaht wählen Sie selbst: Gold, Schwarz oder Grün — unsere Handschrift, Ihre Entscheidung.',x:'Goldene Hardware, Magnetverschluss, Innenfach mit Reißverschluss.'},
  {id:'p118',cat:'mode',sc:'oberteile',who:'herren',n:'T-Shirt „Essenziale“',p:79,img:'assets/p/118_a.jpg',img2:'assets/p/118_b.jpg',gal:['assets/p/118_b.jpg','assets/p/118_video.mp4', "assets/p/118_a_v2.jpg", "assets/p/118_a_v3.jpg"],r:4.9,rv:4,badge:'Neu',mat:'100 % Bio-Baumwolle, 220 g/m²',sizes:["S","M","L","XL"],rel:["p149","p131","p122"],d:'Das schwere off-white T-Shirt mit den vier großen Hohlquadraten und der Serifen-Wortmarke auf der Brust — das Statement-Piece der Herrenlinie.',x:'Vorgewaschen, verstärkte Schulternähte, Rippkragen mit türkiser Linie. Bei 30 °C waschen.'},
@@ -2146,8 +2216,8 @@ const gpLine=p=>{const t=gpText(p);return t?`<div class="gp">${t}</div>`:''};
 function card(p){
   const d=disc(p);
   return `<article class="card" onclick="openP('${p.id}')">
-    <div class="iw"><img src="${src(p.img)}" alt="${p.n}" loading="lazy" onload="this.classList.add('ld')">
-      ${p.img2?`<img class="im2" src="${src(p.img2)}" alt="" loading="lazy">`:''}
+    <div class="iw"><img src="${src(p.img)}" srcset="${tsrc(src(p.img))} 400w, ${src(p.img)} 1100w" sizes="(max-width:760px) 46vw, 300px" alt="${p.n}" loading="lazy" onload="this.classList.add('ld')">
+      ${p.img2?`<img class="im2" src="${src(p.img2)}" srcset="${tsrc(src(p.img2))} 400w, ${src(p.img2)} 1100w" sizes="(max-width:760px) 46vw, 300px" alt="" loading="lazy">`:''}
       ${d?`<span class="badge sale">−${d} %</span>`:(p.badge?`<span class="badge">${p.badge}</span>`:'')}
       ${wishBtn(p)}
       <div class="qa" onclick="event.stopPropagation();add('${p.id}')">${p.sizes?'Größe wählen':'In den Warenkorb'}</div></div>
@@ -2162,8 +2232,8 @@ function cardRail(p){
   const d=disc(p);
   const sw = p.colors ? `<div class="swatches">${p.colors.map(i=>`<i style="background:${BRANDHEX[i]}"></i>`).join('')}</div>` : '';
   return `<article class="card" onclick="openP('${p.id}')">
-    <div class="iw"><img src="${src(p.img)}" alt="${p.n}" loading="lazy" onload="this.classList.add('ld')">
-      ${p.img2?`<img class="im2" src="${src(p.img2)}" alt="" loading="lazy">`:''}
+    <div class="iw"><img src="${src(p.img)}" srcset="${tsrc(src(p.img))} 400w, ${src(p.img)} 1100w" sizes="(max-width:760px) 46vw, 300px" alt="${p.n}" loading="lazy" onload="this.classList.add('ld')">
+      ${p.img2?`<img class="im2" src="${src(p.img2)}" srcset="${tsrc(src(p.img2))} 400w, ${src(p.img2)} 1100w" sizes="(max-width:760px) 46vw, 300px" alt="" loading="lazy">`:''}
       ${d?`<span class="badge sale">−${d} %</span>`:(p.badge?`<span class="badge">${p.badge}</span>`:'')}
       ${wishBtn(p)}
       <div class="qa" onclick="event.stopPropagation();add('${p.id}')">${p.sizes?'Größe wählen':'In den Warenkorb'}</div></div>
@@ -2302,7 +2372,7 @@ function renderShop(){
   function weltCount(r,who){
     const scOk=p=>!r.sub || (r.sub==='schuhetaschen' ? (p.sc==='schuhe'||p.sc==='taschen') : p.sc===r.sub);
     return P.filter(p=>p.cat===r.cat&&scOk(p)
-      &&((who==='kinder'||who==='herren')?p.who===who:(!p.who||p.who===who))).length;
+      &&(who==='kinder'?p.who===who:who==='herren'?(p.who===who||(p.cat==='parfuem'&&!p.who)):(!p.who||p.who===who))).length;
   }
   window.weltGo=function(cat,sub,who){ filt(cat,who); if(sub){curSub=sub;renderShop();} };
   function weltTiles(who){
@@ -2388,7 +2458,7 @@ function renderShop(){
     document.getElementById('shopTitle').textContent='Alles für '+nice;
     document.getElementById('shopSub').textContent='Die komplette Auswahl für '+nice+' — über alle Kategorien.';
     crumb2('Alles für '+nice);
-    let list=P.filter(p=>p.who===who);
+    let list=P.filter(p=>p.who===who||(who==='herren'&&p.cat==='parfuem'&&!p.who));
     if(q)list=list.filter(p=>prodMatch(p,q));
     list=sortList(list);
     document.getElementById('shopBody').innerHTML=`<section class="catsec" style="padding-top:10px">
@@ -2525,7 +2595,7 @@ function renderShop(){
           <button class="subchip ${curWho==='kinder'?'on':''}" onclick="whoFilt('kinder')">Kinder</button>
           <button class="subchip ${curWho==='herren'?'on':''}" onclick="whoFilt('herren')">Herren</button></div>` : '';
       if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>curSub==='schuhetaschen' ? (p.sc==='schuhe'||p.sc==='taschen') : p.sc===curSub);
-      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>(curWho==='kinder'||curWho==='herren') ? p.who===curWho : (!p.who||p.who===curWho));
+      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>curWho==='kinder' ? p.who===curWho : curWho==='herren' ? (p.who===curWho||(p.cat==='parfuem'&&!p.who)) : (!p.who||p.who===curWho));
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
       /* Bei einer einzelnen Abteilung steht der große Titel schon oben —
@@ -2820,6 +2890,13 @@ function openP(id){
         </div>
         <button class="btn ghost slim" onclick="addBundle('${p.id}')">Alle 3 in den Warenkorb</button></div>`:''}
       <div class="accs">
+        ${p.sizes?`<details class="acc"><summary>Größentabelle</summary>
+          <div style="overflow-x:auto"><table class="sizetab">
+            <tr><th>Größe</th><th>S</th><th>M</th><th>L</th><th>XL</th></tr>
+            <tr><td>Brustumfang (cm)</td><td>88–96</td><td>96–104</td><td>104–112</td><td>112–120</td></tr>
+            <tr><td>Taille (cm)</td><td>76–84</td><td>84–92</td><td>92–100</td><td>100–108</td></tr>
+          </table></div>
+          <p style="font-size:12.5px;margin-top:8px">Schuhe fallen normal aus (EU-Größen). Kindergrößen = Körpergröße in cm. Zwischen zwei Größen? Wir empfehlen die größere.</p></details>`:''}
         ${p.x?`<details class="acc"><summary>Gut zu wissen</summary><p>${p.x}</p></details>`:''}
         <details class="acc"><summary>Details &amp; Material</summary>
           <p>${p.mat?`Material: ${p.mat}.<br>`:''}${p.ml?`Inhalt: ${p.ml} ml.<br>`:''}${p.g?`Gewicht: ${p.g} g.<br>`:''}${p.sizes?`Erhältliche Größen: ${p.sizes.join(', ')}.<br>`:''}Artikelnummer: LD-${p.id.toUpperCase()}</p></details>
