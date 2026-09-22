@@ -820,8 +820,8 @@ body.pmopen{overflow:hidden}
 .stx h2{color:var(--paper);font-size:clamp(30px,4.6vw,54px);margin:12px 0 10px;text-shadow:0 2px 16px rgba(20,20,24,.45)}
 .stx p{color:rgba(255,255,255,.86);font-size:13.5px;max-width:46ch;margin-bottom:24px}
 .scta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.grouplbl{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-70);
-  font-weight:500;margin:36px 0 16px;display:flex;align-items:center;gap:12px}
+.grouplbl{font-family:var(--serif);font-size:clamp(21px,2.6vw,30px);letter-spacing:.01em;text-transform:none;color:var(--ink);
+  margin:36px 0 14px;display:flex;align-items:center;gap:18px;font-weight:500}
 .grouplbl::after{content:'';flex:1;height:1px;background:var(--line)}
 .collgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(10px,1.4vw,16px)}
 .coll{position:relative;overflow:hidden;cursor:pointer;grid-column:span 2;transition:transform .45s cubic-bezier(.2,.7,.3,1)}
@@ -1657,7 +1657,7 @@ html{scroll-behavior:smooth}
     Vier offene Quadrate in Gelb, Orange, Türkis und Violett bilden unsere Wortmarke,
     und sie tauchen überall wieder auf: als Würfel unserer Parfüms, als Steppung auf Jacken,
     als Stickerei auf Caps, als Kristall an Tasche und Sneaker.</p>
-    <h2>Vom Blatt Papier zum Flakon</h2>
+    <h2>Die Handschrift</h2>
     <p>Jedes Parfüm der Kollektion begann als Handskizze des Gründers — gerade Linien,
     scharfe Kanten, kein sichtbarer Deckel. Heute gibt es jede Form zweimal:
     lackiert in kräftiger Farbe oder als <i>Vetro</i>-Edition aus satiniertem Glas mit
@@ -2604,16 +2604,7 @@ function renderShop(){
     const neu=P.filter(p=>p.badge==='Neu').slice(-8).reverse();
     body=(neu.length?`<div class="grouplbl">Neu in der Kollektion</div>
       <div class="rail">${neu.map(cardRail).join('')}</div>`:'')
-      +`<div class="reveal" style="margin-top:clamp(34px,5vw,60px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(16px,3vw,40px);align-items:center">
-        <img src="referenzen/parfuem-skizze-1.jpg" alt="Original-Skizze des Gründers" loading="lazy" style="width:100%;border-radius:4px">
-        <div>
-          <div class="grouplbl">Vom Blatt Papier zum Flakon</div>
-          <p style="max-width:46ch;line-height:1.65;margin:12px 0 18px">Jedes Parfüm begann als Handskizze des Gründers — gerade Linien, scharfe Kanten,
-          kein sichtbarer Deckel. Vier Quadrate, eine Handschrift: entworfen in Wien, geschützt beim Deutschen Patent- und Markenamt.</p>
-          <button class="btn ghost" onclick="go('marke')">Die Marke kennenlernen</button>
-        </div>
-      </div>
-      <div style="margin-top:clamp(34px,5vw,56px);padding-top:26px;border-top:1px solid rgba(20,20,24,.1)">
+      +`      <div style="margin-top:clamp(34px,5vw,56px);padding-top:26px;border-top:1px solid rgba(20,20,24,.1)">
         <p style="font-size:13px;line-height:1.7;color:var(--ink-70);max-width:72ch">LA DOCCIA steht für den ersten ehrlichen Moment des Tages: Wasser, Licht und Farbe.
         Aus vier offenen Quadraten wurde eine komplette Kollektion — Eau de Parfum im Würfel, Mode mit goldener Ziernaht,
         wasserfeste Schuhe und Taschen sowie Frottee für zu Hause. Jede Naht sichtbar, jede Form klar. Entworfen in Wien, gefertigt mit Manufakturen in Europa.</p>
