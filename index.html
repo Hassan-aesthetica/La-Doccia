@@ -2345,7 +2345,7 @@ function renderShop(){
       <div class="nwhero top reveal">
         <img src="assets/e/hero-parfum.jpg" alt="Die Parfümerie von La Doccia" loading="lazy">
         <div class="ntx"><span class="stag tagbeige">Neu im Sortiment</span>
-          <h2 class="mega">Eine Form.<br>Zwei Materialien.</h2>
+          <h2 class="mega">Die neuen<br>Glas-Editionen.</h2>
           <button class="btn pill" onclick="filt('parfuem')">Parfümerie entdecken</button></div>
       </div>
       <div class="grouplbl" style="margin-top:26px">Neu: Die Glas-Editionen</div>${rail(['p159','p160','p161','p163','p164','p162'])}
@@ -2571,21 +2571,6 @@ function renderShop(){
           <p class="railsub">Die Stücke, die unsere Handschrift tragen — Quadrate, Gold-Naht, Farbe.</p></div>
         </div>
         <div class="rail">${['p148','p128','p117','p143','p158','p62','p154','p160'].map(id=>P.find(p=>p.id===id)).filter(Boolean).map(cardRail).join('')}</div>
-      </div>
-      <!-- Signature-Kapsel: die Parfümerie in zwei Materialien -->
-      <div class="reveal" style="margin-top:clamp(30px,4.5vw,54px)">
-        <div class="railhead"><div>
-          <div class="grouplbl">Eine Form. Zwei Materialien.</div>
-          <p class="railsub">Jedes Parfüm der Kollektion gibt es zweimal: kräftig lackiert — oder als Vetro-Edition aus satiniertem Glas mit Goldgravur.</p></div>
-        </div>
-        <div class="gsplit catgrid" style="margin-top:14px">
-          <div class="gtile" style="--kachel-col:var(--c1)" onclick="go('shop','parfuem')">
-            <img src="assets/p/148_a.jpg" srcset="assets/t/148_a.jpg 400w, assets/p/148_a.jpg 1100w" sizes="(max-width:760px) 92vw, 46vw" alt="Lackierte Edition" loading="lazy">
-            <div class="glab"><h3><span class="sq"></span>Lackiert</h3><span class="gbtn">Entdecken</span></div></div>
-          <div class="gtile" style="--kachel-col:var(--gold)" onclick="go('shop','parfuem')">
-            <img src="assets/p/148_glas_a.jpg" srcset="assets/t/148_glas_a.jpg 400w, assets/p/148_glas_a.jpg 1100w" sizes="(max-width:760px) 92vw, 46vw" alt="Vetro-Edition aus satiniertem Glas" loading="lazy">
-            <div class="glab"><h3><span class="sq"></span>Vetro · Glas</h3><span class="gbtn">Entdecken</span></div></div>
-        </div>
       </div>
       <!-- Marken-DNA-Kapsel: Regen -->
       <div class="nwhero reveal" style="margin-top:clamp(30px,4.5vw,54px)">
