@@ -1840,7 +1840,6 @@ Object.assign(A,{
   pxRed2:'assets/v2/px-4176618.jpg',
   pxBottles:'assets/v2/px-4176488.jpg'
 });
-const PAIR={'p148':'p159','p159':'p148','p113':'p160','p160':'p113','p140':'p161','p161':'p140','p141':'p162','p162':'p141','p142':'p163','p163':'p142','p114':'p164','p164':'p114'};
 const src = k => A[k]||k;
 const tsrc=u=>u&&u.indexOf('assets/p/')===0&&!/\.mp4$/.test(u)?u.replace('assets/p/','assets/t/'):u;
 
@@ -2619,8 +2618,18 @@ function renderShop(){
         ? `<div class="subhead"><h2>${c.n}</h2><span class="cnt">${list.length} Artikel</span></div>
            <p class="sub">${c.sub}</p>`
         : '';
-      /* „Alle": nicht mischen, sondern nach Rubriken geordnet zeigen */
-      const grid=(curCat!=='all'&&curSub==='all'&&c.subs.length>1)
+      /* Mode-„Alle": visuelle Rubrik-Kacheln — großes Bild, ein Klick, drin.
+         Andere Kategorien: nach Rubriken geordnete Sektionen. */
+      const SUBIMG={oberteile:'assets/p/149_a.jpg',hosen:'assets/p/157_a.jpg',jacken:'assets/p/155_a.jpg',regen:'assets/p/62_regenjacke_tuerkis_a.jpg',sport:'assets/p/146_weiss.jpg',schuhe:'assets/p/158_a.jpg',taschen:'assets/p/117_neu_a.jpg',huete:'assets/p/122_weiss.jpg',acc:'assets/p/156_a.jpg'};
+      const grid=(curCat==='mode'&&curSub==='all'&&!q)
+        ? `<div class="gsplit catgrid" style="margin-top:10px">${c.subs.map((s,si)=>{
+            const its=list.filter(p=>p.sc===s.id); if(!its.length)return '';
+            const im=SUBIMG[s.id]||its[0].img;
+            return `<div class="gtile" style="--kachel-col:var(--c${1+si%4})" onclick="subFilt('${s.id}')">
+              <img src="${im}" srcset="${tsrc(im)} 400w, ${im} 1100w" sizes="(max-width:760px) 46vw, 32vw" alt="${s.n}" loading="lazy">
+              <div class="glab"><h3><span class="sq"></span>${s.n}</h3><span class="gbtn">${its.length} Artikel</span></div></div>`;
+          }).join('')}</div>`
+        : (curCat!=='all'&&curSub==='all'&&c.subs.length>1)
         ? c.subs.map(s=>{const its=list.filter(p=>p.sc===s.id);return its.length?grpSec(s.n,its):''}).join('')
           +((r)=>r.length?grpSec('Weiteres',r):'')(list.filter(p=>!c.subs.some(s=>s.id===p.sc)))
         : `<div class="pg">${list.map(card).join('')}</div>`;
@@ -2870,9 +2879,6 @@ function openP(id){
       ${p.old||gpT?`<div class="refnote">${[p.old?'Streichpreis: niedrigster Preis der letzten 30 Tage':'',gpT?`Grundpreis: ${gpT}`:''].filter(Boolean).join(' · ')}</div>`:''}
       <div class="tax" style="margin-bottom:14px">inkl. MwSt. · <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">kostenloser Versand</a></div>
       <div class="stock"><i></i>Auf Lager&nbsp;<span>· ${lieferzeit()}</span></div>
-      ${PAIR[p.id]?`<div class="sizes"><span class="slbl">Ausführung</span><div>
-        <button class="szb ${p.n.includes('Vetro')?'':'on'}" onclick="${p.n.includes('Vetro')?`openP('${PAIR[p.id]}')`:''}">Lackiert</button>
-        <button class="szb ${p.n.includes('Vetro')?'on':''}" onclick="${p.n.includes('Vetro')?'':`openP('${PAIR[p.id]}')`}">Vetro · Glas</button></div></div>`:''}
       ${p.colors?`<div class="sizes"><span class="slbl">Farbe: <b id="colLbl">${COLNAMES[p.colors[0]]}</b></span><div>
         ${p.colors.map((ci,i)=>`<button class="colb ${i===0?'on':''}" data-c="${COLNAMES[ci]}" style="background:${SELCOLS[ci]}"
           title="${COLNAMES[ci]}" aria-label="${COLNAMES[ci]}"
