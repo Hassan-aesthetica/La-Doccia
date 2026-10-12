@@ -1221,9 +1221,15 @@ nav.main .salelink:hover{border-color:#E0231C}
 .iw img.ld{opacity:1}
 html{scroll-behavior:smooth}
 .sizetab{border-collapse:collapse;font-size:13px;margin-top:6px}.sizetab th,.sizetab td{border:1px solid rgba(20,20,24,.14);padding:6px 12px;text-align:left}.sizetab th{font-weight:600}
+#intro{display:none!important}
+/* Footer: Calibri als 3D-Form */
+.f3d{margin-top:20px;cursor:pointer;perspective:700px;display:inline-block;text-align:center}
+.f3d img{width:150px;border-radius:6px;transform:rotateY(-18deg) rotateX(6deg);box-shadow:14px 22px 34px rgba(0,0,0,.22);transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+.f3d:hover img{transform:rotateY(14deg) rotateX(-4deg) scale(1.06)}
+.f3d span{display:block;margin-top:10px;font-size:12px;letter-spacing:.06em;color:inherit;opacity:.75}
 </style>
 </head>
-<body class="locked">
+<body>
 
 <!-- ===== LOGO INTRO ===== -->
 <div id="intro"><div class="box"><div id="introHost"></div></div>
@@ -1713,6 +1719,10 @@ html{scroll-behavior:smooth}
     <div class="fgrid">
       <div>
         <p>Parfümerie, Kosmetik, Mode und Schmuck aus Wien — eine Handschrift, vier Farben.</p>
+        <div class="f3d" onclick="openP('p166')" role="button" aria-label="Handtasche Calibri ansehen">
+          <img src="assets/p/166_a.jpg" alt="Handtasche „Calibri“" loading="lazy">
+          <span>Neu: Handtasche „Calibri“</span>
+        </div>
       </div>
       <div><h4>Leistungen</h4><ul>
         <li><a href="#" onclick="go('shop','neuwelt');return false">Neuheiten</a></li>
@@ -1909,7 +1919,7 @@ function endIntro(){
   const v=document.getElementById('heroVid');
   if(v){ try{v.currentTime=0}catch(e){} v.play().catch(()=>{}); }
 }
-setTimeout(endIntro, 2300);
+endIntro();  /* Kein Intro mehr — Seite startet direkt */
 
 
 document.querySelectorAll('[data-img]').forEach(el=>{el.src=src(el.dataset.img)});
@@ -2151,6 +2161,8 @@ const P=[
  {id:'p161',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Duo Vetro“, 30 ml',p:99,img:'assets/p/140_glas_a.jpg',img2:'assets/p/140_glas_b.jpg',gal:["assets/p/140_glas_b.jpg", "assets/p/140_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p140","p162","p160"],d:'Zwei Würfel, Türkis und Violett, als Edition aus satiniertem, undurchsichtigem Glas. Gleiche Form wie „Duo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Duo“. Design geschützt.'},
  {id:'p141',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo“, 15 ml',p:59,img:'assets/p/141_a.jpg',img2:'assets/p/141_b.jpg',gal:["assets/p/141_b.jpg", "assets/p/141_c.jpg"],r:4.9,rv:3,badge:'Neu',rel:["p140","p128","p141"],d:'Ein einzelner Würfel in Gelb mit Golddeckel — das Reiseformat der Turm-Familie, klein wie ein Schmuckstück.',x:'Flugtauglich unter 100 ml. Auch schön als Geschenk zum Kennenlernen.'},
  {id:'p165',cat:'parfuem',sc:'edp',who:'kinder',n:'Kinder-Duft „Cubetto“, 50 ml',p:39,img:'assets/p/165_a.jpg',img2:'assets/p/165_b.jpg',gal:["assets/p/165_b.jpg", "assets/p/165_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p114","p87"],d:'Der verspielte Würfelturm für die Kleinen: vier bunte Würfel zum Stapeln-Anschauen, ganz ohne Alkohol. Sanft, mild und in den vier Farben der Marke.',x:'Ohne Alkohol, dermatologisch mild \u2014 ein zarter, fruchtig-frischer Duft für Kinderhaut. 50 ml. KI-Design geschützt.'},
+ {id:'p166',cat:'mode',sc:'taschen',who:'damen',n:'Handtasche „Calibri“',p:329,img:'assets/p/166_a.jpg',img2:'assets/p/166_b.jpg',gal:["assets/p/166_b.jpg", "assets/p/166_c.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Mattes Leder, blaues Glas, Latex, Strass-Steine',rel:["p117","p136","p137"],d:'Die Calibri nach dem Original-Entwurf des Gründers: mattes weißes Leder mit tanzendem Quadrate-Mosaik, zwei Fenster aus blauem Glas und ein funkelndes Strass-Feld auf mattem Blau — getragen am blauen Henkel mit goldenen Ringen.',x:'Goldene Hardware, Magnetverschluss, Innenfach mit Reißverschluss. Jedes Stück ein Statement.'},
+ {id:'p167',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Grado“, 50 ml',p:149,img:'assets/p/167_a.jpg',img2:'assets/p/167_b.jpg',gal:["assets/p/167_b.jpg", "assets/p/167_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p148","p128","p158"],d:'Der Herrenduft nach dem Entwurf des Gründers: ein matter weißer Block, der Deckel ein Mosaik aus bunten Quadraten, die Aufschrift in Blau — holzig-frisch, klar und erwachsen.',x:'12 % Duftölanteil, hält 6–8 Stunden auf der Haut. Design geschützt.'},
  {id:'p162',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo Vetro“, 15 ml',p:59,img:'assets/p/141_glas_a.jpg',img2:'assets/p/141_glas_b.jpg',gal:["assets/p/141_glas_b.jpg", "assets/p/141_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p161","p164"],d:'Der einzelne gelbe Würfel mit Golddeckel als satinierte Glas-Edition — das Reiseformat in neuem Material. Gleiche Form wie „Piccolo“.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Piccolo“. Design geschützt.'},
  {id:'p142',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo“, 75 ml',p:189,img:'assets/p/142_a.jpg',img2:'assets/p/142_b.jpg',gal:["assets/p/142_b.jpg", "assets/p/142_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p128","p128","p140"],d:'Der Wolkenkratzer: sechs dünne Glasscheiben in den Markenfarben übereinander, oben bündig geschlossen — das große Format der Familie.',x:'15 % Duftölanteil — der langlebigste Duft der Kollektion.'},
  {id:'p163',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo Vetro“, 75 ml',p:189,img:'assets/p/142_glas_a.jpg',img2:'assets/p/142_glas_b.jpg',gal:["assets/p/142_glas_b.jpg", "assets/p/142_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p142","p159","p164"],d:'Der Wolkenkratzer als satinierte Glas-Edition: sechs Farbschichten übereinander, undurchsichtig, mit weichem Glas-Schimmer. Gleiche Form wie „Grattacielo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Grattacielo“. Design geschützt.'},
