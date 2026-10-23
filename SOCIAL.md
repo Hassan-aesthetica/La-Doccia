@@ -22,8 +22,8 @@ YouTube. Mach's bitte gleich, damit wir Zeit haben, die durchzugestalten."
 > ⬇ Shop
 
 **Facebook / YouTube (lang):**
-> LA DOCCIA steht für den ersten ehrlichen Moment des Tages: Wasser, Licht und
-> Farbe. Vier Quadrate, eine Handschrift — vom Parfüm im Glasblock bis zur
+> LA DOCCIA steht für vier Elemente: Wasser, Feuer, Licht und Farbe — eines für
+> jedes Quadrat. Vier Quadrate, eine Handschrift — vom Parfüm im Glasblock bis zur
 > Regenjacke, an der das Wasser abperlt. Entworfen in Wien. Marke und Design
 > sind beim Deutschen Patent- und Markenamt geschützt.
 

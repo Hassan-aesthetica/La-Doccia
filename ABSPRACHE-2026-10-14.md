@@ -33,3 +33,10 @@
 - Vergütung: Oleg will Beteiligungs-Modell statt Fixbetrag — Hassan soll Vorschlag machen
 - Portugal: Oleg hat Agent für Klamotten-Herstellung kontaktiert
 - Zeitrahmen: „spätestens in einer Woche", Louis-Vuitton-Anspruch
+
+## Nachtrag 22.10. (3 Sprachnachrichten + Hassan)
+- [x] Herren-Parfüm „Note": NICHT eine Dose mit Farbauswahl — VIER EINZELNE Produkte (vier Sprachen) → umgesetzt: p169 Note 1 Man (Gelb, 149), p170 Note 2 Mann (Orange, 149), p171 Note 3 Homme (Türkis, 149), p172 Note 4 Uomo (Violett, 169 — Königsnote)
+- [x] Ganze Webseite auf Ukrainisch für Fabriken in der Ukraine → umgesetzt als ukrainischer Hersteller-Katalog katalog-ua.html (alle Produkte, übersetzt, mit Material/Größen/Preisen), Footer-Link; Voll-Übersetzung des Shops bei Bedarf als nächster Schritt
+- [x] Markenbeschreibung: VIER Elemente — Wasser, Feuer, Licht und Farbe (eines je Quadrat) → alle Markentexte angepasst
+- [x] Damen→Mode→Hüte&Caps geprüft: Filter korrekt (zeigt die 2 Damen-Hüte Sole+Bianco, keine Kinderware); Rubrik-Kachelbilder folgen jetzt dem Welt-Filter
+- Hersteller-Strategie (Kontext): Oleg kontaktiert private Schneiderei in der Ukraine für Musterstücke — mit Mustern verhandelt es sich leichter; Fabriken wollen sonst eigene Schnitte verkaufen
