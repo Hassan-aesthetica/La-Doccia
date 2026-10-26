@@ -81,7 +81,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacin
   opacity:0;transform:translateY(8px);transition:.6s}
 #ticker .t.on{opacity:1;transform:none}
 #ticker b{font-weight:500;color:var(--brass-lo)}
-header{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.9);
+header{position:sticky;top:0;z-index:55;background:rgba(243,240,233,.92);
   backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .hbar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:74px;
   max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
@@ -1610,7 +1610,7 @@ html{scroll-behavior:smooth}
     <p>Ja — unser Schmuck ist vergoldeter Edelstahl mit Emaille und bleibt beim Händewaschen und Duschen einfach an. Parfüm und Chlorwasser sollten Sie trotzdem meiden, das gilt für jeden Schmuck.</p>
 
     <h2>Welche Farben gibt es?</h2>
-    <p>Unsere Kollektion lebt in vier Markenfarben — Gelb, Orange, Türkis und Violett. Viele Artikel gibt es in mehreren dieser Farben; die Auswahl finden Sie direkt auf der Produktseite.</p>
+    <p>Unsere Quadrate spielen mit allen Farben — von strahlendem Rot bis zu leuchtendem Lila. Viele Artikel gibt es in mehreren Farben; die Auswahl finden Sie direkt auf der Produktseite.</p>
 
     <h2>Wie schnell wird meine Shop-Bestellung geliefert?</h2>
     <p>Innerhalb von 2 bis 4 Werktagen — versandkostenfrei, ohne Mindestbestellwert.</p>
@@ -1653,11 +1653,10 @@ html{scroll-behavior:smooth}
 <main class="view" id="v-marke">
   <div class="wrap legal" style="max-width:760px">
     <h1>Die Marke</h1>
-    <p style="font-size:17px"><b>Eine Handschrift, vier Farben.</b> LA DOCCIA beginnt beim ersten ehrlichen
+    <p style="font-size:17px"><b>Eine Handschrift, vier Quadrate.</b> LA DOCCIA beginnt beim ersten ehrlichen
     Moment des Tages: Wasser, Feuer, Licht und Farbe — vier Elemente, wie die vier Seiten eines Quadrats. Daraus wurde unsere Formsprache.
-    Vier offene Quadrate in Gelb, Orange, Türkis und Violett bilden unsere Wortmarke,
-    und sie tauchen überall wieder auf: als Würfel unserer Parfüms, als Steppung auf Jacken,
-    als Stickerei auf Caps, als Kristall an Tasche und Sneaker.</p>
+    Vier offene Quadrate bilden unsere Wortmarke, und sie tauchen überall wieder auf: als Würfel unserer Parfüms, als Steppung auf Jacken,
+    als Stickerei auf Caps, als Kristall an Tasche und Sneaker. Unsere Quadrate spielen mit allen Farben.</p>
     <h2>Die Handschrift</h2>
     <p>Jedes Parfüm der Kollektion begann als Handskizze des Gründers — gerade Linien,
     scharfe Kanten, kein sichtbarer Deckel. Heute gibt es jede Form zweimal:
@@ -1856,8 +1855,8 @@ function pathsStatic(list, color){
   return list.map(g=>`<g transform="translate(${g.x},0) scale(${g.s},${-g.s})"><path d="${g.d}" fill="${color}"/></g>`).join('');
 }
 const BRAND=['#E8B400','#E85D2A','#1FA98A','#6C4FD8'];
-const SELCOLS=[...BRAND,'#FFFFFF','#17171B','#C9A227','#1E7A46','#1E5AA8','#E0231C','#2E86C1','#58D68D','#F5B041','#1E8449','#E8B400','#E85D2A','#1FA98A','#6C4FD8'];  /* Auswahlfarben für Produkte (inkl. Weiß) — nicht fürs Logo */
-const COLNAMES=['Gelb','Orange','Türkis','Violett','Weiß','Schwarz','Gold','Grün','Blau','Rot','Kolibri','Chamäleon','Salamander','Krokodil','Man','Mann','Homme','Uomo'];
+const SELCOLS=[...BRAND,'#FFFFFF','#17171B','#C9A227','#1E7A46','#1E5AA8','#E0231C','#2E86C1','#58D68D','#F5B041','#1E8449','#E8B400','#E85D2A','#1FA98A','#6C4FD8','#C9CBD1','#F2F1EC'];  /* Auswahlfarben für Produkte (inkl. Weiß) — nicht fürs Logo */
+const COLNAMES=['Gelb','Orange','Türkis','Violett','Weiß','Schwarz','Gold','Grün','Blau','Rot','Kolibri','Chamäleon','Salamander','Krokodil','Man','Mann','Homme','Uomo','Metall','Vetro'];
 /* Die Quadrate sind jetzt RAHMEN (Vorgabe aus Olegs Skizze):
    fill:none + kräftiger Stroke statt gefüllter Fläche. */
 function squaresWide(size,y,x0,x1,anim){
@@ -2132,6 +2131,7 @@ const P=[
  {id:'p87',cat:'kosmetik',sc:'haar',who:'kinder',n:'Kinder-Shampoo „Bolla“, 250 ml',p:12,img:'assets/p/87_a.jpg',img2:'assets/p/87_b.jpg',gal:["assets/p/87_b.jpg", "assets/p/87_c.jpg"],r:4.9,rv:16,badge:'Neu',ml:250,rel:["p92","p11","p82"],d:'Mildes Kinder-Shampoo in der Verlaufsflasche mit Blubber-Kappe — keine Tränen, viel Schaum.',x:'Ohne Tränen-Formel, pH-hautneutral, ohne Parfümallergene. Auch als Duschgel nutzbar.'},
  {id:'p88',cat:'mode',sc:'huete',who:'damen',n:'Sommerhut „Sole“',p:69,img:'assets/p/88_a.jpg',img2:'assets/p/88_b.jpg',gal:['assets/p/88_b.jpg', "assets/p/88_a_v2.jpg", "assets/p/88_a_v3.jpg"],r:4.9,rv:12,badge:'Neu',mat:'Papierstroh-Geflecht',sizes:["S/M","L/XL"],rel:["p89","p86","p13"],d:'Weißer Sommerhut mit weit schwingender Krempe und dem schmalen Quadrate-Band — Schatten, der gut aussieht.',x:'UPF 50+, formstabil, mit verstellbarem Innenband. Zum Transport flach rollbar.'},
  {id:'p89',cat:'mode',sc:'huete',who:'damen',n:'Bucket Hat „Bianco“',p:59,img:'assets/p/89_a.jpg',img2:'assets/p/89_a_v2.jpg',gal:["assets/p/89_a_v2.jpg", "assets/p/89_a_v3.jpg"],r:4.8,rv:10,badge:'Neu',mat:'Baumwoll-Twill',sizes:["S/M","L/XL"],rel:["p88","p86","p64"],d:'Weißer Bucket Hat aus festem Twill mit gestickter Wortmarke — der Sommer-Klassiker der Kollektion.',x:'Waschbar bei 30 °C, behält die Form. Passt zu allem — vom Duschtuch bis zur Regenjacke.'},
+ {id:'p173',cat:'mode',sc:'huete',who:'damen',n:'Cap „Quadra Donna“',p:69,img:'assets/p/173_a.jpg',img2:'assets/p/173_b.jpg',gal:["assets/p/173_b.jpg"],r:5.0,rv:1,badge:'Neu',mat:'100 % Baumwoll-Twill',rel:["p88","p89","p156"],d:'Die Damen-Cap in strahlendem Weiß: feine gestickte Quadrate in allen Farben regnen über Front und Seiten, darüber die Wortmarke mit den vier offenen Quadraten.',x:'Geschwungener Schirm, verstellbarer Riegel. Bei 30 °C von Hand waschen.'},
  {id:'p92',cat:'kosmetik',sc:'haar',n:'Shampoo „Volume“, 250 ml',p:19,img:'assets/p/92_a.jpg',img2:'assets/p/92_b.jpg',gal:['assets/p/92_b.jpg'],r:4.8,rv:13,badge:'Neu',ml:250,rel:["p92","p93","p21"],d:'Volumen-Shampoo in der schimmernden Violett-Flasche — Fülle ohne Beschweren.',x:'Mit Reisprotein und Panthenol, sulfatfrei. Für feines Haar, tägliche Anwendung.'},
  {id:'p93',cat:'kosmetik',sc:'haar',n:'Shampoo „Repair“, 250 ml',p:19,img:'assets/p/93_a.jpg',img2:'assets/p/93_b.jpg',gal:['assets/p/93_b.jpg'],r:4.9,rv:9,badge:'Neu',ml:250,rel:["p92","p22","p22"],d:'Repair-Shampoo in der Amber-Gold-Flasche — Aufbau für strapaziertes Haar.',x:'Mit Keratin und Arganöl, sulfatfrei. Nach Sonne, Färben oder Hitze-Styling.'},
  {id:'p100',cat:'kosmetik',sc:'koerper',n:'Körperöl „Oro“, 100 ml',p:34,img:'assets/p/100_a.jpg',img2:'assets/p/100_b.jpg',gal:['assets/p/100_b.jpg'],r:4.9,rv:9,badge:'Neu',ml:100,rel:["p13","p14","p113"],d:'Trockenöl mit feinem Goldschimmer in der Pipettenflasche — Glow für Haut und Haar.',x:'98 % Ölanteil aus Jojoba und Mandel, zieht schnell ein. Auf die feuchte Haut oder in die Längen geben.'},
@@ -2153,11 +2153,10 @@ const P=[
  {id:'p161',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Duo Vetro“, 30 ml',p:99,img:'assets/p/140_glas_a.jpg',img2:'assets/p/140_glas_b.jpg',gal:["assets/p/140_glas_b.jpg", "assets/p/140_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p140","p162","p160"],d:'Zwei Würfel, Türkis und Violett, als Edition aus satiniertem, undurchsichtigem Glas. Gleiche Form wie „Duo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Duo“. Design geschützt.'},
  {id:'p141',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo“, 15 ml',p:59,img:'assets/p/141_a.jpg',img2:'assets/p/141_b.jpg',gal:["assets/p/141_b.jpg", "assets/p/141_c.jpg"],r:4.9,rv:3,badge:'Neu',rel:["p140","p128","p141"],d:'Ein einzelner Würfel in Gelb mit Golddeckel — das Reiseformat der Turm-Familie, klein wie ein Schmuckstück.',x:'Flugtauglich unter 100 ml. Auch schön als Geschenk zum Kennenlernen.'},
  {id:'p165',cat:'parfuem',sc:'edp',who:'kinder',n:'Kinder-Duft „Cubetto“, 50 ml',p:39,img:'assets/p/165_a.jpg',img2:'assets/p/165_b.jpg',gal:["assets/p/165_b.jpg", "assets/p/165_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p113","p87"],d:'Der verspielte Würfelturm für die Kleinen: vier bunte Würfel zum Stapeln-Anschauen, ganz ohne Alkohol. Sanft, mild und in den vier Farben der Marke.',x:'Ohne Alkohol, dermatologisch mild \u2014 ein zarter, fruchtig-frischer Duft für Kinderhaut. 50 ml. KI-Design geschützt.'},
- {id:'p168',cat:'mode',sc:'taschen',who:'damen',n:'Tasche „Calibri“',p:6000,img:'assets/p/168_a.jpg',img2:'assets/p/168_b.jpg',gal:["assets/p/168_video.mp4", "assets/p/168_b.jpg", "assets/p/168_c.jpg"],colors:[10,11,12,13],cimg:{Kolibri:'assets/p/168_a.jpg','Chamäleon':'assets/p/168_m2.jpg',Salamander:'assets/p/168_m3.jpg',Krokodil:'assets/p/168_m4.jpg'},r:5.0,rv:1,badge:'Neu',mat:'Genarbtes Leder, Echtseide, Chamäleonglas, vergoldetes Metall',rel:["p117","p136","p156"],d:'„Der Designer meint: Es hört bald auf zu regnen.“ — Ein Schmuckstück, keine Gebrauchstasche: beiges Leder, darüber Regen aus schimmernden Seidenquadraten, gefasst in strahlendem Blau. Die Griffe sind die Sonne, und durch den Regen fliegt ein Kolibri aus Chamäleonglas, das im Licht die Farbe wechselt. Vier Motive: Kolibri, Chamäleon, Salamander, Krokodil.',x:'Gefertigt in drei Stationen: Grundgerüst aus einer italienischen Werkstatt, von Hand mit Seide bestückt zwischen Hongkong und Guangzhou, Glasherstellung und Endmontage in Deutschland (Glasdesign: Daniel). Gewölbte blaue Glaselemente, vergoldete Beschläge, beide Seiten identisch. Ab 6.000 € — auf Anfrage.'},
- {id:'p169',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 1 — Man“, 50 ml',p:149,img:'assets/p/169_man.jpg',r:5.0,rv:2,badge:'Neu',rel:["p170","p171","p172"],d:'Die erste Note der Herrenlinie: MAN, auf Englisch, im sonnengelben Würfel. Leicht und frisch — der Duft für den Moment, er verfliegt wie ein kurzer Regen.',x:'Note 1 nach klassischer Parfümerie-Lehre. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
- {id:'p170',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 2 — Mann“, 50 ml',p:149,img:'assets/p/169_mann.jpg',r:5.0,rv:2,badge:'Neu',rel:["p169","p171","p172"],d:'Die zweite Note: MANN, auf Deutsch, im orangen Würfel. Würzig und präsent — der Duft, der den Tag trägt.',x:'Note 2 nach klassischer Parfümerie-Lehre. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
- {id:'p171',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 3 — Homme“, 50 ml',p:149,img:'assets/p/169_homme.jpg',r:5.0,rv:2,badge:'Neu',rel:["p169","p170","p172"],d:'Die dritte Note: HOMME, auf Französisch, im türkisen Würfel. Tief und beständig — er bleibt bis in den Abend.',x:'Note 3 nach klassischer Parfümerie-Lehre. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
- {id:'p172',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 4 — Uomo“, 50 ml',p:169,img:'assets/p/169_uomo.jpg',r:5.0,rv:2,badge:'Neu',rel:["p169","p170","p171"],d:'Die vierte Note: UOMO, auf Italienisch, im violetten Würfel — die Königsnote. Sie vereint alle Noten in sich, so wie La Doccia alle vier Farben vereint, und hält am längsten.',x:'Note 4 — die Mischung aller Noten, nach italienischer Art. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
+ {id:'p169',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 1 — Man“, 50 ml',p:149,img:'assets/p/169_man_knall.jpg',colors:[0,18,19],cimg:{Gelb:'assets/p/169_man_knall.jpg',Metall:'assets/p/169_man_metall.jpg',Vetro:'assets/p/169_man_glas.jpg'},r:5.0,rv:2,badge:'Neu',rel:["p170","p171","p172"],d:'Die erste Note der Herrenlinie: MAN, auf Englisch, im strahlend gelben Würfel. Leicht und frisch — der Duft für den Moment, er verfliegt wie ein kurzer Regen. In drei Ausführungen: glänzender Lack, Metallic wie Autolack, satiniertes Glas.',x:'Note 1 nach klassischer Parfümerie-Lehre. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
+ {id:'p170',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 2 — Mann“, 50 ml',p:149,img:'assets/p/169_mann_knall.jpg',colors:[9,18,19],cimg:{Rot:'assets/p/169_mann_knall.jpg',Metall:'assets/p/169_mann_metall.jpg',Vetro:'assets/p/169_mann_glas.jpg'},r:5.0,rv:2,badge:'Neu',rel:["p169","p171","p172"],d:'Die zweite Note: MANN, auf Deutsch, im knallroten Würfel. Würzig und präsent — der Duft, der den Tag trägt. In drei Ausführungen: glänzender Lack, Metallic wie Autolack, satiniertes Glas.',x:'Note 2 nach klassischer Parfümerie-Lehre. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
+ {id:'p171',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 3 — Homme“, 50 ml',p:149,img:'assets/p/169_homme_knall.jpg',colors:[7,18,19],cimg:{'Grün':'assets/p/169_homme_knall.jpg',Metall:'assets/p/169_homme_metall.jpg',Vetro:'assets/p/169_homme_glas.jpg'},r:5.0,rv:2,badge:'Neu',rel:["p169","p170","p172"],d:'Die dritte Note: HOMME, auf Französisch, im strahlend grünen Würfel. Tief und beständig — er bleibt bis in den Abend. In drei Ausführungen: glänzender Lack, Metallic wie Autolack, satiniertes Glas.',x:'Note 3 nach klassischer Parfümerie-Lehre. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
+ {id:'p172',cat:'parfuem',sc:'edp',who:'herren',n:'Eau de Parfum „Note 4 — Uomo“, 50 ml',p:169,img:'assets/p/169_uomo_knall.jpg',colors:[3,18,19],cimg:{Violett:'assets/p/169_uomo_knall.jpg',Metall:'assets/p/169_uomo_metall.jpg',Vetro:'assets/p/169_uomo_glas.jpg'},r:5.0,rv:2,badge:'Neu',rel:["p169","p170","p171"],d:'Die vierte Note: UOMO, auf Italienisch, im strahlend violetten Würfel — die Königsnote. Sie vereint alle Noten in sich, so wie La Doccia alle vier Farben vereint, und hält am längsten. In drei Ausführungen: glänzender Lack, Metallic wie Autolack, satiniertes Glas.',x:'Note 4 — die Mischung aller Noten, nach italienischer Art. Beschriftung auf dem Deckel, Wortmarke seitlich. Design geschützt.'},
  {id:'p162',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Piccolo Vetro“, 15 ml',p:59,img:'assets/p/141_glas_a.jpg',img2:'assets/p/141_glas_b.jpg',gal:["assets/p/141_glas_b.jpg", "assets/p/141_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p141","p161","p160"],d:'Der einzelne gelbe Würfel mit Golddeckel als satinierte Glas-Edition — das Reiseformat in neuem Material. Gleiche Form wie „Piccolo“.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Piccolo“. Design geschützt.'},
  {id:'p142',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo“, 75 ml',p:189,img:'assets/p/142_a.jpg',img2:'assets/p/142_b.jpg',gal:["assets/p/142_b.jpg", "assets/p/142_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p128","p128","p140"],d:'Der Wolkenkratzer: sechs dünne Glasscheiben in den Markenfarben übereinander, oben bündig geschlossen — das große Format der Familie.',x:'15 % Duftölanteil — der langlebigste Duft der Kollektion.'},
  {id:'p163',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo Vetro“, 75 ml',p:189,img:'assets/p/142_glas_a.jpg',img2:'assets/p/142_glas_b.jpg',gal:["assets/p/142_glas_b.jpg", "assets/p/142_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p142","p159","p160"],d:'Der Wolkenkratzer als satinierte Glas-Edition: sechs Farbschichten übereinander, undurchsichtig, mit weichem Glas-Schimmer. Gleiche Form wie „Grattacielo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Grattacielo“. Design geschützt.'},
@@ -2381,7 +2380,7 @@ function renderShop(){
   function weltCount(r,who){
     const scOk=p=>!r.sub || (r.sub==='schuhetaschen' ? (p.sc==='schuhe'||p.sc==='taschen') : p.sc===r.sub);
     return P.filter(p=>p.cat===r.cat&&scOk(p)
-      &&(who==='kinder'?p.who===who:who==='herren'?(p.who===who||(p.cat==='parfuem'&&!p.who)):(!p.who||p.who===who))).length;
+      &&(who==='kinder'||who==='herren'?p.who===who:(!p.who||p.who===who))).length;
   }
   window.weltGo=function(cat,sub,who){ filt(cat,who); if(sub){curSub=sub;renderShop();} };
   function weltTiles(who){
@@ -2420,8 +2419,8 @@ function renderShop(){
     document.getElementById('v-shop').classList.add('landing');
     const rail=(ids)=>`<div class="rail">${ids.map(id=>P.find(p=>p.id===id)).filter(Boolean).map(cardRail).join('')}</div>`;
     document.getElementById('shopBody').innerHTML=`
-      <div class="nwhero top reveal">
-        <img src="assets/e/hero-damen.jpg" alt="La Doccia Damen" loading="lazy">
+      <div class="nwhero top reveal" style="height:min(92svh,900px)">
+        <img src="assets/e/hero-damen.jpg" alt="La Doccia Damen" loading="lazy" style="object-position:center top">
         <div class="ntx"><span class="stag">La Doccia Damen</span>
           <h2 class="mega">Für jeden Tag.<br>Für jedes Wetter.</h2>
           <button class="btn pill" onclick="document.querySelector('#shopBody .grouplbl').scrollIntoView({behavior:'smooth',block:'start'})">Jetzt entdecken</button></div>
@@ -2429,6 +2428,12 @@ function renderShop(){
       ${uspRow()}
       <div class="grouplbl" style="margin-top:8px">Für Damen</div>
       ${weltTiles('damen')}
+      <div class="nwhero reveal" style="margin-top:38px;cursor:pointer" onclick="openP('p173')">
+        <img src="assets/p/look_damen.jpg" alt="Der La Doccia Look" loading="lazy" style="object-position:center 30%">
+        <div class="ntx"><span class="stag">Der La Doccia Look</span>
+          <h2 class="mega">Eine Frau.<br>Eine Handschrift.</h2>
+          <button class="btn pill">Cap entdecken</button></div>
+      </div>
       <div style="margin-top:38px;text-align:center"><button class="btn pill allesbtn" onclick="filt('damen')">Alles für Damen als Liste</button></div>`;
     document.getElementById('fcount').textContent='Damen';
     setTimeout(obs,60); headerClear();
@@ -2467,7 +2472,7 @@ function renderShop(){
     document.getElementById('shopTitle').textContent='Alles für '+nice;
     document.getElementById('shopSub').textContent='Mode und Parfümerie für '+nice+' — nach Rubriken geordnet.';
     crumb2('Alles für '+nice);
-    let list=P.filter(p=>(p.cat==='mode'||p.cat==='parfuem')&&(p.who===who||(who==='herren'&&p.cat==='parfuem'&&!p.who)));
+    let list=P.filter(p=>(p.cat==='mode'||p.cat==='parfuem')&&(who==='herren'?p.who===who:(p.who===who||(p.cat==='parfuem'&&!p.who&&who==='damen'))));
     if(q)list=list.filter(p=>prodMatch(p,q));
     list=sortList(list);
     document.getElementById('shopBody').innerHTML=`<section class="catsec" style="padding-top:10px">
@@ -2615,7 +2620,7 @@ function renderShop(){
           <button class="subchip ${curWho==='kinder'?'on':''}" onclick="whoFilt('kinder')">Kinder</button>
           <button class="subchip ${curWho==='herren'?'on':''}" onclick="whoFilt('herren')">Herren</button></div>` : '';
       if(curCat!=='all'&&curSub!=='all') list=list.filter(p=>curSub==='schuhetaschen' ? (p.sc==='schuhe'||p.sc==='taschen') : p.sc===curSub);
-      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>curWho==='kinder' ? p.who===curWho : curWho==='herren' ? (p.who===curWho||(p.cat==='parfuem'&&!p.who)) : (!p.who||p.who===curWho));
+      if(curCat!=='all'&&curWho!=='all') list=list.filter(p=>(curWho==='kinder'||curWho==='herren') ? p.who===curWho : (!p.who||p.who===curWho));
       list=sortList(list); total+=list.length;
       if(q&&!list.length) return '';
       /* Bei einer einzelnen Abteilung steht der große Titel schon oben —
