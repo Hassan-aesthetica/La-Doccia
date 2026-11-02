@@ -31,6 +31,10 @@
 24. **Platzierung Website:** NICHT zwischen den normalen Produkten („beißt sich") — **unten als Überraschung** mit der Geschichte (Italien → Handarbeit China → Wien), später mit Dreh-Video und Vitrine-Inszenierung (Hotel-Shooting mit Siegfried geplant). ✅ Teaser-Sektion unten auf der Startseite.
 25. Marketing-Idee: **Zeichentrick-Kurzfilm** über die Geschichte der Marke (China-Zeit etc.) für YouTube/Social. → Später.
 
+## Nachtrag 02./03.11. (WhatsApp-Sprachnachricht + 4 Referenzbilder)
+- **Sprachnachricht 03.11., 00:00:** Beim Klick auf Damen (und alle Welten) soll sich das Bild **genauso bis ganz oben ziehen wie beim Klick aufs La-Doccia-Logo** — voller Laptop-Bildschirm, ohne den hellen Streifen oben. Morgen kurz telefonieren. ✅ umgesetzt (Welt-Heros liegen jetzt unter dem transparenten Header, wie die Startseite).
+- **4 Referenzbilder 02.11., 23:07:** Flakon-Beschriftung für alle vier Material-Reihen (Kunststoff, Metall, Carbon, Glas): **Name (MAN/MANN/HOMME/UOMO) oben auf dem Deckel**, vorne am Deckel **„LA DOCCIA" + die vier Quadrate**. Glas-Reihe in den Referenzen: transparentes Farbglas. → Produktbilder neu generiert (Punkt 16 „Noten auf die Flaschen" damit in Olegs Variante erledigt).
+
 ## Business (offline)
 - Rechnung **1.900 €** per WhatsApp/E-Mail; Überweisung vom Geschäftskonto, Montag/Dienstag.
 - Fotoshooting im Hotel (mit Siegfried abgeklärt), Vitrine mit Beleuchtung und Drehteller im Foyer; Baden-Baden wird komplett verfilmt.
