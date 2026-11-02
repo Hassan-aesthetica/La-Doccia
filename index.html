@@ -886,6 +886,11 @@ nav.main .salelink:hover{border-color:#E0231C}
 /* Kompakter Kopf: auf der Shop-Übersicht fallen Titelblock & Filterleiste weg —
    das Bild ist sofort da. Kategorien stecken in Header & Mobil-Leiste. */
 .view.landing .shophead,.view.landing .catbar{display:none}
+/* Oleg 03.11. (Sprachnachricht): Welt-Seiten wie nach Klick aufs Logo — das Bild zieht
+   bis ganz nach oben, kein heller Streifen; Header liegt transparent darüber */
+@media(min-width:961px){
+  .view.landing #shopBody>.nwhero.top:first-child{margin-top:-136px;height:calc(100svh - 28px)!important;min-height:540px}
+}
 /* Slider */
 .shero .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;pointer-events:none}
 .shero .slide.on{opacity:1;pointer-events:auto}
@@ -2736,10 +2741,15 @@ setInterval(()=>{
 
 /* ---------- Header über dem Hero: transparent, Logo weiß; beim Scrollen wieder dunkel ---------- */
 function headerClear(){
-  const onLanding=document.getElementById('v-shop').classList.contains('on')&&curCat==='all'&&!curQ.trim();
-  const hero=document.querySelector('.shero.full');
+  const vOn=document.getElementById('v-shop').classList.contains('on');
+  const q=curQ.trim();
+  /* Oleg 03.11.: auch Damen/Herren/Kinder/Parfümerie — Header transparent über dem vollen Bild */
+  let hero=null;
+  if(vOn&&curCat==='all'&&!q)hero=document.querySelector('.shero.full');
+  else if(vOn&&!q&&['damenwelt','herrenwelt','kinderwelt','neuwelt','parfuem'].includes(curCat))
+    hero=document.querySelector('#shopBody>.nwhero.top:first-child');
   /* Wechsel früher: schon nach ~1/3 des Heros wird der Header wieder dunkel */
-  const clear=onLanding&&hero&&innerWidth>960&&scrollY<Math.max(120,hero.offsetHeight*0.35);
+  const clear=hero&&innerWidth>960&&scrollY<Math.max(120,hero.offsetHeight*0.35);
   document.querySelector('header').classList.toggle('clear',!!clear);
 }
 addEventListener('scroll',headerClear,{passive:true});
