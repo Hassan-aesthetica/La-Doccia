@@ -81,3 +81,8 @@ Noch im Shop aus Zubehör: nur die Antirutschmatte (p60).
 
 ## 26.10.2026 — Call Oleg
 - **p168 Tasche „Calibri" (6.000 €)** raus aus dem Shop (Oleg: Luxusobjekt passt nicht neben Duschsachen; „mache ich raus"). Bilder bleiben in assets/p/168_*. Neues Design in Arbeit (Downloads/La Doccia Calibri Varianten).
+
+## 02.11.2026 — nach Pocket-Auswertung Call 28.10.
+- **Offen (Website):** Kino-Videos für Herren- und Kinder-Hero (alle Bereiche „in Bewegung"); verschiedene Model-Gesichter bei Hüte/Caps nachgenerieren; Cap-Kipp-Video; Zeichentrick-Markenfilm (Marketing, später).
+- **Offen (Parfüm):** Torre Vetro (148_glas) glänzend-undurchsichtig — Korrektur kam noch durchscheinend zurück, alte Version vorerst behalten; Duo-Vetro-Bilder (140_glas) noch satiniert; „Note 1–4" als Beschriftung auf den Flaschen; Piccolo („macht weg" vs. „weiterverfolgen") am Dienstag klären; Oleg schickt noch Carbon-Referenzbilder.
+- **Erledigt:** siehe ABSPRACHE-2026-10-28-CALL.md (Hero-Positionen, Vollbild-Unterseiten, Logo-Farbwechsel, Schuhe/Taschen getrennt, Matt→Glänzend-Texte, Carbon-Reihe p169–172, Ferrari-Rot Metall Note 2, Glas-Reihe glänzend-opak, Quattro/Blocco 4 Teile ohne Deckel länglich, Calibri-Überraschung unten auf Startseite).
