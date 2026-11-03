@@ -34,6 +34,7 @@
 ## Nachtrag 02./03.11. (WhatsApp-Sprachnachricht + 4 Referenzbilder)
 - **Sprachnachricht 03.11., 00:00:** Beim Klick auf Damen (und alle Welten) soll sich das Bild **genauso bis ganz oben ziehen wie beim Klick aufs La-Doccia-Logo** — voller Laptop-Bildschirm, ohne den hellen Streifen oben. Morgen kurz telefonieren. ✅ umgesetzt (Welt-Heros liegen jetzt unter dem transparenten Header, wie die Startseite).
 - **4 Referenzbilder 02.11., 23:07:** Flakon-Beschriftung für alle vier Material-Reihen (Kunststoff, Metall, Carbon, Glas): **Name (MAN/MANN/HOMME/UOMO) oben auf dem Deckel**, vorne am Deckel **„LA DOCCIA" + die vier Quadrate**. Glas-Reihe in den Referenzen: transparentes Farbglas. → Produktbilder neu generiert (Punkt 16 „Noten auf die Flaschen" damit in Olegs Variante erledigt).
+- **Hassan 03.11.:** Die vier Ausführungen sind **einzelne Produkte, kein Varianten-Umschalter**. ✅ umgesetzt: 16 Einzelprodukte (p169–172 Lack, p174–177 Metall, p178–181 Farbglas, p182–185 Carbon), in der Parfümerie als vier Material-Reihen „Die Herren-Noten — Lack/Metall/Farbglas/Carbon". Preise vorläufig gestaffelt (Lack 149, Metall 169, Farbglas 179, Carbon 189; Uomo je +20 €) — **mit Oleg bestätigen**.
 
 ## Business (offline)
 - Rechnung **1.900 €** per WhatsApp/E-Mail; Überweisung vom Geschäftskonto, Montag/Dienstag.
