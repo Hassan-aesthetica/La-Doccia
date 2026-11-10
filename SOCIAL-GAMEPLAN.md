@@ -37,8 +37,8 @@ Launch bald — sei dabei.
 | Highlight | Cover | Inhalt |
 |---|---|---|
 | Parfüm | highlight_parfuem | Noten, Türme, Ausführungen |
-| Mode | highlight_mode | Jacken, Sneaker, Looks |
-| Calibri | highlight_calibri | Die Entstehung der Tasche |
+| Mode | highlight_mode | Jacken (Piuma), Sneaker, Looks |
+| Neu | highlight_neu | Drops & Launches |
 | Atelier | highlight_atelier | Hinter den Kulissen, Skizzen, Oleg |
 | Service | highlight_service | FAQ, Versand, Launch-Infos |
 
@@ -52,7 +52,7 @@ Immer abwechseln: **dunkles Cover → beiges Produktbild → dunkles Cover**. Ni
 | Säule | Anteil | Was |
 |---|---|---|
 | Produkt-Poesie | 35 % | Karussells & Reels zu Flakons, Turm, Jacken, Sneaker |
-| Atelier / Entstehung | 30 % | Skizzen (Olegs Zeichnungen!), Entwürfe, „vorher/nachher", Calibri-Reise |
+| Atelier / Entstehung | 30 % | Skizzen (Olegs Zeichnungen!), Entwürfe, „vorher/nachher" |
 | Marke & Herkunft | 20 % | Vier Quadrate, Wien, Regen-DNA, Nähte in Gold |
 | Launch & Community | 15 % | Countdown, Fragen, Abstimmungen („Lack oder Glas?") |
 
@@ -108,19 +108,19 @@ Torre, 100 ml. Das Sammlerstück der Kollektion. (KI-Visualisierung)
 #LaDoccia #Torre #Parfumflakon #FlakonDesign #Sammlerstück #Parfumsammlung #PerfumeBottle #DesignLovers #Luxusdesign #RätselPost
 ```
 
-### K4 — „Ein Stück entsteht." (6 Slides) → Woche 2, Posting 3
-Calibri-Teaser. Caption:
+### K4 — „Die erste Jacke." (5 Slides) → Woche 2, Posting 3
+Piuma Donna in Olegs Entwürfen. Caption:
 ```
-Ein Stück entsteht.
+Die erste Jacke.
 
-Echte Seide, gewölbtes Glas, Gold auf Kalbsleder.
-Das Grundgerüst aus einer italienischen Werkstatt, von Hand
-bestückt bei Guangzhou, vollendet in Wien.
+Piuma Donna — Quadrat-Steppung, Goldzipper, die Wortmarke
+gestickt statt gedruckt. In Violett, Weiß und Grün.
+Wasserabweisend und federleicht: gemacht für Regentage,
+wie alles bei uns.
 
-Sie ist noch nicht im Verkauf. Wir zeigen jeden Schritt,
-bis sie es ist. (Design-Studie, KI-Visualisierung)
+379 €. Bald erhältlich. (Produktvisualisierung: KI)
 
-#LaDoccia #Calibri #Handarbeit #Taschendesign #EntstehungEinerTasche #Atelier #BehindTheScenes #LuxuryBag #Seide #MadeWithLove
+#LaDoccia #Daunenjacke #PufferJacket #Herbstmode #Wintermode #Damenmode #FashionDesign #QuiltedJacket #MadeForRain #NeueMarke
 ```
 
 ---
@@ -152,8 +152,8 @@ Die „Tag 1"-Serie ist der stärkste TikTok-Play für neue Marken: Dokumentiere
 | Woche | Mo | Mi | Fr/So |
 |---|---|---|---|
 | 1 | K1 Vier Quadrate | Reel: Torre-Glas-Video | K2 Vier Noten |
-| 2 | K3 Turm-Geheimnis | Reel: MANN-Rot-Video | K4 Calibri |
-| 3 | Auflösung Torre (Einzelpost: Deckel-Story) | TikTok: Skizze→Render | Jacken-Post (Olegs Piuma-Bilder) |
+| 2 | K3 Turm-Geheimnis | Reel: MANN-Rot-Video | K4 Piuma-Jacke |
+| 3 | Auflösung Torre (Einzelpost: Deckel-Story) | TikTok: Skizze→Render | Story-Serie: Skizze → Realität |
 | 4 | Sneaker-Post (Navy Passo) | TikTok: „Welche Note bist du?" | Story-Umfrage: „Lack oder Glas?" + Countdown |
 
 Stories an jedem Posting-Tag: Post teilen + 1 interaktives Element (Umfrage, Slider, Frage). Jede Woche 1 Behind-the-Scenes-Story (Skizzen, Chats mit der Fabrik — ohne sensible Details).
@@ -170,7 +170,7 @@ Stories an jedem Posting-Tag: Post teilen + 1 interaktives Element (Umfrage, Sli
 4. **Kommentar-Ton:** warm, kurz, auf Augenhöhe. Signatur-Emoji: 🟨🟥🟩🟪 sparsam einsetzen.
 
 ## 7. Nächste Ausbaustufe (nach Launch der Kanäle)
-- Eigene Domain + Link-in-Bio-Seite (Shop, Calibri-Story, Newsletter)
+- Eigene Domain + Link-in-Bio-Seite (Shop, Newsletter)
 - Instagram-Shop/Produkt-Tags, sobald Shopify steht (→ hängt am Abrechnungssystem-Punkt)
 - Zeichentrick-Markenfilm (Olegs Idee vom 28.10.) als YouTube/Reel-Serie
 - Hotel-Shooting mit Siegfried → erstes echtes (nicht-KI) Foto-Set
