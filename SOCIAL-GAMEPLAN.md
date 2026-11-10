@@ -169,6 +169,17 @@ Stories an jedem Posting-Tag: Post teilen + 1 interaktives Element (Umfrage, Sli
 3. **Nie posten:** Preise diskutieren, Fabrik-Interna, unfertige Rechtslagen. Bei Fragen zu Kauf: „Launch kommt — folg uns, du erfährst es zuerst."
 4. **Kommentar-Ton:** warm, kurz, auf Augenhöhe. Signatur-Emoji: 🟨🟥🟩🟪 sparsam einsetzen.
 
+## Nachschub-Paket (10.11., zweiter Produktionslauf)
+
+Neu in `Downloads/La Doccia Social/` — alle Captions dazu in `CAPTIONS-NEU.md`:
+
+- **4 weitere Karussells:** K5 „Der erste Schuh." (Passo, 6 Slides), K6 „Eine Note. Vier Ausführungen." (MANN in Lack/Metall/Farbglas/Carbon, 6), K7 „Welche Note bist du?" (Community-Quiz, 6), K8 „Die Auflösung." (Torre-Deckel-Reveal als Antwort auf K3, 4).
+- **6 Einzelposts** (Grid-Füller): Quote „Wir verstecken Nähte nicht", „Entworfen in Wien", „Bald."-Launch-Teaser, Produktposts Torre/Piuma/Homme.
+- **4 Story-Vorlagen** (1080×1920) mit markierten Sticker-Flächen: Umfrage „Lack oder Glas?", Quiz „Welche Note bist du?", Countdown, „Neu im Feed".
+- **4 neue KI-Reels** (Seedance): Sneaker Passo, MAN-Gelb im Regen, UOMO-Carbon rotierend, Piuma-Jacke.
+- **2 Slideshow-Reels** (~13 s, lokal gerendert): „Vier Noten" und „Die Kollektion kommt" — direkt postbar, nur Sound drauflegen.
+- **Posting-Plan verlängert** auf Woche 5–6 (siehe CAPTIONS-NEU.md).
+
 ## 7. Nächste Ausbaustufe (nach Launch der Kanäle)
 - Eigene Domain + Link-in-Bio-Seite (Shop, Newsletter)
 - Instagram-Shop/Produkt-Tags, sobald Shopify steht (→ hängt am Abrechnungssystem-Punkt)
