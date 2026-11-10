@@ -180,6 +180,15 @@ Neu in `Downloads/La Doccia Social/` — alle Captions dazu in `CAPTIONS-NEU.md`
 - **2 Slideshow-Reels** (~13 s, lokal gerendert): „Vier Noten" und „Die Kollektion kommt" — direkt postbar, nur Sound drauflegen.
 - **Posting-Plan verlängert** auf Woche 5–6 (siehe CAPTIONS-NEU.md).
 
+## Editorial-Paket (10.11., dritter Produktionslauf)
+
+- **K9 „Das Manifest"** — 5 Sätze über die Maison, rein typografisch (römische Ziffern in Gold, Didot).
+- **K10 „Die Details"** — Macro-Serie: LD-Ferse, Stickerei, Carbon-Gewebe, goldene Lettern; Claim „Luxus ist, was man erst beim zweiten Blick sieht."
+- **K11 „Collection N° 1 — Der Index"** — Lookbook-Katalogseiten mit N° 01–05, Rahmen, Preisen.
+- **4 Editorial-Singles:** Kapitel 01 Parfum / Kapitel 02 Mode (Split-Layout mit Gold-Ziffer), Quotes „Regen ist Herkunft" und „Leise Form. Laute Farbe."
+- **2 neue Videos:** KI-Reel Homme-Farbglas (Licht durch grünes Glas) + Macro-Details-Slideshow (~13 s). Torre- und Piuma-KI-Reels blockt der IP-Filter des Videodienstes (goldene Wortmarke im Bild) — dafür existieren die Slideshow-Versionen.
+- **Posting-Plan Woche 7–8** im Ordner `Posting-Plan/` (Manifest → Details → Collection-Index → Kapitel-Serie), plus `Reserve-Grid-Fueller/`.
+
 ## 7. Nächste Ausbaustufe (nach Launch der Kanäle)
 - Eigene Domain + Link-in-Bio-Seite (Shop, Newsletter)
 - Instagram-Shop/Produkt-Tags, sobald Shopify steht (→ hängt am Abrechnungssystem-Punkt)
