@@ -630,7 +630,7 @@ header.stuck{box-shadow:0 12px 34px -26px rgba(20,20,24,.5)}
 @media(max-width:860px){.pmgrid{grid-template-columns:1fr}}
 .pmgal{position:relative}
 .pmgal .frame{position:relative;aspect-ratio:1/1;background:#fff;overflow:hidden}
-.pmgal .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+.pmgal .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
   opacity:0;transform:scale(1.035);transition:opacity .65s ease,transform 1.2s cubic-bezier(.2,.7,.3,1)}
 .pmgal .frame img.on{opacity:1;transform:scale(1)}
 .pmthumbs{display:flex;gap:10px;margin-top:10px}
@@ -882,7 +882,15 @@ nav.main .salelink:hover{border-color:#E0231C}
 .shero.full{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
   aspect-ratio:auto;height:calc(100svh - 28px);min-height:540px}
 @media(min-width:961px){.shero.full{margin-top:-136px}.catbar{top:136px}}
-@media(max-width:960px){.shero.full{height:calc(100svh - 170px);min-height:420px}}
+@media(max-width:960px){
+  /* Oleg 06.11. (Sprachnachricht): Handy-Version wie Laptop — Bild zieht bis ganz oben,
+     Header + Kategorie-Leiste liegen transparent darüber (123px = Header 75 + mobcats 48) */
+  .shero.full{margin-top:-123px;height:calc(100svh - 28px);min-height:480px}
+  .view.landing #shopBody>.nwhero.top:first-child{margin-top:-123px;height:calc(100svh - 28px)!important;min-height:480px}
+  .view.landing #shopBody>.nwhero.top:first-child::before,.shero.full::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:150px;z-index:3;pointer-events:none;
+    background:linear-gradient(rgba(20,20,24,.42),rgba(20,20,24,0))}
+}
 /* Kompakter Kopf: auf der Shop-Übersicht fallen Titelblock & Filterleiste weg —
    das Bild ist sofort da. Kategorien stecken in Header & Mobil-Leiste. */
 .view.landing .shophead,.view.landing .catbar{display:none}
@@ -932,10 +940,11 @@ nav.main .salelink:hover{border-color:#E0231C}
 #headLogo .brandsq:nth-of-type(3){animation-delay:-12s}
 #headLogo .brandsq:nth-of-type(4){animation-delay:-18s}
 @media(prefers-reduced-motion:reduce){#headLogo .brandsq{animation:none}}
-/* Header transparent über dem Hero (nur Desktop), Logo wechselt auf Weiß */
+/* Header transparent über dem Hero (Desktop UND Handy — Oleg 06.11.), Logo wechselt auf Weiß */
 #headLogo path{transition:fill .6s ease}
 .hnav a,.htel,.icon,.prodbtn{transition:color .5s ease,border-color .5s ease,background .5s ease,stroke .5s ease}
-@media(min-width:961px){
+header.clear~.mobcats{background:transparent;backdrop-filter:none;border-color:transparent}
+header.clear~.mobcats a,header.clear~.mobcats .salelink{color:#fff}
   header.clear{background:transparent;backdrop-filter:none;border-color:transparent;--hlogo:#FFFFFF;box-shadow:none}
   header.clear .hnav{border-color:rgba(255,255,255,.22)}
   header.clear .hnav>a,header.clear .hnav .navdrop>a,header.clear .hnav .hsoon{color:#FFFFFF}
@@ -947,7 +956,6 @@ nav.main .salelink:hover{border-color:#E0231C}
   header.clear .icon{stroke:#FFFFFF}
   header.clear .hsearch{border-color:transparent}
   header.clear .hnav .svc>a::after{color:rgba(255,255,255,.6)}
-}
 /* Produkt-Reihen zwischen den Abteilungen */
 .deptrail{margin:6px 0 10px}
 /* Bunte USP-Zeile */
@@ -1695,7 +1703,7 @@ html{scroll-behavior:smooth}
     gravierter Goldschrift.</p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0">
       <img src="referenzen/parfuem-skizze-1.jpg" alt="Original-Skizze des Gründers" loading="lazy" style="width:100%;border-radius:4px">
-      <img src="assets/p/148_glas_a.jpg" alt="Eau de Parfum Torre Vetro" loading="lazy" style="width:100%;border-radius:4px">
+      <img src="assets/p/148_glas_neu4_a.jpg" alt="Eau de Parfum Torre Vetro" loading="lazy" style="width:100%;border-radius:4px">
     </div>
     <h2>Wir verstecken Nähte nicht. Wir feiern sie.</h2>
     <p>Wo andere Marken Nähte kaschieren, setzen wir sie in Gold und Farbe sichtbar auf
@@ -2204,12 +2212,12 @@ const P=[
  {id:'p142',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo“, 75 ml',p:189,img:'assets/p/142_a.jpg',img2:'assets/p/142_b.jpg',gal:["assets/p/142_b.jpg", "assets/p/142_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p128","p128","p140"],d:'Der Wolkenkratzer: sechs dünne Glasscheiben in den Markenfarben übereinander, oben bündig geschlossen — das große Format der Familie.',x:'15 % Duftölanteil — der langlebigste Duft der Kollektion.'},
  {id:'p163',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Grattacielo Vetro“, 75 ml',p:189,img:'assets/p/142_glas_a.jpg',img2:'assets/p/142_glas_b.jpg',gal:["assets/p/142_glas_b.jpg", "assets/p/142_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p142","p159","p160"],d:'Der Wolkenkratzer als satinierte Glas-Edition: sechs Farbschichten übereinander, undurchsichtig, mit weichem Glas-Schimmer. Gleiche Form wie „Grattacielo“, neues Material.',x:'Satinierte Glas-Edition mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Grattacielo“. Design geschützt.'},
  {id:'p143',cat:'mode',sc:'jacken',who:'herren',n:'Daunenjacke „Piuma“',p:399,img:'assets/p/143_schwarz.jpg',img2:'assets/p/143_schwarz_v2.jpg',gal:["assets/p/143_schwarz_v2.jpg", "assets/p/143_schwarz_v3.jpg"],colors:[5,2,4],cimg:{Schwarz:'assets/p/143_schwarz.jpg','Türkis':'assets/p/143_tuerkis.jpg',Weiß:'assets/p/143_weiss.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Recyceltes Polyamid, Daune (RDS)',sizes:["S","M","L","XL"],rel:["p126","p146","p149"],d:'Unsere Daunenjacke mit dem Quadrat-Stepp: statt Querstreifen wölbt sich jede Kammer als Quadrat. Goldener Reißverschluss, Brustbadge mit den vier Quadraten.',x:'Warm, leicht, wasserabweisend. Bei 30 °C im Schonwaschgang, mit Tennisbällen trocknen.'},
- {id:'p144',cat:'mode',sc:'jacken',who:'damen',n:'Daunenjacke „Piuma Donna“',p:379,img:'assets/p/144_violett.jpg',img2:'assets/p/144_violett_v2.jpg',gal:["assets/p/144_violett_v2.jpg", "assets/p/144_violett_v3.jpg"],colors:[3,4,1],cimg:{Violett:'assets/p/144_violett.jpg',Weiß:'assets/p/144_weiss.jpg',Orange:'assets/p/144_orange.jpg'},r:5.0,rv:3,badge:'Neu',mat:'Recyceltes Polyamid, Daune (RDS)',sizes:["XS","S","M","L"],rel:["p143","p117","p116"],d:'Die cropped Version mit Quadrat-Steppung und Goldzipper — Volumen oben, Taille frei.',x:'Warm, federleicht, wasserabweisend. Bei 30 °C im Schonwaschgang.'},
+ {id:'p144',cat:'mode',sc:'jacken',who:'damen',n:'Daunenjacke „Piuma Donna“',p:379,img:'assets/p/144_oleg_a.jpg',img2:'assets/p/144_oleg_logo.jpg',gal:["assets/p/144_oleg_logo.jpg"],colors:[3,4,7],cimg:{Violett:'assets/p/144_oleg_a.jpg',Weiß:'assets/p/144_oleg_weiss.jpg','Grün':'assets/p/144_oleg_gruen.jpg'},r:5.0,rv:3,badge:'Neu',mat:'Recyceltes Polyamid, Daune (RDS)',sizes:["XS","S","M","L"],rel:["p143","p117","p116"],d:'Die cropped Version mit Quadrat-Steppung und Goldzipper — Volumen oben, Taille frei.',x:'Warm, federleicht, wasserabweisend. Bei 30 °C im Schonwaschgang.'},
  {id:'p145',cat:'mode',sc:'oberteile',who:'damen',n:'Strickpullover „Quadretti“',p:179,img:'assets/p/145_creme.jpg',img2:'assets/p/145_creme_v2.jpg',gal:["assets/p/145_creme_v2.jpg", "assets/p/145_creme_v3.jpg"],colors:[4,5],cimg:{Weiß:'assets/p/145_creme.jpg',Schwarz:'assets/p/145_anthrazit.jpg'},r:4.9,rv:2,badge:'Neu',mat:'70 % Wolle, 30 % Baumwolle',sizes:["XS","S","M","L"],rel:["p134","p144","p116"],d:'Cremefarbener Strick mit eingestrickten Hohlquadraten in den vier Markenfarben — verspielt, aber teuer gedacht. Goldfaden an Kragen und Bündchen.',x:'Intarsien-Strick, kein Aufdruck. Handwäsche oder Wollprogramm.'},
  {id:'p146',cat:'mode',sc:'sport',who:'herren',n:'Track-Jacke „Pista“',p:199,img:'assets/p/146_weiss.jpg',img2:'assets/p/146_weiss_v2.jpg',gal:["assets/p/146_weiss_v2.jpg", "assets/p/146_weiss_v3.jpg"],colors:[4,5],cimg:{Weiß:'assets/p/146_weiss.jpg',Schwarz:'assets/p/146_schwarz.jpg'},r:4.9,rv:2,badge:'Neu',mat:'Technischer Jersey',sizes:["S","M","L","XL"],rel:["p143","p133","p122"],d:'Retro-Sportjacke mit dem Quadrate-Band an beiden Ärmeln und goldener Stickerei — Sport als Mode.',x:'Rippkragen mit Türkis-Orange-Tipping. Bei 30 °C waschen.'},
  {id:'p147',cat:'mode',sc:'jacken',who:'kinder',n:'Kinder-Daunenjacke „Piumino“',p:149,img:'assets/p/147_weiss.jpg',img2:'assets/p/147_weiss_v2.jpg',gal:["assets/p/147_weiss_v2.jpg", "assets/p/147_weiss_v3.jpg"],colors:[4,0,2],cimg:{Weiß:'assets/p/147_weiss.jpg',Gelb:'assets/p/147_gelb.jpg','Türkis':'assets/p/147_tuerkis.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Matter Baumwoll-Mix, Wattierung',sizes:["98/104","110/116","122/128"],rel:["p82","p83","p87"],d:'Die Mini-Piuma in Mattoptik: Quadrat-Steppung, kuschelige Kapuze mit farbigem Futter und die vier Quadrate als Stickerei auf der Brust.',x:'Wattiert statt Daune — pflegeleicht und tierfreundlich. Bei 30 °C waschbar.'},
- {id:'p148',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre“, 100 ml',p:199,img:'assets/p/148_a.jpg',img2:'assets/p/148_b.jpg',gal:["assets/p/148_b.jpg", "assets/p/148_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p128","p142","p128"],d:'Der große Turm: fünf Farbwürfel übereinander, und die Wortmarke läuft senkrecht über die Kanten — die Quadrate sitzen mitten in den Buchstaben. Das Sammlerstück der Kollektion.',x:'15 % Duftölanteil, 100 ml. Der oberste Würfel ist der Deckel. Design geschützt.'},
- {id:'p159',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre Vetro“, 100 ml',p:199,img:'assets/p/148_glas_a.jpg',img2:'assets/p/148_glas_b.jpg',gal:["assets/p/148_glas_b.jpg", "assets/p/148_glas_c.jpg"],r:5.0,rv:2,badge:'Neu',rel:["p148","p163","p160"],d:'Der große Turm als Edition aus glänzendem, undurchsichtigem Farbglas: fünf Farbwürfel übereinander mit senkrechter Wortmarke. Gleiche Form wie „Torre“, neues Material — strahlendes Glas mit Tiefe.',x:'Glänzende Glas-Edition — nicht durchsichtig, mit gravierter Goldschrift und feiner Goldlinie an jeder Fuge — dieselbe Duftkomposition wie „Torre“. Design geschützt.'},
+ {id:'p148',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre“, 100 ml',p:199,img:'assets/p/148_neu4_a.jpg',r:5.0,rv:2,badge:'Neu',rel:["p128","p142","p159"],d:'Der große Turm nach Olegs Entwurf: vier Farbwürfel übereinander — Gelb, Rot, Türkis, Violett — und die goldene Wortmarke läuft senkrecht über die Kanten. Das Sammlerstück der Kollektion.',x:'15 % Duftölanteil, 100 ml. Der oberste Würfel ist der Deckel. Design geschützt.'},
+ {id:'p159',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre Vetro“, 100 ml',p:199,img:'assets/p/148_glas_neu4_a.jpg',r:5.0,rv:2,badge:'Neu',rel:["p148","p163","p160"],d:'Der große Turm als Glas-Edition nach Olegs Entwurf: vier Würfel aus strahlendem Farbglas — Gelb, Rot, Türkis, Violett — mit intensiven Glanzreflexen und senkrechter Gold-Wortmarke. Gleiche Form wie „Torre“, neues Material.',x:'Glas-Edition mit Goldschrift — dieselbe Duftkomposition wie „Torre“. Design geschützt.'},
 {id:'p149',cat:'mode',sc:'oberteile',who:'herren',n:'Premium-Polo „Bottone“',p:149,img:'assets/p/149_a.jpg',img2:'assets/p/149_a_v2.jpg',gal:["assets/p/149_a_v2.jpg", "assets/p/149_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Baumwoll-Piqué',sizes:["S","M","L","XL"],rel:["p146","p122","p120"],d:'Das Polo mit den goldenen Quadrat-Knöpfen — leicht abgerundet wie die Quadrate im Logo. Goldene Ziernähte an Knopfleiste, Kragen und Ärmeln.',x:'Gestickte Gold-Wortmarke mit den vier Quadraten. Bei 30 °C waschen, Knöpfe unempfindlich.'},
 {id:'p150',cat:'mode',sc:'sport',who:'damen',n:'Track-Jacke „Pista Donna“',p:189,img:'assets/p/150_a.jpg',img2:'assets/p/150_a_v2.jpg',gal:["assets/p/150_a_v2.jpg", "assets/p/150_a_v3.jpg"],r:4.9,rv:2,badge:'Neu',mat:'Technischer Jersey',sizes:["XS","S","M","L"],rel:["p146","p108","p143"],d:'Die Pista für Damen: tailliert, mit dem Quadrate-Band an beiden Ärmeln, farbigen Ziernähten und goldenem Reißverschluss — Sport als Mode.',x:'Stehkragen, zwei Reißverschlusstaschen. Bei 30 °C waschen.'},
 {id:'p151',cat:'mode',sc:'oberteile',who:'kinder',n:'Kinder-Strickpulli „Quadretti Mini“',p:69,img:'assets/p/151_a.jpg',img2:'assets/p/151_a_v2.jpg',gal:["assets/p/151_a_v2.jpg", "assets/p/151_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Weiche Wollmischung',sizes:["98/104","110/116","122/128"],rel:["p147","p87","p82"],d:'Kuscheliger Strick in Creme mit verstreuten bunten Quadraten — das Quadretti-Muster für die Kleinen.',x:'Rippbündchen an Kragen und Ärmeln. Wollwaschgang, liegend trocknen.'},
@@ -2777,7 +2785,7 @@ function headerClear(){
   else if(vOn&&!q&&['damenwelt','herrenwelt','kinderwelt','neuwelt','parfuem'].includes(curCat))
     hero=document.querySelector('#shopBody>.nwhero.top:first-child');
   /* Wechsel früher: schon nach ~1/3 des Heros wird der Header wieder dunkel */
-  const clear=hero&&innerWidth>960&&scrollY<Math.max(120,hero.offsetHeight*0.35);
+  const clear=hero&&scrollY<Math.max(120,hero.offsetHeight*0.35);  /* Oleg 06.11.: auch mobil */
   document.querySelector('header').classList.toggle('clear',!!clear);
 }
 addEventListener('scroll',headerClear,{passive:true});

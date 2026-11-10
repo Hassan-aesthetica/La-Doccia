@@ -86,3 +86,7 @@ Noch im Shop aus Zubehör: nur die Antirutschmatte (p60).
 - **Offen (Website):** Kino-Videos für Herren- und Kinder-Hero (alle Bereiche „in Bewegung"); verschiedene Model-Gesichter bei Hüte/Caps nachgenerieren; Cap-Kipp-Video; Zeichentrick-Markenfilm (Marketing, später).
 - **Offen (Parfüm):** Torre Vetro (148_glas) glänzend-undurchsichtig — Korrektur kam noch durchscheinend zurück, alte Version vorerst behalten; Duo-Vetro-Bilder (140_glas) noch satiniert; „Note 1–4" als Beschriftung auf den Flaschen; Piccolo („macht weg" vs. „weiterverfolgen") am Dienstag klären; Oleg schickt noch Carbon-Referenzbilder.
 - **Erledigt:** siehe ABSPRACHE-2026-10-28-CALL.md (Hero-Positionen, Vollbild-Unterseiten, Logo-Farbwechsel, Schuhe/Taschen getrennt, Matt→Glänzend-Texte, Carbon-Reihe p169–172, Ferrari-Rot Metall Note 2, Glas-Reihe glänzend-opak, Quattro/Blocco 4 Teile ohne Deckel länglich, Calibri-Überraschung unten auf Startseite).
+
+## 10.11. — Sprachnachrichten 04.–08.11. umgesetzt
+Erledigt: Torre + Torre Vetro = Olegs 4-Würfel-Entwürfe (Satin + Farbglas); Handy-Version wie Laptop (Vollbild bis oben, transparente Leisten); Produktbilder im Modal komplett sichtbar; Piuma Donna = Olegs Jacken-Entwurf (Violett/Weiß/Grün + Stickerei-Detail).
+Offen: Shopify/Stripe-Abrechnung + Social-Media-Kanäle (Oleg drängt, 3 Nachrichten; 1.000 € nach Fertigstellung — Accounts muss Hassan anlegen); Sneaker-Referenz „La Doccia Custom Design" liegt in den Bildern (noch nicht eingebaut); Oleg schickt nach und nach qualitativere Produktbilder als Ersatz.

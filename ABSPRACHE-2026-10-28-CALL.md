@@ -36,6 +36,13 @@
 - **4 Referenzbilder 02.11., 23:07:** Flakon-Beschriftung für alle vier Material-Reihen (Kunststoff, Metall, Carbon, Glas): **Name (MAN/MANN/HOMME/UOMO) oben auf dem Deckel**, vorne am Deckel **„LA DOCCIA" + die vier Quadrate**. Glas-Reihe in den Referenzen: transparentes Farbglas. → Produktbilder neu generiert (Punkt 16 „Noten auf die Flaschen" damit in Olegs Variante erledigt).
 - **Hassan 03.11.:** Die vier Ausführungen sind **einzelne Produkte, kein Varianten-Umschalter**. ✅ umgesetzt: 16 Einzelprodukte (p169–172 Lack, p174–177 Metall, p178–181 Farbglas, p182–185 Carbon), in der Parfümerie als vier Material-Reihen „Die Herren-Noten — Lack/Metall/Farbglas/Carbon". Preise vorläufig gestaffelt (Lack 149, Metall 169, Farbglas 179, Carbon 189; Uomo je +20 €) — **mit Oleg bestätigen**.
 
+## Nachtrag 04.–08.11. (6 Sprachnachrichten + Bilder)
+- **Torre hat VIER Würfel, nicht fünf** („Hier habt ihr die ganze Zeit fünf gemacht") — Olegs eigene Entwürfe ersetzen beide Flaschen: ✅ Torre (p148) = Satin-Kunststoff-Bild, Torre Vetro (p159) = Farbglas-Bild, Texte auf vier Würfel (Gelb, Rot, Türkis, Violett) umgestellt, auch im Story-Block der Startseite.
+- **Handy wie Laptop:** Welt-Seiten + Startseite ziehen auch mobil bis ganz oben, Header + Kategorie-Leiste transparent über dem Bild. ✅
+- **Produktbild auf dem Handy nur halb sichtbar** → Galerie zeigt Bilder jetzt komplett (object-fit contain). ✅
+- **Daunenjacke ersetzen:** Piuma Donna (p144) trägt jetzt Olegs Entwurf (Violett/Weiß/Grün, Stickerei-Detail als zweites Bild); weitere Produktbilder folgen von Oleg nach und nach.
+- **GANZ WICHTIG (3× wiederholt): Abrechnungssystem (Shopify/Stripe) + Social-Media-Kanäle fertig machen.** Oleg wurde früher schon einmal mit einer nicht funktionierenden Seite sitzen gelassen; er überweist 1.000 €, sobald das steht. → OFFEN, liegt bei Hassan (Accounts/Verträge kann nur er anlegen).
+
 ## Business (offline)
 - Rechnung **1.900 €** per WhatsApp/E-Mail; Überweisung vom Geschäftskonto, Montag/Dienstag.
 - Fotoshooting im Hotel (mit Siegfried abgeklärt), Vitrine mit Beleuchtung und Drehteller im Foyer; Baden-Baden wird komplett verfilmt.
