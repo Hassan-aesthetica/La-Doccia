@@ -1470,7 +1470,8 @@ html{scroll-behavior:smooth}
     <h2>Steuerliche Angaben</h2>
     <p>
       Steuernummer: 03 743/8454<br>
-      Umsatzsteuer-Identifikationsnummer (UID): <mark>[ATU-Nummer ergänzen, oder Hinweis auf Kleinunternehmerregelung]</mark>
+      Kleinunternehmer gemäß § 6 Abs. 1 Z 27 UStG 1994 — umsatzsteuerbefreit.
+      Es wird keine Umsatzsteuer berechnet und ausgewiesen.
     </p>
 
     <h2>Bildnachweis / KI-generierte Inhalte</h2>
@@ -1480,7 +1481,7 @@ html{scroll-behavior:smooth}
     <p>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.</p>
 
     <div class="legalnote">
-      <strong>Hinweis:</strong> Vor Veröffentlichung außerdem prüfen: Preisangaben inkl. USt. Dieses Impressum ist eine Vorlage mit den gesicherten Firmendaten. Die gelb markierten Felder sowie die Angaben zur Umsatzsteuer müssen vor der Veröffentlichung ergänzt und von fachkundiger Stelle geprüft werden — etwa über den kostenlosen <a href="https://www.wko.at/service/impressumsgenerator.html" target="_blank" rel="noopener">WKO-Impressumsgenerator</a>.
+      <strong>Hinweis:</strong> Dieses Impressum basiert auf den gesicherten Firmendaten (Kleinunternehmerregelung ist eingetragen). Die gelb markierten Kontaktfelder müssen vor dem Verkaufsstart ergänzt und das Ganze von fachkundiger Stelle geprüft werden — etwa über den kostenlosen <a href="https://www.wko.at/service/impressumsgenerator.html" target="_blank" rel="noopener">WKO-Impressumsgenerator</a>.
     </div>
 
     <button class="btn ghost" onclick="go('shop')" style="margin-top:32px">Zurück zum Shop</button>
@@ -1543,7 +1544,7 @@ html{scroll-behavior:smooth}
     <p>Die Darstellung der Produkte im Online-Shop stellt kein bindendes Angebot dar. Mit der Bestellung geben Sie ein verbindliches Angebot ab. Der Vertrag kommt mit unserer Auftragsbestätigung bzw. mit Auslieferung der Ware zustande.</p>
 
     <h2>§ 3 Preise und Zahlung</h2>
-    <p>Es gelten die zum Bestellzeitpunkt angegebenen Preise. <mark>[Angaben zur Umsatzsteuer ergänzen — Ausweis oder Hinweis auf Kleinunternehmerregelung.]</mark> Akzeptierte Zahlungsarten: <mark>[Zahlungsarten ergänzen, z. B. PayPal, Kreditkarte, Rechnung.]</mark></p>
+    <p>Es gelten die zum Bestellzeitpunkt angegebenen Preise. Als Kleinunternehmer im Sinne des § 6 Abs. 1 Z 27 UStG 1994 berechnen und weisen wir keine Umsatzsteuer aus. Akzeptierte Zahlungsarten: PayPal, Klarna, Kreditkarte (Visa/Mastercard), Kauf auf Rechnung.</p>
 
     <h2>§ 4 Lieferung und Versandkosten</h2>
     <p>Die Lieferung erfolgt an die von Ihnen angegebene Adresse. <mark>[Liefergebiete und Lieferzeiten ergänzen. Aktuell auf der Website: Versand grundsätzlich kostenlos.]</mark></p>
@@ -2967,7 +2968,7 @@ function openP(id){
       <div class="prow"><span class="now">${eur(p.p)}</span>
         ${p.old?`<span class="old">${eur(p.old)}</span><span class="pc">−${d} %</span>`:''}</div>
       ${p.old||gpT?`<div class="refnote">${[p.old?'Streichpreis: niedrigster Preis der letzten 30 Tage':'',gpT?`Grundpreis: ${gpT}`:''].filter(Boolean).join(' · ')}</div>`:''}
-      <div class="tax" style="margin-bottom:14px">inkl. MwSt. · <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">kostenloser Versand</a></div>
+      <div class="tax" style="margin-bottom:14px">umsatzsteuerfrei (Kleinunternehmerregelung) · <a href="#" onclick="closeP();go('versand');return false" style="text-decoration:underline;text-underline-offset:2px">kostenloser Versand</a></div>
       <div class="stock"><i></i>Auf Lager&nbsp;<span>· ${lieferzeit()}</span></div>
       ${p.colors?`<div class="sizes"><span class="slbl">Variante: <b id="colLbl">${COLNAMES[p.colors[0]]}</b></span><div>
         ${p.colors.map((ci,i)=>`<button class="colb ${i===0?'on':''}" data-c="${COLNAMES[ci]}" style="background:${SELCOLS[ci]}"
