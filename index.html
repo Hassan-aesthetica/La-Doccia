@@ -2580,7 +2580,7 @@ function renderShop(){
        cta:'Jacke entdecken',fn:"openP('p62')"},
       {img:'assets/e/hero-herren.mp4',tag:'La Doccia Herren',sub:'Mantel, Strick-Polo und Premium-Sneaker — kuratiert für ihn',h:'Einfach gut<br>angezogen.',
        cta:'Herren entdecken',fn:"filt('herrenwelt')",right:true},
-      {img:'assets/e/hero-kinder.mp4',tag:'La Doccia Kinder',sub:'Regenjacken, Stiefel und mildes Shampoo',h:'Kleine Füße,<br>große Pfützen.',
+      {img:'assets/e/hero-kinder-2.mp4',tag:'La Doccia Kinder',sub:'Regenjacken, Stiefel und mildes Shampoo',h:'Kleine Füße,<br>große Pfützen.',
        cta:'Kinderwelt entdecken',fn:"filt('kinderwelt')",right:true}
     ];
     tiles = `<div class="shero full" id="heroSlider">
@@ -2614,7 +2614,7 @@ function renderShop(){
         ${[
           {n:'Damen',img:'assets/e/hero-damen.mp4',poster:'assets/e/hero-damen.jpg',col:'var(--c4)',fn:"go('shop','damenwelt')"},
           {n:'Herren',img:'assets/e/hero-herren.mp4',poster:'assets/e/hero-herren.jpg',col:'var(--c2)',fn:"go('shop','herrenwelt')"},
-          {n:'Kinder',img:'assets/e/hero-kinder.mp4',poster:'assets/e/hero-kinder.jpg',col:'var(--c1)',fn:"go('shop','kinderwelt')"}
+          {n:'Kinder',img:'assets/e/hero-kinder-2.mp4',poster:'assets/e/hero-kinder.jpg',col:'var(--c1)',fn:"go('shop','kinderwelt')"}
         ].map(c=>`<div class="gtile" style="--kachel-col:${c.col}" onclick="${c.fn}">
           <video src="${c.img}" poster="${c.poster}" autoplay muted loop playsinline aria-label="${c.n}"></video>
           <div class="glab"><h3><span class="sq"></span>${c.n}</h3><span class="gbtn">Entdecken</span></div>
