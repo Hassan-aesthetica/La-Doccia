@@ -456,11 +456,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
 .shophead p{color:var(--ink-70);max-width:56ch}
 .catbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:18px 0;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  /* Hassan 14.11.: Balken läuft nicht mehr mit (kein sticky) — steht ganz normal im Inhalt */
-  position:static;background:var(--paper)}
+  /* Hassan 14.11.: Balken läuft nicht mehr mit (kein sticky) — steht ganz normal im Inhalt,
+     ohne eigene Box: kein weißes Panel, das über den Rand laufen kann */
+  position:static;background:transparent;max-width:100%}
 .chiprow{display:flex;gap:9px;flex-wrap:wrap;align-items:center;flex:1}
 .chip{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:11px 20px;
-  border:1px solid var(--line);transition:.25s;white-space:nowrap}
+  border:1px solid var(--line);transition:.25s;white-space:nowrap;background:#fff}
 .chip:hover{border-color:var(--ink)}
 .chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .catsec{padding:clamp(40px,5vw,66px) 0 0}
@@ -686,9 +687,8 @@ body.pmopen{overflow:hidden}
    Basisregeln (.shoptools margin-left:auto etc.) sicher überschreiben. */
 @media(max-width:900px){
   .catbar{flex-direction:column;align-items:stretch;gap:12px;position:static}
-  .chiprow{flex-wrap:nowrap;overflow-x:auto;margin-inline:calc(var(--pad)*-1);
-    padding-inline:var(--pad);padding-bottom:4px;scrollbar-width:none}
-  .chiprow::-webkit-scrollbar{display:none}
+  /* Hassan 14.11.: Chips brechen sauber um statt seitlich abgeschnitten zu scrollen */
+  .chiprow{flex-wrap:wrap;overflow:visible;margin-inline:0;padding-inline:0}
   .chip{flex:none}
   .shoptools{margin-left:0;flex-wrap:wrap;gap:10px;width:100%}
   .fsearch{flex:1 1 100%}
@@ -1241,8 +1241,8 @@ header.clear~.mobcats a,header.clear~.mobcats .salelink{color:#fff}
   box-shadow:0 8px 26px -10px rgba(20,20,24,.35);opacity:0;pointer-events:none;transition:opacity .3s}
 #toTop.on{opacity:1;pointer-events:auto}
 @media(max-width:760px){
-  .subbar{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;gap:18px;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:2px}
-  .subbar::-webkit-scrollbar{display:none}
+  /* Hassan 14.11.: auch die Unterkategorien brechen um statt rechts abgeschnitten zu scrollen */
+  .subbar{flex-wrap:wrap;justify-content:center;gap:4px 16px}
   .subchip{white-space:nowrap;flex:0 0 auto}
 }
 .rail{scroll-snap-type:x proximity;scroll-behavior:smooth}
