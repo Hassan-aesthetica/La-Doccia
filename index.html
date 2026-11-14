@@ -949,9 +949,8 @@ nav.main .salelink:hover{border-color:#E0231C}
 @media(prefers-reduced-motion:reduce){#headLogo .brandsq{animation:none}}
 /* Oleg 12.11.: Logo im Rahmen, erscheint langsam wie Tageslicht, verschwindet kurz
    und kommt in der nächsten Markenfarbe wieder; Quadrate in Vollfarben. */
-#headLogoHost{display:inline-block;padding:7px 16px 4px;border:1.5px solid color-mix(in srgb,var(--hlogo,#17171B) 32%,transparent);border-radius:12px;transition:border-color .5s ease}
-@keyframes logodawn{0%{opacity:0}46%{opacity:1}84%{opacity:1}93%{opacity:0}100%{opacity:0}}
-#headLogo{animation:logodawn 11s ease-in-out infinite}
+@keyframes logodawn{0%{opacity:0}14%{opacity:1}90%{opacity:1}97%{opacity:0}100%{opacity:0}}
+#headLogo{animation:logodawn 6s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){#headLogo{animation:none}}
 /* Header transparent über dem Hero (Desktop UND Handy — Oleg 06.11.), Logo wechselt auf Weiß */
 #headLogo path{transition:fill .6s ease}
