@@ -456,7 +456,8 @@ footer{background:var(--ink);color:rgba(255,255,255,.6);padding:clamp(54px,7vw,8
 .shophead p{color:var(--ink-70);max-width:56ch}
 .catbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center;padding:18px 0;
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  position:sticky;top:74px;background:var(--paper);z-index:30}
+  /* Hassan 14.11.: Balken läuft nicht mehr mit (kein sticky) — steht ganz normal im Inhalt */
+  position:static;background:var(--paper)}
 .chiprow{display:flex;gap:9px;flex-wrap:wrap;align-items:center;flex:1}
 .chip{font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:11px 20px;
   border:1px solid var(--line);transition:.25s;white-space:nowrap}
@@ -590,7 +591,6 @@ header.stuck{box-shadow:0 12px 34px -26px rgba(20,20,24,.5)}
 
 /* Feiner Rand statt harter Kante */
 .score,.rev,.line,.tform{box-shadow:0 1px 2px rgba(20,20,24,.03)}
-.catbar{backdrop-filter:blur(12px);background:rgba(255,255,255,.92)}
 .chip{border-radius:0}
 ::selection{background:var(--brass);color:#fff}
 
@@ -881,7 +881,7 @@ nav.main .salelink:hover{border-color:#E0231C}
    liegt auf Desktop UNTER dem transparenten Header */
 .shero.full{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);
   aspect-ratio:auto;height:calc(100svh - 28px);min-height:540px}
-@media(min-width:961px){.shero.full{margin-top:-136px}.catbar{top:136px}}
+@media(min-width:961px){.shero.full{margin-top:-136px}}
 @media(max-width:960px){
   /* Oleg 06.11. (Sprachnachricht): Handy-Version wie Laptop — Bild zieht bis ganz oben,
      Header + Kategorie-Leiste liegen transparent darüber (123px = Header 75 + mobcats 48) */
