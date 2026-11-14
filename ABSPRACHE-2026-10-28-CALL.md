@@ -43,6 +43,23 @@
 - **Daunenjacke ersetzen:** Piuma Donna (p144) trägt jetzt Olegs Entwurf (Violett/Weiß/Grün, Stickerei-Detail als zweites Bild); weitere Produktbilder folgen von Oleg nach und nach.
 - **GANZ WICHTIG (3× wiederholt): Abrechnungssystem (Shopify/Stripe) + Social-Media-Kanäle fertig machen.** Oleg wurde früher schon einmal mit einer nicht funktionierenden Seite sitzen gelassen; er überweist 1.000 €, sobald das steht. → OFFEN, liegt bei Hassan (Accounts/Verträge kann nur er anlegen).
 
+## Nachtrag 12.11. (30 Sprachnachrichten + 27 Fotos — kompletter Seiten-Durchgang)
+- **Logo:** Quadrate in **Vollfarben, knalliger**; Wortmarke wechselt durch die vier Markenfarben; das Ganze im Rahmen, erscheint langsam „wie Tageslicht", verschwindet kurz, kommt in neuer Farbe. ✅ umgesetzt (11-s-Zyklus, Vollfarben-Quadrate, Rahmen um das Logo).
+- **Startseite:** Damen/Herren/Kinder-Buttons **weiter nach unten**. ✅ (62 % → 72 %). Die 4 Hero-Bilder und die 3 Welt-Kacheln **in Bewegung** → ✅ als sanfte Ken-Burns-Fahrt; **echte kleine Videos** zu Slides und allen Produkten folgen nach und nach (Galerie unterstützt MP4 bereits — Oleg generiert ggf. selbst zu).
+- **Parfümerie:** Duo, Duo Vetro, Piccolo, Piccolo Vetro **komplett raus**. ✅ — Herren-Dosen künftig **gradlinig, flacher Deckel** (sein Referenzbild mit MAN/MAN(N)/HOMME/UOMO liegt in `referenzen/oleg-herrendosen-flach.jpg`) → OFFEN: Oleg schickt Original-Renders oder generiert selbst; dann tausche ich alle 16 Bilder.
+- **KI-Kennzeichen auf den Bildern alle weg** („Zeichen für billige Ware") ✅ — Transparenzhinweis bleibt im Impressum + FAQ (rechtlich sauber, stört im Shop nicht).
+- **Raus aus dem Sortiment:** T-Shirt Cucitura, T-Shirt Giorno, T-Shirt Essenziale, Plateau-Sneaker Nuvola, Hemd Camicia, Sommerhemd Quadri, Chino Gamba („Hosen bestellt niemand"), Kinder-T-Shirt mit den 4 großen Quadraten. ✅ alle entfernt, inkl. aller Querverweise; Rubrik „Hosen" dadurch ganz raus.
+- **Taschen trennen:** Kulturtaschen/Kosmetiktaschen nicht neben edlen Taschen → ✅ zu „Zubehör/Accessoires" verschoben (zusammen mit der Trinkflasche); edle Taschenmodelle schickt Oleg noch.
+- **Handtasche „Quadra": Weiß geht gar nicht** → ✅ jetzt echte Farbvarianten Schwarz / Grün / Cognac (KI-generiert nach bisherigem Modell), Weiß komplett raus.
+- **Mantel ersetzt:** Trenchcoat „Milano" trägt jetzt Olegs Kampagnen-Design (Sand Beige, tailliert, Gürtel; Damen) ✅ — Salbei Grün + Navy Blau als Bilder folgen (sein Original liegt in `referenzen/oleg-mantel-kampagne.jpg`).
+- **Passo korrigiert:** trägt Olegs Patchwork-Design ✅ (Haupt- + 7 Galerie-Bilder aus seinem Kampagnen-Render; vier Farb-Mixe im Text).
+- **Pista (Herren) „sehr gut":** jetzt zusätzlich in Rot, Violett und Gold/Braun ✅ (Farbvarianten). Damen-Sportjacke tauchte bei Herren in den Empfehlungen auf → ✅ Empfehlungen mischen die Welten nicht mehr. Die Damen-Pista gestaltet Oleg selbst um (offen bei ihm).
+- **Kinder:** Regenjacke Salto in Gelb/Rot/Türkis/Violett ✅, Kinder-Sneaker Salto in Weiß/Gelb/Türkis/Rosa ✅ („sehen sehr gut aus").
+- **Trends-&-Inspiration-Hero:** gestaltet Oleg selbst um; bekommt dann auch Bewegung. (Ken-Burns läuft schon.)
+- **Ukrainischer Hersteller-Katalog im Footer: weg.** ✅
+- **GANZ WICHTIG (wiederholt):** Bestell-/Bezahl-Ablauf muss intern testbar funktionieren („ich überweise keinen Cent, wenn das System nicht funktioniert") + Social-Kanäle — liegt bei Hassan. **Alles auch am Handy prüfen** — Oleg vergleicht auf dem Handy.
+- **Dateiaustausch:** Oleg will Bilder nicht mehr mailen → Empfehlung an ihn: gemeinsamer Cloud-Ordner (z. B. Google Drive „La Doccia Bilder"), Hassan richtet ihn ein.
+
 ## Business (offline)
 - Rechnung **1.900 €** per WhatsApp/E-Mail; Überweisung vom Geschäftskonto, Montag/Dienstag.
 - Fotoshooting im Hotel (mit Siegfried abgeklärt), Vitrine mit Beleuchtung und Drehteller im Foyer; Baden-Baden wird komplett verfilmt.
