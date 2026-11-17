@@ -19,10 +19,10 @@
   /* Kein Braun mehr: neutrales Schwarz/Weiß als Bühne, die Logo-Farben knallen */
   --ink:#17171B; --ink-70:rgba(23,23,27,.72); --ink-45:rgba(23,23,27,.48);
   --paper:#FFFFFF; --bg:#F3F0E9; --stone:#F5F5F8; --stone-2:#E9E9F0;
-  --brass:#E85D2A; --brass-lo:#FFB25C; --gold:#C9A227; --clay:#6C4FD8;
+  --brass:#FE6104; --brass-lo:#FFB25C; --gold:#C9A227; --clay:#0060FC;
   --line:rgba(23,23,27,.12);
   /* Vier Markenfarben — kräftig und vorne drauf, wie im Logo */
-  --c1:#E8B400; --c2:#E85D2A; --c3:#1FA98A; --c4:#6C4FD8;
+  --c1:#FED104; --c2:#FE6104; --c3:#00C174; --c4:#0060FC;
   --sans:'Inter',system-ui,sans-serif; --serif:'Bodoni Moda',Georgia,serif;
   --pad:clamp(22px,6vw,64px); --maxw:1440px;
 }
@@ -938,15 +938,8 @@ nav.main .salelink:hover{border-color:#E0231C}
 .shero .slide:nth-child(2n) img,.catgrid .gtile:nth-child(2n) img{animation-duration:21s;animation-direction:alternate-reverse}
 .catgrid .gtile{overflow:hidden}
 @media(prefers-reduced-motion:reduce){.shero .slide img,.nwhero img,.catgrid .gtile img{animation:none}}
-/* Oleg 28.10.: „Die vier Quadrate — mach auch flexible Farbe." Die Farben wandern
-   langsam durchs Logo; zu jedem Zeitpunkt sind alle vier Markenfarben zu sehen. */
-@keyframes sqshift{
-  0%,19%{fill:#E8B400}25%,44%{fill:#E85D2A}50%,69%{fill:#1FA98A}75%,94%{fill:#6C4FD8}100%{fill:#E8B400}}
-#headLogo .brandsq{animation:sqshift 24s ease-in-out infinite}
-#headLogo .brandsq:nth-of-type(2){animation-delay:-6s}
-#headLogo .brandsq:nth-of-type(3){animation-delay:-12s}
-#headLogo .brandsq:nth-of-type(4){animation-delay:-18s}
-@media(prefers-reduced-motion:reduce){#headLogo .brandsq{animation:none}}
+/* Neues Logo 11/2026: Quadrate stehen fest in Gelb/Orange/Grün/Blau;
+   die flexible Farbe kommt über die Logo-Varianten (SQPAL) pro Zyklus. */
 /* Oleg 12.11.: Logo im Rahmen, erscheint langsam wie Tageslicht, verschwindet kurz
    und kommt in der nächsten Markenfarbe wieder; Quadrate in Vollfarben. */
 @keyframes logodawn{0%{opacity:0}14%{opacity:1}90%{opacity:1}97%{opacity:0}100%{opacity:0}}
@@ -1900,18 +1893,17 @@ function paths(list, color){
 function pathsStatic(list, color){
   return list.map(g=>`<g transform="translate(${g.x},0) scale(${g.s},${-g.s})"><path d="${g.d}" fill="${color}"/></g>`).join('');
 }
-const BRAND=['#E8B400','#E85D2A','#1FA98A','#6C4FD8'];
-const SELCOLS=[...BRAND,'#FFFFFF','#17171B','#C9A227','#1E7A46','#1E5AA8','#E0231C','#2E86C1','#58D68D','#F5B041','#1E8449','#E8B400','#E85D2A','#1FA98A','#6C4FD8','#C9CBD1','#F2F1EC','#3A3A3E','#F2A9BB','#D8CCB8','#8A9B7E','#22314E'];  /* Auswahlfarben für Produkte (inkl. Weiß) — nicht fürs Logo */
-const COLNAMES=['Gelb','Orange','Türkis','Violett','Weiß','Schwarz','Gold','Grün','Blau','Rot','Kolibri','Chamäleon','Salamander','Krokodil','Man','Mann','Homme','Uomo','Metall','Vetro','Carbon','Rosa','Sand','Salbei','Navy'];
-/* Die Quadrate sind jetzt RAHMEN (Vorgabe aus Olegs Skizze):
-   fill:none + kräftiger Stroke statt gefüllter Fläche. */
+const BRAND=['#FED104','#FE6104','#00C174','#0060FC'];
+const SELCOLS=['#FED104','#FE6104','#1FA98A','#6C4FD8','#FFFFFF','#17171B','#C9A227','#1E7A46','#1E5AA8','#E0231C','#2E86C1','#58D68D','#F5B041','#1E8449','#E8B400','#E85D2A','#1FA98A','#6C4FD8','#C9CBD1','#F2F1EC','#3A3A3E','#F2A9BB','#D8CCB8','#8A9B7E','#22314E','#14382B','#6E1423'];  /* Auswahlfarben für Produkte (inkl. Weiß) — nicht fürs Logo */
+const COLNAMES=['Gelb','Orange','Türkis','Violett','Weiß','Schwarz','Gold','Grün','Blau','Rot','Kolibri','Chamäleon','Salamander','Krokodil','Man','Mann','Homme','Uomo','Metall','Vetro','Carbon','Rosa','Sand','Salbei','Navy','Dunkelgrün','Bordeaux'];
+/* Neues Logo (Olegs Vorlage 11/2026): volle, gefüllte Quadrate
+   mit stark abgerundeten Ecken — Gelb, Orange, Grün, Blau. */
 function squaresWide(size,y,x0,x1,anim){
   const centers=[0,1,2,3].map(i=>x0+(x1-x0)*i/3);
-  const sw=Math.max(2,size*0.26);
   return BRAND.map((c,i)=>`<rect class="brandsq ${anim?'sq':''}" data-i="${i}" style="${anim?`animation-delay:${(0.5+i*0.07).toFixed(2)}s`:''}"
-    x="${(centers[i]-size/2+sw/2).toFixed(2)}" y="${(y+sw/2).toFixed(2)}"
-    width="${(size-sw).toFixed(2)}" height="${(size-sw).toFixed(2)}"
-    fill="${c}" stroke="none" rx="1"/>`).join('');
+    x="${(centers[i]-size/2).toFixed(2)}" y="${y.toFixed(2)}"
+    width="${size.toFixed(2)}" height="${size.toFixed(2)}"
+    fill="${c}" stroke="none" rx="${(size*0.24).toFixed(2)}"/>`).join('');
 }
 function stackedLogo(){
   const {word,ww}=LOGO;
@@ -2219,6 +2211,9 @@ const P=[
  {id:'p159',cat:'parfuem',sc:'edp',n:'Eau de Parfum „Torre Vetro“, 100 ml',p:199,img:'assets/p/148_glas_neu4_a.jpg',r:5.0,rv:2,badge:'Neu',rel:["p148","p163","p160"],d:'Der große Turm als Glas-Edition nach Olegs Entwurf: vier Würfel aus strahlendem Farbglas — Gelb, Rot, Türkis, Violett — mit intensiven Glanzreflexen und senkrechter Gold-Wortmarke. Gleiche Form wie „Torre“, neues Material.',x:'Glas-Edition mit Goldschrift — dieselbe Duftkomposition wie „Torre“. Design geschützt.'},
 {id:'p149',cat:'mode',sc:'oberteile',who:'herren',n:'Premium-Polo „Bottone“',p:149,img:'assets/p/149_a.jpg',img2:'assets/p/149_a_v2.jpg',gal:["assets/p/149_a_v2.jpg", "assets/p/149_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Baumwoll-Piqué',sizes:["S","M","L","XL"],rel:["p146","p122","p120"],d:'Das Polo mit den goldenen Quadrat-Knöpfen — leicht abgerundet wie die Quadrate im Logo. Goldene Ziernähte an Knopfleiste, Kragen und Ärmeln.',x:'Gestickte Gold-Wortmarke mit den vier Quadraten. Bei 30 °C waschen, Knöpfe unempfindlich.'},
 {id:'p150',cat:'mode',sc:'sport',who:'damen',n:'Track-Jacke „Pista Donna“',p:189,img:'assets/p/150_a.jpg',img2:'assets/p/150_a_v2.jpg',gal:["assets/p/150_a_v2.jpg", "assets/p/150_a_v3.jpg"],r:4.9,rv:2,badge:'Neu',mat:'Technischer Jersey',sizes:["XS","S","M","L"],rel:["p146","p108","p143"],d:'Die Pista für Damen: tailliert, mit dem Quadrate-Band an beiden Ärmeln, farbigen Ziernähten und goldenem Reißverschluss — Sport als Mode.',x:'Stehkragen, zwei Reißverschlusstaschen. Bei 30 °C waschen.'},
+{id:'p190',cat:'mode',sc:'sport',who:'damen',n:'Trainingsanzug „Fiore“',p:299,img:'assets/p/190_tuta_gruen.jpg',img2:'assets/p/190_tuta_bordeaux.jpg',gal:["assets/p/190_tuta_navy.jpg", "assets/p/190_tuta_schwarz.jpg", "assets/p/190_tuta_details.jpg"],colors:[25,26,24,5],cimg:{'Dunkelgrün':'assets/p/190_tuta_gruen.jpg','Bordeaux':'assets/p/190_tuta_bordeaux.jpg','Navy':'assets/p/190_tuta_navy.jpg','Schwarz':'assets/p/190_tuta_schwarz.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Technischer Jersey mit Fiore-Monogramm',sizes:["XS","S","M","L","XL"],rel:["p191","p192","p150","p108"],d:'Der Anzug der neuen Fiore-Linie: Jacke und Hose im goldenen Blumen-Monogramm, mit Streifenband an Ärmel und Bein und goldenem Reißverschluss — Sport als Abendgarderobe.',x:'Jacke und Hose im Set. Wasserabweisend, wärmend, elastisch und formstabil. Goldene Stickerei La Doccia mit den vier Quadraten auf der Brust. Bei 30 °C waschen.'},
+{id:'p191',cat:'mode',sc:'schuhe',who:'damen',n:'Sneaker „Fiore“',p:249,img:'assets/p/191_fiore_gruen.jpg',img2:'assets/p/191_fiore_bordeaux.jpg',gal:["assets/p/191_fiore_navy.jpg", "assets/p/191_fiore_schwarz.jpg", "assets/p/191_fiore_uebersicht.jpg"],colors:[25,26,24,5],cimg:{'Dunkelgrün':'assets/p/191_fiore_gruen.jpg','Bordeaux':'assets/p/191_fiore_bordeaux.jpg','Navy':'assets/p/191_fiore_navy.jpg','Schwarz':'assets/p/191_fiore_schwarz.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Gestepptes Textil, Gummisohle',sizes:["36","37","38","39","40","41"],rel:["p190","p192","p132","p64"],d:'Der Sneaker zur Fiore-Linie: gesteppter Schaft im goldenen Blumen-Monogramm, goldene Spange an der Seite und weiße Sohle — leicht, rutschfest und wasserabweisend.',x:'Goldene Ösen, La Doccia in Gold auf der Zunge. Wasserabweisendes Obermaterial — Regen perlt ab. Mit feuchtem Tuch pflegen.'},
+{id:'p192',cat:'mode',sc:'huete',who:'damen',n:'Cap „Fiore“',p:59,img:'assets/p/192_cap_gruen.jpg',img2:'assets/p/192_cap_bordeaux.jpg',gal:["assets/p/192_cap_navy.jpg", "assets/p/192_cap_schwarz.jpg"],colors:[25,26,24,5],cimg:{'Dunkelgrün':'assets/p/192_cap_gruen.jpg','Bordeaux':'assets/p/192_cap_bordeaux.jpg','Navy':'assets/p/192_cap_navy.jpg','Schwarz':'assets/p/192_cap_schwarz.jpg'},r:5.0,rv:2,badge:'Neu',mat:'Baumwoll-Twill mit Monogramm-Druck',sizes:["Einheitsgröße"],rel:["p190","p191","p152","p88"],d:'Die Cap zur Fiore-Linie: Blumen-Monogramm Ton in Ton, vorn La Doccia in Gold mit den vier Quadraten — das Finish zum Anzug.',x:'Größenverstellbar, gebogener Schirm. Bei 30 °C von Hand waschen.'},
 {id:'p151',cat:'mode',sc:'oberteile',who:'kinder',n:'Kinder-Strickpulli „Quadretti Mini“',p:69,img:'assets/p/151_a.jpg',img2:'assets/p/151_a_v2.jpg',gal:["assets/p/151_a_v2.jpg", "assets/p/151_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Weiche Wollmischung',sizes:["98/104","110/116","122/128"],rel:["p147","p87","p82"],d:'Kuscheliger Strick in Creme mit verstreuten bunten Quadraten — das Quadretti-Muster für die Kleinen.',x:'Rippbündchen an Kragen und Ärmeln. Wollwaschgang, liegend trocknen.'},
 {id:'p152',cat:'mode',sc:'huete',who:'herren',n:'Cap „Coriandoli“',p:79,img:'assets/p/122_a.jpg',img2:'assets/p/122_b.jpg',gal:["assets/p/122_b.jpg", "assets/p/122_a_v2.jpg"],r:5.0,rv:3,badge:'Neu',mat:'100 % Baumwoll-Twill',rel:["p122","p149","p120"],d:'Die knallweiße Cap mit den tanzenden Quadraten: viele kleine Stickereien in den vier Markenfarben wirbeln über Schirm und Seite — dazu die graue Wortmarke.',x:'Silberne Metallschließe, größenverstellbar. Nicht waschen, feucht abwischen.'},
 {id:'p153',cat:'mode',sc:'oberteile',who:'herren',n:'Strick-Polo „Maglia“',p:159,img:'assets/p/153_a.jpg',img2:'assets/p/153_a_v2.jpg',gal:["assets/p/153_a_v2.jpg", "assets/p/153_a_v3.jpg"],r:5.0,rv:2,badge:'Neu',mat:'Feine Merinowolle',sizes:["S","M","L","XL"],rel:["p149","p145","p155"],d:'Das Strick-Polo aus feiner Merinowolle mit den goldenen Quadrat-Knöpfen und Gold-Tipping am Kragen — leise Eleganz mit unserer Handschrift.',x:'Gestickte Gold-Wortmarke mit den vier Quadraten. Wollwaschgang, liegend trocknen.'},
@@ -3175,10 +3170,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){popClose();cart(0);
    Palette herein — gleiche Animation wie in der Startsequenz (sqIn).
    Reine SVG-Attribut-Änderung, beeinflusst das Scrollen nicht. */
 const SQPAL=[
-  ['#E8B400','#E85D2A','#1FA98A','#6C4FD8'],  // Original
-  ['#FFD400','#FF4D2E','#00B894','#7C4DFF'],  // Neon
-  ['#00A8E8','#FFD400','#FF4D6D','#22C55E'],  // Kühl-knallig
-  ['#6C4FD8','#1FA98A','#E8B400','#E85D2A']   // Original rotiert
+  ['#FED104','#FE6104','#00C174','#0060FC'],  // Original (Olegs Hauptlogo)
+  ['#FEDB05','#FEDB05','#FEDB05','#FEDB05'],  // Variante Gelb
+  ['#FD0305','#FD0305','#FD0305','#FD0305'],  // Variante Rot
+  ['#01DB53','#01DB53','#01DB53','#01DB53'],  // Variante Grün
+  ['#005EFE','#005EFE','#005EFE','#005EFE']   // Variante Blau
 ];
 let sqPalIdx=0;
 function cycleSquares(){
@@ -3193,16 +3189,12 @@ function cycleSquares(){
     }
   });
 }
-/* Oleg 12.11.: pro Tageslicht-Zyklus wechseln Wortmarke und Quadrate die Farben */
+/* Neues Logo (11/2026): Wortmarke bleibt fest (weiß/Tinte),
+   nur die Quadrate wechseln pro Zyklus durch Olegs Logo-Varianten. */
 (function(){
   const hl=document.getElementById('headLogo');
   if(!hl){ setInterval(cycleSquares,15000); return; }
-  let wmIdx=-1;
-  hl.addEventListener('animationiteration',()=>{
-    wmIdx=(wmIdx+1)%BRAND.length;
-    hl.querySelectorAll('g:first-of-type path').forEach(p=>p.setAttribute('fill',BRAND[wmIdx]));
-    cycleSquares();
-  });
+  hl.addEventListener('animationiteration',cycleSquares);
   if(matchMedia('(prefers-reduced-motion: reduce)').matches) setInterval(cycleSquares,15000);
 })();
 
