@@ -67,3 +67,8 @@
 - Ukrainische Fabriken angeschrieben, Antworten ausstehend; ggf. Portugiesen + weitere auf Englisch anschreiben.
 
 Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>
+
+## Nachtrag 17.11.2026 — Neues Logo + Damen-Linie „Fiore"
+- Neues Logo von Oleg übernommen: Wortmarke fest weiß/schwarz, vier voll gefüllte Quadrate mit runden Ecken in Gelb/Orange/Grün/Blau (#FED104/#FE6104/#00C174/#0060FC). Die einfarbigen Varianten (alle Quadrate Gelb/Rot/Grün/Blau) laufen als Wechsel pro Einblend-Zyklus.
+- Neue Damen-Linie „Fiore" (Blumen-Monogramm) im Shop: Trainingsanzug 299 €, Sneaker 249 €, Cap 59 € — je in Dunkelgrün, Bordeaux, Navy, Schwarz.
+- Anzug- und Cap-Bilder aus Olegs Vorlagen zugeschnitten; Sneaker-Produktfotos neu generiert (Olegs Grafik enthielt Amazon-Badges/Text, fürs Shop-Design ungeeignet). Olegs Infografiken liegen als Galeriebilder im Produkt.
